@@ -2,9 +2,9 @@
 
 ## Web Development
 
-- [Check cross-browser compatibility for CSS, JavaScript and HTML](https://caniuse.com/#home)
+- [Check cross-browser compatibility for CSS, JavaScript and HTML ](https://caniuse.com/#home)
 - [Modern front-end Cheatsheets](https://medium.freecodecamp.org/modern-frontend-hacking-cheatsheets-df9c2566c72a)
-- [Check out what your favorite company’s stack is](https://stackshare.io/)
+- [Check out what your favorite company's stack is](https://stackshare.io/)
 - [A Guide to Becoming a Full-Stack Developer in 2017](https://medium.com/coderbyte/a-guide-to-becoming-a-full-stack-developer-in-2017-5c3c08a1600c)
 - [What happens when you type a URL into a web browser](http://edusagar.com/articles/view/70/What-happens-when-you-type-a-URL-in-browser)
 
@@ -16,7 +16,7 @@
 
 ## GIT
 
-- [HubSpot’s Intro to Git/GitHub including Pull Requests & Merging](http://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
+- [HubSpot's Intro to Git/GitHub including Pull Requests & Merging](http://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
 
 ## Express
 
@@ -24,10 +24,12 @@
 
 ## Node.js
 
-- [Fetch vs. Axios.js for making http requests](https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5) \#\# Sequelize
+- [Fetch vs. Axios.js for making http requests](https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5)
+
+## Sequelize
 
 - [Sequelize: Getting Started](https://www.youtube.com/watch?v=6NKNfXtKk0c)
-- <span class="citation" data-cites="tmkelly28">\[Sequelize reference by @tmkelly28\]</span>(https://github.com/tmkelly28/sequelize-reference)
+- [Sequelize reference by @tmkelly28](https://github.com/tmkelly28/sequelize-reference)
 - [Short but useful Sequelize querying cheatsheet](https://blog.cloudboost.io/docs-for-the-sequelize-docs-querying-edition-aed4bd1273f0)
 
 ## Study Guides
@@ -52,7 +54,10 @@
 
 - [redux-freeze: avoid accidental in-place mutations of state](https://github.com/buunguyen/redux-freeze)
 - [redux-saga: manage redux side-effects with es6 generators](https://github.com/redux-saga/redux-saga)
-- [redux-promise-middleware: A thunk alternative with more bells and whistles](https://github.com/pburtchaell/redux-promise-middleware) \#\# CSS
+- [redux-promise-middleware: A thunk alternative with more bells and whistles](https://github.com/pburtchaell/redux-promise-middleware)
+
+## CSS
+
 - [Specificity Calculator](https://specificity.keegan.st/)
 - [Tool for making clip-paths quickly with CSS](http://bennettfeely.com/clippy/)
 
@@ -68,7 +73,7 @@
 ## VS Code
 
 - [Keystroke cheat sheet](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
-- [Daniel’s Config](https://gist.github.com/tanukid/4ba5d7021a2027362592cbac0a356f58)
+- [Daniel's Config](https://gist.github.com/tanukid/4ba5d7021a2027362592cbac0a356f58)
 
 ## Sublime
 

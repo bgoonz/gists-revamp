@@ -118,7 +118,7 @@ Here are just some of the **features** that GitLens provides,
 - <span id="05e9">on-demand **file annotations** in the editor gutter, including</span>
 - <span id="fb38"><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#gutter-blame-" class="markup--anchor markup--li-anchor" title="Jump to Gutter Blame"><strong>blame</strong></a> — shows the commit and author who last modified each line of a file</span>
 - <span id="c964"><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#gutter-changes-" class="markup--anchor markup--li-anchor" title="Jump to Gutter Changes"><strong>changes</strong></a> — highlights any local (unpublished) changes or lines changed by the most recent commit</span>
-- <span id="8e28"><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#gutter-heatmap-" class="markup--anchor markup--li-anchor" title="Jump to Gutter Heatmap"><strong>heatmap</strong></a> — shows how recently lines were changed, relative to all the other changes in the file and to now (hot vs. cold)</span>
+- <span id="8e28"><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#gutter-heatmap-" class="markup--anchor markup--li-anchor" title="Jump to Gutter Heatmap"><strong>heatmap</strong></a> — shows how recently lines were changed, relative to all the other changes in the file and to now (hot vs. cold)</span>
 - <span id="f31e">many rich **Side Bar views**</span>
 - <span id="454e">a <a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#commits-view-" class="markup--anchor markup--li-anchor" title="Jump to the Commits view"><strong><em>Commits</em> view</strong></a> to visualize, explore, and manage Git commits</span>
 - <span id="20b4">a <a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#repositories-view-" class="markup--anchor markup--li-anchor" title="Jump to the Repositories view"><strong><em>Repositories</em> view</strong></a> to visualize, explore, and manage Git repositories</span>
@@ -185,10 +185,10 @@ Here are just some of the **features** that GitLens provides,
 ### Print Markdown to HTML
 
 - <span id="b93d">Commands `Markdown: Print current document to HTML` and `Markdown: Print documents to HTML` (batch mode)</span>
-- <span id="0011">**Compatible** with other installed Markdown plugins (e.g. <a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes" class="markup--anchor markup--li-anchor">Markdown Footnotes</a>) The exported HTML should look the same as inside VSCode.</span>
+- <span id="0011">**Compatible** with other installed Markdown plugins (e.g. <a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes" class="markup--anchor markup--li-anchor">Markdown Footnotes</a>) The exported HTML should look the same as inside VSCode.</span>
 - <span id="9740">Use comment `<!-- title: Your Title -->` to specify a title of the exported HTML.</span>
 - <span id="9298">Plain links to `.md` files will be converted to `.html`.</span>
-- <span id="5a32">It’s recommended to print the exported HTML to PDF with browser (e.g. Chrome) if you want to share your documents with others.</span>
+- <span id="5a32">It’s recommended to print the exported HTML to PDF with browser (e.g. Chrome) if you want to share your documents with others.</span>
 
 ### GitHub Flavored Markdown
 
@@ -222,11 +222,21 @@ Tip: also support the option `completion.root`
 
 ### Import command
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*1ks3u0MsnG96JUy6.gif" class="graf-image" /></figure>{ “npm-intellisense.importES6”: true, “npm-intellisense.importQuotes”: “’”, “npm-intellisense.importLinebreak”: “;”, “npm-intellisense.importDeclarationType”: “const”, }
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*1ks3u0MsnG96JUy6.gif" class="graf-image" /></figure>{
+        "npm-intellisense.importES6": true,
+       "npm-intellisense.importQuotes": "'",
+       "npm-intellisense.importLinebreak": ";\r\n",
+        "npm-intellisense.importDeclarationType": "const",
+    }
 
 ### Import command (ES5)
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*srfRIxEbcL_yxBey.gif" class="graf-image" /></figure>{ “npm-intellisense.importES6”: false, “npm-intellisense.importQuotes”: “’”, “npm-intellisense.importLinebreak”: “;”, “npm-intellisense.importDeclarationType”: “const”, }
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*srfRIxEbcL_yxBey.gif" class="graf-image" /></figure>{
+        "npm-intellisense.importES6": false,
+      "npm-intellisense.importQuotes": "'",
+       "npm-intellisense.importLinebreak": ";\r\n",
+        "npm-intellisense.importDeclarationType": "const",
+    }
 
 ---
 
@@ -239,11 +249,21 @@ Tip: also support the option `completion.root`
 
 ### Import command
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*o3KIizXjd5BfnZzR.gif" class="graf-image" /></figure>{ “npm-intellisense.importES6”: true, “npm-intellisense.importQuotes”: “’”, “npm-intellisense.importLinebreak”: “;”, “npm-intellisense.importDeclarationType”: “const”, }
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*o3KIizXjd5BfnZzR.gif" class="graf-image" /></figure>{
+        "npm-intellisense.importES6": true,
+       "npm-intellisense.importQuotes": "'",
+       "npm-intellisense.importLinebreak": ";\r\n",
+        "npm-intellisense.importDeclarationType": "const",
+    }
 
 ### Import command (ES5)
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*pCEaJc8pJmJi_dMk.gif" class="graf-image" /></figure>{ “npm-intellisense.importES6”: false, “npm-intellisense.importQuotes”: “’”, “npm-intellisense.importLinebreak”: “;”, “npm-intellisense.importDeclarationType”: “const”, }
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*pCEaJc8pJmJi_dMk.gif" class="graf-image" /></figure>{
+        "npm-intellisense.importES6": false,
+      "npm-intellisense.importQuotes": "'",
+       "npm-intellisense.importLinebreak": ";\r\n",
+        "npm-intellisense.importDeclarationType": "const",
+    }
 
 ### Scan devDependencies
 

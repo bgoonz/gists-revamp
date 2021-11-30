@@ -17,13 +17,13 @@
 - Does not have its own bindings to
   [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) or [`super`](/en-US/docs/Web/JavaScript/Reference/Operators/super),
   and should not be used as [`methods`](/en-US/docs/Glossary/Method).
-- Does not have [`new.target`](/en-US/docs/Web/JavaScript/Reference/Operators/new.target) keyword.
+- Does not have [`new.target`](/en-US/docs/Web/JavaScript/Reference/Operators/new.target) keyword.
 - Not suitable for
   [`call`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call),
   [`apply`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
   and [`bind`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
   methods, which generally rely on establishing a [scope](/en-US/docs/Glossary/Scope).
-- Can not be used as [constructors](/en-US/docs/Glossary/Constructor).
+- Can not be used as [constructors](/en-US/docs/Glossary/Constructor).
 - Can not use [`yield`](/en-US/docs/Web/JavaScript/Reference/Operators/yield), within its body.
 
 {{EmbedInteractiveExample("pages/js/functions-arrow.html")}}
@@ -202,7 +202,7 @@ obj.b(); // prints undefined, Window {...} (or the global object)
 obj.c(); // prints 10, Object {...}
 ```
 
-Arrow functions do not have their own `this`. Another example involving
+Arrow functions do not have their own `this`. Another example involving
 {{jsxref("Object.defineProperty()")}}:
 
 ```js
@@ -406,7 +406,7 @@ generators.
 Arrow functions can have either a "concise body" or the usual "block body".
 
 In a concise body, only an expression is specified, which becomes the implicit return
-value. In a block body, you must use an explicit `return` statement.
+value. In a block body, you must use an explicit `return` statement.
 
 ```js
 var func = (x) => x * x;
@@ -567,7 +567,7 @@ console.log(add(10, 20)); // 30
 
 ---
 
-**The following example is equivalent to the above `add()` function expression but use an arrow function instead:**
+**The following example is equivalent to the above `add()` function expression but use an arrow function instead:**
 
 ---
 
@@ -579,9 +579,9 @@ console.log(add(10, 20)); // 30;
 
 ---
 
-**In this example, the arrow function has one expression `x + y` so it returns the result of the expression.**
+**In this example, the arrow function has one expression `x + y` so it returns the result of the expression.**
 
-**However, if you use the block syntax, you need to specify the `return` keyword:**
+**However, if you use the block syntax, you need to specify the `return` keyword:**
 
 ---
 
@@ -593,7 +593,7 @@ let add = (x, y) => {
 
 ---
 
-**The  `typeof` operator returns `function` indicating the type of arrow function.**
+**The  `typeof` operator returns `function` indicating the type of arrow function.**
 
 ---
 
@@ -603,7 +603,7 @@ console.log(typeof add); // function
 
 ---
 
-**The arrow function is also an instance of the [Function type](javascript-function-type/) as shown in the following example:**
+**The arrow function is also an instance of the [Function type](javascript-function-type/) as shown in the following example:**
 
 ---
 
@@ -654,7 +654,7 @@ console.log(add instanceof Function); // true
 
 ---
 
-**For example, to [sort an array](javascript-array-sort/) of numbers in the descending order, you use the `sort()` method of the array object as follows:**
+**For example, to [sort an array](javascript-array-sort/) of numbers in the descending order, you use the `sort()` method of the array object as follows:**
 
 ---
 
@@ -706,7 +706,7 @@ console.log(numbers); // [6,4,2]
 
 ---
 
-**The following example uses an arrow function as an argument of the `[map()](/javascript-array-map/)` method that transforms an array of strings into an array of the string's lengths.**
+**The following example uses an arrow function as an argument of the `[map()](/javascript-array-map/)` method that transforms an array of strings into an array of the string's lengths.**
 
 ---
 
@@ -756,7 +756,7 @@ logDoc();
 
 > JavaScript doesn't allow you to have a line break between the parameter definition and the arrow (`=>`) in an arrow function.
 
-## For example, the following code causes a `SyntaxError`
+## For example, the following code causes a `SyntaxError`
 
 ```js
 
@@ -822,7 +822,7 @@ let square = (x) => x * x;
 
 ---
 
-**However, if you use a statement, you must wrap it inside a pair of curly braces as in the following example:#####**
+**However, if you use a statement, you must wrap it inside a pair of curly braces as in the following example:#####**
 
 ---
 
@@ -851,7 +851,7 @@ console.log(backgroundColor.value); // "Red"
 
 ---
 
-**The `setColor()` function expression returns an object that has the `value` property set to the `color` argument.**
+**The `setColor()` function expression returns an object that has the `value` property set to the `color` argument.**
 
 **If you use the following syntax to return an object literal from an arrow function, you will get an error.**
 
@@ -889,8 +889,8 @@ let setColor = (color) => ({ value: color });
 
 ##### There are two main differences between an arrow function and a regular function
 
-1. First, in the arrow function, the `this` are lexical. It means that the arrow function uses these variables (or constructs) from the enclosing lexical scope.
-2. Second, an arrow function cannot be used as a function constructor. If you use the `new` keyword to create a new object from an arrow function, you will get an error.
+1. First, in the arrow function, the `this` are lexical. It means that the arrow function uses these variables (or constructs) from the enclosing lexical scope.
+2. Second, an arrow function cannot be used as a function constructor. If you use the `new` keyword to create a new object from an arrow function, you will get an error.
 
 ---
 
@@ -901,23 +901,23 @@ let setColor = (color) => ({ value: color });
 <details>
 <summary>_**More On THIS**_</summary>
 
-Summary: in this tutorial, you will  learn about the JavaScript `this` value and understand it clearly in various contexts.
+Summary: in this tutorial, you will  learn about the JavaScript `this` value and understand it clearly in various contexts.
 
-##### If you have been working with other programming languages such as C++, Java, and [PHP](https://www.phptutorial.net/php-oop/php-this/), you're already familiar with the `this` keyword
+##### If you have been working with other programming languages such as C++, Java, and [PHP](https://www.phptutorial.net/php-oop/php-this/), you're already familiar with the `this` keyword
 
-##### In these languages, the `this`keyword represents the instance of the current object in the method of the class. And the `this` keyword is only relevant within a method of the class, meaning that you cannot use it outside of a method
+##### In these languages, the `this`keyword represents the instance of the current object in the method of the class. And the `this` keyword is only relevant within a method of the class, meaning that you cannot use it outside of a method
 
-> JavaScript has the `this` keyword that behaves differently from other programming languages, which may confuse you at first.
+> JavaScript has the `this` keyword that behaves differently from other programming languages, which may confuse you at first.
 
-#### **In JavaScript, you can use the `this` keyword in the [global and function contexts](/javascript-execution-context/). Moreover, the behavior of the  `this` keyword changes between strict and non-strict modes**
+#### **In JavaScript, you can use the `this` keyword in the [global and function contexts](/javascript-execution-context/). Moreover, the behavior of the  `this` keyword changes between strict and non-strict modes**
 
-#### What is the `this` keyword
+#### What is the `this` keyword
 
-##### The `this` references the object of which the function is a property. In other words, the `this` references the object that is currently calling the function
+##### The `this` references the object of which the function is a property. In other words, the `this` references the object that is currently calling the function
 
-Suppose that you have an object called `counter`. This object `counter` has a method called `next()`.
+Suppose that you have an object called `counter`. This object `counter` has a method called `next()`.
 
-When you call the `next()` method, you can access the `this` object.
+When you call the `next()` method, you can access the `this` object.
 
 ```js
 const counter = {
@@ -932,7 +932,7 @@ counter.next();
 
 ---
 
-Inside the `next()` function, the `this` references the `counter` object.
+Inside the `next()` function, the `this` references the `counter` object.
 
 See the following method call:
 
@@ -944,13 +944,13 @@ counter.next();
 
 > Code language: CSS (css)
 
-##### The `next()` is a function that is the property of the `counter` object. Therefore, inside the `next()` function, the `this` references the `counter` object
+##### The `next()` is a function that is the property of the `counter` object. Therefore, inside the `next()` function, the `this` references the `counter` object
 
 By the way, when a function is a property of an object, it is called a method.
 
 #### Global context
 
-##### In the global context, the `this` references the [global object](/es-next/javascript-globalthis/), which is the `window` object on the web browser or `global` object on Node.js
+##### In the global context, the `this` references the [global object](/es-next/javascript-globalthis/), which is the `window` object on the web browser or `global` object on Node.js
 
 This behavior is consistent whether the strict mode is applied or not, like this:
 
@@ -960,7 +960,7 @@ console.log(this === window); // true
 
 ---
 
-##### If you assign a property to `this` object in the global context, JavaScript will add the property to the global object as shown in the following example
+##### If you assign a property to `this` object in the global context, JavaScript will add the property to the global object as shown in the following example
 
 ```js
 this.color = "Red";
@@ -971,18 +971,18 @@ console.log(window.color); // 'Red'
 
 #### Function context
 
-#### **In JavaScript, you can invoke a [function](javascript-function/) in the following ways**
+#### **In JavaScript, you can invoke a [function](javascript-function/) in the following ways**
 
 - [Function invocation](/javascript-this/#function_invocation)
 - [Method invocation](/javascript-this/#method_invocation)
 - [Constructor invocation](/javascript-this/#constructor_invocation)
 - [Indirect invocation](/javascript-this/#indirect_invocation)
 
-Each function invocation defines its own context, therefore, the `this` behaves differently than you may expect.
+Each function invocation defines its own context, therefore, the `this` behaves differently than you may expect.
 
 ### 1) Simple function invocation
 
-##### In the non-strict mode, the `this` references the global object when the function is called as follows
+##### In the non-strict mode, the `this` references the global object when the function is called as follows
 
 ```js
 function show() {
@@ -994,9 +994,9 @@ show();
 
 ---
 
-When you call the `show()` function, the `this` references the [global object](/es-next/javascript-globalthis/), which is the `window` on the web browser and `global` on Node.js.
+When you call the `show()` function, the `this` references the [global object](/es-next/javascript-globalthis/), which is the `window` on the web browser and `global` on Node.js.
 
-Calling the `show()` function is the same as:
+Calling the `show()` function is the same as:
 
 ```js
 window.show();
@@ -1004,7 +1004,7 @@ window.show();
 
 ---
 
-##### In the strict mode, JavaScript sets the `this` to `undefined`. #### Consider the following example
+##### In the strict mode, JavaScript sets the `this` to `undefined`. #### Consider the following example
 
 ```js
 "use strict";
@@ -1018,11 +1018,11 @@ show();
 
 ---
 
-To set the strict mode, you can use the directive `"use strict"` at the beginning of the file.
+To set the strict mode, you can use the directive `"use strict"` at the beginning of the file.
 
 ##### If you want to apply the strict mode to a specific function only, you place it at the top of the function body
 
-Note that the strict mode has been available since ECMAScript 5.1. The `strict` mode applies to both function and inner functions within the function. Here is an example:
+Note that the strict mode has been available since ECMAScript 5.1. The `strict` mode applies to both function and inner functions within the function. Here is an example:
 
 ```js
 function show() {
@@ -1049,11 +1049,11 @@ true;
 
 ---
 
-##### In the `display()` inner function, The `this` also set to `undefined` as shown in the console
+##### In the `display()` inner function, The `this` also set to `undefined` as shown in the console
 
 ### 2) Method invocation
 
-When you call a method of an object, JavaScript sets `this` to the object that owns the method. See the following `car` object:
+When you call a method of an object, JavaScript sets `this` to the object that owns the method. See the following `car` object:
 
 ```js
 let car = {
@@ -1068,7 +1068,7 @@ console.log(car.getBrand()); // Honda
 
 ---
 
-##### In this example, the `this` object in the `getBrand()` method references the `car` object
+##### In this example, the `this` object in the `getBrand()` method references the `car` object
 
 \*\*Since a method is a property of an object which is a value, you can store it in a variable.
 
@@ -1086,9 +1086,9 @@ console.log(brand()); // undefined
 
 ---
 
-You get `undefined` instead of `"Honda"` because when you call a method without specifying its object, JavaScript sets `this` to the global object in non-strict mode and `undefined` in the strict mode.
+You get `undefined` instead of `"Honda"` because when you call a method without specifying its object, JavaScript sets `this` to the global object in non-strict mode and `undefined` in the strict mode.
 
-To fix this issue, you use the `[bind()](/javascript-bind/)` method of the `Function.prototype` object. The `bind()` method creates a new function whose the `this` keyword is set to a specified value.
+To fix this issue, you use the `[bind()](/javascript-bind/)` method of the `Function.prototype` object. The `bind()` method creates a new function whose the `this` keyword is set to a specified value.
 
 ```js
 let brand = car.getBrand.bind(car);
@@ -1097,7 +1097,7 @@ console.log(brand()); // Honda
 
 ---
 
-##### In this example, when you call the `brand()` method, the `this` keyword is bound to the `car` object. For example
+##### In this example, when you call the `brand()` method, the `this` keyword is bound to the `car` object. For example
 
 ```js
 let car = {
@@ -1126,13 +1126,13 @@ Harley Davidson
 
 ---
 
-##### In this example, the `bind()` method sets the `this` to the `bike` object, therefore, you see the value of the `brand` property of the `bike` object on the console
+##### In this example, the `bind()` method sets the `this` to the `bike` object, therefore, you see the value of the `brand` property of the `bike` object on the console
 
 ### 3) Constructor invocation
 
-When you use the `new` keyword to create an instance of a function object, you use the function as a constructor.
+When you use the `new` keyword to create an instance of a function object, you use the function as a constructor.
 
-##### The following example declares a `Car` function, then invokes it as a constructor
+##### The following example declares a `Car` function, then invokes it as a constructor
 
 ```js
 function Car(brand) {
@@ -1149,11 +1149,11 @@ console.log(car.getBrand());
 
 ---
 
-##### The expression `new Car('Honda')` is a constructor invocation of the `Car` function
+##### The expression `new Car('Honda')` is a constructor invocation of the `Car` function
 
-> JavaScript creates a new object and sets `this` to the newly created object. This pattern works great with only one potential problem.
+> JavaScript creates a new object and sets `this` to the newly created object. This pattern works great with only one potential problem.
 
-Now, you can invoke the `Car()` as a function or as a constructor. If you omit the `new` keyword as follows:
+Now, you can invoke the `Car()` as a function or as a constructor. If you omit the `new` keyword as follows:
 
 ```js
 var bmw = Car("BMW");
@@ -1163,9 +1163,9 @@ console.log(bmw.brand);
 
 ---
 
-\*\*Since the `this` value in the `Car()` sets to the global object, the `bmw.brand` returns `undefined`.
+\*\*Since the `this` value in the `Car()` sets to the global object, the `bmw.brand` returns `undefined`.
 
-To make sure that the `Car()` function is always invoked using constructor invocation, you add a check at the beginning of the `Car()` function as follows:
+To make sure that the `Car()` function is always invoked using constructor invocation, you add a check at the beginning of the `Car()` function as follows:
 
 ```js
 function Car(brand) {
@@ -1178,9 +1178,9 @@ function Car(brand) {
 
 ---
 
-ES6 introduced a meta-property named [`new.target`](es6/javascript-new-target/) that allows you to detect whether a function is invoked as a simple invocation or as a constructor.
+ES6 introduced a meta-property named [`new.target`](es6/javascript-new-target/) that allows you to detect whether a function is invoked as a simple invocation or as a constructor.
 
-You can modify the `Car()` function that uses the `new.target` metaproperty as follows:
+You can modify the `Car()` function that uses the `new.target` metaproperty as follows:
 
 ```js
 function Car(brand) {
@@ -1195,9 +1195,9 @@ function Car(brand) {
 
 ### 4) Indirect Invocation
 
-#### **In JavaScript, [functions are first-class citizens](/javascript-functions-are-first-class-citizens/). In other words, functions are objects, which are instances of the [Function type](javascript-function-type/)**
+#### **In JavaScript, [functions are first-class citizens](/javascript-functions-are-first-class-citizens/). In other words, functions are objects, which are instances of the [Function type](javascript-function-type/)**
 
-##### The `Function` type has two methods: `[call()](/javascript-call/)` and `[apply()](/javascript-apply-method/)` . These methods allow you to set the `this` value when calling a function. For example
+##### The `Function` type has two methods: `[call()](/javascript-call/)` and `[apply()](/javascript-apply-method/)` . These methods allow you to set the `this` value when calling a function. For example
 
 ```js
 function getBrand(prefix) {
@@ -1227,9 +1227,9 @@ It's an Audi
 
 ---
 
-##### In this example, we called the `getBrand()` function indirectly using the `call()` method of the `getBrand` function. We passed `honda` and  `audi` object as the first argument of the `call()` method, therefore, we got the corresponding brand in each call
+##### In this example, we called the `getBrand()` function indirectly using the `call()` method of the `getBrand` function. We passed `honda` and  `audi` object as the first argument of the `call()` method, therefore, we got the corresponding brand in each call
 
-##### The `apply()` method is similar to the `call()` method except that its second argument is an array of arguments
+##### The `apply()` method is similar to the `call()` method except that its second argument is an array of arguments
 
 ```js
 getBrand.apply(honda, ["It's a "]); // "It's a Honda"
@@ -1240,9 +1240,9 @@ getBrand.apply(audi, ["It's an "]); // "It's a Audi"
 
 #### Arrow functions
 
-[ES6](es6/)introduced a new concept named [arrow function](es6/javascript-arrow-function/). In arrow functions, JavaScript sets the `this` lexically.
+[ES6](es6/)introduced a new concept named [arrow function](es6/javascript-arrow-function/). In arrow functions, JavaScript sets the `this` lexically.
 
-It means the arrow function does not create its own [execution context](/javascript-execution-context/) but inherits the `this` from the outer function where the arrow function is defined. See the following example:
+It means the arrow function does not create its own [execution context](/javascript-execution-context/) but inherits the `this` from the outer function where the arrow function is defined. See the following example:
 
 ```js
 let getThis = () => this;
@@ -1251,7 +1251,7 @@ console.log(getThis() === window); // true
 
 ---
 
-##### In this example, the `this` value is set to the global object i.e., `window` in the web browser
+##### In this example, the `this` value is set to the global object i.e., `window` in the web browser
 
 \*\*Since an arrow function does not create its own execution context, defining a method using an arrow function will cause an issue. For example:
 
@@ -1270,13 +1270,13 @@ car.getSpeed(); // TypeError
 
 ---
 
-Inside the `getSpeed()` method, the `this` value reference the global object, not the `Car` object. Therefore the `car.getSpeed()` invocation causes an error because the global object does not have the `speed` property.
+Inside the `getSpeed()` method, the `this` value reference the global object, not the `Car` object. Therefore the `car.getSpeed()` invocation causes an error because the global object does not have the `speed` property.
 
 </details>
 
-### JavaScript arrow functions and `this` value
+### JavaScript arrow functions and `this` value
 
-#### **In JavaScript, a new function defines its own `this` value. However, it is not the case for the arrow function. See the following example**
+#### **In JavaScript, a new function defines its own `this` value. However, it is not the case for the arrow function. See the following example**
 
 ---
 
@@ -1298,9 +1298,9 @@ car.speedUp(50);
 
 ---
 
-Inside the anonymous function of the `[setTimeout()](/javascript-bom/javascript-settimeout/)` function, the `this.speed` is `undefined`. The reason is that the `this` of the [anonymous function](/javascript-anonymous-functions/) shadows the `this` of the `speedUp()` method.
+Inside the anonymous function of the `[setTimeout()](/javascript-bom/javascript-settimeout/)` function, the `this.speed` is `undefined`. The reason is that the `this` of the [anonymous function](/javascript-anonymous-functions/) shadows the `this` of the `speedUp()` method.
 
-## To fix this, you assign the `this` value to a variable that doesn't shadow inside the anonymous function as follows
+## To fix this, you assign the `this` value to a variable that doesn't shadow inside the anonymous function as follows
 
 ```js
 function Car() {
@@ -1321,7 +1321,7 @@ car.speedUp(50); // 50;
 
 ---
 
-## Unlike an anonymous function, an arrow function captures the `this` value of the enclosing context instead of creating its own `this` context. The following code should work as expected
+## Unlike an anonymous function, an arrow function captures the `this` value of the enclosing context instead of creating its own `this` context. The following code should work as expected
 
 ```js
 function Car() {
@@ -1341,7 +1341,7 @@ car.speedUp(50); // 50;
 
 ### JavaScript arrow functions and the arguments object
 
-## An arrow function doesn't have the `arguments` object. For example
+## An arrow function doesn't have the `arguments` object. For example
 
 ```js
 function show() {
@@ -1355,13 +1355,13 @@ console.log(result); // 15
 
 ---
 
-##### The arrow function inside the `showMe()` function references the `arguments` object. However, this `arguments` object belongs to the `show()` function, not the arrow function
+##### The arrow function inside the `showMe()` function references the `arguments` object. However, this `arguments` object belongs to the `show()` function, not the arrow function
 
-Also, an arrow function doesn't have the `[new.target](/es6/javascript-new-target/)` keyword.
+Also, an arrow function doesn't have the `[new.target](/es6/javascript-new-target/)` keyword.
 
 ### JavaScript arrow functions and the prototype property
 
-## When you define a [function](/javascript-function/) using a `function` keyword, the function has a property called `[prototype](/javascript-prototype/)`
+## When you define a [function](/javascript-function/) using a `function` keyword, the function has a property called `[prototype](/javascript-prototype/)`
 
 ```js
 function dump(message) {
@@ -1372,7 +1372,7 @@ console.log(dump.hasOwnProperty("prototype")); // true
 
 ---
 
-**However, arrow functions don't have the `prototype` property:**
+**However, arrow functions don't have the `prototype` property:**
 
 ---
 
@@ -1383,14 +1383,14 @@ console.log(dump.hasOwnProperty("prototype")); // false
 
 ---
 
-It is a good practice to use arrow functions for [callbacks](/javascript-callback/) and [closures](/javascript-closure/) because the syntax of arrow functions is cleaner.
+It is a good practice to use arrow functions for [callbacks](/javascript-callback/) and [closures](/javascript-closure/) because the syntax of arrow functions is cleaner.
 
 #### Summary
 
-- Use the `(...args) => expression;` to define an arrow function.
-- Use the `(...args) => { statements }` to define an arrow function that has multiple statements.
-- An arrow function doesn't have its binding to `this` or `super`.
-- An arrow function doesn't have `arguments` object, `new.target` keyword, and `prototype` property.Introduction to JavaScript arrow functions
+- Use the `(...args) => expression;` to define an arrow function.
+- Use the `(...args) => { statements }` to define an arrow function that has multiple statements.
+- An arrow function doesn't have its binding to `this` or `super`.
+- An arrow function doesn't have `arguments` object, `new.target` keyword, and `prototype` property.Introduction to JavaScript arrow functions
 
 </details>
 
@@ -1412,7 +1412,7 @@ console.log(add(10, 20)); // 30
 
 ---
 
-**The following example is equivalent to the above `add()` function expression but use an arrow function instead:**
+**The following example is equivalent to the above `add()` function expression but use an arrow function instead:**
 
 ---
 
@@ -1424,9 +1424,9 @@ console.log(add(10, 20)); // 30;
 
 ---
 
-##### In this example, the arrow function has one expression `x + y` so it returns the result of the expression
+##### In this example, the arrow function has one expression `x + y` so it returns the result of the expression
 
-**However, if you use the block syntax, you need to specify the `return` keyword:**
+**However, if you use the block syntax, you need to specify the `return` keyword:**
 
 ---
 
@@ -1438,7 +1438,7 @@ let add = (x, y) => {
 
 ---
 
-**The  `typeof` operator returns `function` indicating the type of arrow function.**
+**The  `typeof` operator returns `function` indicating the type of arrow function.**
 
 ---
 
@@ -1448,7 +1448,7 @@ console.log(typeof add); // function
 
 ---
 
-**The arrow function is also an instance of the [Function type](javascript-function-type/) as shown in the following example:**
+**The arrow function is also an instance of the [Function type](javascript-function-type/) as shown in the following example:**
 
 ---
 
@@ -1497,7 +1497,7 @@ console.log(add instanceof Function); // true
 
 ---
 
-## For example, to [sort an array](javascript-array-sort/) of numbers in the descending order, you use the `sort()` method of the array object as follows
+## For example, to [sort an array](javascript-array-sort/) of numbers in the descending order, you use the `sort()` method of the array object as follows
 
 ```js
 let numbers = [4, 2, 6];
@@ -1545,7 +1545,7 @@ console.log(numbers); // [6,4,2]
 
 ---
 
-**The following example uses an arrow function as an argument of the `[map()](/javascript-array-map/)` method that transforms an array of strings into an array of the string's lengths.**
+**The following example uses an arrow function as an argument of the `[map()](/javascript-array-map/)` method that transforms an array of strings into an array of the string's lengths.**
 
 ---
 
@@ -1595,7 +1595,7 @@ logDoc();
 
 > JavaScript doesn't allow you to have a line break between the parameter definition and the arrow (`=>`) in an arrow function.
 
-## For example, the following code causes a `SyntaxError`
+## For example, the following code causes a `SyntaxError`
 
 ```js
 
@@ -1659,7 +1659,7 @@ let square = (x) => x * x;
 
 ---
 
-**However, if you use a statement, you must wrap it inside a pair of curly braces as in the following example:**
+**However, if you use a statement, you must wrap it inside a pair of curly braces as in the following example:**
 
 ---
 
@@ -1688,7 +1688,7 @@ console.log(backgroundColor.value); // "Red"
 
 ---
 
-##### The `setColor()` function expression returns an object that has the `value` property set to the `color` argument
+##### The `setColor()` function expression returns an object that has the `value` property set to the `color` argument
 
 **If you use the following syntax to return an object literal from an arrow function, you will get an error.**
 
@@ -1726,11 +1726,11 @@ let setColor = (color) => ({ value: color });
 
 ##### There are two main differences between an arrow function and a regular function
 
-> _**1. First, in the arrow function, the `[this](/javascript-this/)`, `arguments`, `super`, `[new.target](/es6/javascript-new-target/)` are lexical. It means that the arrow function uses these variables (or constructs) from the enclosing lexical scope. 2. Second, an arrow function cannot be used as a function constructor. If you use the `new` keyword to create a new object from an arrow function, you will get an error.**_
+> _**1. First, in the arrow function, the `[this](/javascript-this/)`, `arguments`, `super`, `[new.target](/es6/javascript-new-target/)` are lexical. It means that the arrow function uses these variables (or constructs) from the enclosing lexical scope. 2. Second, an arrow function cannot be used as a function constructor. If you use the `new` keyword to create a new object from an arrow function, you will get an error.**_
 
-### JavaScript arrow functions and `this` value
+### JavaScript arrow functions and `this` value
 
-#### **In JavaScript, a new function defines its own `this` value. However, it is not the case for the arrow function. See the following example**
+#### **In JavaScript, a new function defines its own `this` value. However, it is not the case for the arrow function. See the following example**
 
 ---
 
@@ -1752,9 +1752,9 @@ car.speedUp(50);
 
 ---
 
-**Inside the anonymous function of the `[setTimeout()](/javascript-bom/javascript-settimeout/)` function, the `this.speed` is `undefined`. The reason is that the `this` of the [anonymous function](/javascript-anonymous-functions/) shadows the `this` of the `speedUp()` method.**
+**Inside the anonymous function of the `[setTimeout()](/javascript-bom/javascript-settimeout/)` function, the `this.speed` is `undefined`. The reason is that the `this` of the [anonymous function](/javascript-anonymous-functions/) shadows the `this` of the `speedUp()` method.**
 
-## To fix this, you assign the `this` value to a variable that doesn't shadow inside the anonymous function as follows
+## To fix this, you assign the `this` value to a variable that doesn't shadow inside the anonymous function as follows
 
 ```js
 function Car() {
@@ -1775,7 +1775,7 @@ car.speedUp(50); // 50;
 
 ---
 
-## Unlike an anonymous function, an arrow function captures the `this` value of the enclosing context instead of creating its own `this` context. The following code should work as expected
+## Unlike an anonymous function, an arrow function captures the `this` value of the enclosing context instead of creating its own `this` context. The following code should work as expected
 
 ```js
 function Car() {
@@ -1795,7 +1795,7 @@ car.speedUp(50); // 50;
 
 ### JavaScript arrow functions and the arguments object
 
-## An arrow function doesn't have the `arguments` object. For example
+## An arrow function doesn't have the `arguments` object. For example
 
 ```js
 function show() {
@@ -1809,13 +1809,13 @@ console.log(result); // 15
 
 ---
 
-##### The arrow function inside the `showMe()` function references the `arguments` object. However, this `arguments` object belongs to the `show()` function, not the arrow function
+##### The arrow function inside the `showMe()` function references the `arguments` object. However, this `arguments` object belongs to the `show()` function, not the arrow function
 
-Also, an arrow function doesn't have the `[new.target](/es6/javascript-new-target/)` keyword.
+Also, an arrow function doesn't have the `[new.target](/es6/javascript-new-target/)` keyword.
 
 ### JavaScript arrow functions and the prototype property
 
-## When you define a [function](/javascript-function/) using a `function` keyword, the function has a property called `[prototype](/javascript-prototype/)`
+## When you define a [function](/javascript-function/) using a `function` keyword, the function has a property called `[prototype](/javascript-prototype/)`
 
 ```js
 function dump(message) {
@@ -1826,7 +1826,7 @@ console.log(dump.hasOwnProperty("prototype")); // true
 
 ---
 
-**However, arrow functions don't have the `prototype` property:**
+**However, arrow functions don't have the `prototype` property:**
 
 ---
 
@@ -1837,13 +1837,13 @@ console.log(dump.hasOwnProperty("prototype")); // false
 
 ---
 
-> It is a good practice to use arrow functions for [callbacks](/javascript-callback/) and [closures](/javascript-closure/) because the syntax of arrow functions is cleaner.
+> It is a good practice to use arrow functions for [callbacks](/javascript-callback/) and [closures](/javascript-closure/) because the syntax of arrow functions is cleaner.
 
 ---
 
 ## Summary
 
-- **Use the `(...args) => expression;` to define an arrow function.**
-- **Use the `(...args) => { statements }` to define an arrow function**that has multiple statements.\*\*
-- **An arrow function doesn't have its binding to `this` or `super`.**
-- **An arrow function doesn't have `arguments` object, `new.target` keyword, and `prototype` property.**
+- **Use the `(...args) => expression;` to define an arrow function.**
+- **Use the `(...args) => { statements }` to define an arrow function**that has multiple statements.\*\*
+- **An arrow function doesn't have its binding to `this` or `super`.**
+- **An arrow function doesn't have `arguments` object, `new.target` keyword, and `prototype` property.**

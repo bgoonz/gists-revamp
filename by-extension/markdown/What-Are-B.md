@@ -6,7 +6,7 @@ A Bash alias is a method of supplementing or overriding Bash commands with new o
 
 ### What Are Bash Aliases And Why Should You Be Using Them!
 
-A Bash alias is a method of supplementing or overriding Bash commands with new ones. Bash aliases make it easy for users to customize their experience in a <a href="https://opensource.com/article/19/7/what-posix-richard-stallman-explains" class="markup--anchor markup--p-anchor">POSIX</a> terminal. They are often defined in **<span class="math inline">_HOME_/.*bashrc* \*  \* *or* \* \*</span>HOME/bash_aliases** (which must be loaded by **$HOME/.bashrc**).
+A Bash alias is a method of supplementing or overriding Bash commands with new ones. Bash aliases make it easy for users to customize their experience in a <a href="https://opensource.com/article/19/7/what-posix-richard-stallman-explains" class="markup--anchor markup--p-anchor">POSIX</a> terminal. They are often defined in **$HOME/.bashrc** or **$HOME/bash_aliases** (which must be loaded by **$HOME/.bashrc**).
 
 Most distributions add at least some popular aliases in the default **.bashrc** file of any new user account. These are simple ones to demonstrate the syntax of a Bash alias:
 

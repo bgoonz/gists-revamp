@@ -131,7 +131,7 @@ My current terminal/shell combination is iTerm2 and zsh. iTerm2 is a great termi
 
 ![](https://miro.medium.com/max/3200/0*b7Wkxw-0N-AK89vm.png)
 
-In the world of full-stack web development, the next thing to consider is browsers. These are the applications that allow you to access the internet and execute/render the frontend code (i.e. websites) you will create.
+In the world of full-stack web development, the next thing to consider is browsers. These are the applications that allow you to access the internet and execute/render the frontend code (i.e. websites) you will create.
 
 These browsers also offer tools for debugging and analyzing your website’s code. Learning how to work with these tools early on (and especially once you start learning JavaScript) is something I can’t recommend enough.
 
@@ -198,7 +198,7 @@ _A Quick Note: It is also common for the term “browser engine” to only refer
 
 ![](https://miro.medium.com/max/3200/0*xmFAn8wHmCSAfyGf.png)
 
-Client-side or frontend programming is the area of web development dedicated to creating everything a user of a website will see (i.e. the UI).
+Client-side or frontend programming is the area of web development dedicated to creating everything a user of a website will see (i.e. the UI).
 
 In its simplest form, all you need to make a website is HTML. Unfortunately, an HTML-only website will look and feel quite bland which is why CSS is also used to change the style of a website, and JavaScript is used to add more complex behavior to a website.
 
@@ -222,7 +222,7 @@ It’s a website that I highly recommend you take the time to peruse and see wha
 
 As I stated above, HTML (Hyper-Text Markup Language) is the absolute baseline for what you need to make a website. It is the place where you include the content of your website and _define the structure_ of your webpages.
 
-An analogy that I’m fond of is that if the content (i.e. text, images, etc.) of your website is a pile of bones, then HTML is what you use to structure those bones into a skeleton (i.e. a webpage).
+An analogy that I’m fond of is that if the content (i.e. text, images, etc.) of your website is a pile of bones, then HTML is what you use to structure those bones into a skeleton (i.e. a webpage).
 
 ![](https://miro.medium.com/max/3200/0*JfAX8iLqbyl0oeFp.png)
 
@@ -250,7 +250,7 @@ These references below are once again a sort of dictionary with definitions of a
 
 Character code references are another type of dictionary that defines all the possible characters you can use in an HTML document and their associated code that you type.
 
-Say, for example, you wanted to include the division symbol on a webpage you can type “÷” and it will be converted into ÷.
+Say, for example, you wanted to include the division symbol on a webpage you can type “&divide;” and it will be converted into ÷.
 
 - 🔥 [HTML Character Code Reference](https://www.toptal.com/designers/htmlarrows/arrows/)
 - [HTML Dog — Character Code Reference](https://htmldog.com/references/html/characters/)
@@ -576,7 +576,7 @@ Moving on from JavaScript we start to enter the territory of languages, librarie
 
 One such language is TypeScript. Created by Microsoft, TypeScript is a “superset of JavaScript” meaning it’s JavaScript with extra features. Those extra features are namely a type system.
 
-Instead of letting JavaScript determine what types of data (i.e. numbers, strings, etc.) your variables contain or your functions return, you explicitly define the data types yourself like you would in a language such as Java or C.
+Instead of letting JavaScript determine what types of data (i.e. numbers, strings, etc.) your variables contain or your functions return, you explicitly define the data types yourself like you would in a language such as Java or C.
 
 The benefit of doing this is that you and larger teams can catch a ton of small mistakes that could lead to runtime errors. Accidentally passed a number into a function that should accept a string? No problem, TypeScript has got your back and will let you know.
 
@@ -666,7 +666,7 @@ Third-Party APIs are APIs created by someone else (usually a company). The relat
 - [API List](https://apilist.fun/) –– A public list of free third-party APIs
 - [API Marketplace](https://rapidapi.com/) –– Another public list of free third-party APIs
 
-Browser APIs are a little bit different (and a little bit cooler in my opinion). The same customer-restaurant relationship can be used, but the restaurant location has changed. Rather than being located at some far-away server, the restaurant is the web browser itself (i.e. Chrome or Firefox).
+Browser APIs are a little bit different (and a little bit cooler in my opinion). The same customer-restaurant relationship can be used, but the restaurant location has changed. Rather than being located at some far-away server, the restaurant is the web browser itself (i.e. Chrome or Firefox).
 
 This new type of restaurant also serves slightly different and slightly cooler menu items. There are browser APIs for using [Bluetooth](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API), checking [ambient light levels](https://developer.mozilla.org/en-US/docs/Web/API/Ambient_Light_Events), connecting [game controllers](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API), [capturing photos or videos](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API), and many more options.
 
@@ -889,7 +889,7 @@ These are some great resources to get oriented with Node.js and dive deeper into
 - [Node.js Tutorial](https://www.tutorialspoint.com/nodejs/index.htm)
 - [Why The Hell Would I Use Node.js? A Case By Case Tutorial](https://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js)
 
-Setting up a Node.js development environment is actually fairly straightforward since all the primary tools you need (i.e. the Node.js runtime and the Node Package Manager) are both downloaded when you install Node.
+Setting up a Node.js development environment is actually fairly straightforward since all the primary tools you need (i.e. the Node.js runtime and the Node Package Manager) are both downloaded when you install Node.
 
 The only other useful piece of a Node developer environment would be to use an IDE or a text editor extension for working with Node. My recommendation is to use VS Code as it already comes with an incredible JavaScript / TypeScript / Node extension built-in.
 
@@ -897,7 +897,7 @@ The only other useful piece of a Node developer environment would be to use an I
 - [Setting Up A Node.js Development Environment](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment)
 - [Node.js Development Environment Setup](https://cloud.google.com/nodejs/docs/setup)
 
-A huge benefit to using Node.js is its [insanely large](https://snyk.io/blog/npm-passes-the-1-millionth-package-milestone-what-can-we-learn/) ecosystem of third-party packages you can use (i.e. pieces of Node software written by someone else that you can use in your own Node projects).
+A huge benefit to using Node.js is its [insanely large](https://snyk.io/blog/npm-passes-the-1-millionth-package-milestone-what-can-we-learn/) ecosystem of third-party packages you can use (i.e. pieces of Node software written by someone else that you can use in your own Node projects).
 
 A piece of software called the Node Package Manager (NPM) is installed when you install the Node.js runtime and is the mechanism for including and tracking the packages your Node projects use.
 

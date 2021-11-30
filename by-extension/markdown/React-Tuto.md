@@ -39,7 +39,7 @@ Random Things to Remember
 - <span id="da3c">`Webpack` : In between tool for dealing with the extra build step involved.</span>
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*4O0NPGEa-1NcDOIA.png" class="graf-image" /></figure>-   <span id="9d53">**HMR** : (Hot Module Replacement) When you make changes to your source code the changes are delivered in real-time.</span>
--   <span id="8d5b">React Developers created something called `Flux Architecture` to moderate how their web page consumes and modifies data received from back-end API’s.</span>
+-   <span id="8d5b">React Developers created something called `Flux Architecture` to moderate how their web page consumes and modifies data received from back-end API's.</span>
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*hXODC_ZsM-egMFI4.png" class="graf-image" /></figure>-   <span id="97a3">**Choosing React**</span>
 -   <span id="1589">Basically, React is super important to learn and master.</span>

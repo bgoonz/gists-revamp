@@ -8,10 +8,12 @@ Commands:
 
 #### Every extension or tool you could possibly need
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*gcp0kkiWQY6qd1Y4qEcqxw.png" class="graf-image" /></figure>### Here’s a rudimentary static site I made that goes into more detail on the extensions I use…
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*gcp0kkiWQY6qd1Y4qEcqxw.png" class="graf-image" /></figure>
+
+### Here’s a rudimentary static site I made that goes into more detail on the extensions I use…
 
 <a href="https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18"><strong>VSCodeExtensions</strong><br />
-5fff5b9a2430bb564bfd451d–stoic-mccarthy-2c335f.netlify.app</a><a href="https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app</a><a href="https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 ### Here’s the repo it was deployed from:
 
@@ -355,7 +357,7 @@ These extensions provide slightly different sets of features. While the first on
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*vitZrD9ZU0_eWckU.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*0BHxQOLMx09FFuWZ.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*x8F97F4AdSvvtehT.png" class="graf-image" /></figure>### <a href="https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-github" class="markup--anchor markup--h3-anchor">GitHub</a>
 
-> _Provides GitHub workflow support. For example browse project, issues, file (the current line), create and manage pull request. Support for other providers (e.g. gitlab or bitbucket) is planned. Have a look at the_ <a href="https://github.com/KnisterPeter/vscode-github/blob/master/README.md" class="markup--anchor markup--blockquote-anchor"><em>README.md</em></a> _on how to get started with the setup for this extension._
+> _Provides GitHub workflow support. For example browse project, issues, file (the current line), create and manage pull request. Support for other providers (e.g. gitlab or bitbucket) is planned. Have a look at the_ <a href="https://github.com/KnisterPeter/vscode-github/blob/master/README.md" class="markup--anchor markup--blockquote-anchor"><em>README.md</em></a> _on how to get started with the setup for this extension._
 
 ### <a href="https://marketplace.visualstudio.com/items?itemName=erichbehrens.pull-request-monitor" class="markup--anchor markup--h3-anchor">GitHub Pull Request Monitor</a>
 

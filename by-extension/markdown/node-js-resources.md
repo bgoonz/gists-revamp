@@ -1,6 +1,7 @@
 # Awesome Node.js projects [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-> A curated list of awesome open-source applications made with Node.js. See [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs) for a curated list of packages and resources.
+> A curated list of awesome open-source applications made with Node.js. See [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
+> for a curated list of packages and resources.
 
 > [Read the story of how this repository ranked first on Hacker News and reached the 1000+ stars on Github.](https://medium.com/@vdeturckheim/the-story-of-how-i-got-first-place-on-hacker-news-and-got-1000-stars-on-github-9dc9e63ef829#.1v4b51fvs)
 
@@ -15,7 +16,9 @@
 - [Enduro.js](https://github.com/Gottwik/enduro) ([website](http://endurojs.com)) - Minimalistic, flat-file, full-fledged cms that gets your website running in minutes.
 - [Raneto](https://github.com/gilbitron/Raneto) ([website](http://raneto.com/)) - Markdown powered Knowledgebase for Nodejs
 
-**Meteor apps** \* [TelescopeJS](https://github.com/TelescopeJS/Telescope) ([website](http://www.telescopeapp.org)) - Telescope Nova is a free, open-source app platform built with React and powered by Meteor on the back-end. Nova provides simple building blocks such as posts, comments, forms, and modals, and makes it easy to quickly customize them to build modern, social web apps.
+**Meteor apps**
+
+- [TelescopeJS](https://github.com/TelescopeJS/Telescope) ([website](http://www.telescopeapp.org)) - Telescope Nova is a free, open-source app platform built with React and powered by Meteor on the back-end. Nova provides simple building blocks such as posts, comments, forms, and modals, and makes it easy to quickly customize them to build modern, social web apps.
 
 ## Developers
 
@@ -66,7 +69,7 @@
 
 ## Science
 
-- [NASA’s Open MCT](https://github.com/nasa/openmct) ([website](https://nasa.github.io/openmct/)) - A web based mission control framework.
+- [NASA's Open MCT](https://github.com/nasa/openmct) ([website](https://nasa.github.io/openmct/)) - A web based mission control framework.
 
 ## eCommerce
 

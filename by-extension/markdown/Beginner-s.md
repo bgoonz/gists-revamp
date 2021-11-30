@@ -126,9 +126,9 @@ If you need to interact with the browser, perform your work in `componentDidMoun
 
 The export statement at the bottom of the file also stays, completely unchanged. Our class component will thus look like this:
 
-**Notice that our** `BasicClassComponent` **inherits from the base** `Component` **class that we imported from the React library, by virtue of the ‘extends’ keyword.**
+**Notice that our** `BasicClassComponent` **inherits from the base** `Component` **class that we imported from the React library, by virtue of the 'extends' keyword.**
 
-_That being said, there’s nothing in this minimal component that takes advantage of any of those inherited methods._
+_That being said, there's nothing in this minimal component that takes advantage of any of those inherited methods._
 
 **All we have is a method on our component class called** `render` **that returns the same div tag.**
 
@@ -160,12 +160,12 @@ Our class component with state will look a lot like the basic class component we
 
 **So far, the only new thing going on here is the constructor block. If you recall how classes in JavaScript work, classes need constructors.**
 
-**Additionally, if a class is extending off of another class and wants access to its parent class’s methods and properties, then the** `super` **function needs to be called inside the class’s constructor function.**
+**Additionally, if a class is extending off of another class and wants access to its parent class’s methods and properties, then the** `super` **function needs to be called inside the class's constructor function.**
 
 #### Point being, the constructor function and the call to the `super` function are _not_ associated with React, they are associated with all JavaScript classes.
 
 - <span id="0d56">Then there is the `this.state` **property inside the constructor function that is set as an empty object**.</span>
-- <span id="7b29">We’re adding a property called `state` to our class and setting it to an empty object.</span>
+- <span id="7b29">We're adding a property called `state` to our class and setting it to an empty object.</span>
 
 #### State objects in React are always just plain old objects.
 
@@ -175,7 +175,7 @@ That is because we had no need for them since all our class component was doing 
 
 **The constructor is needed here because that is where we need to initialize our state object.**
 
-**The call to** `super` **is needed because we can’t reference** `this` **inside of our constructor without a call to** `super` **first.**
+**The call to** `super` **is needed because we can't reference** `this` **inside of our constructor without a call to** `super` **first.**
 
 Ok, now let’s actually use this state object.
 
@@ -191,7 +191,9 @@ We added a key-value pair to our state object inside our constructor.
 
 **With Reacts newest version, we can actually now add state to a component without explicitly defining a constructor on the class. We can refactor our class component to look like this:**
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*6sYhFUNpUkt6xN9kkn4pJQ.png" class="graf-image" /></figure>This new syntax is what is often referred to as ‘syntactic sugar’: under the hood, the React library translates this back into the old constructor code that we first started with, so that the JavaScript remains valid to the JavaScript interpreter.
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*6sYhFUNpUkt6xN9kkn4pJQ.png" class="graf-image" /></figure>
+
+This new syntax is what is often referred to as ‘syntactic sugar’: under the hood, the React library translates this back into the old constructor code that we first started with, so that the JavaScript remains valid to the JavaScript interpreter.
 
 The clue to this is the fact that when we want to access some data from the state object, we still need to call it with `this.state.someData` ; changing it to just `state.someData` does not work.
 
@@ -221,19 +223,19 @@ The more interesting thing is what is going on within the bodies of these method
 
 - <span id="df3c">`setState` in fact _is_ provided to us by React.</span>
 
-It is the standard way to update a component’s state.
+It is the standard way to update a component's state.
 
-It’s the _only_ way you should ever update a component’s state. It may seem more verbose than necessary, but there are good reasons for why you should be doing it this way.
+It's the _only_ way you should ever update a component's state. It may seem more verbose than necessary, but there are good reasons for why you should be doing it this way.
 
-#### So the way to use `setState` to update a component’s state is to pass it an object with each of the state keys you wish to update, along with the updated value.
+#### So the way to use `setState` to update a component's state is to pass it an object with each of the state keys you wish to update, along with the updated value.
 
-In our `increment` method we said “I would like to update the `aNumber` property on my component state by adding one to it and then setting the new value as my new `aNumber`”.
+In our `increment` method we said "I would like to update the `aNumber` property on my component state by adding one to it and then setting the new value as my new `aNumber` ".
 
-The same thing happens in our `decrement` method, only we’re subtracting instead of adding.
+The same thing happens in our `decrement` method, only we're subtracting instead of adding.
 
 Then the other new concept we’re running into here is how to actually call these methods we’ve added to our class.
 
-<figure><img src="https://cdn-images-1.medium.com/max/600/1*k8t5QBcMvHDX521sd4pC4g.png" class="graf-image" /></figure>We added two HTML button tags within our `render` function, then in their respective `onClick` handlers, we specify the method that should be called whenever this button gets clicked. So whenever we click either of the buttons, our state gets updated appropriately and our component will re-render to show the correct value we’re expecting.
+<figure><img src="https://cdn-images-1.medium.com/max/600/1*k8t5QBcMvHDX521sd4pC4g.png" class="graf-image" /></figure>We added two HTML button tags within our `render` function, then in their respective `onClick` handlers, we specify the method that should be called whenever this button gets clicked. So whenever we click either of the buttons, our state gets updated appropriately and our component will re-render to show the correct value we're expecting.
 
 ### Class Component Iterating State
 
@@ -249,17 +251,17 @@ The first change to note is that our state object now has an ‘ingredients’ a
 
 The ingredients array contains the elements that we’ll want to render in our list.
 
-The `addIngredient` and `handleIngredientInput` methods we’ve added to our class receives a parameter called ‘event’.
+The `addIngredient` and `handleIngredientInput` methods we've added to our class receives a parameter called 'event'.
 
-This event object is part of the browser’s API.
+This event object is part of the browser's API.
 
 When we interact with some DOM element, **such as clicking on an HTML button, the _function that is invoked upon that button being clicked_ actually receives the event object.**
 
-- <span id="3ba1">So when we type some input into an input tag, we’re able grab each character that was typed into the input field through the event object parameter.</span>
+- <span id="3ba1">So when we type some input into an input tag, we're able grab each character that was typed into the input field through the event object parameter.</span>
 - <span id="5de7">The `handleIngredientInput` method is what gets invoked every time the user presses a key to enter text in the input box for adding a new ingredient.</span>
 - <span id="514e">Every character the user types gets persisted in the `newIngredient` field on the state object.</span>
 
-We’re able to grab the text in the input box using `event.target.value`
+We're able to grab the text in the input box using `event.target.value`
 
 **Which holds the value of the string text that is currently in the input box**.
 
@@ -267,7 +269,7 @@ We’re able to grab the text in the input box using `event.target.value`
 
 Breaking down the `addIngredient` method, we see this `event.preventDefault()` invocation.
 
-This is because this method will be used upon submitting a form, and it turns out that submitting a form triggers some default form behavior that we don’t want to trigger when we submit the form (**namely refreshing the entire page**).
+This is because this method will be used upon submitting a form, and it turns out that submitting a form triggers some default form behavior that we don't want to trigger when we submit the form (**namely refreshing the entire page**).
 
 > `event.preventDefault()` will prevent this default form behavior, meaning our form will only do what we want it to do when it is submitted.
 
@@ -283,7 +285,7 @@ So all we have to do now is call `setState` appropriately in order to update the
 
 Additionally, we also set the `newIngredient` field back to an empty string in order to clear out the input field once we submit a new ingredient.
 
-Now it’s ready to accept more user input!
+Now it's ready to accept more user input!
 
 <figure><img src="https://cdn-images-1.medium.com/max/600/1*LXx7WeP_5wFRfYa45snSEA.png" class="graf-image" /></figure>Looking at our render function, first note the `this.state.ingredients.map` call.
 
@@ -293,7 +295,7 @@ This is a very common pattern for rendering everything inside an array.
 
 Then we have an HTML form which contains an input field.
 
-The purpose of this form is to allow a user to add new ingredients to the list. Note that we’re passing our `addIngredient` method to the form’s `onSubmit` handler.
+The purpose of this form is to allow a user to add new ingredients to the list. Note that we’re passing our `addIngredient` method to the form's `onSubmit` handler.
 
 This means that our `addIngredient` method gets invoked whenever our form is submitted.
 
@@ -315,13 +317,15 @@ The only two other differences in this component are that we’re importing a `C
 
 `ChildComponent` is another React component.
 
-Notice that we’re using it just as if it were any other HTML tag.
+Notice that we're using it just as if it were any other HTML tag.
 
 **This is how we lay out our component hierarchy: the ChildComponent is rendered within the ParentComponent.**
 
 We can see this to be the case if we open up the developer console and inspect these elements.
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*q_XLnJ2h1L5yZjNnSKzj5w.png" alt="child-left: parent-right" class="graf-image" /><figcaption><strong>child-left: parent-right</strong></figcaption></figure>Note also that we’re passing each ingredient as a ‘thing’ to the ChildComponent component.
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*q_XLnJ2h1L5yZjNnSKzj5w.png" alt="child-left: parent-right" class="graf-image" /><figcaption><strong>child-left: parent-right</strong></figcaption></figure>
+
+Note also that we’re passing each ingredient as a ‘thing’ to the ChildComponent component.
 
 This is how a parent component passes data to a child component. It doesn’t need to be called ‘thing’; you can call it whatever you want.
 
@@ -336,7 +340,7 @@ The overall structure of the child component is nothing we haven’t seen. It’
 
 **A component accesses its props via the** `this.props` **object.**
 
-_Any prop a parent component passes down to a child component is accessible inside the child component’s_ `this.prop` _object._
+_Any prop a parent component passes down to a child component is accessible inside the child component's_ `this.prop` _object._
 
 So our child component keeps its own state that tracks whether the component has been clicked or not.
 
@@ -559,7 +563,7 @@ React-Tutorial-1:
 React Boilerplate:
 
 <a href="https://replit.com/@bgoonz/Reactjs-Babel-Webpack-Boilerplate#index.js" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://replit.com/@bgoonz/Reactjs-Babel-Webpack-Boilerplate#index.js"><strong>React.js + Babel + Webpack Boilerplate</strong><br />
-<em>Created by <span class="citation" data-cites="eankeen">@eankeen</span> | The ultimate trifecta - React, Babel, and Webpack - complete with hot module reloading and a…</em>replit.com</a><a href="https://replit.com/@bgoonz/Reactjs-Babel-Webpack-Boilerplate#index.js" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Created by @eankeen | The ultimate trifecta - React, Babel, and Webpack - complete with hot module reloading and a…</em>replit.com</a><a href="https://replit.com/@bgoonz/Reactjs-Babel-Webpack-Boilerplate#index.js" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 For more resources visit:
 

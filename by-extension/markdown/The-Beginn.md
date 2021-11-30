@@ -8,7 +8,9 @@ Part 1
 
 #### Part 1
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*Cg0j-L4ZHN7_5g2In-K-Ew.png" class="graf-image" /></figure>### How to learn effectively
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*Cg0j-L4ZHN7_5g2In-K-Ew.png" class="graf-image" /></figure>
+
+### How to learn effectively
 
 **Learning**: The acquisition of skills and the ability to apply them in the future.
 
@@ -127,10 +129,10 @@ The **boolean** data type is the simplest data type since there are only two val
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/1*Aw4iCm7-FQ7znEcBVH3FTw.png" class="graf-image" /></figure>-   <span id="a087">**Logical Order of Operations** : JS will evaluate !, then &&, then ||.</span>
 -   <span id="295f">**De Morgan’s Law** : Common mistake in boolean logic is incorrectly distributing ! across parentheses.</span>
--   <span id="7400">`!(A || B) === !A && !B; !(A && B) === !A             || !B;`</span>
+-   <span id="7400">`!(A || B) === !A && !B; !(A && B) === !A                     || !B;`</span>
 -   <span id="26c2">In summary, to correctly distribute ! across parentheses we must also flip the operation within.</span>
 -   <span id="a8c1">**Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.</span>
--   <span id="58a3">`console.log(true || !false); // => stops after it sees "true             ||"`</span>
+-   <span id="58a3">`console.log(true || !false); // => stops after it sees                     "true ||"`</span>
 
 ---
 
@@ -149,7 +151,7 @@ All comparison operators will result in a boolean output.
 
 > _Fun Fact: “a” &lt; “b” is considered valid JS Code because string comparisons are compared lexicographically (meaning dictionary order), so “a” is less than “b” because it appears earlier!_
 
-> _If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser._
+> _If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser._
 
 **Difference between == and ===**
 

@@ -196,7 +196,7 @@ You can access and query the data using the findByPk, findOne, and findAll metho
 
 **SQL**
 
-1.  How to use the SELECT … FROM … statement to select data from a single table
+1. How to use the SELECT … FROM … statement to select data from a single table
 
 - <span id="9202">Supply the column names in the SELECT clause. If we want all columns, we can also use \*</span>
 - <span id="9fdc">Supply the table names in the FROM clause</span>
@@ -386,7 +386,7 @@ FROM friends;
 - <span id="482c">It gives us an idea of how our database will search for data as well as a qualitative comparitor for how expensive that operation will be. Comparing the cost of two queries will tell us which one is more efficient (lower cost).</span>
 - <span id="c7c7">We can also use the ANALYZE command with EXPLAIN, which will actually run the specified query. Doing so gives us more detailed information, such as the milliseconds it took our query to execute as well as specifics like the exact number of rows filtered and returned.</span>
 
-1.  Demonstrate how to install and use the node-postgres library and its Pool class to query a PostgreSQL-managed database
+1. Demonstrate how to install and use the node-postgres library and its Pool class to query a PostgreSQL-managed database
 
 - <span id="8f73">We can add the node-postgres library to our application with npm install pg. From there we will typically use the Pool class associated with this library. That way we can run many SQL queries with one database connection (as opposed to Client, which closes the connection after a query).</span>
 
@@ -445,7 +445,7 @@ pool.end(); // invoking end() will close our connection to the database
 
 **ORM**
 
-1.  How to install, configure, and use Sequelize, an ORM for JavaScript
+1. How to install, configure, and use Sequelize, an ORM for JavaScript
 
 - <span id="0e86">To start a new project we use our standard npm initialize statement</span>
 - <span id="7bf0">npm init -y</span>
@@ -500,7 +500,7 @@ pool.end(); // invoking end() will close our connection to the database
     }
     }
 
-1.  How to use database migrations to make your database grow with your application in a source-control enabled way
+1. How to use database migrations to make your database grow with your application in a source-control enabled way
 
 **Migrations**
 
@@ -665,7 +665,7 @@ pool.end(); // invoking end() will close our connection to the database
 
 **Updating Records**
 
-- <span id="4ecc">When we have a reference to an instance of a model (i.e. after we have queried for it or created it), we can update values by simply reassigning those fields and using the save method</span>
+- <span id="4ecc">When we have a reference to an instance of a model (i.e. after we have queried for it or created it), we can update values by simply reassigning those fields and using the save method</span>
 
 **Deleting Records**
 
@@ -1120,7 +1120,7 @@ Include can take an array of models if you need to include more than one.
 
 Include can also take an object with keys `model` and `include`.  
 This is in case you have nested associations.  
-In this case Owner doesn’t have an association with PetType, but  
+In this case Owner doesn't have an association with PetType, but  
 Pet does, so we want to include PetType onto the Pet Model.
 
     await Owner.findByPk(1, {
@@ -1173,7 +1173,9 @@ returns a POJO for the instance.
     [Op.notIRegexp]: '^[h|a|t]' // !~* '^[h|a|t]' (PG only)
     [Op.like]: { [Op.any]: ['cat', 'hat']}
 
-<figure><img src="https://cdn-images-1.medium.com/max/2560/1*IdBeXbBynFmQD7WwTNr7Hw.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/2560/1*bgZjuBly2EBDtGiCFaFoFw.png" class="graf-image" /></figure>### Accessing the Data
+<figure><img src="https://cdn-images-1.medium.com/max/2560/1*IdBeXbBynFmQD7WwTNr7Hw.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/2560/1*bgZjuBly2EBDtGiCFaFoFw.png" class="graf-image" /></figure>
+
+### Accessing the Data
 
 You can access and query the data using the `findByPk`, `findOne`, and `findAll` methods. First, make sure you import the models in your JavaScript file. In this case, we are assuming your JavaScript file is in the root of your project and so is the models folder.
 
@@ -1229,7 +1231,7 @@ This just created our new recipe and added it to our Recipes table. You can do t
 
     await Recipe.create({ title: 'Chicken Noodle Soup' });
 
-If you want to modify an item in your table, you can use `update`. Let’s say we want to change the chicken noodle soup to chicken noodle soup with extra veggies, first we need to get the recipe, then we can update it.
+If you want to modify an item in your table, you can use `update`. Let's say we want to change the chicken noodle soup to chicken noodle soup with extra veggies, first we need to get the recipe, then we can update it.
 
     const modRecipe = await Recipe.findOne({ where: { title: 'Chicken Noodle Soup' } });
 

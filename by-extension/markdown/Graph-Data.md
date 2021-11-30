@@ -391,10 +391,12 @@ dives down the graph as far as it can before backtracking and exploring another 
 
 ### Review of Concepts:
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/0*oOYEgDBV2yhim9SC" class="graf-image" /></figure>-   <span id="9d7a">A graph is any collection of nodes and edges.</span>
--   <span id="7a3a">A graph is a less restrictive class of collections of nodes than structures like a tree.</span>
--   <span id="8d05">It doesn’t need to have a root node (not every node needs to be accessible from a single node)</span>
--   <span id="6fac">It can have cycles (a group of nodes whose paths begin and end at the same node)</span>
+<figure><img src="https://cdn-images-1.medium.com/max/1200/0*oOYEgDBV2yhim9SC" class="graf-image" /></figure>
+
+- <span id="9d7a">A graph is any collection of nodes and edges.</span>
+- <span id="7a3a">A graph is a less restrictive class of collections of nodes than structures like a tree.</span>
+- <span id="8d05">It doesn’t need to have a root node (not every node needs to be accessible from a single node)</span>
+- <span id="6fac">It can have cycles (a group of nodes whose paths begin and end at the same node)</span>
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*nN2X6TCy0JSh4mfL.gif" alt="Cycles in a graph" class="graf-image" /><figcaption>Cycles in a graph</figcaption></figure>-   <span id="783b">Cycles are not always “isolated”, they can be one part of a larger graph. You can detect them by starting your search on a specific node and finding a path that takes you back to that same node.</span>
 

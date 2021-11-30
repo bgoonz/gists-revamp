@@ -8,7 +8,7 @@ Web storage objects localStorage and sessionStorage allow to save key/value pair
 
 Web storage objects `localStorage` and `sessionStorage` allow to save key/value pairs in the browser.
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*sJFEUTv2t9DsmpE2" class="graf-image" /></figure>What’s interesting about them is that the data survives a page refresh (for `sessionStorage`) and even a full browser restart (for `localStorage`). We’ll see that very soon.
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*sJFEUTv2t9DsmpE2" class="graf-image" /></figure>What’s interesting about them is that the data survives a page refresh (for `sessionStorage`) and even a full browser restart (for `localStorage`). We'll see that very soon.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*NL5JYJqGcyQ7Q16P.png" class="graf-image" /></figure>We already have cookies. Why additional objects?
 
@@ -18,12 +18,12 @@ Web storage objects `localStorage` and `sessionStorage` allow to save key/value 
 
 Both storage objects provide same methods and properties:
 
-- <span id="63b8">`setItem(key, value)` – store key/value pair.</span>
-- <span id="72e2">`getItem(key)` – get the value by key.</span>
-- <span id="848a">`removeItem(key)` – remove the key with its value.</span>
-- <span id="b51e">`clear()` – delete everything.</span>
-- <span id="7c98">`key(index)` – get the key on a given position.</span>
-- <span id="ef56">`length` – the number of stored items.</span>
+- <span id="63b8">`setItem(key, value)` -- store key/value pair.</span>
+- <span id="72e2">`getItem(key)` -- get the value by key.</span>
+- <span id="848a">`removeItem(key)` -- remove the key with its value.</span>
+- <span id="b51e">`clear()` -- delete everything.</span>
+- <span id="7c98">`key(index)` -- get the key on a given position.</span>
+- <span id="ef56">`length` -- the number of stored items.</span>
 
 As you can see, it’s like a `Map` collection (`setItem/getItem/removeItem`), but also allows access by index with `key(index)`.
 
@@ -69,7 +69,7 @@ That’s allowed for historical reasons, and mostly works, but generally not rec
 
     let key = ‘length’; localStorage[key] = 5; // Error, can’t assign length
 
-1.  <span id="3020">There’s a `storage` event, it triggers when we modify the data. That event does not happen for object-like access. We’ll see that later in this chapter.</span>
+1.  <span id="3020">There’s a `storage` event, it triggers when we modify the data. That event does not happen for object-like access. We'll see that later in this chapter.</span>
 
 ### Looping over keys
 
@@ -128,7 +128,7 @@ We can use `JSON` to store objects though:
     let user = JSON.parse( sessionStorage.user );
     alert( user.name ); // John
 
-Also it is possible to stringify the whole storage object, e.g. for debugging purposes:
+Also it is possible to stringify the whole storage object, e.g. for debugging purposes:
 
     // added formatting options to JSON.stringify to make the object look nicer
     alert( JSON.stringify(localStorage, null, 2) );
@@ -154,7 +154,7 @@ Run this code…
 
     alert( sessionStorage.getItem('test') ); // after refresh: 1
 
-…But if you open the same page in another tab, and try again there, the code above returns `null`, meaning “nothing found”.
+…But if you open the same page in another tab, and try again there, the code above returns `null`, meaning "nothing found".
 
 That’s exactly because `sessionStorage` is bound not only to the origin, but also to the browser tab. For that reason, `sessionStorage` is used sparingly.
 
@@ -186,9 +186,9 @@ If both windows are listening for `window.onstorage`, then each one will react o
 
     localStorage.setItem('now', Date.now());
 
-Please note that the event also contains: `event.url` – the url of the document where the data was updated.
+Please note that the event also contains: `event.url` -- the url of the document where the data was updated.
 
-Also, `event.storageArea` contains the storage object – the event is the same for both `sessionStorage` and `localStorage`, so `event.storageArea` references the one that was modified. We may even want to set something back in it, to “respond” to a change.
+Also, `event.storageArea` contains the storage object -- the event is the same for both `sessionStorage` and `localStorage`, so `event.storageArea` references the one that was modified. We may even want to set something back in it, to "respond" to a change.
 
 **That allows different windows from the same origin to exchange messages.**
 
@@ -211,14 +211,14 @@ Web storage objects `localStorage` and `sessionStorage` allow to store key/value
 
 API:
 
-- <span id="14d9">`setItem(key, value)` – store key/value pair.</span>
-- <span id="519b">`getItem(key)` – get the value by key.</span>
-- <span id="09a8">`removeItem(key)` – remove the key with its value.</span>
-- <span id="4d2e">`clear()` – delete everything.</span>
-- <span id="68ca">`key(index)` – get the key number `index`.</span>
-- <span id="e125">`length` – the number of stored items.</span>
+- <span id="14d9">`setItem(key, value)` -- store key/value pair.</span>
+- <span id="519b">`getItem(key)` -- get the value by key.</span>
+- <span id="09a8">`removeItem(key)` -- remove the key with its value.</span>
+- <span id="4d2e">`clear()` -- delete everything.</span>
+- <span id="68ca">`key(index)` -- get the key number `index`.</span>
+- <span id="e125">`length` -- the number of stored items.</span>
 - <span id="a33a">Use `Object.keys` to get all keys.</span>
-- <span id="29fb">We access keys as object properties, in that case `storage` event isn’t triggered.</span>
+- <span id="29fb">We access keys as object properties, in that case `storage` event isn't triggered.</span>
 
 Storage event:
 

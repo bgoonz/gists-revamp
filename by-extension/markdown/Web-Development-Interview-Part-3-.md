@@ -42,9 +42,9 @@ _Current Experience_
 
 > **\*⚫\*\***Outline the role you’re currently in, your responsibilities, and your achievements (without reciting your resume)\*
 
-> **\*⚫\*\***Highlight what you’re most passionate about (i.e. working with PMs to perfect product specs, discussing with colleagues about different tech stacks, helping others excel in their jobs and career)\*
+> **\*⚫\*\***Highlight what you’re most passionate about (i.e. working with PMs to perfect product specs, discussing with colleagues about different tech stacks, helping others excel in their jobs and career)\*
 
-> **\*⚫\*\***Recount one or two job-related projects and/or situations that map onto the job you’re applying to (i.e. collaborating with designers, working with legacy code, implementing best-practices, introducing new tech stacks, mentoring your colleagues)\*
+> **\*⚫\*\***Recount one or two job-related projects and/or situations that map onto the job you’re applying to (i.e. collaborating with designers, working with legacy code, implementing best-practices, introducing new tech stacks, mentoring your colleagues)\*
 
 ### Past Experience
 
@@ -54,7 +54,7 @@ _Current Experience_
 
 > **_⚫_**Highlight the hard and soft skills you learned from your past working experiences
 
-> **_⚫_**Emphasize the initiatives you took to improve the company’s work flow (i.e. propose new flow to streamline sprints) or your own skillsets (i.e. engaging in hackathon with colleagues or friends)
+> **_⚫_**Emphasize the initiatives you took to improve the company’s work flow (i.e. propose new flow to streamline sprints) or your own skillsets (i.e. engaging in hackathon with colleagues or friends)
 
 ### Future Expectations
 

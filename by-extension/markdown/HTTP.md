@@ -57,8 +57,10 @@ Each individual request is sent to a server, which handles it and provides an an
 
 ### Example of a request:
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*tq-BRYuzZ_Dx8s1g5xJKKQ.png" class="graf-image" /></figure>-   <span id="bfa1">**Request-line & HTTP verbs**</span>
--   <span id="0e3d">The first line of an HTTP Request made up of three parts:</span>
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*tq-BRYuzZ_Dx8s1g5xJKKQ.png" class="graf-image" /></figure>
+
+- <span id="bfa1">**Request-line & HTTP verbs**</span>
+- <span id="0e3d">The first line of an HTTP Request made up of three parts:</span>
 
 1.  <span id="e67b">The `Method` : Indicated by an HTTP Verb.</span>
 2.  <span id="f17e">The `URI` : Uniform Resource Indicator that ID’s our request.</span>

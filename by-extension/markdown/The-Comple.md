@@ -103,13 +103,10 @@ JS evaluates more complex expressions using the general math order of operations
 The **string** data type is a primitive data type that used to represent textual data.
 
 - <span id="e1b0">can be wrapped by either **single** or **double** quotation marks, _best to choose one and stick with it for consistency_.</span>
-- If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.  
+- <span id="f8ad">If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.  
    “That’s a great string”; (valid)
-
   ‘Shakespeare wrote, “To be or not to be”’; (valid)
-
-  ‘That’s a bad string’; (invalid)
-
+  ‘That’s a bad string’; (invalid)</span>
 - <span id="b2cb">Alt. way to add other quotes within strings is to use template literals.  
    \`This is a temp’l’ate literal ${function}\` // use ${} to invoke functions within.</span>
 - <span id="7b1a">**.length** : property that can be appended to data to return the length.</span>
@@ -155,7 +152,7 @@ All comparison operators will result in a boolean output.
 
 Fun Fact: “a” &lt; “b” is considered valid JS Code because string comparisons are compared lexicographically (meaning dictionary order), so “a” is less than “b” because it appears earlier!
 
-If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser.
+If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser.
 
 **Difference between == and ===**
 
@@ -787,7 +784,7 @@ Events are things that can happen to HTML elements and are performed by the user
 ### Media
 
 - <span id="e0ab">`onabort` — Media loading is aborted</span>
-- <span id="0758">`oncanplay` — The browser can start playing media (e.g. a file has buffered enough)</span>
+- <span id="0758">`oncanplay` — The browser can start playing media (e.g. a file has buffered enough)</span>
 - <span id="0bc2">`oncanplaythrough` — The browser can play through media without stopping</span>
 - <span id="4c27">`ondurationchange` — The duration of the media changes</span>
 - <span id="aa9a">`onended` — The media has reached its end</span>
@@ -804,7 +801,7 @@ Events are things that can happen to HTML elements and are performed by the user
 - <span id="9895">`onseeking` — The user starts moving/skipping</span>
 - <span id="c636">`onstalled` — The browser is trying to load the media but it is not available</span>
 - <span id="6480">`onsuspend` — The browser is intentionally not loading media</span>
-- <span id="f94b">`ontimeupdate` — The playing position has changed (e.g. because of fast forward)</span>
+- <span id="f94b">`ontimeupdate` — The playing position has changed (e.g. because of fast forward)</span>
 - <span id="e96b">`onvolumechange` — Media volume has changed (including mute)</span>
 - <span id="9fe8">`onwaiting` — Media paused but expected to resume (for example, buffering)</span>
 
@@ -859,7 +856,7 @@ The error property can return six different values as its name:
 
 The simplest way to perform an explicit type conversion is to use the `Boolean(), Number()`, and `String()` functions.
 
-Any value other than `null`or `undefined`has a`toString()` method.
+Any value other than `null `or `undefined `has a` toString()` method.
 
 `n.toString(2);`
 
@@ -931,7 +928,7 @@ Run Snippets
 
 The simplest way to perform an explicit type conversion is to use the `Boolean(), Number()`, and `String()` functions.
 
-Any value other than `null`or `undefined`has a`toString()` method.
+Any value other than `null `or `undefined `has a` toString()` method.
 
 `n.toString(2);`
 
@@ -1069,7 +1066,7 @@ Variable destructuring in loops:
 
     }
 
-**Note**: The `Object.entries()` method returns an array of a given object’s own enumerable string-keyed property `[key, value]` pairs, in the same order as that provided by a `for...in` loop. (The only important difference is that a `for...in` loop enumerates properties in the prototype chain as well).
+**Note**: The `Object.entries()` method returns an array of a given object's own enumerable string-keyed property `[key, value]` pairs, in the same order as that provided by a `for...in` loop. (The only important difference is that a `for...in` loop enumerates properties in the prototype chain as well).
 
 The list of variables on the left can include extra commas to skip certain values on the right
 
@@ -1079,7 +1076,7 @@ x == 2; y == 4
 
 **Note**: the last comma does not stand for a value.
 
-To collect all unused or remaining values into a single variable when destructuring an array, use three dots `(...)`before the last variable name on the left-hand side
+To collect all unused or remaining values into a single variable when destructuring an array, use three dots `(...) `before the last variable name on the left-hand side
 
 `let [x, ...y] = [1,2,3,4];`
 
@@ -1103,11 +1100,11 @@ sin=Math.sin, cos=Math.cos, tan=Math.tan
 
 ### Expressions and Operators
 
-In JavaScript, the values `null`and `undefined`are the only two values that do not have properties. In a regular property access expression using . or \[\], you get a `TypeError` if the expression on the left evaluates to `null`or `undefined`. You can use `?.` and `?.[]` syntax to guard against errors of this type.
+In JavaScript, the values `null `and `undefined `are the only two values that do not have properties. In a regular property access expression using . or \[\], you get a `TypeError` if the expression on the left evaluates to `null `or `undefined`. You can use `?.` and `?.[]` syntax to guard against errors of this type.
 
 You can also invoke a function using `?.()` instead of `()`.
 
-With the `new ?.()` invocation syntax, if the expression to the left of the `?.` evaluates to `null` or `undefined`, then the entire invocation expression evaluates to `undefined`and no exception is thrown.
+With the `new ?.()` invocation syntax, if the expression to the left of the `?.` evaluates to `null` or `undefined`, then the entire invocation expression evaluates to `undefined `and no exception is thrown.
 
 Write the function invocation using `?.(),` knowing that invocation will only happen if there is actually a value to be invoked
 
@@ -1119,11 +1116,11 @@ Write the function invocation using `?.(),` knowing that invocation will only h
 
     }
 
-Note that expression `x++` is not always the same as `x = x + 1`.The `++` operator never performs string concatenation: it always converts its operand to a number and increments it. If x is the string “1”, `++x` is the number 2, but`x + 1` is the string “11”.
+Note that expression `x++` is not always the same as `x = x + 1`.The `++` operator never performs string concatenation: it always converts its operand to a number and increments it. If x is the string "1", `++x` is the number 2, but` x + 1` is the string "11".
 
 JavaScript objects are compared by reference, not by value. An object is equal to itself, but not to any other object. If two distinct objects have the same number of properties, with the same names and values, they are still not equal. Similarly, two arrays that have the same elements in the same order are not equal to each other.
 
-`NaN`value is never equal to any other value, including itself! To check whether a value `x` is `NaN`, use `x !==`, or the global `isNaN()` function.
+`NaN `value is never equal to any other value, including itself! To check whether a value `x` is `NaN`, use `x !== `, or the global `isNaN()` function.
 
 If both values refer to the same object, array, or function, they are equal. If they refer to different objects, they are not equal, even if both objects have identical properties.
 
@@ -1133,7 +1130,7 @@ JavaScript has the ability to interpret strings of JavaScript source code, evalu
 
 `eval("3+2")`
 
-Because of security issues, some web servers use the HTTP “Content-Security-Policy” header to disable`eval()` for an entire website.
+Because of security issues, some web servers use the HTTP “Content-Security-Policy” header to disable` eval()` for an entire website.
 
 ### First-Defined (??)
 
@@ -1141,7 +1138,7 @@ The first-defined operator `??` evaluates to its first defined operand: if its 
 
 `a ?? b` is equivalent to `(a !== null && a !== undefined) ? a : b`
 
-`??` is a useful alternative to `||.` The problem with this idiomatic use is that zero, the empty string, and false are all `falsy`values that may be perfectly valid in some circumstances. In this code example, if `maxWidth`is zero, that value will be ignored. But if we change the `||` operator to `??`, we end up with an expression where zero is a valid value.
+`??` is a useful alternative to `||.` The problem with this idiomatic use is that zero, the empty string, and false are all `falsy `values that may be perfectly valid in some circumstances. In this code example, if `maxWidth `is zero, that value will be ignored. But if we change the `||` operator to `??`, we end up with an expression where zero is a valid value.
 
 `let max = maxWidth || preferences.maxWidth || 500;`
 
@@ -1261,7 +1258,7 @@ The `for/in` loop does not actually enumerate all properties of an object. It do
 
 The with statement runs a block of code as if the properties of a specified object were variables in scope for that code.
 
-The `with`statement is forbidden in strict mode and should be considered deprecated in non-strict mode: avoid using it whenever possible.
+The `with `statement is forbidden in strict mode and should be considered deprecated in non-strict mode: avoid using it whenever possible.
 
     document.forms[0].address.value
 
@@ -1289,23 +1286,23 @@ Strict mode is a restricted subset of the language that fixes important language
 
 The differences between strict mode and non-strict mode are the following:
 
-· The `with`statement is not allowed in strict mode.
+· The `with `statement is not allowed in strict mode.
 
-· In strict mode, all variables must be declared: a `ReferenceError`is thrown if you assign a value to an identifier that is not a declared variable, function, function parameter, catch clause parameter, or property of the global object.
+· In strict mode, all variables must be declared: a `ReferenceError `is thrown if you assign a value to an identifier that is not a declared variable, function, function parameter, catch clause parameter, or property of the global object.
 
 · In non-strict mode, this implicitly declares a global variable by adding a new property to the global object.
 
-· In strict mode, functions invoked as functions (rather than as methods) have a `this`value of undefined. (In non-strict mode, functions invoked as functions are always passed the global object as their `this`value.)
+· In strict mode, functions invoked as functions (rather than as methods) have a `this `value of undefined. (In non-strict mode, functions invoked as functions are always passed the global object as their `this `value.)
 
-· A function is invoked with `call()`or `apply()` , the `this`value is exactly the value passed as the first argument to `call()` or `apply()`. (In non-strict mode, `null`and `undefined`values are replaced with the global object and non-object values are converted to objects.)
+· A function is invoked with `call() `or `apply()` , the `this `value is exactly the value passed as the first argument to `call()` or `apply()`. (In non-strict mode, `null `and `undefined `values are replaced with the global object and non-object values are converted to objects.)
 
 · In strict mode, assignments to non-writable properties and attempts to create new properties on non-extensible objects throw a `TypeError`. (In non-strict mode, these attempts fail silently.)
 
-· In strict mode, code passed to `eval()`cannot declare variables or define functions in the caller’s scope as it can in non-strict mode. Instead, variable and function definitions live in a new scope created for the `eval()`. This scope is discarded when the `eval()` returns.
+· In strict mode, code passed to `eval() `cannot declare variables or define functions in the caller’s scope as it can in non-strict mode. Instead, variable and function definitions live in a new scope created for the `eval()`. This scope is discarded when the `eval()` returns.
 
 · In strict mode, the Arguments object in a function holds a static copy of the values passed to the function. In non-strict mode, the Arguments object has “magical” behavior in which elements of the array and named function parameters both refer to the same value.
 
-· In strict mode, a `SyntaxError`is thrown if the `delete`operator is followed by an unqualified identifier such as a variable, function, or function parameter. (In non-strict mode, such a `delete`expression does nothing and evaluates to false.)
+· In strict mode, a `SyntaxError `is thrown if the `delete `operator is followed by an unqualified identifier such as a variable, function, or function parameter. (In non-strict mode, such a `delete `expression does nothing and evaluates to false.)
 
 · In strict mode, an attempt to delete a non-configurable property throws a `TypeError`. (In non-strict mode, the attempt fails and the delete expression evaluates to false.)
 
@@ -1315,21 +1312,21 @@ The differences between strict mode and non-strict mode are the following:
 
 In addition to its name and value, each property has three property attributes:
 
-· The `writable`attribute specifies whether the value of the property can be set.
+· The `writable `attribute specifies whether the value of the property can be set.
 
-· The `enumerable`attribute specifies whether the property name is returned by a `for/in` loop.
+· The `enumerable `attribute specifies whether the property name is returned by a `for/in` loop.
 
-· The `configurable`attribute specifies whether the property can be deleted and whether its attributes can be altered.
+· The `configurable `attribute specifies whether the property can be deleted and whether its attributes can be altered.
 
 ### Prototypes
 
 All objects created by object literals have the same prototype object, `Object.prototype.`
 
-Objects created using the `new`keyword and a constructor invocation use the value of the prototype property of the constructor function as their prototype.
+Objects created using the `new `keyword and a constructor invocation use the value of the prototype property of the constructor function as their prototype.
 
-Object created by `new Object()` inherits from `Object.prototype`, just as the object created by `{}` does. Similarly, the object created by `new Array()` uses `Array.prototype` as its prototype, and the object created by`new Date()` uses `Date.prototype` as its prototype.
+Object created by `new Object()` inherits from `Object.prototype`, just as the object created by `{}` does. Similarly, the object created by `new Array()` uses `Array.prototype` as its prototype, and the object created by` new Date()` uses `Date.prototype` as its prototype.
 
-Almost all objects have a prototype, but only a relatively small number of objects have a `prototype`property. It is these objects with prototype properties that define the prototypes for all the other objects.
+Almost all objects have a prototype, but only a relatively small number of objects have a `prototype `property. It is these objects with prototype properties that define the prototypes for all the other objects.
 
 Most built-in constructors (and most user-defined constructors) have a prototype that inherits from `Object.prototype`.
 
@@ -1365,9 +1362,9 @@ Literal
 
 `new`
 
-`let o = new Object();`  
- `let a = new Array();`  
- `let d = new Date();`  
+`let o = new Object(); `  
+ `let a = new Array(); `  
+ `let d = new Date(); `  
  `let r = new Map();`
 
 `Object.create`
@@ -1420,7 +1417,7 @@ Property `x` and `y` available on object `q`
 
 The `delete` operator only deletes own properties, not inherited ones. (To delete an inherited property, you must delete it from the prototype object in which it is defined. Doing this affects every object that inherits from that prototype.)
 
-`delete` does not remove properties that have a `configurable`attribute of false.
+`delete` does not remove properties that have a `configurable `attribute of false.
 
 Certain properties of built-in objects are non-configurable, as are properties of the global object created by variable declaration and function declaration.
 
@@ -1432,7 +1429,7 @@ false: property is non-configurable
 
 `delete globalThis.x`
 
-false: can’t delete `this`property
+false: can’t delete `this `property
 
 `function f() {}`
 
@@ -1470,7 +1467,7 @@ false
 
 `"toString" in o`
 
-true: o inherits a `toString`property
+true: o inherits a `toString `property
 
 `o.toString !== undefined`
 
@@ -1528,7 +1525,7 @@ Functions you can use to get an array of property names
 
 · `Object.keys()` returns an array of the names of the enumerable own properties of an object. It does not include non-enumerable properties, inherited properties, or properties whose name is a Symbol.
 
-· `Object.getOwnPropertyNames()` works like `Object.keys()`but returns an array of the names of nonenumerable own properties as well.
+· `Object.getOwnPropertyNames()` works like `Object.keys() `but returns an array of the names of nonenumerable own properties as well.
 
 · `Object.getOwnPropertySymbols()` returns own properties whose names are Symbols, whether or not they are enumerable.
 
@@ -1560,7 +1557,7 @@ Instead, use one of the following:,
 
 ### Serializing Objects
 
-The functions `JSON.stringify()` and`JSON.parse()` serialize and restore JavaScript objects.
+The functions `JSON.stringify()` and` JSON.parse()` serialize and restore JavaScript objects.
 
 `let o = {x: 1, y: {z: [false, null, ""]}};`
 
@@ -1754,7 +1751,7 @@ create a copy of an array — modifying the copy does not change the origina
 
 `let digits = [..."0123456789ABCDEF"];`
 
-\[“0”,”1“,”2“,”3“,”4“,”5“,”6“,”7“,”8“,”9“,”A”,”B”,”C”,”D”,”E”,”F”\]
+\[“0”,”1",”2",”3",”4",”5",”6",”7",”8",”9",”A”,”B”,”C”,”D”,”E”,”F”\]
 
 `let letters = [..."hello world"];`
 
@@ -1860,7 +1857,7 @@ add elements to it.
 
 You can also use the `push()` method to add one or more values to the end of an array.
 
-You can use the`unshift()` method to insert a value at the beginning of an array, shifting the existing array elements to higher indexes.
+You can use the` unshift()` method to insert a value at the beginning of an array, shifting the existing array elements to higher indexes.
 
 The `pop()` method is the opposite of `push()`: it removes the last element of the array and returns it, reducing the length of an array by 1.
 
@@ -1984,7 +1981,7 @@ MAP()
 FILTER()
 
 `let a = [5, 4, 3, 2, 1];`  
- `a.filter(x => x < 3)`  
+ `a.filter(x => x < 3) `  
  `a.filter((x,i) => i % 2 === 0)`
 
 \[2, 1\];
@@ -2055,7 +2052,7 @@ And to close gaps and remove undefined and null elements, you can use filter, li
 
 `a = a.filter(x => x !== undefined && x !== null);`
 
-Unlike `filter()`, however,`find()` and `findIndex()` stop iterating the first time the predicate finds an element. When that happens, `find()` returns the matching element, and `findIndex()` returns the index of the matching element. If no matching element is found,`find()` returns `undefined` and`findIndex()`returns -1.
+Unlike `filter()`, however,` find()` and `findIndex()` stop iterating the first time the predicate finds an element. When that happens, `find()` returns the matching element, and `findIndex()` returns the index of the matching element. If no matching element is found,` find()` returns `undefined` and` findIndex()`returns -1.
 
 When you invoke `reduce()` with no initial value, it uses the first element of the array as the initial value.
 
@@ -2110,11 +2107,11 @@ Calling `a.flatMap(f)` is the same as (but more efficient than) `a.map(f).flat()
 
 ### Stacks and Queues with push(), pop(), shift(), and unshift()
 
-The `push()` and`pop()` methods allow you to work with arrays as if they were stacks. The `push()` method appends one or more new elements to the end of an array and returns the new length of the array.
+The `push()` and` pop()` methods allow you to work with arrays as if they were stacks. The `push()` method appends one or more new elements to the end of an array and returns the new length of the array.
 
-The `unshift()` and `shift()` methods behave much like `push()` and`pop()`, except that they insert and remove elements from the beginning of an array rather than from the end.
+The `unshift()` and `shift()` methods behave much like `push()` and` pop()`, except that they insert and remove elements from the beginning of an array rather than from the end.
 
-You can implement a queue data structure by using `push()` to add elements at the end of an array and `shift()` to remove them from the start of the array. Note differences in `unshift`with single and multiple values.
+You can implement a queue data structure by using `push()` to add elements at the end of an array and `shift()` to remove them from the start of the array. Note differences in `unshift `with single and multiple values.
 
 `let a = [];`
 
@@ -2212,7 +2209,7 @@ COPYWITHIN()
 
 \[4,4,3,4,4\]
 
-`splice()` is a general-purpose method for inserting or removing elements from an array.`splice()` can delete elements from an array, insert new elements into an array, or perform both operations at the same time.
+`splice()` is a general-purpose method for inserting or removing elements from an array.` splice()` can delete elements from an array, insert new elements into an array, or perform both operations at the same time.
 
 The first argument to `splice()` specifies the array position at which the insertion and/or deletion is to begin. The second argument specifies the number of elements that should be deleted from (spliced out of) the array.
 
@@ -2496,7 +2493,7 @@ A constructor invocation creates a new, empty object that inherits from the obje
 
 ### Indirect invocation
 
-JavaScript functions are objects, and like all JavaScript objects, they have methods. Two of these methods, `call()` and `apply()`, invoke the function indirectly. Both methods allow you to explicitly specify the `this`value for the invocation, which means you can invoke any function as a method of any object, even if it is not actually a method of that object.
+JavaScript functions are objects, and like all JavaScript objects, they have methods. Two of these methods, `call()` and `apply()`, invoke the function indirectly. Both methods allow you to explicitly specify the `this `value for the invocation, which means you can invoke any function as a method of any object, even if it is not actually a method of that object.
 
 ### Function Arguments and Parameters
 
@@ -2734,7 +2731,7 @@ Functions don’t even require names at all, as when they’re assigned to array
 
 400
 
-`a[0]` accesses first element of the array, which is “`x => x*x`”, `(a[1])` passes parameter, which is 20.
+`a[0]` accesses first element of the array, which is "`x => x*x`", `(a[1])` passes parameter, which is 20.
 
 ### Examples of using functions as data
 
@@ -3076,7 +3073,7 @@ When a function is used as a constructor, the newly created object inherits prop
 
 `call()` and `apply()` allow you to indirectly invoke a function as if it were a method of some other object. The first argument to both `call()` and `apply()` is the object on which the function is to be invoked; this argument is the invocation context and becomes the value of the `this` keyword within the body of the function.
 
-To invoke the function`f()` as a method of the object o (passing no arguments),
+To invoke the function` f()` as a method of the object o (passing no arguments),
 
 `f.call(o);`
 
@@ -3090,7 +3087,7 @@ The `apply()` method is like the `call()` method, except that the arguments to b
 
     f.apply(o, [1,2]);
 
-The `trace()`function defined uses the `apply()`method instead of a spread operator, and by doing that, it is able to invoke the wrapped method with the same arguments and the same this value as the wrapper method
+The `trace() `function defined uses the `apply() `method instead of a spread operator, and by doing that, it is able to invoke the wrapped method with the same arguments and the same this value as the wrapper method
 
     function trace(o, m) {
 
@@ -3320,7 +3317,7 @@ true
 
 \[1, 2, 3\]
 
-Because the `Range()`constructor is invoked with `new`, it does not have to call `Object.create()` or take any action to create a new object.
+Because the `Range() `constructor is invoked with `new`, it does not have to call `Object.create()` or take any action to create a new object.
 
 In the first example, the prototype was `range.methods`. This was a convenient and descriptive name, but arbitrary. In the second example, the prototype is `Range.prototype`, and this name is mandatory.
 
@@ -3822,7 +3819,7 @@ When importing from a module that defines many exports, however, you can easily 
 
     import * as stats from "./stats.js";
 
-With the wildcard import shown in the previous example, the importing module would use the imported `mean()` and`stddev()` functions through the stats object, invoking them as `stats.mean()` and `stats.stddev()`.
+With the wildcard import shown in the previous example, the importing module would use the imported `mean()` and` stddev()` functions through the stats object, invoking them as `stats.mean()` and `stats.stddev()`.
 
 Note: not finished.
 
@@ -3892,7 +3889,7 @@ use `has()` to check whether a map includes the specified key; use `delete()` to
 
 `set()` method of Map can be chained.
 
-Any JavaScript value can be used as a key or a value in a Map. This includes`null, undefined`, and `NaN`, as well as reference types like objects and arrays.
+Any JavaScript value can be used as a key or a value in a Map. This includes` null, undefined`, and `NaN`, as well as reference types like objects and arrays.
 
 Map compares keys by identity, not by equality.
 
@@ -3947,11 +3944,11 @@ Note that the value parameter comes before the key parameter.
 
 ### WeakMap and WeakSet
 
-The `WeakMap`class is a variant (but not an actual subclass) of the Map class that does not prevent its key values from being garbage collected.
+The `WeakMap `class is a variant (but not an actual subclass) of the Map class that does not prevent its key values from being garbage collected.
 
-`WeakMap`keys must be objects or arrays; primitive values are not subject to garbage collection and cannot be used as keys.
+`WeakMap `keys must be objects or arrays; primitive values are not subject to garbage collection and cannot be used as keys.
 
-WeakMap implements only the`get(), set(), has(),` and `delete()` methods. In particular, `WeakMap` is not iterable and does not define `keys(), values(),` or `forEach()`. If WeakMap was iterable, then its keys would be reachable and it wouldn’t be weak.
+WeakMap implements only the` get(), set(), has(),` and `delete()` methods. In particular, `WeakMap` is not iterable and does not define `keys(), values(),` or `forEach()`. If WeakMap was iterable, then its keys would be reachable and it wouldn’t be weak.
 
 Similarly, WeakMap does not implement the size property because the `size` of a WeakMap could change at any time as objects are garbage collected
 
@@ -4015,7 +4012,7 @@ Typed arrays are not true arrays, but they re-implement most array methods, so y
 
 “9999999999”
 
-Remember that typed arrays have fixed lengths, so the length property is read-only, and methods that change the length of the array (such as`push(), pop(), unshift(), shift(),` and `splice()`) are not implemented for typed arrays. Methods that alter the contents of an array without changing the length (such as `sort(), reverse()`, and `fill()`) are implemented.
+Remember that typed arrays have fixed lengths, so the length property is read-only, and methods that change the length of the array (such as` push(), pop(), unshift(), shift(),` and `splice()`) are not implemented for typed arrays. Methods that alter the contents of an array without changing the length (such as `sort(), reverse()`, and `fill()`) are implemented.
 
 ### Determine Endianess and DataView
 
@@ -4041,7 +4038,7 @@ Regular expressions can also have one or more flag characters that affect how th
 
 i = case insensitive
 
-Punctuation characters have special meanings in regular expressions: `^ $ . * + ? = ! : | \ / ( ) [ ] { }.`Other punctuation characters, such as quotation marks and @, do not have special meaning and simply match themselves literally in a regular expression.
+Punctuation characters have special meanings in regular expressions: `^ $ . * + ? = ! : | \ / ( ) [ ] { }. `Other punctuation characters, such as quotation marks and @, do not have special meaning and simply match themselves literally in a regular expression.
 
 If you use the `RegExp()` constructor, keep in mind that any backslashes in your regular expression need to be doubled, since strings also use backslashes as an escape character.
 
@@ -4226,6 +4223,8 @@ To require the quotes to match,use a reference
 
 **Meaning**
 
+|
+
 match either the subexpression to the left or the subexpression to the right.
 
 (…)
@@ -4236,9 +4235,9 @@ Grouping: group items into a single unit that can be used with \*, +, ?, |, and
 
 group items into a single unit, but do not remember the characters that match this group.
 
-Note`(?:...)` syntax:
+Note` (?:...)` syntax:
 
-In pattern`"/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/`" `\2` refers to the text matched by `(fun\w*)` since `(?:[Ss]cript)?)` in not remembered.
+In pattern` "/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/`" `\2` refers to the text matched by `(fun\w*)` since `(?:[Ss]cript)?)` in not remembered.
 
 ### SPECIFYING MATCH POSITION
 
@@ -4252,9 +4251,9 @@ match the word “JavaScript” on a line by itself
 
 `/^JavaScript$/`
 
-To search for “Java” as a word by itself you can try the pattern `/\sJava\s/`, which requires a space before and after the word. But there are two problems with this solution. First, it does not match “Java” at the beginning or the end of a string, but only if it appears with space on either side. Second, when this pattern does find a match, the matched string it returns has leading and trailing spaces, which is not quite what’s needed. So instead of matching actual space characters with \\s, match (or anchor to) word boundaries with \\b. The resulting expression is `/\bJava\b/`.
+To search for “Java” as a word by itself you can try the pattern `/\sJava\s/`, which requires a space before and after the word. But there are two problems with this solution. First, it does not match "Java" at the beginning or the end of a string, but only if it appears with space on either side. Second, when this pattern does find a match, the matched string it returns has leading and trailing spaces, which is not quite what’s needed. So instead of matching actual space characters with \\s, match (or anchor to) word boundaries with \\b. The resulting expression is `/\bJava\b/`.
 
-The element `\B` anchors the match to a location that is not a word boundary. Thus, the pattern `/\B[Ss]cript/` matches “JavaScript” and “postscript”, but not “script” or “Scripting”.
+The element `\B` anchors the match to a location that is not a word boundary. Thus, the pattern `/\B[Ss]cript/` matches "JavaScript" and "postscript", but not "script" or "Scripting".
 
 You can also use arbitrary regular expressions as anchor conditions.
 
@@ -4304,7 +4303,7 @@ u
 
 Unicode.
 
-Setting the u flag on a RegExp also allows you to use the new `\u{...}` escape sequence for Unicode character and also enables the \\p{…} notation for Unicode character classes.
+Setting the u flag on a RegExp also allows you to use the new `\u{...}` escape sequence for Unicode character and also enables the \\p{...} notation for Unicode character classes.
 
 y
 
@@ -4382,7 +4381,7 @@ Thus, if `match()` returns an array a, a\[0\] contains the complete match, a\[1\
 
     fullurl = match[0];
 
-<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>”
+<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>"
 
     protocol = match[1];
 
@@ -4390,7 +4389,7 @@ Thus, if `match()` returns an array a, a\[0\] contains the complete match, a\[1\
 
     host = match[2];
 
-<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>”
+<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>"
 
     path = match[3];
 
@@ -4412,7 +4411,7 @@ if the regular expression contains named capture groups, then the returned array
 
 `match[0]`
 
-<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>”
+<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>"
 
 `match.input`
 
@@ -4428,7 +4427,7 @@ text
 
 `match.groups.host`
 
-<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>”
+<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>"
 
 `match.groups.path`
 
@@ -4525,7 +4524,7 @@ On the other hand, sometimes reusing a RegExp object is the wrong thing to do. S
 
 \[“apple”, “coffee”\]: “book” is missing!
 
-Because we set the g flag on the RegExp, the `lastIndex` property is changed after successful matches, and the `test()` method (which is based on `exec()`) starts searching for a match at the position specified by `lastIndex`. After matching the “pp” in “apple”, `lastIndex` is 3, and so we start searching the word “book” at position 3 and do not see the “oo” that it contains.
+Because we set the g flag on the RegExp, the `lastIndex` property is changed after successful matches, and the `test()` method (which is based on `exec()`) starts searching for a match at the position specified by `lastIndex`. After matching the "pp" in "apple", `lastIndex` is 3, and so we start searching the word "book" at position 3 and do not see the "oo" that it contains.
 
 ### Dates and Times
 
@@ -4557,7 +4556,7 @@ January
 
 Midnight in GMT, January 1, 2100
 
-If you print a date (with console.log(century), for example), it will, by default, be printed in your local time zone. If you want to display a date in UTC, you should explicitly convert it to a string with `toUTCString()` or`toISOString()`.
+If you print a date (with console.log(century), for example), it will, by default, be printed in your local time zone. If you want to display a date in UTC, you should explicitly convert it to a string with `toUTCString()` or` toISOString()`.
 
 if you pass a string to the Date() constructor, it will attempt to parse that string as a date and time specification
 
@@ -4616,13 +4615,13 @@ adds three months and two weeks to the current date:
 
 “2020–01–02T01:10:30.000Z”
 
-there is also a static Date.parse() method that takes a string as its argument, attempts to parse it as a date and time, and returns a timestamp representing that date. `Date.parse()` is able to parse the same strings that the `Date()` constructor can and is guaranteed to be able to parse the output of`toISOString(), toUTCString()`, and`toString()`.
+there is also a static Date.parse() method that takes a string as its argument, attempts to parse it as a date and time, and returns a timestamp representing that date. `Date.parse()` is able to parse the same strings that the `Date()` constructor can and is guaranteed to be able to parse the output of` toISOString(), toUTCString()`, and` toString()`.
 
 ### Error Classes
 
 One good reason to use an Error object is that, when you create an Error, it captures the state of the JavaScript stack, and if the exception is uncaught, the stack trace will be displayed with the error message, which will help you debug the issue.
 
-Error objects have two properties: `message` and `name`, and a`toString()` method. Node and all modern browsers also define a `stack` property on Error objects.
+Error objects have two properties: `message` and `name`, and a` toString()` method. Node and all modern browsers also define a `stack` property on Error objects.
 
 Subclasses are `EvalError, RangeError, ReferenceError, SyntaxError, TypeError,` and `URIError`.
 
@@ -4654,7 +4653,7 @@ You should feel free to define your own Error subclasses that best encapsulate t
 
     error.message
 
-“404 Not Found:<a href="http://example.com/" class="markup--anchor markup--p-anchor">http://example.com/</a>”
+“404 Not Found:<a href="http://example.com/" class="markup--anchor markup--p-anchor">http://example.com/</a>"
 
     error.name
 
@@ -4684,7 +4683,7 @@ Inefficient way of creating a deep copy of an object
 
 Typically, you pass only a single argument to `JSON.stringify()` and `JSON.parse()`. Both functions accept an optional second argument that allows us to extend the JSON format.
 
-`JSON.stringify()` also takes an optional third argument. If you would like your JSONformatted string to be human-readable (if it is being used as a configuration file, for example), then you should pass null as the second argument and pass a number or string as the third argument. If the third argument is a number, then it will use that number of spaces for each indentation level. If the third argument is a string of whitespace (such as ‘\\t’), it will use that string for each level of indent.
+`JSON.stringify()` also takes an optional third argument. If you would like your JSONformatted string to be human-readable (if it is being used as a configuration file, for example), then you should pass null as the second argument and pass a number or string as the third argument. If the third argument is a number, then it will use that number of spaces for each indentation level. If the third argument is a string of whitespace (such as '\\t'), it will use that string for each level of indent.
 
 ### JSON Customizations
 
@@ -4716,11 +4715,11 @@ Console functions that print their arguments like console.log() have a little-kn
 
     url.href
 
-<a href="https://example.com:8000/path/name" class="markup--anchor markup--p-anchor">“https://example.com:8000/path/name</a>?q=term\#fragment”
+<a href="https://example.com:8000/path/name" class="markup--anchor markup--p-anchor">“https://example.com:8000/path/name</a>?q=term\#fragment"
 
     url.origin
 
-<a href="https://example.com:8000/" class="markup--anchor markup--p-anchor">“https://example.com:8000</a>”
+<a href="https://example.com:8000/" class="markup--anchor markup--p-anchor">“https://example.com:8000</a>"
 
     url.protocol
 
@@ -4762,7 +4761,7 @@ Add a query parameter
 
     url.toString()
 
-<a href="https://example.com/api/search?q=test" class="markup--anchor markup--p-anchor">“https://example.com/api/search?q=test</a>”
+<a href="https://example.com/api/search?q=test" class="markup--anchor markup--p-anchor">“https://example.com/api/search?q=test</a>"
 
 One of the important features of the URL class is that it correctly adds punctuation and escapes special characters in URLs when that is needed
 
@@ -4782,7 +4781,7 @@ One of the important features of the URL class is that it correctly adds punctua
 
     url.href
 
-<a href="https://example.com/path%20with%20spaces?q=foo%23bar" class="markup--anchor markup--p-anchor">“https://example.com/path%20with%20spaces?q=foo%23bar</a>”
+<a href="https://example.com/path%20with%20spaces?q=foo%23bar" class="markup--anchor markup--p-anchor">“https://example.com/path%20with%20spaces?q=foo%23bar</a>"
 
 Often, however, HTTP requests encode the values of multiple form fields or multiple API parameters into the query portion of a URL. In this format, the query portion of the URL is a question mark followed by one or more name/value pairs, which are separated from one another by ampersands.
 
@@ -4830,11 +4829,11 @@ The value of the searchParams property is a URLSearchParams object.
 
 `url.href`
 
-<a href="http://example.com/" class="markup--anchor markup--p-anchor">“http://example.com/</a>?q=term&opts=exact”
+<a href="http://example.com/" class="markup--anchor markup--p-anchor">“http://example.com/</a>?q=term&opts=exact"
 
 ### Timers
 
-`setTimeout()` and`setInterval()`—that allow programs to ask the browser to invoke a function after a specified amount of time has elapsed or to invoke the function repeatedly at a specified interval.
+`setTimeout()` and` setInterval()`—that allow programs to ask the browser to invoke a function after a specified amount of time has elapsed or to invoke the function repeatedly at a specified interval.
 
     setTimeout(() => { console.log("Ready..."); }, 1000);
 
@@ -5181,7 +5180,7 @@ This kind of infinite generator becomes more useful with a `take()` generator li
 
 The keywords `async` and `await` were introduced in ES2017 and provide new syntax that simplifies asynchronous programming by allowing you to structure your Promise based code as if it was synchronous.
 
-Asynchronous iterators and the`for/await` loop were introduced in ES2018 and allow you to work with streams of asynchronous events using simple loops that appear synchronous.
+Asynchronous iterators and the` for/await` loop were introduced in ES2018 and allow you to work with streams of asynchronous events using simple loops that appear synchronous.
 
 ### Asynchronous Programming with Callbacks
 
@@ -5299,7 +5298,7 @@ To understand it, first consider what happens if `getJSON()` completes normally 
 
     getJSON("/api/user/profile").then(displayUserProfile).catch(handleProfileError);
 
-With this code, a normal result from`getJSON()` is still passed to `displayUserProfile()`, but any error in `getJSON()` or in `displayUserProfile()` (including any exceptions thrown by `displayUserProfile`) get passed to `handleProfileError()`.
+With this code, a normal result from` getJSON()` is still passed to `displayUserProfile()`, but any error in `getJSON()` or in `displayUserProfile()` (including any exceptions thrown by `displayUserProfile`) get passed to `handleProfileError()`.
 
 ### Chaining Promises
 
@@ -5329,7 +5328,7 @@ has largely been replaced by the newer, Promise-based Fetch API. In its simplest
 
     });
 
-But although the initial Promise is fulfilled, the body of the response may not yet have arrived. So these `text()` and`json()` methods for accessing the body of the response themselves return Promises.
+But although the initial Promise is fulfilled, the body of the response may not yet have arrived. So these `text()` and` json()` methods for accessing the body of the response themselves return Promises.
 
     fetch("/api/user/profile")
 
@@ -5553,7 +5552,7 @@ The returned Promise will be rejected if any of the input Promises are rejected.
     .catch(e => console.error(e));
 
 The Promise returned by `Promise.all()` rejects when any of the input Promises is rejected. This happens immediately upon the first rejection and can happen while other input Promises are still pending. In ES2020, `Promise.allSettled()` takes an array of input  
- Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to “fulfilled” or “rejected.” If the status is “fulfilled”, then the object will also have a value property that gives the fulfillment value. And if the status is “rejected”, then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
+ Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to "fulfilled" or "rejected." If the status is "fulfilled", then the object will also have a value property that gives the fulfillment value. And if the status is "rejected", then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
 
     Promise.allSettled([Promise.resolve(1), Promise.reject(2),3]).then(results => {
 
@@ -5579,7 +5578,7 @@ Asynchronous code can’t return a value or throw an exception the way that regu
 
 `async` and `await` take efficient, Promise-based code and hide the Promises so that your asynchronous code can be as easy to read and as easy to reason about as inefficient, blocking, synchronous code.
 
-Given a Promise object p, the expression await p waits until p settles. If p fulfills, then the value of await p is the fulfillment value of p. On the other hand, if p is rejected, then the await p expression throws the rejection value of p.
+Given a Promise object p, the expression await p waits until p settles. If p fulfills, then the value of await p is the fulfillment value of p. On the other hand, if p is rejected, then the await p expression throws the rejection value of p.
 
     let response = await fetch("/api/user/profile");
 
@@ -5641,7 +5640,7 @@ You can call fetch() on each URL to get an array of Promises:
 
     const promises = urls.map(url => fetch(url));
 
-We could now use`Promise.all()` to wait for all the Promises in the array to be fulfilled. But suppose we want the results of the first fetch as soon as they become available and don’t want to wait for all the URLs to be fetched.
+We could now use` Promise.all()` to wait for all the Promises in the array to be fulfilled. But suppose we want the results of the first fetch as soon as they become available and don’t want to wait for all the URLs to be fetched.
 
     for(const promise of promises) {
 

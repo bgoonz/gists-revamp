@@ -24,7 +24,7 @@ The syntax:
 Parameters:
 
 `func|code`: Function or a string of code to execute.  
-Usually, that’s a function. For historical reasons, a string of code can be passed, but that’s not recommended.
+Usually, that's a function. For historical reasons, a string of code can be passed, but that's not recommended.
 
 `delay`: The delay before running, in milliseconds (1000 ms = 1 second), by default 0.
 
@@ -70,7 +70,7 @@ But using strings is not recommended, use arrow functions instead of them, like 
 
 ### Canceling with clearTimeout
 
-A call to `setTimeout` returns a “timer identifier” `timerId` that we can use to cancel the execution.
+A call to `setTimeout` returns a "timer identifier" `timerId` that we can use to cancel the execution.
 
 The syntax to cancel:
 
@@ -111,7 +111,7 @@ The following example will show the message every 2 seconds. After 5 seconds, th
 
 \`\`\`smart header = “Time goes on while `alert` is shown”
 
-In most browsers, including Chrome and Firefox, the internal timer continues “ticking” while showing `alert/confirm/prompt`.
+In most browsers, including Chrome and Firefox, the internal timer continues "ticking" while showing `alert/confirm/prompt`.
 
 So if you run the code above and don’t dismiss the `alert` window for some time, then the next `alert` will be shown immediately as you do it. The actual interval between alerts will be shorter than 2 seconds.
 
@@ -181,9 +181,9 @@ Did you notice?
 
 **The real delay between** `func` **calls for** `setInterval` **is less than in the code!**
 
-That’s normal, because the time taken by `func`’s execution “consumes” a part of the interval.
+That’s normal, because the time taken by `func`'s execution "consumes" a part of the interval.
 
-It is possible that `func`’s execution turns out to be longer than we expected and takes more than 100ms.
+It is possible that `func`'s execution turns out to be longer than we expected and takes more than 100ms.
 
 In this case the engine waits for `func` to complete, then checks the scheduler and if the time is up, runs it again _immediately_.
 
@@ -220,7 +220,7 @@ For instance, this outputs “Hello”, then immediately “World”:
 
     alert("Hello");
 
-The first line “puts the call into calendar after 0ms”. But the scheduler will only “check the calendar” after the current script is complete, so `"Hello"` is first, and `"World"` – after it.
+The first line “puts the call into calendar after 0ms”. But the scheduler will only “check the calendar” after the current script is complete, so `"Hello"` is first, and `"World"` -- after it.
 
 There are also advanced browser-related use cases of a zero-delay timeout, that we’ll discuss in the chapter info:event-loop.
 
@@ -256,8 +256,8 @@ There are also advanced browser-related use cases of a zero-delay timeout, that 
 - <span id="4074">Methods `setTimeout(func, delay, ...args)` and `setInterval(func, delay, ...args)` allow us to run the `func` once/regularly after `delay` milliseconds.</span>
 - <span id="6249">To cancel the execution, we should call `clearTimeout/clearInterval` with the value returned by `setTimeout/setInterval`.</span>
 - <span id="af18">Nested `setTimeout` calls are a more flexible alternative to `setInterval`, allowing us to set the time _between_ executions more precisely.</span>
-- <span id="06e2">Zero delay scheduling with `setTimeout(func, 0)` (the same as `setTimeout(func)`) is used to schedule the call “as soon as possible, but after the current script is complete”.</span>
-- <span id="5393">The browser limits the minimal delay for five or more nested calls of `setTimeout` or for `setInterval` (after 5th call) to 4ms. That’s for historical reasons.</span>
+- <span id="06e2">Zero delay scheduling with `setTimeout(func, 0)` (the same as `setTimeout(func)`) is used to schedule the call "as soon as possible, but after the current script is complete".</span>
+- <span id="5393">The browser limits the minimal delay for five or more nested calls of `setTimeout` or for `setInterval` (after 5th call) to 4ms. That's for historical reasons.</span>
 
 Please note that all scheduling methods do not _guarantee_ the exact delay.
 

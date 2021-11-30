@@ -10,7 +10,9 @@ Explanation for Rotate Right
 
 ### Explanation for Rotate Right
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/0*3_vbGvHeWOgSTxk7.png" class="graf-image" /></figure>### Question
+<figure><img src="https://cdn-images-1.medium.com/max/1200/0*3_vbGvHeWOgSTxk7.png" class="graf-image" /></figure>
+
+### Question
 
 <span class="graf-dropCap">W</span>rite a function `rotateRight(array, num)` that takes in an array and a number as arguments.
 
@@ -89,7 +91,7 @@ We need to put some executable code within our for loop to be run during every c
 - <span id="ab3a">`['a', 'b', 'c', 'd', 'e'];` (how it looks like at the start)</span>
 - <span id="5fab">`['e', 'a', 'b', 'c', 'd'];` (after one run of the for loop)</span>
 - <span id="e31e">`['d', 'e', 'a', 'b', 'c'];` (after second/last run of the for loop)</span>
-- <span id="aa2f">To accomplish this we first need to ‘`pop`’ off or remove our last element.</span>
+- <span id="aa2f">To accomplish this we first need to ‘`pop`' off or remove our last element.</span>
 - <span id="d19e">Two things happen when we use this built-in function.</span>
 - <span id="687c">Our copied array is mutated to lose it’s last ele.</span>
 - <span id="392e">The removed element is stored in the variable we assigned to the function.</span>

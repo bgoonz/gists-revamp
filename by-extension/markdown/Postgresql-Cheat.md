@@ -168,12 +168,12 @@ Query data using the `LIKE` operator:
     SELECT * FROM table_name
     WHERE column LIKE '%value%'
 
-Query data using the `BETWEEN`operator:
+Query data using the `BETWEEN `operator:
 
     SELECT * FROM table_name
     WHERE column BETWEEN low AND high;
 
-Query data using the `IN`operator:
+Query data using the `IN `operator:
 
     SELECT * FROM table_name
     WHERE column IN (value1, value2,...);
@@ -392,7 +392,7 @@ Output:
       browser json
     );
 
-We’re going to store events in this table, like pageviews. Each event has properties, which could be anything (e.g. current page) and also sends information about the browser (like OS, screen resolution, etc). Both of these are completely free form and could change over time (as we think of extra stuff to track).
+We’re going to store events in this table, like pageviews. Each event has properties, which could be anything (e.g. current page) and also sends information about the browser (like OS, screen resolution, etc). Both of these are completely free form and could change over time (as we think of extra stuff to track).
 
     INSERT INTO events VALUES (
       'pageview', '1',
@@ -447,7 +447,7 @@ Output:
 Output:
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*HxOS3CgwXBJ6A2FP" class="graf-image" /></figure>-   <span id="9850">Average screen resolution</span>
--   <span id="132f">`SELECT AVG(CAST(browser->'resolution'->>'x' AS integer))             AS width, AVG(CAST(browser->'resolution'->>'y' AS integer))             AS height FROM events;`</span>
+-   <span id="132f">`SELECT                     AVG(CAST(browser->'resolution'->>'x'                     AS integer)) AS width,                     AVG(CAST(browser->'resolution'->>'y'                     AS integer)) AS height FROM events;`</span>
 
 Output:
 

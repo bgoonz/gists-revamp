@@ -51,7 +51,7 @@ Everyone’s seen the ‘Awesome’ lists on GitHub… and they are indeed aweso
 - <span id="5b6f"><a href="https://github.com/getify/Functional-Light-JS" class="markup--anchor markup--li-anchor">Pragmatic, balanced FP in JavaScript book</a></span>
 - <span id="78c8"><a href="https://github.com/pikapkg/pack" class="markup--anchor markup--li-anchor">Pack</a> — Helps you build amazing packages without the hassle.</span>
 - <span id="215c"><a href="https://mafinto.sh/blog/learning-javascript.html" class="markup--anchor markup--li-anchor">Learning JavaScript (2016)</a></span>
-- <span id="390e"><a href="https://github.com/pikapkg/web" class="markup--anchor markup--li-anchor"><span class="citation" data-cites="pika/web">@pika/web</span></a> — Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.</span>
+- <span id="390e"><a href="https://github.com/pikapkg/web" class="markup--anchor markup--li-anchor">@pika/web</a> — Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.</span>
 - <span id="525a"><a href="https://github.com/alangpierce/sucrase" class="markup--anchor markup--li-anchor">Sucrase</a> — Super-fast alternative to Babel for when you can target modern JS runtimes.</span>
 - <span id="51ea"><a href="https://github.com/airbnb/javascript" class="markup--anchor markup--li-anchor">Airbnb JavaScript Style Guide</a></span>
 - <span id="ecaa"><a href="https://github.com/twhite96/js-dev-reads" class="markup--anchor markup--li-anchor">JavaScript Developer’s Reading List</a> — List of hand-picked books and articles for JavaScript developers.</span>

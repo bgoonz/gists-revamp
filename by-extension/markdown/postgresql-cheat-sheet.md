@@ -1,324 +1,410 @@
-# Postgresql · Cheatsheets
+===========================
 
-> source
+## PostgreSQL commands
 
-## Basic Commands
+===========================
+| | |
+| ------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Access the PostgreSQL server from **psql** with a specific user: `psql -U [username];` | Connect to a specific database:`\c database_name;` |
+| To quit the psql:`\q` |[List all databases](https://www.postgresqltutorial.com/postgresql-show-databases/) in the PostgreSQL database server`\l` |
+| List all schemas:`\dn` |List all [stored procedures](https://www.postgresqltutorial.com/postgresql-stored-procedures/) and functions:`\df` |
+|List all [views](https://www.postgresqltutorial.com/postgresql-views/):`\dv`|[Lists all tables](https://www.postgresqltutorial.com/postgresql-show-tables/) in a current database.`\dt`|
+|Or to get more information on tables in the current database:`\dt+`|Get detailed information on a table.`\d+ table_name`|Show a [stored procedure](https://www.postgresqltutorial.com/postgresql-stored-procedures/) or function code:`\df+ function_name`|
+Show query output in the pretty-format:`\x`|List all users:`\du`
 
-### Login to postgresql
+Create a new [role](https://www.postgresqltutorial.com/postgresql-roles/):
 
-    psql -U postgres
-    psql -d mydb -U myuser -W
-    psql -h myhost -d mydb -U myuser -W
-    psql -U myuser -h myhost "dbname=mydb sslmode=require" # ssl connection
+```
+CREATE ROLE role_name;
+```
 
-### Default Admin Login
+Create a new role with a `username` and `password`:
 
-    sudo -u postgres psql -U postgres
-    sudo -u postgres psql
+```
+CREATE ROLE username NOINHERIT LOGIN PASSWORD password;
+```
 
-### List databases on postgresql server
+Change role for the current session to the `new_role`:
 
-### Determine system tables
+```
+SET ROLE new_role;
+```
 
-    select * from pg_tables where tableowner = 'postgres';
+Allow `role_1` to set its role as `role_2:`
 
-### List databases from within a pg shell
+```
+GRANT role_2 TO role_1;
+```
 
-### List databases from UNIX command prompt
+===========================
 
-### Describe a table
+## Managing databases
 
-### Quit psql
+===========================
+[Create a new database](https://www.postgresqltutorial.com/postgresql-create-database/):
 
-### Switch postgres database within admin login shell
+```
+CREATE DATABASE [IF NOT EXISTS] db_name;
+```
 
-### Reset a user password as admin
+[Delete a database permanently](https://www.postgresqltutorial.com/postgresql-drop-database/):
 
-    alter user usertochange with password 'new_passwd';
+```
+DROP DATABASE [IF EXISTS] db_name;
+```
 
-### Show all tables
+===========================
 
-### List all Schemas
+## Managing tables
 
-### List all users
+===========================
+[Create a new table](https://www.postgresqltutorial.com/postgresql-create-table/) or a [temporary table](https://www.postgresqltutorial.com/postgresql-temporary-table/)
 
-### Load data into postgresql
+```
+CREATE [TEMP] TABLE [IF NOT EXISTS] table_name(
+       pk SERIAL PRIMARY KEY,
+   c1 type(size) NOT NULL,
+   c2 type(size) NULL,
+   ...
+);
+```
 
-    psql -W -U username -H hostname < file.sql
+[Add a new column](https://www.postgresqltutorial.com/postgresql-add-column/) to a table:
 
-### Dump (Backup) Data into file
+```
+ALTER TABLE table_name ADD COLUMN new_column_name TYPE;
+```
 
-    pg_dump -W -U username -h hostname database_name > file.sql
+[Drop a column](https://www.postgresqltutorial.com/postgresql-drop-column/) in a table:
 
-### Increment a sequence
+```
+ALTER TABLE table_name DROP COLUMN column_name;
+```
 
-    SELECT nextval('my_id_seq');
+[Rename a column](https://www.postgresqltutorial.com/postgresql-rename-column/):
 
-### Create new user
+```
+ALTER TABLE table_name RENAME column_name TO new_column_name;
+```
 
-    CREATE USER lemmy WITH PASSWORD 'myPassword';
-    # or
+Set or remove a default value for a column:
 
-    sudo -u postgres createuser lemmy -W
+```
+ALTER TABLE table_name ALTER COLUMN [SET DEFAULT value | DROP DEFAULT]
+```
 
-### Change user password
+Add a [primary key ](https://www.postgresqltutorial.com/postgresql-primary-key/)to a table.
 
-    ALTER USER Postgres WITH PASSWORD 'mypass';
+```
+ALTER TABLE table_name ADD PRIMARY KEY (column,...);
+```
 
-### Grant user createdb privilege
+Remove the primary key from a table.
 
-    ALTER USER myuser WITH createdb;
+```
+ALTER TABLE table_name
+DROP CONSTRAINT primary_key_constraint_name;
+```
 
-### Create a superuser user
+[Rename a table](https://www.postgresqltutorial.com/postgresql-rename-table/).
 
-    create user mysuper with password '1234' SUPERUSER
-    # or even better
-    create user mysuper with password '1234' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION;
-    # or
-    sudo -u postgres createuser lemmy -W -s
+```
+ALTER TABLE table_name RENAME TO new_table_name;
+```
 
-### Upgrade an existing user to superuser
+[Drop a table](https://www.postgresqltutorial.com/postgresql-drop-table/) and its dependent objects:
 
-    alter user mysuper with superuser;
-    # or even better
-    alter user mysuper with SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION
+```
+DROP TABLE [IF EXISTS] table_name CASCADE;
+```
 
-### Show Database Version
+===========================
 
-### Change Database Owner
+## Managing views
 
-    alter database database_name owner to new_owner;
+===========================
+[Create a view](https://www.postgresqltutorial.com/managing-postgresql-views/):
 
-### Copy a database
+```
+CREATE OR REPLACE view_name AS
+query;
+```
 
-    CREATE DATABASE newdb WITH TEMPLATE originaldb;
+[Create a recursive view](https://www.postgresqltutorial.com/postgresql-recursive-view/):
 
-### View Database Connections
+```
+CREATE RECURSIVE VIEW view_name(column_list) AS
+SELECT column_list;
+```
 
-    SELECT * FROM pg_stat_activity;
+[Create a materialized view](https://www.postgresqltutorial.com/postgresql-materialized-views/):
 
-### View show data directory (works on 9.1+)
+```
+CREATE MATERIALIZED VIEW view_name
+AS
+query
+WITH [NO] DATA;
+```
 
-### Show run-time parameters
+Refresh a materialized view:
 
-    show all;
-    select * from pg_settings;
+```
+REFRESH MATERIALIZED VIEW CONCURRENTLY view_name;
+```
 
-### Show the block size setting
+Drop a view:
 
-    # show block_size;
-     block_size
-    ------------
-     8192
-    (1 row)
+```
+DROP VIEW [ IF EXISTS ] view_name;
+```
 
-### Show stored procedure source
+Drop a materialized view:
 
-    SELECT prosrc FROM pg_proc WHERE proname = 'procname'
+```
+DROP MATERIALIZED VIEW view_name;
+```
 
-### Grant examples
+Rename a view:
 
-    # readonly to all tables for myuser
-    grant select on all tables in schema public to myuser;
-    # all privileges on table1 and table2 to myuser
-    grant all privileges on table1, table2, table3 to myuser;
+```
+ALTER VIEW view_name RENAME TO new_name;
+```
 
-### Restore Postgres .dump file
+===========================
 
-    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump
+## Managing indexes
 
-[source](https://gist.github.com/kagemusha/1569836)
+===========================
+Creating an index with the specified name on a table
 
-### Find all active sessions and kill them (i.e. for when needing to drop or rename db)
+```
+CREATE [UNIQUE] INDEX index_name
+ON table (column,...)
+```
 
-Source: [http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it](http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it)
+Removing a specified index from a table
 
-    # Postgres 9.6 and above
-    SELECT pg_terminate_backend(pg_stat_activity.pid)
-    FROM pg_stat_activity
-    WHERE pg_stat_activity.datname = 'TARGET_DB'
-     AND pid <> pg_backend_pid();
+```
+DROP INDEX index_name;
+```
 
-    # Postgres 9.6 and below
-    SELECT pg_terminate_backend(pg_stat_activity.procpid)
-    FROM pg_stat_activity
-    WHERE pg_stat_activity.datname = 'TARGET_DB'
-    AND procpid <> pg_backend_pid();
+===========================
 
-## Handy Queries
+## Querying data from tables
 
-    -- List procedure/function
-    SELECT * FROM pg_proc WHERE proname='__procedurename__';
+===========================
+Query all data from a table:
 
-    -- List view (including the definition)
-    SELECT * FROM pg_views WHERE viewname='__viewname__';
+```
+SELECT * FROM table_name;
+```
 
-    -- Show DB table space in use
-    SELECT pg_size_pretty(pg_total_relation_size('__table_name__'));:
+Query data from specified columns of all rows in a table:
 
-    -- Show DB space in use
-    SELECT pg_size_pretty(pg_database_size('__database_name__'));
+```
+SELECT column_list
+FROM table;
+```
 
-    -- Show current user's statement timeout
-    show statement_timeout;
+Query data and select only unique rows:
 
-    -- Show table indexes
-    SELECT * FROM pg_indexes WHERE tablename='__table_name__' AND schemaname='__schema_name__';
+```
+SELECT DISTINCT (column)
+FROM table;
+```
 
-    -- Get all indexes from all tables of a schema:
-    SELECT
-       t.relname AS table_name,
-       i.relname AS index_name,
-       a.attname AS column_name
-    FROM
-       pg_class t,
-       pg_class i,
-       pg_index ix,
-       pg_attribute a,
-       pg_namespace n
-    WHERE
-       t.oid = ix.indrelid
-       AND i.oid = ix.indexrelid
-       AND a.attrelid = t.oid
-       AND a.attnum = ANY(ix.indkey)
-       AND t.relnamespace = n.oid
-       AND n.nspname = 'kartones'
-    ORDER BY
-       t.relname,
-       i.relname
+Query data from a table with a filter:
 
-    -- Queries being executed at a certain DB
-    SELECT datname, application_name, pid, backend_start, query_start, state_change, state, query
-      FROM pg_stat_activity
-      WHERE datname='__database_name__';
-
-    -- Get all queries from all dbs waiting for data (might be hung)
-    SELECT * FROM pg_stat_activity WHERE waiting='t';
+```
+SELECT *
+FROM table
+WHERE condition;
+```
 
-### Query analysis
-
-    -- See the query plan for the given query
-    EXPLAIN __query__
-
-    -- See and execute the query plan for the given query
-    EXPLAIN ANALYZE __query__
+Assign an [alias](https://www.postgresqltutorial.com/postgresql-alias/) to a column in the result set:
 
-    -- Collect statistics
-    ANALYZE [__table__]
-
-## Querying Data
-
-### From a Single Table
-
-    -- Query data in columns c1, c2 from a table
-    SELECT c1, c2 FROM t;
-
-    -- Query distinct rows from a table
-    SELECT DISTINCT c1
-    FROM t
-    WHERE condition;
-
-    -- Sort the result set in ascending or descending order
-    SELECT c1, c2
-    FROM t
-    ORDER BY c1 ASC [DESC];
-
-    -- Skip offset of rows and return the next n rows
-    SELECT c1, c2
-    FROM t
-    ORDER BY c1
-    LIMIT n
-    OFFSET offset;
-
-    -- Group rows using an aggregate function
-    SELECT c1, aggregate(c2)
-    FROM t
-    GROUP BY c1;
-
-    -- Filter groups using HAVING clause
-    SELECT c1, aggregate(c2) FROM t
-    GROUP BY c1
-    HAVING condition;
-
-### From Multiple Tables
-
-    -- Inner join t1 and t2
-    SELECT c1, c2
-    FROM t1
-    INNER JOIN t2
-    ON condition;
-
-    -- Left join t1 and t1
-    SELECT c1, c2
-    FROM t1
-    LEFT JOIN t2
-    ON condition;
-
-    -- Right join t1 and t2
-    SELECT c1, c2
-    FROM t1
-    RIGHT JOIN t2
-    ON condition;
-
-    -- Perform full outer join
-    SELECT c1, c2
-    FROM t1
-    FULL OUTER JOIN t2
-    ON condition;
-
-    -- Produce a Cartesian product of rows in tables
-    SELECT c1, c2
-    FROM t1
-    CROSS JOIN t2;
-
-    -- Another way to perform cross join
-    SELECT c1, c2
-    FROM t1, t2;
-
-    -- Join t1 to itself using INNER JOIN clause
-    SELECT c1, c2
-    FROM t1 A
-    INNER JOIN t2 B ON condition
-
-### Using SQL Operators
-
-    -- Combine rows from two queries
-    SELECT c1, c2 FROM t1
-    UNION [ALL]
-    SELECT c1, c2 FROM t2;
-
-    -- Return the intersection of two queries
-    SELECT c1, c2 FROM t1
-    INTERSECT
-    SELECT c1, c2 FROM t2;
-
-    -- Subtract a result set from another result set
-    SELECT c1, c2 FROM t1
-    EXCEPT
-    SELECT c1, c2 FROM t2;
-
-    -- Query rows using pattern matching %, _
-    SELECT c1, c2 FROM t1
-    WHERE c1 [NOT] LIKE pattern;
-
-    -- Query rows in a list
-    SELECT c1, c2
-    FROM t
-    WHERE c1
-    [NOT] IN value_list;
-
-    -- Query rows between two values
-    SELECT c1, c2
-    FROM t
-    WHERE c1
-    BETWEEN low AND high;
-
-    -- Check if values in a table is NULL or not
-    SELECT c1, c2 FROM t
-    WHERE c1 IS [NOT] NULL;
-
-## Source:
-
-- [PostgreSQL 9.6.0 Documentation](https://www.postgresql.org/docs/9.6/static/app-psql.html)
-- [PostgreSQL Exercises](https://pgexercises.com/)
-- [PostgreSQL Tutorial](http://www.postgresqltutorial.com/postgresql-cheat-sheets)
+```
+SELECT column_1 AS new_column_1, ...
+FROM table;
+```
+
+Query data using the <code>[LIKE](https://www.postgresqltutorial.com/postgresql-like/)</code> operator:
+
+```
+SELECT * FROM table_name
+WHERE column LIKE '%value%'
+```
+
+Query data using the <code>[BETWEEN](https://www.postgresqltutorial.com/postgresql-between/) </code>operator:
+
+```
+SELECT * FROM table_name
+WHERE column BETWEEN low AND high;
+```
+
+Query data using the <code>[IN](https://www.postgresqltutorial.com/postgresql-in/) </code>operator:
+
+```
+SELECT * FROM table_name
+WHERE column IN (value1, value2,...);
+```
+
+Constrain the returned rows with the <code>[LIMIT](https://www.postgresqltutorial.com/postgresql-limit/)</code> clause:
+
+```
+SELECT * FROM table_name
+LIMIT limit OFFSET offset
+ORDER BY column_name;
+```
+
+Query data from multiple using the [inner join](https://www.postgresqltutorial.com/postgresql-inner-join/), [left join](https://www.postgresqltutorial.com/postgresql-left-join/), [full outer join](https://www.postgresqltutorial.com/postgresql-full-outer-join/), [cross join](https://www.postgresqltutorial.com/postgresql-cross-join/) and [natural join](https://www.postgresqltutorial.com/postgresql-natural-join/):
+
+```
+SELECT *
+FROM table1
+INNER JOIN table2 ON conditions
+SELECT *
+FROM table1
+LEFT JOIN table2 ON conditions
+SELECT *
+FROM table1
+FULL OUTER JOIN table2 ON conditions
+SELECT *
+FROM table1
+CROSS JOIN table2;
+SELECT *
+FROM table1
+NATURAL JOIN table2;
+```
+
+Return the number of rows of a table.
+
+```
+SELECT COUNT (*)
+FROM table_name;
+```
+
+Sort rows in ascending or descending order:
+
+```
+SELECT select_list
+FROM table
+ORDER BY column ASC [DESC], column2 ASC [DESC],...;
+```
+
+Group rows using <code>[GROUP BY](https://www.postgresqltutorial.com/postgresql-group-by/)</code> clause.
+
+```
+SELECT *
+FROM table
+GROUP BY column_1, column_2, ...;
+```
+
+Filter groups using the <code>[HAVING](https://www.postgresqltutorial.com/postgresql-having/)</code> clause.
+
+```
+SELECT *
+FROM table
+GROUP BY column_1
+HAVING condition;
+```
+
+===========================
+
+## Set operations
+
+===========================
+Combine the result set of two or more queries with <code>[UNION](https://www.postgresqltutorial.com/postgresql-union/)</code> operator:
+
+```
+SELECT * FROM table1
+UNION
+SELECT * FROM table2;
+```
+
+Minus a result set using <code>[EXCEPT](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/)</code> operator:
+
+```
+SELECT * FROM table1
+EXCEPT
+SELECT * FROM table2;
+```
+
+Get intersection of the result sets of two queries:
+
+```
+SELECT * FROM table1
+INTERSECT
+SELECT * FROM table2;
+```
+
+===========================
+
+## Modifying data
+
+===========================
+[Insert a new row into a table](https://www.postgresqltutorial.com/postgresql-insert/):
+
+```
+INSERT INTO table(column1,column2,...)
+VALUES(value_1,value_2,...);
+```
+
+Insert multiple rows into a table:
+
+```
+INSERT INTO table_name(column1,column2,...)
+VALUES(value_1,value_2,...),
+      (value_1,value_2,...),
+      (value_1,value_2,...)...
+```
+
+[Update](https://www.postgresqltutorial.com/postgresql-update/) data for all rows:
+
+```
+UPDATE table_name
+SET column_1 = value_1,
+    ...;
+```
+
+Update data for a set of rows specified by a condition in the `WHERE` clause.
+
+```
+UPDATE table
+SET column_1 = value_1,
+    ...
+WHERE condition;
+```
+
+[Delete all rows](https://www.postgresqltutorial.com/postgresql-delete/) of a table:
+
+```
+DELETE FROM table_name;
+```
+
+Delete specific rows based on a condition:
+
+```
+DELETE FROM table_name
+WHERE condition;
+```
+
+## Performance
+
+Show the query plan for a query:
+
+```
+EXPLAIN query;
+```
+
+Show and execute the query plan for a query:
+
+```
+EXPLAIN ANALYZE query;
+```
+
+Collect statistics:
+
+```
+ANALYZE table_name;
+```

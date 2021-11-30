@@ -94,11 +94,11 @@ Defining a constructor function _Example of an object using object initializatio
     };
 
 - <span id="9071">The above literal is a “Book” object type.</span>
-- <span id="a5d6">`Object Type` is defined by it’s attributes and behaviors.</span>
+- <span id="a5d6">`Object Type` is defined by it's attributes and behaviors.</span>
 
 > `Behaviors` **are represented by methods.**
 
-- <span id="ccb5">`Constructor Functions` : Handle the creation of an object - it’s a factory for creating objects of a specific type.</span>
+- <span id="ccb5">`Constructor Functions` : Handle the creation of an object - it's a factory for creating objects of a specific type.</span>
 - <span id="bdc9">There are a few specific things to constructors worth noting:</span>
 - <span id="6549">**_The name of the constructor function is capitalized_**</span>
 - <span id="8e61">The Function _does not explicitly return a value_</span>
@@ -163,10 +163,10 @@ Defining a constructor function _Example of an object using object initializatio
 ### Defining Sharable Methods
 
 - <span id="0f4e">_Avoid the temptation to store an object method inside a constructor function, it is inefficient with computer memory usage b/c each object instance would have it’s own method definition._</span>
-- <span id="a9e8">`Prototype` : An object that is delegated to when a reference to an object property or method can’t be resolved.</span>
+- <span id="a9e8">`Prototype` : An object that is delegated to when a reference to an object property or method can't be resolved.</span>
 - <span id="ddc6">Every instance created by a constructor function shares the same prototype.</span>
 - <span id="ddba">`Object.setPrototypeOf()` and `Object.getPrototypeOf()` are just used to set a prototype of one object to another object; and also the verify a prototype.</span>
-- <span id="144c">`proto` : aka “dunder proto” is a property used to gain easy access to an object’s prototype - it is widely supported by browsers but is considered deprecated.</span>
+- <span id="144c">`proto` : aka "dunder proto" is a property used to gain easy access to an object's prototype - it is widely supported by browsers but is considered deprecated.</span>
 
 <!-- -->
 
@@ -203,7 +203,7 @@ The Problem with Arrow Functions
 
 In ES2015, JS gained the `class` keyword - replacing the need to use only constructor functions & prototypes to mimic classes!
 
-- <span id="df3e">`class` : keyword that gives developers a formal way to create a class definition to specify an object type’s attributes and behavior; also used to create objects of that specific type.</span>
+- <span id="df3e">`class` : keyword that gives developers a formal way to create a class definition to specify an object type's attributes and behavior; also used to create objects of that specific type.</span>
 
 Defining a ES2015 class
 
@@ -392,7 +392,7 @@ Defining Methods
     console.log(Catalogitem instanceof Function); // true
     console.log(Book instanceof Function); // true
 
-- <span id="8dcd">A `prototype chain` defines a series of prototype objects that are delegated to one by one, when a property or method can’t be found on an instance object.</span>
+- <span id="8dcd">A `prototype chain` defines a series of prototype objects that are delegated to one by one, when a property or method can't be found on an instance object.</span>
 
 <!-- -->
 
@@ -405,7 +405,7 @@ Defining Methods
 
 Overriding a method in a parent class
 
-- <span id="71f7">`Method Overriding` : when a child class provides an implementation of a method that’s already defined in a parent class.</span>
+- <span id="71f7">`Method Overriding` : when a child class provides an implementation of a method that's already defined in a parent class.</span>
 
 <!-- -->
 

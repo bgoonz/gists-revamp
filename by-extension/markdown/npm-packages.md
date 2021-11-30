@@ -10,7 +10,7 @@ Vue was built by combining the best approaches from React and others, focusing o
 
 3.[Svelte](https://www.npmjs.com/package/svelte)
 
-Svelte is a new way to build web applications. It’s a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
+Svelte is a new way to build web applications. It's a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
 
 _Other notable frameworks include _[_Angular_](https://www.npmjs.com/package/angular)_, _[_Ember_](https://www.npmjs.com/package/ember)_, _[_Backbone_](https://www.npmjs.com/package/backbone)_, _[_Preact_](https://www.npmjs.com/package/preact)_ and many others. You can do wonders with any of them, the golden rule is to learn _[_modern JS (ES6 and above)_](https://javascript.info/)_ well before._
 
@@ -18,7 +18,7 @@ _Other notable frameworks include _[_Angular_](https://www.npmjs.com/package/an
 
 4.[Bootstrap](https://www.npmjs.com/package/bootstrap)
 
-World’s most popular framework for building responsive, mobile-first sites. Intuitive and powerful, tho relatively bulky in size. Many modern UI kits are based on it like [React Bootstrap](https://www.npmjs.com/package/react-bootstrap) or [Reactstrap](https://www.npmjs.com/package/reactstrap).
+World's most popular framework for building responsive, mobile-first sites. Intuitive and powerful, tho relatively bulky in size. Many modern UI kits are based on it like [React Bootstrap](https://www.npmjs.com/package/react-bootstrap) or [Reactstrap](https://www.npmjs.com/package/reactstrap).
 
 5.[Tailwind](https://www.npmjs.com/package/tailwindcss)
 
@@ -54,7 +54,7 @@ Node.js middleware for providing a Connect/Express middleware that can be used t
 
 11.[Axios](https://www.npmjs.com/package/axios)
 
-A promise-based HTTP client for the browser and Node.js. It’s easy to set-up, intuitive, and simplifies a lot of stuff compared to JS built-in [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+A promise-based HTTP client for the browser and Node.js. It's easy to set-up, intuitive, and simplifies a lot of stuff compared to JS built-in [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 12.[Body-parser](https://www.npmjs.com/package/body-parser)
 
@@ -104,7 +104,7 @@ Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite an
 
 21.[Passport](https://www.npmjs.com/package/passport)
 
-Passport’s purpose is to authenticate requests through an extensible set of plugins known as strategies. You provide Passport a request to authenticate, and Passport provides hooks for controlling what occurs when authentication succeeds or fails.
+Passport's purpose is to authenticate requests through an extensible set of plugins known as strategies. You provide Passport a request to authenticate, and Passport provides hooks for controlling what occurs when authentication succeeds or fails.
 
 22.[Bcrypt](https://www.npmjs.com/package/bcrypt)
 
@@ -136,13 +136,13 @@ NextJS first and foremost supports server rendering as well as statically genera
 
 28.[NuxtJS](https://www.npmjs.com/package/nuxt)
 
-NuxtJS is basically a NextJS alternative in Vue’s ecosystem. NuxtJS’s goal is to make web development powerful and performant with great developer experience in mind.
+NuxtJS is basically a NextJS alternative in Vue's ecosystem. NuxtJS's goal is to make web development powerful and performant with great developer experience in mind.
 
 ## 🌟Templating languages
 
 29.[Mustache](https://www.npmjs.com/package/mustache)
 
-Mustache is a logic-less template syntax. It can be used for HTML, config files, source code — anything. It works by expanding tags in a template using values provided in a hash or object.
+Mustache is a logic-less template syntax. It can be used for HTML, config files, source code --- anything. It works by expanding tags in a template using values provided in a hash or object.
 
 30.[Handlebars](https://www.npmjs.com/package/handlebars)
 
@@ -160,17 +160,17 @@ A great module to convert large images in common formats to smaller, web-friendl
 
 33.[GM](https://www.npmjs.com/package/gm)
 
-Thanks to the Node.js module GM you can use two popular tools for creating, editing, composing, and converting images — GraphicsMagick and ImageMagick directly from within your code.
+Thanks to the Node.js module GM you can use two popular tools for creating, editing, composing, and converting images --- GraphicsMagick and ImageMagick directly from within your code.
 
 34.[Cloudinary](https://www.npmjs.com/package/cloudinary)
 
-Dedicated module to ease work with cloud service that offers a solution to a web application’s entire image management pipeline.
+Dedicated module to ease work with cloud service that offers a solution to a web application's entire image management pipeline.
 
 ## 📅 Date formatting
 
 35.[DayJS](https://www.npmjs.com/package/dayjs)
 
-DayJS is a fast and lightweight alternative to [MomentJS](https://www.npmjs.com/package/moment) (in maintenance mode since September, 2020). Uses similar API — if you have used MomentJS, you already know how to use most of DayJS.
+DayJS is a fast and lightweight alternative to [MomentJS](https://www.npmjs.com/package/moment) (in maintenance mode since September, 2020). Uses similar API --- if you have used MomentJS, you already know how to use most of DayJS.
 
 36.[Luxon](https://www.npmjs.com/package/luxon)
 
@@ -204,7 +204,7 @@ Powerful schema description language and data validator for JavaScript.
 
 42.[Formik](https://www.npmjs.com/package/formik)
 
-Formik is a popular open-source form library for React and React Native. It’s easy to use, declarative, and adaptive.
+Formik is a popular open-source form library for React and React Native. It's easy to use, declarative, and adaptive.
 
 43.[Multer](https://www.npmjs.com/package/multer)
 
@@ -266,7 +266,7 @@ JavaScript parser, minifier, compressor and beautifier toolkit. It can take mult
 
 55.[Nodemon](https://www.npmjs.com/package/nodemon)
 
-Simple monitor script for use during the development of a Node.js app. Useful for development, since it’s incredibly easy to restart and has file-watching enabled and baked in by default
+Simple monitor script for use during the development of a Node.js app. Useful for development, since it's incredibly easy to restart and has file-watching enabled and baked in by default
 
 56.[PM2](https://www.npmjs.com/package/pm2)
 
@@ -274,7 +274,7 @@ Production process manager for Node.JS applications with a built-in load balance
 
 57.[Concurrently](https://www.npmjs.com/package/concurrently)
 
-Simple and straight to the point — useful tool for running multiple commands concurrently.
+Simple and straight to the point --- useful tool for running multiple commands concurrently.
 
 ## 🚧 CLI and debuggers
 
@@ -288,7 +288,7 @@ An easily embeddable and beautiful command-line interface for Node.js. Provides 
 
 60.[Chalk](https://www.npmjs.com/package/chalk)
 
-Chalk is an extremely simple library, created for one, simple purpose — styling your terminal strings.
+Chalk is an extremely simple library, created for one, simple purpose --- styling your terminal strings.
 
 61.[Debug](https://www.npmjs.com/package/debug)
 
@@ -312,7 +312,7 @@ Async is a utility module that provides straight-forward, powerful functions for
 
 65.[Fs-extra](https://www.npmjs.com/package/fs-extra)
 
-Fs-extra contains methods that aren’t included in the vanilla Node.js `fs` package like `copy()`, `remove()`, `mkdirs()`.
+Fs-extra contains methods that aren't included in the vanilla Node.js `fs` package like `copy()`, `remove()`, `mkdirs()`.
 
 66.[Node-dir](https://www.npmjs.com/package/node-dir)
 
@@ -326,7 +326,7 @@ A simple caching module that has set, get and delete methods and works a little 
 
 68.[Helmet](https://www.npmjs.com/package/helmet)
 
-Helps you secure your apps by setting various HTTP headers. It’s Connect-style middleware, which is compatible with frameworks like Express.
+Helps you secure your apps by setting various HTTP headers. It's Connect-style middleware, which is compatible with frameworks like Express.
 
 69.[PDFKit](https://www.npmjs.com/package/pdfkit)
 

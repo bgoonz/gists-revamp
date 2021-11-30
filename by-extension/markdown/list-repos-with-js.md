@@ -6,18 +6,18 @@ Do you use GitHub? Got a blog/website? Then read on for a handy bit of JavaScrip
 Preamble
 --------
 
-[GitHub](http://github.com/) is simply fantastic. If you're into open source then it really is the place to host your work. Heck, I even use it for private projects as well.
+[GitHub](http://github.com/) is simply fantastic. If you're into open source then it really is the place to host your work. Heck, I even use it for private projects as well.
 
-If you have some kind of blog or personal website why not promote and show-off your projects? It's exactly what I'm doing here. Just look at my [home page](http://aboutcode.net/).
+If you have some kind of blog or personal website why not promote and show-off your projects? It's exactly what I'm doing here. Just look at my [home page](http://aboutcode.net/).
 
 The list of projects is generated using some simple JavaScript. Read on to get the code.
 
 Get the code
 ------------
 
-Before I go further, I must say that I originally copied this code from [jointheconversation.org](http://jointheconversation.org/). However, I've made enough changes that I think it's worth posting here to share the love.
+Before I go further, I must say that I originally copied this code from [jointheconversation.org](http://jointheconversation.org/). However, I've made enough changes that I think it's worth posting here to share the love.
 
-In your HTML add a `<div>` with an ID. The list of projects will be inserted here.
+In your HTML add a `<div>` with an ID. The list of projects will be inserted here.
 
 `
 
@@ -50,7 +50,7 @@ In your HTML add a `<div>` with an ID. The list of projects will be inserted h
 
 `
 
-Next, just before `</body>`, add these scripts.
+Next, just before `</body>`, add these scripts.
 
 `
 
@@ -79,7 +79,7 @@ Feel free to load jQuery from wherever you usually do. I just happen to like usi
 
 Make sure you replace "andrewdavey" with whatever github username you want to display repositories for.
 
-Finally, create the `/scripts/github.js` file. Here comes the magic.
+Finally, create the `/scripts/github.js` file. Here comes the magic.
 
 `
 

@@ -108,12 +108,12 @@ So far we have learned about 6 different data types:
 
 **Utilizing Rest Parameters**
 
-- <span id="e9b5">`Rest Parameter Syntax` : Allows us to capture all of a function’s incoming arguments into an array.</span>
+- <span id="e9b5">`Rest Parameter Syntax` : Allows us to capture all of a function's incoming arguments into an array.</span>
 - <span id="f072">Only the last parameter can be a rest parameter.</span>
 
 **Utilizing Spread Syntax**
 
-- <span id="347a">Takes a data type (i.e. array, obj) and spreads the values of that type where elements are expected.</span>
+- <span id="347a">Takes a data type (i.e. array, obj) and spreads the values of that type where elements are expected.</span>
 - <span id="4612">Takes iterable data and spreads the elements of that type where arguments are expected.</span>
 
 ### Destructuring
@@ -197,7 +197,7 @@ More details in <a href="https://github.com/Lambda-April/Unsorted-Notes/blob/mai
         document.writeIn(properties[i] + ‘:’ + today[properties[i]]);
      }
 
-- <span id="5d1f">This ensures you get the properties you want (i.e. not up the prototype chain) and in the order you want, as opposed to a _for in_ loop which achieves neither of these</span>
+- <span id="5d1f">This ensures you get the properties you want (i.e. not up the prototype chain) and in the order you want, as opposed to a _for in_ loop which achieves neither of these</span>
 
 ### Delete
 

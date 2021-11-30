@@ -1,4 +1,4 @@
-The text-based command line is a common platform for most development environments. Learning how to use this text-based interface enables you to interact directly with your computer’s file system and access many developer-facing tools. Lambda’s track focuses on the bash shell.
+The text-based command line is a common platform for most development environments. Learning how to use this text-based interface enables you to interact directly with your computer's file system and access many developer-facing tools. Lambda's track focuses on the bash shell.
 
 ## Objectives
 

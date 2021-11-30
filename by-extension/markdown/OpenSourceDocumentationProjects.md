@@ -9,7 +9,7 @@
 - https://github.com/prometheus/docs
 - https://github.com/etcd-io/etcd/tree/master/Documentation
 - https://github.com/habitat-sh/habitat-example-plans
-- (Glitch) https://handbook.glitch.me/\#welcome
+- (Glitch) https://handbook.glitch.me/#welcome
 - https://github.com/timescale/docs.timescale.com-content
 - https://github.com/ballerina-guides
 - https://github.com/mesosphere/dcos-docs-site/tree/master

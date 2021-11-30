@@ -72,7 +72,11 @@ no loops or exit & return = O(1)
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/1*HhXmG2cNdg8y4ZCCQGTyuQ.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/1*ULeXxVCDkF73GwhsxyM_2g.png" class="graf-image" /></figure>### Data Structures
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*hkZWlUgFyOSaLD5Uskv0tQ.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/2560/1*COjzunj0-FsMJ0d7v7Z-6g.png" class="graf-image" /></figure>For similar content check out my GitHub:
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*hkZWlUgFyOSaLD5Uskv0tQ.png" class="graf-image" /></figure>
+
+<figure><img src="https://cdn-images-1.medium.com/max/2560/1*COjzunj0-FsMJ0d7v7Z-6g.png" class="graf-image" /></figure>
+
+For similar content check out my GitHub:
 
 <a href="https://github.com/bgoonz" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/bgoonz"><strong>bgoonz - Overview</strong><br />
 <em>Web Developer, Electrical Engineer https://bryanguner.medium.com/ https://portfolio42.netlify.app/…</em>github.com</a><a href="https://github.com/bgoonz" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>

@@ -13,7 +13,7 @@ My Awesome JavaScript List Part 2
 **_…well… not really… here’s the rest of my stash:_**
 
 <a href="https://github.com/bgoonz/Cumulative-Resource-List/tree/master/README-s" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/bgoonz/Cumulative-Resource-List/tree/master/README-s"><strong>bgoonz/Cumulative-Resource-List</strong><br />
-<em>List of useful cheats heets Inspired by <span class="citation" data-cites="sindresorhus">@sindresorhus</span> awesome and improved by these amazing contributors . If you see a…</em>github.com</a><a href="https://github.com/bgoonz/Cumulative-Resource-List/tree/master/README-s" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>List of useful cheats heets Inspired by @sindresorhus awesome and improved by these amazing contributors . If you see a…</em>github.com</a><a href="https://github.com/bgoonz/Cumulative-Resource-List/tree/master/README-s" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 ---
 
@@ -521,7 +521,7 @@ My Awesome JavaScript List Part 2
 
 > <a href="https://github.com/nmn/react-timeago" class="markup--anchor markup--pullquote-anchor">react-timeago</a> — A simple time-ago component for ReactJs.
 
-> <a href="https://github.com/hustcc/timeago-react" class="markup--anchor markup--pullquote-anchor">timeago-react</a> — Simple and efficient react component to format date with `*** time ago` statement. eg: ‘3 hours ago’.
+> <a href="https://github.com/hustcc/timeago-react" class="markup--anchor markup--pullquote-anchor">timeago-react</a> — Simple and efficient react component to format date with `*** time ago` statement. eg: '3 hours ago'.
 
 > Photo / Image
 
@@ -693,7 +693,7 @@ My Awesome JavaScript List Part 2
 
 > Type Select
 
-> _Let the user select something (e.g. a tag) while typing_
+> _Let the user select something (e.g. a tag) while typing_
 
 > <a href="https://github.com/olahol/react-tagsinput" class="markup--anchor markup--pullquote-anchor">react-tagsinput</a> — A simple react component for inputing tags.
 
@@ -737,7 +737,7 @@ My Awesome JavaScript List Part 2
 
 > _Let the user define an order on a list_
 
-> <a href="https://github.com/RubaXa/Sortable" class="markup--anchor markup--pullquote-anchor">sortablejs</a> — Sortable — is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery. Supports Meteor, AngularJS, React, Polymer, Knockout and any CSS library, e.g. Bootstrap.
+> <a href="https://github.com/RubaXa/Sortable" class="markup--anchor markup--pullquote-anchor">sortablejs</a> — Sortable — is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery. Supports Meteor, AngularJS, React, Polymer, Knockout and any CSS library, e.g. Bootstrap.
 
 > <a href="https://github.com/jasonslyvia/react-anything-sortable" class="markup--anchor markup--pullquote-anchor">react-anything-sortable</a> — A ReactJS component that can sort any children with touch support and IE8 compatibility.
 
@@ -1177,7 +1177,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://github.com/logux/server" class="markup--anchor markup--pullquote-anchor">Logux Server</a> — Build own Logux server or make proxy between WebSocket and HTTP backend on any language.
 
-> · ​<a href="https://github.com/expo/results" class="markup--anchor markup--pullquote-anchor"><span class="citation" data-cites="expo/results">@expo/results</span></a> — Efficient, standards-compliant library for representing results of successful or failed operations.
+> · ​<a href="https://github.com/expo/results" class="markup--anchor markup--pullquote-anchor">@expo/results</a> — Efficient, standards-compliant library for representing results of successful or failed operations.
 
 > · ​<a href="https://github.com/milesj/emojibase" class="markup--anchor markup--pullquote-anchor">Emojibase</a> — Collection of lightweight, up-to-date, pre-generated, specification compliant, localized emoji JSON datasets, regex patterns, and more.
 
@@ -1273,7 +1273,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://github.com/open-draft/reach-schema" class="markup--anchor markup--pullquote-anchor">Reach Schema</a> — Functional schema-driven JavaScript object validation library.
 
-> · ​<a href="https://github.com/cyclejs/callbags" class="markup--anchor markup--pullquote-anchor"><span class="citation" data-cites="cycle/callbags">@cycle/callbags</span></a> — Set of commonly used stream operators implemented as callbags with Typescript and ES modules.
+> · ​<a href="https://github.com/cyclejs/callbags" class="markup--anchor markup--pullquote-anchor">@cycle/callbags</a> — Set of commonly used stream operators implemented as callbags with Typescript and ES modules.
 
 > · ​<a href="https://github.com/thi-ng/umbrella/" class="markup--anchor markup--pullquote-anchor">umbrella</a> — Broadly scoped ecosystem & mono-repository of ~135 TypeScript projects for functional, data driven development.
 

@@ -34,7 +34,7 @@ Browsers don’t have a notion of a file system so we cannot use require or modu
 
 ### The fs module
 
-Node comes with an <a href="https://nodejs.org/api/fs.html" class="markup--anchor markup--p-anchor">fs module</a> that contains methods that allow us to interact with our computer’s **F**ile **S**ystem through JavaScript. No additional installations are required; to access this module we can simply `require` it. We recommend that you code along with this reading. Let’s begin with a `change-some-files.js` script that imports the module:
+Node comes with an <a href="https://nodejs.org/api/fs.html" class="markup--anchor markup--p-anchor">fs module</a> that contains methods that allow us to interact with our computer’s **F**ile **S**ystem through JavaScript. No additional installations are required; to access this module we can simply `require` it. We recommend that you code along with this reading. Let's begin with a `change-some-files.js` script that imports the module:
 
     // change-some-files.js
 
@@ -44,13 +44,13 @@ Similar to what we saw in the `readline` lesson, `require` will return to us a o
 
 **_Did you know?_** _I/O is short for input/output. It’s usage is widespread and all the hip tech companies are using it, like.io._
 
-The `fs` module contains tons of functionality! Chances are that if there is some operation you need to perform regarding files, the `fs` module supports it. The module also offers both synchronous and asynchronous implementations of these methods. We prefer to not block the thread and so we’ll opt for the asynchronous flavors of these methods.
+The `fs` module contains tons of functionality! Chances are that if there is some operation you need to perform regarding files, the `fs` module supports it. The module also offers both synchronous and asynchronous implementations of these methods. We prefer to not block the thread and so we'll opt for the asynchronous flavors of these methods.
 
 ### Creating a new file
 
 To create a file, we can use the `writeFile` method. According to the documentation, there are a few ways to use it. The most straight forward way is:
 
-The code a<a href="https://gist.github.com/bgoonz/8898ad673bd2ecee9d93f8ec267cf213" class="markup--anchor markup--p-anchor">create-a-nnew-file.js (github.com)</a>bove will create a new file called `foo.txt` in the same directory as our `change-some-file.js` script. It will write the string `'Hello world!'` into that newly created file. The third argument specifies the encoding of the characters. There are different ways to encode characters; <a href="https://en.wikipedia.org/wiki/UTF-8" class="markup--anchor markup--p-anchor">UTF-8</a> is the most common and you’ll use this in most scenarios. The fourth argument to `writeFile` is a callback that will be invoked when the write operation is complete. The docs indicate that if there is an error during the operation (such as an invalid encoding argument), an error object will be passed into the callback. This type of error handling is quite common for asynchronous functions. Like we are used to, since `writeFile` is asynchronous, we need to utilize _callback chaining_ if we want to guarantee that commands occur _after_ the write is complete or fails.
+The code a<a href="https://gist.github.com/bgoonz/8898ad673bd2ecee9d93f8ec267cf213" class="markup--anchor markup--p-anchor">create-a-nnew-file.js (github.com)</a>bove will create a new file called `foo.txt` in the same directory as our `change-some-file.js` script. It will write the string `'Hello world!'` into that newly created file. The third argument specifies the encoding of the characters. There are different ways to encode characters; <a href="https://en.wikipedia.org/wiki/UTF-8" class="markup--anchor markup--p-anchor">UTF-8</a> is the most common and you'll use this in most scenarios. The fourth argument to `writeFile` is a callback that will be invoked when the write operation is complete. The docs indicate that if there is an error during the operation (such as an invalid encoding argument), an error object will be passed into the callback. This type of error handling is quite common for asynchronous functions. Like we are used to, since `writeFile` is asynchronous, we need to utilize _callback chaining_ if we want to guarantee that commands occur _after_ the write is complete or fails.
 
 _Beware! If the file name specified to_ `writeFile` _already exists, it will completely overwrite the contents of that file._
 
@@ -84,7 +84,7 @@ We can use the `readFile` method to read the contents of this file. The method a
 
     I do not know why
 
-Success! From here, you can do anything you please with the data read from the file. For example, since `data` is a string, we could split the string on the newline character `\n` to obtain an array of the file’s lines:
+Success! From here, you can do anything you please with the data read from the file. For example, since `data` is a string, we could split the string on the newline character `\n` to obtain an array of the file's lines:
 
     THE CONTENTS ARE:
 

@@ -217,7 +217,7 @@ You can think of this as roughly equivalent to the slice method called on a Java
     a = 'seventeen'
     print(a)         # => seventeen
 
-- <span id="4605">`NaN` _does not exist in Python, but you can ‘create’ it like so:  
+- <span id="4605">`NaN` _does not exist in Python, but you can 'create' it like so:  
   _`print(float("nan"))`</span>
 - <span id="d150">_Python replaces_ `null` _with_ `none`_._</span>
 - <span id="6fa7">`none` **_is an object_** _and can be directly assigned to a variable._</span>
@@ -230,8 +230,7 @@ You can think of this as roughly equivalent to the slice method called on a Java
 
 - <span id="b843">One of the biggest benefits of Python is that it reads more like English than JS does.</span>
 
-# <figure><img src="https://cdn-images-1.medium.com/max/800/0*HQpndNhm1Z_xSoHb.png" class="graf-image" /></figure>Logical AND
-
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*HQpndNhm1Z_xSoHb.png" class="graf-image" /></figure># Logical AND
     print(True and True)    # => True
     print(True and False)   # => False
     print(False and False)  # => False
@@ -392,7 +391,7 @@ You can think of this as roughly equivalent to the slice method called on a Java
     except ZeroDivisionError:
         pass
 
-- <span id="030b">The `pass` method won’t allow you to bypass every single error so you can chain an exception series like so:</span>
+- <span id="030b">The `pass` method won't allow you to bypass every single error so you can chain an exception series like so:</span>
 
 <!-- -->
 
@@ -746,12 +745,12 @@ Working with sets**
 
 Always Includes:
 
-> 1.  The for keyword
-> 2.  A variable name
-> 3.  The ‘in’ keyword
-> 4.  An iterable of some kid
-> 5.  A colon
-> 6.  On the next line, an indented block of code called the for clause.
+> 1. The for keyword
+> 2. A variable name
+> 3. The ‘in’ keyword
+> 4. An iterable of some kid
+> 5. A colon
+> 6. On the next line, an indented block of code called the for clause.
 
 **You can use break and continue statements inside for loops as well.**
 

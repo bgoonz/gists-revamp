@@ -233,7 +233,7 @@ The above two components are equivalent from React’s point of view.
 
 ### **10. Create routes using components from the react-router-dom package**
 
-1.  Import the react-router-dom package:
+a. Import the react-router-dom package:
 
     npm i react-router-dom
 

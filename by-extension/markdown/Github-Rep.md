@@ -156,7 +156,7 @@ Inspired by <a href="https://kentcdodds.com/blog/first-timers-only" class="marku
 
 If you are a maintainer of open-source projects, add the label `first-timers-only` (or similar) to your project and list it here so that people can find it.
 
-If you are looking to contribute, then explore this list, look at `first-timers-only` <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=label%3Afirst-timers-only+is%3Aissue+is%3Aopen&amp;type=" class="markup--anchor markup--p-anchor">labelled open issues on Github</a>, and follow <a href="https://twitter.com/first_tmrs_only" class="markup--anchor markup--p-anchor"><span class="citation" data-cites="first_tmrs_only">@first_tmrs_only</span></a> on Twitter to be notified when a new `first-timers-only` issue is created.
+If you are looking to contribute, then explore this list, look at `first-timers-only` <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=label%3Afirst-timers-only+is%3Aissue+is%3Aopen&amp;type=" class="markup--anchor markup--p-anchor">labelled open issues on Github</a>, and follow <a href="https://twitter.com/first_tmrs_only" class="markup--anchor markup--p-anchor">@first_tmrs_only</a> on Twitter to be notified when a new `first-timers-only` issue is created.
 
 If you are not a programmer but would like to contribute, check out the <a href="https://github.com/szabgab/awesome-for-non-programmers" class="markup--anchor markup--p-anchor">Awesome for non-programmers</a> list.
 
@@ -182,7 +182,7 @@ Navigate to <a href="https://open.appacademy.io/" class="markup--anchor markup--
 The rest of the courses from our legendary Full-Stack curriculum are available to you from the moment you sign up. To switch, simply click the ‘Course Outline’ at the top of the page. The menu should have a ‘Switch’ button which will list all available courses.
 
 <a href="https://github.com/appacademy/welcome-to-open" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/appacademy/welcome-to-open"><strong>appacademy/welcome-to-open</strong><br />
-<em>tl;dr: click here to learn to code for free With WebDevHub Open you’ll get free access to WebDevHub’s entire…</em>github.com</a><a href="https://github.com/appacademy/welcome-to-open" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>tl;dr: click here to learn to code for free With WebDevHub Open you'll get free access to WebDevHub's entire…</em>github.com</a><a href="https://github.com/appacademy/welcome-to-open" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 ---
 
@@ -313,7 +313,7 @@ You can find implementations of these projects in many other languages by other 
 
 ### The awesome manifesto
 
-If you want your list to be included on `awesome`, try to only include actual awesome stuff in your list. After all, it’s a curation, not a collection.
+If you want your list to be included on `awesome`, try to only include actual awesome stuff in your list. After all, it's a curation, not a collection.
 
 But what is awesome?
 
@@ -807,7 +807,7 @@ Forks, tutorials, workshops, and other resources based on the RealWorld project:
 - <span id="e813"><a href="https://medium.freecodecamp.org/a-real-world-comparison-of-front-end-frameworks-with-benchmarks-e1cb62fd526c" class="markup--anchor markup--li-anchor">A Real-World Comparison of Front-End Frameworks with Benchmarks 2017</a></span>
 
 <a href="https://github.com/gothinkster/realworld" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/gothinkster/realworld"><strong>gothinkster/realworld</strong><br />
-<em>“The mother of all demo apps” - Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many…</em>github.com</a><a href="https://github.com/gothinkster/realworld" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>"The mother of all demo apps" - Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many…</em>github.com</a><a href="https://github.com/gothinkster/realworld" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 ---
 

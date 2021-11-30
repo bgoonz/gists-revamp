@@ -42,13 +42,15 @@ Quiz yourself with this website I made:
 - <span id="42a6">**Closure:** “Closures are functions that refer to independent (free) variables. In other words, the function defined in the closure ‘remembers’ the environment in which it was created.” — MDN</span>
 - <span id="023f">**Variable Shadowing:** “occurs when a variable declared within a certain scope … has the same name as a variable declared in an outer scope.” — Wikipedia</span>
 - <span id="7ba5">**for statement:** “The for statement creates a loop that consists of three optional expressions, enclosed in parentheses and separated by semicolons, followed by a statement or a set of statements executed in the loop.” — MDN</span>
-- <span id="6f95">**initialization:** “An expression (including assignment expressions) or variable declaration. Typically used to initialize a counter variable. This expression may optionally declare new variables with the var keyword. These variables are not local to the loop, i.e. they are in the same scope the for loop is in. The result of this expression is discarded.” — MDN</span>
+- <span id="6f95">**initialization:** “An expression (including assignment expressions) or variable declaration. Typically used to initialize a counter variable. This expression may optionally declare new variables with the var keyword. These variables are not local to the loop, i.e. they are in the same scope the for loop is in. The result of this expression is discarded.” — MDN</span>
 - <span id="c763">**condition:** “An expression to be evaluated before each loop iteration. If this expression evaluates to true, statement is executed. This conditional test is optional. If omitted, the condition always evaluates to true. If the expression evaluates to false, execution skips to the first expression following the for construct.” — MDN</span>
 - <span id="0954">**final-expression:** “An expression to be evaluated at the end of each loop iteration. This occurs before the next evaluation of condition. Generally used to update or increment the counter variable.” — MDN</span>
 - <span id="76ee">**statement:** “A statement that is executed as long as the condition evaluates to true. To execute multiple statements within the loop, use a block statement ({ … }) to group those statements.” — MDN</span>
 - <span id="31bf">**Arrays:** “JavaScript arrays are used to store multiple values in a single variable.” — W3Schools</span>
 
-<figure><img src="https://cdn-images-1.medium.com/max/2560/1*A1vTM5TdeUhUIfWxemwUEw.png" class="graf-image" /></figure>#### I am going to try something new this article… it’s called **spaced repetition.**
+<figure><img src="https://cdn-images-1.medium.com/max/2560/1*A1vTM5TdeUhUIfWxemwUEw.png" class="graf-image" /></figure>
+
+#### I am going to try something new this article… it’s called **spaced repetition.**
 
 > <a href="https://en.wikipedia.org/wiki/Spaced_repetition" class="markup--anchor markup--blockquote-anchor"><strong>“Spaced repetition</strong></a> is an <a href="https://en.wikipedia.org/wiki/Evidence-based_learning" class="markup--anchor markup--blockquote-anchor">evidence-based learning</a> technique that is usually performed with <a href="https://en.wikipedia.org/wiki/Flashcard" class="markup--anchor markup--blockquote-anchor" title="Flashcard">flashcards</a>. Newly introduced and more difficult flashcards are shown more frequently, while older and less difficult flashcards are shown less frequently in order to exploit the psychological <a href="https://en.wikipedia.org/wiki/Spacing_effect" class="markup--anchor markup--blockquote-anchor" title="Spacing effect">spacing effect</a>. The use of spaced repetition has been proven to increase rate of learning.”
 
@@ -143,7 +145,7 @@ Let’s step things up and see what happens when we start actually adding code t
 #### Execution Context ≠(NOT EQUAL)≠≠≠Scope
 
 1.  <span id="0fcc">The **global execution context** is created **_before_** any code is executed.</span>
-2.  <span id="de32">Whenever a function is _executed_ invoked (this means the function is told to run… i.e. after the doSomething function has been declared … calling ‘doSomething()’, a **new execution context** gets created.</span>
+2.  <span id="de32">Whenever a function is _executed_ invoked (this means the function is told to run… i.e. after the doSomething function has been declared … calling ‘doSomething()’, a **new execution context** gets created.</span>
 3.  <span id="20c3">**Every** execution context provides `this` keyword, which points to an **object** to which the current code that’s being executed belongs.</span>
 
 For more info read about <a href="https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd" class="markup--anchor markup--p-anchor">Event Queue and Call Stack</a>
@@ -290,7 +292,7 @@ Only function declarations are hoisted in JavaScript, function expressions are n
       console.log('Hello World!');
     }
 
-As JavaScript only hoist declarations, not initializations (assignments), so the `helloWorld`will be treated as a variable, not as a function. Because `helloWorld` is a `var` variable, so the engine will assign is the `undefined` value during hoisting.
+As JavaScript only hoist declarations, not initializations (assignments), so the `helloWorld `will be treated as a variable, not as a function. Because `helloWorld` is a `var` variable, so the engine will assign is the `undefined` value during hoisting.
 
 So this code will work.
 
@@ -411,7 +413,7 @@ Let’s look at the Window/Console in a browser/node environment. Type `window` 
 
 There are two types of scope in javascript, `Global Vs. Local` and that this is important to understand in terms of a computer program written in JavaScript.
 
-When a function is declared and created, a new `scope` is also created. Any variables declared within that function’s scope will be `enclosed` in a lexical/private scope that belongs to that function. Also, it is important to remember that functions look `outward` for context. If some variable isn’t defined in a function’s scope, the function will look outside the scope chain and search for a variable being referenced in the outer scope. This is what closure is all about.
+When a function is declared and created, a new `scope` is also created. Any variables declared within that function's scope will be `enclosed` in a lexical/private scope that belongs to that function. Also, it is important to remember that functions look `outward` for context. If some variable isn't defined in a function's scope, the function will look outside the scope chain and search for a variable being referenced in the outer scope. This is what closure is all about.
 
 In it’s most simplest of forms this is a closure:
 
@@ -435,7 +437,7 @@ Let’s look at another example:
 
 Not much different than the idea presented above, but the thought remains the same. When ‘greet’ is called, it has no context in its local scope of finding `lastName` so, it looks outside its scope to find it and use the `lastName` that is found there.
 
-Let’s take this a step further. In the given examples, we’ve seen that we have created two environments for our code. The first would be the global environment where `lastName` and `greet` exist. The second would be the local environment where the alert function is called. Let’s represent those two environments like this:
+Let’s take this a step further. In the given examples, we’ve seen that we have created two environments for our code. The first would be the global environment where `lastName` and `greet` exist. The second would be the local environment where the alert function is called. Let's represent those two environments like this:
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*fpIwHvwpDYxatfE9.png" class="graf-image" /></figure>### What is a closure?
 
@@ -463,7 +465,7 @@ Context is most often determined by how a function is invoked. When a function i
 ### `this`** ?**
 
 - <span id="2c6d">`This` : Keyword that exists in every function and evaluates to the object that is currently invoking that function.</span>
-- <span id="2b18">**Method-Style Invocation** : syntax goes like `object.method(arg)`. (i.e. array.push, str.toUpperCase()</span>
+- <span id="2b18">**Method-Style Invocation** : syntax goes like `object.method(arg)`. (i.e. array.push, str.toUpperCase()</span>
 - <span id="17bb">`Context` refers to the value of this within a function and `this` refers to where a function is invoked.</span>
 
 **Issues with Scope and Context**
@@ -482,7 +484,7 @@ We can run JS in strict mode by tagging `use strict` at the top of our program.
 
 **Changing Context using Bind**
 
-“The simplest use of `bind()` is to make a function that, no matter how it is called, is called with a particular this value”.
+“The simplest use of `bind()` is to make a function that, no matter how it is called, is called with a particular this value".
 
 **Binding with Arguments**
 
@@ -567,7 +569,7 @@ For example:
 
 However, if we were to return a function from `addOne()` that referenced `counter`, counter would become part of the context of that new function, even after `addOne()` finishes executing. This is easier to see in code than to explain in words:
 
-This works! we only instantiate counter when `createAdder()` is called, but it’s value gets updated whenever the function it returns is called.
+This works! we only instantiate counter when `createAdder()` is called, but it's value gets updated whenever the function it returns is called.
 
 > We say that this inner function is closed around the variable `counter`
 
@@ -585,11 +587,11 @@ So it seems we should declare all of our variables at the global scope.
 
 > Why could this be a problem?
 
-It seems reasonable to want `counter` to _only_ be accessed/modified through our `addOne()` function, but if our variable is defined within the global scope, it’s simply not so.
+It seems reasonable to want `counter` to _only_ be accessed/modified through our `addOne()` function, but if our variable is defined within the global scope, it's simply not so.
 
 This may not seem like a major concern — we can just make sure we don’t access it directly.
 
-We need some form of encapsulation — i.e. the data our function relies on is _completely_ contained within the logic of that function
+We need some form of encapsulation — i.e. the data our function relies on is _completely_ contained within the logic of that function
 
 ### Inner Scope
 
@@ -599,13 +601,13 @@ OK, this seems to work as expected, however
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*hCP3tX_zDtTQLRQT.png" class="graf-image" /></figure>Every function creates it’s own local scope.
 
-Compared to it’s context (i.e. *where* our function is defined), we call this the inner scope
+Compared to it’s context (i.e. _where_ our function is defined), we call this the inner scope
 
 Our function can access/modify anything outside of it’s scope, so the body of our function, `{ counter++; }`, has an effect that persists in the outside scope.
 
 > What about the other way around…Can global scope modify inner scope?
 
-Because `counter` is _defined_ within our function’s scope, it doesn’t exist within the global scope, so referencing it there doesn’t make sense.
+Because `counter` is _defined_ within our function's scope, it doesn't exist within the global scope, so referencing it there doesn't make sense.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*K-GktN0XO2Gw6BPK.png" class="graf-image" /></figure>
 
@@ -619,7 +621,7 @@ Every function invocation has both a scope and a context associated with it.
 
 To condense it down to a single concept, scope is function-based while context is object-based.
 
-#### In other words, scope pertains to the variable access of a function when it is invoked and is unique to each invocation. Context is always the value of the `this` keyword which is a reference to the object that “owns” the currently executing code.
+#### In other words, scope pertains to the variable access of a function when it is invoked and is unique to each invocation. Context is always the value of the `this` keyword which is a reference to the object that "owns" the currently executing code.
 
 ### Variable Scope
 

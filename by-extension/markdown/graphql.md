@@ -1,6 +1,6 @@
 # GraphQL Workshop
 
-Welcome! We’re really glad you’re here! Below you’ll find all of the resources that we’ll use throughout this course. If you’re looking for slides, samples, links, etc., this is the place to look.
+Welcome! We're really glad you're here! Below you'll find all of the resources that we'll use throughout this course. If you're looking for slides, samples, links, etc., this is the place to look.
 
 ## Instructor Info
 
@@ -39,10 +39,12 @@ Welcome! We’re really glad you’re here! Below you’ll find all of the resou
 
 - curl Request
 
-  curl -X POST \
-   -H "Content-Type: application/json" \
-   --data '{ "query": "{allLifts{name}}" }' \
-   http://snowtooth.moonhighway.com
+```sh
+curl -X POST \
+     -H "Content-Type: application/json" \
+     --data '{ "query": "{allLifts{name}}" }' \
+     http://snowtooth.moonhighway.com
+```
 
 - [Fetch Sample](https://codesandbox.io/s/n3jro0o4n0)
 - [graphql-request](https://codesandbox.io/s/4qzq5z2vz0)

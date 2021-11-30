@@ -37,7 +37,7 @@ To determine if your Windows computer already has Python 3:
 
 `python --version`
 
-<figure><img src="https://cdn-images-1.medium.com/max/600/1*59V2ZNbyJfsdGR2N20PM7w.png" class="graf-image" /></figure>1.  <span id="e87f">Running `python --version` may not return a value, or may return an error message stating *‘python’ is not recognized as an internal or external command, operable program or batch file.* This indicates Python is not installed on your Windows system.</span>
+<figure><img src="https://cdn-images-1.medium.com/max/600/1*59V2ZNbyJfsdGR2N20PM7w.png" class="graf-image" /></figure>1.  <span id="e87f">Running `python --version` may not return a value, or may return an error message stating *'python' is not recognized as an internal or external command, operable program or batch file.* This indicates Python is not installed on your Windows system.</span>
 2.  <span id="7c04">If you see the word `Python` with a set of numbers separated by `.` characters, some version of Python is installed.</span>
 
 #### i.e.
@@ -359,7 +359,7 @@ Unlike many other languages, there is no `var`, `let`, or `const` to declare a v
 
 Remember, there is a difference between integers and strings. _Remember: String =_ `""`_._ To convert between these two, you can put an int in a `str()` function, and a string in a `int()` function. There is also a less used one, called a float. Mainly, these are integers with decimals. Change them using the `float()` command.
 
-<a href="https://repl.it/@bgoonz/second-scr?lite=true&amp;amp;referrer=https%3A%2F%2Fbryanguner.medium.com" class="markup--anchor markup--p-anchor">https://repl.it/<span class="citation" data-cites="bgoonz/second-scr?lite">@bgoonz/second-scr?lite</span>=true&amp;amp;referrer=https%3A%2F%2Fbryanguner.medium.com</a>
+<a href="https://repl.it/@bgoonz/second-scr?lite=true&amp;amp;referrer=https%3A%2F%2Fbryanguner.medium.com" class="markup--anchor markup--p-anchor">https://repl.it/@bgoonz/second-scr?lite=true&amp;amp;referrer=https%3A%2F%2Fbryanguner.medium.com</a>
 
     x = 5
     x = str(x)
@@ -488,8 +488,8 @@ _module2.py_
     print(random.randint(3,5)) # Prints a random number between 3 and 5
 
 > _Pro Tip:  
-> Do_ `from random import randint` _to not have to do_ `random.randint()`_, just_ `randint()`\_  
-> To import all functions from a module, you could do\_ `from random import *`
+> Do_ `from random import randint` _to not have to do_ `random.randint()`_, just_ `randint()`_  
+> To import all functions from a module, you could do_ `from random import *`
 
 ### New: Loops!
 

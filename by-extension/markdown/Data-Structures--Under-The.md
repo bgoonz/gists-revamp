@@ -457,7 +457,7 @@ n = 2^{h-1} \* 2¹ — 1
 n = 2^{h-1+1}- 1  
 n = 2^{h} — 1**
 
-So that’s how we can go from h to n. What about the other direction?
+So that’s how we can go from h to n. What about the other direction?
 
 We need to bring the h down from the exponent.
 

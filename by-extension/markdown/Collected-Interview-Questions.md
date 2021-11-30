@@ -4,11 +4,11 @@ Interpreted languages don’t run at the machine code level. They are interprete
 
 Compiled languages are converted to machine code to execute directly on the CPU. This makes them typically much faster than interpreted programs.
 
-_\[Technically any language could be compiled or interpreted, but there are some languages that typically get compiled (Go, C, C++, etc.) and some that typically get interpreted (Java, Python, JavaScript, etc.)\]_
+_[Technically any language could be compiled or interpreted, but there are some languages that typically get compiled (Go, C, C++, etc.) and some that typically get interpreted (Java, Python, JavaScript, etc.)]_
 
 ## Stack vs heap
 
-_\[This specific question, “stack vs. heap” is about where a language allocates memory for different types of objects. It’s not directly about the stack data structure or heap data structure.\]_
+_[This specific question, “stack vs. heap” is about where a language allocates memory for different types of objects. It’s not directly about the stack data structure or heap data structure.]_
 
 When a program executes, the stack is used to hold local variables and function arguments. When a function gets called, a new stack frame is allocated on top of the stack with just enough room to hold all the local variables and arguments to the function. When the function returns, its stack frame is popped from the stack and the variables are forgotten. (Which is OK, because they were only needed for as long as the function was active.)
 
@@ -18,22 +18,22 @@ The heap is used for longer-term storage. Objects that were allocated with new o
 
 Recursion is when a function calls itself.
 
-It typically keeps calling itself until a _base case_ is met that causes it to no longer call itself. (i.e. when the work is done.)
+It typically keeps calling itself until a _base case_ is met that causes it to no longer call itself. (i.e. when the work is done.)
 
 Problems that are composed of identical independent subproblems are good candidates for recursive solutions. (e.g a binary search tree is made up of smaller binary search trees, so traversing them has a nice recursive solution.)
 
 ## Object oriented design
 
-- https://en.wikipedia.org/wiki/Object-oriented\_design
+- https://en.wikipedia.org/wiki/Object-oriented_design
 
 ## Design patterns (singleton, factory)
 
-- https://en.wikipedia.org/wiki/Singleton\_pattern
-- https://en.wikipedia.org/wiki/Factory\_(object-oriented\_programming)
+- https://en.wikipedia.org/wiki/Singleton_pattern
+- https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)
 
 ## S.O.L.I.D. principles
 
-- https://en.wikipedia.org/wiki/SOLID\_(object-oriented\_design)
+- https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
 
 ## Data Structures, Algorithms
 

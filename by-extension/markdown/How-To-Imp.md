@@ -17,7 +17,7 @@ Smart data structures and dumb code works better than the other way around -“E
 > <a href="https://stackoverflow.com/a/31113335/15158587" class="markup--anchor markup--blockquote-anchor">Opposite of ADT is Concrete Data Type (CDT), where it contains an implementation of ADT.</a>
 
 > **Examples:**  
-> `Array, List, Map, Queue, Set, Stack, Table, Tree, and Vector` are ADTs. Each of these ADTs has many implementations i.e. CDT. The container is a high-level ADT of above all ADTs.
+> `Array, List, Map, Queue, Set, Stack, Table, Tree, and Vector` are ADTs. Each of these ADTs has many implementations i.e. CDT. The container is a high-level ADT of above all ADTs.
 
 > **Real life example:**  
 > book is Abstract (Telephone Book is an implementation)

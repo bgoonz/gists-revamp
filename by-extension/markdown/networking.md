@@ -1,41 +1,83 @@
-Networking
+![](https://ca.slack-edge.com/ESZCHB482-U01P89ZE8UE-39838129c205-48)
 
-## Transport
+**Abraham-Mirambeaux**Abraham Mirambeaux
 
-1.  UDP &gt;&gt; UDP is a connectionless protocol
-2.  TCP is a connection-oriented protocol
+![](https://ca.slack-edge.com/ESZCHB482-U01H6NFK8DQ-d48cf8e808ec-48)
 
-## DNS Record Types
+**Aldo**Aldo Mata
 
-1.  SOA - Start of Authority record points to the primary authority for the domain we’re querying
-2.  NS - Name Servers
+![](https://ca.slack-edge.com/ESZCHB482-U01CKMG0QBY-75a0b4d1b3a7-48)
 
-- directory for devices and the IP addresses attached to them
-- translate domain names into numerical IP addresses
+**Andrew Castillo**Andrew Castillo
 
-1.  A / AAAA - record that maps directly to an IP address
-2.  CNAME - record that acts as an alias
-3.  MX - Mail Exchanger - used for e-mail
+![](https://ca.slack-edge.com/ESZCHB482-U01CPAC71L5-b36c8d6fb173-48)
 
-## Network Hardware
+**Anthony Cortese**Anthony Cortese
 
-### Router
+![](https://ca.slack-edge.com/ESZCHB482-U02CA71AVQV-0a2a01eea9f8-48)
 
-- contains internal addresses of each device connected to router
-- can join different networks, a feature switches and hubs cannot do
-- performs NAT (network address translation)
-- NAT allows router a single IP address
-- router can direct traffic to the appropriate address
+**Ash Tilawat**Ashalesh Tilawat
 
-## Switch
+![](https://ca.slack-edge.com/ESZCHB482-U01SNQ8L66Q-8670797ec4d1-48)
 
-- contains the MAC (media access control) address of all - connected devices
-- flood - send to ALL connected devices ”
-- forward - send to a particular device
-- filter - drop data entirely
+**bryan-guner(you)**Bryan Guner
 
-# Switch
+![](https://ca.slack-edge.com/ESZCHB482-U01SGRN4FDH-d119bc08088a-48)
 
-- no network management ,,,
-- signal splitter
-- duplicates data and broadcasts it to ALL connected devices
+**Dave Dwight**David Dwight Jr
+
+![](https://ca.slack-edge.com/ESZCHB482-W012CLEK197-53ea4a23d354-48)
+
+**Derek**Derek Peters
+
+![](https://ca.slack-edge.com/ESZCHB482-U01DSK8KC0G-65f96f90b66e-48)
+
+**Frank Fusco**Frank Fusco
+
+![](https://ca.slack-edge.com/ESZCHB482-U01DR047WRF-c04a2e439047-48)
+
+**Ike**Ike OkonkwoDS Manager - Labs PT
+
+![](https://ca.slack-edge.com/ESZCHB482-U01PTMSDM8R-b615f4d8e258-48)
+
+**Jaden Walker**Jaden Walker
+
+![](https://ca.slack-edge.com/ESZCHB482-W012020TFBL-cf6df601064c-48)
+
+**jake.mallory**Jake Mallory
+
+![](https://ca.slack-edge.com/ESZCHB482-U01SGRMTNHH-a3beab5d8e1e-48)
+
+**Jim Liberi**Jim Liberi
+
+![](https://ca.slack-edge.com/ESZCHB482-U01ERJUAEAZ-dd277bd264b7-48)
+
+**Joe Park**Jong Seo ParkWeb development student from Los Angeles, CA.
+
+![](https://ca.slack-edge.com/ESZCHB482-U01SV83GEPK-e77c679c2fe6-48)
+
+**John Laubscher**John Laubscher
+
+![](https://ca.slack-edge.com/ESZCHB482-U01P09Y9HM5-6ab8348ac940-48)
+
+**Michael-Quint**Michael Quint
+
+![](https://ca.slack-edge.com/ESZCHB482-U01Q4TJEG1E-78d6f170ae00-48)
+
+**Murray Warnock**Murray Warnock
+
+![](https://ca.slack-edge.com/ESZCHB482-U02B1AHRTSN-b9fb78e5eeb7-48)
+
+**Paul St.Germain**Paul St. GermainRelease Manager @ Lambda School Labs
+
+![](https://ca.slack-edge.com/ESZCHB482-U0259QKJJET-b88826f7bc63-48)
+
+**Robert Sharp**Robert SharpData Science Instructor for Labs
+
+![](https://ca.slack-edge.com/ESZCHB482-W01207ZD9TM-d4fecaef9d60-48)
+
+**Ryan Hamblin**Ryan Hamblin![:deer:](https://slack-imgs.com/?c=1&o1=gu&url=https%3A%2F%2Fa.slack-edge.com%2Fproduction-standard-emoji-assets%2F13.0%2Fgoogle-small%2F1f98c%402x.png)Program Manger - Build Week
+
+![](https://ca.slack-edge.com/ESZCHB482-U01SGKE1SGJ-ad70e2ca779e-48)
+
+**Salomon M.**Salomon Maldonado

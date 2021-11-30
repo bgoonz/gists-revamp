@@ -28,7 +28,7 @@ SQL is a powerful language where we can perform a wide range of operations:
 - <span id="5389">insert, update, and delete records in a database (DML operations)</span>
 - <span id="f62e">create new objects in a database (DDL operations)</span>
 - <span id="d790">set permissions on tables, procedures, functions, and views</span>
-- <span id="ebab">and much, much more…</span>
+- <span id="ebab">and much, much more...</span>
 
 ### What is the ANSI SQL standard?
 
@@ -60,6 +60,10 @@ If we check the <a href="https://www.postgresql.org/docs/12/sql-insert.html" cla
 > _INSERT conforms to the SQL standard, except that the RETURNING clause is a PostgreSQL extension, as is the ability to use WITH with INSERT, and the ability to specify an alternative action with ON CONFLICT. Also, the case in which a column name list is omitted, but not all the columns are filled from the VALUES clause or query, is disallowed by the standard._
 
 > _The SQL standard specifies that OVERRIDING SYSTEM VALUE can only be specified if an identity column that is generated always exists. PostgreSQL allows the clause in any case and ignores it if it is not applicable._
+
+>
+
+>
 
 The PostgreSQL documentation includes clear descriptions of any differences from the SQL standard for any command, including:
 
@@ -174,7 +178,7 @@ A RETURNING clause returns the updated rows. This is optional in UPDATE:
 
     UPDATE 1
 
-It is always recommended to perform such operations under transaction blocks (i.e., BEGIN…COMMIT/ROLLBACK;), so we have the option to roll back the operation.
+It is always recommended to perform such operations under transaction blocks (i.e., BEGIN...COMMIT/ROLLBACK;), so we have the option to roll back the operation.
 
 ### 5. DELETE query in PostgreSQL
 
@@ -356,7 +360,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-createsequence.html" class="
 
 PostgreSQL doesn’t directly support BLOBs (binary large objects), but we can work with them using the following methods:
 
-Let’s assume you have an image (in png format) downloaded in the /home/edb/ folder:
+Let's assume you have an image (in png format) downloaded in the /home/edb/ folder:
 
     [edb@localhost]$ ls /home/edb/mypic.png
     /home/edb/mypic.png
@@ -567,6 +571,8 @@ With the help of the <a href="https://www.postgresql.org/docs/12/sql-copy.html" 
 
 - <span id="ddbe">`postgres=#WITH RECURSIVE cte AS ( SELECT emp_no, ename, manager_no, 1 AS level FROM test_table where manager_no is null UNION ALL SELECT e.emp_no, e.ename, e.manager_no, c.level + 1 FROM cte c JOIN test_table e ON e.manager_no = c.emp_no ) SELECT * FROM cte; emp_no | ename | manager_no | level -----------+----------+------------------+------- 10 | A1 | | 1 11 | B1 | 10 | 2 12 | B2 | 10 | 2 13 | B3 | 10 | 2 14 | C1 | 13 | 3 17 | E1 | 11 | 3 18 | E2 | 11 | 3 15 | C2 | 13 | 3 16 | D1 | 15 | 4 (9 rows) postgres=#`</span>
 
+<!-- -->
+
 1.  <span id="a513">  
     </span>
 
@@ -581,11 +587,19 @@ With the help of the <a href="https://www.postgresql.org/docs/12/sql-copy.html" 
 1.  <span id="c6e2">The <a href="https://www.postgresql.org/docs/8.3/tablefunc.html" class="markup--anchor markup--li-anchor">tablefunc extension</a> is a contrib module that resides in the contrib/ folder in PostgreSQL sources.</span>
 2.  <span id="2847">First, create the tablefunc extension:</span>
 
+<!-- -->
+
 - <span id="3505">`postgres=# CREATE EXTENSION tablefunc; CREATE EXTENSION postgres=#`</span>
+
+<!-- -->
 
 1.  <span id="b334">Then, use tablefunc’s connectby function to display results hierarchically:</span>
 
+<!-- -->
+
 - <span id="e7f5">`postgres=# SELECT * FROM connectby('dummy_table', 'emp_no', 'manager_no', '10', 0, '->') AS t(emp_no int, manager_no int, level int, ord text) order by emp_no; emp_no | manager_no | level | ord --------+------------+-------+---------------- 10 | | 0 | 10 11 | 10 | 1 | 10->11 12 | 10 | 1 | 10->12 13 | 10 | 1 | 10->13 14 | 13 | 2 | 10->13->14 15 | 13 | 2 | 10->13->15 16 | 15 | 3 | 10->13->15->16 17 | 11 | 2 | 10->11->17 18 | 11 | 2 | 10->11->18 (9 rows) postgres=#`</span>
+
+<!-- -->
 
 1.  <span id="8781">  
     </span>
@@ -687,7 +701,7 @@ The <a href="https://www.postgresql.org/docs/12/queries-limit.html" class="marku
 
 ###
 
-We can use <a href="https://www.postgresql.org/docs/9.1/plpgsql-control-structures.html" class="markup--anchor markup--p-anchor">conditional statements</a> like IF … ELSE in an anonymous block. The example below checks if the values of variables abc and xyz are matching and prints the result— i.e., 150:
+We can use <a href="https://www.postgresql.org/docs/9.1/plpgsql-control-structures.html" class="markup--anchor markup--p-anchor">conditional statements</a> like IF ... ELSE in an anonymous block. The example below checks if the values of variables abc and xyz are matching and prints the result— i.e., 150:
 
     postgres=# Do
                  $$
@@ -789,7 +803,7 @@ The <a href="https://www.postgresql.org/docs/12/functions-conditional.html" clas
 Recursive queries are used to deal with hierarchical queries or tree-structured data. The structure of a WITH RECURSIVE query is always: a) Non-recursive term  
   b) UNION (or UNION ALL), then a recursive term
 
-where the recursive term includes a reference to the query’s output.
+where the recursive term includes a reference to the query's output.
 
     CREATE TABLE emp_test (
       id int,

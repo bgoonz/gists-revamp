@@ -1,5 +1,4 @@
 ## Lessons
-
 1. [Navigate the filesystem in bash](#navigate-the-file-system)
 2. [View files and folders in bash](#view-files-and-folders-in-bash)
 3. [Create and Delete Files and Folders in bash](#create-and-delete-files-and-folders)
@@ -17,7 +16,6 @@
 ## [Navigate the file system](https://egghead.io/lessons/bash-navigate-the-filesystem-in-bash)
 
 #### Change bash's current working directory
-
 ```bash
 cd <file path here>
 # to go up a directory from your current directory
@@ -25,7 +23,6 @@ cd ..
 ```
 
 #### List a directory's contents
-
 ```bash
 ls
 # for more details, add -l (long)
@@ -50,7 +47,6 @@ ls -la
 ## [View files and folders in bash](https://egghead.io/lessons/bash-view-files-and-folders-in-bash)
 
 #### Output a file to the screen (stdout)
-
 ```bash
 cat <file name>
 # shows it with line numbers
@@ -58,7 +54,6 @@ cat -n <file name>
 ```
 
 #### View a file in bash
-
 ```bash
 # view the file without dumping it all onto your screen
 less <file name>
@@ -70,7 +65,6 @@ less <file name>
 ```
 
 #### View file/folder in default application associated with it
-
 ```bash
 open <file/folder name>
 # view current directory in Finder
@@ -82,13 +76,11 @@ open <file name> -a TextEdit
 ## [Create and delete files and folders](https://egghead.io/lessons/bash-create-and-delete-files-and-folders-in-bash)
 
 #### Create a file
-
 ```bash
 touch <file name>
 ```
 
 #### Set or append to a file
-
 ```bash
 # set the file's contents
 echo 'hi' > file.txt
@@ -98,7 +90,6 @@ echo 'hi' >> file.txt
 ```
 
 #### Create a directory
-
 ```bash
 mkdir <folder name>
 # make intermediary directories as needed
@@ -106,7 +97,6 @@ mkdir -p parent/child/grandchild
 ```
 
 #### Remove a file
-
 ```bash
 # Note, this permanently deletes a file
 rm <file name>
@@ -114,10 +104,10 @@ rm <file name>
 rm -rf <folder name>
 ```
 
+
 ## [Move and Copy Files and Folders with bash](https://egghead.io/lessons/bash-move-and-copy-files-and-folders-with-bash)
 
 #### Move a file
-
 ```bash
 mv <target> <destination>
 # for example, to rename a file
@@ -127,7 +117,6 @@ mv lib/* src
 ```
 
 #### Copy a file
-
 ```bash
 cp <target> <destination>
 # copy everything recursively from one folder to another
@@ -135,7 +124,6 @@ cp -R src/* lib
 ```
 
 ## [Find Files and Folders with `find` in bash](https://egghead.io/lessons/bash-find-files-and-folders-with-find-in-bash)
-
 ```bash
 # find all the PNGs in a folder
 find <path> -name "*.png"
@@ -163,9 +151,7 @@ grep <pattern> <target file or glob>
 ```
 
 ## [Make HTTP requests in bash with `curl`](https://egghead.io/lessons/http-make-http-requests-in-bash-with-curl)
-
 The test server is available in the `curl-practice-server` directory. Run `npm install && npm start` to run it.
-
 ```bash
 curl <url>
 # Useful flags
@@ -202,9 +188,7 @@ echo 'echo Hello World' > script.sh
 chmod u+x script.sh
 ./script.sh
 ```
-
 The `init-js.sh` script for scaffolding a JS project
-
 ```bash
 echo "Initializing JS project at $(pwd)"
 git init
@@ -215,13 +199,11 @@ code .
 ```
 
 One way to add that script to your `$PATH`:
-
 ```bash
 cp init-js.sh /usr/local/bin/init-js
 ```
 
 ## [Store and Use Values with bash Variables](https://egghead.io/lessons/bash-store-and-use-values-with-bash-variables)
-
 ```bash
 # no spaces between name, =, and value
 var=123
@@ -231,15 +213,11 @@ export var
 # this deletes the variable
 unset var
 ```
-
 To see all environment variables
-
 ```bash
 env
 ```
-
 `clone-to-temp.sh` script:
-
 ```bash
 temp=$(mktemp -d)
 git clone --branch $1 $PWD $temp
@@ -277,15 +255,12 @@ echo "local_var = $local_var" # will be empty because it's out of scope
 ## [Understand exit statuses in bash](https://egghead.io/lessons/bash-understand-exit-statuses-in-bash)
 
 Get the last run command's exit status
-
 ```bash
 ls
 # will be 0 if it ran successfully, 1 - 255 for an error
 echo $?
 ```
-
 Exit statuses and functions. `script.sh`
-
 ```bash
 ok() {
   return 0
@@ -307,7 +282,6 @@ echo $? # exit status is same as the last run function/command
 ## [Use Conditional Statements in bash](https://egghead.io/lessons/bash-use-conditional-statements-in-bash)
 
 Basic form
-
 ```bash
 # Some conditional primaries that can be used in the if expression:
 #   =, !=      string (in)equality
@@ -324,13 +298,11 @@ fi
 ```
 
 Conditionals can be used inline in a more ternary-like format
-
 ```bash
 [[ $USER = 'cameronnokes' ]] && echo "yes" || echo "no"
 ```
 
 `check-status.sh` for checking a URL is responding with a 200
-
 ```bash
 check_status() {
   local status=$(curl -ILs $1 | head -n 1 | cut -d ' ' -f 2)
@@ -349,7 +321,6 @@ check_status https://example.org/404
 ## [Chain Commands with Pipes and Redirect Output in bash](https://egghead.io/lessons/bash-chain-commands-with-pipes-and-redirect-output-in-bash)
 
 Pipes
-
 ```bash
 # ps ax will list all running processes
 ps ax | grep Chrome | less
@@ -358,7 +329,6 @@ uglifyjs -c -m -- index.js | gzip -9 | wc -c
 ```
 
 Redirection
-
 ```bash
 # redirect stdout to a file
 ls > ls.txt
@@ -366,8 +336,8 @@ ls > ls.txt
 echo "hi" >> ls.txt
 ```
 
-# Additional learning resources
 
+# Additional learning resources
 - You can view a command's documentation right in bash with `man <command name>`.
 - [Official bash manual](https://www.gnu.org/software/bash/manual/bash.html)
 - [TLDP bash programming intro, basic](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)

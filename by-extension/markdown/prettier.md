@@ -8,7 +8,7 @@ npm i prettier
 
 ```
 
-Add following **script** in **package.json:**
+Add following **script** in **package.json:**
 
 ```
 "pretty": "prettier --write \"./**/*.{js,jsx,json}\""

@@ -1,19 +1,19 @@
 # Inspire [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-Designing and building a modern frontend in any web project can be a long and arduous process. Here’s a collction of links to help you. Enjoy!
+Designing and building a modern frontend in any web project can be a long and arduous process. Here's a collction of links to help you. Enjoy!
 
 ## Concept
 
-##### These sites are good to get a general idea of possible layouts and style paths to take.
+<h5>These sites are good to get a general idea of possible layouts and style paths to take.</h5>
 
 - [TheBestDesigns](https://www.thebestdesigns.com/) - General list of hand picked sites from across the web.
 - [Awwwards](http://www.awwwards.com/) - More awesome sites of various styles.
 - [Dribbble](https://dribbble.com/) - Snaps of icons, doodles, sites, and more from a talented group of people.
 - [Siiimple](https://siiimple.com/) - Another list of sites, but on the much simpler side.
 - [Httpster](http://httpster.net/) - A curated list of the best sites around the Internet.
-- [SaaS Pages](https://saaspages.xyz) - An inspection of Netlify’s page made especially to bring you inspiration.
+- [SaaS Pages](https://saaspages.xyz) - An inspection of Netlify's page made especially to bring you inspiration.
 - [siteInspire](http://www.siteinspire.com/) - Get inspired.
-- [Designer News](https://www.designernews.co/) - The best design / development links from the ’net.
+- [Designer News](https://www.designernews.co/) - The best design / development links from the 'net.
 - [CSS Winner](http://www.csswinner.com/) - Reviewed list of great websites.
 - [OnePageLove](https://onepagelove.com/) - Great influence for one page and general website design.
 - [CodeMyUI](https://codemyui.com/) - List of code snippets for fancy CSS/JS that make an awesome UI.
@@ -23,7 +23,7 @@ Designing and building a modern frontend in any web project can be a long and ar
 
 ## Creation
 
-##### These sites are good for building a basic framework for the site.
+<h5>These sites are good for building a basic framework for the site.</h5>
 
 - Color
   - [ColorsWall](https://colorswall.com/) - Place to store your color palettes.
@@ -42,7 +42,7 @@ Designing and building a modern frontend in any web project can be a long and ar
 - [Google Fonts](https://www.google.com/fonts) - Tons of free, easy to use webfonts.
 - [Text to ASCII](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) - Add some sexy Easter eggs in your source code.
 - [CSS3 Animation Cheat Sheet](http://www.justinaguilar.com/animations/) - A collection of CSS3 animation snippets.
-- [Flat UI](http://designmodo.github.io/Flat-UI/) - A superb HTML and CSS framework for flat design. It’s the juice.
+- [Flat UI](http://designmodo.github.io/Flat-UI/) - A superb HTML and CSS framework for flat design. It's the juice.
 - [CSS2Stylus](http://css2stylus.com) - Convert your CSS to Stylus.
 - [YMNNJQ](http://youmightnotneedjquery.com) - See jQuery functions in natural JS. No libraries.
 - [User Inter Faces](http://uifaces.com) - Get ipsum images for user images.
@@ -54,11 +54,11 @@ Designing and building a modern frontend in any web project can be a long and ar
 
 ## Tools
 
-##### Every painter needs a brush. Well… Most do.
+<h5>Every painter needs a brush. Well... Most do.</h5>
 
 - [Sublime Text](https://www.sublimetext.com) - A very popular text editor for developers.
   - Themes
-    - [Flatron](https://github.com/noahbuscher/Flatron) - It’s flat, purple, and hella sexy.
+    - [Flatron](https://github.com/noahbuscher/Flatron) - It's flat, purple, and hella sexy.
     - [Predawn](https://github.com/jamiewilson/predawn) - Gorgeous dark interface and syntax theme.
 - [Atom](https://atom.io) - A hackable text editor for the 21st century.
 - [Brackets](http://brackets.io/) - Modern, open source editor with live preview.
@@ -66,12 +66,12 @@ Designing and building a modern frontend in any web project can be a long and ar
 - [Hyper](https://hyper.is) - Beautiful, extensible command-line interface
 - [FileZilla](https://filezilla-project.org) - For those who fear FTP in the terminal.
 - [WinSCP](http://winscp.net) - Upload files to a MEAN stack or VPS server.
-- [Sketch](http://www.sketchapp.com/) \[OS X only\] - A professional vector graphics app.
-- [Taskade](https://www.taskade.com/) \[OS X only\] - Create beautiful task lists and outlines.
+- [Sketch](http://www.sketchapp.com/) [OS X only] - A professional vector graphics app.
+- [Taskade](https://www.taskade.com/) [OS X only] - Create beautiful task lists and outlines.
 
 ## Collaborate
 
-##### Working with a team? These links are for you.
+<h5>Working with a team? These links are for you.</h5>
 
 - [Cloud9](https://c9.io) - An awesome, zen way to work with others in the cloud.
 - [Gist](https://gist.github.com) - Share code and text with others fast. Like a mini repository.
@@ -81,7 +81,7 @@ Designing and building a modern frontend in any web project can be a long and ar
 
 ## Backends
 
-##### Every awesome web app needs an awesome backend.
+<h5>Every awesome web app needs an awesome backend.</h5>
 
 - [Firebase](https://www.firebase.com) - A real-time front-end database for your sites.
 - [DigitalOcean](https://www.digitalocean.com/) - A cheap and quality VPS hosting company.
@@ -91,7 +91,7 @@ Designing and building a modern frontend in any web project can be a long and ar
 
 ## Testing
 
-##### Before you launch, these are good tools to make sure your site is ready for stardom.
+<h5>Before you launch, these are good tools to make sure your site is ready for stardom.</h5>
 
 - [Checkbot](https://www.checkbot.io) - Browser extension that tests your website follows 50+ SEO, speed and security best practices.
 - [Placehold](http://placehold.it) - Generate custom placeholder images of any size.
@@ -105,7 +105,7 @@ Designing and building a modern frontend in any web project can be a long and ar
 
 ## Good Reads
 
-##### Need something to read in your spare time?
+<h5>Need something to read in your spare time?</h5>
 
 - [Smashing Magazine](http://www.smashingmagazine.com) - A magazine for all things digital design.
 - [CSS-Tricks](https://css-tricks.com/) - Awesome blog on anything and everything related to CSS.
@@ -113,5 +113,5 @@ Designing and building a modern frontend in any web project can be a long and ar
 - [Insert HTML](http://www.inserthtml.com) - A blog covering current and upcoming techniques and technologies for web developers.
 - [1stWebDesign](http://www.1stwebdesigner.com/blog/) - A good, simple blog on web development and design.
 - [A List Apart](http://alistapart.com) - Guest bloggers and full books on topics from coding to business practices.
-- [GoodUI](http://goodui.org) - It’s definitely not bad.
+- [GoodUI](http://goodui.org) - It's definitely not bad.
 - [Mentor](http://www.mentor.so/) - Get random advice from other designers and developers.

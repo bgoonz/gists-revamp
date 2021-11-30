@@ -6,63 +6,71 @@ This lesson will mostly focus on ES6 Promise syntax, but will use [Bluebird](htt
 
 ## the problem
 
-To demonstrate, let’s take the problem of loading images in the browser. The following shows an implementation using a Node style (error-first) callback:
+To demonstrate, let's take the problem of loading images in the browser. The following shows an implementation using a Node style (error-first) callback:
 
-    function loadImage(url, callback) {
-      var image = new Image();
+```javascript
+function loadImage(url, callback) {
+  var image = new Image();
 
-      image.onload = function() {
-        callback(null, image);
-      };
+  image.onload = function () {
+    callback(null, image);
+  };
 
-      image.onerror = function() {
-        callback(new Error('Could not load image at ' + url));
-      };
+  image.onerror = function () {
+    callback(new Error("Could not load image at " + url));
+  };
 
-      image.src = url;
-    }
+  image.src = url;
+}
+```
 
-<sub>_Tip:_\ The\ above\ is\ implemented\ on\ npm\ as\ [img](https://www.npmjs.com/package/img).</sub>
+<sub>_Tip:_ The above is implemented on npm as [img](https://www.npmjs.com/package/img).</sub>
 
 Loading a single image is relatively easy, and looks like this:
 
-    loadImage('one.png', function(err, image) {
-      if (err) throw err;
-      console.log('Image loaded', image);
-    });
+```js
+loadImage("one.png", function (err, image) {
+  if (err) throw err;
+  console.log("Image loaded", image);
+});
+```
 
 However, as our application grows in complexity, so too does the code. If we were to take the same approach, but load three images, things get a little unwieldy:
 
-    loadImage('one.png', function(err, image1) {
+```js
+loadImage("one.png", function (err, image1) {
+  if (err) throw err;
+
+  loadImage("two.png", function (err, image2) {
+    if (err) throw err;
+
+    loadImage("three.png", function (err, image3) {
       if (err) throw err;
 
-      loadImage('two.png', function(err, image2) {
-        if (err) throw err;
-
-        loadImage('three.png', function(err, image3) {
-          if (err) throw err;
-
-          var images = [image1, image2, image3];
-          console.log('All images loaded', images);
-        });
-      });
+      var images = [image1, image2, image3];
+      console.log("All images loaded", images);
     });
+  });
+});
+```
 
-This tends to create a “Christmas Tree” of functions; and leads to code that is difficult to read and maintain. Further, if we wanted the images to load in parallel, it would need a [more complex solution](https://gist.github.com/mattdesl/7b2afa86481fbce87098).
+This tends to create a "Christmas Tree" of functions; and leads to code that is difficult to read and maintain. Further, if we wanted the images to load in parallel, it would need a [more complex solution](https://gist.github.com/mattdesl/7b2afa86481fbce87098).
 
 ## async
 
-There are numerous abstractions built around the error-first callbacks, sometimes called “errbacks.”
+There are numerous abstractions built around the error-first callbacks, sometimes called "errbacks."
 
 One way to solve the problem is with the [async](https://github.com/caolan/async) module:
 
-    var mapAsync = require('async').map;
+```js
+var mapAsync = require("async").map;
 
-    var urls = [ 'one.png', 'two.png' ];
-    mapAsync(urls, loadImage, function(err, images) {
-      if (err) throw err;
-      console.log('All images loaded', images);
-    });
+var urls = ["one.png", "two.png"];
+mapAsync(urls, loadImage, function (err, images) {
+  if (err) throw err;
+  console.log("All images loaded", images);
+});
+```
 
 Similar abstractions exist independently on npm, such as:
 
@@ -72,35 +80,37 @@ Similar abstractions exist independently on npm, such as:
 - [run-waterfall](https://www.npmjs.com/package/run-waterfall)
 - [map-limit](https://www.npmjs.com/package/map-limit)
 
-This approach is very powerful. It’s [a great fit for small modules](#promises-in-small-modules) as it does not introduce additional bloat or vendor lock-in, and does not have some of the other [pitfalls of promises](#pitfalls).
+This approach is very powerful. It's [a great fit for small modules](#promises-in-small-modules) as it does not introduce additional bloat or vendor lock-in, and does not have some of the other [pitfalls of promises](#pitfalls).
 
 However, in a larger scope, promises can provide a unified and composable structure throughout your application. They will also lay the groundwork for [ES7 async/await](https://jakearchibald.com/2014/es7-async-functions/).
 
 ## promises
 
-Let’s re-implement the above with promises for our control flow. At first this may seem like more overhead, but the benefits will become clear shortly.
+Let's re-implement the above with promises for our control flow. At first this may seem like more overhead, but the benefits will become clear shortly.
 
 ### `new Promise(function(resolve, reject) { ... })`
 
-Below is how the image loading function would be implemented with promises. We’ll call it `loadImageAsync` to distinguish it from the earlier example.
+Below is how the image loading function would be implemented with promises. We'll call it `loadImageAsync` to distinguish it from the earlier example.
 
-    var Promise = require('bluebird')
+```js
+var Promise = require("bluebird");
 
-    function loadImageAsync(url) {
-      return new Promise(function(resolve, reject) {
-        var image = new Image();
+function loadImageAsync(url) {
+  return new Promise(function (resolve, reject) {
+    var image = new Image();
 
-        image.onload = function() {
-          resolve(image);
-        };
+    image.onload = function () {
+      resolve(image);
+    };
 
-        image.onerror = function() {
-          reject(new Error('Could not load image at ' + url));
-        };
+    image.onerror = function () {
+      reject(new Error("Could not load image at " + url));
+    };
 
-        image.src = url;
-      });
-    }
+    image.src = url;
+  });
+}
+```
 
 The function returns a new instance of `Promise` which is _resolved_ to `image` if the load succeeds, or _rejected_ with a new `Error` if it fails. In our case, we `require('bluebird')` for the Promise implementation.
 
@@ -108,27 +118,35 @@ The `Promise` constructor is typically only needed for edge cases like this, whe
 
 For example, the above becomes very concise with our [earlier `loadImage`](#the-problem) function:
 
-    var Promise = require('bluebird');
-    var loadImageAsync = Promise.promisify(loadImage);
+```js
+var Promise = require("bluebird");
+var loadImageAsync = Promise.promisify(loadImage);
+```
 
 Or with the [img](https://www.npmjs.com/package/img) module:
 
-    var Promise = require('bluebird');
-    var loadImage = require('img');
-    var loadImageAsync = Promise.promisify(loadImage);
+```js
+var Promise = require("bluebird");
+var loadImage = require("img");
+var loadImageAsync = Promise.promisify(loadImage);
+```
 
-If you aren’t using Bluebird, you can use [es6-denodeify](https://www.npmjs.com/package/es6-denodeify) for this.
+If you aren't using Bluebird, you can use [es6-denodeify](https://www.npmjs.com/package/es6-denodeify) for this.
 
 ### `.then(resolved, rejected)`
 
 Each `Promise` instance has a `then()` method on its prototype. This allows us to handle the result of the async task.
 
-    loadImageAsync('one.png')
-      .then(function(image) {
-        console.log('Image loaded', image);
-      }, function(err) {
-        console.error('Error loading image', err);
-      });
+```js
+loadImageAsync("one.png").then(
+  function (image) {
+    console.log("Image loaded", image);
+  },
+  function (err) {
+    console.error("Error loading image", err);
+  }
+);
+```
 
 `then` takes two functions, either of which can be `null` or undefined. The `resolved` callback is called when the promise succeeds, and it is passed the resolved value (in this case `image`). The `rejected` callback is called when the promise fails, and it is passed the `Error` object we created earlier.
 
@@ -136,10 +154,11 @@ Each `Promise` instance has a `then()` method on its prototype. This allows us t
 
 Promises also have a `.catch(func)` to handle errors, which is the same as `.then(null, func)` but provides clearer intent.
 
-    loadImageAsync('one.png')
-      .catch(function(err) {
-        console.error('Could not load image', err);
-      });
+```js
+loadImageAsync("one.png").catch(function (err) {
+  console.error("Could not load image", err);
+});
+```
 
 ### chaining
 
@@ -147,17 +166,19 @@ The `.then()` method _always returns a Promise_, which means it can be chained. 
 
 In the following example, if the `loadImageAsync` method is rejected, the only output to the console will be the error message.
 
-    loadImageAsync('one.png')
-      .then(function(image) {
-        console.log('Image loaded', image);
-        return { width: image.width, height: image.height };
-      })
-      .then(function(size) {
-        console.log('Image size:', size);
-      })
-      .catch(function(err) {
-        console.error('Error in promise chain', err);
-      });
+```js
+loadImageAsync("one.png")
+  .then(function (image) {
+    console.log("Image loaded", image);
+    return { width: image.width, height: image.height };
+  })
+  .then(function (size) {
+    console.log("Image size:", size);
+  })
+  .catch(function (err) {
+    console.error("Error in promise chain", err);
+  });
+```
 
 In general, you should be wary of long promise chains. They can be difficult to maintain and it would be better to split the tasks into smaller, named functions.
 
@@ -165,49 +186,55 @@ In general, you should be wary of long promise chains. They can be difficult to 
 
 Your `then()` and `catch()` callbacks can return a value to pass it along to the next method in the chain. For example, here we resolve errors to a default image:
 
-    loadImageAsync('one.png')
-      .catch(function(err) {
-        console.warn(err.message);
-        return notFoundImage;
-      })
-      .then(function(image) {
-        console.log('Resolved image', image);
-      });
+```js
+loadImageAsync("one.png")
+  .catch(function (err) {
+    console.warn(err.message);
+    return notFoundImage;
+  })
+  .then(function (image) {
+    console.log("Resolved image", image);
+  });
+```
 
 The above code will try to load `'one.png'`, but will fall back to using `notFoundImage` if the load failed.
 
 The cool thing is, you can return a `Promise` instance, and it will be resolved before the next `.then()` is triggered. The value resolved by that promise will also get passed to the next `.then()`.
 
-    loadImageAsync('one.png')
-      .catch(function(err) {
-        console.warn(err.message);
-        return loadImageAsync('not-found.png');
-      })
-      .then(function(image) {
-        console.log('Resolved image', image);
-      })
-      .catch(function(err) {
-        console.error('Could not load any images', err);
-      });
+```js
+loadImageAsync("one.png")
+  .catch(function (err) {
+    console.warn(err.message);
+    return loadImageAsync("not-found.png");
+  })
+  .then(function (image) {
+    console.log("Resolved image", image);
+  })
+  .catch(function (err) {
+    console.error("Could not load any images", err);
+  });
+```
 
 The above tries to load `'one.png'`, but if that fails it will then load `'not-found.png'`.
 
 ### `Promise.all()`
 
-Let’s go back to our original task of loading multiple images.
+Let's go back to our original task of loading multiple images.
 
 The `Promise.all()` method accepts an array of values or promises and returns a new `Promise` that is only resolved once _all_ the promises are resolved. Here we map each URL to a new Promise using `loadImageAsync`, and then pass those promises to `all()`.
 
-    var urls = ['one.png', 'two.png', 'three.png'];
-    var promises = urls.map(loadImageAsync);
+```js
+var urls = ["one.png", "two.png", "three.png"];
+var promises = urls.map(loadImageAsync);
 
-    Promise.all(promises)
-      .then(function(images) {
-        console.log('All images loaded', images);
-      })
-      .catch(function(err) {
-        console.error(err);
-      });
+Promise.all(promises)
+  .then(function (images) {
+    console.log("All images loaded", images);
+  })
+  .catch(function (err) {
+    console.error(err);
+  });
+```
 
 Finally, things are starting to look a bit cleaner.
 
@@ -215,32 +242,32 @@ Finally, things are starting to look a bit cleaner.
 
 You may still be wondering where promises improve on the `async` approach. The real benefits come from composing promises across your application.
 
-We can “pass the buck” by making named functions that return promises, and let errors bubble upstream. The above code would look like this:
+We can "pass the buck" by making named functions that return promises, and let errors bubble upstream. The above code would look like this:
 
-    function loadImages(urls) {
-      var promises = urls.map(loadImageAsync);
-      return Promise.all(promises);
-    }
+```js
+function loadImages(urls) {
+  var promises = urls.map(loadImageAsync);
+  return Promise.all(promises);
+}
+```
 
 A more complex example might look like this:
 
-    function getUserImages(user) {
-      return loadUserData(user)
-        .then(function(userData) {
-          return loadImages(userData.imageUrls);
-        });
-    }
+```js
+function getUserImages(user) {
+  return loadUserData(user).then(function (userData) {
+    return loadImages(userData.imageUrls);
+  });
+}
 
-    function showUserImages(user) {
-      return getUserImages(user)
-        .then(renderGallery)
-        .catch(renderEmptyGallery);
-    }
+function showUserImages(user) {
+  return getUserImages(user).then(renderGallery).catch(renderEmptyGallery);
+}
 
-    showUserImages('mattdesl')
-      .catch(function(err) {
-        showError(err);
-      });
+showUserImages("mattdesl").catch(function (err) {
+  showError(err);
+});
+```
 
 ### `throw` and implicit catch
 
@@ -248,18 +275,20 @@ If you `throw` inside your promise chain, the error will be impliticly caught by
 
 In the following example, if the user has not activated their account, the promise will be rejected and the `showError` method will be called.
 
-    loadUser()
-      .then(function(user) {
-        if (!user.activated) {
-          throw new Error('user has not activated their account');
-        }
-        return showUserGallery(user);
-      })
-      .catch(function(err) {
-        showError(err.message);
-      });
+```js
+loadUser()
+  .then(function (user) {
+    if (!user.activated) {
+      throw new Error("user has not activated their account");
+    }
+    return showUserGallery(user);
+  })
+  .catch(function (err) {
+    showError(err.message);
+  });
+```
 
-This part of the specification is often viewed as a pitfall of promises. It conflates the semantics of error handling by combining syntax errors, programmer error (e.g. invalid parameters), and connection errors into the same logic.
+This part of the specification is often viewed as a pitfall of promises. It conflates the semantics of error handling by combining syntax errors, programmer error (e.g. invalid parameters), and connection errors into the same logic.
 
 It leads to frustrations during browser development: you might lose debugger capabilities, stack traces, and source map details.
 
@@ -273,15 +302,17 @@ For many developers, this is enough reason to eschew promises in favour of error
 
 We can use `.then()` on a promise even after the asynchronous task is long complete. For example, instead of always requesting the same `'not-found.png'` image, we can cache the result of the first request and just resolve to the same `Image` object.
 
-    var notFound;
+```js
+var notFound;
 
-    function getNotFoundImage() {
-      if (notFound) {
-        return notFound;
-      }
-      notFound = loadImageAsync('not-found.png');
-      return notFound;
-    }
+function getNotFoundImage() {
+  if (notFound) {
+    return notFound;
+  }
+  notFound = loadImageAsync("not-found.png");
+  return notFound;
+}
+```
 
 This is more useful for server requests, since the browser already has a caching layer in place for image loading.
 
@@ -291,19 +322,21 @@ The `Promise` class also provides a `resolve` and `reject` method. When called, 
 
 For example:
 
-    var thumbnail = Promise.resolve(defaultThumbnail);
+```js
+var thumbnail = Promise.resolve(defaultThumbnail);
 
-    //query the DB
-    if (userLoggedIn) {
-      thumbnail = loadUserThumbnail();
-    }
+//query the DB
+if (userLoggedIn) {
+  thumbnail = loadUserThumbnail();
+}
 
-    //add the image to the DOM when it's ready
-    thumbnail.then(function(image) {
-      document.body.appendChild(image);
-    });
+//add the image to the DOM when it's ready
+thumbnail.then(function (image) {
+  document.body.appendChild(image);
+});
+```
 
-Here `loadUserThumbnail` returns a `Promise` that resolves to an image. With `Promise.resolve` we can treat `thumbnail` the same even if it doesn’t involve a database query.
+Here `loadUserThumbnail` returns a `Promise` that resolves to an image. With `Promise.resolve` we can treat `thumbnail` the same even if it doesn't involve a database query.
 
 ### handling user errors
 
@@ -313,27 +346,31 @@ Instead of throwing errors on invalid user arguments, you should return a promis
 
 For example, using our earlier [`loadImageAsync`](#new-promise):
 
-    function loadImageAsync(url) {
-      if (typeof url !== 'string') {
-        return Promise.reject(new TypeError('must specify a string'));
-      }
+```js
+function loadImageAsync(url) {
+  if (typeof url !== "string") {
+    return Promise.reject(new TypeError("must specify a string"));
+  }
 
-      return new Promise(function (resolve, reject) {
-        /* async code */
-      });
-    }
+  return new Promise(function (resolve, reject) {
+    /* async code */
+  });
+}
+```
 
 Alternatively, you could use `throw` inside the promise function:
 
-    function loadImageAsync(url) {
-      return new Promise(function (resolve, reject) {
-        if (typeof url !== 'string') {
-          throw new TypeError('must specify a string');
-        }
-
-        /* async code */
-      });
+```js
+function loadImageAsync(url) {
+  return new Promise(function (resolve, reject) {
+    if (typeof url !== "string") {
+      throw new TypeError("must specify a string");
     }
+
+    /* async code */
+  });
+}
+```
 
 See [here](https://www.w3.org/2001/tag/doc/promises-guide#always-return-promises) for details.
 
@@ -348,9 +385,11 @@ Some other implementations:
 
 For example, in Node/browserify:
 
-    // use native promise if it exists
-    // otherwise fall back to polyfill
-    var Promise = global.Promise || require('es6-promise').Promise;
+```js
+// use native promise if it exists
+// otherwise fall back to polyfill
+var Promise = global.Promise || require("es6-promise").Promise;
+```
 
 ## pitfalls
 
@@ -366,20 +405,22 @@ One situation where promises are not yet a good fit is in small, self-contained 
 
 Until native Promise support is widespread, it is often easier to use Node-style callbacks and independent [async modules](#async) for control flow and smaller bundle size.
 
-Consumers can then “promisify” your API with their favourite implementation. For example, using the [xhr](https://www.npmjs.com/package/xhr) module in Bluebird might look like this:
+Consumers can then "promisify" your API with their favourite implementation. For example, using the [xhr](https://www.npmjs.com/package/xhr) module in Bluebird might look like this:
 
-    var Promise = require('bluebird')
-    var xhrAsync = Promise.promisify(require('xhr'))
+```js
+var Promise = require("bluebird");
+var xhrAsync = Promise.promisify(require("xhr"));
+```
 
 ### complexity
 
 Promises can introduce a lot of complexity and mental overhead into a codebase (evident by the need for this guide). In real-world projects, developers will often work with promise-based code without fully understanding how promises work.
 
-See Nolan Lawson’s [“We Have a Problem With Promises”](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html) for an example of this.
+See Nolan Lawson's ["We Have a Problem With Promises"](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html) for an example of this.
 
 ### lock-in
 
-Another frustration is that promises tend to work best once _everything_ in your codebase is using them. In practice, you might find yourself refactoring and “promisifying” a lot of code before you can reap the benefits of promises. It also means that new code must be written with promises in mind — you are now stuck with them!
+Another frustration is that promises tend to work best once _everything_ in your codebase is using them. In practice, you might find yourself refactoring and "promisifying" a lot of code before you can reap the benefits of promises. It also means that new code must be written with promises in mind — you are now stuck with them!
 
 ## further reading
 
@@ -387,4 +428,4 @@ For a comprehensive list of Promise resources and small modules to avoid library
 
 - [JavaScript Promises: There and back again](http://www.html5rocks.com/en/tutorials/es6/promises/)
 - [We Have a Problem With Promises](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
-- [You’re Missing the Point of Promises](https://blog.domenic.me/youre-missing-the-point-of-promises/)
+- [You're Missing the Point of Promises](https://blog.domenic.me/youre-missing-the-point-of-promises/)

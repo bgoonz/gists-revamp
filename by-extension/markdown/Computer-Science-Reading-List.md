@@ -1,26 +1,26 @@
-**\*Optional** reading for your spare time…\*
+_**Optional** reading for your spare time..._
 
 ## Algorithms and Data Structures
 
 Books:
 
-- [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)–Beej’s favorite ([try coupon `grokkalg33` here for 33% off](https://www.manning.com/books/grokking-algorithms))
+- [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)--Beej's favorite ([try coupon `grokkalg33` here for 33% off](https://www.manning.com/books/grokking-algorithms))
 - [Algorithms in a Nutshell](http://shop.oreilly.com/product/9780596516246.do)
-- [Hacker’s Delight](http://www.hackersdelight.org/)
-- [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms) (Cormen et al)–Beej’s other favorite
+- [Hacker's Delight](http://www.hackersdelight.org/)
+- [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms) (Cormen et al)--Beej's other favorite
 - [Foundations of Computer Science](http://i.stanford.edu/~ullman/focs.html)
 
 Web pages:
 
-- [Top Algorithms and Data Structures You Really Need To Know](https://towardsdatascience.com/top-algorithms-and-data-structures-you-really-need-to-know-ab9a2a91c7b5)–good overview
-- [Data Structures-Algorithms Basics](https://www.tutorialspoint.com/data_structures_algorithms/algorithms_basics.htm)–intro that gets progressively more challenging
-- [Problem Solving with Algorithms and Data Structures using Python](http://interactivepython.org/runestone/static/pythonds/index.html)–virtual book, covers up through trees and graphs
-- [Top 10 Algorithms and Data Structures for Competitive Programming](https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/)–next level stuff
+- [Top Algorithms and Data Structures You Really Need To Know](https://towardsdatascience.com/top-algorithms-and-data-structures-you-really-need-to-know-ab9a2a91c7b5)--good overview
+- [Data Structures-Algorithms Basics](https://www.tutorialspoint.com/data_structures_algorithms/algorithms_basics.htm)--intro that gets progressively more challenging
+- [Problem Solving with Algorithms and Data Structures using Python](http://interactivepython.org/runestone/static/pythonds/index.html)--virtual book, covers up through trees and graphs
+- [Top 10 Algorithms and Data Structures for Competitive Programming](https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/)--next level stuff
 
 ## Architecture
 
 - [The Elements of Computing Systems: Building a Modern Computer from First Principles](https://mitpress.mit.edu/books/elements-computing-systems)
-  - [NAND2Tetris](http://nand2tetris.org/)–the companion website
+  - [NAND2Tetris](http://nand2tetris.org/)--the companion website
 
 ## Languages
 

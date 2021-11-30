@@ -30,9 +30,9 @@ Web Development
 
 ### Node.js
 
-- <span id="3f91"><a href="https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5" class="markup--anchor markup--li-anchor">Fetch vs. Axios.js for making http requests</a> \#\# Sequelize</span>
+- <span id="3f91"><a href="https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5" class="markup--anchor markup--li-anchor">Fetch vs. Axios.js for making http requests</a> \#\# Sequelize</span>
 - <span id="b94a"><a href="https://www.youtube.com/watch?v=6NKNfXtKk0c" class="markup--anchor markup--li-anchor">Sequelize: Getting Started</a></span>
-- <span id="fe38">\[Sequelize reference by <span class="citation" data-cites="tmkelly28">@tmkelly28</span>\](https://github.com/tmkelly28/sequelize-reference)</span>
+- <span id="fe38">\[Sequelize reference by @tmkelly28\](https://github.com/tmkelly28/sequelize-reference)</span>
 - <span id="63a1"><a href="https://blog.cloudboost.io/docs-for-the-sequelize-docs-querying-edition-aed4bd1273f0" class="markup--anchor markup--li-anchor">Short but useful Sequelize querying cheatsheet</a></span>
 
 ### Study Guides

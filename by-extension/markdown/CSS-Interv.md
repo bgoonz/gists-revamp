@@ -26,7 +26,7 @@ Plus Css Cheat Sheet (82 questions total)
 - <span id="09ae">\[ \] `a`</span>
 - <span id="a2d4">\[ \] `ul li a`</span>
 
-#### Q2. Using an attribute selector, how would you select an `<a>` element with a “title” attribute?
+#### Q2. Using an attribute selector, how would you select an `<a>` element with a "title" attribute?
 
 - <span id="558d">\[x\] a\[title\]{…}</span>
 - <span id="768a">\[ \] a &gt; title {…}</span>
@@ -651,7 +651,7 @@ Plus Css Cheat Sheet (82 questions total)
 - <span id="7333">\[x\] none</span>
 - <span id="ff26">\[ \] oblique</span>
 
-#### Q56. When would you use the <span class="citation" data-cites="font-face">@font-face</span> method?
+#### Q56. When would you use the @font-face method?
 
 - <span id="5fb7">\[ \] to set the font size of the text</span>
 - <span id="ed7c">\[x\] to load custom fonts into stylesheet</span>

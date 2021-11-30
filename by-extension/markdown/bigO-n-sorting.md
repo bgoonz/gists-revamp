@@ -29,7 +29,7 @@ Curating Complexity: A Guide to Big-O Notation
 ### Simplifying Math Terms
 
 - <span id="64a4">We can use the following rules to simplify the our Big O functions:</span>
-- <span id="a2c2">`Simplify Products` : If the function is a product of many terms, we drop the terms that don’t depend on n.</span>
+- <span id="a2c2">`Simplify Products` : If the function is a product of many terms, we drop the terms that don't depend on n.</span>
 - <span id="b058">`Simplify Sums` : If the function is a sum of many terms, we drop the non-dominant terms.</span>
 - <span id="eb32">`n` : size of the input</span>
 - <span id="c042">`T(f)` : unsimplified math function</span>

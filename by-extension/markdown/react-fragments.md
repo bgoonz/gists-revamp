@@ -15,7 +15,7 @@ render() {
 }
 ```
 
-There is also a new [short syntax](https://reactjs.org/docs/fragments.html#short-syntax) for declaring them.
+There is also a new [short syntax](https://reactjs.org/docs/fragments.html#short-syntax) for declaring them.
 
 [](https://reactjs.org/docs/fragments.html#motivation)Motivation
 ----------------------------------------------------------------
@@ -36,7 +36,7 @@ class Table extends React.Component {
 }
 ```
 
-`<Columns />` would need to return multiple `<td>` elements in order for the rendered HTML to be valid. If a parent div was used inside the `render()` of `<Columns />`, then the resulting HTML will be invalid.
+`<Columns />` would need to return multiple `<td>` elements in order for the rendered HTML to be valid. If a parent div was used inside the `render()` of `<Columns />`, then the resulting HTML will be invalid.
 
 ```
 class Columns extends React.Component {
@@ -51,7 +51,7 @@ class Columns extends React.Component {
 }
 ```
 
-results in a `<Table />` output of:
+results in a `<Table />` output of:
 
 ```
 <table>
@@ -80,7 +80,7 @@ class Columns extends React.Component {
 }
 ```
 
-which results in a correct `<Table />` output of:
+which results in a correct `<Table />` output of:
 
 ```
 <table>
@@ -106,11 +106,11 @@ class Columns extends React.Component {
 }
 ```
 
-You can use `<></>` the same way you'd use any other element except that it doesn't support keys or attributes.
+You can use `<></>` the same way you'd use any other element except that it doesn't support keys or attributes.
 
 ### [](https://reactjs.org/docs/fragments.html#keyed-fragments)Keyed Fragments
 
-Fragments declared with the explicit `<React.Fragment>` syntax may have keys. A use case for this is mapping a collection to an array of fragments --- for example, to create a description list:
+Fragments declared with the explicit `<React.Fragment>` syntax may have keys. A use case for this is mapping a collection to an array of fragments --- for example, to create a description list:
 
 ```
 function Glossary(props) {
@@ -128,8 +128,8 @@ function Glossary(props) {
 }
 ```
 
-`key` is the only attribute that can be passed to `Fragment`. In the future, we may add support for additional attributes, such as event handlers.
+`key` is the only attribute that can be passed to `Fragment`. In the future, we may add support for additional attributes, such as event handlers.
 
 ### [](https://reactjs.org/docs/fragments.html#live-demo)Live Demo
 
-You can try out the new JSX fragment syntax with this [CodePen](https://codepen.io/reactjs/pen/VrEbjE?editors=1000).
+You can try out the new JSX fragment syntax with this [CodePen](https://codepen.io/reactjs/pen/VrEbjE?editors=1000).

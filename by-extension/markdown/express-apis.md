@@ -31,6 +31,8 @@ The request handler is a function that takes the `request` coming from the clien
 
 This process works, but the resulting code is verbose, even for the simplest of servers. Also, note that when using only Node.js to build a server, we use a single request handler function for all requests.
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*PTKhCN2p9S8EDZ4r.gif" class="graf-image" /></figure>[View original.](https://medium.com/p/75e3267b284a)
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*PTKhCN2p9S8EDZ4r.gif" class="graf-image" /></figure>
+
+[View original.](https://medium.com/p/75e3267b284a)
 
 Exported from [Medium](https://medium.com) on July 13, 2021.

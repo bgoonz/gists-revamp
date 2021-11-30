@@ -8,7 +8,9 @@ A simple to follow guide to Lists Stacks and Queues, with animated gifs, diagram
 
 #### A simple to follow guide to Lists Stacks and Queues, with animated gifs, diagrams, and code examples!
 
-<figure><img src="https://cdn-images-1.medium.com/max/2560/0*ph952PPOmG5uz_Pv" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*zhC6dP1hb2rq2qt2.png" class="graf-image" /></figure>### Linked Lists
+<figure><img src="https://cdn-images-1.medium.com/max/2560/0*ph952PPOmG5uz_Pv" class="graf-image" /></figure>
+
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*zhC6dP1hb2rq2qt2.png" class="graf-image" /></figure>### Linked Lists
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*znES1vYRV3Zvk9-e.gif" class="graf-image" /></figure>In the university setting, it’s common for Linked Lists to appear early on in an undergraduate’s Computer Science coursework. While they don’t always have the most practical real-world applications in industry, Linked Lists make for an important and effective educational tool in helping develop a student’s mental model on what data structures actually are to begin with.
 
@@ -62,20 +64,24 @@ There are four flavors of Linked List you should be familiar with when walking i
 
 For instance:
 
-- <span id="a0e8">Any type of Linked List can be implemented Circularly (e.g. A Circular Doubly Linked List).</span>
+- <span id="a0e8">Any type of Linked List can be implemented Circularly (e.g. A Circular Doubly Linked List).</span>
 - <span id="c0ff">A Doubly Linked List is actually just a special case of a Multiply Linked List.</span>
 
 You are most likely to encounter Singly and Doubly Linked Lists in your upcoming job search, so we are going to focus exclusively on those two moving forward. However, in more senior level interviews, it is very valuable to have some familiarity with the other types of Linked Lists. Though you may not actually code them out, _you will win extra points by illustrating your ability to weigh the tradeoffs of your technical decisions_ by discussing how your choice of Linked List type may affect the efficiency of the solutions you propose.
 
 ### Linked List Methods
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*9EnhpQAeV03_DyEZIyiTCw.png" class="graf-image" /></figure>Linked Lists are great foundation builders when learning about data structures because they share a number of similar methods (and edge cases) with many other common data structures. You will find that many of the concepts discussed here will repeat themselves as we dive into some of the more complex non-linear data structures later on, like Trees and Graphs.
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*9EnhpQAeV03_DyEZIyiTCw.png" class="graf-image" /></figure>
+
+Linked Lists are great foundation builders when learning about data structures because they share a number of similar methods (and edge cases) with many other common data structures. You will find that many of the concepts discussed here will repeat themselves as we dive into some of the more complex non-linear data structures later on, like Trees and Graphs.
 
 ### Time and Space Complexity Analysis
 
 Before we begin our analysis, here is a quick summary of the Time and Space constraints of each Linked List Operation. The complexities below apply to both Singly and Doubly Linked Lists:
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*Enb9YaqRxzS87ML83Loasw.png" class="graf-image" /></figure>Before moving forward, see if you can reason to yourself why each operation has the time and space complexity listed above!
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*Enb9YaqRxzS87ML83Loasw.png" class="graf-image" /></figure>
+
+Before moving forward, see if you can reason to yourself why each operation has the time and space complexity listed above!
 
 ### Time Complexity — Access and Search
 
@@ -267,7 +273,9 @@ Additionally, Stacks and Queues serve as the essential underlying data structure
 
 **Here’s a live code editor where you can mess with any of the examples:**
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*zhC6dP1hb2rq2qt2.png" class="graf-image" /></figure>By <a href="https://medium.com/@bryanguner" class="p-author h-card">Bryan Guner</a> on [March 22, 2021](https://medium.com/p/88466fae0fbb).
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*zhC6dP1hb2rq2qt2.png" class="graf-image" /></figure>
+
+By <a href="https://medium.com/@bryanguner" class="p-author h-card">Bryan Guner</a> on [March 22, 2021](https://medium.com/p/88466fae0fbb).
 
 <a href="https://medium.com/@bryanguner/lists-stacks-and-queues-in-javascript-88466fae0fbb" class="p-canonical">Canonical link</a>
 

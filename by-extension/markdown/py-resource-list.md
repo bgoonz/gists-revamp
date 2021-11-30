@@ -367,7 +367,7 @@ _Libraries for working with HTTP._
 - [grequests](https://github.com/kennethreitz/grequests) - requests + gevent for asynchronous HTTP requests.
 - [urllib3](https://github.com/shazow/urllib3) - A HTTP library with thread-safe connection pooling, file post support, sanity friendly.
 - [httplib2](https://github.com/jcgregorio/httplib2) - Comprehensive HTTP client library.
-- [treq](https://github.com/dreid/treq) - Python requests like API built on top of Twisted’s HTTP client.
+- [treq](https://github.com/dreid/treq) - Python requests like API built on top of Twisted's HTTP client.
 
 ## Database
 
@@ -398,7 +398,7 @@ _Libraries for connecting and operating databases._
   - [PyMongo](http://docs.mongodb.org/ecosystem/drivers/python/) - The official Python client for MongoDB.
   - [Plyvel](https://plyvel.readthedocs.org/) - A fast and feature-rich Python interface to LevelDB.
   - [redis-py](https://github.com/andymccurdy/redis-py) - The Redis Python Client.
-  - [py2neo](http://book.py2neo.org/) - Python wrapper client for Neo4j’s restful interface.
+  - [py2neo](http://book.py2neo.org/) - Python wrapper client for Neo4j's restful interface.
   - [telephus](https://github.com/driftx/Telephus) - Twisted based client for Cassandra.
   - [txRedis](https://github.com/deldotdr/txRedis) - Twisted based client for Redis.
 
@@ -503,7 +503,7 @@ _Libraries for implementing authentications schemes._
   - [python-social-auth](https://github.com/omab/python-social-auth) - An easy-to-setup social authentication mechanism.
   - [django-oauth-toolkit](https://github.com/evonove/django-oauth-toolkit) - OAuth2 goodies for the Djangonauts.
   - [django-oauth2-provider](https://github.com/caffeinehit/django-oauth2-provider) - Providing OAuth2 access to Django app.
-  - [django-allauth](https://github.com/pennersr/django-allauth) - Authentication app for Django that “just works.”
+  - [django-allauth](https://github.com/pennersr/django-allauth) - Authentication app for Django that "just works."
   - [Flask-OAuthlib](https://github.com/lepture/flask-oauthlib) - OAuth 1.0/a, 2.0 implementation of client and provider for Flask.
   - [sanction](https://github.com/demianbrecht/sanction) - A dead simple OAuth2 client implementation.
 - Others
@@ -528,7 +528,7 @@ _Libraries for working with event and task queues._
 
 - [celery](http://www.celeryproject.org/) - An asynchronous task queue/job queue based on distributed message passing.
 - [huey](https://github.com/coleifer/huey) - Little multi-threaded task queue.
-- [mrq](https://github.com/pricingassistant/mrq) - Mr. Queue - A distributed worker task queue in Python using Redis & gevent.
+- [mrq](https://github.com/pricingassistant/mrq) - Mr. Queue - A distributed worker task queue in Python using Redis & gevent.
 - [rq](http://python-rq.org/) - Simple job queues for Python.
 - [simpleq](https://github.com/rdegges/simpleq) - A simple, infinitely scalable, Amazon SQS based queue.
 
@@ -543,7 +543,7 @@ _Libraries and software for indexing and performing search queries on data._
 
 ## News Feed
 
-_Libraries for building user’s activities._
+_Libraries for building user's activities._
 
 - [Feedly](https://github.com/tschellenbach/Feedly) - A library to build newsfeed and notification systems using Cassandra and Redis.
 - [django-activity-stream](https://github.com/justquick/django-activity-stream) - Generate generic activity streams from the actions on your site.
@@ -650,7 +650,7 @@ _Libraries for extracting web contents._
 - [micawber](https://github.com/coleifer/micawber) - A small library for extracting rich content from URLs.
 - [sumy](https://github.com/miso-belica/sumy) - A module for automatic summarization of text documents and HTML pages.
 - [Haul](https://github.com/vinta/Haul) - An Extensible Image Crawler.
-- [python-readability](https://github.com/buriy/python-readability) - Fast Python port of arc90’s readability tool.
+- [python-readability](https://github.com/buriy/python-readability) - Fast Python port of arc90's readability tool.
 - [opengraph](https://github.com/erikriver/opengraph) - A Python module to parse the Open Graph Protocol
 - [textract](https://github.com/deanmalmgren/textract) - Extract text from any document, Word, PowerPoint, PDFs, etc.
 - [sanitize](https://github.com/Alir3z4/sanitize) - Bringing sanity to world of messed-up data.
@@ -715,7 +715,7 @@ _Static site generator is a software that takes some text + templates as input a
 
 _Libraries for working with processes or threads_
 
-- [multiprocessing](https://docs.python.org/2/library/multiprocessing.html) - (Python standard library) Process-based “threading” interface.
+- [multiprocessing](https://docs.python.org/2/library/multiprocessing.html) - (Python standard library) Process-based "threading" interface.
 - [threading](https://docs.python.org/2/library/threading.html) - (Python standard library) Higher-level threading interface.
 - [envoy](https://github.com/kennethreitz/envoy) - Python Subprocesses for Humans™.
 - [sh](https://github.com/amoffat/sh) - A full-fledged [subprocess](https://docs.python.org/2/library/subprocess.html) replacement for Python.
@@ -786,7 +786,7 @@ _Libraries for working with graphical user interface applications._
 - [curses](https://docs.python.org/2/library/curses.html#module-curses) - Built-in wrapper for [ncurses](http://www.gnu.org/software/ncurses/) used to create terminal GUI applications.
 - [urwid](http://urwid.org/) - A library for creating terminal GUI applications with strong support for widgets, events, rich colors, etc.
 - [pyglet](http://www.pyglet.org/) - A cross-platform windowing and multimedia library for Python.
-- [Tkinter](https://wiki.python.org/moin/TkInter) - Tkinter is Python’s de-facto standard GUI package.
+- [Tkinter](https://wiki.python.org/moin/TkInter) - Tkinter is Python's de-facto standard GUI package.
 - [enaml](https://github.com/nucleic/enaml) - Creating beautiful user-interfaces with Declaratic Syntax like QML.
 - [Toga](https://github.com/pybee/toga) - A Python native, OS native GUI toolkit.
 
@@ -797,9 +797,9 @@ _Awesome game development libraries._
 - [Pygame](http://www.pygame.org/news.html) - Pygame is a set of Python modules designed for writing games.
 - [Cocos2d](http://cocos2d.org/) - cocos2d is a framework for building 2D games, demos, and other graphical/interactive applications. It is based on pyglet.
 - [PySDL2](http://pysdl2.readthedocs.org/) - A ctypes based wrapper for the SDL2 library.
-- [Panda3D](https://www.panda3d.org/) - 3D game engine developed by Disney and maintained by Carnegie Mellon’s Entertainment Technology Center. Written in C++, completely wrapped in Python.
+- [Panda3D](https://www.panda3d.org/) - 3D game engine developed by Disney and maintained by Carnegie Mellon's Entertainment Technology Center. Written in C++, completely wrapped in Python.
 - [PyOgre](http://www.ogre3d.org/tikiwiki/PyOgre) - Python bindings for the Ogre 3D render engine, can be used for games, simulations, anything 3D.
-- [PyOpenGL](http://pyopengl.sourceforge.net/) - Python ctypes bindings for OpenGL and it’s related APIs.
+- [PyOpenGL](http://pyopengl.sourceforge.net/) - Python ctypes bindings for OpenGL and it's related APIs.
 - [PySFML](http://www.python-sfml.org/) - Python bindings for [SFML](http://www.sfml-dev.org/)
 - [RenPy](http://www.renpy.org/) - A Visual Novel engine.
 
@@ -821,7 +821,7 @@ _Libraries for testing codebases and generating test data._
   - [nose](https://nose.readthedocs.org/) - nose extends unittest.
   - [pytest](http://pytest.org/) - A mature full-featured Python testing tool.
   - [mamba](https://nestorsalceda.github.io/mamba) - The definitive testing tool for Python. Born under the banner of BDD.
-  - [contexts](https://github.com/benjamin-hodgson/Contexts) - A BDD framework for Python 3.3+. Inspired by C\#’s `Machine.Specifications`.
+  - [contexts](https://github.com/benjamin-hodgson/Contexts) - A BDD framework for Python 3.3+. Inspired by C#'s `Machine.Specifications`.
   - [pyshould](https://github.com/drslump/pyshould) - Should style asserts based on [PyHamcrest](https://github.com/hamcrest/PyHamcrest).
   - [pyvows](http://heynemann.github.io/pyvows/) - BDD style testing for Python. Inspired by [Vows.js](http://vowsjs.org/).
 - Web Testing
@@ -843,7 +843,7 @@ _Libraries for testing codebases and generating test data._
   - [fake2db](https://github.com/emirozer/fake2db) - Fake database generator.
   - [mixer](https://mixer.readthedocs.org) - Generating fake data and creating random fixtures for testing in Django ORM, SQLAlchemy, Peewee, MongoEngine, Pony ORM and etc.
   - [model_mommy](https://model-mommy.readthedocs.org/) - Creating random fixtures for testing in Django.
-  - [ForgeryPy](https://pypi.python.org/pypi/ForgeryPy) - An easy to use forged data generator for Python. It’s a port of [forgery](http://rubygems.org/gems/forgery).
+  - [ForgeryPy](https://pypi.python.org/pypi/ForgeryPy) - An easy to use forged data generator for Python. It's a port of [forgery](http://rubygems.org/gems/forgery).
   - [radar](https://pypi.python.org/pypi/radar) - Generate random datetime / time.
 - Error Handler
   - [FuckIt.py](https://github.com/ajalt/fuckitpy) - FuckIt.py uses state-of-the-art technology to make sure your Python code runs whether it has any right to or not.
@@ -874,7 +874,7 @@ _Libraries for debugging code._
 - [memory_profiler](https://github.com/fabianp/memory_profiler) - Monitor Memory usage of Python code.
 - [profiling](https://github.com/what-studio/profiling) - An interactive Python profiler.
 - [django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) - Display various debug information about the current request/response.
-- [django-devserver](https://github.com/dcramer/django-devserver) - A drop-in replacement for Django’s runserver.
+- [django-devserver](https://github.com/dcramer/django-devserver) - A drop-in replacement for Django's runserver.
 - [flask-debugtoolbar](https://github.com/mgood/flask-debugtoolbar) - A port of the django-debug-toolbar to flask.
 - [pyelftools](https://github.com/eliben/pyelftools) - A pure-Python library for parsing and analyzing ELF files and DWARF debugging information.
 
@@ -971,7 +971,7 @@ _Libraries for accessing third party services APIs. See: [List of Python API Wra
 - [google-api-python-client](https://github.com/google/google-api-python-client) - Google APIs Client Library for Python.
 - [gspread](https://github.com/burnash/gspread) - Google Spreadsheets Python API.
 - [facebook-sdk](https://github.com/pythonforfacebook/facebook-sdk) - Facebook Platform Python SDK.
-- [facepy](https://github.com/jgorset/facepy) - Facepy makes it really easy to interact with Facebook’s Graph API
+- [facepy](https://github.com/jgorset/facepy) - Facepy makes it really easy to interact with Facebook's Graph API
 - [gmail](https://github.com/charlierguo/gmail) - A Pythonic interface for Gmail.
 - [django-wordpress](https://github.com/sunlightlabs/django-wordpress/) - WordPress models and views for Django.
 
@@ -1015,7 +1015,7 @@ _Libraries for providing foreign function interface._
 - [ctypes](https://docs.python.org/2/library/ctypes.html) - (Python standard library) Foreign Function Interface for Python calling C code.
 - [cffi](https://pypi.python.org/pypi/cffi) - Foreign Function Interface for Python calling C code.
 - [SWIG](http://www.swig.org/Doc1.3/Python.html) - Simplified Wrapper and Interface Generator.
-- [PyCUDA](http://mathema.tician.de/software/pycuda/) - A Python wrapper for Nvidia’s CUDA API.
+- [PyCUDA](http://mathema.tician.de/software/pycuda/) - A Python wrapper for Nvidia's CUDA API.
 
 ## High Performance
 
@@ -1066,7 +1066,7 @@ _Libraries for migrating from Python 2 to 3._
 
 ## Miscellaneous
 
-_Useful libraries or tools that don’t fit in the categories above._
+_Useful libraries or tools that don't fit in the categories above._
 
 - [pluginbase](https://github.com/mitsuhiko/pluginbase) - A simple but flexible plugin system for Python.
 - [itsdangerous](https://github.com/mitsuhiko/itsdangerous) - Various helpers to pass trusted data to untrusted environments.
@@ -1111,7 +1111,7 @@ Where to discover new Python libraries.
 ## Websites
 
 - [r/Python](http://www.reddit.com/r/python) - News about Python.
-- [Python 3 Wall of Superpowers](http://python3wos.appspot.com/) - Too many popular Python packages don’t support Python 3.
+- [Python 3 Wall of Superpowers](http://python3wos.appspot.com/) - Too many popular Python packages don't support Python 3.
 - [Trending Python repositories on GitHub today](https://github.com/trending?l=python) - Good place to find new Python libraries.
 - [Python Hackers](http://pythonhackers.com/open-source/) - List of top 400 projects in GitHub.
 - [CoolGithubProjects](http://coolgithubprojects.com/) - Sharing cool github projects just got easier!
@@ -1120,18 +1120,18 @@ Where to discover new Python libraries.
 
 ## Weekly
 
-- [Pycoder’s Weekly](http://pycoders.com/)
+- [Pycoder's Weekly](http://pycoders.com/)
 - [Python Weekly](http://www.pythonweekly.com/)
 - [Import Python Newsletter](http://importpython.com/newsletter/)
 
 ## Twitter
 
-- <span class="citation" data-cites="pypi">\[@pypi\]</span>(https://twitter.com/pypi)
-- <span class="citation" data-cites="planetpython">\[@planetpython\]</span>(https://twitter.com/planetpython)
-- <span class="citation" data-cites="getpy">\[@getpy\]</span>(https://twitter.com/getpy)
-- <span class="citation" data-cites="pycoders">\[@pycoders\]</span>(https://twitter.com/pycoders)
-- <span class="citation" data-cites="PythonWeekly">\[@PythonWeekly\]</span>(https://twitter.com/PythonWeekly)
-- <span class="citation" data-cites="pythontrending">\[@pythontrending\]</span>(https://twitter.com/pythontrending)
+- [@pypi](https://twitter.com/pypi)
+- [@planetpython](https://twitter.com/planetpython)
+- [@getpy](https://twitter.com/getpy)
+- [@pycoders](https://twitter.com/pycoders)
+- [@PythonWeekly](https://twitter.com/PythonWeekly)
+- [@pythontrending](https://twitter.com/pythontrending)
 
 # Other Awesome Lists
 

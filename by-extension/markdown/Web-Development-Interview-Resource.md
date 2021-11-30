@@ -180,7 +180,7 @@ Most good programmers do programming not because they expect to get paid or get 
 
 ### JavaScript
 
-- <span id="3f22"><a href="http://exploringjs.com/" class="markup--anchor markup--li-anchor">Free books by Dr. Axel Rauschmayer</a></span>
+- <span id="3f22"><a href="http://exploringjs.com/" class="markup--anchor markup--li-anchor">Free books by Dr. Axel Rauschmayer</a></span>
 - <span id="fd1a"><a href="https://github.com/getify/You-Dont-Know-JS" class="markup--anchor markup--li-anchor">You Don’t Know JS</a></span>
 - <span id="8cd1"><a href="http://superherojs.com/" class="markup--anchor markup--li-anchor">Superhero.js</a></span>
 - <span id="466b"><a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" class="markup--anchor markup--li-anchor">h5bp/Front-end-Developer-Interview-Questions</a></span>

@@ -10,7 +10,9 @@ All of the code examples below will be included a second time at the bottom of t
 
 React uses a syntax extension of JavaScript called JSX that allows you to write HTML directly within JavaScript.
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/0*Olfj44MF6WSzvlSM.png" class="graf-image" /></figure>### React
+<figure><img src="https://cdn-images-1.medium.com/max/1200/0*Olfj44MF6WSzvlSM.png" class="graf-image" /></figure>
+
+### React
 
 > _React uses a syntax extension of JavaScript called JSX that allows you to write HTML directly within JavaScript_
 
@@ -146,7 +148,7 @@ The code editor has a JSX element similar to what you created in the last challe
 
 > _there are special instances in HTML called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start._
 
-> _For example the line-break tag can be written as_ `<br>` _or as_ `<br />,` _but should never be written as_ `<br></br>`_, since it doesn’t contain any content._
+> _For example the line-break tag can be written as_ `<br>` _or as_ `<br />,` _but should never be written as_ `<br></br>`_, since it doesn't contain any content._
 
 > _In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed.  
 > The line-break tag, for example, must always be written as_ `<br />` _in order to be valid JSX that can be transpiled.  

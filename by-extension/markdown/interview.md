@@ -2,7 +2,7 @@ There are 11 interview questions, each scored on a 1 to 3 rubric. A passing scor
 
 The interview is meant to mimic an actual interview! It will last approximately 1 hour. Make sure you treat this interview like you would any job interview. Show up on time, with your video on, in a quiet place and with a professional Zoom background.
 
-The interview will be a review of your web skillset and knowledge. Please come prepared with GitHub links to your build week unit 3 project and unit 4 sprint challenges 1 and 2. **Your projects do not need to be 100% complete or bug free.** You will not be scored on your code but it will be a starting point for discussion. You may also use links to personal projects if you prefer. Questions will relate to the following topics:
+The interview will be a review of your web skillset and knowledge. Please come prepared with GitHub links to your build week unit 3 project and unit 4 sprint challenges 1 and 2. **Your projects do not need to be 100% complete or bug free.** You will not be scored on your code but it will be a starting point for discussion. You may also use links to personal projects if you prefer. Questions will relate to the following topics:
 
 1.  Responsive Design Concepts
 2.  Accessibility

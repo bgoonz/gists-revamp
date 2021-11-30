@@ -1,4 +1,4 @@
-_\[This book is about solving mathematical problems, but the same techniques apply to solving computing problems.\]_
+_[This book is about solving mathematical problems, but the same techniques apply to solving computing problems.]_
 
 ## UNDERSTAND THE PROBLEM
 

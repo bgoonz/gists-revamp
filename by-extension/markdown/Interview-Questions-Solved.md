@@ -10,91 +10,91 @@
 
 ---
 
-- [\[_geekpradd (Python)_\]](https://github.com/geekpradd/PythonPi/blob/master/PythonPi.py)
+- [[_geekpradd (Python)_]](https://github.com/geekpradd/PythonPi/blob/master/PythonPi.py)
 
 ---
 
-- [\[_MrBlaise (Python)_\]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/pi.py)
+- [[_MrBlaise (Python)_]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/pi.py)
 
 ---
 
-- [\[_whoshuu (Python)_\]](https://github.com/whoshuu/Projects/blob/master/Numbers/pi.py)
+- [[_whoshuu (Python)_]](https://github.com/whoshuu/Projects/blob/master/Numbers/pi.py)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/Pi.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/Pi.hs)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/pi.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/pi.rb)
 
 ---
 
-- [\[_atomic22 (PHP)_\]](https://github.com/atomic22/problem_solving/blob/master/Pi_to_Nth.php)
+- [[_atomic22 (PHP)_]](https://github.com/atomic22/problem_solving/blob/master/Pi_to_Nth.php)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Numbers/00.%20Find%20PI%20to%20the%20Nth%20Digit.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Numbers/00.%20Find%20PI%20to%20the%20Nth%20Digit.js)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/pi.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/pi.go)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/pi.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/pi.py)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/PiToTheNth.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/PiToTheNth.java)
 
 ---
 
-- [\[_lazynight (Python)_\]](https://github.com/Flowerowl/Projects/blob/master/solutions/numbers/find_pi_to_the_nth_digit.py)
+- [[_lazynight (Python)_]](https://github.com/Flowerowl/Projects/blob/master/solutions/numbers/find_pi_to_the_nth_digit.py)
 
 ---
 
-- [\[_abadojack(Go)_\]](https://github.com/abadojack/Playground/blob/master/Projects-Solutions/Numbers/Go/pi.go)
+- [[_abadojack(Go)_]](https://github.com/abadojack/Playground/blob/master/Projects-Solutions/Numbers/Go/pi.go)
 
 ---
 
-- [\[_abadojack(Java)_\]](https://github.com/abadojack/Playground/blob/master/Projects-Solutions/Numbers/Java/Pi.java)
+- [[_abadojack(Java)_]](https://github.com/abadojack/Playground/blob/master/Projects-Solutions/Numbers/Java/Pi.java)
 
 ---
 
-- [\[_lazy0getter(Swift)_\]](https://github.com/lazy0getter/codeless-code/blob/master/Swift/Projects-solutions.playground/section-1.swift)
+- [[_lazy0getter(Swift)_]](https://github.com/lazy0getter/codeless-code/blob/master/Swift/Projects-solutions.playground/section-1.swift)
 
 ---
 
-- [\[_mandeepbhutani (Python)_\]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/DecimalPlace.py)
+- [[_mandeepbhutani (Python)_]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/DecimalPlace.py)
 
 ---
 
-- [\[_chibby0ne (C)_\]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/pi_to_n_digit/pi_to_n_digit.c)
+- [[_chibby0ne (C)_]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/pi_to_n_digit/pi_to_n_digit.c)
 
 ---
 
-- [\[_jesspls (Java)_\]](https://github.com/jesspls/MegaProjectList/blob/master/src/Numbers/PiToNthDigit.java)
+- [[_jesspls (Java)_]](https://github.com/jesspls/MegaProjectList/blob/master/src/Numbers/PiToNthDigit.java)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/Pi_to_the_Nth.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/Pi_to_the_Nth.java)
 
 ---
 
-- [\[_kingballer29 (C++)_\]](https://github.com/kingballer29/Programming/blob/master/PI.cpp)
+- [[_kingballer29 (C++)_]](https://github.com/kingballer29/Programming/blob/master/PI.cpp)
 
 ---
 
-- [\[_manateemilitia (Java)_\]](https://github.com/manateemilitia/PiDec/blob/master/PiDec/src/pidec/PiDec.java)
+- [[_manateemilitia (Java)_]](https://github.com/manateemilitia/PiDec/blob/master/PiDec/src/pidec/PiDec.java)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pi-to-nth.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pi-to-nth.sh)
 
 ---
 
-- [\[_marcusmonteiro(Haskell)_\]](https://github.com/marcusmonteiro/Projects/blob/master/numbers/PiToTheNth.hs)
+- [[_marcusmonteiro(Haskell)_]](https://github.com/marcusmonteiro/Projects/blob/master/numbers/PiToTheNth.hs)
 
 ---
 
@@ -104,39 +104,39 @@
 
 ---
 
-- [\[_dhd12391 (Java)_\]](https://github.com/dhd12391/Projects/blob/master/Java/EToNthDigit.java)
+- [[_dhd12391 (Java)_]](https://github.com/dhd12391/Projects/blob/master/Java/EToNthDigit.java)
 
 ---
 
-- [\[_aseeon (Python)_\]](https://gist.github.com/aseeon/3f06d95f995fde7adfc2)
+- [[_aseeon (Python)_]](https://gist.github.com/aseeon/3f06d95f995fde7adfc2)
 
 ---
 
-- [\[_lazy0getter(Swift)_\]](https://github.com/lazy0getter/codeless-code/blob/master/Swift/Projects-solutions.playground/section-1.swift)
+- [[_lazy0getter(Swift)_]](https://github.com/lazy0getter/codeless-code/blob/master/Swift/Projects-solutions.playground/section-1.swift)
 
 ---
 
-- [\[_grzeswol(Ruby)_\]](https://github.com/grzeswol/karan_projects_solutions/blob/master/Ruby/2_euler_number.rb)
+- [[_grzeswol(Ruby)_]](https://github.com/grzeswol/karan_projects_solutions/blob/master/Ruby/2_euler_number.rb)
 
 ---
 
-- [\[_mandeepbhutani (Python)_\]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/FindE.py)
+- [[_mandeepbhutani (Python)_]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/FindE.py)
 
 ---
 
-- [\[_chibby0ne (C)_\]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/e_to_n_digit/e_to_n_digit.c)
+- [[_chibby0ne (C)_]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/e_to_n_digit/e_to_n_digit.c)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/e_to_the_Nth.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/e_to_the_Nth.java)
 
 ---
 
-- [\[_kingballer29 (C++)_\]](https://github.com/kingballer29/Programming/blob/master/e.cpp)
+- [[_kingballer29 (C++)_]](https://github.com/kingballer29/Programming/blob/master/e.cpp)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pi-to-nth.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pi-to-nth.sh)
 
 ---
 
@@ -146,139 +146,139 @@
 
 ---
 
-- [\[_MrBlaise (Python)_\]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/fibonacci.py)
+- [[_MrBlaise (Python)_]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/fibonacci.py)
 
 ---
 
-- [\[_timkaboya (Python)_\]](https://github.com/timkaboya/cached_fibo/blob/master/cached_fibo.py)
+- [[_timkaboya (Python)_]](https://github.com/timkaboya/cached_fibo/blob/master/cached_fibo.py)
 
 ---
 
-- [\[_whoshuu (Python)_\]](https://github.com/whoshuu/Projects/blob/master/Numbers/fibonacci.py)
+- [[_whoshuu (Python)_]](https://github.com/whoshuu/Projects/blob/master/Numbers/fibonacci.py)
 
 ---
 
-- [\[_mayankj08 (Bash)_\]](https://github.com/mayankj08/Shell-Script-Collection/blob/master/calcualte_fibonacci_numbers.sh)
+- [[_mayankj08 (Bash)_]](https://github.com/mayankj08/Shell-Script-Collection/blob/master/calcualte_fibonacci_numbers.sh)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/Fibonacci.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/Fibonacci.hs)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/fib.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/fib.rb)
 
 ---
 
-- [\[_bolcselo (C)_\]](https://github.com/bolcselo/Projects/blob/master/Numbers/fibonacci.c)
+- [[_bolcselo (C)_]](https://github.com/bolcselo/Projects/blob/master/Numbers/fibonacci.c)
 
 ---
 
-- [\[_atomic22 (PHP)_\]](https://github.com/atomic22/problem_solving/blob/master/fibseq.php)
+- [[_atomic22 (PHP)_]](https://github.com/atomic22/problem_solving/blob/master/fibseq.php)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Numbers/01.%20Fibonacci%20Sequence.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Numbers/01.%20Fibonacci%20Sequence.js)
 
 ---
 
-- [\[_luisccastillo(C\#_\]](https://github.com/luisccastillo/Projects/blob/master/Numbers/fibonacci_sequence.cs)
+- [[_luisccastillo(C#_]](https://github.com/luisccastillo/Projects/blob/master/Numbers/fibonacci_sequence.cs)
 
 ---
 
-- [\[_MikroMan (Java)_\]](https://github.com/MikroMan/Contributions/blob/master/Fibonacci.java)
+- [[_MikroMan (Java)_]](https://github.com/MikroMan/Contributions/blob/master/Fibonacci.java)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/fibonacci.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/fibonacci.go)
 
 ---
 
-- [\[_brotatotes (Python)_\]](https://github.com/brotatotes/myStuff/blob/master/Fibonacci_Sequence.py)
+- [[_brotatotes (Python)_]](https://github.com/brotatotes/myStuff/blob/master/Fibonacci_Sequence.py)
 
 ---
 
-- [\[_mandliya (C++)_\]](https://github.com/mandliya/practice/blob/master/fib.cpp)
+- [[_mandliya (C++)_]](https://github.com/mandliya/practice/blob/master/fib.cpp)
 
 ---
 
-- [\[_Silverneo (Python)_\]](https://github.com/Silverneo/pylearn/blob/master/Fibonacci.py)
+- [[_Silverneo (Python)_]](https://github.com/Silverneo/pylearn/blob/master/Fibonacci.py)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/fibonacci.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/fibonacci.py)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/FibonnacciSeq.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/FibonnacciSeq.java)
 
 ---
 
-- [\[_mukul13(java)_\]](https://github.com/mukul13/poker/blob/master/fibonacci.java)
+- [[_mukul13(java)_]](https://github.com/mukul13/poker/blob/master/fibonacci.java)
 
 ---
 
-- [\[_Bhavika (C)_\]](https://github.com/Bhavikaso/Project1/blob/master/fibonacci.c)
+- [[_Bhavika (C)_]](https://github.com/Bhavikaso/Project1/blob/master/fibonacci.c)
 
 ---
 
-- [\[_turlapatykaushik (Python)_\]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/fibonacci_series.py)
+- [[_turlapatykaushik (Python)_]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/fibonacci_series.py)
 
 ---
 
-- [\[_neivin (Python)_\]](https://github.com/neivin/projects/blob/master/numbers/fibonacci.py)
+- [[_neivin (Python)_]](https://github.com/neivin/projects/blob/master/numbers/fibonacci.py)
 
 ---
 
-- [\[_Josenberg (Ruby)_\]](https://github.com/josenberg/fibonacci_ruby/blob/master/fibonacci.rb)
+- [[_Josenberg (Ruby)_]](https://github.com/josenberg/fibonacci_ruby/blob/master/fibonacci.rb)
 
 ---
 
-- [\[_lazy0getter (Swift)_\]](https://github.com/lazy0getter/codeless-code/blob/master/Swift/Projects-solutions.playground/section-1.swift)
+- [[_lazy0getter (Swift)_]](https://github.com/lazy0getter/codeless-code/blob/master/Swift/Projects-solutions.playground/section-1.swift)
 
 ---
 
-- [\[_nokafor (C)_\]](https://github.com/nokafor/personal-development/blob/master/fibonacci.c)
+- [[_nokafor (C)_]](https://github.com/nokafor/personal-development/blob/master/fibonacci.c)
 
 ---
 
-- [\[_ritwikmishra (JavaScript)_\]](https://github.com/ritwikmishra/myrepo/blob/master/fibo.js)
+- [[_ritwikmishra (JavaScript)_]](https://github.com/ritwikmishra/myrepo/blob/master/fibo.js)
 
 ---
 
-- [\[_hollynicolemills (Java)_\]](https://github.com/hollynicolemills/Fibonacci/blob/master/Fibonacci.java)
+- [[_hollynicolemills (Java)_]](https://github.com/hollynicolemills/Fibonacci/blob/master/Fibonacci.java)
 
 ---
 
-- [\[_chasmani(Ruby)_\]](https://github.com/chasmani/RubyFunProjects/blob/master/Problems/fibonacci.rb)
+- [[_chasmani(Ruby)_]](https://github.com/chasmani/RubyFunProjects/blob/master/Problems/fibonacci.rb)
 
 ---
 
-- [\[_crobin21 (Java)_\]](https://github.com/crobin21/ProjectSolutions/blob/master/source/fibonacciSequence.java)
+- [[_crobin21 (Java)_]](https://github.com/crobin21/ProjectSolutions/blob/master/source/fibonacciSequence.java)
 
 ---
 
-- [\[_chibby0ne (C)_\]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/fibonacci_sequence/fibonacci.c)
+- [[_chibby0ne (C)_]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/fibonacci_sequence/fibonacci.c)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/Fibonacci.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/Fibonacci.java)
 
 ---
 
-- [\[_kingballer29 (C++)_\]](https://github.com/kingballer29/Programming/blob/master/fibonacci.cpp)
+- [[_kingballer29 (C++)_]](https://github.com/kingballer29/Programming/blob/master/fibonacci.cpp)
 
 ---
 
-- [\[_manateemilitia (Java)_\]](https://github.com/manateemilitia/FibJava/blob/master/FibJava/src/fibjava/FibJava.java)
+- [[_manateemilitia (Java)_]](https://github.com/manateemilitia/FibJava/blob/master/FibJava/src/fibjava/FibJava.java)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/fs.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/fs.sh)
 
 ---
 
-- [\[_korabum (Python)_\]](https://github.com/korabum/Projects/blob/master/Numbers/fibonacci.py)
+- [[_korabum (Python)_]](https://github.com/korabum/Projects/blob/master/Numbers/fibonacci.py)
 
 ---
 
@@ -286,87 +286,87 @@
 
 ### **Prime Factorization** - Have the user enter a number and find all Prime Factors (if there are any) and display them.
 
-- [\[_geekpradd (C++)_\]](https://github.com/geekpradd/Prime-Factorise/blob/master/primefactorize.cpp)
+- [[_geekpradd (C++)_]](https://github.com/geekpradd/Prime-Factorise/blob/master/primefactorize.cpp)
 
 ---
 
-- [\[_geekpradd (Python)_\]](https://github.com/geekpradd/Prime-Factorise/blob/master/primefactorize.py)
+- [[_geekpradd (Python)_]](https://github.com/geekpradd/Prime-Factorise/blob/master/primefactorize.py)
 
 ---
 
-- [\[_MrBlaise (Python)_\]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/prime.py)
+- [[_MrBlaise (Python)_]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/prime.py)
 
 ---
 
-- [\[_whoshuu (Python)_\]](https://github.com/whoshuu/Projects/blob/master/Numbers/prime.py)
+- [[_whoshuu (Python)_]](https://github.com/whoshuu/Projects/blob/master/Numbers/prime.py)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/prime_factorization.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/prime_factorization.rb)
 
 ---
 
-- [\[_aterkik (Haskell)_\]](https://github.com/aterkik/Projects/blob/master/Numbers/primeFactors.hs)
+- [[_aterkik (Haskell)_]](https://github.com/aterkik/Projects/blob/master/Numbers/primeFactors.hs)
 
 ---
 
-- [\[_bolcselo(c)_\]](https://github.com/bolcselo/Projects/blob/master/Numbers/prime.c)
+- [[_bolcselo(c)_]](https://github.com/bolcselo/Projects/blob/master/Numbers/prime.c)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Numbers/02.%20Prime%20Factorization.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Numbers/02.%20Prime%20Factorization.js)
 
 ---
 
-- [\[_MikroMan (Java)_\]](https://github.com/MikroMan/Contributions/blob/master/Factors.java)
+- [[_MikroMan (Java)_]](https://github.com/MikroMan/Contributions/blob/master/Factors.java)
 
 ---
 
-- [\[_checkcheckzz (C++)_\]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Primefactors.cpp)
+- [[_checkcheckzz (C++)_]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Primefactors.cpp)
 
 ---
 
-- [\[_kdamball (Javascript)_\]](https://github.com/kdamball/Numbers/blob/master/primeFactors.js)
+- [[_kdamball (Javascript)_]](https://github.com/kdamball/Numbers/blob/master/primeFactors.js)
 
 ---
 
-- [\[_Tartuffe1 (Python)_\]](https://github.com/Tartuffe1/Projects/blob/master/Numbers/prime_factorization.py)
+- [[_Tartuffe1 (Python)_]](https://github.com/Tartuffe1/Projects/blob/master/Numbers/prime_factorization.py)
 
 ---
 
-- [\[_Hedgehog01 (Java)_\]](https://github.com/hedgehog01/src/blob/master/numbers/PrimeFactorization.java)
+- [[_Hedgehog01 (Java)_]](https://github.com/hedgehog01/src/blob/master/numbers/PrimeFactorization.java)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/prime_factorization.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/prime_factorization.py)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/PrimeFactorization.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/PrimeFactorization.java)
 
 ---
 
-- [\[_chasmani (Ruby)_\]](https://github.com/chasmani/RubyFunProjects/blob/master/Problems/prime_factors.rb)
+- [[_chasmani (Ruby)_]](https://github.com/chasmani/RubyFunProjects/blob/master/Problems/prime_factors.rb)
 
 ---
 
-- [\[_chibby0ne (C)_\]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/prime_factorization/prime_factorization.c)
+- [[_chibby0ne (C)_]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/prime_factorization/prime_factorization.c)
 
 ---
 
-- [\[_mchwalek (Clojure)_\]](https://github.com/mchwalek/Projects/blob/clojure-solutions/Numbers/prime-factorization.clj)
+- [[_mchwalek (Clojure)_]](https://github.com/mchwalek/Projects/blob/clojure-solutions/Numbers/prime-factorization.clj)
 
 ---
 
-- [\[_kvsingh (Python)_\]](https://github.com/kvsingh/python-practice/blob/master/primeFactors.py)
+- [[_kvsingh (Python)_]](https://github.com/kvsingh/python-practice/blob/master/primeFactors.py)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/prime_Factorization.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/prime_Factorization.java)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pf.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pf.sh)
 
 ---
 
@@ -376,67 +376,67 @@
 
 ---
 
-- [\[_MrBlaise (Python)_\]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/next_prime.py)
+- [[_MrBlaise (Python)_]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/next_prime.py)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/NextPrime.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/NextPrime.hs)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/next_prime_number.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/next_prime_number.rb)
 
 ---
 
-- [\[_bolcselo (C)_\]](https://github.com/bolcselo/Projects/blob/master/Numbers/next_prime.c)
+- [[_bolcselo (C)_]](https://github.com/bolcselo/Projects/blob/master/Numbers/next_prime.c)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Numbers/03.%20Next%20Prime%20Number.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Numbers/03.%20Next%20Prime%20Number.js)
 
 ---
 
-- [\[_MikroMan (Java)_\]](https://github.com/MikroMan/Contributions/blob/master/NextPrime.java)
+- [[_MikroMan (Java)_]](https://github.com/MikroMan/Contributions/blob/master/NextPrime.java)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/nextprime.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/nextprime.go)
 
 ---
 
-- [\[_Silverneo (Python)_\]](https://github.com/Silverneo/pylearn/blob/master/prime.py)
+- [[_Silverneo (Python)_]](https://github.com/Silverneo/pylearn/blob/master/prime.py)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/next_prime.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/next_prime.py)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/NextPrimeNum.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/NextPrimeNum.java)
 
 ---
 
-- [\[_Bhavika (C)_\]](https://github.com/Bhavikaso/Project1/blob/master/newPrime.c)
+- [[_Bhavika (C)_]](https://github.com/Bhavikaso/Project1/blob/master/newPrime.c)
 
 ---
 
-- [\[_turlapatykaushik (Python)_\]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/prime_number_generator.py)
+- [[_turlapatykaushik (Python)_]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/prime_number_generator.py)
 
 ---
 
-- [\[_nokafor (C)_\]](https://github.com/nokafor/personal-development/blob/master/primes.c)
+- [[_nokafor (C)_]](https://github.com/nokafor/personal-development/blob/master/primes.c)
 
 ---
 
-- [\[_psk11 (html,javascript)_\]](https://gist.githubusercontent.com/psk11/76e00e2aa8f5c00bf8c7/raw/d5bfe67022e25a78f02691d702c16b124c969053/NextPrime.html)
+- [[_psk11 (html,javascript)_]](https://gist.githubusercontent.com/psk11/76e00e2aa8f5c00bf8c7/raw/d5bfe67022e25a78f02691d702c16b124c969053/NextPrime.html)
 
 ---
 
-- [\[_chibby0ne (C)_\]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/next_prime_number/next_prime_number.c)
+- [[_chibby0ne (C)_]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/next_prime_number/next_prime_number.c)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/next_Prime.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/next_Prime.java)
 
 ---
 
@@ -446,63 +446,63 @@
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/other/misc.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/other/misc.py)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/cost_of_tile.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/cost_of_tile.rb)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Numbers/04.%20Find%20Cost%20of%20Tile%20to%20Cover%20W%20x%20H%20Floor.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Numbers/04.%20Find%20Cost%20of%20Tile%20to%20Cover%20W%20x%20H%20Floor.js)
 
 ---
 
-- [\[_jbruno2 (C++)_\]](https://github.com/jbruno2/Simple-Programs-and-Solutions/blob/master/C%2B%2B/Cost%20to%20tile%20WxH%20of%20floor.cpp)
+- [[_jbruno2 (C++)_]](https://github.com/jbruno2/Simple-Programs-and-Solutions/blob/master/C%2B%2B/Cost%20to%20tile%20WxH%20of%20floor.cpp)
 
 ---
 
-- [\[_rasppie (Python)_\]](https://github.com/rasppie/pyprojects/blob/master/tile.py)
+- [[_rasppie (Python)_]](https://github.com/rasppie/pyprojects/blob/master/tile.py)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/tile.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/tile.py)
 
 ---
 
-- [\[_vdrey (Python)_\]](https://github.com/vdrey/Project-Programs/blob/master/Python/Tile%20cost.py)
+- [[_vdrey (Python)_]](https://github.com/vdrey/Project-Programs/blob/master/Python/Tile%20cost.py)
 
 ---
 
-- [\[_Josenberg (Ruby)_\]](https://github.com/josenberg/tile_cost/blob/master/tile_cost.rb)
+- [[_Josenberg (Ruby)_]](https://github.com/josenberg/tile_cost/blob/master/tile_cost.rb)
 
 ---
 
-- [\[_nokafor(C)_\]](https://github.com/nokafor/personal-development/blob/master/tiles.c)
+- [[_nokafor(C)_]](https://github.com/nokafor/personal-development/blob/master/tiles.c)
 
 ---
 
-- [\[_francis36012 (C++)_\]](https://github.com/francis36012/karan-projects/blob/master/src/numbers/tile.cpp)
+- [[_francis36012 (C++)_]](https://github.com/francis36012/karan-projects/blob/master/src/numbers/tile.cpp)
 
 ---
 
-- [\[_dsub15 (Python)_\]](https://github.com/dsub15/Projects/commit/f2adae5891932dee5ad63aa19814c0096988b32a)
+- [[_dsub15 (Python)_]](https://github.com/dsub15/Projects/commit/f2adae5891932dee5ad63aa19814c0096988b32a)
 
 ---
 
-- [\[_chibby0ne (C)_\]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/find_cost_tile/find_cost_tile.c)
+- [[_chibby0ne (C)_]](https://github.com/chibby0ne/Projects/blob/master/Solutions/Numbers/find_cost_tile/find_cost_tile.c)
 
 ---
 
-- [\[_kingballer29 (Scala)_\]](https://github.com/kingballer29/Programming/blob/master/floorTileCostCalculator.scala)
+- [[_kingballer29 (Scala)_]](https://github.com/kingballer29/Programming/blob/master/floorTileCostCalculator.scala)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/wxhfloor.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/wxhfloor.sh)
 
 ---
 
-- [\[_viktorahlstrom (Java)_\]](https://github.com/viktorahlstrom/all-java/blob/master/floor.java)
+- [[_viktorahlstrom (Java)_]](https://github.com/viktorahlstrom/all-java/blob/master/floor.java)
 
 ---
 
@@ -512,27 +512,27 @@
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/mortgage_calculator.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/mortgage_calculator.rb)
 
 ---
 
-- [\[_jbruno2 (C++)_\]](https://github.com/jbruno2/Simple-Programs-and-Solutions/blob/master/C%2B%2B/mortgagecalculator.cpp)
+- [[_jbruno2 (C++)_]](https://github.com/jbruno2/Simple-Programs-and-Solutions/blob/master/C%2B%2B/mortgagecalculator.cpp)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/mortgage.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/mortgage.go)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/mortgage.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/mortgage.py)
 
 ---
 
-- [\[_francis36012 (Java)_\]](https://github.com/francis36012/karan-projects/blob/master/src/numbers/Mortgage.java)
+- [[_francis36012 (Java)_]](https://github.com/francis36012/karan-projects/blob/master/src/numbers/Mortgage.java)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/mortgage.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/mortgage.sh)
 
 ---
 
@@ -542,47 +542,47 @@
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/money_changing/money_changing.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/money_changing/money_changing.py)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/change_return.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/change_return.rb)
 
 ---
 
-- [\[_MikroMan (Java)_\]](https://github.com/MikroMan/Contributions/blob/master/Change.java)
+- [[_MikroMan (Java)_]](https://github.com/MikroMan/Contributions/blob/master/Change.java)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/change.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/change.go)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/change.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/change.py)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/ChangeReturn.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/ChangeReturn.java)
 
 ---
 
-- [\[_dsub15 (Python)_\]](https://github.com/dsub15/Projects/blob/master/Change.py)
+- [[_dsub15 (Python)_]](https://github.com/dsub15/Projects/blob/master/Change.py)
 
 ---
 
-- [\[_mchwalek (Clojure)_\]](https://github.com/mchwalek/Projects/blob/clojure-solutions/Numbers/change-return.clj)
+- [[_mchwalek (Clojure)_]](https://github.com/mchwalek/Projects/blob/clojure-solutions/Numbers/change-return.clj)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/change_return.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/change_return.sh)
 
 ---
 
-- [\[_ryjo1026 (Java)_\]](https://github.com/ryjo1026/Java-Practice/blob/master/ChangeReturn.java)
+- [[_ryjo1026 (Java)_]](https://github.com/ryjo1026/Java-Practice/blob/master/ChangeReturn.java)
 
 ---
 
-- [\[_rlingineni (C++)_\]](https://gist.github.com/rlingineni/93b57d67e37134735df5)
+- [[_rlingineni (C++)_]](https://gist.github.com/rlingineni/93b57d67e37134735df5)
 
 ---
 
@@ -592,39 +592,39 @@
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/conversion/conversions.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/conversion/conversions.py)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/binary_to_decimal.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/binary_to_decimal.rb)
 
 ---
 
-- [\[_hx1997 (C)_\]](https://github.com/hx1997/Projects/blob/master/Numbers/binary_decimal.c)
+- [[_hx1997 (C)_]](https://github.com/hx1997/Projects/blob/master/Numbers/binary_decimal.c)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/binary_decimal_convert.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/binary_decimal_convert.py)
 
 ---
 
-- [\[_vinaynikhil313 (Java)_\]](https://github.com/vinaynikhil313/Projects-Solutions/blob/master/BinaryDecimal.java)
+- [[_vinaynikhil313  (Java)_]](https://github.com/vinaynikhil313/Projects-Solutions/blob/master/BinaryDecimal.java)
 
 ---
 
-- [\[_mukul13 (C)_\]](https://github.com/mukul13/poker/blob/master/Binary%20to%20decimal%20and%20Back%20Converter.c)
+- [[_mukul13 (C)_]](https://github.com/mukul13/poker/blob/master/Binary%20to%20decimal%20and%20Back%20Converter.c)
 
 ---
 
-- [\[_francis36012 (C++)_\]](https://github.com/francis36012/karan-projects/blob/master/src/numbers/binBaseConv.cpp)
+- [[_francis36012 (C++)_]](https://github.com/francis36012/karan-projects/blob/master/src/numbers/binBaseConv.cpp)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/binary_decimal_conversion.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/binary_decimal_conversion.java)
 
 ---
 
-- [\[_mandliya(c++)_\]](https://github.com/mandliya/short-fun-projects/blob/master/conversion/conversion.cpp)
+- [[_mandliya(c++)_]](https://github.com/mandliya/short-fun-projects/blob/master/conversion/conversion.cpp)
 
 ---
 
@@ -634,35 +634,35 @@
 
 ---
 
-- [\[_MrBlaise (Python)_\]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/calc.py)
+- [[_MrBlaise (Python)_]](https://github.com/MrBlaise/learnpython/blob/master/Numbers/calc.py)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/Calc.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/Calc.hs)
 
 ---
 
-- [\[_ripperhf (C)_\]](https://github.com/ripperhf/Calculator/blob/master/calc.c)
+- [[_ripperhf (C)_]](https://github.com/ripperhf/Calculator/blob/master/calc.c)
 
 ---
 
-- [\[_hx1997 (C)_\]](https://github.com/hx1997/Projects/blob/master/Numbers/calc.c)
+- [[_hx1997 (C)_]](https://github.com/hx1997/Projects/blob/master/Numbers/calc.c)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/calculator.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/calculator.py)
 
 ---
 
-- [\[_grzeswol (Ruby)_\]](https://github.com/grzeswol/karan_projects_solutions/blob/master/Ruby/10_calculator.rb)
+- [[_grzeswol (Ruby)_]](https://github.com/grzeswol/karan_projects_solutions/blob/master/Ruby/10_calculator.rb)
 
 ---
 
-- [\[_hollynicolemills(java)_\]](https://github.com/hollynicolemills/CalculatorApp/blob/master/src/CalculatorGUI.java)
+- [[_hollynicolemills(java)_]](https://github.com/hollynicolemills/CalculatorApp/blob/master/src/CalculatorGUI.java)
 
 ---
 
-- [\[_psk11 (HTML, JS)_\]](https://gist.githubusercontent.com/psk11/f9196c924c7f2ee0fd2b/raw/3c597636572579c3a6aa33c891bffccf877764a1/calculator.html)
+- [[_psk11 (HTML, JS)_]](https://gist.githubusercontent.com/psk11/f9196c924c7f2ee0fd2b/raw/3c597636572579c3a6aa33c891bffccf877764a1/calculator.html)
 
 ---
 
@@ -672,15 +672,15 @@
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/conversion/conversions.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/number_projects/conversion/conversions.py)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/unit_convert.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/unit_convert.py)
 
 ---
 
-- [\[_kurokuriboh (Java)_\]](https://github.com/kurokuriboh/Mega_Project_Solutions/tree/master/Numbers/Unit%20Converter)
+- [[_kurokuriboh (Java)_]](https://github.com/kurokuriboh/Mega_Project_Solutions/tree/master/Numbers/Unit%20Converter)
 
 ---
 
@@ -690,19 +690,19 @@
 
 ---
 
-- [\[_smthc (Python)_\]](https://github.com/smthc/mini_projects/blob/master/alarm.py)
+- [[_smthc (Python)_]](https://github.com/smthc/mini_projects/blob/master/alarm.py)
 
 ---
 
-- [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Rooster)
+- [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Rooster)
 
 ---
 
-- [\[_kingballer29 (Python)_\]](https://github.com/kingballer29/Programming/blob/master/alarmClock.py)
+- [[_kingballer29 (Python)_]](https://github.com/kingballer29/Programming/blob/master/alarmClock.py)
 
 ---
 
-- [\[_rlingineni (C\#)_\]](https://github.com/rlingineni/CsharpProblems/blob/master/alarmClock/alarmClock/Program.cs)
+- [[_rlingineni (C#)_]](https://github.com/rlingineni/CsharpProblems/blob/master/alarmClock/alarmClock/Program.cs)
 
 ---
 
@@ -712,19 +712,19 @@
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/CityDistance.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/CityDistance.hs)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Numbers/two_city_distance.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Numbers/two_city_distance.rb)
 
 ---
 
-- [\[_dabillox (Python)_\]](https://github.com/dabillox/pyprojects/blob/master/citydistance.py)
+- [[_dabillox (Python)_]](https://github.com/dabillox/pyprojects/blob/master/citydistance.py)
 
 ---
 
-- [\[_kingballer29 (C)_\]](https://github.com/kingballer29/Programming/blob/master/distanceBetweenTwoCities.c)
+- [[_kingballer29 (C)_]](https://github.com/kingballer29/Programming/blob/master/distanceBetweenTwoCities.c)
 
 ---
 
@@ -734,55 +734,55 @@
 
 ---
 
-- [\[_kbohinski (Java)_\]](https://github.com/kbohinski/CCValidator)
+- [[_kbohinski (Java)_]](https://github.com/kbohinski/CCValidator)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/CCValidator.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/CCValidator.hs)
 
 ---
 
-- [\[_stupidgrass (Python)_\]](https://github.com/stupidgrass/Projects/blob/master/Numbers/credit_card_validator_xwz.py)
+- [[_stupidgrass (Python)_]](https://github.com/stupidgrass/Projects/blob/master/Numbers/credit_card_validator_xwz.py)
 
 ---
 
-- [\[_MikroMan (Java)_\]](https://github.com/MikroMan/Contributions/blob/master/Checksum.java)
+- [[_MikroMan (Java)_]](https://github.com/MikroMan/Contributions/blob/master/Checksum.java)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/creditcard.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/creditcard.go)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/credit_card.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/credit_card.py)
 
 ---
 
-- [\[_dotslash (Python)_\]](https://github.com/dotslash/Projects/blob/master/solutions/credit_card_validator.py)
+- [[_dotslash (Python)_]](https://github.com/dotslash/Projects/blob/master/solutions/credit_card_validator.py)
 
 ---
 
-- [\[_Barvin (Python)_\]](https://github.com/Barvin/CodeWars-ByArvin/blob/master/TheLuhnAlgorithm.py)
+- [[_Barvin (Python)_]](https://github.com/Barvin/CodeWars-ByArvin/blob/master/TheLuhnAlgorithm.py)
 
 ---
 
-- [\[_Josenberg (Ruby)_\]](https://github.com/josenberg/credit_card_validate/blob/master/credit_card_validator.rb)
+- [[_Josenberg (Ruby)_]](https://github.com/josenberg/credit_card_validate/blob/master/credit_card_validator.rb)
 
 ---
 
-- [\[_psk11 (html,js)_\]](https://github.com/psk11/snippets/blob/master/cardValid.html)
+- [[_psk11 (html,js)_]](https://github.com/psk11/snippets/blob/master/cardValid.html)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/Creditcard.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/Creditcard.java)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/ccv.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/ccv.sh)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/all/blob/master/python/ccv.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/all/blob/master/python/ccv.py)
 
 ---
 
@@ -792,93 +792,93 @@
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/TaxCalculator.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/TaxCalculator.hs)
 
 ---
 
-- [\[_jbruno2 (C++)_\]](https://github.com/jbruno2/Simple-Programs-and-Solutions/blob/master/C%2B%2B/Tax%20calculator.cpp)
+- [[_jbruno2 (C++)_]](https://github.com/jbruno2/Simple-Programs-and-Solutions/blob/master/C%2B%2B/Tax%20calculator.cpp)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/tax.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/tax.go)
 
 ---
 
-- [\[_brotatotes (Python)_\]](https://github.com/brotatotes/myStuff/blob/master/Tax_Calculator.py)
+- [[_brotatotes (Python)_]](https://github.com/brotatotes/myStuff/blob/master/Tax_Calculator.py)
 
 ---
 
-- [\[_desertwebdesigns (Python)_\]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/tax.py)
+- [[_desertwebdesigns (Python)_]](https://bitbucket.org/desertwebdesigns/learn_python/src/master/Numbers/tax.py)
 
 ---
 
-- [\[_neivin (Python)_\]](https://github.com/neivin/projects/blob/master/numbers/tax_calculator.py)
+- [[_neivin (Python)_]](https://github.com/neivin/projects/blob/master/numbers/tax_calculator.py)
 
 ---
 
-- [\[_Vdrey (Python)_\]](https://github.com/vdrey/Project-Programs/blob/master/Python/Tax%20Calculator.py)
+- [[_Vdrey (Python)_]](https://github.com/vdrey/Project-Programs/blob/master/Python/Tax%20Calculator.py)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/tax.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/tax.sh)
 
 ---
 
 ---
 
-### **Factorial Finder** - The factorial of a positive integer _n_ is defined as the product of the sequence , n-1, n-2, …1 and the factorial of 0 is defined as being 1. Solve this using both loops and recursion.
+### **Factorial Finder** - The factorial of a positive integer _n_ is defined as the product of the sequence , n-1, n-2, ...1 and the factorial of 0 is defined as being 1. Solve this using both loops and recursion.
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/Factorial.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/Factorial.hs)
 
 ---
 
-- [\[_rramchand (python)_\]](https://github.com/rramchand/Projects-Solutions/blob/master/factorial.py)
+- [[_rramchand (python)_]](https://github.com/rramchand/Projects-Solutions/blob/master/factorial.py)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/factorial.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/factorial.go)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/FactorialFinder.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/FactorialFinder.java)
 
 ---
 
-- [\[_JaredCubilla (Javascript)_\]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/numbers/factorialFinder.js)
+- [[_JaredCubilla (Javascript)_]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/numbers/factorialFinder.js)
 
 ---
 
-- [\[_turlapatykaushik(Python)_\]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/factorial.py)
+- [[_turlapatykaushik(Python)_]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/factorial.py)
 
 ---
 
-- [\[_Josenberg (Ruby)_\]](https://github.com/josenberg/factorial_ruby/blob/master/factorial_finder.rb)
+- [[_Josenberg (Ruby)_]](https://github.com/josenberg/factorial_ruby/blob/master/factorial_finder.rb)
 
 ---
 
-- [\[_melvin0008(SML)_\]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.sml)
+- [[_melvin0008(SML)_]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.sml)
 
 ---
 
-- [\[_melvin0008 (Python)_\]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.py)
+- [[_melvin0008 (Python)_]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.py)
 
 ---
 
-- [\[_melvin0008(haskell)_\]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.hs)
+- [[_melvin0008(haskell)_]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.hs)
 
 ---
 
-- [\[_melvin0008 (Julia)_\]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.jl)
+- [[_melvin0008 (Julia)_]](https://github.com/melvin0008/FactorialComparer/blob/master/fact.jl)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/factorial_finder.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/factorial_finder.java)
 
 ---
 
-- [\[_kvsingh (Python)_\]](https://github.com/kvsingh/python-practice/blob/master/factorial.py)
+- [[_kvsingh (Python)_]](https://github.com/kvsingh/python-practice/blob/master/factorial.py)
 
 ---
 
@@ -888,19 +888,19 @@
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/ComplexNumberAlgebra.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/ComplexNumberAlgebra.hs)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/ComplexNumbers.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/ComplexNumbers.java)
 
 ---
 
-- [\[_ppype (python)_\]](https://github.com/ppype/Complex-Number-Algebra/blob/master/programs/main.py)
+- [[_ppype (python)_]](https://github.com/ppype/Complex-Number-Algebra/blob/master/programs/main.py)
 
 ---
 
-- [\[_sijunhe (c)_\]](https://github.com/sijunhe/Project-Programs/blob/master/c/complex.c)
+- [[_sijunhe (c)_]](https://github.com/sijunhe/Project-Programs/blob/master/c/complex.c)
 
 ---
 
@@ -910,61 +910,61 @@
 
 ---
 
-- [\[_Quoly (Python)_\]](https://github.com/Quoly/Projects/blob/master/happy_numbers.py)
+- [[_Quoly (Python)_]](https://github.com/Quoly/Projects/blob/master/happy_numbers.py)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/HappyNumbers.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/HappyNumbers.hs)
 
 ---
 
-- [\[_manoj1992(Java)_\]](https://github.com/manoj1992/Projects/blob/master/Numbers/HappyNumber.java)
+- [[_manoj1992(Java)_]](https://github.com/manoj1992/Projects/blob/master/Numbers/HappyNumber.java)
 
 ---
 
-- [\[_checkcheckzz (C++)_\]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Happy%20Number.cpp)
+- [[_checkcheckzz (C++)_]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Happy%20Number.cpp)
 
 ---
 
-- [\[_BinaryForest (Java)_\]](https://github.com/BinaryForest/KaranProjects/blob/master/HappyNumbers/HappyNumbers.java)
+- [[_BinaryForest (Java)_]](https://github.com/BinaryForest/KaranProjects/blob/master/HappyNumbers/HappyNumbers.java)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/HappyNumbers.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/HappyNumbers.java)
 
 ---
 
-- [\[_kiriakosv (Python)_\]](https://github.com/kiriakosv/Project_Solutions/blob/master/happy.py)
+- [[_kiriakosv (Python)_]](https://github.com/kiriakosv/Project_Solutions/blob/master/happy.py)
 
 ---
 
-- [\[_chasmani(Ruby)_\]](https://github.com/chasmani/RubyFunProjects/blob/master/Problems/happy_numbers.rb)
+- [[_chasmani(Ruby)_]](https://github.com/chasmani/RubyFunProjects/blob/master/Problems/happy_numbers.rb)
 
 ---
 
-- [\[_nagelflorian (Swift)_\]](https://gist.github.com/nagelflorian/7eb2201893a2259ceb97)
+- [[_nagelflorian (Swift)_]](https://gist.github.com/nagelflorian/7eb2201893a2259ceb97)
 
 ---
 
-- [\[_hkuchampudi (Java)_\]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/happy_numbers.java)
+- [[_hkuchampudi (Java)_]](https://github.com/hkuchampudi/MegaProject_Solutions/blob/master/Numbers/happy_numbers.java)
 
 ---
 
 ---
 
-### **Number Names** - Show how to spell out a number in English. You can use a preexisting implementation or roll your own, but you should support inputs up to at least one million (or the maximum value of your language’s default bounded integer type, if that’s less). _Optional: Support for inputs other than positive integers (like zero, negative integers, and floating-point numbers)._ \* [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Numbers/WordNumbers.hs)
+### **Number Names** - Show how to spell out a number in English. You can use a preexisting implementation or roll your own, but you should support inputs up to at least one million (or the maximum value of your language's default bounded integer type, if that's less). _Optional: Support for inputs other than positive integers (like zero, negative integers, and floating-point numbers)._ \* [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Numbers/WordNumbers.hs)
 
 ---
 
-- [\[_scottdchris (Python)_\]](https://github.com/scottdchris/NumToWords)
+- [[_scottdchris (Python)_]](https://github.com/scottdchris/NumToWords)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/names.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/names.go)
 
 ---
 
-- [\[_checkcheckzz (C++)_\]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Namenumbers.cpp)
+- [[_checkcheckzz (C++)_]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Namenumbers.cpp)
 
 ---
 
@@ -974,59 +974,59 @@
 
 ---
 
-- [\[_scottdchris (Python)_\]](https://github.com/scottdchris/CoinFlip)
+- [[_scottdchris (Python)_]](https://github.com/scottdchris/CoinFlip)
 
 ---
 
-- [\[_aysark (Java)_\]](https://github.com/aysark/Review/blob/master/Projects/src/CoinFlip.java)
+- [[_aysark (Java)_]](https://github.com/aysark/Review/blob/master/Projects/src/CoinFlip.java)
 
 ---
 
-- [\[_JaredCubilla (Javascript)_\]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/numbers/coinFlip.js)
+- [[_JaredCubilla (Javascript)_]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/numbers/coinFlip.js)
 
 ---
 
-- [\[_dsub15 (Python)_\]](https://github.com/dsub15/Projects/blob/master/Coin_flip.py)
+- [[_dsub15 (Python)_]](https://github.com/dsub15/Projects/blob/master/Coin_flip.py)
 
 ---
 
-- [\[_mandeepbhutani (Python)_\]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/CoinFlip.py)
+- [[_mandeepbhutani (Python)_]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/CoinFlip.py)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/coinflip.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/coinflip.sh)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/all/blob/master/python/coin.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/all/blob/master/python/coin.py)
 
 ---
 
-- [\[_viktorahlstrom (Java)_\]](https://github.com/viktorahlstrom/all/blob/master/java/coinflip.java)
+- [[_viktorahlstrom (Java)_]](https://github.com/viktorahlstrom/all/blob/master/java/coinflip.java)
 
 ---
 
-- [\[_mandliya(C++)_\]](https://github.com/mandliya/short-fun-projects/blob/master/coin-flip-simulation/coinFlip.cpp)
-
----
-
----
-
-### **Limit Calculator** - Ask the user to enter f(x) and the limit value, then return the value of the limit statement _Optional: Make the calculator capable of supporting infinite limits._\* [\[_ChrisBlair (Java)_\]](https://github.com/ChrisBlair2019/SummerProjectsJAVA/tree/master/Limits)
+- [[_mandliya(C++)_]](https://github.com/mandliya/short-fun-projects/blob/master/coin-flip-simulation/coinFlip.cpp)
 
 ---
 
 ---
 
-### **Fast Exponentiation** - Ask the user to enter 2 integers a and b and output a^b (i.e. pow(a,b)) in O(lg n) time complexity.
+### **Limit Calculator** - Ask the user to enter f(x) and the limit value, then return the value of the limit statement _Optional: Make the calculator capable of supporting infinite limits._\* [[_ChrisBlair (Java)_]](https://github.com/ChrisBlair2019/SummerProjectsJAVA/tree/master/Limits)
 
 ---
 
-- [\[_chrislyc1991(C++)_\]](https://github.com/chrislyc1991/project-1/blob/master/FastExpo.cpp)
+---
+
+### **Fast Exponentiation** - Ask the user to enter 2 integers a and b and output a^b (i.e. pow(a,b)) in O(lg n) time complexity.
 
 ---
 
-- [\[_korabum (Python)_\]](https://github.com/korabum/Projects/blob/master/Numbers/power.py)
+- [[_chrislyc1991(C++)_]](https://github.com/chrislyc1991/project-1/blob/master/FastExpo.cpp)
+
+---
+
+- [[_korabum (Python)_]](https://github.com/korabum/Projects/blob/master/Numbers/power.py)
 
 ## Classic Algorithms
 
@@ -1034,97 +1034,97 @@
 
 ---
 
-### **Collatz Conjecture** - Start with a number _n &gt; 1_. Find the number of steps it takes to reach one using the following process: If _n_ is even, divide it by 2. If _n_ is odd, multiply it by 3 and add 1.
+### **Collatz Conjecture** - Start with a number _n > 1_. Find the number of steps it takes to reach one using the following process: If _n_ is even, divide it by 2. If _n_ is odd, multiply it by 3 and add 1.
 
 ---
 
-- [\[_EpicDavi (Python)_\]](https://github.com/EpicDavi/RandomProjects/blob/master/Language%20Challenge%20Stuff/CollatzRecursive.py)
+- [[_EpicDavi (Python)_]](https://github.com/EpicDavi/RandomProjects/blob/master/Language%20Challenge%20Stuff/CollatzRecursive.py)
 
 ---
 
-- [\[_rramchand (Java)_\]](https://github.com/rramchand/Projects-Solutions/blob/master/Collatz.java)
+- [[_rramchand (Java)_]](https://github.com/rramchand/Projects-Solutions/blob/master/Collatz.java)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Classic%20Algorithms/collatz.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Classic%20Algorithms/collatz.rb)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Classic%20Algorithms/00.%20Collatz%20Conjecture.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Classic%20Algorithms/00.%20Collatz%20Conjecture.js)
 
 ---
 
-- [\[_taycaldwell (Java)_\]](https://github.com/taycaldwell/Projects/blob/master/Classic%20Algorithms/collatz.java)
+- [[_taycaldwell (Java)_]](https://github.com/taycaldwell/Projects/blob/master/Classic%20Algorithms/collatz.java)
 
 ---
 
-- [\[_anggiaj (Go)_\]](https://github.com/anggiaj/Projects/blob/master/Classic%20Algorithms/collatz.go)
+- [[_anggiaj (Go)_]](https://github.com/anggiaj/Projects/blob/master/Classic%20Algorithms/collatz.go)
 
 ---
 
-- [\[_edeng (Java)_\]](https://github.com/edeng/Problems/blob/master/Collatz.java)
+- [[_edeng (Java)_]](https://github.com/edeng/Problems/blob/master/Collatz.java)
 
 ---
 
-- [\[_luisccastillo (C\#)_\]](https://github.com/luisccastillo/Projects/blob/master/Classic%20Algorithms/collatz_cojecture.cs)
+- [[_luisccastillo (C#)_]](https://github.com/luisccastillo/Projects/blob/master/Classic%20Algorithms/collatz_cojecture.cs)
 
 ---
 
-- [\[_vdrey (Python)_\]](https://github.com/vdrey/Project-Programs/blob/master/Python/Collatz.py)
+- [[_vdrey (Python)_]](https://github.com/vdrey/Project-Programs/blob/master/Python/Collatz.py)
 
 ---
 
-- [\[_francis36012 (Python)_\]](https://github.com/francis36012/karan-projects/blob/master/src/classic_algorithms/collatz.py)
+- [[_francis36012 (Python)_]](https://github.com/francis36012/karan-projects/blob/master/src/classic_algorithms/collatz.py)
 
 ---
 
-- [\[_kingballer29 (C++)_\]](https://github.com/kingballer29/Programming/blob/master/collatzConjecture.cpp)
+- [[_kingballer29 (C++)_]](https://github.com/kingballer29/Programming/blob/master/collatzConjecture.cpp)
 
 ---
 
-- [\[_manateemilitia (Java)_\]](https://github.com/manateemilitia/CollatzJava/blob/master/CollatzJava/src/collatzjava/CollatzJava.java)
+- [[_manateemilitia (Java)_]](https://github.com/manateemilitia/CollatzJava/blob/master/CollatzJava/src/collatzjava/CollatzJava.java)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/pythonscripts/blob/master/collatz_conjecture.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/pythonscripts/blob/master/collatz_conjecture.py)
 
 ---
 
 ---
 
-### **Sorting** - Implement two types of sorting algorithms: Merge sort and bubble sort \* [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Classic%20Algorithms/sorting.rb)
+### **Sorting** - Implement two types of sorting algorithms: Merge sort and bubble sort \* [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Classic%20Algorithms/sorting.rb)
 
 ---
 
-- [\[_sananth12 (C)_\]](https://github.com/sananth12/Projects/blob/master/Classic%20Algorithms/Sorting.c)
+- [[_sananth12 (C)_]](https://github.com/sananth12/Projects/blob/master/Classic%20Algorithms/Sorting.c)
 
 ---
 
-- [\[_liuyang1 (Python)_\]](https://github.com/liuyang1/Projects/blob/master/Classic%20Algorithms/mergesort.py)
+- [[_liuyang1 (Python)_]](https://github.com/liuyang1/Projects/blob/master/Classic%20Algorithms/mergesort.py)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Classic%20Algorithms/sorting.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Classic%20Algorithms/sorting.go)
 
 ---
 
-- [\[_checkcheckzz (C++)_\]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Sorting.cpp)
+- [[_checkcheckzz (C++)_]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/Sorting.cpp)
 
 ---
 
-- [\[_yasaswyk (C++)_\]](https://github.com/yasaswyk/Projects-Solutions/blob/mysolutions/Sorting/sort.cc)
+- [[_yasaswyk (C++)_]](https://github.com/yasaswyk/Projects-Solutions/blob/mysolutions/Sorting/sort.cc)
 
 ---
 
-- [\[_turlapatykaushik (C)_\]](https://github.com/turlapatykaushik/DataStructures-and-Algorithms-Implementation/tree/master/sorting)
+- [[_turlapatykaushik (C)_]](https://github.com/turlapatykaushik/DataStructures-and-Algorithms-Implementation/tree/master/sorting)
 
 ---
 
-- [\[_smac89 (haskell)_\]](https://gist.github.com/smac89/656240fea116f8230351)
+- [[_smac89 (haskell)_]](https://gist.github.com/smac89/656240fea116f8230351)
 
 ---
 
-- [\[_sijunhe (java)_\]](https://github.com/sijunhe/Project-Programs/blob/master/java/sort.java)
+- [[_sijunhe (java)_]](https://github.com/sijunhe/Project-Programs/blob/master/java/sort.java)
 
 ---
 
@@ -1134,19 +1134,19 @@
 
 ---
 
-- [\[_dabillox (Python)_\]](https://github.com/dabillox/pyprojects/blob/master/closestpairproblem.py)
+- [[_dabillox (Python)_]](https://github.com/dabillox/pyprojects/blob/master/closestpairproblem.py)
 
 ---
 
-- [\[_liuyang1 (Python)_\]](https://github.com/liuyang1/Projects/blob/master/Classic%20Algorithms/cloestpair.py)
+- [[_liuyang1 (Python)_]](https://github.com/liuyang1/Projects/blob/master/Classic%20Algorithms/cloestpair.py)
 
 ---
 
-- [\[_smac89 (C++)_\]](https://github.com/smac89/Projects/tree/master/solutions/classic-algorithms/closestpair)
+- [[_smac89 (C++)_]](https://github.com/smac89/Projects/tree/master/solutions/classic-algorithms/closestpair)
 
 ---
 
-- [\[_sijunhe (java)_\]](https://github.com/sijunhe/Project-Programs/tree/master/java/closest%20Pair)
+- [[_sijunhe (java)_]](https://github.com/sijunhe/Project-Programs/tree/master/java/closest%20Pair)
 
 ---
 
@@ -1156,35 +1156,35 @@
 
 ---
 
-- [\[_swapagarwal (Python)_\]](https://github.com/swapagarwal/Projects/blob/master/Classic%20Algorithms/Sieve%20of%20Eratosthenes.py)
+- [[_swapagarwal (Python)_]](https://github.com/swapagarwal/Projects/blob/master/Classic%20Algorithms/Sieve%20of%20Eratosthenes.py)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Classic%20Algorithms/03.%20Sieve%20of%20Eratosthenes.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Classic%20Algorithms/03.%20Sieve%20of%20Eratosthenes.js)
 
 ---
 
-- [\[_liuyang1 (Python)_\]](https://github.com/liuyang1/Projects/blob/master/Classic%20Algorithms/sieve.py)
+- [[_liuyang1 (Python)_]](https://github.com/liuyang1/Projects/blob/master/Classic%20Algorithms/sieve.py)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Classic%20Algorithms/sieve.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Classic%20Algorithms/sieve.go)
 
 ---
 
-- [\[_danfang (Java)_\]](https://github.com/danfang/Algorithms/blob/master/src/problem35/SieveEratosthenes.java)
+- [[_danfang (Java)_]](https://github.com/danfang/Algorithms/blob/master/src/problem35/SieveEratosthenes.java)
 
 ---
 
-- [\[_checkcheckzz (C++)_\]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/SieveofEratosthenes.cpp)
+- [[_checkcheckzz (C++)_]](https://github.com/checkcheckzz/coding-problem/blob/master/problem/SieveofEratosthenes.cpp)
 
 ---
 
-- [\[_gautamk (rust)_\]](https://github.com/gautamk/ferrous-oxide/blob/master/projects/src/sieve_of_eratosthenes.rs)
+- [[_gautamk (rust)_]](https://github.com/gautamk/ferrous-oxide/blob/master/projects/src/sieve_of_eratosthenes.rs)
 
 ---
 
-- [\[_korabum (Python)_\]](https://github.com/korabum/Projects/blob/master/Classic-Algorithms/sieveOfEratosthenes.py)
+- [[_korabum (Python)_]](https://github.com/korabum/Projects/blob/master/Classic-Algorithms/sieveOfEratosthenes.py)
 
 ## Graphs
 
@@ -1192,11 +1192,11 @@
 
 ---
 
-### **Graph from links** - Create a program that will create a graph or network from a series of links.\* [\[_grimley517 (Python)_\]](https://github.com/grimley517/Projects/blob/graph1/Graphs/GfmLinks.py)
+### **Graph from links** - Create a program that will create a graph or network from a series of links.\* [[_grimley517 (Python)_]](https://github.com/grimley517/Projects/blob/graph1/Graphs/GfmLinks.py)
 
 ---
 
-- [\[_rahulxxarora(c++)_\]](https://github.com/rahulxxarora/SourceCodes/blob/master/GraphLinks.cpp)
+- [[_rahulxxarora(c++)_]](https://github.com/rahulxxarora/SourceCodes/blob/master/GraphLinks.cpp)
 
 ---
 
@@ -1204,13 +1204,13 @@
 
 ### **Eulerian Path** - Create a program which will take as an input a graph and output either a Eulerian path or a Eulerian cycle, or state that it is not possible. A Eulerian Path starts at one node and traverses every edge of a graph through every node and finishes at another node. A Eulerian cycle is a eulerian Path that starts and finishes at the same node.
 
-- [\[_DiegoAscanio(Python)_\]](https://github.com/DiegoAscanio/python-graphs/blob/master/eulerian.py)
+- [[_DiegoAscanio(Python)_]](https://github.com/DiegoAscanio/python-graphs/blob/master/eulerian.py)
 
 ---
 
 ---
 
-### **Connected Graph** - Create a program which takes a graph as an input and outputs whether every node is connected or not.\* [\[_DiegoAscanio(Python)_\]](https://github.com/DiegoAscanio/python-graphs/blob/master/is_connected.py)
+### **Connected Graph** - Create a program which takes a graph as an input and outputs whether every node is connected or not.\* [[_DiegoAscanio(Python)_]](https://github.com/DiegoAscanio/python-graphs/blob/master/is_connected.py)
 
 ---
 
@@ -1220,11 +1220,11 @@
 
 ---
 
-- [\[_mouradmourafiq (Python)_\]](https://github.com/mouradmourafiq/data-analysis/blob/master/dijkstra.py)
+- [[_mouradmourafiq (Python)_]](https://github.com/mouradmourafiq/data-analysis/blob/master/dijkstra.py)
 
 ---
 
-- [\[_rahulxxarora(c++)_\]](https://github.com/rahulxxarora/SourceCodes/blob/master/Dijshaktra.cpp)
+- [[_rahulxxarora(c++)_]](https://github.com/rahulxxarora/SourceCodes/blob/master/Dijshaktra.cpp)
 
 ---
 
@@ -1236,7 +1236,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_kiriakosv (Python)_\]](https://github.com/kiriakosv/Project_Solutions/tree/master/MinSpanTree)
+- [[_kiriakosv (Python)_]](https://github.com/kiriakosv/Project_Solutions/tree/master/MinSpanTree)
 
 ## Data Structures
 
@@ -1248,19 +1248,19 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Word_Finder)
+- [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Word_Finder)
 
 ---
 
-- [\[_anubhavmaity (Python)_\]](https://github.com/anubhavmaity/FindWordInFiles)
+- [[_anubhavmaity (Python)_]](https://github.com/anubhavmaity/FindWordInFiles)
 
 ---
 
-- [\[_smac89 (C++)_\]](https://gist.github.com/smac89/e9fdfaa83f6659480b9a)
+- [[_smac89 (C++)_]](https://gist.github.com/smac89/e9fdfaa83f6659480b9a)
 
 ---
 
-- [\[_gatsbydhn (c++)_\]](https://github.com/gatsbydhn/myToy/blob/master/invertedIndex.cpp#L1)
+- [[_gatsbydhn (c++)_]](https://github.com/gatsbydhn/myToy/blob/master/invertedIndex.cpp#L1)
 
 ## Text
 
@@ -1270,27 +1270,27 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ### **Fizz Buzz** - Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
 
-- [\[_eush77(Befunge)_\]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/fizzbuzz.bf)
+- [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/fizzbuzz.bf)
 
 ---
 
-- [\[_sethlugibihl (Python)_\]](https://github.com/sethlugibihl/Python-Solutions/blob/master/FizzBuzz.py)
+- [[_sethlugibihl (Python)_]](https://github.com/sethlugibihl/Python-Solutions/blob/master/FizzBuzz.py)
 
 ---
 
-- [\[_viktorahlstrom (Java)_\]](https://github.com/viktorahlstrom/all/blob/master/java/fizzbuzz.java)
+- [[_viktorahlstrom (Java)_]](https://github.com/viktorahlstrom/all/blob/master/java/fizzbuzz.java)
 
 ---
 
-- [\[_baarb (JavaScript)_\]](https://github.com/baarb/FizzBuzzSolution/blob/master/FizzBuzzSolution.js)
+- [[_baarb (JavaScript)_]](https://github.com/baarb/FizzBuzzSolution/blob/master/FizzBuzzSolution.js)
 
 ---
 
-- [\[_korabum (Python)_\]](https://github.com/korabum/Projects/blob/master/Text/fizzbuzz.py)
+- [[_korabum (Python)_]](https://github.com/korabum/Projects/blob/master/Text/fizzbuzz.py)
 
 ---
 
-- [\[_danman1979(JavaScript)_\]](https://github.com/danman1979/FizzBuzz/blob/master/fizzBuzz.js)
+- [[_danman1979(JavaScript)_]](https://github.com/danman1979/FizzBuzz/blob/master/fizzBuzz.js)
 
 ---
 
@@ -1300,209 +1300,210 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
 
 ---
 
-- [\[_JLukeC (Python)_\]](https://github.com/jLukeC/mega-project-list/blob/master/python/reverse_string.py)
+- [[_JLukeC (Python)_]](https://github.com/jLukeC/mega-project-list/blob/master/python/reverse_string.py)
 
 ---
 
-- [\[_JLukeC (Java)_\]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/ReverseString.java)
+- [[_JLukeC (Java)_]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/ReverseString.java)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Text/Reverse.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Text/Reverse.hs)
 
 ---
 
-- [\[_ross-t (Python)_\]](https://github.com/ross-t/stringgnirts/blob/master/reverser.py)
+- [[_ross-t (Python)_]](https://github.com/ross-t/stringgnirts/blob/master/reverser.py)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/reverse_a_string.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/reverse_a_string.rb)
 
 ---
 
-- [\[_jotaki (C)_\]](https://github.com/jotaki/mini-projects/blob/master/strings/reverse.c)
+- [[_jotaki (C)_]](https://github.com/jotaki/mini-projects/blob/master/strings/reverse.c)
 
 ---
 
-- [\[_taycaldwell (Java)_\]](https://github.com/taycaldwell/Projects/blob/master/Text/reverse_string.java)
+- [[_taycaldwell (Java)_]](https://github.com/taycaldwell/Projects/blob/master/Text/reverse_string.java)
 
 ---
 
-- [\[_anggiaj (Go)_\]](https://github.com/anggiaj/Projects/blob/master/Text/reverse.go)
+- [[_anggiaj (Go)_]](https://github.com/anggiaj/Projects/blob/master/Text/reverse.go)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Text/00.%20Reverse%20a%20String.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Text/00.%20Reverse%20a%20String.js)
 
 ---
 
-- [\[_edeng (Java)_\]](https://github.com/edeng/Problems/blob/master/ReverseString.java)
+- [[_edeng (Java)_]](https://github.com/edeng/Problems/blob/master/ReverseString.java)
 
 ---
 
-- [\[_hx1997 (C)_\]](https://github.com/hx1997/Projects/blob/master/Text/reverse.c)
+- [[_hx1997 (C)_]](https://github.com/hx1997/Projects/blob/master/Text/reverse.c)
 
 ---
 
-- [\[_Tartuffe1(Python)_\]](https://github.com/Tartuffe1/Projects/blob/master/Text/reverse_word.py)
+- [[_Tartuffe1(Python)_]](https://github.com/Tartuffe1/Projects/blob/master/Text/reverse_word.py)
 
 ---
 
-- [\[_dawitelias (Javascript)_\]](https://github.com/dawitelias/Projects/blob/master/Text/reverseString.js)
+- [[_dawitelias (Javascript)_]](https://github.com/dawitelias/Projects/blob/master/Text/reverseString.js)
 
 ---
 
-- [\[_bhaskar4n(Android)_\]](https://github.com/bhaskar4n/ReverseString-Android)
+- [[_bhaskar4n(Android)_]](https://github.com/bhaskar4n/ReverseString-Android)
 
 ---
 
-- [\[_rasppie (Python)_\]](https://github.com/rasppie/pyprojects/blob/master/string_reverse.py)
+- [[_rasppie (Python)_]](https://github.com/rasppie/pyprojects/blob/master/string_reverse.py)
 
 ---
 
-- [\[_xanderlewis(Python)_\]](https://github.com/xanderlewis/Python-Projects-Solutions/blob/master/ReverseString.py)
+- [[_xanderlewis(Python)_]](https://github.com/xanderlewis/Python-Projects-Solutions/blob/master/ReverseString.py)
 
 ---
 
-- [\[_sespino1 (Java)_\]](https://github.com/Sespino1/Java-Projects/blob/master/ReverseString.java)
+- [[_sespino1 (Java)_]](https://github.com/Sespino1/Java-Projects/blob/master/ReverseString.java)
 
 ---
 
-- [\[_JaredCubilla (Javascript)_\]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/reverseAString.js)
+- [[_JaredCubilla (Javascript)_]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/reverseAString.js)
 
 ---
 
-- [\[_Bhavika(C)_\]](https://github.com/Bhavikaso/Project1/blob/master/reverseString.c)
+- [[_Bhavika(C)_]](https://github.com/Bhavikaso/Project1/blob/master/reverseString.c)
 
 ---
 
-- [\[_turlapatykaushik (Python)_\]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/Reverse_String.py)
+- [[_turlapatykaushik (Python)_]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/Reverse_String.py)
 
 ---
 
-- [\[_neivin (Python)_\]](https://github.com/neivin/projects/blob/master/text/reverse.py)
+- [[_neivin (Python)_]](https://github.com/neivin/projects/blob/master/text/reverse.py)
 
 ---
 
-- [\[_nokafor(C)_\]](https://github.com/nokafor/personal-development/blob/master/reverseString.c)
+- [[_nokafor(C)_]](https://github.com/nokafor/personal-development/blob/master/reverseString.c)
 
 ---
 
-- [\[_mandeepbhutani (Python)_\]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/ReverseString.py)
+- [[_mandeepbhutani (Python)_]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/ReverseString.py)
 
 ---
 
-- [\[_satanicsanta (Perl)_\]](https://github.com/satanicsanta/General-Perl/blob/master/src/reverse.pl)
+- [[_satanicsanta (Perl)_]](https://github.com/satanicsanta/General-Perl/blob/master/src/reverse.pl)
 
 ---
 
-- [\[_eush77(Befunge)_\]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/string-reverse.bf)
+- [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/string-reverse.bf)
 
 ---
 
-- [\[_sethlugibihl (Python)_\]](https://github.com/sethlugibihl/Python-Solutions/blob/master/StringReverse.py)
+- [[_sethlugibihl (Python)_]](https://github.com/sethlugibihl/Python-Solutions/blob/master/StringReverse.py)
 
 ---
 
-- [\[_chrislyc1991(C++)_\]](https://github.com/chrislyc1991/project-1/blob/master/reversestring.cpp)
+- [[_chrislyc1991(C++)_]](https://github.com/chrislyc1991/project-1/blob/master/reversestring.cpp)
 
 ---
 
-- [\[_kingballer29 (Scala)_\]](https://github.com/kingballer29/Programming/blob/master/stringReverse.scala)
+- [[_kingballer29 (Scala)_]](https://github.com/kingballer29/Programming/blob/master/stringReverse.scala)
 
 ---
 
-- [\[_rnikhil275 (Python)_\]](https://github.com/rnikhil275/scripts/blob/master/string.py) \[Mohammadhassan (Python)\_\]\](https://github.com/mohammadhassanj/project/blob/master/reverse-string.py)
+- [[_rnikhil275 (Python)_]](https://github.com/rnikhil275/scripts/blob/master/string.py)
+  [Mohammadhassan (Python)_]](https://github.com/mohammadhassanj/project/blob/master/reverse-string.py)
 
 ---
 
 ---
 
-### **Pig Latin** - Pig Latin is a game of alterations played on the English language game. To create the Pig Latin form of an English word the initial consonant sound is transposed to the end of the word and an ay is affixed (Ex.: “banana” would yield anana-bay). Read Wikipedia for more information on rules.
+### **Pig Latin** - Pig Latin is a game of alterations played on the English language game. To create the Pig Latin form of an English word the initial consonant sound is transposed to the end of the word and an ay is affixed (Ex.: "banana" would yield anana-bay). Read Wikipedia for more information on rules.
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
 
 ---
 
-- [\[_JLukeC (Python)_\]](https://github.com/jLukeC/mega-project-list/blob/master/python/pig_latin.py)
+- [[_JLukeC (Python)_]](https://github.com/jLukeC/mega-project-list/blob/master/python/pig_latin.py)
 
 ---
 
-- [\[_JLukeC (Java)_\]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/PigLatin.java)
+- [[_JLukeC (Java)_]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/PigLatin.java)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/pig_latin.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/pig_latin.rb)
 
 ---
 
-- [\[_jotaki (C)_\]](https://github.com/jotaki/mini-projects/blob/master/strings/piglatin.c)
+- [[_jotaki (C)_]](https://github.com/jotaki/mini-projects/blob/master/strings/piglatin.c)
 
 ---
 
-- [\[_taycaldwell (Java)_\]](https://github.com/taycaldwell/Projects/blob/master/Text/PigLatin.java)
+- [[_taycaldwell (Java)_]](https://github.com/taycaldwell/Projects/blob/master/Text/PigLatin.java)
 
 ---
 
-- [\[_anggiaj (Go)_\]](https://github.com/anggiaj/Projects/blob/master/Text/piglatin.go)
+- [[_anggiaj (Go)_]](https://github.com/anggiaj/Projects/blob/master/Text/piglatin.go)
 
 ---
 
-- [\[_edeng (Java)_\]](https://github.com/edeng/Problems/blob/master/PigLatin.java)
+- [[_edeng (Java)_]](https://github.com/edeng/Problems/blob/master/PigLatin.java)
 
 ---
 
-- [\[_dawitelias (Python)_\]](https://github.com/dawitelias/Projects/blob/master/Text/convertToPyg.py)
+- [[_dawitelias (Python)_]](https://github.com/dawitelias/Projects/blob/master/Text/convertToPyg.py)
 
 ---
 
-- [\[_sespino1 (Java)_\]](https://github.com/Sespino1/Java-Projects/blob/master/PigLatin.java)
+- [[_sespino1 (Java)_]](https://github.com/Sespino1/Java-Projects/blob/master/PigLatin.java)
 
 ---
 
-- [\[_JaredCubilla (Javascript)_\]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/pigLatin.js)
+- [[_JaredCubilla (Javascript)_]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/pigLatin.js)
 
 ---
 
-- [\[_mandeepbhutani (Python)_\]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/PigLatin.py)
+- [[_mandeepbhutani (Python)_]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/PigLatin.py)
 
 ---
 
-- [\[_satanicsanta (Perl)_\]](https://github.com/satanicsanta/General-Perl/blob/master/src/pig_latin.pl)
+- [[_satanicsanta (Perl)_]](https://github.com/satanicsanta/General-Perl/blob/master/src/pig_latin.pl)
 
 ---
 
-- [\[_smac89 (MIPS)_\]](https://gist.github.com/smac89/9982a0a62609a32c05e5#file-piglatin-asm)
+- [[_smac89 (MIPS)_]](https://gist.github.com/smac89/9982a0a62609a32c05e5#file-piglatin-asm)
 
 ---
 
-- [\[_snitz70(Python)_\]](https://github.com/snitz70/Projects-Solutions/blob/master/pig_latin.py)
+- [[_snitz70(Python)_]](https://github.com/snitz70/Projects-Solutions/blob/master/pig_latin.py)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/atinlay.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/atinlay.sh)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/all/blob/master/python/atinlay.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/all/blob/master/python/atinlay.py)
 
 ---
 
-- [\[_viktorahlstrom (Java)_\]](https://github.com/viktorahlstrom/all/blob/master/java/piglatin.java)
+- [[_viktorahlstrom (Java)_]](https://github.com/viktorahlstrom/all/blob/master/java/piglatin.java)
 
 ---
 
-- [\[_eush77(Befunge)_\]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/piglatin.bf)
+- [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/piglatin.bf)
 
 ---
 
-- [\[_pinkninjajess (Ruby)_\]](https://github.com/pinkninjajess/Projects/blob/master/JV_Solutions/pigLatin.rb)
+- [[_pinkninjajess (Ruby)_]](https://github.com/pinkninjajess/Projects/blob/master/JV_Solutions/pigLatin.rb)
 
 ---
 
@@ -1512,157 +1513,157 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
 
 ---
 
-- [\[_JLukeC (Python)_\]](https://github.com/jLukeC/mega-project-list/blob/master/python/count_vowels.py)
+- [[_JLukeC (Python)_]](https://github.com/jLukeC/mega-project-list/blob/master/python/count_vowels.py)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Text/CountVowels.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Text/CountVowels.hs)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/count_vowels.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/count_vowels.rb)
 
 ---
 
-- [\[_jotaki (C)_\]](https://github.com/jotaki/mini-projects/blob/master/strings/count_vowels.c)
+- [[_jotaki (C)_]](https://github.com/jotaki/mini-projects/blob/master/strings/count_vowels.c)
 
 ---
 
-- [\[_taycaldwell (Java)_\]](https://github.com/taycaldwell/Projects/blob/master/Text/CountVowels.java)
+- [[_taycaldwell (Java)_]](https://github.com/taycaldwell/Projects/blob/master/Text/CountVowels.java)
 
 ---
 
-- [\[_anggiaj (Go)_\]](https://github.com/anggiaj/Projects/blob/master/Text/countVowels.go)
+- [[_anggiaj (Go)_]](https://github.com/anggiaj/Projects/blob/master/Text/countVowels.go)
 
 ---
 
-- [\[_edeng (Java)_\]](https://github.com/edeng/Problems/blob/master/CountVowels.java)
+- [[_edeng (Java)_]](https://github.com/edeng/Problems/blob/master/CountVowels.java)
 
 ---
 
-- [\[_brotatotes (Python)_\]](https://github.com/brotatotes/myStuff/blob/master/Count_Vowels.py)
+- [[_brotatotes (Python)_]](https://github.com/brotatotes/myStuff/blob/master/Count_Vowels.py)
 
 ---
 
-- [\[_mandeepbhutani (Python)_\]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/CountVowel.py)
+- [[_mandeepbhutani (Python)_]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/CountVowel.py)
 
 ---
 
-- [\[_plentybinary (javascript)_\]](https://github.com/plentybinary/Vowel-Counter/blob/master/VCount.js)
+- [[_plentybinary (javascript)_]](https://github.com/plentybinary/Vowel-Counter/blob/master/VCount.js)
 
 ---
 
-- [\[_rnikhil275 (Python)_\]](https://github.com/rnikhil275/scripts/blob/master/string.py)
+- [[_rnikhil275 (Python)_]](https://github.com/rnikhil275/scripts/blob/master/string.py)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/vowelcount.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/vowelcount.sh)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/all/blob/master/python/vowelcount.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/all/blob/master/python/vowelcount.py)
 
 ---
 
-- [\[_chrislyc1991(C++)_\]](https://github.com/chrislyc1991/project-1/blob/master/CountVowels.cpp)
+- [[_chrislyc1991(C++)_]](https://github.com/chrislyc1991/project-1/blob/master/CountVowels.cpp)
 
 ---
 
-- [\[_eush77(Befunge)_\]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/count-vowels.bf)
+- [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/count-vowels.bf)
 
 ---
 
-- [\[_baarb (JavaScript)_\]](https://github.com/baarb/CountVowelsSolution/blob/master/CountVowelsSolution.js)
+- [[_baarb (JavaScript)_]](https://github.com/baarb/CountVowelsSolution/blob/master/CountVowelsSolution.js)
 
 ---
 
 ---
 
-### **Check if Palindrome** - Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar” \* [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
+### **Check if Palindrome** - Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar” \* [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
 
 ---
 
-- [\[_JLukeC (Python)_\]](https://github.com/jLukeC/mega-project-list/blob/master/python/palindrome.py)
+- [[_JLukeC (Python)_]](https://github.com/jLukeC/mega-project-list/blob/master/python/palindrome.py)
 
 ---
 
-- [\[_JLukeC (Java)_\]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/PalindromeCheck.java)
+- [[_JLukeC (Java)_]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/PalindromeCheck.java)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Text/Palindrome.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Text/Palindrome.hs)
 
 ---
 
-- [\[_mouradmourafiq (Python)_\]](https://github.com/mouradmourafiq/data-analysis/blob/master/algorithmics/palindromes.py)
+- [[_mouradmourafiq (Python)_]](https://github.com/mouradmourafiq/data-analysis/blob/master/algorithmics/palindromes.py)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/palindrome.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/palindrome.rb)
 
 ---
 
-- [\[_jotaki (C)_\]](https://github.com/jotaki/mini-projects/blob/master/strings/palindrome.c)
+- [[_jotaki (C)_]](https://github.com/jotaki/mini-projects/blob/master/strings/palindrome.c)
 
 ---
 
-- [\[_anggiaj (Go)_\]](https://github.com/anggiaj/Projects/blob/master/Text/palindrome.go)
+- [[_anggiaj (Go)_]](https://github.com/anggiaj/Projects/blob/master/Text/palindrome.go)
 
 ---
 
-- [\[_edeng (Java)_\]](https://github.com/edeng/Problems/blob/master/CheckPalindrome.java)
+- [[_edeng (Java)_]](https://github.com/edeng/Problems/blob/master/CheckPalindrome.java)
 
 ---
 
-- [\[_JaredCubilla (Javascript)_\]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/checkIfPalindrome.js)
+- [[_JaredCubilla (Javascript)_]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/checkIfPalindrome.js)
 
 ---
 
-- [\[_xanderlewis (Python)_\]](https://github.com/xanderlewis/Python-Projects-Solutions/blob/master/IsPalindrome.py)
+- [[_xanderlewis (Python)_]](https://github.com/xanderlewis/Python-Projects-Solutions/blob/master/IsPalindrome.py)
 
 ---
 
-- [\[_turlapatykaushik (Python)_\]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/palindrome.py)
+- [[_turlapatykaushik (Python)_]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/palindrome.py)
 
 ---
 
-- [\[_Andrs14 (Python)_\]](https://github.com/Andrs14/Projects/blob/master/Text/palindrome.py)
+- [[_Andrs14 (Python)_]](https://github.com/Andrs14/Projects/blob/master/Text/palindrome.py)
 
 ---
 
-- [\[_mandeepbhutani (Python)_\]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/Palindrome.py)
+- [[_mandeepbhutani (Python)_]](https://github.com/mandeepbhutani/Sample-Projects/blob/master/Palindrome.py)
 
 ---
 
-- [\[_nrward (Perl)_\]](https://github.com/nrward/Projects/blob/master/check-if-palindrome.pl)
+- [[_nrward (Perl)_]](https://github.com/nrward/Projects/blob/master/check-if-palindrome.pl)
 
 ---
 
-- [\[_kingballer29 (C++)_\]](https://github.com/kingballer29/Programming/blob/master/Palindrome.cpp)
+- [[_kingballer29 (C++)_]](https://github.com/kingballer29/Programming/blob/master/Palindrome.cpp)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pdrome.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/pdrome.sh)
 
 ---
 
-- [\[_eush77(Befunge)_\]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/check-palindrome.bf)
+- [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/check-palindrome.bf)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/all/blob/master/python/pdrome.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/all/blob/master/python/pdrome.py)
 
 ---
 
-- [\[_rnikhil275 (Python_\]](https://github.com/rnikhil275/scripts/blob/master/string.py)
+- [[_rnikhil275 (Python_]](https://github.com/rnikhil275/scripts/blob/master/string.py)
 
 ---
 
-- [\[_Mohammadhassanj (Python)_\]](https://github.com/mohammadhassanj/project/blob/master/palindrome.py)
+- [[_Mohammadhassanj (Python)_]](https://github.com/mohammadhassanj/project/blob/master/palindrome.py)
 
 ---
 
@@ -1672,57 +1673,57 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
 
 ---
 
-- [\[_JLukeC (Python)_\]](https://github.com/jLukeC/mega-project-list/blob/master/python/count_words.py)
+- [[_JLukeC (Python)_]](https://github.com/jLukeC/mega-project-list/blob/master/python/count_words.py)
 
 ---
 
-- [\[_JLukeC (Java)_\]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/CountWords.java)
+- [[_JLukeC (Java)_]](https://github.com/jLukeC/mega-project-list/blob/master/java/src/projects/CountWords.java)
 
 ---
 
-- [\[_tel (Haskell)_\]](https://github.com/tel/Projects/blob/master/Text/CountWords.hs)
+- [[_tel (Haskell)_]](https://github.com/tel/Projects/blob/master/Text/CountWords.hs)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/count_words.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/count_words.rb)
 
 ---
 
-- [\[_rasppie (Python)_\]](https://github.com/rasppie/pyprojects/blob/master/word_counter.py)
+- [[_rasppie (Python)_]](https://github.com/rasppie/pyprojects/blob/master/word_counter.py)
 
 ---
 
-- [\[_JaredCubilla (Javascript)_\]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/countWordsInAString.js)
+- [[_JaredCubilla (Javascript)_]](https://github.com/JaredCubilla/Projects/blob/master/Javascript/text/countWordsInAString.js)
 
 ---
 
-- [\[_turlapatykaushik (Python)_\]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/count_word_string.py)[Abhi0725(Python)](https://github.com/Abhi0725/word_counter/blob/master/word_counter.py)
+- [[_turlapatykaushik (Python)_]](https://github.com/turlapatykaushik/Programs-and-codes/blob/master/problems/count_word_string.py)[Abhi0725(Python)](https://github.com/Abhi0725/word_counter/blob/master/word_counter.py)
 
 ---
 
-- [\[_eush77(Befunge)_\]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/count-words.bf)
+- [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/count-words.bf)
 
 ---
 
-- [\[_rnikhil275 (Python)_\]](https://github.com/rnikhil275/scripts/blob/master/string.py)
+- [[_rnikhil275 (Python)_]](https://github.com/rnikhil275/scripts/blob/master/string.py)
 
 ---
 
 ---
 
-### **Text Editor** - Notepad style application that can open, edit, and save text documents. _Optional: Add syntax highlighting and other features._ \* [\[_JLukeC (Python)_\]](https://github.com/jLukeC/advanced-text-editor)
+### **Text Editor** - Notepad style application that can open, edit, and save text documents. _Optional: Add syntax highlighting and other features._ \* [[_JLukeC (Python)_]](https://github.com/jLukeC/advanced-text-editor)
 
 ---
 
-- [\[_mouradmourafiq (c++/QT)_\]](https://github.com/mouradmourafiq/mnotepad)
+- [[_mouradmourafiq (c++/QT)_]](https://github.com/mouradmourafiq/mnotepad)
 
 ---
 
-- [\[_rasppie (Python)_\]](https://github.com/rasppie/Text_Editor/blob/master/texteditor.py)
+- [[_rasppie (Python)_]](https://github.com/rasppie/Text_Editor/blob/master/texteditor.py)
 
 ---
 
@@ -1732,35 +1733,35 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_sriniavireddy (python)_\]](https://github.com/sriniavireddy/scripts-and-solutions/tree/master/Text/RSSfeedparser)
+- [[_sriniavireddy (python)_]](https://github.com/sriniavireddy/scripts-and-solutions/tree/master/Text/RSSfeedparser)
 
 ---
 
 ---
 
-### **Post it Notes Program** - A program where you can add text reminders and post them. _Optional: You can have the program also add popup reminders._ \* [\[_rahulxxarora(python)_\]](https://github.com/rahulxxarora/Reminder)
+### **Post it Notes Program** - A program where you can add text reminders and post them. _Optional: You can have the program also add popup reminders._ \* [[_rahulxxarora(python)_]](https://github.com/rahulxxarora/Reminder)
 
 ---
 
 ---
 
-### **Quote Tracker (market symbols etc)** - A program which can go out and check the current value of stocks for a list of symbols entered by the user. The user can set how often the stocks are checked. For CLI, show whether the stock has moved up or down. _Optional: If GUI, the program can show green up and red down arrows to show which direction the stock value has moved._ \* [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/stock_price.rb)
+### **Quote Tracker (market symbols etc)** - A program which can go out and check the current value of stocks for a list of symbols entered by the user. The user can set how often the stocks are checked. For CLI, show whether the stock has moved up or down. _Optional: If GUI, the program can show green up and red down arrows to show which direction the stock value has moved._ \* [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/stock_price.rb)
 
 ---
 
-- [\[_masegaloeh (Python)_\]](https://github.com/masegaloeh/freetime-projects/blob/master/text/quote_tracker.py)
+- [[_masegaloeh (Python)_]](https://github.com/masegaloeh/freetime-projects/blob/master/text/quote_tracker.py)
 
 ---
 
-- [\[_tkwon123 (Ruby)_\]](https://github.com/Tkwon123/fetchstock)
+- [[_tkwon123 (Ruby)_]](https://github.com/Tkwon123/fetchstock)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/scripts/stocks.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/scripts/stocks.sh)
 
 ---
 
-- [\[_dotslash (Python)_\]](https://github.com/dotslash/Projects/blob/master/solutions/quotes.py)
+- [[_dotslash (Python)_]](https://github.com/dotslash/Projects/blob/master/solutions/quotes.py)
 
 ---
 
@@ -1776,19 +1777,19 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/horoscope.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/horoscope.rb)
 
 ---
 
-- [\[_cahitonur (Python)_\]](https://github.com/cahitonur/mini-project/blob/master/horoscope/horoscope.py)
+- [[_cahitonur (Python)_]](https://github.com/cahitonur/mini-project/blob/master/horoscope/horoscope.py)
 
 ---
 
-- [\[_tapasweni-pathak (Python)_\]](https://github.com/tapasweni-pathak/Scripts/blob/master/Your-Horoscope.py)
+- [[_tapasweni-pathak (Python)_]](https://github.com/tapasweni-pathak/Scripts/blob/master/Your-Horoscope.py)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/horoscope.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/horoscope.sh)
 
 ---
 
@@ -1798,19 +1799,19 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Rnhmjoj (Python)_\]](https://github.com/Rnhmjoj/Crypto)
+- [[_Rnhmjoj (Python)_]](https://github.com/Rnhmjoj/Crypto)
 
 ---
 
-- [\[_petehuang (Ruby)_\]](https://github.com/petehuang/Projects/blob/master/Text/cipher.rb)
+- [[_petehuang (Ruby)_]](https://github.com/petehuang/Projects/blob/master/Text/cipher.rb)
 
 ---
 
-- [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Ciphers)
+- [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Ciphers)
 
 ---
 
-- [\[_Bhavika (C)_\]](https://github.com/Bhavikaso/Project1/blob/master/vigenere.c)
+- [[_Bhavika (C)_]](https://github.com/Bhavikaso/Project1/blob/master/vigenere.c)
 
 ---
 
@@ -1822,7 +1823,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Markdown to HTML Converter** - Converts Markdown formatted text into HTML files. Implement basic tags like `p`, `strong`, `em` etc. _Optional: Implement all tags from [Markdown Syntax Docs](http://daringfireball.net/projects/markdown/syntax)._ \* [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/auto_markup/markup.py)
+### **Markdown to HTML Converter** - Converts Markdown formatted text into HTML files. Implement basic tags like `p`, `strong`, `em` etc. _Optional: Implement all tags from [Markdown Syntax Docs](http://daringfireball.net/projects/markdown/syntax)._ \* [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/auto_markup/markup.py)
 
 ---
 
@@ -1832,11 +1833,11 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Rnhmjoj (Python)_\]](https://gist.github.com/Rnhmjoj/6140266)
+- [[_Rnhmjoj (Python)_]](https://gist.github.com/Rnhmjoj/6140266)
 
 ---
 
-- [\[_dotslash (Python \[cl\])_\]](https://github.com/dotslash/Projects/blob/master/solutions/regex.py)
+- [[_dotslash (Python [cl])_]](https://github.com/dotslash/Projects/blob/master/solutions/regex.py)
 
 ## Networking
 
@@ -1848,23 +1849,23 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_mouradmourafiq (c)_\]](https://github.com/mouradmourafiq/mftp)
+- [[_mouradmourafiq (c)_]](https://github.com/mouradmourafiq/mftp)
 
 ---
 
-- [\[_rohit-takhar (c)_\]](https://github.com/rohit-takhar/Simple-FTP)
+- [[_rohit-takhar (c)_]](https://github.com/rohit-takhar/Simple-FTP)
 
 ---
 
-- [\[_rohit-takhar (C)_\]](https://github.com/rohit-takhar/ftp-client-program-in-C-vsftpd)
+- [[_rohit-takhar (C)_]](https://github.com/rohit-takhar/ftp-client-program-in-C-vsftpd)
 
 ---
 
-- [\[_smd519 (c)_\]](https://github.com/smd519/Networking_Basics/tree/master/My_FTP_Protocol)
+- [[_smd519 (c)_]](https://github.com/smd519/Networking_Basics/tree/master/My_FTP_Protocol)
 
 ---
 
-- [\[_rnikhil275(Python)_\]](https://github.com/rnikhil275/scripts/blob/master/ftp.py)
+- [[_rnikhil275(Python)_]](https://github.com/rnikhil275/scripts/blob/master/ftp.py)
 
 ---
 
@@ -1874,33 +1875,33 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_smd519 (c)_\]](https://github.com/smd519/Networking_Basics/tree/master/Bandwidth_Monitor)
+- [[_smd519 (c)_]](https://github.com/smd519/Networking_Basics/tree/master/Bandwidth_Monitor)
 
 ---
 
 ---
 
-### **Port Scanner** - Enter an IP address and a port range where the program will then attempt to find open ports on the given computer by connecting to each of them. On any successful connections mark the port as open.\* [\[_enessenel (Python)_\]](https://github.com/enessenel/Small-Projects/blob/master/PortScanner.py)
+### **Port Scanner** - Enter an IP address and a port range where the program will then attempt to find open ports on the given computer by connecting to each of them. On any successful connections mark the port as open.\* [[_enessenel (Python)_]](https://github.com/enessenel/Small-Projects/blob/master/PortScanner.py)
 
 ---
 
-- [\[_mayankj08 (Python)_\]](https://github.com/mayankj08/Python-Programs/blob/master/open_ports.py)
+- [[_mayankj08 (Python)_]](https://github.com/mayankj08/Python-Programs/blob/master/open_ports.py)
 
 ---
 
-- [\[_Rnhmjoj (Python)_\]](https://gist.github.com/Rnhmjoj/8409734)
+- [[_Rnhmjoj (Python)_]](https://gist.github.com/Rnhmjoj/8409734)
 
 ---
 
-- [\[_jbruno2 (C++)_\]](https://github.com/jbruno2/SimplePortScanner/blob/master/portscanner.cpp)
+- [[_jbruno2 (C++)_]](https://github.com/jbruno2/SimplePortScanner/blob/master/portscanner.cpp)
 
 ---
 
-- [\[_dawdler (python)_\]](https://github.com/dawdler/Projects/blob/master/port_scanner.py)
+- [[_dawdler (python)_]](https://github.com/dawdler/Projects/blob/master/port_scanner.py)
 
 ---
 
-- [\[_smd519 (c)_\]](https://github.com/smd519/Networking_Basics/tree/master/Port_Scanner)
+- [[_smd519 (c)_]](https://github.com/smd519/Networking_Basics/tree/master/Port_Scanner)
 
 ---
 
@@ -1910,29 +1911,29 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Mail_Checker)
+- [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Mail_Checker)
 
 ---
 
 ---
 
-### **Country from IP Lookup** - Enter an IP address and find the country that IP is registered in. _Optional: Find the Ip automatically._ \* [\[_Hash-Collision (Python)_\]](https://github.com/Hash-Collision/Projects/blob/master/Networking/country_from_ip.py)
+### **Country from IP Lookup** - Enter an IP address and find the country that IP is registered in. _Optional: Find the Ip automatically._ \* [[_Hash-Collision (Python)_]](https://github.com/Hash-Collision/Projects/blob/master/Networking/country_from_ip.py)
 
 ---
 
-- [\[_tapasweni-pathak (Python)_\]](https://github.com/tapasweni-pathak/Scripts/blob/master/Locate-Me.py)
+- [[_tapasweni-pathak (Python)_]](https://github.com/tapasweni-pathak/Scripts/blob/master/Locate-Me.py)
 
 ---
 
-- [\[_dotslash (Python)_\]](https://github.com/dotslash/Projects/blob/master/solutions/ip_lookup.py)
+- [[_dotslash (Python)_]](https://github.com/dotslash/Projects/blob/master/solutions/ip_lookup.py)
 
 ---
 
-- [\[_smd519 (c)_\]](https://github.com/smd519/Networking_Basics/tree/master/Country_from_IP_Lookup)
+- [[_smd519 (c)_]](https://github.com/smd519/Networking_Basics/tree/master/Country_from_IP_Lookup)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/pythonscripts/blob/master/iplocator.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/pythonscripts/blob/master/iplocator.py)
 
 ---
 
@@ -1942,11 +1943,11 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_rramchand (Python)_\]](https://github.com/rramchand/Projects-Solutions/blob/master/whois.py)
+- [[_rramchand (Python)_]](https://github.com/rramchand/Projects-Solutions/blob/master/whois.py)
 
 ---
 
-- [\[_tapasweni-pathak (Python)_\]](https://github.com/tapasweni-pathak/Scripts/blob/master/WhoIs%3F.py)
+- [[_tapasweni-pathak (Python)_]](https://github.com/tapasweni-pathak/Scripts/blob/master/WhoIs%3F.py)
 
 ---
 
@@ -1956,7 +1957,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_cahitonur (Python)_\]](https://github.com/cahitonur/mini-project/blob/master/site_monitor/monitor.py)
+- [[_cahitonur (Python)_]](https://github.com/cahitonur/mini-project/blob/master/site_monitor/monitor.py)
 
 ## Classes
 
@@ -1968,35 +1969,35 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Drhealsgood (Python)_\]](https://github.com/Drhealsgood/miniprojects/blob/master/class_projects/product_inventory/product_inventory.py)
+- [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/class_projects/product_inventory/product_inventory.py)
 
 ---
 
-- [\[_Goldsmith (Ruby)_\]](https://github.com/goldsmith/ruby-projects/blob/master/Classes/inventory.rb)
+- [[_Goldsmith (Ruby)_]](https://github.com/goldsmith/ruby-projects/blob/master/Classes/inventory.rb)
 
 ---
 
-- [\[_quitrk (JavaScript)_\]](https://github.com/quitrk/LearningJS/blob/master/Classes/00.%20Product%20Inventary%20Project.js)
+- [[_quitrk (JavaScript)_]](https://github.com/quitrk/LearningJS/blob/master/Classes/00.%20Product%20Inventary%20Project.js)
 
 ---
 
-- [\[_luisccastillo (C\#)_\]](https://github.com/luisccastillo/Projects/blob/master/Classes/product_inventory.cs)
+- [[_luisccastillo (C#)_]](https://github.com/luisccastillo/Projects/blob/master/Classes/product_inventory.cs)
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Classes/inventory.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Classes/inventory.go)
 
 ---
 
-- [\[_Daytron (Python)_\]](https://github.com/Daytron/Projects/blob/master/Classes/product_inventory_daytron.py)
+- [[_Daytron (Python)_]](https://github.com/Daytron/Projects/blob/master/Classes/product_inventory_daytron.py)
 
 ---
 
-- [\[_Daytron (Java)_\]](https://github.com/Daytron/Projects/tree/master/Classes/ProductInventoryProject)
+- [[_Daytron (Java)_]](https://github.com/Daytron/Projects/tree/master/Classes/ProductInventoryProject)
 
 ---
 
-- [\[_anubhavmaity(Java)_\]](https://github.com/anubhavmaity/InventoryManagement)
+- [[_anubhavmaity(Java)_]](https://github.com/anubhavmaity/InventoryManagement)
 
 ---
 
@@ -2012,11 +2013,11 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Daytron (Python)_\]](https://github.com/Daytron/Projects/blob/master/Classes/bank_account_manager.py)
+- [[_Daytron (Python)_]](https://github.com/Daytron/Projects/blob/master/Classes/bank_account_manager.py)
 
 ---
 
-- [\[_viktorahlstrom (Bash)_\]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/bank_manager/bank_manager.sh)
+- [[_viktorahlstrom (Bash)_]](https://github.com/viktorahlstrom/all/blob/master/coding-problems-solved/projects-solutions/bank_manager/bank_manager.sh)
 
 ---
 
@@ -2024,7 +2025,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ### **Patient / Doctor Scheduler** - Create a patient class and a doctor class. Have a doctor that can handle multiple patients and setup a scheduling program where a doctor can only handle 16 patients during an 8 hr work day.
 
-- [\[_rnikhil275_\]](https://github.com/rnikhil275/scripts/blob/master/schedule.py)
+- [[_rnikhil275_]](https://github.com/rnikhil275/scripts/blob/master/schedule.py)
 
 ---
 
@@ -2046,15 +2047,15 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Shape_Calculator)
+- [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Shape_Calculator)
 
 ---
 
-- [\[_masegaloeh (Python)_\]](https://github.com/masegaloeh/freetime-projects/blob/master/class/shape/shape.py)
+- [[_masegaloeh (Python)_]](https://github.com/masegaloeh/freetime-projects/blob/master/class/shape/shape.py)
 
 ---
 
-- [\[_abadojack (Java)_\]](https://github.com/abadojack/Playground/tree/master/Projects-Solutions/Classes/Java/Shapes)
+- [[_abadojack (Java)_]](https://github.com/abadojack/Playground/tree/master/Projects-Solutions/Classes/Java/Shapes)
 
 ---
 
@@ -2070,7 +2071,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_vogosvagen (C++)_\]](https://github.com/vogosvagen/Family-Tree-Creator)
+- [[_vogosvagen (C++)_]](https://github.com/vogosvagen/Family-Tree-Creator)
 
 ## Threading
 
@@ -2082,7 +2083,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_ScottKolo (Go)_\]](https://github.com/ScottKolo/GoProjects/blob/master/Threading/progress.go)
+- [[_ScottKolo (Go)_]](https://github.com/ScottKolo/GoProjects/blob/master/Threading/progress.go)
 
 ---
 
@@ -2092,19 +2093,20 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Bulk_Thumbnail_Creator)
+- [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Bulk_Thumbnail_Creator)
 
 ---
 
-- [\[_bhaskar4n(python)_\]](https://github.com/bhaskar4n/bulk-thumbnail-creator)
+- [[_bhaskar4n(python)_]](https://github.com/bhaskar4n/bulk-thumbnail-creator)
 
 ---
 
-- [\[_SumedhArani(python)_\]](https://github.com/SumedhArani/Threading-Python)
+- [[_SumedhArani(python)_]](https://github.com/SumedhArani/Threading-Python)
 
 ---
 
-- [\[_tushar-rishav(python)_\]](https://github.com/tushar-rishav/Pynail) Web
+- [[_tushar-rishav(python)_]](https://github.com/tushar-rishav/Pynail)
+  Web
 
 ---
 
@@ -2112,19 +2114,19 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Page Scraper** - Create an application which connects to a site and pulls out all links, or images, and saves them to a list. _Optional: Organize the indexed content and don’t allow duplicates. Have it put the results into an easily searchable index file._ \* [\[_mouradmourafiq (python)_\]](https://github.com/mouradmourafiq/pages-jaunes-maroc)
+### **Page Scraper** - Create an application which connects to a site and pulls out all links, or images, and saves them to a list. _Optional: Organize the indexed content and don’t allow duplicates. Have it put the results into an easily searchable index file._ \* [[_mouradmourafiq (python)_]](https://github.com/mouradmourafiq/pages-jaunes-maroc)
 
 ---
 
-- [\[_chillaranand (python)_\]](https://github.com/ChillarAnand/site_crawler)
+- [[_chillaranand (python)_]](https://github.com/ChillarAnand/site_crawler)
 
 ---
 
-- [\[_tapasweni-pathak (python)_\]](https://github.com/tapasweni-pathak/STW-Collection)
+- [[_tapasweni-pathak (python)_]](https://github.com/tapasweni-pathak/STW-Collection)
 
 ---
 
-- [\[_brahalla (python)_\]](https://github.com/brahalla/Scripts/blob/master/web/scrape_links.py)
+- [[_brahalla (python)_]](https://github.com/brahalla/Scripts/blob/master/web/scrape_links.py)
 
 ---
 
@@ -2146,15 +2148,15 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_anggiaj (Go)_\]](https://github.com/anggiaj/Projects/blob/master/Web/time.go)
+- [[_anggiaj (Go)_]](https://github.com/anggiaj/Projects/blob/master/Web/time.go)
 
 ---
 
-- [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Atomic_Time)
+- [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Atomic_Time)
 
 ---
 
-- [\[_rnikhil275 (Python)_\]](https://github.com/rnikhil275/scripts/blob/master/time.py)
+- [[_rnikhil275 (Python)_]](https://github.com/rnikhil275/scripts/blob/master/time.py)
 
 ---
 
@@ -2162,23 +2164,23 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ### **Fetch Current Weather** - Get the current weather for a given zip/postal code. _Optional: Try locating the user automatically._
 
-- [\[_chillaranand (python)_\]](https://github.com/ChillarAnand/Weather-on-Terminal)
+- [[_chillaranand (python)_]](https://github.com/ChillarAnand/Weather-on-Terminal)
 
 ---
 
-- [\[_tapasweni-pathak (python)_\]](https://github.com/tapasweni-pathak/Scripts/blob/master/Weather.py)
+- [[_tapasweni-pathak (python)_]](https://github.com/tapasweni-pathak/Scripts/blob/master/Weather.py)
 
 ---
 
-- [\[_Tkwon123 (ruby)_\]](https://github.com/Tkwon123/whatweather)
+- [[_Tkwon123 (ruby)_]](https://github.com/Tkwon123/whatweather)
 
 ---
 
-- [\[_brahalla (Javascript)_\]](https://github.com/brahalla/BeautifulWeather)
+- [[_brahalla (Javascript)_]](https://github.com/brahalla/BeautifulWeather)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/pyweather)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/pyweather)
 
 ---
 
@@ -2216,7 +2218,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Quiz Maker** - Make an application which takes various questions form a file, picked randomly, and puts together a quiz for students. Each quiz can be different and then reads a key to grade the quizzes.\* [\[_melvin0008 (PHP)_\]](https://github.com/melvin0008/quizcreator)
+### **Quiz Maker** - Make an application which takes various questions form a file, picked randomly, and puts together a quiz for students. Each quiz can be different and then reads a key to grade the quizzes.\* [[_melvin0008 (PHP)_]](https://github.com/melvin0008/quizcreator)
 
 ---
 
@@ -2232,13 +2234,13 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_vishwanath79 (Python)_\]](https://github.com/vishwanath79/ExcelSorter/blob/master/ExcelSorter.py)
+- [[_vishwanath79 (Python)_]](https://github.com/vishwanath79/ExcelSorter/blob/master/ExcelSorter.py)
 
 ---
 
 ---
 
-### **Create Zip File Maker** - The user enters various files from different directories and the program zips them up into a zip file. _Optional: Apply actual compression to the files. Start with Huffman Algorithm._ \* [\[_averageprogrammer (Java)_\]](https://github.com/averageprogrammer/Zip_Up)
+### **Create Zip File Maker** - The user enters various files from different directories and the program zips them up into a zip file. _Optional: Apply actual compression to the files. Start with Huffman Algorithm._ \* [[_averageprogrammer (Java)_]](https://github.com/averageprogrammer/Zip_Up)
 
 ---
 
@@ -2270,7 +2272,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Remote SQL Tool** - A utility that can execute queries on remote servers from your local computer across the Internet. It should take in a remote host, user name and password, run the query and return the results.\* [\[_vishwanath79 (Python)_\]](https://github.com/vishwanath79/Remote-SQL/blob/master/RemSQL.py)
+### **Remote SQL Tool** - A utility that can execute queries on remote servers from your local computer across the Internet. It should take in a remote host, user name and password, run the query and return the results.\* [[_vishwanath79 (Python)_]](https://github.com/vishwanath79/Remote-SQL/blob/master/RemSQL.py)
 
 ---
 
@@ -2294,11 +2296,11 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Address Book** - Keep track of various contacts, their numbers, emails and little notes about them like a Rolodex in the database.\* [\[_bhaskar4n(python)_\]](https://github.com/bhaskar4n/address-book-database)
+### **Address Book** - Keep track of various contacts, their numbers, emails and little notes about them like a Rolodex in the database.\* [[_bhaskar4n(python)_]](https://github.com/bhaskar4n/address-book-database)
 
 ---
 
-- [\[_bhaskar4n(python)_\]](https://github.com/bhaskar4n/address-book-database-linked)
+- [[_bhaskar4n(python)_]](https://github.com/bhaskar4n/address-book-database-linked)
 
 ---
 
@@ -2308,7 +2310,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_dabillox (Python)_\]](https://github.com/dabillox/pyprojects/tree/master/tvshowtracker)
+- [[_dabillox (Python)_]](https://github.com/dabillox/pyprojects/tree/master/tvshowtracker)
 
 ---
 
@@ -2338,7 +2340,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_rasppie (Python)_\]](https://github.com/rasppie/pyprojects/blob/master/music-player.py)
+- [[_rasppie (Python)_]](https://github.com/rasppie/pyprojects/blob/master/music-player.py)
 
 ---
 
@@ -2348,21 +2350,21 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-- [\[_Naggie (PHP)_\]](https://github.com/naggie/vosbox)
+- [[_Naggie (PHP)_]](https://github.com/naggie/vosbox)
 
 ---
 
 ---
 
-### **Watermarking Application** - Have some pictures you want copyright protected? Add your own logo or text lightly across the background so that no one can simply steal your graphics off your site. Make a program that will add this watermark to the picture. _Optional: Use threading to process multiple images simultaneously._ \* [\[_bhaskar4n(python)_\]](https://github.com/bhaskar4n/watermarker)
+### **Watermarking Application** - Have some pictures you want copyright protected? Add your own logo or text lightly across the background so that no one can simply steal your graphics off your site. Make a program that will add this watermark to the picture. _Optional: Use threading to process multiple images simultaneously._ \* [[_bhaskar4n(python)_]](https://github.com/bhaskar4n/watermarker)
 
 ---
 
 ---
 
-### **Turtle Graphics** - This is a common project where you create a floor of 20 x 20 squares. Using various commands you tell a turtle to draw a line on the floor. You have move forward, left or right, lift or drop pen etc. Do a search online for “Turtle Graphics” for more information. _Optional: Allow the program to read in the list of commands from a file._
+### **Turtle Graphics** - This is a common project where you create a floor of 20 x 20 squares. Using various commands you tell a turtle to draw a line on the floor. You have move forward, left or right, lift or drop pen etc. Do a search online for "Turtle Graphics" for more information. _Optional: Allow the program to read in the list of commands from a file._
 
-- [\[_Tushar(python)_\]](https://github.com/tushar-rishav/PyLogo)
+- [[_Tushar(python)_]](https://github.com/tushar-rishav/PyLogo)
 
 ---
 
@@ -2376,52 +2378,52 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Caesar cipher** - Implement a Caesar cipher, both encoding and decoding. The key is an integer from 1 to 25. This cipher rotates the letters of the alphabet (A to Z). The encoding replaces each letter with the 1st to 25th next letter in the alphabet (wrapping Z to A). So key 2 encrypts “HI” to “JK”, but key 20 encrypts “HI” to “BC”. This simple “monoalphabetic substitution cipher” provides almost no security, because an attacker who has the encoded message can either use frequency analysis to guess the key, or just try all 25 keys.
+### **Caesar cipher** - Implement a Caesar cipher, both encoding and decoding. The key is an integer from 1 to 25. This cipher rotates the letters of the alphabet (A to Z). The encoding replaces each letter with the 1st to 25th next letter in the alphabet (wrapping Z to A). So key 2 encrypts "HI" to "JK", but key 20 encrypts "HI" to "BC". This simple "monoalphabetic substitution cipher" provides almost no security, because an attacker who has the encoded message can either use frequency analysis to guess the key, or just try all 25 keys.
 
 ---
 
-- [\[_shyamsalimkumar (Python)_\]](https://github.com/shyamsalimkumar/Projects/blob/master/Security/caesar_cipher.py)
+- [[_shyamsalimkumar (Python)_]](https://github.com/shyamsalimkumar/Projects/blob/master/Security/caesar_cipher.py)
 
 ---
 
-- [\[_sriniavireddy (python)_\]](https://github.com/sriniavireddy/scripts-and-solutions/blob/master/CaesarCipher.py)
+- [[_sriniavireddy (python)_]](https://github.com/sriniavireddy/scripts-and-solutions/blob/master/CaesarCipher.py)
 
 ---
 
-- [\[_hx1997 (C)_\]](https://github.com/hx1997/Projects/blob/master/Security/caesar.c)
+- [[_hx1997 (C)_]](https://github.com/hx1997/Projects/blob/master/Security/caesar.c)
 
 ---
 
-- [\[_MikroMan (Java)_\]](https://github.com/MikroMan/Contributions/blob/master/Cipher.java)
+- [[_MikroMan (Java)_]](https://github.com/MikroMan/Contributions/blob/master/Cipher.java)
 
 ---
 
-- [\[_sicter (Python)_\]](https://github.com/sicter/CaesarCipher/blob/master/CaesarCipher.py)
+- [[_sicter (Python)_]](https://github.com/sicter/CaesarCipher/blob/master/CaesarCipher.py)
 
 ---
 
-- [\[_neivin (Python)_\]](https://github.com/neivin/projects/blob/master/security/caesar_cipher.py)
+- [[_neivin (Python)_]](https://github.com/neivin/projects/blob/master/security/caesar_cipher.py)
 
 ---
 
-- [\[_chasmani(Ruby)_\]](https://github.com/chasmani/RubyBuildingBlocks/blob/master/caesar_cipher.rb)
+- [[_chasmani(Ruby)_]](https://github.com/chasmani/RubyBuildingBlocks/blob/master/caesar_cipher.rb)
 
 ---
 
-- [\[_vdrey(Python)_\]](https://github.com/vdrey/Project-Programs/blob/master/Python/caesarCipher.py)
+- [[_vdrey(Python)_]](https://github.com/vdrey/Project-Programs/blob/master/Python/caesarCipher.py)
 
 ---
 
-- [\[_kingballer29(Scala)_\]](https://github.com/kingballer29/Programming/blob/master/caesarCipher.scala)
+- [[_kingballer29(Scala)_]](https://github.com/kingballer29/Programming/blob/master/caesarCipher.scala)
 
 ---
 
-- [\[_eush77(Befunge)_\]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/caesar.bf)
+- [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/caesar.bf)
 
 ---
 
-- [\[_viktorahlstrom (Python)_\]](https://github.com/viktorahlstrom/pythonscripts/blob/master/caesar.py)
+- [[_viktorahlstrom (Python)_]](https://github.com/viktorahlstrom/pythonscripts/blob/master/caesar.py)
 
 ---
 
-- [\[_mandliya(C++)_\]](https://github.com/mandliya/short-fun-projects/blob/master/caesarCipher/caesarCipher.cpp)
+- [[_mandliya(C++)_]](https://github.com/mandliya/short-fun-projects/blob/master/caesarCipher/caesarCipher.cpp)

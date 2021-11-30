@@ -10,7 +10,7 @@ Be compliant with [PEP 8](https://www.python.org/dev/peps/pep-0008/).
 
 ## C
 
-We’ll use a variant of [K&R style](https://en.wikipedia.org/wiki/Indentation_style#K&R_style).
+We'll use a variant of [K&R style](https://en.wikipedia.org/wiki/Indentation_style#K&R_style).
 
 - Function braces on the next line after the function definition.
 - Flow control braces on the same line as the flow control statement.
@@ -19,26 +19,27 @@ We’ll use a variant of [K&R style](https://en.wikipedia.org/wiki/Indentation_s
   - Just a space _after_ a `;` or `,`.
 - Asterisk next to the variable name in pointer declarations.
 
-  #include <stdio.h>
+```c
+#include <stdio.h>
 
-  int mul2(int x)
-  {
-  return x \* 2;
-  }
+int mul2(int x)
+{
+    return x * 2;
+}
 
-  int main(void)
-  {
-  int i, j;
-  char *p, *q;
+int main(void)
+{
+    int i, j;
+    char *p, *q;
 
-      for (i = 0; i < 20; i++) {
-          if (i > 10) {
-              printf("Hi!\n");
-          } else {
-              printf("Hello!\n");
-          }
-      }
+    for (i = 0; i < 20; i++) {
+        if (i > 10) {
+            printf("Hi!\n");
+        } else {
+            printf("Hello!\n");
+        }
+    }
 
-      return 0;
-
-  }
+    return 0;
+}
+```

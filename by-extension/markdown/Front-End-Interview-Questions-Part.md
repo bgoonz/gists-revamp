@@ -10,7 +10,9 @@ These will focus more on vocabulary and concepts than the application driven app
 
 #### These will focus more on vocabulary and concepts than the application-driven approach in my last post!
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/0*D3yQI42gBkYpnLXY.jpg" class="graf-image" /></figure>### Here’s part one for reference:
+<figure><img src="https://cdn-images-1.medium.com/max/1200/0*D3yQI42gBkYpnLXY.jpg" class="graf-image" /></figure>
+
+### Here’s part one for reference:
 
 <a href="https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822"><strong>The Web Developer’s Technical Interview</strong><br />
 <em>Questions….Answers… and links to the missing pieces.</em>bryanguner.medium.com</a><a href="https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -70,13 +72,13 @@ It is code identified elsewhere that we can use later; gives the ability to put 
 
 · **Describe the four rules of the ‘this’ keyword.**
 
-1.  Window/global binding — this is the window/console object. ‘use strict’; to prevent window binding.
+1. Window/global binding — this is the window/console object. ‘use strict’; to prevent window binding.
 
-2.  Implicit binding — when a function is called by a dot, the object preceding the dot is the ‘this’. 80 percent of ‘this’ is from this type of binding.
+2. Implicit binding — when a function is called by a dot, the object preceding the dot is the ‘this’. 80 percent of ‘this’ is from this type of binding.
 
-3.  New binding — points to new object created & returned by constructor function
+3. New binding — points to new object created & returned by constructor function
 
-4.  Explicit binding — whenever call, bind, or apply are used.
+4. Explicit binding — whenever call, bind, or apply are used.
 
 · **Why do we need super() in an extended class?**
 

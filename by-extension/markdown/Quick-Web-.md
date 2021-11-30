@@ -116,7 +116,7 @@ A set of questions you should use before handing off your application to the cli
 <em>Browsershots makes screenshots of your web design in different operating systems and browsers. It is a free open-source…</em>browsershots.org</a><a href="http://browsershots.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://browserling.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://browserling.com/"><strong>Online cross-browser testing</strong><br />
-<em>Browserling did a custom cross-browser testing solution for UK’s National Health Service. Our application needs to…</em>browserling.com</a><a href="https://browserling.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Browserling did a custom cross-browser testing solution for UK's National Health Service. Our application needs to…</em>browserling.com</a><a href="https://browserling.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://www.browserstack.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.browserstack.com/"><strong>Most Reliable App &amp; Cross Browser Testing Platform | BrowserStack</strong><br />
 <em>Just played around with BrowserStack: Quite cool, instant access to a browser in a VM with dev tools. Big thanks to…</em>www.browserstack.com</a><a href="https://www.browserstack.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -128,19 +128,19 @@ A set of questions you should use before handing off your application to the cli
 <em>We have estimated that by transitioning to automated front-end visual testing and by having easy access to so many…</em>crossbrowsertesting.com</a><a href="https://crossbrowsertesting.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://no-www.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://no-www.org/"><strong>www. is deprecated.</strong><br />
-<em>Stay in touch! Dec 21, 2012 No-WWW now hasa a social media presence! Check us out on Twitter at <span class="citation" data-cites="www_deprecated">@www_deprecated</span> . We…</em>no-www.org</a><a href="http://no-www.org/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
+<em>Stay in touch! Dec 21, 2012 No-WWW now hasa a social media presence! Check us out on Twitter at @www_deprecated . We…</em>no-www.org</a><a href="http://no-www.org/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://www.yes-www.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.yes-www.org/"><strong>www. is not deprecated</strong><br />
 <em>Ever since the first traditional media ads began to appear with Web site addresses in them 25 years ago, people have…</em>www.yes-www.org</a><a href="https://www.yes-www.org/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="http://madskristensen.net/post/url-rewrite-and-the-www-subdomain" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://madskristensen.net/post/url-rewrite-and-the-www-subdomain"><strong>URL rewrite and the www subdomain</strong><br />
-<em>What’s the address of your website? www.domain.com or domain.com? There are two camps on the subject of the www…</em>madskristensen.net</a><a href="http://madskristensen.net/post/url-rewrite-and-the-www-subdomain" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
+<em>What's the address of your website? www.domain.com or domain.com? There are two camps on the subject of the www…</em>madskristensen.net</a><a href="http://madskristensen.net/post/url-rewrite-and-the-www-subdomain" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://www.google.com/webmasters/tools/mobile-friendly/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.google.com/webmasters/tools/mobile-friendly/"><strong>Mobile-Friendly Test - Google Search Console</strong><br />
 <em>Is your web page mobile-friendly? Test how easily a visitor can use your page on a mobile device. Just enter a page URL…</em>www.google.com</a><a href="https://www.google.com/webmasters/tools/mobile-friendly/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
-<a href="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972"><strong>Quick Tip: Don’t Forget the Viewport Meta Tag</strong><br />
-<em>I remember my maiden voyage into responsive web design; I’d used a classic grid, wrestled with a flexible layout, and…</em>webdesign.tutsplus.com</a><a href="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<a href="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972"><strong>Quick Tip: Don't Forget the Viewport Meta Tag</strong><br />
+<em>I remember my maiden voyage into responsive web design; I'd used a classic grid, wrestled with a flexible layout, and…</em>webdesign.tutsplus.com</a><a href="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://html5tutorial.info/html5-contact.php" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://html5tutorial.info/html5-contact.php"><strong>Input Type : Email,URL,Phone</strong><br />
 <em>Email, Phone number and Website url are the three most commonly used contact detail which has its unique input…</em>html5tutorial.info</a><a href="https://html5tutorial.info/html5-contact.php" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -152,7 +152,7 @@ A set of questions you should use before handing off your application to the cli
 <em>Frequently Asked Questions Why is responsive testing critical for your website? Responsive design enables a website to…</em>www.browserstack.com</a><a href="https://www.browserstack.com/responsive" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://www.uptimerobot.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.uptimerobot.com/"><strong>UptimeRobot | Free Website Monitoring</strong><br />
-<em>Get up to 50 website, port or heartbeat monitors for free. When something happens, we’ll notify you via email, SMS…</em>www.uptimerobot.com</a><a href="https://www.uptimerobot.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Get up to 50 website, port or heartbeat monitors for free. When something happens, we'll notify you via email, SMS…</em>www.uptimerobot.com</a><a href="https://www.uptimerobot.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://www.statuscake.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.statuscake.com/"><strong>StatusCake: Website Monitoring with Uptime Monitoring solution</strong><br />
 <em>Website Monitoring solution that drives revenue &amp; keeps you online. Track your uptime, page speed, domain, server, &amp;…</em>www.statuscake.com</a><a href="https://www.statuscake.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -164,10 +164,10 @@ A set of questions you should use before handing off your application to the cli
 <em>Watch in real time as visitors navigate through your website. Are they flowing through your site the way you expect…</em>statcounter.com</a><a href="https://statcounter.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://clicky.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://clicky.com/"><strong>Real Time Web Analytics</strong><br />
-<em>Clicky Web Analytics is simply the best way to monitor, analyze, and react to your blog or web site’s traffic in real…</em>clicky.com</a><a href="https://clicky.com/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
+<em>Clicky Web Analytics is simply the best way to monitor, analyze, and react to your blog or web site's traffic in real…</em>clicky.com</a><a href="https://clicky.com/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://matomo.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://matomo.org/"><strong>Matomo - The Google Analytics alternative that protects your data</strong><br />
-<em>Matomo’s the Google Analytics alternative that protects your data and your customer’s privacy. A powerful web analytics…</em>matomo.org</a><a href="https://matomo.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Matomo's the Google Analytics alternative that protects your data and your customer's privacy. A powerful web analytics…</em>matomo.org</a><a href="https://matomo.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://developers.google.com/speed/pagespeed/insights/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developers.google.com/speed/pagespeed/insights/"><strong>PageSpeed Insights</strong><br />
 <em>Have specific, answerable questions about using PageSpeed Insights? Ask your question on Stack Overflow. For general…</em>developers.google.com</a><a href="https://developers.google.com/speed/pagespeed/insights/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
@@ -175,8 +175,8 @@ A set of questions you should use before handing off your application to the cli
 <a href="https://redbot.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://redbot.org/"><strong>REDbot</strong><br />
 <em>Lint for your HTTP resources</em>redbot.org</a><a href="https://redbot.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://pageweight.imgix.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://pageweight.imgix.com/"><strong>imgix Page Weight Tool \* Learn how to improve your site or app’s speed.</strong><br />
-<em>imgix Page Weight Tool measures the resources on your site and then recommends how to improve your site’s load time.</em>pageweight.imgix.com</a><a href="https://pageweight.imgix.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<a href="https://pageweight.imgix.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://pageweight.imgix.com/"><strong>imgix Page Weight Tool \* Learn how to improve your site or app's speed.</strong><br />
+<em>imgix Page Weight Tool measures the resources on your site and then recommends how to improve your site's load time.</em>pageweight.imgix.com</a><a href="https://pageweight.imgix.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://tinypng.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://tinypng.com/"><strong>TinyPNG - Compress PNG images while preserving transparency</strong><br />
 <em>Excellent question! Let me give you a side by side comparison. Below are two photos of my cousin. The left image is…</em>tinypng.com</a><a href="https://tinypng.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -193,11 +193,11 @@ A set of questions you should use before handing off your application to the cli
 <a href="https://imageoptim.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://imageoptim.com/"><strong>ImageOptim - better Save for Web</strong><br />
 <em>Reduces image file sizes - so they take up less disk space and down­load faster - by applying advanced compression…</em>imageoptim.com</a><a href="https://imageoptim.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://caniuse.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://caniuse.com/"><strong>Can I use… Support tables for HTML5, CSS3, etc</strong><br />
+<a href="https://caniuse.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://caniuse.com/"><strong>Can I use... Support tables for HTML5, CSS3, etc</strong><br />
 <em>Test a feature Our partnership with BrowserStack now lets you test your website for compatibility across 2,000+ real…</em>caniuse.com</a><a href="https://caniuse.com/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://modernizr.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://modernizr.com/"><strong>Modernizr: the feature detection library for HTML5/CSS3</strong><br />
-<em>All web developers come up against differences between browsers and devices. That’s largely due to different feature…</em>modernizr.com</a><a href="https://modernizr.com/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
+<em>All web developers come up against differences between browsers and devices. That's largely due to different feature…</em>modernizr.com</a><a href="https://modernizr.com/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://validator.w3.org/i18n-checker/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://validator.w3.org/i18n-checker/"><strong>W3C I18n Checker</strong><br />
 <em>This checker performs various tests on a Web Page to determine its level of internationalisation-friendliness. It also…</em>validator.w3.org</a><a href="https://validator.w3.org/i18n-checker/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -209,7 +209,7 @@ A set of questions you should use before handing off your application to the cli
 <em>The ultimate favicon generator. Design your icons platform per platform and make them look great everywhere. Including…</em>realfavicongenerator.net</a><a href="https://realfavicongenerator.net/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://github.com/audreyr/favicon-cheat-sheet" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/audreyr/favicon-cheat-sheet"><strong>audreyfeldroy/favicon-cheat-sheet</strong><br />
-<em>A painfully obsessive cheat sheet to favicon sizes/types. Compiled from: For the main favicon itself, it’s best for…</em>github.com</a><a href="https://github.com/audreyr/favicon-cheat-sheet" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>A painfully obsessive cheat sheet to favicon sizes/types. Compiled from: For the main favicon itself, it's best for…</em>github.com</a><a href="https://github.com/audreyr/favicon-cheat-sheet" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://moz.com/learn/seo/url" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://moz.com/learn/seo/url"><strong>URL Structure [2021 SEO]</strong><br />
 <em>Keeping URLs as simple, relevant, compelling, and accurate as possible is key to getting both your users and search…</em>moz.com</a><a href="https://moz.com/learn/seo/url" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -248,7 +248,7 @@ A set of questions you should use before handing off your application to the cli
 <em>Edit description</em>search.google.com</a><a href="https://search.google.com/structured-data/testing-tool/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://developers.facebook.com/tools/debug/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developers.facebook.com/tools/debug/"><strong>Sharing Debugger - Facebook for Developers</strong><br />
-<em>Sharing Debugger lets you preview how your content will look when it’s shared to Facebook and debug any issues with…</em>developers.facebook.com</a><a href="https://developers.facebook.com/tools/debug/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Sharing Debugger lets you preview how your content will look when it's shared to Facebook and debug any issues with…</em>developers.facebook.com</a><a href="https://developers.facebook.com/tools/debug/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://cards-dev.twitter.com/validator" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://cards-dev.twitter.com/validator"><strong>JavaScript is not available.</strong><br />
 <em>Edit description</em>cards-dev.twitter.com</a><a href="https://cards-dev.twitter.com/validator" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -269,7 +269,7 @@ A set of questions you should use before handing off your application to the cli
 <em>Free Online Google Sitemap Generator. XML-sitemaps.com provides free online sitemap generator service, creating an XML…</em>www.xml-sitemaps.com</a><a href="https://www.xml-sitemaps.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://validator.w3.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://validator.w3.org/"><strong>Markup Validation Service</strong><br />
-<em>W3C’s easy-to-use markup validation service, based on SGML and XML parsers.</em>validator.w3.org</a><a href="https://validator.w3.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>W3C's easy-to-use markup validation service, based on SGML and XML parsers.</em>validator.w3.org</a><a href="https://validator.w3.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://html5.validator.nu/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://html5.validator.nu/"><strong>Validator.nu (X)HTML5 Validator</strong><br />
 <em>Edit description</em>html5.validator.nu</a><a href="https://html5.validator.nu/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
@@ -308,7 +308,7 @@ A set of questions you should use before handing off your application to the cli
 <em>Web developers interested in accessibility issues often discuss WAI-ARIA, an upcoming W3C candidate recommendation…</em>alistapart.com</a><a href="https://alistapart.com/article/the-accessibility-of-wai-aria/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://www.punkchip.com/2010/11/aria-basic-findings/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://www.punkchip.com/2010/11/aria-basic-findings/"><strong>WAI-ARIA states and properties: Practical examples</strong><br />
-<em>I’ve been trying to include some WAI-ARIA into the project I’m currently working on. Luckily for me I’m using jQuery’s…</em>www.punkchip.com</a><a href="http://www.punkchip.com/2010/11/aria-basic-findings/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>I've been trying to include some WAI-ARIA into the project I'm currently working on. Luckily for me I'm using jQuery's…</em>www.punkchip.com</a><a href="http://www.punkchip.com/2010/11/aria-basic-findings/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://observatory.mozilla.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://observatory.mozilla.org/"><strong>Mozilla Observatory</strong><br />
 <em>The Mozilla Observatory is a project designed to help developers, system administrators, and security professionals…</em>observatory.mozilla.org</a><a href="https://observatory.mozilla.org/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
@@ -325,8 +325,8 @@ A set of questions you should use before handing off your application to the cli
 <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"><strong>Cross-Site Request Forgery Prevention - OWASP Cheat Sheet Series</strong><br />
 <em>Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant…</em>cheatsheetseries.owasp.org</a><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
-<a href="https://letsencrypt.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://letsencrypt.org/"><strong>Let’s Encrypt</strong><br />
-<em>Let’s Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security…</em>letsencrypt.org</a><a href="https://letsencrypt.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<a href="https://letsencrypt.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://letsencrypt.org/"><strong>Let's Encrypt</strong><br />
+<em>Let's Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security…</em>letsencrypt.org</a><a href="https://letsencrypt.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://support.microsoft.com/en-gb/help/299875/how-to-implement-ssl-in-iis" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://support.microsoft.com/en-gb/help/299875/how-to-implement-ssl-in-iis"><strong>How to Set Up SSL on IIS 7</strong><br />
 <em>by Saad Ladki The steps for configuring Secure Sockets Layer (SSL) for a site are the same in IIS 7 and above and IIS…</em>support.microsoft.com</a><a href="https://support.microsoft.com/en-gb/help/299875/how-to-implement-ssl-in-iis" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -347,7 +347,7 @@ A set of questions you should use before handing off your application to the cli
 <em>HTTP Strict Transport Security (also named HSTS) is an opt-in security enhancement that is specified by a web…</em>cheatsheetseries.owasp.org</a><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://www.html5rocks.com/en/tutorials/security/content-security-policy/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.html5rocks.com/en/tutorials/security/content-security-policy/"><strong>Content Security Policy | Web Fundamentals | Google Developers</strong><br />
-<em>The web’s security model is rooted in the same-origin policy . Code from https://mybank.com should only have access to…</em>www.html5rocks.com</a><a href="https://www.html5rocks.com/en/tutorials/security/content-security-policy/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>The web's security model is rooted in the same-origin policy . Code from https://mybank.com should only have access to…</em>www.html5rocks.com</a><a href="https://www.html5rocks.com/en/tutorials/security/content-security-policy/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"><strong>Content Security Policy (CSP) - HTTP | MDN</strong><br />
 <em>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -365,10 +365,10 @@ A set of questions you should use before handing off your application to the cli
 <em>With Twitter Cards, you can attach rich photos, videos and media experiences to Tweets, helping to drive traffic to…</em>developer.twitter.com</a><a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://developers.facebook.com/docs/sharing/webmasters#markup" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developers.facebook.com/docs/sharing/webmasters#markup"><strong>Webmasters - Sharing - Documentation - Facebook for Developers</strong><br />
-<em>Most content is shared to Facebook as a URL, so it’s important that you mark up your website with Open Graph tags to…</em>developers.facebook.com</a><a href="https://developers.facebook.com/docs/sharing/webmasters#markup" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Most content is shared to Facebook as a URL, so it's important that you mark up your website with Open Graph tags to…</em>developers.facebook.com</a><a href="https://developers.facebook.com/docs/sharing/webmasters#markup" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://humanstxt.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://humanstxt.org/"><strong>Humans TXT: We Are People, Not Machines.</strong><br />
-<em>It’s an initiative for knowing the people behind a website. It’s a TXT file that contains information about the…</em>humanstxt.org</a><a href="http://humanstxt.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>It's an initiative for knowing the people behind a website. It's a TXT file that contains information about the…</em>humanstxt.org</a><a href="http://humanstxt.org/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 ### Discover More:
 

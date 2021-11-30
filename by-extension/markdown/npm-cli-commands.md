@@ -1144,7 +1144,7 @@ support, know that you're not using the default registry.
 
 While it's documented in the README, it may not be obvious that npm needs Git
 installed to do many of the things that it does. Also, in some cases
-– especially on Windows – you may have Git set up in such a way that it's not
+– especially on Windows – you may have Git set up in such a way that it's not
 accessible via your `PATH` so that npm can find it. This check ensures that Git
 is available.
 

@@ -1,234 +1,289 @@
-# Introduction
+## V1 - Getting started
 
-JavaScript was introduced in 1995 as a way to add programs to web pages in the Netscape Navigator browser. The language has since been adopted by all other major graphical web browsers. It has made modern web applications possible---applications with which you can interact directly without doing a page reload for every action. JavaScript is also used in more traditional websites to provide various forms of interactivity and cleverness.
+- Arrays are lists: `['Item 1', 'Item 2', 'Item 3']`.
+- Variables are nicknames for data: `var todos = ['Item 1', 'Item 2', 'Item 3']`.
+- Semicolons act sort of like periods do in English. They don't appear at the end of every line though.
+- Proper semicolon usage is particularly important when you are saving to a file, so pay close attention to how I use semicolons in `todoList.html`. I'll note exceptions as we get to them.
+- You can ignore my semicolon usage in the console since I treat that environment like a temporary scratchpad/whiteboard.
+- Use `console.log` to display data in the console. Example: `console.log('hi hi hi!')`.
+- Computers start counting from 0, not 1.
+- On an array, use `.push` to add data to the end of the array. Example: `myArray.push('new data')`.
+- Get an element at a certain position: `array[position]`.
+- Change an element at a certain position: `array[position] = 'changed!`.
+- Remove an element at a certain position: `array.splice(position, 1)`.
 
-It is important to note that JavaScript has almost nothing to do with the programming language named Java. The similar name was inspired by marketing considerations rather than good judgment. When JavaScript was being introduced, the Java language was being heavily marketed and was gaining popularity. Someone thought it was a good idea to try to ride along on this success. Now we are stuck with the name.
+## Functions - Interlude
 
-# Variables
+- Characteristic 1: Functions group multiple lines of code together under a single name.
 
-The latest ECMAScript(ES6) standard defines seven data types: Out of which six data types are Primitive(predefined).
-
-- Numbers: 1, 6.5, 7 etc.
-- String: `Hello NoobMaster69` etc.
-- Boolean: Represent a logical entity and can have two values: true or false.
-- Null: This type has only one value : null.
-- Undefined: A variable that has not been assigned a value is undefined.
-- Object: It is the most important data-type and forms the building blocks for modern JavaScript. We will learn about these data types in details in further articles.
-
-# Variables in JavaScript are containers which hold reusable data. It is the basic unit of storage in a program
-
-- The value stored in a variable can be changed during program execution.
-- A variable is only a name given to a memory location, all the operations done on the variable effects that memory location.
-- In JavaScript, all the variables must be declared before they can be used.
-
-Before ES2015, JavaScript variables were solely declared using the var keyword followed by the name of the variable and semi-colon.
-
-We can initialize the variables either at the time of declaration or also later when we want to use them. Below are some examples of declaring and initializing variables in JavaScript:
-
-```js
-/* declaring single variable */
-let name;
-
-/* declaring multiple variables */
-let name, title, num;
-
-/* initializng variables */
-let name = `Lasha`;
-name = `Lasha`;
-```
-
-After ES2015, we now have two new variable containers : let and const. Now we shall look at both of them one by one. The variable type Let shares lots of similarities with var but unlike var it has scope constraints. Let's make use of let variable:
-
-```js
-/* let variable */
-let x; // undefined
-let name = `Lasha`;
-
-/* declaring multiple values */
-let a = 1,
-  b = 2,
-  c = 3;
-
-/* assigment */
-let a = 3;
-a = `Lasha`; // works same as var
-```
-
-# Constants
-
-**Constants are block-scoped, much like variables defined using the let statement. The value of a constant can't be changed through reassignment, and it can't be redeclared.**
-
-> Naming a const in JavaScript follow the same rule of naming a variable, except that the const keyword is always required, even for global constants.
-
-```js
-/* const variable */
-const name = `Lasha`;
-name = `Selly`; // will give us an error
-```
-
-# What is Scope?
-
-Scope determines the visibility or accessibility of a variable or other resource in the area of your code.
-
-There's only one Global scope in the JavaScript document. The area outside all the functions is consider the global scope and the variables defined inside the global scope can be accessed and altered in any other scopes.
-
-```js
-/* global scope */
-let fruit = `apple`;
-console.log(fruit); // apple
-
-function getFruit() {
-  /* fruit is accesable here */
-  console.log(fruit);
+```javascript
+// Declaring a function.
+function functionName() {
+  // Body of function. You can put 0 or more
+  // lines of code between the curly braces.
 }
 
-getFruit(); // apple
+// To run the function, add a set of parentheses to the function name.
+functionName();
 ```
 
-Variables declared inside the functions become Local to the function and are considered in the corresponding local scope. Every Functions has its own scope. Same variable can be used in different functions because they are bound to the respective functions and are not mutual visible.
+- Characteristic 2: When you a run a function, you can provide the function with data.
 
-```js
-function foo1() {
-  /* local scope 1 */
-  function foo2() {
-    /* local scope 2 */
-  }
+```javascript
+// myData is a parameter. Parameters differ from variables in two ways:
+// 1. Parameters are declared at the same time a function is created.
+// 2. Parameters are assigned a value only when the function is run.
+function demoFunction(myData) {
+  console.log(myData);
 }
-/* global scope */
-function foo3() {
-  /* local scope 3 */
+
+demoFunction("gordon"); // myData = 'gordon'
+demoFunction("watch and code"); // myData = 'watch and code'
+
+// Notice that we do NOT use semicolons after the opening
+// and closing curly braces in function declarations.
+```
+
+## V2 - Using functions
+
+- Functions can have 0, 1, or _more_ parameters.
+
+```javascript
+function edit(position, newValue) {
+  todos[position] = newValue;
+  console.log(todos);
 }
-/* global scope */
 ```
 
-Local scope can be divided into function scope and block scope. The concept of block scope is introduced in ES2015 together with the new ways to declare variables -- const and let.
+## The computer's perspective - Interlude
 
-# Objects
+- To understand the computer's perspective, you need to understand every little thing that happens in each line of code. To do this, you must learn how to use the debugger effectively.
+- When I see the "Step over" button, I think "step over to next line of code that's about to run".
+- When you hit "Step over", you will not necessarily go to the next line of code in the file. You have to think about what will happen.
+- The "Resume script execution" is sorta of like an unpause button. It'll exit the debugger or go to the next breakpoint (if there is one).
+- Delusional thinking is not compatible with success (programming or otherwise).
+- Use the expectations/reality framework (along with the debugger) to improve the quality of your thinking.
+- Use "Step into" to go into any function call _except_ built-in functions.
+- Use the `debugger` statement to set breakpoints in the console without writing to a file.
 
-Objects in JavaScript, just as in many other programming languages, can be compared to objects in real life. The concept of objects in JavaScript can be understood with real life, tangible objects.
+## Questions and quality - Interlude
 
-In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.
+- Ask high quality questions. How you approach this will be a deciding factor in how good you will be.
+- Throughout your journey learning to program (or with anything really), you will be faced with choices like this. One path leads to high ability, the other path leads to low ability. Choose wisely.
 
-A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object.
+## Functions and variables - Interlude
 
-```js
-const myCar = new Object();
-myCar.make = `Ford`;
-myCar.model = `Mustang`;
-myCar.year = 1969;
-```
+- If you're inside of a function, you can look out and see data, but the opposite isn't true. If you're outside, you can't look in.
+- Whenever you're in doubt, draw circles and arrows. Arrows can only exit circles; they can never go in.
+- "Scope" is a fancy term for describing variable visibility.
 
-Unassigned properties of an object are undefined (and not null).
+## V3 - Using objects
 
-```js
-myCar.color; /* undefined */
-```
+- `true` and `false` are boolean values.
+- Use objects to group related data together
 
-An object property name can be any valid JavaScript string, or anything that can be converted to a string, including the empty string. However, any property name that is not a valid JavaScript identifier (for example, a property name that has a space or a hyphen, or that starts with a number) can only be accessed using the square bracket notation. This notation is also very useful when property names are to be dynamically determined (when the property name is not determined until runtime).
-
-Examples are as follows:
-
-```js
-/* four variables are created and assigned in a single go, separated by commas */
-const myObj = new Object(),
-  str = `myString`,
-  rand = Math.random(),
-  obj = new Object();
-
-myObj.type = `Dot syntax`;
-myObj[`date created`] = `String with space`;
-myObj[str] = `String value`;
-myObj[rand] = `Random Number`;
-myObj[obj] = `Object`;
-myObj[``] = `Even an empty string`;
-
-console.log(myObj);
-```
-
-# **Arrays**
-
-An array is a special variable, which can hold more than one value at a time. If you have a list of items (a list of anime series, for example), storing the animes in single variables could look like this:
-
-```js
-const anime1 = `One Piece`;
-const anime2 = `Steins;Gate`;
-const anime3 = `Berserk`;
-```
-
-However, what if you want to loop through the animes and find a specific one? And what if you had not 3 animes, but 300? The solution is an array! An array can hold many values under a single name, and you can access the values by referring to an index number.
-
-```js
-const animes = [`One Piece`, `Steins;Gate`, `Berserk`];
-```
-
-You access an array element by referring to the index number.This statement accesses the value of the first element in animes:
-
-Note: Array indexes start with 0. [0] is the first element. [1] is the second element.
-
-```js
-const name1 = animes[0]; // One Piece
-const name2 = animes[1]; // Steins;Gate
-const name3 = animes[2]; // Berserk
-```
-
-The length property of an array returns the length of an array (the number of array elements).
-
-```js
-const fruits = [`Banana`, `Orange`, `Apple`, `Kiwi`];
-fruits.length; // the length of fruits is 4
-```
-
-# **Comparison Operators**
-
-In most of my JavaScript interviews for a Front-End Developer position, I have been asked this exact question. What is the difference between comparing variables using `==` and `===` operator?
-
-We will see couple of example of both operator in this article, to understand difference between them much better.
-
-Since JavaScript support both strict equality and type-converting equality, it's important to know which operator is used for which operation. As I said that, === takes type of variable in consideration, while == make type correction based upon values of variables, following are couple of more differences between `==` and `===` operator in JavaScript programming language :
-
-`==` operator is known as type coercion operator and anytime if both values are same and compared using ==operator, type coercion happens. On the other hand === is known as strictly equality operator. It's much similar Java's equality operator (==), which gives compilation error if you compare two variables, whose types are not compatible to each other. In fact, you should always use `===` operator for comparing variables or just for any comparison.
-
-When we compare two variables of different type e.g. a boolean with a string or a number with String using == operator, it automatically converts one type into another and return value based upon content equality. This will be much clear with following example of == and === operator in JavaScript :
-
-```js
-0 == false; // true, because false is equivalent of 0
-0 === false; // false, because both operands are of different type
-2 == `2`; // true, auto type coercion, string converted into number
-2 === `2`; // false, since both operands are not of same type
-```
-
-# **What** is a Closure?
-
-A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
-
-To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function. The inner function will have access to the variables in the outer function scope, even after the outer function has returned.
-
-In JavaScript, closures are the primary mechanism used to enable data privacy. When you use closures for data privacy, the enclosed variables are only in scope within the containing (outer) function. You can't get at the data from an outside scope except through the object's privileged methods.
-
-In JavaScript, any exposed method defined within the closure scope is privileged.
-
-The easiest example would be :
-
-```js
-var passed = 3;
-
-var addTo = function () {
-  var inner = 2;
-  return passed + inner;
+```javascript
+var todo = {
+  todoText: "Get groceries",
+  completed: false,
 };
 
-console.log(addTo(3)); // 5
+// Access properties with dot notation.
+console.log(todo.todoText); // 'Get groceries'
+console.log(todo.completed); // false
 ```
 
-Here is the same function using ES2015 syntax:
+## V4 - Toggling
 
-```js
-const passed = 3;
+- Comparisons: Use `===` to see if two things are equal to each other.
+- Use if statements to conditionally run chunks of code.
 
-const addTo = () => {
-  const inner = 2;
-  return passed + inner;
+```javascript
+if (true) {
+  console.log("This line of code will run.");
+}
+
+if (false) {
+  console.log("This line of code will not run.");
+}
+
+// Notice that we do NOT use semicolons after the opening
+// and closing curly braces in if statements.
+```
+
+- `if/else` statements offer another way to structure conditional logic.
+
+```javascript
+if (condition) {
+  // Will run if condition is true.
+} else {
+  // Will run if condition is false.
+}
+```
+
+## Data types and comparisons - Interlude
+
+- JavaScript has two broad types of data, objects and primitives.
+- Objects can be as complex as you want. Examples include arrays and functions.
+- Primitives are the simple building blocks of the language.
+- There are five main primitives: strings, numbers, booleans, undefined, and null.
+- Comparisons with primitives work how most people would expect (like math class).
+- Comparisons with objects work very differently.
+- Make sure you understand why `[1, 2, 3] === [1, 2, 3]` is `false`.
+
+## V5 - Displaying data better
+
+- Use a for-loop to repeat a piece of code any number of times.
+
+```javascript
+for (var i = 0; i < 5; i++) {
+  console.log(i);
+  // 0
+  // 1
+  // 2
+  // 3
+  // 4
+}
+
+// Notice that we do NOT use semicolons after the opening
+// and closing curly braces in for-loops.
+```
+
+## V6 - Toggle all
+
+- Boolean logic can be complicated. Make sure that you carefully think about different situations before you start coding.
+
+## V7 - Buttons!
+
+- HTML syntax for buttons: `<button>My button</button>`.
+- Vocab lesson: A function on an object is called a "method".
+
+```javascript
+var gordon = {
+  name: "Gordon", // property
+  city: "San Francisco", // property
+  myMethod: function sayHi() {
+    // method
+    console.log("Hi");
+  },
 };
-
-console.log(addTo(3)); // 5
 ```
+
+- Use the `document` object to access the webpage in your JavaScript.
+- Use the `document.getElementById` method to grab an element by id.
+
+```javascript
+var displayTodosButton = document.getElementById("display-todos-button");
+```
+
+- Elements have a `addEventListener` method, which can be used to respond to events.
+
+```javascript
+// The first argument is an event type.
+// The second argument is a function that'll run
+// whenever the event occurs on the element.
+// In this example, whenever the displayTodosButton is clicked,
+// the displayTodos function will run.
+displayTodosButton.addEventListener("click", displayTodos);
+```
+
+## Experimenting with functions - Interlude
+
+- You need to get to the point where the results of these experiments are obvious and familiar to you.
+
+```javascript
+function demoFunction() {}
+
+var experiment1 = demoFunction; // ?
+var experiment2 = demoFunction(); // ?
+
+function demoFunctionThatReturnsAString() {
+  return "a string";
+}
+
+var experiment3 = demoFunctionThatReturnsAString; // ?
+var experiment4 = demoFunctionThatReturnsAString(); // ?
+
+function demoFunctionThatReturnsUndefined() {
+  return undefined;
+}
+
+var experiment5 = demoFunctionThatReturnsUndefined; // ?
+var experiment6 = demoFunctionThatReturnsUndefined(); // ?
+
+function logThis(thing) {
+  console.log(thing);
+}
+
+// Experiment 7
+logThis(demoFunctionThatReturnsAString); // ?
+
+// Experiment 8
+logThis(demoFunctionThatReturnsAString()); // ?
+```
+
+## V8 - Getting data from inputs
+
+- In your HTML, use `<input>` to get user input.
+- In your JavaScript, use `input.value` to get/set an input's value.
+
+## V9 - Escape from the console
+
+- In HTML, use `ul`s and `li`s for listing data.
+
+```
+<ul>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+</ul>
+```
+
+- Use `document.createElement` to create elements in JavaScript.
+
+```javascript
+var todoLi = document.createElement("li");
+```
+
+- Use the `appendChild` method to add elements to the page.
+
+```javascript
+var todosUl = document.getElementById("todos-ul");
+todosUl.appendChild(todoLi);
+```
+
+- Use the `innerHTML` property to get/set an element's html.
+- Use the `innerText` property to get/set an element's text.
+- Use `+` to combine strings.
+
+## V10 - Click to delete
+
+- Went through the pros/cons of different ways to access the remove button that was clicked. Making informed tradeoffs is one of the most important skills that you will learn.
+- Functions passed to `addEventListener` are called with an event object, which describes the event that occurred.
+
+```javascript
+function remove(event) {
+  // We used event.currentTarget to access the remove button element that was clicked.
+  // Elements have an id property we can use to get/set the id.
+  var position = event.currentTarget.id;
+  todos.splice(position, 1);
+  displayTodos();
+}
+```
+
+## V11 - Click to toggle
+
+- Element ids should be unique.
+- Practiced thinking through the pros/cons of different ways to extract position from ids.
+
+```javascript
+// We ended up choosing this technique.
+var idString = "todo-0";
+var position = idString.split("-")[1];
+```
+
+## V12 - Click to edit
+
+- `prompt()` is a simple way to get user input.
+- Use `!==` to test for inequality.
+- Use `&&` to combine comparisons.

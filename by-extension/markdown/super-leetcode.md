@@ -231,8 +231,8 @@ Output: "PAHNAPLSIIGYIR"
 **Example 2:**
 
 ```
-Input: s = "PAYPALISHIRING", numRows = 4
-Output: "PINALSIGYAHRPI"
+Input: s = "PAYPALISHIRING", numRows = 4
+Output: "PINALSIGYAHRPI"
 Explanation:
 
 P     I    N
@@ -368,7 +368,7 @@ Output: 21
 ```
 
 **Note:**
-Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
 ### Solution:
 
@@ -432,7 +432,7 @@ Similar Questions:
 
 ### Problem:
 
-Implement `atoi` which converts a string to an integer.
+Implement `atoi` which converts a string to an integer.
 
 The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
 
@@ -445,7 +445,7 @@ If no valid conversion could be performed, a zero value is returned.
 **Note:**
 
 Only the space character `' '` is considered as whitespace character.
-Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
+Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
 
 **Example 1:**
 
@@ -460,7 +460,7 @@ Output: 42
 Input: "   -42"
 Output: -42
 Explanation: The first non-whitespace character is '-', which is the minus sign.
-             Then take as many numerical digits as possible, which gets 42.
+             Then take as many numerical digits as possible, which gets 42.
 ```
 
 **Example 3:**
@@ -477,7 +477,7 @@ Explanation: Conversion stops at digit '3' as the next character is not a numeri
 Input: "words and 987"
 Output: 0
 Explanation: The first non-whitespace character is 'w', which is not a numerical
-             digit or a +/- sign. Therefore no valid conversion could be performed.
+             digit or a +/- sign. Therefore no valid conversion could be performed.
 ```
 
 **Example 5:**
@@ -486,7 +486,7 @@ Explanation: The first non-whitespace character is 'w', which is not a numerical
 Input: "-91283472332"
 Output: -2147483648
 Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.
-             Thefore INT_MIN (−231) is returned.
+             Thefore INT_MIN (−231) is returned.
 ```
 
 ### Solution:
@@ -586,7 +586,7 @@ Similar Questions:
 
 ### Problem:
 
-Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
 **Example 1:**
 
@@ -613,7 +613,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 **Follow up:**
 
-Coud you solve it without converting the integer to a string?
+Coud you solve it without converting the integer to a string?
 
 ### Solution:
 
@@ -715,8 +715,8 @@ The matching should cover the **entire** input string (not partial).
 
 **Note:**
 
-`s` could be empty and contains only lowercase letters `a-z`.
-`p` could be empty and contains only lowercase letters `a-z`, and characters like `.` or `*`.
+`s` could be empty and contains only lowercase letters `a-z`.
+`p` could be empty and contains only lowercase letters `a-z`, and characters like `.` or `*`.
 
 **Example 1:**
 
@@ -735,7 +735,7 @@ Input:
 s = "aa"
 p = "a*"
 Output: true
-Explanation: '*' means zero or more of the precedeng element, 'a'. Therefore, by repeating 'a' once, it becomes "aa".
+Explanation: '*' means zero or more of the precedeng element, 'a'. Therefore, by repeating 'a' once, it becomes "aa".
 ```
 
 **Example 3:**
@@ -745,7 +745,7 @@ Input:
 s = "ab"
 p = ".*"
 Output: true
-Explanation: ".*" means "zero or more (*) of any character (.)".
+Explanation: ".*" means "zero or more (*) of any character (.)".
 ```
 
 **Example 4:**
@@ -755,7 +755,7 @@ Input:
 s = "aab"
 p = "c*a*b"
 Output: true
-Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore it matches "aab".
+Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore it matches "aab".
 ```
 
 **Example 5:**
@@ -931,7 +931,7 @@ Similar Questions:
 
 ### Problem:
 
-Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
 
 ```
 Symbol       Value
@@ -944,7 +944,7 @@ D             500
 M             1000
 ```
 
-For example, two is written as `II` in Roman numeral, just two one's added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
+For example, two is written as `II` in Roman numeral, just two one's added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
 
@@ -957,28 +957,28 @@ Given an integer, convert it to a roman numeral. Input is guaranteed to be withi
 **Example 1:**
 
 ```
-Input: 3
+Input: 3
 Output: "III"
 ```
 
 **Example 2:**
 
 ```
-Input: 4
+Input: 4
 Output: "IV"
 ```
 
 **Example 3:**
 
 ```
-Input: 9
+Input: 9
 Output: "IX"
 ```
 
 **Example 4:**
 
 ```
-Input: 58
+Input: 58
 Output: "LVIII"
 Explanation: C = 100, L = 50, XXX = 30 and III = 3.
 ```
@@ -986,7 +986,7 @@ Explanation: C = 100, L = 50, XXX = 30 and III = 3.
 **Example 5:**
 
 ```
-Input: 1994
+Input: 1994
 Output: "MCMXCIV"
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 ```
@@ -1053,7 +1053,7 @@ Similar Questions:
 
 ### Problem:
 
-Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
 
 ```
 Symbol       Value
@@ -1066,7 +1066,7 @@ D             500
 M             1000
 ```
 
-For example, two is written as `II` in Roman numeral, just two one's added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
+For example, two is written as `II` in Roman numeral, just two one's added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
 
@@ -1079,28 +1079,28 @@ Given a roman numeral, convert it to an integer. Input is guaranteed to be withi
 **Example 1:**
 
 ```
-Input: "III"
+Input: "III"
 Output: 3
 ```
 
 **Example 2:**
 
 ```
-Input: "IV"
+Input: "IV"
 Output: 4
 ```
 
 **Example 3:**
 
 ```
-Input: "IX"
+Input: "IX"
 Output: 9
 ```
 
 **Example 4:**
 
 ```
-Input: "LVIII"
+Input: "LVIII"
 Output: 58
 Explanation: C = 100, L = 50, XXX = 30 and III = 3.
 ```
@@ -1108,7 +1108,7 @@ Explanation: C = 100, L = 50, XXX = 30 and III = 3.
 **Example 5:**
 
 ```
-Input: "MCMXCIV"
+Input: "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 ```
@@ -1393,7 +1393,7 @@ Similar Questions:
 
 ### Problem:
 
-Given an array `nums` of _n_ integers and an integer `target`, find three integers in `nums` such that the sum is closest to `target`. Return the sum of the three integers. You may assume that each input would have exactly one solution.
+Given an array `nums` of _n_ integers and an integer `target`, find three integers in `nums` such that the sum is closest to `target`. Return the sum of the three integers. You may assume that each input would have exactly one solution.
 
 **Example:**
 
@@ -1782,7 +1782,7 @@ An input string is valid if:
 1. Open brackets must be closed by the same type of brackets.
 2. Open brackets must be closed in the correct order.
 
-Note that an empty string is also considered valid.
+Note that an empty string is also considered valid.
 
 **Example 1:**
 
@@ -2082,9 +2082,9 @@ Merge _k_ sorted linked lists and return it as one sorted list. Analyze and desc
 ```
 Input:
 [
-  1->4->5,
-  1->3->4,
-  2->6
+  1->4->5,
+  1->3->4,
+  2->6
 ]
 Output: 1->1->2->3->4->4->5->6
 ```
@@ -2185,7 +2185,7 @@ Similar Questions:
 
 ### Problem:
 
-Given a linked list, swap every two adjacent nodes and return its head.
+Given a linked list, swap every two adjacent nodes and return its head.
 
 **Example:**
 
@@ -2367,9 +2367,9 @@ It doesn't matter what you leave beyond the returned length.
 ```
 Given nums = [0,0,1,1,1,2,2,3,3,4],
 
-Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
+Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
 
-It doesn't matter what values are set beyond the returned length.
+It doesn't matter what values are set beyond the returned length.
 ```
 
 **Clarification:**
@@ -2387,7 +2387,7 @@ int len = removeDuplicates(nums);
 // any modification to nums in your function would be known by the caller.
 // using the length returned by your function, it prints the first len elements.
 for (int i = 0; i < len; i++) {
-    print(nums[i]);
+    print(nums[i]);
 }
 ```
 
@@ -2456,11 +2456,11 @@ It doesn't matter what you leave beyond the returned length.
 ```
 Given nums = [0,1,2,2,3,0,4,2], val = 2,
 
-Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.
+Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.
 
 Note that the order of those five elements can be arbitrary.
 
-It doesn't matter what values are set beyond the returned length.
+It doesn't matter what values are set beyond the returned length.
 ```
 
 **Clarification:**
@@ -2478,7 +2478,7 @@ int len = removeElement(nums, val);
 // any modification to nums in your function would be known by the caller.
 // using the length returned by your function, it prints the first len elements.
 for (int i = 0; i < len; i++) {
-    print(nums[i]);
+    print(nums[i]);
 }
 ```
 
@@ -2545,9 +2545,9 @@ Output: -2
 
 **Note:**
 
-- Both dividend and divisor will be 32-bit signed integers.
+- Both dividend and divisor will be 32-bit signed integers.
 - The divisor will never be 0.
-- Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 231 − 1 when the division result overflows.
+- Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 231 − 1 when the division result overflows.
 
 ### Solution:
 
@@ -2624,7 +2624,7 @@ Implement **next permutation**, which rearranges numbers into the lexicographica
 
 If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
 
-The replacement must be **in-place** and use only constant extra memory.
+The replacement must be **in-place** and use only constant extra memory.
 
 Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
 
@@ -2712,7 +2712,7 @@ You are given a target value to search. If found in the array return its index, 
 
 You may assume no duplicate exists in the array.
 
-Your algorithm's runtime complexity must be in the order of *O*(log *n*).
+Your algorithm's runtime complexity must be in the order of *O*(log *n*).
 
 **Example 1:**
 
@@ -2997,11 +2997,11 @@ Similar Questions:
 
 ### Problem:
 
-Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated **according to the following rules**:
+Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated **according to the following rules**:
 
-1. Each row must contain the digits `1-9` without repetition.
-2. Each column must contain the digits `1-9` without repetition.
-3. Each of the 9 `3x3` sub-boxes of the grid must contain the digits `1-9` without repetition.
+1. Each row must contain the digits `1-9` without repetition.
+2. Each column must contain the digits `1-9` without repetition.
+3. Each of the 9 `3x3` sub-boxes of the grid must contain the digits `1-9` without repetition.
 
 ![250px-Sudoku-by-L2G-20050714.svg.png](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png)
 
@@ -3032,15 +3032,15 @@ Output: true
 ```
 Input:
 [
-  ["8","3",".",".","7",".",".",".","."],
-  ["6",".",".","1","9","5",".",".","."],
-  [".","9","8",".",".",".",".","6","."],
-  ["8",".",".",".","6",".",".",".","3"],
-  ["4",".",".","8",".","3",".",".","1"],
-  ["7",".",".",".","2",".",".",".","6"],
-  [".","6",".",".",".",".","2","8","."],
-  [".",".",".","4","1","9",".",".","5"],
-  [".",".",".",".","8",".",".","7","9"]
+  ["8","3",".",".","7",".",".",".","."],
+  ["6",".",".","1","9","5",".",".","."],
+  [".","9","8",".",".",".",".","6","."],
+  ["8",".",".",".","6",".",".",".","3"],
+  ["4",".",".","8",".","3",".",".","1"],
+  ["7",".",".",".","2",".",".",".","6"],
+  [".","6",".",".",".",".","2","8","."],
+  [".",".",".","4","1","9",".",".","5"],
+  [".",".",".",".","8",".",".","7","9"]
 ]
 Output: false
 Explanation: Same as Example 1, except with the 5 in the top left corner being
@@ -3050,8 +3050,8 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being
 **Note:**
 
 - A Sudoku board (partially filled) could be valid but is not necessarily solvable.
-- Only the filled cells need to be validated according to the mentioned rules.
-- The given board contain only digits `1-9` and the character `'.'`.
+- Only the filled cells need to be validated according to the mentioned rules.
+- The given board contain only digits `1-9` and the character `'.'`.
 - The given board size is always `9x9`.
 
 ### Solution:
@@ -3125,11 +3125,11 @@ Similar Questions:
 
 Write a program to solve a Sudoku puzzle by filling the empty cells.
 
-A sudoku solution must satisfy **all of the following rules**:
+A sudoku solution must satisfy **all of the following rules**:
 
-1. Each of the digits `1-9` must occur exactly once in each row.
-2. Each of the digits `1-9` must occur exactly once in each column.
-3. Each of the the digits `1-9` must occur exactly once in each of the 9 `3x3` sub-boxes of the grid.
+1. Each of the digits `1-9` must occur exactly once in each row.
+2. Each of the digits `1-9` must occur exactly once in each column.
+3. Each of the the digits `1-9` must occur exactly once in each of the 9 `3x3` sub-boxes of the grid.
 
 Empty cells are indicated by the character `'.'`.
 
@@ -3141,7 +3141,7 @@ A sudoku puzzle...
 
 **Note:**
 
-- The given board contain only digits `1-9` and the character `'.'`.
+- The given board contain only digits `1-9` and the character `'.'`.
 - You may assume that the given Sudoku puzzle will have a single unique solution.
 - The given board size is always `9x9`.
 
@@ -3353,9 +3353,9 @@ Similar Questions:
 
 ### Problem:
 
-Given a **set** of candidate numbers (`candidates`) **(without duplicates)** and a target number (`target`), find all unique combinations in `candidates` where the candidate numbers sums to `target`.
+Given a **set** of candidate numbers (`candidates`) **(without duplicates)** and a target number (`target`), find all unique combinations in `candidates` where the candidate numbers sums to `target`.
 
-The **same** repeated number may be chosen from `candidates` unlimited number of times.
+The **same** repeated number may be chosen from `candidates` unlimited number of times.
 
 **Note:**
 
@@ -3379,9 +3379,9 @@ A solution set is:
 Input: candidates = [2,3,5], target = 8,
 A solution set is:
 [
-  [2,2,2,2],
-  [2,3,3],
-  [3,5]
+  [2,2,2,2],
+  [2,3,3],
+  [3,5]
 ]
 ```
 
@@ -3444,9 +3444,9 @@ Similar Questions:
 
 ### Problem:
 
-Given a collection of candidate numbers (`candidates`) and a target number (`target`), find all unique combinations in `candidates` where the candidate numbers sums to `target`.
+Given a collection of candidate numbers (`candidates`) and a target number (`target`), find all unique combinations in `candidates` where the candidate numbers sums to `target`.
 
-Each number in `candidates` may only be used **once** in the combination.
+Each number in `candidates` may only be used **once** in the combination.
 
 **Note:**
 
@@ -3456,7 +3456,7 @@ Each number in `candidates` may only be used **once** in the combination.
 **Example 1:**
 
 ```
-Input: candidates = [10,1,2,7,6,1,5], target = 8,
+Input: candidates = [10,1,2,7,6,1,5], target = 8,
 A solution set is:
 [
   [1, 7],
@@ -3469,11 +3469,11 @@ A solution set is:
 **Example 2:**
 
 ```
-Input: candidates = [2,5,2,1,2], target = 5,
+Input: candidates = [2,5,2,1,2], target = 5,
 A solution set is:
 [
-  [1,2,2],
-  [5]
+  [1,2,2],
+  [5]
 ]
 ```
 
@@ -3554,7 +3554,7 @@ Similar Questions:
 
 ### Problem:
 
-Given an unsorted integer array, find the smallest missing positive integer.
+Given an unsorted integer array, find the smallest missing positive integer.
 
 **Example 1:**
 
@@ -3587,11 +3587,11 @@ The last requirement is why this problem is marked "hard". Though the solution f
 
 So the algorithm still requires _O_(_n_) space but _O_(_1_) **extra** space.
 
-The core idea of the solution is, if the length of the array is n, then the smallest missing positive integer must be within [1, n+1].
+The core idea of the solution is, if the length of the array is n, then the smallest missing positive integer must be within [1, n+1].
 
-Consider an edge-case scenario where the array is `[1,2,...,n]`. The smallest missing positive integer is `n+1`.
+Consider an edge-case scenario where the array is `[1,2,...,n]`. The smallest missing positive integer is `n+1`.
 
-Now if one of these integers is missing in the array, that integer **is** the smallest missing positive integer.
+Now if one of these integers is missing in the array, that integer **is** the smallest missing positive integer.
 
 If more than one are missing, pick the smallest.
 
@@ -3745,8 +3745,8 @@ Output: "56088"
 **Note:**
 
 1. The length of both `num1` and `num2` is < 110.
-2. Both `num1` and `num2` contain only digits `0-9`.
-3. Both `num1` and `num2` do not contain any leading zero, except the number 0 itself.
+2. Both `num1` and `num2` contain only digits `0-9`.
+3. Both `num1` and `num2` do not contain any leading zero, except the number 0 itself.
 4. You **must not use any built-in BigInteger library** or **convert the inputs to integer** directly.
 
 ### Solution:
@@ -4132,7 +4132,7 @@ Output:
 **Note:**
 
 - All inputs will be in lowercase.
-- The order of your output does not matter.
+- The order of your output does not matter.
 
 ### Solution:
 
@@ -4210,7 +4210,7 @@ Similar Questions:
 
 ### Problem:
 
-Implement [pow(_x_, _n_)](http://www.cplusplus.com/reference/valarray/pow/), which calculates *x* raised to the power _n_ (xn).
+Implement [pow(_x_, _n_)](http://www.cplusplus.com/reference/valarray/pow/), which calculates *x* raised to the power _n_ (xn).
 
 **Example 1:**
 
@@ -4237,7 +4237,7 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
 **Note:**
 
 - -100.0 < _x_ < 100.0
-- _n_ is a 32-bit signed integer, within the range [−231, 231 − 1]
+- _n_ is a 32-bit signed integer, within the range [−231, 231 − 1]
 
 ### Solution:
 
@@ -4468,7 +4468,7 @@ The _n_-queens puzzle is the problem of placing _n_ queens on an *n*×*n* chessb
 
 ![8-queens.png](https://leetcode.com/static/images/problemset/8-queens.png)
 
-Given an integer *n*, return the number of distinct solutions to the *n*-queens puzzle.
+Given an integer *n*, return the number of distinct solutions to the *n*-queens puzzle.
 
 **Example:**
 
@@ -4477,15 +4477,15 @@ Input: 4
 Output: 2
 Explanation: There are two distinct solutions to the 4-queens puzzle as shown below.
 [
- [".Q..",  // Solution 1
-  "...Q",
-  "Q...",
-  "..Q."],
+ [".Q..",  // Solution 1
+  "...Q",
+  "Q...",
+  "..Q."],
 
- ["..Q.",  // Solution 2
-  "Q...",
-  "...Q",
-  ".Q.."]
+ ["..Q.",  // Solution 2
+  "Q...",
+  "...Q",
+  ".Q.."]
 ]
 ```
 
@@ -4565,14 +4565,14 @@ Similar Questions:
 
 ### Problem:
 
-Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
 **Example:**
 
 ```
 Input: [-2,1,-3,4,-1,2,1,-5,4],
 Output: 6
-Explanation: [4,-1,2,1] has the largest sum = 6.
+Explanation: [4,-1,2,1] has the largest sum = 6.
 ```
 
 **Follow up:**
@@ -4763,7 +4763,7 @@ Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
 Input: [3,2,1,0,4]
 Output: false
 Explanation: You will always arrive at index 3 no matter what. Its maximum
-             jump length is 0, which makes it impossible to reach the last index.
+             jump length is 0, which makes it impossible to reach the last index.
 ```
 
 ### Solution:
@@ -5178,7 +5178,7 @@ Given _n_ and _k_, return the *k*th permutation sequence.
 **Note:**
 
 - Given _n_ will be between 1 and 9 inclusive.
-- Given *k* will be between 1 and _n_! inclusive.
+- Given *k* will be between 1 and _n_! inclusive.
 
 **Example 1:**
 
@@ -5253,7 +5253,7 @@ Similar Questions:
 
 ### Problem:
 
-Given a linked list, rotate the list to the right by _k_ places, where _k_ is non-negative.
+Given a linked list, rotate the list to the right by _k_ places, where _k_ is non-negative.
 
 **Example 1:**
 
@@ -5273,8 +5273,8 @@ Output: 2->0->1->NULL
 Explanation:
 rotate 1 steps to the right: 2->0->1->NULL
 rotate 2 steps to the right: 1->2->0->NULL
-rotate 3 steps to the right: 0->1->2->NULL
-rotate 4 steps to the right: 2->0->1->NULL
+rotate 3 steps to the right: 0->1->2->NULL
+rotate 4 steps to the right: 2->0->1->NULL
 ```
 
 ### Solution:
@@ -5456,7 +5456,7 @@ Given a _m_ x _n_ grid filled with non-negative numbers, find a path from top le
 ```
 Input:
 [
-  [1,3,1],
+  [1,3,1],
   [1,5,1],
   [4,2,1]
 ]
@@ -5750,7 +5750,7 @@ Similar Questions:
 
 ### Problem:
 
-Given a **non-empty** array of digits representing a non-negative integer, plus one to the integer.
+Given a **non-empty** array of digits representing a non-negative integer, plus one to the integer.
 
 The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
 
@@ -5841,7 +5841,7 @@ Related Topics:
 
 ### Problem:
 
-Given an array of words and a width *maxWidth*, format the text such that each line has exactly _maxWidth_ characters and is fully (left and right) justified.
+Given an array of words and a width *maxWidth*, format the text such that each line has exactly _maxWidth_ characters and is fully (left and right) justified.
 
 You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces `' '` when necessary so that each line has exactly _maxWidth_ characters.
 
@@ -5851,9 +5851,9 @@ For the last line of text, it should be left justified and no **extra** space is
 
 **Note:**
 
-- A word is defined as a character sequence consisting of non-space characters only.
-- Each word's length is guaranteed to be greater than 0 and not exceed _maxWidth_.
-- The input array `words` contains at least one word.
+- A word is defined as a character sequence consisting of non-space characters only.
+- Each word's length is guaranteed to be greater than 0 and not exceed _maxWidth_.
+- The input array `words` contains at least one word.
 
 **Example 1:**
 
@@ -5863,9 +5863,9 @@ words = ["This", "is", "an", "example", "of", "text", "justification."]
 maxWidth = 16
 Output:
 [
-   "This    is    an",
-   "example  of text",
-   "justification.  "
+   "This    is    an",
+   "example  of text",
+   "justification.  "
 ]
 ```
 
@@ -5877,12 +5877,12 @@ words = ["What","must","be","acknowledgment","shall","be"]
 maxWidth = 16
 Output:
 [
-  "What   must   be",
-  "acknowledgment  ",
-  "shall be        "
+  "What   must   be",
+  "acknowledgment  ",
+  "shall be        "
 ]
 Explanation: Note that the last line is "shall be    " instead of "shall     be",
-             because the last line must be left-justified instead of fully-justified.
+             because the last line must be left-justified instead of fully-justified.
              Note that the second line is also left-justified becase it contains only one word.
 ```
 
@@ -5891,16 +5891,16 @@ Explanation: Note that the last line is "shall be    " instead of "shall     be"
 ```
 Input:
 words = ["Science","is","what","we","understand","well","enough","to","explain",
-         "to","a","computer.","Art","is","everything","else","we","do"]
+         "to","a","computer.","Art","is","everything","else","we","do"]
 maxWidth = 20
 Output:
 [
-  "Science  is  what we",
-  "understand      well",
-  "enough to explain to",
-  "a  computer.  Art is",
-  "everything  else  we",
-  "do                  "
+  "Science  is  what we",
+  "understand      well",
+  "enough to explain to",
+  "a  computer.  Art is",
+  "everything  else  we",
+  "do                  "
 ]
 ```
 
@@ -5983,9 +5983,9 @@ Similar Questions:
 
 Implement `int sqrt(int x)`.
 
-Compute and return the square root of _x_, where *x* is guaranteed to be a non-negative integer.
+Compute and return the square root of _x_, where *x* is guaranteed to be a non-negative integer.
 
-Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
+Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
 
 **Example 1:**
 
@@ -6000,7 +6000,7 @@ Output: 2
 Input: 8
 Output: 2
 Explanation: The square root of 8 is 2.82842..., and since
-             the decimal part is truncated, 2 is returned.
+             the decimal part is truncated, 2 is returned.
 ```
 
 ### Solution:
@@ -6266,15 +6266,15 @@ Given a _m_ x _n_ matrix, if an element is 0, set its entire row and column to 0
 ```
 Input:
 [
-  [1,1,1],
-  [1,0,1],
-  [1,1,1]
+  [1,1,1],
+  [1,0,1],
+  [1,1,1]
 ]
 Output:
 [
-  [1,0,1],
-  [0,0,0],
-  [1,0,1]
+  [1,0,1],
+  [0,0,0],
+  [1,0,1]
 ]
 ```
 
@@ -6283,15 +6283,15 @@ Output:
 ```
 Input:
 [
-  [0,1,2,0],
-  [3,4,5,2],
-  [1,3,1,5]
+  [0,1,2,0],
+  [3,4,5,2],
+  [1,3,1,5]
 ]
 Output:
 [
-  [0,0,0,0],
-  [0,4,5,0],
-  [0,3,1,0]
+  [0,0,0,0],
+  [0,4,5,0],
+  [0,3,1,0]
 ]
 ```
 
@@ -6580,7 +6580,7 @@ Given an array with _n_ objects colored red, white or blue, sort them **in-place
 
 Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
 
-**Note:** You are not suppose to use the library's sort function for this problem.
+**Note:** You are not suppose to use the library's sort function for this problem.
 
 **Example:**
 
@@ -6593,7 +6593,7 @@ Output: [0,0,1,1,2,2]
 
 - A rather straight forward solution is a two-pass algorithm using counting sort.
   First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
-- Could you come up with a one-pass algorithm using only constant space?
+- Could you come up with a one-pass algorithm using only constant space?
 
 ### Solution:
 
@@ -6658,7 +6658,7 @@ Given two integers _n_ and _k_, return all possible combinations of _k_ numbers 
 **Example:**
 
 ```
-Input: n = 4, k = 2
+Input: n = 4, k = 2
 Output:
 [
   [2,4],
@@ -6735,13 +6735,13 @@ Input: nums = [1,2,3]
 Output:
 [
   [3],
-  [1],
-  [2],
-  [1,2,3],
-  [1,3],
-  [2,3],
-  [1,2],
-  []
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
 ]
 ```
 
@@ -6949,7 +6949,7 @@ Similar Questions:
 
 ### Problem:
 
-Given a sorted array _nums_, remove the duplicates [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) such that duplicates appeared at most *twice* and return the new length.
+Given a sorted array _nums_, remove the duplicates [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) such that duplicates appeared at most *twice* and return the new length.
 
 Do not allocate extra space for another array, you must do this by **modifying the input array in-place** with O(1) extra memory.
 
@@ -6968,9 +6968,9 @@ It doesn't matter what you leave beyond the returned length.
 ```
 Given nums = [0,0,1,1,1,1,2,3,3],
 
-Your function should return length = 7, with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and 3 respectively.
+Your function should return length = 7, with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and 3 respectively.
 
-It doesn't matter what values are set beyond the returned length.
+It doesn't matter what values are set beyond the returned length.
 ```
 
 **Clarification:**
@@ -6988,7 +6988,7 @@ int len = removeDuplicates(nums);
 // any modification to nums in your function would be known by the caller.
 // using the length returned by your function, it prints the first len elements.
 for (int i = 0; i < len; i++) {
-    print(nums[i]);
+    print(nums[i]);
 }
 ```
 
@@ -7056,7 +7056,7 @@ Output: false
 
 **Follow up:**
 
-- This is a follow up problem to [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/), where `nums` may contain duplicates.
+- This is a follow up problem to [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/), where `nums` may contain duplicates.
 - Would this affect the run-time complexity? How and why?
 
 ### Solution:
@@ -7675,7 +7675,7 @@ Input:
 nums1 = [1,2,3,0,0,0], m = 3
 nums2 = [2,5,6],       n = 3
 
-Output: [1,2,2,3,5,6]
+Output: [1,2,2,3,5,6]
 ```
 
 ### Solution:
@@ -7726,15 +7726,15 @@ Given a non-negative integer _n_ representing the total number of bits in the co
 **Example 1:**
 
 ```
-Input: 2
-Output: [0,1,3,2]
+Input: 2
+Output: [0,1,3,2]
 Explanation:
 00 - 0
 01 - 1
 11 - 3
 10 - 2
 
-For a given n, a gray code sequence may not be uniquely defined.
+For a given n, a gray code sequence may not be uniquely defined.
 For example, [0,2,3,1] is also a valid gray code sequence.
 
 00 - 0
@@ -7746,11 +7746,11 @@ For example, [0,2,3,1] is also a valid gray code sequence.
 **Example 2:**
 
 ```
-Input: 0
-Output: [0]
+Input: 0
+Output: [0]
 Explanation: We define the gray code sequence to begin with 0.
-             A gray code sequence of n has size = 2n, which for n = 0 the size is 20 = 1.
-             Therefore, for n = 0 the gray code sequence is [0].
+             A gray code sequence of n has size = 2n, which for n = 0 the size is 20 = 1.
+             Therefore, for n = 0 the gray code sequence is [0].
 ```
 
 ### Solution:
@@ -7893,7 +7893,7 @@ Given a **non-empty** string containing only digits, determine the total number 
 ```
 Input: "12"
 Output: 2
-Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+Explanation: It could be decoded as "AB" (1 2) or "L" (12).
 ```
 
 **Example 2:**
@@ -7901,7 +7901,7 @@ Explanation: It could be decoded as "AB" (1 2) or "L" (12).
 ```
 Input: "226"
 Output: 3
-Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 ```
 
 ### Solution:
@@ -8621,7 +8621,7 @@ Given a binary tree, find its maximum depth.
 
 The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
-**Note:** A leaf is a node with no children.
+**Note:** A leaf is a node with no children.
 
 **Example:**
 
@@ -8691,7 +8691,7 @@ You may assume that duplicates do not exist in the tree.
 For example, given
 
 ```
-preorder = [3,9,20,15,7]
+preorder = [3,9,20,15,7]
 inorder = [9,3,15,20,7]
 ```
 
@@ -8794,7 +8794,7 @@ You may assume that duplicates do not exist in the tree.
 For example, given
 
 ```
-inorder = [9,3,15,20,7]
+inorder = [9,3,15,20,7]
 postorder = [9,15,7,20,3]
 ```
 
@@ -9078,7 +9078,7 @@ Given a binary tree, find its minimum depth.
 
 The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
 
-**Note:** A leaf is a node with no children.
+**Note:** A leaf is a node with no children.
 
 **Example:**
 
@@ -9092,7 +9092,7 @@ Given binary tree `[3,9,20,null,null,15,7]`,
    15   7
 ```
 
-return its minimum depth = 2.
+return its minimum depth = 2.
 
 ### Solution:
 
@@ -9152,7 +9152,7 @@ Similar Questions:
 
 Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
 
-**Note:** A leaf is a node with no children.
+**Note:** A leaf is a node with no children.
 
 **Example:**
 
@@ -9228,7 +9228,7 @@ Similar Questions:
 
 Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
 
-**Note:** A leaf is a node with no children.
+**Note:** A leaf is a node with no children.
 
 **Example:**
 
@@ -9411,7 +9411,7 @@ A subsequence of a string is a new string which is formed from the original stri
 
 ```
 Input: S = "rabbbit", T = "rabbit"
-Output: 3
+Output: 3
 Explanation:
 
 As shown below, there are 3 ways you can generate "rabbit" from S.
@@ -9429,7 +9429,7 @@ rabbbit
 
 ```
 Input: S = "babgbag", T = "bag"
-Output: 5
+Output: 5
 Explanation:
 
 As shown below, there are 5 ways you can generate "bag" from S.
@@ -9812,7 +9812,7 @@ Similar Questions:
 
 ### Problem:
 
-Given a non-negative integer *numRows*, generate the first _numRows_ of Pascal's triangle.
+Given a non-negative integer *numRows*, generate the first _numRows_ of Pascal's triangle.
 
 ![PascalTriangleAnimated2.gif](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
 
@@ -9883,9 +9883,9 @@ Similar Questions:
 
 ### Problem:
 
-Given a non-negative index *k* where _k_ ≤ 33, return the *k*th index row of the Pascal's triangle.
+Given a non-negative index *k* where _k_ ≤ 33, return the *k*th index row of the Pascal's triangle.
 
-Note that the row index starts from 0.
+Note that the row index starts from 0.
 
 ![PascalTriangleAnimated2.gif](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
 
@@ -10043,7 +10043,7 @@ Note that you cannot sell a stock before you buy one.
 Input: [7,1,5,3,6,4]
 Output: 5
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-             Not 7-1 = 6, as selling price needs to be larger than buying price.
+             Not 7-1 = 6, as selling price needs to be larger than buying price.
 
 ```
 
@@ -10120,7 +10120,7 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 Input: [7,1,5,3,6,4]
 Output: 7
 Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
-             Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+             Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
 
 ```
 
@@ -10130,8 +10130,8 @@ Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-
 Input: [1,2,3,4,5]
 Output: 4
 Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
-             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
-             engaging multiple transactions at the same time. You must sell before buying again.
+             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
+             engaging multiple transactions at the same time. You must sell before buying again.
 
 ```
 
@@ -10200,7 +10200,7 @@ Design an algorithm to find the maximum profit. You may complete at most _two_ t
 Input: [3,3,5,0,0,3,1,4]
 Output: 6
 Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
-             Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
+             Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
 ```
 
 **Example 2:**
@@ -10209,8 +10209,8 @@ Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-
 Input: [1,2,3,4,5]
 Output: 4
 Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
-             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
-             engaging multiple transactions at the same time. You must sell before buying again.
+             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
+             engaging multiple transactions at the same time. You must sell before buying again.
 
 ```
 
@@ -10320,11 +10320,11 @@ Output: 6
 ```
 Input: [-10,9,20,null,null,15,7]
 
-   -10
-   / \
-  9  20
-    /  \
-   15   7
+   -10
+   / \
+  9  20
+    /  \
+   15   7
 
 Output: 42
 
@@ -10453,7 +10453,7 @@ Similar Questions:
 
 Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
-**Note:** For the purpose of this problem, we define empty string as valid palindrome.
+**Note:** For the purpose of this problem, we define empty string as valid palindrome.
 
 **Example 1:**
 
@@ -10608,7 +10608,7 @@ wordList = ["hot","dot","dog","lot","log","cog"]
 Output:
 [
   ["hit","hot","dot","dog","cog"],
-  ["hit","hot","lot","log","cog"]
+  ["hit","hot","lot","log","cog"]
 ]
 
 ```
@@ -10623,7 +10623,7 @@ wordList = ["hot","dot","dog","lot","log"]
 
 Output: []
 
-Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
+Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 
 ```
 
@@ -10755,9 +10755,9 @@ beginWord = "hit"
 endWord = "cog"
 wordList = ["hot","dot","dog","lot","log"]
 
-Output: 0
+Output: 0
 
-Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
+Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 
 ```
 
@@ -10848,7 +10848,7 @@ Your algorithm should run in O(_n_) complexity.
 **Example:**
 
 ```
-Input: [100, 4, 200, 1, 3, 2]
+Input: [100, 4, 200, 1, 3, 2]
 Output: 4
 Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
 
@@ -10913,7 +10913,7 @@ An example is the root-to-leaf path `1->2->3` which represents the number `123`.
 
 Find the total sum of all root-to-leaf numbers.
 
-**Note:** A leaf is a node with no children.
+**Note:** A leaf is a node with no children.
 
 **Example:**
 
@@ -10936,7 +10936,7 @@ Input: [4,9,0,5,1]
     4
    / \
   9   0
- / \
+ / \
 5   1
 Output: 1026
 Explanation:
@@ -11021,7 +11021,7 @@ X O X X
 
 **Explanation:**
 
-Surrounded regions shouldn’t be on the border, which means that any `'O'` on the border of the board are not flipped to `'X'`. Any `'O'` that is not on the border and it is not connected to an `'O'` on the border will be flipped to `'X'`. Two cells are connected if they are adjacent cells connected horizontally or vertically.
+Surrounded regions shouldn’t be on the border, which means that any `'O'` on the border of the board are not flipped to `'X'`. Any `'O'` that is not on the border and it is not connected to an `'O'` on the border will be flipped to `'X'`. Two cells are connected if they are adjacent cells connected horizontally or vertically.
 
 ### Solution:
 
@@ -11129,7 +11129,7 @@ Similar Questions:
 
 ### Problem:
 
-Given the head of a graph, return a deep copy (clone) of the graph. Each node in the graph contains a `label` (`int`) and a list (`List[UndirectedGraphNode]`) of its `neighbors`. There is an edge between the given node and each of the nodes in its neighbors.
+Given the head of a graph, return a deep copy (clone) of the graph. Each node in the graph contains a `label` (`int`) and a list (`List[UndirectedGraphNode]`) of its `neighbors`. There is an edge between the given node and each of the nodes in its neighbors.
 
 OJ's undirected graph serialization (so you can understand error output):
 

@@ -1,19 +1,19 @@
 # React Patterns
 
-## Element (**element**)
+## Element (**element**)
 
-[Elements](https://reactjs.org/docs/glossary.html#elements) are anything inside angle brackets.
+[Elements](https://reactjs.org/docs/glossary.html#elements) are anything inside angle brackets.
 
 ```js
 <div></div>
 <Greeting />
 ```
 
-[Components](#component) return Elements.
+[Components](#component) return Elements.
 
-## Component (**component**)
+## Component (**component**)
 
-Define a [Component](https://reactjs.org/docs/glossary.html#components) by declaring a function that returns a React [Element](#element).
+Define a [Component](https://reactjs.org/docs/glossary.html#components) by declaring a function that returns a React [Element](#element).
 
 ```js
 function Greeting() {
@@ -21,9 +21,9 @@ function Greeting() {
 }
 ```
 
-## Expressions (**expressions**)
+## Expressions (**expressions**)
 
-Use curly braces to [embed expressions](https://reactjs.org/docs/introducing-jsx.html#embedding-expressions-in-jsx) in [JSX](https://reactjs.org/docs/glossary.html#jsx).
+Use curly braces to [embed expressions](https://reactjs.org/docs/introducing-jsx.html#embedding-expressions-in-jsx) in [JSX](https://reactjs.org/docs/glossary.html#jsx).
 
 ```js
 function Greeting() {
@@ -33,9 +33,9 @@ function Greeting() {
 }
 ```
 
-## Props (**props**)
+## Props (**props**)
 
-Take `props` as an argument to allow outside customizations of your Component.
+Take `props` as an argument to allow outside customizations of your Component.
 
 ```js
 function Greeting(props) {
@@ -43,9 +43,9 @@ function Greeting(props) {
 }
 ```
 
-## defaultProps (**defaultprops**)
+## defaultProps (**defaultprops**)
 
-Specify default values for `props` with `defaultProps`.
+Specify default values for `props` with `defaultProps`.
 
 ```js
 function Greeting(props) {
@@ -58,9 +58,9 @@ Greeting.defaultProps = {
 
 ---
 
-## Destructuring props (**destructuring-props**)
+## Destructuring props (**destructuring-props**)
 
-[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) is a JavaScript feature.\
+[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) is a JavaScript feature.\
 It was added to the language in ES2015.\
 So it might not look familiar.
 
@@ -78,7 +78,7 @@ let things = ["one", "two"];
 let [first, second] = things;
 ```
 
-Destructuring assignment is used a lot in [function components](#function-component).\
+Destructuring assignment is used a lot in [function components](#function-component).\
 These component declarations below are equivalent.
 
 ```js
@@ -91,8 +91,8 @@ function Greeting({ name }) {
 }
 ```
 
-There's a syntax for collecting remaining `props` into an object.\
-It's called [rest parameter syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and looks like this.
+There's a syntax for collecting remaining `props` into an object.\
+It's called [rest parameter syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and looks like this.
 
 ```js
 function Greeting({ name, ...restProps }) {
@@ -100,20 +100,20 @@ function Greeting({ name, ...restProps }) {
 }
 ```
 
-Those three dots (`...`) take all the remaining properties and assign them to the object `restProps`.
+Those three dots (`...`) take all the remaining properties and assign them to the object `restProps`.
 
-So, what do you do with `restProps` once you have it?\
+So, what do you do with `restProps` once you have it?\
 Keep reading...
 
 ---
 
-## JSX spread attributes (**jsx-spread-attributes**)
+## JSX spread attributes (**jsx-spread-attributes**)
 
-Spread Attributes is a feature of [JSX](https://reactjs.org/docs/introducing-jsx.html).\
+Spread Attributes is a feature of [JSX](https://reactjs.org/docs/introducing-jsx.html).\
 It's a syntax for providing an object's properties as JSX attributes.
 
-Following the example from [Destructuring props](#destructuring-props),\
-We can **spread** `restProps` over our `<div>`.
+Following the example from [Destructuring props](#destructuring-props),\
+We can **spread** `restProps` over our `<div>`.
 
 ```js
 function Greeting({ name, ...restProps }) {
@@ -121,14 +121,14 @@ function Greeting({ name, ...restProps }) {
 }
 ```
 
-This makes `Greeting` super flexible.\
-We can pass DOM attributes to `Greeting` and trust that they'll be passed through to `div`.
+This makes `Greeting` super flexible.\
+We can pass DOM attributes to `Greeting` and trust that they'll be passed through to `div`.
 
 ```js
 <Greeting name="Fancy pants" className="fancy-greeting" id="user-greeting" />
 ```
 
-Avoid forwarding non-DOM `props` to components.\
+Avoid forwarding non-DOM `props` to components.\
 Destructuring assignment is popular because it gives you a way to separate component-specific props from DOM/platform-specific attributes.
 
 ```js
@@ -139,12 +139,12 @@ function Greeting({ name, ...platformProps }) {
 
 ---
 
-## Merge destructured props with other values (**merge-destructured-props-with-other-values**)
+## Merge destructured props with other values (**merge-destructured-props-with-other-values**)
 
 Components are abstractions.\
 Good abstractions allow for extension.
 
-Consider this component that uses a `class` attribute for style a `button`.
+Consider this component that uses a `class` attribute for style a `button`.
 
 ```js
 function MyButton(props) {
@@ -158,12 +158,12 @@ This works great until we try to extend it with another class.
 <MyButton className="delete-btn">Delete...</MyButton>
 ```
 
-In this case, `delete-btn` replaces `btn`.
+In this case, `delete-btn` replaces `btn`.
 
-Order matters for [JSX spread attributes](#jsx-spread-attributes).\
-The `props.className` being spread is overriding the `className` in our component.
+Order matters for [JSX spread attributes](#jsx-spread-attributes).\
+The `props.className` being spread is overriding the `className` in our component.
 
-We can change the order but now the `className` will **never** be anything but `btn`.
+We can change the order but now the `className` will **never** be anything but `btn`.
 
 ```js
 function MyButton(props) {
@@ -171,7 +171,7 @@ function MyButton(props) {
 }
 ```
 
-We need to use destructuring assignment to get the incoming `className` and merge with the base `className`.\
+We need to use destructuring assignment to get the incoming `className` and merge with the base `className`.\
 We can do this simply by adding all values to an array and joining them with a space.
 
 ```js
@@ -182,7 +182,7 @@ function MyButton({ className, ...props }) {
 }
 ```
 
-To guard from `undefined` showing up as a className, you could update your logic to filter out `falsy` values:
+To guard from `undefined` showing up as a className, you could update your logic to filter out `falsy` values:
 
 ```js
 function MyButton({ className, ...props }) {
@@ -192,16 +192,16 @@ function MyButton({ className, ...props }) {
 }
 ```
 
-Bear in mind though that if an empty object is passed it'll be included in the class as well, resulting in: `btn [object Object]`.
+Bear in mind though that if an empty object is passed it'll be included in the class as well, resulting in: `btn [object Object]`.
 
-The better approach is to make use of available packages, like [classnames](https://www.npmjs.com/package/classnames) or [clsx](https://www.npmjs.com/package/clsx), that could be used to join classnames, relieving you from having to deal with it manually.
+The better approach is to make use of available packages, like [classnames](https://www.npmjs.com/package/classnames) or [clsx](https://www.npmjs.com/package/clsx), that could be used to join classnames, relieving you from having to deal with it manually.
 
-## Conditional rendering (**conditional-rendering**)
+## Conditional rendering (**conditional-rendering**)
 
 You can't use if/else statements inside a component declarations.\
-So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) and [short-circuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation) are your friends.
+So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) and [short-circuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation) are your friends.
 
-### `if` (**if**)
+### `if` (**if**)
 
 ```js
 {
@@ -209,7 +209,7 @@ So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/We
 }
 ```
 
-### `unless` (**unless**)
+### `unless` (**unless**)
 
 ```js
 {
@@ -217,7 +217,7 @@ So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/We
 }
 ```
 
-### `if-else` (**if-else**)
+### `if-else` (**if-else**)
 
 ```js
 {
@@ -229,29 +229,29 @@ So [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/We
 }
 ```
 
-## Children types (**children-types**)
+## Children types (**children-types**)
 
-React can render `children` from most types.\
-In most cases it's either an `array` or a `string`.
+React can render `children` from most types.\
+In most cases it's either an `array` or a `string`.
 
-### `String` (**string**)
+### `String` (**string**)
 
 ```js
 <div>Hello World!</div>
 ```
 
-### `Array` (**array**)
+### `Array` (**array**)
 
 ```js
 <div>{["Hello ", <span>World</span>, "!"]}</div>
 ```
 
-## Array as children (**array-as-children**)
+## Array as children (**array-as-children**)
 
-Providing an array as `children` is a very common.\
+Providing an array as `children` is a very common.\
 It's how lists are drawn in React.
 
-We use `map()` to create an array of React Elements for every value in the array.
+We use `map()` to create an array of React Elements for every value in the array.
 
 ```js
 <ul>
@@ -261,7 +261,7 @@ We use `map()` to create an array of React Elements for every value in the arr
 </ul>
 ```
 
-That's equivalent to providing a literal `array`.
+That's equivalent to providing a literal `array`.
 
 ```js
 <ul>{[<li>first</li>, <li>second</li>]}</ul>
@@ -277,12 +277,12 @@ This pattern can be combined with destructuring, JSX Spread Attributes, and othe
 </ul>
 ```
 
-## Function as children (**function-as-children**)
+## Function as children (**function-as-children**)
 
-React components don't support functions as `children`.\
-However, [render props](#render-prop) is a pattern for creating components that take functions as children.
+React components don't support functions as `children`.\
+However, [render props](#render-prop) is a pattern for creating components that take functions as children.
 
-## Render prop (**render-prop**)
+## Render prop (**render-prop**)
 
 Here's a component that uses a render callback.\
 It's not useful, but it's an easy illustration to start with.
@@ -291,9 +291,9 @@ It's not useful, but it's an easy illustration to start with.
 const Width = ({ children }) => children(500);
 ```
 
-The component calls `children` as a function, with some number of arguments. Here, it's the number `500`.
+The component calls `children` as a function, with some number of arguments. Here, it's the number `500`.
 
-To use this component, we give it a [function as `children`](#function-as-children).
+To use this component, we give it a [function as `children`](#function-as-children).
 
 ```js
 <Width>{(width) => <div>window is {width}</div>}</Width>
@@ -305,7 +305,7 @@ We get this output.
 <div>window is 500</div>
 ```
 
-With this setup, we can use this `width` to make rendering decisions.
+With this setup, we can use this `width` to make rendering decisions.
 
 ```js
 <Width>
@@ -321,7 +321,7 @@ const MinWidth = ({ width: minWidth, children }) => (
 );
 ```
 
-Obviously a static `Width` component isn't useful but one that watches the browser window is. Here's a sample implementation.
+Obviously a static `Width` component isn't useful but one that watches the browser window is. Here's a sample implementation.
 
 ```js
 class WindowWidth extends React.Component {
@@ -344,11 +344,11 @@ class WindowWidth extends React.Component {
 }
 ```
 
-Many developers favor [Higher Order Components](#higher-order-component) for this type of functionality. It's a matter of preference.
+Many developers favor [Higher Order Components](#higher-order-component) for this type of functionality. It's a matter of preference.
 
-## Children pass-through (**children-pass-through**)
+## Children pass-through (**children-pass-through**)
 
-You might create a component designed to apply `context` and render its `children`.
+You might create a component designed to apply `context` and render its `children`.
 
 ```js
 class SomeContextProvider extends React.Component {
@@ -362,7 +362,7 @@ class SomeContextProvider extends React.Component {
 }
 ```
 
-You're faced with a decision. Wrap `children` in an extraneous `<div />` or return `children` directly. The first options gives you extra markup (which can break some stylesheets). The second will result in unhelpful errors.
+You're faced with a decision. Wrap `children` in an extraneous `<div />` or return `children` directly. The first options gives you extra markup (which can break some stylesheets). The second will result in unhelpful errors.
 
 ```
 // option 1: extra div
@@ -372,30 +372,30 @@ return <div>{children}</div>;
 return children;
 ```
 
-It's best to treat `children` as an opaque data type. React provides `React.Children` for dealing with `children` appropriately.
+It's best to treat `children` as an opaque data type. React provides `React.Children` for dealing with `children` appropriately.
 
 ```
 return React.Children.only(this.props.children);
 ```
 
-## Proxy component (**proxy-component**)
+## Proxy component (**proxy-component**)
 
 _(I'm not sure if this name makes sense)_
 
-Buttons are everywhere in web apps. And every one of them must have the `type` attribute set to "button".
+Buttons are everywhere in web apps. And every one of them must have the `type` attribute set to "button".
 
 ```js
 <button type="button">
 ```
 
-Writing this attribute hundreds of times is error prone. We can write a higher level component to proxy `props` to a lower-level `button` component.
+Writing this attribute hundreds of times is error prone. We can write a higher level component to proxy `props` to a lower-level `button` component.
 
 ```js
 const Button = props =>
   <button type="button" {...props}>
 ```
 
-We can use `Button` in place of `button` and ensure that the `type` attribute is consistently applied everywhere.
+We can use `Button` in place of `button` and ensure that the `type` attribute is consistently applied everywhere.
 
 ```js
 <Button />
@@ -405,9 +405,9 @@ We can use `Button` in place of `button` and ensure that the `type` attrib
 // <button type="button" class="CTA">Send Money</button>
 ```
 
-## Style component (**style-component**)
+## Style component (**style-component**)
 
-This is a [Proxy component](#proxy-component) applied to the practices of style.
+This is a [Proxy component](#proxy-component) applied to the practices of style.
 
 Say we have a button. It uses classes to be styled as a "primary" button.
 
@@ -450,9 +450,9 @@ Using these components, all of these result in the same output.
 
 This can be a huge boon to style maintenance. It isolates all concerns of style to a single component.
 
-## Event switch (**event-switch**)
+## Event switch (**event-switch**)
 
-When writing event handlers it's common to adopt the `handle{eventName}` naming convention.
+When writing event handlers it's common to adopt the `handle{eventName}` naming convention.
 
 ```js
 handleClick(e) { /* do something */ }
@@ -466,7 +466,7 @@ handleMouseEnter() { this.setState({ hovered: true }) }
 handleMouseLeave() { this.setState({ hovered: false }) }
 ```
 
-Consider writing a single event handler for your component and switching on `event.type`.
+Consider writing a single event handler for your component and switching on `event.type`.
 
 ```js
 handleEvent({type}) {
@@ -491,11 +491,11 @@ Alternatively, for simple components, you can call imported actions/functions di
 
 Don't fret about performance optimizations until you have problems. Seriously don't.
 
-## Layout component (**layout-component**)
+## Layout component (**layout-component**)
 
 Layout components result in some form of static DOM element. It might not need to update frequently, if ever.
 
-Consider a component that renders two `children` side-by-side.
+Consider a component that renders two `children` side-by-side.
 
 ```js
 <HorizontalSplit
@@ -506,7 +506,7 @@ Consider a component that renders two `children` side-by-side.
 
 We can aggressively optimize this component.
 
-While `HorizontalSplit` will be `parent` to both components, it will never be their `owner`. We can tell it to update never, without interrupting the lifecycle of the components inside.
+While `HorizontalSplit` will be `parent` to both components, it will never be their `owner`. We can tell it to update never, without interrupting the lifecycle of the components inside.
 
 ```js
 class HorizontalSplit extends React.Component {
@@ -525,11 +525,11 @@ class HorizontalSplit extends React.Component {
 }
 ```
 
-## Container component (**container-component**)
+## Container component (**container-component**)
 
 "A container does data fetching and then renders its corresponding sub-component. That's it."---[Jason Bonta](https://twitter.com/jasonbonta**)
 
-Given this reusable `CommentList` component.
+Given this reusable `CommentList` component.
 
 ```js
 const CommentList = ({ comments }) => (
@@ -543,7 +543,7 @@ const CommentList = ({ comments }) => (
 );
 ```
 
-We can create a new component responsible for fetching data and rendering the `CommentList` function component.
+We can create a new component responsible for fetching data and rendering the `CommentList` function component.
 
 ```js
 class CommentListContainer extends React.Component {
@@ -569,13 +569,13 @@ class CommentListContainer extends React.Component {
 
 We can write different containers for different application contexts.
 
-## Higher-order component (**higher-order-component**)
+## Higher-order component (**higher-order-component**)
 
-A [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) is a function that takes and/or returns a function. It's not more complicated than that. So, what's a higher-order component?
+A [higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) is a function that takes and/or returns a function. It's not more complicated than that. So, what's a higher-order component?
 
-If you're already using [container components](#container-component), these are just generic containers, wrapped up in a function.
+If you're already using [container components](#container-component), these are just generic containers, wrapped up in a function.
 
-Let's start with our `Greeting` component.
+Let's start with our `Greeting` component.
 
 ```js
 const Greeting = ({ name }) => {
@@ -587,7 +587,7 @@ const Greeting = ({ name }) => {
 };
 ```
 
-If it gets `props.name`, it's gonna render that data. Otherwise it'll say that it's "Connecting...". Now for the the higher-order bit.
+If it gets `props.name`, it's gonna render that data. Otherwise it'll say that it's "Connecting...". Now for the the higher-order bit.
 
 ```js
 const Connect = (ComposedComponent) =>
@@ -610,20 +610,20 @@ const Connect = (ComposedComponent) =>
 
 This is just a function that returns component that renders the component we passed as an argument.
 
-Last step, we need to wrap our `Greeting` component in `Connect`.
+Last step, we need to wrap our `Greeting` component in `Connect`.
 
 ```js
 const ConnectedMyComponent = Connect(Greeting);
 ```
 
-This is a powerful pattern for providing fetching and providing data to any number of [function components](#function-component).
+This is a powerful pattern for providing fetching and providing data to any number of [function components](#function-component).
 
-## State hoisting (**state-hoisting**)
+## State hoisting (**state-hoisting**)
 
-[function-component](#function-component) don't hold state (as the name implies).
+[function-component](#function-component) don't hold state (as the name implies).
 
 Events are changes in state.\
-Their data needs to be passed to stateful [container components](#container-component) parents.
+Their data needs to be passed to stateful [container components](#container-component) parents.
 
 This is called "state hoisting".\
 It's accomplished by passing a callback from a container component to a child component.
@@ -640,10 +640,10 @@ const Name = ({ onChange }) => (
 );
 ```
 
-`Name` receives an `onChange` callback from `NameContainer` and calls on events.
+`Name` receives an `onChange` callback from `NameContainer` and calls on events.
 
-The `alert` above makes for a terse demo but it's not changing state.\
-Let's change the internal state of `NameContainer`.
+The `alert` above makes for a terse demo but it's not changing state.\
+Let's change the internal state of `NameContainer`.
 
 ```js
 class NameContainer extends React.Component {
@@ -658,18 +658,18 @@ class NameContainer extends React.Component {
 }
 ```
 
-The state is *hoisted* to the container, by the provided callback, where it's used to update local state.\
+The state is *hoisted* to the container, by the provided callback, where it's used to update local state.\
 This sets a nice clear boundary and maximizes the re-usability of function component.
 
 This pattern isn't limited to function components.\
 Because function components don't have lifecycle events,\
 you'll use this pattern with component classes as well.
 
-_[Controlled input](#controlled-input) is an important pattern to know for use with state hoisting_
+_[Controlled input](#controlled-input) is an important pattern to know for use with state hoisting_
 
 _(It's best to process the event object on the stateful component)_
 
-## Controlled input (**controlled-input**)
+## Controlled input (**controlled-input**)
 
 It's hard to talk about controlled inputs in the abstract.\
 Let's start with an uncontrolled (normal) input and go from there.
@@ -682,14 +682,14 @@ When you fiddle with this input in the browser, you see your changes.\
 This is normal.
 
 A controlled input disallows the DOM mutations that make this possible.\
-You set the `value` of the input in component-land and it doesn't change in DOM-land.
+You set the `value` of the input in component-land and it doesn't change in DOM-land.
 
 ```js
 <input type="text" value="This won't change. Try it." />
 ```
 
 Obviously static inputs aren't very useful to your users.\
-So, we derive a `value` from state.
+So, we derive a `value` from state.
 
 ```js
 class ControlledNameInput extends React.Component {

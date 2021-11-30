@@ -8,7 +8,9 @@ A all encompassing list of tools and resources for web developers
 
 A all encompassing list of tools and resources for web developers
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*QXSlTWm23iJGGW_R4Vslug.png" class="graf-image" /></figure>### General resources
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*QXSlTWm23iJGGW_R4Vslug.png" class="graf-image" /></figure>
+
+### General resources
 
 - <span id="a017"><a href="http://devdocs.io/" class="markup--anchor markup--li-anchor">Devdocs.io</a>: Fast, offline, and free documentation browser for developers. Search 100+ docs in one web app: HTML, CSS, JavaScript, PHP, Ruby, Python, Go, C, C++…</span>
 - <span id="9bd1"><a href="https://devhints.io/" class="markup--anchor markup--li-anchor">DevHints</a>: cheatsheets for many web technologies</span>
@@ -26,7 +28,7 @@ A all encompassing list of tools and resources for web developers
 - <span id="ecb9"><a href="https://github.com/maticzav/emma-cli" class="markup--anchor markup--li-anchor">emma</a>: 📦 Terminal assistant to find and install node packages</span>
 - <span id="e1df"><a href="https://github.com/harksys/npmvet" class="markup--anchor markup--li-anchor">npmvet</a>: A simple CLI tool for vetting npm package versions</span>
 - <span id="e831"><a href="https://bundlephobia.com/" class="markup--anchor markup--li-anchor">Bundlephobia</a>: See the “cost” of any npm package</span>
-- <span id="28aa"><a href="https://snyk.io" class="markup--anchor markup--li-anchor">Snyk</a>: Find any security vulnerabilities for any npm package. Search their database here: `https://snyk.io/vuln/npm:{package}` e.g. <a href="https://snyk.io/vuln/npm:react" class="markup--anchor markup--li-anchor">https://snyk.io/vuln/npm:react</a></span>
+- <span id="28aa"><a href="https://snyk.io" class="markup--anchor markup--li-anchor">Snyk</a>: Find any security vulnerabilities for any npm package. Search their database here: `https://snyk.io/vuln/npm:{package}` e.g. <a href="https://snyk.io/vuln/npm:react" class="markup--anchor markup--li-anchor">https://snyk.io/vuln/npm:react</a></span>
 - <span id="b4da"><a href="https://runpkg.com/" class="markup--anchor markup--li-anchor">runpkg</a>: Explore, learn about and perform static analysis on npm packages in the browser</span>
 
 ### 🎨 CSS
@@ -106,7 +108,7 @@ A all encompassing list of tools and resources for web developers
 - <span id="f062"><a href="https://github.com/davidtheclark/focus-trap" class="markup--anchor markup--li-anchor">focus-trap</a>: Trap focus within a DOM node</span>
 - <span id="e6d4"><a href="https://github.com/jamiebuilds/tinykeys" class="markup--anchor markup--li-anchor">tinykeys</a>: A tiny (~400 B) & modern library for keybindings</span>
 - <span id="9900"><a href="https://github.com/reasonink/clack" class="markup--anchor markup--li-anchor">clack</a>: A modern keyboard shortcut library written in Typescript</span>
-- <span id="067c"><a href="https://github.com/reasonink/clack-react" class="markup--anchor markup--li-anchor">clack-react</a>: React support for <span class="citation" data-cites="reasonink/clack">@reasonink/clack</span></span>
+- <span id="067c"><a href="https://github.com/reasonink/clack-react" class="markup--anchor markup--li-anchor">clack-react</a>: React support for @reasonink/clack</span>
 - <span id="a03a"><a href="https://github.com/ollieglass/js-humanize" class="markup--anchor markup--li-anchor">js-humanize</a>: Humanize large numbers</span>
 - <span id="5332"><a href="https://github.com/peterpme/sub-in" class="markup--anchor markup--li-anchor">sub-in</a>: 🥙 A tiny (115B) find-and-replace utility for strings in Javascript</span>
 - <span id="cc9c"><a href="https://github.com/zenozeng/color-hash" class="markup--anchor markup--li-anchor">color-hash</a>: Generate color based on the given string (using HSL color space and BKDRHash)</span>

@@ -11,7 +11,18 @@
       data JSONb NOT NULL
     );
 
-\#\#\#Populating the DB INSERT INTO books(client, data) values( ‘Joe’, ‘{ “title”: “Siddhartha”, “author”: { “first_name”: “Herman”, “last_name”: “Hesse” } }’ ); INSERT INTO books(client, data) values(‘Jenny’, ‘{ “title”: “Dharma Bums”, “author”: { “first_name”: “Jack”, “last_name”: “Kerouac” } }’); INSERT INTO books(client, data) values(‘Jenny’, ‘{ “title”: “100 años de soledad”, “author”: { “first_name”: “Gabo”, “last_name”: “Marquéz” } }’);
+###Populating the DB
+INSERT INTO books(client, data)
+values(
+'Joe',
+'{ "title": "Siddhartha", "author": { "first_name": "Herman", "last_name": "Hesse" } }'
+);
+INSERT INTO books(client, data)
+values('Jenny',
+'{ "title": "Dharma Bums", "author": { "first_name": "Jack", "last_name": "Kerouac" } }');
+INSERT INTO books(client, data)
+values('Jenny',
+'{ "title": "100 años de soledad", "author": { "first_name": "Gabo", "last_name": "Marquéz" } }');
 
 Lets see everything inside the table books:
 
@@ -100,7 +111,7 @@ Output:
       browser json
     );
 
-We’re going to store events in this table, like pageviews. Each event has properties, which could be anything (e.g. current page) and also sends information about the browser (like OS, screen resolution, etc). Both of these are completely free form and could change over time (as we think of extra stuff to track).
+We’re going to store events in this table, like pageviews. Each event has properties, which could be anything (e.g. current page) and also sends information about the browser (like OS, screen resolution, etc). Both of these are completely free form and could change over time (as we think of extra stuff to track).
 
     INSERT INTO events VALUES (
       'pageview', '1',
@@ -147,10 +158,10 @@ Using the JSON operators, combined with traditional PostgreSQL aggregate functio
 
 - Lets see browser usage:
 
-        SELECT browser->>'name' AS browser,
-          count(browser)
-          FROM events
-          GROUP BY browser->>'name';
+      SELECT browser->>'name' AS browser,
+        count(browser)
+        FROM events
+        GROUP BY browser->>'name';
 
 Output:
 
@@ -158,10 +169,10 @@ Output:
 
 - Total revenue per visitor:
 
-        SELECT visitor_id, SUM(CAST(properties->>'amount' AS integer)) AS total
-        FROM events
-        WHERE CAST(properties->>'amount' AS integer) > 0
-        GROUP BY visitor_id;
+      SELECT visitor_id, SUM(CAST(properties->>'amount' AS integer)) AS total
+      FROM events
+      WHERE CAST(properties->>'amount' AS integer) > 0
+      GROUP BY visitor_id;
 
 Output:
 
@@ -169,9 +180,9 @@ Output:
 
 - Average screen resolution
 
-        SELECT AVG(CAST(browser->'resolution'->>'x' AS integer)) AS width,
-          AVG(CAST(browser->'resolution'->>'y' AS integer)) AS height
-        FROM events;
+      SELECT AVG(CAST(browser->'resolution'->>'x' AS integer)) AS width,
+        AVG(CAST(browser->'resolution'->>'y' AS integer)) AS height
+      FROM events;
 
 Output:
 

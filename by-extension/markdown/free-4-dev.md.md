@@ -4,7 +4,7 @@ Developers and Open Source authors now have a massive amount of services offerin
 
 This is a list of software (SaaS, PaaS, IaaS, etc.) and other offerings that have free tiers for developers.
 
-The scope of this particular list is limited to things that infrastructure developers (System Administrator, DevOps Practitioners, etc.) are likely to find useful. We love all the free services out there, but it would be good to keep it on topic. It’s a bit of a grey line at times so this is a bit opinionated; do not be offended if I do not accept your contribution.
+The scope of this particular list is limited to things that infrastructure developers (System Administrator, DevOps Practitioners, etc.) are likely to find useful. We love all the free services out there, but it would be good to keep it on topic. It's a bit of a grey line at times so this is a bit opinionated; do not be offended if I do not accept your contribution.
 
 This list is the result of Pull Requests, reviews, ideas and work done by 900+ people. You too can help by sending [Pull Requests](https://github.com/ripienaar/free-for-dev) to add more services or by remove ones whose offerings have changed or been retired.
 
@@ -12,7 +12,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 
 # Table of Contents
 
-- [Major Cloud Providers’ Always-Free Limits](#major-cloud-providers)
+- [Major Cloud Providers' Always-Free Limits](#major-cloud-providers)
 - [Analytics, Events and Statistics](#analytics-events-and-statistics)
 - [APIs, Data and ML](#apis-data-and-ml)
 - [Artifact Repos](#artifact-repos)
@@ -63,6 +63,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 ## Major Cloud Providers
 
 - [Google Cloud Platform](https://cloud.google.com)
+
   - App Engine - 28 frontend instance hours per day, 9 backend instance hours per day
   - Cloud Firestore - 1GB storage, 50,000 reads, 20,000 writes, 20,000 deletes per day
   - Compute Engine - 1 non-preemptible f1-micro, 30GB HDD, 5GB snapshot storage (restricted to certain regions), 1 GB network egress from North America to all region destinations (excluding China and Australia) per month
@@ -76,7 +77,9 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
   - Cloud Build - 120 build-minutes per day
   - Cloud Source Repositories - Up to 5 Users, 50 GB Storage, 50 GB Egress
   - Full, detailed list - https://cloud.google.com/free
+
 - [Amazon Web Services](https://aws.amazon.com)
+
   - Amazon DynamoDB - 25GB NoSQL DB
   - Amazon Lambda - 1 Million requests per month
   - Amazon SNS - 1 million publishes per month
@@ -87,7 +90,9 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
   - Amazon Code Commit - 5 active users per month
   - Amazon Code Pipeline - 1 active pipeline per month
   - Full, detailed list - https://aws.amazon.com/free/
+
 - [Microsoft Azure](https://azure.microsoft.com)
+
   - [Virtual Machines](https://azure.microsoft.com/services/virtual-machines/) - 1 B1S Linux VM, 1 B1S Windows VM
   - [App Service](https://azure.microsoft.com/services/app-service/) - 10 web, mobile or API apps
   - [Functions](https://azure.microsoft.com/services/functions/) - 1 million requests per month
@@ -103,12 +108,14 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
   - [Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) - 5GB storage and 400 RUs of provisioned throughput
   - [Static Web Apps](https://azure.microsoft.com/pricing/details/app-service/static/) — Build, deploy and host static apps and serverless functions, with free SSL, Authentication/Authorization and custom domains
   - [Storage](https://azure.microsoft.com/services/storage/) - 5GB LRS File or Blob storage
-  - [Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) - AI/ML APIs (Computer Vision, Translator, Face detection, Bots…) with free tier including limited transactions
+  - [Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) - AI/ML APIs (Computer Vision, Translator, Face detection, Bots...) with free tier including limited transactions
   - [Cognitive Search](https://azure.microsoft.com/services/search/#features) - AI-based search and indexation service, free for 10,000 documents
   - [Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/) - Managed Kubernetes service, free cluster management
   - [Event Grid](https://azure.microsoft.com/services/event-grid/) - 100K ops/month
-  - Full, detailed list - <https://azure.microsoft.com/free/>
+  - Full, detailed list - [https://azure.microsoft.com/free/](https://azure.microsoft.com/free/)
+
 - [Oracle Cloud](https://www.oracle.com/cloud/)
+
   - Compute - 2 VM.Standard.E2.1.Micro 1GB RAM
   - Block Volume - 2 volumes, 100 GB total (used for compute)
   - Object Storage - 10 GB
@@ -118,6 +125,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
   - Bandwidth - 10TB egress per month, speed limited to 5Mbps
   - Notifications - 1 million delivery options per month, 1000 emails sent per month
   - Full, detailed list - https://www.oracle.com/cloud/free/
+
 - [IBM Cloud](https://www.ibm.com/cloud/free/)
   - Cloud Functions - 5 million executions per month
   - Object Storage - 25GB per month
@@ -183,7 +191,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [Diggernaut](https://www.diggernaut.com/) — Cloud based web scraping and data extraction platform for turning any website to the dataset or to work with it as with an API. Free plan includes 5K page requests monthly.
 - [Disease.sh](https://disease.sh/) — A free API providing accurate data for building the Covid-19 related useful Apps.
 - [dominodatalab.com](https://www.dominodatalab.com) — Data science with support for Python, R, Spark, Hadoop, MATLAB and others.
-- [dreamfactory.com](https://dreamfactory.com/) — Open source REST API backend for mobile, web, and IoT applications. Hook up any SQL/NoSQL database, file storage system, or external service and it instantly creates a comprehensive REST API platform with live documentation, user management,…
+- [dreamfactory.com](https://dreamfactory.com/) — Open source REST API backend for mobile, web, and IoT applications. Hook up any SQL/NoSQL database, file storage system, or external service and it instantly creates a comprehensive REST API platform with live documentation, user management,...
 - [Efemarai](https://efemarai.com) - Testing and debugging platform for ML models and data. Visualize any computational graph. Free 30 debugging sessions per month for developers.
 - [ETF Data API](https://etf-data.com/) - Quality European ETF, ETN and ETC data, updated daily. The API offers complete overview including sector, country, factor, dividend yield and valuations. Additionally basic information such as domicile, followed index, asset class, fee, currency, replication method, distribution type and frequency. 50 free API calls per day.
 - [ExtendsClass](https://extendsclass.com/rest-client-online.html) - Free web-based HTTP client to send HTTP requests.
@@ -278,13 +286,13 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [helplightning.com](https://www.helplightning.com/) — Help over video with augmented reality. Free without analytics, encryption, support
 - [ideascale.com](https://ideascale.com/) — Allow clients to submit ideas and vote, free for 25 members in 1 community
 - [Igloo](https://www.igloosoftware.com/) — Internal portal for sharing documents, blogs and calendars etc. Free for up to 10 users.
-- [Keybase](https://keybase.io/) — Keybase is a cool FOSS alternative to Slack, it keeps everyone’s chats and files safe, from families to communities to companies.
-- [Google Meet](https://meet.google.com/) — Use Google Meet for your business’s online video meeting needs. Meet provides secure, easy-to-join online meetings.
+- [Keybase](https://keybase.io/) — Keybase is a cool FOSS alternative to Slack, it keeps everyone's chats and files safe, from families to communities to companies.
+- [Google Meet](https://meet.google.com/) — Use Google Meet for your business's online video meeting needs. Meet provides secure, easy-to-join online meetings.
 - [meet.jit.si](https://meet.jit.si/) — One click video conversations, screen sharing, for free
 - [Microsoft Teams](https://products.office.com/microsoft-teams/free) — Microsoft Teams is a chat-based digital hub that brings conversations, content, and apps together in one place all from a single experience. Free for up to 500k users.
 - [Miro](https://miro.com/) - Scalable, secure, cross-device and enterprise-ready team collaboration whiteboard for distributed teams. With freemium plan.
 - [Notion](https://www.notion.so/) - Notion is a note-taking and collaboration application with markdown support that also integrates tasks, wikis, and databases. The company describes the app as an all-in-one workspace for note-taking, project management and task management. In addition to cross-platform apps, it can be accessed via most web browsers.
-- [Nuclino](https://www.nuclino.com) - A lightweight and collaborative wiki for all your team’s knowledge, docs, and notes. Free plan with all essential features, up to 50 items, 5GB total storage.
+- [Nuclino](https://www.nuclino.com) - A lightweight and collaborative wiki for all your team's knowledge, docs, and notes. Free plan with all essential features, up to 50 items, 5GB total storage.
 - [Pendulums](https://pendulums.io/) - Pendulums is a free time tracking tool which helps you to manage your time in a better manner with an easy to use interface and useful statistics.
 - [Raindrop.io](https://raindrop.io) - Private and secure bookmarking app for macOS, Windows, Android, iOS and Web. Free Unlimited Bookmarks and Collaboration.
 - [element.io](https://element.io/) — A decentralized and open source communication tool built on Matrix. Group chats, direct messaging, encrypted file transfers, voice and video chats, and easy integration with other services.
@@ -338,28 +346,28 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [codescene.io](https://codescene.io/) - CodeScene prioritizes technical debt based on how the developers work with the code and visualizes organizational factors like team coupling and system mastery. Free for Open Source.
 - [coveralls.io](https://coveralls.io/) — Display test coverage reports, free for Open Source
 - [dareboost](https://dareboost.com) - 5 free analysis report for web performance, accessibility, security each month
-- [deepcode.ai](https://www.deepcode.ai) — DeepCode finds bugs, security vulnerabilities, performance and API issues based on AI. DeepCode’s speed of analysis allow us to analyse your code in real time and deliver results when you hit the save button in your IDE. Supported languages are Java, C/C++, JavaScript, Python, and TypeScript. Integrations with GitHub, BitBucket and Gitlab. Free for open source and private repos, free up to 30 developers.
+- [deepcode.ai](https://www.deepcode.ai) — DeepCode finds bugs, security vulnerabilities, performance and API issues based on AI. DeepCode's speed of analysis allow us to analyse your code in real time and deliver results when you hit the save button in your IDE. Supported languages are Java, C/C++, JavaScript, Python, and TypeScript. Integrations with GitHub, BitBucket and Gitlab. Free for open source and private repos, free up to 30 developers.
 - [deepscan.io](https://deepscan.io) — Advanced static analysis for automatically finding runtime errors in JavaScript code, free for Open Source
 - [DeepSource](https://deepsource.io/) - DeepSource continuously analyzes source code changes, finds and fixes issues categorized under security, performance, anti-patterns, bug-risks, documentation and style. Native integration with GitHub, GitLab and Bitbucket.
-- [eversql.com](https://www.eversql.com/) — EverSQL - The \#1 platform for database optimization. Gain critical insights into your database and SQL queries, auto-magically.
+- [eversql.com](https://www.eversql.com/) — EverSQL - The #1 platform for database optimization. Gain critical insights into your database and SQL queries, auto-magically.
 - [gerrithub.io](https://review.gerrithub.io/) — Gerrit code review for GitHub repositories for free
 - [gocover.io](https://gocover.io/) — Code coverage for any [Go](https://golang.org/) package
 - [goreportcard.com](https://goreportcard.com/) — Code Quality for Go projects, free for Open Source
 - [gtmetrix.com](https://gtmetrix.com/) — Reports and thorough recommendations to optimize websites
-- [holistic.dev](https://holistic.dev/) - The \#1 static code analyzer for Postgresql optimization. Performance, security, and architect database issues automatic detection service
+- [holistic.dev](https://holistic.dev/) - The #1 static code analyzer for Postgresql optimization. Performance, security, and architect database issues automatic detection service
 - [houndci.com](https://houndci.com/) — Comments on GitHub commits about code quality, free for Open Source
-- [Imgbot](https://github.com/marketplace/imgbot) — Imgbot is a friendly robot that optimizes your images and saves you time. Optimized images mean smaller file sizes without sacrificing quality. It’s free for open source.
+- [Imgbot](https://github.com/marketplace/imgbot) — Imgbot is a friendly robot that optimizes your images and saves you time. Optimized images mean smaller file sizes without sacrificing quality. It's free for open source.
 - [Kritika](https://kritika.io/) — Static Code Analysis for Perl with integration for GitHub. Free for unlimited public repositories.
 - [resmush.it](https://resmush.it) — reSmush.it is a FREE API that provides image optimization. reSmush.it has been implemented on the most common CMS such as Wordpress, Drupal or Magento. reSmush.it is the most used image optimization API with more than 7 billions images already treated, and is still Free of charge.
 - [insight.sensiolabs.com](https://insight.sensiolabs.com/) — Code Quality for PHP/Symfony projects, free for Open Source
-- [lgtm.com](https://lgtm.com) — Continuous security analysis for Java, Python, JavaScript, TypeScript, C\#, C and C++, free for Open Source
+- [lgtm.com](https://lgtm.com) — Continuous security analysis for Java, Python, JavaScript, TypeScript, C#, C and C++, free for Open Source
 - [reviewable.io](https://reviewable.io/) — Code review for GitHub repositories, free for public or personal repos
 - [parsers.dev](https://parsers.dev/) - Abstract syntax tree parsers and intermediate representation compilers as a service
-- [scan.coverity.com](https://scan.coverity.com/) — Static code analysis for Java, C/C++, C\# and JavaScript, free for Open Source
+- [scan.coverity.com](https://scan.coverity.com/) — Static code analysis for Java, C/C++, C# and JavaScript, free for Open Source
 - [scrutinizer-ci.com](https://scrutinizer-ci.com/) — Continuous inspection platform, free for Open Source
 - [shields.io](https://shields.io) — Quality metadata badges for open source projects
 - [Sider](https://sider.review) — Code review platform for many languages. Supports integration with GitHub. Free for public repositories with unlimited users.
-- [sonarcloud.io](https://sonarcloud.io) — Automated source code analysis for Java, JavaScript, C/C++, C\#, VB.NET, PHP, Objective-C, Swift, Python, Groovy and even more languages, free for Open Source
+- [sonarcloud.io](https://sonarcloud.io) — Automated source code analysis for Java, JavaScript, C/C++, C#, VB.NET, PHP, Objective-C, Swift, Python, Groovy and even more languages, free for Open Source
 - [SourceLevel](https://sourcelevel.io/) — Automated Code Review and Team Analytics. Free for Open Source and organizations up to 5 collaborators.
 - [Typo CI](https://github.com/marketplace/typo-ci) — Typo CI reviews your Pull Requests and commits for spelling mistakes, free for Open Source.
 - [webceo.com](https://www.webceo.com/) — SEO tools but with also code verifications and different type of advices
@@ -377,7 +385,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 
 ## CI and CD
 
-- [AccessLint](https://github.com/marketplace/accesslint) — AccessLint brings automated web accessibility testing into your development workflow. It’s free for open source and education purposes.
+- [AccessLint](https://github.com/marketplace/accesslint) — AccessLint brings automated web accessibility testing into your development workflow. It's free for open source and education purposes.
 - [appcircle.io](https://appcircle.io) — Automated mobile CI/CD/CT for iOS and Android with online device emulators. 20 minutes build timeout (60 mins for Open Source) with single concurrency for free.
 - [appveyor.com](https://www.appveyor.com/) — CD service for Windows, free for Open Source
 - [bitrise.io](https://www.bitrise.io/) — A CI/CD for mobile apps, native or hybrid. With 200 free builds/month 10 min build time and two team members. OSS projects get 45 min build time, +1 concurrency and unlimited team size.
@@ -388,12 +396,12 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [codefresh.io](https://codefresh.io) — Free-for-Life plan: 1 build, 1 environment, shared servers, unlimited public repos
 - [codemagic.io](https://codemagic.io/) - Free 500 build minutes/month
 - [codeship.com](https://codeship.com/) — 100 private builds/month, 5 private projects, unlimited for Open Source
-- [Continuous PHP](https://continuousphp.com/) — continuousphp is the first and only PHP-centric Platform to build, package, test and deploy applications in the same workflow. Free for Community Projects i.e. OSS/Public/Educational projects.
+- [Continuous PHP](https://continuousphp.com/) — continuousphp is the first and only PHP-centric Platform to build, package, test and deploy applications in the same workflow. Free for Community Projects i.e. OSS/Public/Educational projects.
 - [deployhq.com](https://www.deployhq.com/) — 1 project with 10 daily deployments (30 build minutes/month)
 - [drone](https://cloud.drone.io/) - Drone Cloud enables developers to run Continuous Delivery pipelines across multiple architectures - including x86 and Arm (both 32 bit and 64 bit) - all in one place
 - [LayerCI](https://layerci.com) — CI for full stack projects. 1 full stack preview environment with 5GB memory & 3 CPUs .
 - [ligurio/awesome-ci](https://github.com/ligurio/awesome-ci) — Comparison of Continuous Integration services
-- [Octopus Deploy](https://octopus.com) - Automated deployment and release-management. Free for &lt;= 10 deployment targets.
+- [Octopus Deploy](https://octopus.com) - Automated deployment and release-management. Free for <= 10 deployment targets.
 - [scalr.com](https://scalr.com/) - Remote state & operations backend for Terraform with full CLI support, integration with OPA and a hierarchical configuration model. Free up to 5 users.
 - [semaphoreci.com](https://semaphoreci.com/) — Free for Open Source, 100 private builds per month
 - [shippable.com](https://app.shippable.com/) — 150 private builds/month, free for 1 build container, private and public repos
@@ -412,8 +420,8 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [checkbot.io](https://www.checkbot.io/) — Browser extension that tests if your website follows 50+ SEO, speed and security best practices. Free tier for smaller websites.
 - [crossbrowsertesting.com](https://crossbrowsertesting.com) - Manual, Visual, and Selenium Browser Testing in the cloud - [free for Open Source](https://crossbrowsertesting.com/open-source)
 - [cypress.io](https://www.cypress.io/) - Fast, easy and reliable testing for anything that runs in a browser. Cypress Test Runner is always free and open source with no restrictions and limitations. Cypress Dashboard is free for open source projects for up to 5 users.
-- [everystep-automation.com](https://www.everystep-automation.com/) — Records and replays all steps made in a web browser and creates scripts,… free with fewer options
-- [Gremlin](https://www.gremlin.com/gremlin-free-software) — Gremlin’s Chaos Engineering tools allow you to safely, securely, and simply inject failure into your systems to find weaknesses before they cause customer-facing issues. Gremlin Free provides access to Shutdown and CPU attacks on up to 5 hosts or containers.
+- [everystep-automation.com](https://www.everystep-automation.com/) — Records and replays all steps made in a web browser and creates scripts,... free with fewer options
+- [Gremlin](https://www.gremlin.com/gremlin-free-software) — Gremlin's Chaos Engineering tools allow you to safely, securely, and simply inject failure into your systems to find weaknesses before they cause customer-facing issues. Gremlin Free provides access to Shutdown and CPU attacks on up to 5 hosts or containers.
 - [gridlastic.com](https://www.gridlastic.com/) — Selenium Grid testing with free plan up to 4 simultaneous selenium nodes/10 grid starts/4,000 test minutes/month
 - [loadmill.com](https://www.loadmill.com/) - Automatically create API and load tests by analyzing network traffic. Simulate up to 50 concurrent users for up to 60 minutes for free every month.
 - [percy.io](https://percy.io) - Add visual testing to any web app, static site, style guide, or component library. Unlimited team members, Demo app and unlimited projects, 5,000 snapshots / month.
@@ -456,7 +464,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [Mozilla Observatory](https://observatory.mozilla.org/) — Find and fix security vulnerabilities in your site.
 - [Okta](https://developer.okta.com/) — User management, authentication and authorization. Free for up to 1000 monthly active users.
 - [onelogin.com](https://www.onelogin.com/) — Identity as a Service (IDaaS), Single Sign-On Identity Provider, Cloud SSO IdP, 3 company apps and 5 personal apps, unlimited users
-- [opswat.com](https://www.opswat.com/) — Security Monitoring of computers, devices, applications, configurations,… Free 25 users and 30 days history users.
+- [opswat.com](https://www.opswat.com/) — Security Monitoring of computers, devices, applications, configurations,... Free 25 users and 30 days history users.
 - [pyup.io](https://pyup.io) — Monitor Python dependencies for security vulnerabilities and update them automatically. Free for one private project, unlimited projects for open source.
 - [qualys.com](https://www.qualys.com/community-edition) — Find web app vulnerabilities, audit for OWASP Risks
 - [report-uri.io](https://report-uri.io/) — CSP and HPKP violation reporting
@@ -487,7 +495,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 ## Messaging
 
 - [Ably](https://www.ably.com/) - Realtime messaging service with presence, persistence and guaranteed delivery. Free plan includes 3m messages per month, 100 peak connections and 100 peak channels.
-- [cloudamqp.com](https://www.cloudamqp.com/) — RabbitMQ as a Service. Little Lemur plan: max 1 million messages/month, max 20 concurrent connections, max 100 queues, max 10,000 queued messages, multiple nodes in different AZ’s
+- [cloudamqp.com](https://www.cloudamqp.com/) — RabbitMQ as a Service. Little Lemur plan: max 1 million messages/month, max 20 concurrent connections, max 100 queues, max 10,000 queued messages, multiple nodes in different AZ's
 - [connectycube.com](https://connectycube.com) - Unlimited chat messages, p2p voice & video calls, files attachments and push notifications. Free for apps up to 20K MAU.
 - [courier.com](https://www.courier.com/) — Single API for push, in-app, email, chat, SMS, and other messaging channels with template management and other features. Free plan includes 10,000 messages/mo.
 - [pusher.com](https://pusher.com/) — Realtime messaging service. Free for up to 100 simultaneous connections and 200,000 messages/day
@@ -522,7 +530,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [transifex.com](https://www.transifex.com/) — Free for Open Source
 - [Translation.io](https://translation.io) - Free for Open Source
 - [webtranslateit.com](https://webtranslateit.com/) — Free up to 500 strings
-- [weblate.org](https://weblate.org/) — It’s free for libre projects up to 10,000 string source for the free tier, and Unlimited Self-hosted on-premises.
+- [weblate.org](https://weblate.org/) — It's free for libre projects up to 10,000 string source for the free tier, and Unlimited Self-hosted on-premises.
 
 ## Monitoring
 
@@ -604,7 +612,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [inumbo.com](http://inumbo.com/) — SMTP based spam filter, free for 10 users
 - [kickbox.io](https://kickbox.io/) — Verify 100 emails free, real-time API available
 - [mailazy.com](https://mailazy.com/) — 250 emails/day free
-- [mail-tester.com](https://www.mail-tester.com) — Test if email’s dns/spf/dkim/dmarc settings are correct, 20 free/month
+- [mail-tester.com](https://www.mail-tester.com) — Test if email's dns/spf/dkim/dmarc settings are correct, 20 free/month
 - [mailboxlayer.com](https://mailboxlayer.com/) — Email validation and verification JSON API for developers. 1,000 free API requests/month
 - [mailcatcher.me](https://mailcatcher.me/) — Catches mail and serves it through a web interface
 - [mailchimp.com](https://mailchimp.com/) — 2,000 subscribers and 12,000 emails/month free
@@ -664,10 +672,10 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 
 ## Font
 
-- [dafont](https://www.dafont.com/) - The fonts presented on this website are their authors’ property, and are either freeware, shareware, demo versions or public domain.
-- [Everything Fonts](https://everythingfonts.com/) - Offers multiple tools; <span class="citation" data-cites="font-face">@font-face</span>, Units Converter, Font Hinter and Font Submitter.
+- [dafont](https://www.dafont.com/) - The fonts presented on this website are their authors' property, and are either freeware, shareware, demo versions or public domain.
+- [Everything Fonts](https://everythingfonts.com/) - Offers multiple tools; @font-face, Units Converter, Font Hinter and Font Submitter.
 - [Font Squirrel](https://www.fontsquirrel.com/) - Freeware fonts that is licensed for commercial work. Hand-selected these typefaces and presenting them in an easy-to-use format.
-- [Google Fonts](https://fonts.google.com/) - Lots of free fonts that are easy and quick to install in a website via a download or a link to Google’s CDN.
+- [Google Fonts](https://fonts.google.com/) - Lots of free fonts that are easy and quick to install in a website via a download or a link to Google's CDN.
 - [FontGet](https://www.fontget.com/) - Has a variety of fonts available to download and sorted neatly with tags.
 
 ## Forms
@@ -743,15 +751,15 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [m3o.com](https://m3o.com) - A cloud platform for API services development. M3O is a fully managed Micro as a Service offering focusing on Go microservices development in the Cloud. Free tier provides enough to run 5 services and collaborate with others.
 - [Okteto Cloud](https://okteto.com) - Managed Kubernetes service designed for remote development. Free developer accounts come with 8GB of RAM, 4 CPUs and 5GB Disk space. The apps sleep after 24 hours of inactivity.
 - [opeNode](https://openode.io) — Free Node.js hosting for Open Source projects. 100 GB Bandwidth/month with 100 MB memory & 1000 MB storage. Deploy using CLI or existing Git repository.
-- [outsystems.com](https://www.outsystems.com/) — Enterprise web development PaaS for on-premise or cloud, free “personal environment” offering allows for unlimited code and up to 1 GB database
+- [outsystems.com](https://www.outsystems.com/) — Enterprise web development PaaS for on-premise or cloud, free "personal environment" offering allows for unlimited code and up to 1 GB database
 - [pipedream.com](https://pipedream.com) - An integration platform built for developers. Develop any workflow, based on any trigger. Workflows are code, which you can run [for free](https://docs.pipedream.com/pricing/). No server or cloud resources to manage.
 - [pythonanywhere.com](https://www.pythonanywhere.com/) — Cloud Python app hosting. Beginner account is free, 1 Python web application at your-username.pythonanywhere.com domain, 512 MB private file storage, one MySQL database
 - [scn.sap.com](https://scn.sap.com/docs/DOC-56411) — The in-memory Platform-as-a-Service offering from SAP. Free developer accounts come with 1 GB structured, 1 GB unstructured, 1 GB of Git data and allow you to run HTML5, Java and HANA XS apps
 - [staroid.com](https://staroid.com) - Managed Kubernetes namespace service designed to fund open source developers. Free 8 CPUs and 16GB of RAM namespace to test branches and pull requests of public repository. Free test namespace shutdown every 30 minutes. Maximum 2 concurrent test namespaces.
 - [SUSE Developer Program](https://developer.suse.com) — Experience cloud native productivity for free. Get hands-on with the SUSE Cloud Application Platform with your own Developer Sandbox. 1 Free Application. Free subdomain provided along with API for CLI. Storage & Memory Quota of 1 GB.
-- [workers.dev](https://workers.dev) - Deploy serverless code for free on Cloudflare’s global network. 100,000 free requests per day with a workers.dev subdomain.
+- [workers.dev](https://workers.dev) - Deploy serverless code for free on Cloudflare's global network. 100,000 free requests per day with a workers.dev subdomain.
 - [Platform9](https://platform9.com/) - Managed Kubernetes service designed for developers. Free developer accounts come with up to 3 clusters & 20 nodes cluster.
-- [fly.io](https://fly.io/) - Fly is a platform for applications that need to run globally. It runs your code close to users and scales compute in cities where your app is busiest. Write your code, package it into a Docker image, deploy it to Fly’s platform and let that do all the work to keep your app snappy. Free for side projects, $10/mo of service credit that automatically applies to any paid service. And if you ran really small virtual machines, credits will go a long way.
+- [fly.io](https://fly.io/) - Fly is a platform for applications that need to run globally. It runs your code close to users and scales compute in cities where your app is busiest. Write your code, package it into a Docker image, deploy it to Fly's platform and let that do all the work to keep your app snappy. Free for side projects, $10/mo of service credit that automatically applies to any paid service. And if you ran really small virtual machines, credits will go a long way.
 - [appfleet.com](https://appfleet.com/) - appfleet is an edge platform that allows its users to deploy containers globally to multiple regions at the same time. It offers a simple to use UI while automating all the complexity like smart routing, clustering, failover, monitoring and so on. It’s free for open source projects and all users automatically get $10 to host whatever they want.
 - [Divio](https://www.divio.com/) - A platform to manage cloud application deploying only using Docker. Available free subscription for development projects.
 - [Koyeb](https://www.koyeb.com) - Koyeb is a developer-friendly serverless platform to deploy apps globally. Seamlessly run Docker containers, web apps, and APIs with git-based deployment, native autoscaling, a global edge network, and built-in service mesh and discovery. Koyeb provides two nano services to run your apps with its forever-free tier and also sponsors open-source projects with free resources.
@@ -783,7 +791,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [Salesforce Developer Program](https://developer.salesforce.com/signup) — Build apps Lightning fast with drag and drop tools. Customize your data model with clicks. Go further with Apex code. Integrate with anything using powerful APIs. Stay protected with enterprise-grade security. Customize UI with clicks or any leading-edge web framework. Free Developer Program gives access to the full Lightining Platform.
 - [ServiceNow Developer Program](https://developer.servicenow.com/) — Rapidly build, test, and deploy applications that make work better for your organization. Free Instance & access early previews.
 - [simperium.com](https://simperium.com/) — Move data everywhere instantly and automatically, multi-platform, unlimited sending and storage of structured data, max. 2,500 users/month
-- [stackstorm.com](https://stackstorm.com/) — Event-driven automation for apps, services and workflows, free without flow, access control, LDAP,…
+- [stackstorm.com](https://stackstorm.com/) — Event-driven automation for apps, services and workflows, free without flow, access control, LDAP,...
 - [streamdata.io](https://streamdata.io/) — Turns any REST API into an event-driven streaming API. Free plan up to 1 million messages and 10 concurrent connections.
 - [Supabase](https://supabase.io) — The Open Source Firebase Alternative to build backends. Free Plan offers Authentication, Realtime Database & Object Storage.
 - [tyk.io](https://tyk.io/) — API management with authentication, quotas, monitoring and analytics. Free cloud offering
@@ -804,7 +812,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [Endless Hosting](https://theendlessweb.com/) — 300 MB storage, Free SSL, PHP, MySQL, FTP, free sub-domains, E-Mail, DNS, beatiful panel UI. One of the best!
 - [Fenix Web Server](https://preview.fenixwebserver.com) - A developer desktop app for hosting sites locally and sharing them publically (in realtime). Work however you like, using its beautiful user interface, API, and/or CLI.
 - [Free Hosting](http://freehostingnoads.net/) — Free Hosting With PHP 5, Perl, CGI, MySQL, FTP, File Manager, POP E-Mail, free sub-domains, free domain hosting, DNS Zone Editor, Web Site Statistics, FREE Online Support and many more features not offered by other free hosts.
-- [Freehostia](https://www.freehostia.com) — FreeHostia offers free hosting services incl. an industry-best Control Panel & a 1-click installation of 50+ free apps. Instant setup. No forced ads.
+- [Freehostia](https://www.freehostia.com) — FreeHostia offers free hosting services incl. an industry-best Control Panel & a 1-click installation of 50+ free apps. Instant setup. No forced ads.
 - [heliohost.org](https://www.heliohost.org) — Community powered free hosting for everyone.
 - [hostman.com](https://hostman.com) — Deploy up to 3 static sites from your GitHub repository for free.
 - [InfinityFree](https://infinityfree.net/) - Free PHP website hosting with MySQL, cPanel, and no ads.
@@ -834,7 +842,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [duckdns.org](https://www.duckdns.org/) — Free DDNS with up to 5 domains on the free tier. With configuration guides for various setups.
 - [dynu.com](https://www.dynu.com/) — Free dynamic DNS service
 - [fosshost.org](https://fosshost.org/) - Free open source hosting VPS, web, storage and mirror hosting
-- [freedns.afraid.org](https://freedns.afraid.org/) — Free DNS hosting. Also provide free subdomain based on numerous public user [contributed domains](https://freedns.afraid.org/domain/registry/). Get free subdomains from “Subdomains” menu after signing up.
+- [freedns.afraid.org](https://freedns.afraid.org/) — Free DNS hosting. Also provide free subdomain based on numerous public user [contributed domains](https://freedns.afraid.org/domain/registry/). Get free subdomains from "Subdomains" menu after signing up.
 - [freenom.com](https://freenom.com/) — Free domain provider. Get FQDN for free.
 - [luadns.com](https://www.luadns.com/) — Free DNS hosting, 3 domains, all features with reasonable limits
 - [namecheap.com](https://www.namecheap.com/domains/freedns/) — Free DNS. No limit on number of domains
@@ -861,13 +869,13 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 
 ## DBaaS
 
-- [airtable.com](https://airtable.com/) — Looks like a spreadsheet, but it’s a relational database, unlimited bases, 1,200 rows/base and 1,000 API requests/month
+- [airtable.com](https://airtable.com/) — Looks like a spreadsheet, but it's a relational database, unlimited bases, 1,200 rows/base and 1,000 API requests/month
 - [Astra](https://astra.datastax.com/register) — Cloud Native Cassandra as a Service with 5GB free tier
 - [cloudamqp.com](https://www.cloudamqp.com/) — RabbitMQ as a Service, up to 1M messages/month and 20 connections free
 - [elephantsql.com](https://www.elephantsql.com/) — PostgreSQL as a service, 20 MB free
 - [FaunaDB](https://fauna.com/) — Serverless cloud database, with native GraphQL, multi-model access and daily free tiers up to 100 MB
 - [graphenedb.com](https://www.graphenedb.com/) — Neo4j as a service, up to 1,000 nodes and 10,000 relations free
-- [heroku.com](https://www.heroku.com/) — PostgreSQL as a service, up to 10,000 rows and 20 connections free (provided as an “addon,” but can be attached to an otherwise empty app and accessed externally)
+- [heroku.com](https://www.heroku.com/) — PostgreSQL as a service, up to 10,000 rows and 20 connections free (provided as an "addon," but can be attached to an otherwise empty app and accessed externally)
 - [Upstash](https://upstash.com/) — Serverless Redis with free tier up to 10,000 requests per day, 256MB max database size, and 20 concurrent connections
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) — free tier gives 512 MB
 - [redsmin.com](https://www.redsmin.com/) — Online real-time monitoring and administration service for Redis, Monitoring for 1 Redis instance free
@@ -889,8 +897,8 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [localhost.run](https://localhost.run/) — Instantly share your localhost environment! No download required. Run your app on port 8080 and then run this command and share the URL.
 - [ngrok.com](https://ngrok.com/) — Expose locally running servers over a tunnel to a public URL.
 - [segment.com](https://segment.com/) — Hub to translate and route events to other third-party services. 100,000 events/month free
-- <stun:global.stun.twilio.com:3478?transport=udp> — Twilio STUN
-- <stun:stun.l.google.com:19302> — Google STUN
+- [stun:global.stun.twilio.com:3478?transport=udp](stun:global.stun.twilio.com:3478?transport=udp) — Twilio STUN
+- [stun:stun.l.google.com:19302](stun:stun.l.google.com:19302) — Google STUN
 - [webhookrelay.com](https://webhookrelay.com) — Manage, debug, fan-out and proxy all your webhooks to public or internal (ie: localhost) destinations. Also, expose servers running in a private network over a tunnel by getting a public HTTP endpoint (`https://yoursubdomain.webrelay.io <----> http://localhost:8080`).
 - [Xirsys](https://www.xirsys.com) — Global network of STUN / TURN servers with a generous free tier.
 - [ZeroTier](https://www.zerotier.com) — FOSS managed virtual Ethernet as a service. Unlimited end-to-end encrypted networks of 100 clients on free plan. Clients for desktop/mobile/NA; web interface for configuration of custom routing rules and approval of new client nodes on private networks.
@@ -908,13 +916,13 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [Cloudcraft](https://cloudcraft.co/) — Design a professional architecture diagram in minutes with the Cloudcraft visual designer, optimized for AWS with smart components that show live data too.
 - [Clubhouse](https://clubhouse.io/) - Project management platform. Free for up to 10 users forever
 - [Codegiant](https://codegiant.io) — Project Management with Repository hosting & CI/CD. Free Plan Offers Unlimited Repositories,Projects & Documents with 5 Team Members. 500 CI/CD minutes per month. 30000 Serverless Code Run minutes per month.1GB repository storage.
-- [Confluence](https://www.atlassian.com/software/confluence) - Atlassian’s content collaboration tool used to help teams collaborate and share knowledge efficiently. Free plan up to 10 users.
+- [Confluence](https://www.atlassian.com/software/confluence) - Atlassian's content collaboration tool used to help teams collaborate and share knowledge efficiently. Free plan up to 10 users.
 - [contriber.com](https://www.contriber.com/) — Customizable project management platform, free starter plan, 5 workspaces
 - [draw.io](https://www.draw.io/) — Online diagrams stored locally, in Google Drive, OneDrive or Dropbox. Free for all features and storage levels
 - [freedcamp.com](https://freedcamp.com/) - tasks, discussions, milestones, time tracking, calendar, files and password manager. Free plan with unlimited projects, users and files storage.
 - [easyretro.io](https://www.easyretro.io/) — Free simple and intuitive sprint retrospective tool
 - [gleek.io](https://www.gleek.io) — Free description-to-diagrams tool for developers. Create informal, UML class, object, or entity-relationship diagrams using your keyword.
-- [gliffy.com](https://www.gliffy.com/) — Online diagrams: flowchart, UML, wireframe,… Also plugins for Jira and Confluence. 5 diagrams and 2 MB free
+- [gliffy.com](https://www.gliffy.com/) — Online diagrams: flowchart, UML, wireframe,... Also plugins for Jira and Confluence. 5 diagrams and 2 MB free
 - [GraphQL Inspector](https://github.com/marketplace/graphql-inspector) - GraphQL Inspector ouputs a list of changes between two GraphQL schemas. Every change is precisely explained and marked as breaking, non-breaking or dangerous.
 - [huboard.com](https://huboard.com/) — Instant project management for your GitHub issues, free for Open Source
 - [Instabug](https://instabug.com) — A comprehensive bug reporting and in-app feedback SDK for mobile apps. Free plan up to 1 app and 1 member.
@@ -963,7 +971,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 
 - [borgbase.com](https://www.borgbase.com/) — Simple and secure offsite backup hosting for Borg Backup. 10 GB free backup space and 2 repositories.
 - [sirv.com](https://sirv.com/) — Smart Image CDN with on-the-fly image optimization and resizing. Free tier includes 500 MB of storage and 2 GB bandwidth.
-- [image4.io](https://image4.io/) — Image upload, powerful manipulations, storage and delivery for websites and apps, with SDK’s, integrations and migration tools. Free tier includes 25 credits. 1 credit is equal to 1 GB of CDN usage, 1GB of storage or 1000 image transformations.
+- [image4.io](https://image4.io/) — Image upload, powerful manipulations, storage and delivery for websites and apps, with SDK's, integrations and migration tools. Free tier includes 25 credits. 1 credit is equal to 1 GB of CDN usage, 1GB of storage or 1000 image transformations.
 - [cloudimage.com](https://cloudimage.com/) — Full image optimization and CDN service with 1500+ Points of Presence around the world. A variety of image resizing, compression, watermarking functions. Open source plugins for responsive images, 360 image making and image editing. Free monthly plan with 25GB of CDN traffic and 25GB of cache storage and unlimited transformations.
 - [cloudinary.com](https://cloudinary.com/) — Image upload, powerful manipulations, storage and delivery for sites and apps, with libraries for Ruby, Python, Java, PHP, Objective-C and more. Free tier includes 25 monthly credits. 1 credit is equal to 1,000 image transformations, 1 GB of storage, or 1 GB of CDN usage.
 - [easyDB.io](https://easydb.io/) — one-click, hosted database provider. They provide a database for the programming language of your choice for development purposes. The DB is ephemeral and will be deleted after 24 or 72 hours on the free tier.
@@ -1006,7 +1014,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [Invision App](https://www.invisionapp.com) - UI design and prototyping tool. Desktop and webapp available. Free to use with 1 active prototype.
 - [landen.co](https://www.landen.co) — Generate, edit and publish beautiful websites and landing pages for your startup. All without code. Free tier allows you to have one website, fully customizable and published on the web.
 - [lensdump.com](https://lensdump.com/) - Free cloud image hosting.
-- [Lorem Picsum](https://picsum.photos/) - A Free tool, easy to use stylish placeholders. Just add your desired image size (width & height) after our URL, and you’ll get a random image.
+- [Lorem Picsum](https://picsum.photos/) - A Free tool, easy to use stylish placeholders. Just add your desired image size (width & height) after our URL, and you'll get a random image.
 - [marvelapp.com](https://marvelapp.com/) — Design, prototyping and collaboration, free plan limited to one user and one project.
 - [Mindmup.com](https://www.mindmup.com/) — Unlimited mind maps for free, and store them in the cloud. Your mind maps are available everywhere, instantly, from any device.
 - [mockupmark.com](https://mockupmark.com/create/free) — Create realistic t-shirt and clothing mockups for social media and E-commerce, 40 free mockups.
@@ -1054,7 +1062,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [osmnames](https://osmnames.org/) — Geocoding, search results ranked by the popularity of related Wikipedia page.
 - [positionstack](https://positionstack.com/) - Free geocoding for global places and coordinates. 25.000 Requests per month for personal use.
 - [stadiamaps.com](https://stadiamaps.com/) — Map tiles, routing, navigation, and other geospatial APIs. 2,500 free map views and API requests / day for non-commercial usage and testing.
-- <http://maps.stamen.com/> - Free map tiles and tile hosting.
+- [http://maps.stamen.com/](http://maps.stamen.com/) - Free map tiles and tile hosting.
 - [GeocodeAPI](https://geocodeapi.io) - Geocode API: Address to Coordinate Conversion & Geoparsing based on Pelias. Batch geocoding via CSV. 350000 free requests/month.
 
 ## Package Build System
@@ -1099,7 +1107,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [SoloLearn](https://code.sololearn.com) — A cloud programming playground well-suited for running code snippets. Supports various programming languages. No registration required for running code but required when you need to save code on their platform. Also offers free courses for begginers and intermediate level coders.
 - [stackblitz.com](https://stackblitz.com/) — Online VS Code IDE for Angular & React.
 - [Visual Studio Code](https://code.visualstudio.com/) - Code editor redefined and optimized for building and debugging modern web and cloud applications. Developed by Microsoft for Windows, macOS and Linux.
-- [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) — Fully-featured IDE with thousands of extensions, cross-platform app development (Microsoft extensions available for download for iOS and Android), desktop, web and cloud development, multi-language support (C\#, C++, JavaScript, Python, PHP and more).
+- [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) — Fully-featured IDE with thousands of extensions, cross-platform app development (Microsoft extensions available for download for iOS and Android), desktop, web and cloud development, multi-language support (C#, C++, JavaScript, Python, PHP and more).
 - [VSCodium](https://vscodium.com/) - Community-driven, without telemetry/tracking, and freely-licensed binary distribution of Microsoft’s editor VSCode
 - [wakatime.com](https://wakatime.com/) — Quantified self-metrics about your coding activity, using text editor plugins, limited plan for free.
 
@@ -1141,7 +1149,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [Reactflow.com](https://www.reactflow.com/) — Per site: 1,000 pages views/day, 3 heatmaps, 3 widgets, free bug tracking
 - [LogRocket.com](https://www.logrocket.com) - 1,000 sessions/month with 30 day retention, error tracking, live mode
 - [FullStory.com](https://www.fullstory.com) — 1,000 sessions/month with 1 month data retention and 3 user seats. More information [here](https://help.fullstory.com/hc/en-us/articles/360020623354-FullStory-Free-Edition).
-- [hotjar.com](https://www.hotjar.com/) — Per site: 2,000 pages views/day, 3 heatmaps, data stored for 3 months,…
+- [hotjar.com](https://www.hotjar.com/) — Per site: 2,000 pages views/day, 3 heatmaps, data stored for 3 months,...
 - [inspectlet.com](https://www.inspectlet.com/) — 100 sessions/month free for 1 website
 - [livesession.io](https://livesession.io/) — 1,000 sessions/month free for 1 website
 - [mouseflow.com](https://mouseflow.com/) — 100 sessions/month free for 1 website
@@ -1200,7 +1208,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 ## Screenshot APIs
 
 - [24browser.com](https://www.24browser.com) – Capture beautifully rendered website screenshots at scale with powerful API.
-- [ApiFlash](https://apiflash.com) — A screenshot API based on Aws Lambda and Chrome. Handles full page, capture timing, viewport dimensions, …
+- [ApiFlash](https://apiflash.com) — A screenshot API based on Aws Lambda and Chrome. Handles full page, capture timing, viewport dimensions, ...
 - [microlink.io](https://microlink.io/) – It turns any website into data such as metatags normalization, beauty link previews, scraping capabilities or screenshots as a service. 250 reqs/day every day free.
 - [ScreenshotAPI.net](https://screenshotapi.net/) - Screenshot API use one simple API call to generate screenshots of any website. Build to scale and hosted on Google Cloud. Offers 100 free screenshots per month.
 - [screenshotlayer.com](https://screenshotlayer.com/) — Capture highly customizable snapshots of any website. Free 100 snapshots/month
@@ -1228,7 +1236,7 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 - [FOSSA](https://fossa.com/) - Scalable, end-to-end management for third-party code, license compliance and vulnerabilities.
 - [fullcontact.com](https://www.fullcontact.com/developer/pricing/) — Help your users know more about their contacts by adding social profile into your app. 500 free Person API matches/month
 - [http2.pro](https://http2.pro) — HTTP/2 protocol readiness test and client HTTP/2 support detection API.
-- [JWT Decoder](https://jwt.ssotools.com/) — Online free tool for decoding JWT(JSON web token) and verifying it’s signature.
+- [JWT Decoder](https://jwt.ssotools.com/) — Online free tool for decoding JWT(JSON web token) and verifying it's signature.
 - [Base64 decoder/encoder](https://devpal.xyz/base64-decode/) — Online free tool for decoding & encoding data.
 - [newreleases.io](https://newreleases.io/) - Receive notifications on email, Slack, Telegram, Discord and custom webhooks for new releases from GitHub, GitLab, Bitbucket, Python PyPI, Java Maven, Node.js NPM, Node.js Yarn, Ruby Gems, PHP Packagist, .NET NuGet, Rust Cargo and Docker Hub.
 - [PDFMonkey](https://www.pdfmonkey.io/) — Manage PDF templates in a dashboard, call the API with dynamic data, download your PDF. Offers 1000 free documents per month.
@@ -1246,11 +1254,11 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 
 - [education.github.com](https://education.github.com/pack) — Collection of free services for students. Registration required
 - [Framacloud](https://degooglisons-internet.org/en/list/) — A list of Free/Libre Open Source Software and SaaS by the French non-profit [Framasoft](https://framasoft.org/en/).
-- [getawesomeness](https://getawesomeness.herokuapp.com) — Retrieve all amazing awesomeness from GitHub… a must see
+- [getawesomeness](https://getawesomeness.herokuapp.com) — Retrieve all amazing awesomeness from GitHub... a must see
 - [github.com — FOSS for Dev](https://github.com/tvvocold/FOSS-for-Dev) — A hub of free and Open Source software for developers.
-- [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) — Get a free sandbox, tools, and other resources you need to build solutions for the Microsoft 365 platform. The subscription is a 90-day [Microsoft 365 E5 Subscription](https://www.microsoft.com/microsoft-365/enterprise/e5) (Windows excluded) which is renewable. It is renewed if you’re active in development(measured using telemetry data & algorithms).
+- [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) — Get a free sandbox, tools, and other resources you need to build solutions for the Microsoft 365 platform. The subscription is a 90-day [Microsoft 365 E5 Subscription](https://www.microsoft.com/microsoft-365/enterprise/e5) (Windows excluded) which is renewable. It is renewed if you're active in development(measured using telemetry data & algorithms).
 - [RedHat for Developers](https://developers.redhat.com) — Free access to Red Hat products including RHEL,OpenShift,CodeReady etc exclusively for developers. Individual plan only. Free e-Books also offered for reference.
 - [smsreceivefree.com](https://smsreceivefree.com/) — Provides free temporary and disposable phone numbers.
-- [simplebackups.io](https://simplebackups.io/) — Backup automation service for servers and databases (MySQL, PostgreSQL, MongoDB) stored directly into cloud storage providers (AWS, DigitalOcean, Backblaze…). Provides free plan for 1 backup.
+- [simplebackups.io](https://simplebackups.io/) — Backup automation service for servers and databases (MySQL, PostgreSQL, MongoDB) stored directly into cloud storage providers (AWS, DigitalOcean, Backblaze...). Provides free plan for 1 backup.
 - [SnapShooter](https://snapshooter.com/) — Backup solution for DigitalOcean, AWS, LightSail, Hetzner and Exoscale, with support for direct database, file system and application backups to s3 based storage. Provides a free plan with daily backups for one resource.
 - [Web.Dev](https://web.dev/measure/) — This is a free tool that allows you to see the performance of your website and improve the SEO to get higher rank list in search engines.

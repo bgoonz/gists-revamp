@@ -31,7 +31,7 @@ I’m the psychological equivalent of a physical hoarder only instead of empty s
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*-D07MORsmwK-pHOZ.jpg" class="graf-image" /></figure>### Case studies
 
-- <span id="0707"><a href="https://github.com/andrew--r/frontend-case-studies" class="markup--anchor markup--li-anchor">https://github.com/andrew–r/frontend-case-studies</a></span>
+- <span id="0707"><a href="https://github.com/andrew--r/frontend-case-studies" class="markup--anchor markup--li-anchor">https://github.com/andrew--r/frontend-case-studies</a></span>
 - <span id="60fa"><a href="http://iamakulov.com/notes/walmart/" class="markup--anchor markup--li-anchor">http://iamakulov.com/notes/walmart/</a></span>
 
 ### Interviews
@@ -54,7 +54,7 @@ I’m the psychological equivalent of a physical hoarder only instead of empty s
 
 ### Architecture
 
-- <span id="67ee"><a href="https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3" class="markup--anchor markup--li-anchor">https://medium.com/<span class="citation" data-cites="cramforce/designing-very-large-javascript-applications-6e013a3291a3">@cramforce/designing-very-large-javascript-applications-6e013a3291a3</span></a></span>
+- <span id="67ee"><a href="https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3" class="markup--anchor markup--li-anchor">https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3</a></span>
 - <span id="3bdf"><a href="https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns" class="markup--anchor markup--li-anchor">https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns</a></span>
 - <span id="d77b"><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/" class="markup--anchor markup--li-anchor">https://addyosmani.com/resources/essentialjsdesignpatterns/book/</a></span>
 

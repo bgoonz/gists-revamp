@@ -1,6 +1,6 @@
 # Dad style programming jokes
 
-> submit your own, if they make me laugh I’ll merge them.
+> submit your own, if they make me laugh I'll merge them.
 
 ---
 
@@ -16,7 +16,7 @@ Unfortunately these jokes only work if you git them.
 
 **Q:** Relationship status?
 
-**A:** I’ll leave the relations to the database.
+**A:** I'll leave the relations to the database.
 
 ---
 
@@ -50,11 +50,13 @@ Unfortunately these jokes only work if you git them.
 
 ---
 
-    [Please Enter New Password]
+```
+[Please Enter New Password]
 
-    fortnight
+fortnight
 
-    [Error: Password is Two Week]
+[Error: Password is Two Week]
+```
 
 ---
 
@@ -82,7 +84,7 @@ Huge if true.
 
 ---
 
-**Q:** Why did 10 get paid less than “10”?
+**Q:** Why did 10 get paid less than "10"?
 
 **A:** There was workplace inequality.
 
@@ -108,7 +110,7 @@ Huge if true.
 
 **Q:** Why did the developer ground their kid?
 
-**A:** They weren’t telling the truthy
+**A:** They weren't telling the truthy
 
 ---
 
@@ -120,7 +122,7 @@ Huge if true.
 
 **!false**
 
-It’s funny ’cause it’s true.
+It's funny 'cause it's true.
 
 ---
 
@@ -130,9 +132,9 @@ It’s funny ’cause it’s true.
 
 ---
 
-**Q:** I’m starting a band called HTML Encoder
+**Q:** I'm starting a band called HTML Encoder
 
-**A:** Looking to buy a guitar &amp;
+**A:** Looking to buy a guitar \&amp;
 
 ---
 
@@ -142,19 +144,19 @@ It’s funny ’cause it’s true.
 
 ---
 
-**Q:** What’s the second movie about a database engineer called?
+**Q:** What's the second movie about a database engineer called?
 
 **A:** The SQL.
 
 ---
 
-**Q:** Why doesn’t Hollywood make more Big Data movies?
+**Q:** Why doesn't Hollywood make more Big Data movies?
 
 **A:** NoSQL.
 
 ---
 
-A programmer’s significant other tells them, “Run to the store and pick up a loaf of bread. If they have eggs, get a dozen.”
+A programmer's significant other tells them, "Run to the store and pick up a loaf of bread. If they have eggs, get a dozen."
 
 The programmer comes home with 12 loaves of bread.
 
@@ -232,7 +234,7 @@ I have a DRY sense of humor.
 
 ---
 
-Java truly is an OOP language…
+Java truly is an OOP language...
 
 As in: OOPs I used Java!
 
@@ -250,7 +252,7 @@ As in: OOPs I used Java!
 
 ---
 
-**Q:** What airline do developers prefer when they’re in a rush?
+**Q:** What airline do developers prefer when they're in a rush?
 
 **A:** Delta.
 
@@ -262,7 +264,7 @@ As in: OOPs I used Java!
 
 ---
 
-**Q:** Why don’t bachelors like Git?
+**Q:** Why don't bachelors like Git?
 
 **A:** Because they are afraid to commit.
 
@@ -276,11 +278,11 @@ As in: OOPs I used Java!
 
 **Q:** How does a developer make a cheer?
 
-**A:** \[“hip”,“hip”\] // (hip hip array!)
+**A:** ["hip","hip"] // (hip hip array!)
 
 ---
 
-**Q:** Why was the developer’s family upset with them at dinner?
+**Q:** Why was the developer's family upset with them at dinner?
 
 **A:** They forgot to git squash before going home
 
@@ -294,13 +296,13 @@ As in: OOPs I used Java!
 
 **Q:** What did the proud React component say to its child?
 
-**A:** I’ve got to give you props
+**A:** I've got to give you props
 
 ---
 
 **Q:** What did the server say to his client who was having a bad day?
 
-**A:** Everything’s going to be 200
+**A:** Everything's going to be 200
 
 ---
 
@@ -312,7 +314,7 @@ As in: OOPs I used Java!
 
 **Q:** Are computers dangerous?
 
-**A:** Nah, they don’t byte. They just nibble a bit.
+**A:** Nah, they don't byte. They just nibble a bit.
 
 ---
 
@@ -340,7 +342,7 @@ As in: OOPs I used Java!
 
 ---
 
-**Q:** What do you do when you can’t understand your husband’s behavior?
+**Q:** What do you do when you can't understand your husband's behavior?
 
 **A:** man man
 
@@ -354,7 +356,7 @@ As in: OOPs I used Java!
 
 **Q:** How many developers does it take to change a light bulb?
 
-**A:** None. It’s a hardware issue
+**A:** None. It's a hardware issue
 
 ---
 
@@ -366,11 +368,11 @@ As in: OOPs I used Java!
 
 **Q:** Why do kayakers make bad programmers?
 
-**A:** Because they’re afraid of waterfall.
+**A:** Because they're afraid of waterfall.
 
 ---
 
-**Q:** What are computers’ favorite snacks?
+**Q:** What are computers' favorite snacks?
 
 **A:** Microchips, phish sticks, and cookies. But just a few bytes of each.
 
@@ -388,7 +390,7 @@ As in: OOPs I used Java!
 
 ---
 
-**Q:** What’s a compiler developer’s favorite spice?
+**Q:** What's a compiler developer's favorite spice?
 
 **A:** Parsley.
 
@@ -402,7 +404,7 @@ As in: OOPs I used Java!
 
 **Q:** A SQL developer walked into a NoSQL bar.
 
-**A:** They left because they couldn’t find a table.
+**A:** They left because they couldn't find a table.
 
 ---
 
@@ -412,21 +414,21 @@ As in: OOPs I used Java!
 
 ---
 
-**Q:** Why don’t parents teach their kids about regular expressions?
+**Q:** Why don't parents teach their kids about regular expressions?
 
-**A:** Because they don’t want them playing with matches
+**A:** Because they don't want them playing with matches
 
 ---
 
-**Q:** Why didn’t the `<div />` get invited to the dinner party?
+**Q:** Why didn't the `<div />` get invited to the dinner party?
 
 **A:** Because it had no class!
 
 ---
 
-**Q:** Why aren’t cryptocurrency engineers allowed to vote?
+**Q:** Why aren't cryptocurrency engineers allowed to vote?
 
-**A:** Because they’re miners!
+**A:** Because they're miners!
 
 ---
 
@@ -456,7 +458,7 @@ I Promise you, await and see.
 
 **Q:** Why do Java developers wear glasses?
 
-**A:** Because they don’t C\#!
+**A:** Because they don't C#!
 
 ---
 
@@ -468,7 +470,7 @@ I Promise you, await and see.
 
 **Q:** What did the fruit basket say to the developer?
 
-**A:** I hope you’re ready for some pear programming!
+**A:** I hope you're ready for some pear programming!
 
 ---
 
@@ -478,7 +480,7 @@ I Promise you, await and see.
 
 ---
 
-I’ve got a great UDP joke but I’m afraid you wouldn’t get it…
+I've got a great UDP joke but I'm afraid you wouldn't get it...
 
 ---
 
@@ -486,7 +488,7 @@ A programmer was arrested for writing unreadable code. They refused to comment.
 
 ---
 
-There are 10 types of people in this world, those who understand binary and those who don’t.
+There are 10 types of people in this world, those who understand binary and those who don't.
 
 ---
 
@@ -520,9 +522,9 @@ There are 10 types of people in this world, those who understand binary and thos
 
 ---
 
-**Q:** Why can’t SQL and NoSQL Developers date one other?
+**Q:** Why can't SQL and NoSQL Developers date one other?
 
-**A:** Because they don’t agree on relationships.
+**A:** Because they don't agree on relationships.
 
 ---
 
@@ -538,15 +540,15 @@ There are 10 types of people in this world, those who understand binary and thos
 
 ---
 
-**Q:** Why shouldn’t you trust Matlab developers?
+**Q:** Why shouldn't you trust Matlab developers?
 
-**A:** Because they’re always plotting something.
+**A:** Because they're always plotting something.
 
 ---
 
 **Q:** Why did the developer have to quit smoking?
 
-**A:** Because they couldn’t afford to pay the new syntax.
+**A:** Because they couldn't afford to pay the new syntax.
 
 ---
 
@@ -568,15 +570,15 @@ There are 10 types of people in this world, those who understand binary and thos
 
 ---
 
-**Q:** What is React’s favorite movie genre?
+**Q:** What is React's favorite movie genre?
 
 **A:** Suspense
 
 ---
 
-**Q:** Why couldn’t the React component understand the joke?
+**Q:** Why couldn't the React component understand the joke?
 
-**A:** Because it didn’t get the context.
+**A:** Because it didn't get the context.
 
 ---
 
@@ -586,21 +588,21 @@ There are 10 types of people in this world, those who understand binary and thos
 
 ---
 
-**Q:** What was Grace Hopper’s favorite car?
+**Q:** What was Grace Hopper's favorite car?
 
 **A:** VW Bug
 
 ---
 
-**Q:** What sits on a pirate’s shoulder and calls, “Pieces of seven, Pieces of seven”?
+**Q:** What sits on a pirate's shoulder and calls, "Pieces of seven, Pieces of seven"?
 
 **A:** Parroty error.
 
 ---
 
-**Q:** What is a pirate’s favorite programming language?
+**Q:** What is a pirate's favorite programming language?
 
-**A:** You’d think it was R, but a pirate’s first love is Objectively C.
+**A:** You'd think it was R, but a pirate's first love is Objectively C.
 
 ---
 
@@ -614,7 +616,7 @@ There are 10 types of people in this world, those who understand binary and thos
 
 **-** An async function
 
-**-** Who’s there?
+**-** Who's there?
 
 ---
 
@@ -624,7 +626,7 @@ There are 10 types of people in this world, those who understand binary and thos
 
 ---
 
-The next time you’re using Safari or Firefox and it’s running slowly, you can say to yourself, “[I could’ve had a V8](https://www.youtube.com/watch?v=ld8eAH0MW00)”.
+The next time you're using Safari or Firefox and it's running slowly, you can say to yourself, "[I could've had a V8](https://www.youtube.com/watch?v=ld8eAH0MW00)".
 
 ---
 
@@ -690,7 +692,7 @@ The next time you’re using Safari or Firefox and it’s running slowly, you ca
 
 **Q:** Why did Gargamel shut down the internet?
 
-**A:** Because he didn’t want people **SMURFING** the web!
+**A:** Because he didn't want people **SMURFING** the web!
 
 ---
 
@@ -724,15 +726,15 @@ The next time you’re using Safari or Firefox and it’s running slowly, you ca
 
 ---
 
-**Q**: How does Mr. Potato Head (dev edition 0.0.1) remove his mustache?
+**Q**: How does Mr. Potato Head (dev edition 0.0.1) remove his mustache?
 
 **A**: git stache pop
 
 ---
 
-**Q**: Why can’t you use ‘Soup’ as your password?
+**Q**: Why can't you use 'Soup' as your password?
 
-**A**: Because it isn’t `stroganoff`
+**A**: Because it isn't `stroganoff`
 
 ---
 
@@ -744,17 +746,17 @@ The next time you’re using Safari or Firefox and it’s running slowly, you ca
 
 A new database query walks into a bar.
 
-The server says “Sorry, cache only.”
+The server says "Sorry, cache only."
 
 ---
 
-What’s the best tool for automatically ignoring long email threads about tech buzzwords?
+What's the best tool for automatically ignoring long email threads about tech buzzwords?
 
-“Block-chain”
+"Block-chain"
 
 ---
 
-**Q**: What is a developer’s favorite country song?
+**Q**: What is a developer's favorite country song?
 
 **A**: Hello World - by Lady Antebellum
 
@@ -808,7 +810,7 @@ Chuck Norris can take a screenshot of his blue screen.
 
 **Q:** Have you heard the one about the Corduroy pillow?
 
-**A:** It’s making HEADLINES!
+**A:** It's making HEADLINES!
 
 ---
 
@@ -844,7 +846,7 @@ Chuck Norris can take a screenshot of his blue screen.
 
 **Q:** Which programming language is the shortest?
 
-**A:** HTML. Because it doesn’t have a neck between its `<head>` and `<body>`.
+**A:** HTML. Because it doesn't have a neck between its `<head>` and `<body>`.
 
 ---
 
@@ -866,13 +868,13 @@ It was a trip down Memory Lane.
 
 ---
 
-Lisp programmers don’t make prank calls. They make `FUNCALL`s
+Lisp programmers don't make prank calls. They make `FUNCALL`s
 
 ---
 
 **Q**: Why do Front-End Developers eat lunch alone?
 
-**A**: Because, they don’t know how to join tables.
+**A**: Because, they don't know how to join tables.
 
 ---
 
@@ -894,7 +896,7 @@ Lisp programmers don’t make prank calls. They make `FUNCALL`s
 
 ---
 
-**Q**: Where do programmer dad’s store their jokes?
+**Q**: Where do programmer dad's store their jokes?
 
 **A**: In a dad-a-base.
 
@@ -914,6 +916,6 @@ Lisp programmers don’t make prank calls. They make `FUNCALL`s
 
 **Q**: How do you know your baby is going to be a developer when they grow up?
 
-**A**: Their first word is “Hello world!”
+**A**: Their first word is "Hello world!"
 
 ---

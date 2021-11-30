@@ -13,7 +13,7 @@ A web development student’s declassified school survival guide.
 <a href="https://medium.com/swlh/25-free-resources-to-learn-web-development-dd9b7479e06c" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/swlh/25-free-resources-to-learn-web-development-dd9b7479e06c"><strong>25 Free Resources to Learn Web Development</strong><br />
 <em>Start where you are, use what you have, and do what you can.</em>medium.com</a><a href="https://medium.com/swlh/25-free-resources-to-learn-web-development-dd9b7479e06c" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<figure><img src="https://cdn-images-1.medium.com/max/600/0*dfyNFX1AFX9E3Z6R" class="graf-image" /></figure>### Disclaimer: This guide roughly goes in reverse order of awesomeness… i.e. you have to scroll to get to the coolest content… sorry not sorry
+<figure><img src="https://cdn-images-1.medium.com/max/600/0*dfyNFX1AFX9E3Z6R" class="graf-image" /></figure>### Disclaimer: This guide roughly goes in reverse order of awesomeness… i.e. you have to scroll to get to the coolest content… sorry not sorry
 
 ---
 
@@ -57,7 +57,9 @@ Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible, AngularJ
 - <span id="5668">Type some Markdown on the left</span>
 - <span id="5601">See HTML in the right</span>
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*Tq_ZHXaHBjelpXA4ZY5Ciw.png" class="graf-image" /></figure>### Features
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*Tq_ZHXaHBjelpXA4ZY5Ciw.png" class="graf-image" /></figure>
+
+### Features
 
 - <span id="30d9">Import a HTML file and watch it magically convert to Markdown</span>
 - <span id="be1e">Drag and drop images (requires your Dropbox account be linked)</span>
@@ -71,11 +73,11 @@ Markdown is a lightweight markup language based on the formatting conventions th
 
 This text you see here is _actually_ written in Markdown! To get a feel for Markdown’s syntax, type some text into the left window and watch the results in the right.
 
-Dillinger was first designed and developed by <a href="https://twitter.com/joemccann" class="markup--anchor markup--p-anchor"><span class="citation" data-cites="joemccann">@joemccann</span></a> because he needed a decent Markdown editor. 2014, it got redesigned and coded by <a href="https://twitter.com/mrtnbroder" class="markup--anchor markup--p-anchor"><span class="citation" data-cites="mrtnbroder">@mrtnbroder</span></a>.
+Dillinger was first designed and developed by <a href="https://twitter.com/joemccann" class="markup--anchor markup--p-anchor">@joemccann</a> because he needed a decent Markdown editor. 2014, it got redesigned and coded by <a href="https://twitter.com/mrtnbroder" class="markup--anchor markup--p-anchor">@mrtnbroder</a>.
 
 Dillinger is a <a href="https://github.com/joemccann/dillinger" class="markup--anchor markup--p-anchor">100% open source project</a> so fork the code and contribute!
 
-Follow Dillinger on Twitter at <a href="https://twitter.com/dillingerapp" class="markup--anchor markup--p-anchor"><span class="citation" data-cites="dillingerapp">@dillingerapp</span></a>.
+Follow Dillinger on Twitter at <a href="https://twitter.com/dillingerapp" class="markup--anchor markup--p-anchor">@dillingerapp</a>.
 
 ### 1.) Codepen:
 
@@ -107,7 +109,9 @@ Just by virtue of saving a public Pen, you’re also making it public to the wor
 
 ### 2.) Free Code Camp:
 
-<figure><img src="https://cdn-images-1.medium.com/max/1200/1*GcLsRU-PNXX-bGt6_Z5vPw.png" class="graf-image" /></figure>More than 40,000 people have gotten developer jobs after completing this — including at big companies like Google and Microsoft. If you are new to programming, we recommend you start at the beginning and earn these certifications in order. To earn each certification, build its 5 required projects and get all their tests to pass. You can add these certifications to your résumé or LinkedIn. But more important than the certifications is the practice you get along the way. If you feel overwhelmed, that is normal. Programming is hard. Practice is the key. Practice, practice, practice. And this curriculum will give you thousands of hours of hands-on programming practice.
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*GcLsRU-PNXX-bGt6_Z5vPw.png" class="graf-image" /></figure>
+
+More than 40,000 people have gotten developer jobs after completing this — including at big companies like Google and Microsoft. If you are new to programming, we recommend you start at the beginning and earn these certifications in order. To earn each certification, build its 5 required projects and get all their tests to pass. You can add these certifications to your résumé or LinkedIn. But more important than the certifications is the practice you get along the way. If you feel overwhelmed, that is normal. Programming is hard. Practice is the key. Practice, practice, practice. And this curriculum will give you thousands of hours of hands-on programming practice.
 
 And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on <a href="https://youtube.com/freecodecamp" class="markup--anchor markup--p-anchor">freeCodeCamp’s YouTube channel</a>. If you want to get a developer job or freelance clients, programming skills will be just part of the puzzle. You also need to build your personal network and your reputation as a developer. You can do this on Twitter and GitHub, and also on <a href="https://forum.freecodecamp.org/" class="markup--anchor markup--p-anchor">the freeCodeCamp forum</a>.
 
@@ -122,7 +126,11 @@ CloudConvert is a German-based conversion site that was launched in 2012. Today,
 
 Just upload the file you want to convert and CloudConvert gives you a list of file types it can convert it to. It can then send that file directly to your Dropbox or Google Drive account. It’s a pretty simple process and if you don’t need to convert between file types very often, CloudConvert’s handy to keep around.
 
-<figure><img src="https://cdn-images-1.medium.com/max/600/1*Md8ThdTUmUpuRZRcL6cVng.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/600/1*UP75fygqLTTki4jhZgfPaQ.png" alt="Lot’s of features" class="graf-image" /><figcaption>Lot’s of features</figcaption></figure><figure><img src="https://cdn-images-1.medium.com/max/1200/1*Znr4SJvKJCut1gUoKNf_zg.png" class="graf-image" /></figure><a href="https://cloudconvert.com/" class="markup--anchor markup--p-anchor">CloudConvert</a> transforms a file from one format into another. It recognizes files in more than <a href="https://cloudconvert.com/formats" class="markup--anchor markup--p-anchor">200 different formats</a>, and connects with Box, Dropbox, Google Drive, and OneDrive. This makes CloudConvert an essential web utility for anyone who uses a Chromebook.
+<figure><img src="https://cdn-images-1.medium.com/max/600/1*Md8ThdTUmUpuRZRcL6cVng.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/600/1*UP75fygqLTTki4jhZgfPaQ.png" alt="Lot’s of features" class="graf-image" /><figcaption>Lot’s of features</figcaption></figure>
+
+<figure><img src="https://cdn-images-1.medium.com/max/1200/1*Znr4SJvKJCut1gUoKNf_zg.png" class="graf-image" /></figure>
+
+<a href="https://cloudconvert.com/" class="markup--anchor markup--p-anchor">CloudConvert</a> transforms a file from one format into another. It recognizes files in more than <a href="https://cloudconvert.com/formats" class="markup--anchor markup--p-anchor">200 different formats</a>, and connects with Box, Dropbox, Google Drive, and OneDrive. This makes CloudConvert an essential web utility for anyone who uses a Chromebook.
 
 CloudConvert supports over 200 formats from audio, spreadsheet, video, document, image, eBook, and presentation. And yes, CloudConvert is a safe platform that uses SSL encryption.
 
@@ -397,9 +405,9 @@ Stackbit runs the following steps to show you the preview of your site:
 4.  <span id="42fa">It runs your static site generator’s development server (e.g.: `gatsby develop` for Gatsby, and `bundle exec jekyll serve` for Jekyll).</span>
 5.  <span id="5b26">It routes any page requests made from your browser to SSG’s development server and returns responses back to your browser, as if you are developing your site locally on your local machine.</span>
 
-For example, suppose your site uses <a href="https://www.gatsbyjs.com/" class="markup--anchor markup--p-anchor">Gatsby</a>. In that case, after cloning your repository, checking out the `preview` branch, and installing dependencies, Stackbit executes `gatsby develop` in its preview-server to start Gatsby’s development server and then routes page requests from your browser to that development server running internally on `http://localhost`<a href="http://localhost." class="markup--anchor markup--p-anchor">.</a>
+For example, suppose your site uses <a href="https://www.gatsbyjs.com/" class="markup--anchor markup--p-anchor">Gatsby</a>. In that case, after cloning your repository, checking out the `preview` branch, and installing dependencies, Stackbit executes `gatsby develop` in its preview-server to start Gatsby's development server and then routes page requests from your browser to that development server running internally on `http://localhost`<a href="http://localhost." class="markup--anchor markup--p-anchor">.</a>
 
-If your site uses <a href="https://gohugo.io/" class="markup--anchor markup--p-anchor">Hugo</a>, Stackbit executes `hugo server` and routes page requests to Hugo’s development server running internally on `http://localhost`<a href="http://localhost." class="markup--anchor markup--p-anchor">.</a>
+If your site uses <a href="https://gohugo.io/" class="markup--anchor markup--p-anchor">Hugo</a>, Stackbit executes `hugo server` and routes page requests to Hugo's development server running internally on `http://localhost`<a href="http://localhost." class="markup--anchor markup--p-anchor">.</a>
 
 You can see the logs of how Stackbit pulls your repository, installs dependencies, and runs your SSG’s development server by clicking on the “Logs” button in the “Advanced Tools” bottom bar:
 
@@ -436,7 +444,7 @@ In the search result section, you can not only see a list of files that match yo
 - <span id="24ae">Source:</span>
 
 <a href="https://www.ctrl.blog/entry/review-filelocator.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.ctrl.blog/entry/review-filelocator.html"><strong>FileLocator Lite and Pro review</strong><br />
-<em>Find “everything” with Lite Finding even more and do it faster with Pro Windows and tabs management, and keyboard…</em>www.ctrl.blog</a><a href="https://www.ctrl.blog/entry/review-filelocator.html" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Find "everything" with Lite Finding even more and do it faster with Pro Windows and tabs management, and keyboard…</em>www.ctrl.blog</a><a href="https://www.ctrl.blog/entry/review-filelocator.html" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 ---
 
@@ -447,7 +455,7 @@ In the search result section, you can not only see a list of files that match yo
 The best note taking app ever:
 
 <a href="https://www.notion.so/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.notion.so/"><strong>Notion - The all-in-one workspace for your notes, tasks, wikis, and databases.</strong><br />
-<em>A new tool that blends your everyday work apps into one. It’s the all-in-one workspace for you and your team.</em>www.notion.so</a><a href="https://www.notion.so/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team.</em>www.notion.so</a><a href="https://www.notion.so/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <figure><img src="https://cdn-images-1.medium.com/max/1200/1*G_bpCx8Yq7r126TW2m2LeQ.png" class="graf-image" /></figure>
 
@@ -489,7 +497,9 @@ Not only does this tool allow you to seamlessly create documentation and notes i
 
 If you’re familiar with facebook’s opensource docusaurous … this is a lot like that if it were way better and much easier… Also for no extra cost to you… they don’t spy on you… sell your data or help influence foreign/domestic elections. …
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/1*Go8UXl1siB12VL9il0ninw.png" class="graf-image" /></figure>By <a href="https://medium.com/@bryanguner" class="p-author h-card">Bryan Guner</a> on [May 28, 2021](https://medium.com/p/82e8b6e61879).
+<figure><img src="https://cdn-images-1.medium.com/max/800/1*Go8UXl1siB12VL9il0ninw.png" class="graf-image" /></figure>
+
+By <a href="https://medium.com/@bryanguner" class="p-author h-card">Bryan Guner</a> on [May 28, 2021](https://medium.com/p/82e8b6e61879).
 
 <a href="https://medium.com/@bryanguner/these-are-a-few-of-my-favorite-things-82e8b6e61879" class="p-canonical">Canonical link</a>
 

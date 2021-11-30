@@ -8,7 +8,7 @@ Plain Old JS Object Lesson Concepts
 
 ### Plain Old JS Object Lesson Concepts
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*bEuahctJRS_qCQgV.jpg" class="graf-image" /></figure>-   <span id="d911">Label variables as either Primitive vs. Reference</span>
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*bEuahctJRS_qCQgV.jpg" class="graf-image" /></figure>-   <span id="d911">Label variables as either Primitive vs. Reference</span>
 -   <span id="42a0">primitives: strings, booleans, numbers, null and undefined</span>
 -   <span id="4423">primitives are immutable</span>
 -   <span id="fd1a">refereces: objects (including arrays)</span>
@@ -222,10 +222,10 @@ Plain Old JS Object Lesson Concepts
 - <span id="670d">`var` - outdated, may or may not be reassigned, scoped to function. can be not just reassigned, but also redeclared!</span>
 - <span id="b254">a variable will always evaluate to the value it contains regardless of how it was declared</span>
 - <span id="aace">Explain the difference between `const`, `let`, and `var` declarations</span>
-- <span id="5d79">`var` is function scoped—so if you declare it anywhere in a function, the declaration (but not assignment) is “hoisted”</span>
+- <span id="5d79">`var` is function scoped—so if you declare it anywhere in a function, the declaration (but not assignment) is "hoisted"</span>
 - <span id="a54b">so it will exist in memory as “undefined” which is bad and unpredictable</span>
-- <span id="2dc2">`var` will also allow you to redeclare a variable, while `let` or `const` will raise a syntax error. you shouldn’t be able to do that!</span>
-- <span id="1f74">`const` won’t let you reassign a variable, but if it points to a mutable object, you will still be able to change the value by mutating the object</span>
+- <span id="2dc2">`var` will also allow you to redeclare a variable, while `let` or `const` will raise a syntax error. you shouldn't be able to do that!</span>
+- <span id="1f74">`const` won't let you reassign a variable, but if it points to a mutable object, you will still be able to change the value by mutating the object</span>
 - <span id="2c20">block-scoped variables allow new variables with the same name in new scopes</span>
 - <span id="c3d4">block-scoped still performs hoisting of all variables within the block, but it doesn’t initialize to the value of `undefined` like `var` does, so it throws a specific reference error if you try to access the value before it has been declared</span>
 - <span id="f797">if you do not use `var` or `let` or `const` when initializing, it will be declared as global—THIS IS BAD</span>
@@ -400,7 +400,7 @@ Plain Old JS Object Lesson Concepts
 
 - <span id="ae61">when we use `this` in a method it refers to the object that the method is invoked on</span>
 - <span id="29a2">it will let you access other pieces of information from within that object, or even other methods</span>
-- <span id="c41d">method style invocation — `object.method(args)` (e.g. built in examples like `Array#push`, or `String#toUpperCase`)</span>
+- <span id="c41d">method style invocation — `object.method(args)` (e.g. built in examples like `Array#push`, or `String#toUpperCase`)</span>
 - <span id="c99d">context is set every time we invoke a function</span>
 - <span id="fa43">function style invocation sets the context to the global object no matter what</span>
 - <span id="8cc1">being inside an object does not make the context that object! you still have to use method-style invocation</span>
@@ -531,7 +531,7 @@ we can use strict mode with `"use strict";` this will prevent you from accessing
 
 ### POJOs
 
-#### 1. Label variables as either Primitive vs. Reference
+#### 1. Label variables as either Primitive vs. Reference
 
 Javascript considers most data types to be ‘primitive’, these data types are immutable, and are passed by value. The more complex data types: Array and Object are mutable, are considered ‘reference’ data types, and are passed by reference.
 
@@ -753,7 +753,7 @@ Consider this `run` function, inside which `foo` and `bar` have `function scope`
 
     run();
 
-Notice that referencing `baz` from outside it’s block results in JavaScript throwing a ReferenceError.
+Notice that referencing `baz` from outside it's block results in JavaScript throwing a ReferenceError.
 
 Consider this `run` function, inside of which `foo` has `function scope` .
 
@@ -765,7 +765,7 @@ Consider this `run` function, inside of which `foo` has `function scope` .
 
     run();
 
-Consider this `func1` function and it’s nested scopes.
+Consider this `func1` function and it's nested scopes.
 
     // global scope
     function func1(arg1) {
@@ -818,7 +818,7 @@ Identically, we could write
 
     fDAdder([1, 2, 4, 6]);
 
-If we use a function declaration style function, the `this` variable is set to the `global` object (i.e. `Object [global]` in Node. JS and `Window` in your browser).
+If we use a function declaration style function, the `this` variable is set to the `global` object (i.e. `Object [global]` in Node. JS and `Window` in your browser).
 
     const adder = (arr) => {
         console.log(this);

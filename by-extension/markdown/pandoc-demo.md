@@ -1,86 +1,86 @@
 # Synopsis
 
-`pandoc` [*options*] [*input-file*]...
+`pandoc` [*options*] [*input-file*]...
 
 # Description
 
-Pandoc is a [Haskell](https://www.haskell.org/) library for converting from one markup format to another, and a command-line tool that uses this library.
+Pandoc is a [Haskell](https://www.haskell.org/) library for converting from one markup format to another, and a command-line tool that uses this library.
 
-Pandoc can convert between numerous markup and word processing formats, including, but not limited to, various flavors of [Markdown](https://daringfireball.net/projects/markdown/), [HTML](https://www.w3.org/html/), [LaTeX](https://www.latex-project.org/) and [Word docx](https://en.wikipedia.org/wiki/Office_Open_XML). For the full lists of input and output formats, see the `--from` and `--to` [options below](https://pandoc.org/demo/example1.html#general-options). Pandoc can also produce [PDF](https://www.adobe.com/pdf/) output: see [creating a PDF](https://pandoc.org/demo/example1.html#creating-a-pdf), below.
+Pandoc can convert between numerous markup and word processing formats, including, but not limited to, various flavors of [Markdown](https://daringfireball.net/projects/markdown/), [HTML](https://www.w3.org/html/), [LaTeX](https://www.latex-project.org/) and [Word docx](https://en.wikipedia.org/wiki/Office_Open_XML). For the full lists of input and output formats, see the `--from` and `--to` [options below](https://pandoc.org/demo/example1.html#general-options). Pandoc can also produce [PDF](https://www.adobe.com/pdf/) output: see [creating a PDF](https://pandoc.org/demo/example1.html#creating-a-pdf), below.
 
-Pandoc's enhanced version of Markdown includes syntax for [tables](https://pandoc.org/demo/example1.html#tables), [definition lists](https://pandoc.org/demo/example1.html#definition-lists), [metadata blocks](https://pandoc.org/demo/example1.html#metadata-blocks), [footnotes](https://pandoc.org/demo/example1.html#footnotes), [citations](https://pandoc.org/demo/example1.html#citations), [math](https://pandoc.org/demo/example1.html#math), and much more. See below under [Pandoc's Markdown](https://pandoc.org/demo/example1.html#pandocs-markdown).
+Pandoc's enhanced version of Markdown includes syntax for [tables](https://pandoc.org/demo/example1.html#tables), [definition lists](https://pandoc.org/demo/example1.html#definition-lists), [metadata blocks](https://pandoc.org/demo/example1.html#metadata-blocks), [footnotes](https://pandoc.org/demo/example1.html#footnotes), [citations](https://pandoc.org/demo/example1.html#citations), [math](https://pandoc.org/demo/example1.html#math), and much more. See below under [Pandoc's Markdown](https://pandoc.org/demo/example1.html#pandocs-markdown).
 
-Pandoc has a modular design: it consists of a set of readers, which parse text in a given format and produce a native representation of the document (an *abstract syntax tree* or AST), and a set of writers, which convert this native representation into a target format. Thus, adding an input or output format requires only adding a reader or writer. Users can also run custom [pandoc filters](https://pandoc.org/filters.html) to modify the intermediate AST.
+Pandoc has a modular design: it consists of a set of readers, which parse text in a given format and produce a native representation of the document (an *abstract syntax tree* or AST), and a set of writers, which convert this native representation into a target format. Thus, adding an input or output format requires only adding a reader or writer. Users can also run custom [pandoc filters](https://pandoc.org/filters.html) to modify the intermediate AST.
 
 Because pandoc's intermediate representation of a document is less expressive than many of the formats it converts between, one should not expect perfect conversions between every format and every other. Pandoc attempts to preserve the structural elements of a document, but not formatting details such as margin size. And some document elements, such as complex tables, may not fit into pandoc's simple document model. While conversions from pandoc's Markdown to all formats aspire to be perfect, conversions from formats more expressive than pandoc's Markdown can be expected to be lossy.
 
 ## Using pandoc
 
-If no *input-files* are specified, input is read from *stdin*. Output goes to *stdout* by default. For output to a file, use the `-o` option:
+If no *input-files* are specified, input is read from *stdin*. Output goes to *stdout* by default. For output to a file, use the `-o` option:
 
 ```
 pandoc -o output.html input.txt
 ```
 
-By default, pandoc produces a document fragment. To produce a standalone document (e.g. a valid HTML file including `<head>` and `<body>`), use the `-s` or `--standalone` flag:
+By default, pandoc produces a document fragment. To produce a standalone document (e.g. a valid HTML file including `<head>` and `<body>`), use the `-s` or `--standalone` flag:
 
 ```
 pandoc -s -o output.html input.txt
 ```
 
-For more information on how standalone documents are produced, see [Templates](https://pandoc.org/demo/example1.html#templates) below.
+For more information on how standalone documents are produced, see [Templates](https://pandoc.org/demo/example1.html#templates) below.
 
-If multiple input files are given, `pandoc` will concatenate them all (with blank lines between them) before parsing. (Use `--file-scope` to parse files individually.)
+If multiple input files are given, `pandoc` will concatenate them all (with blank lines between them) before parsing. (Use `--file-scope` to parse files individually.)
 
 ## Specifying formats
 
-The format of the input and output can be specified explicitly using command-line options. The input format can be specified using the `-f/--from` option, the output format using the `-t/--to` option. Thus, to convert `hello.txt` from Markdown to LaTeX, you could type:
+The format of the input and output can be specified explicitly using command-line options. The input format can be specified using the `-f/--from` option, the output format using the `-t/--to` option. Thus, to convert `hello.txt` from Markdown to LaTeX, you could type:
 
 ```
 pandoc -f markdown -t latex hello.txt
 ```
 
-To convert `hello.html` from HTML to Markdown:
+To convert `hello.html` from HTML to Markdown:
 
 ```
 pandoc -f html -t markdown hello.html
 ```
 
-Supported input and output formats are listed below under [Options](https://pandoc.org/demo/example1.html#options) (see `-f` for input formats and `-t` for output formats). You can also use `pandoc --list-input-formats` and `pandoc --list-output-formats` to print lists of supported formats.
+Supported input and output formats are listed below under [Options](https://pandoc.org/demo/example1.html#options) (see `-f` for input formats and `-t` for output formats). You can also use `pandoc --list-input-formats` and `pandoc --list-output-formats` to print lists of supported formats.
 
-If the input or output format is not specified explicitly, `pandoc` will attempt to guess it from the extensions of the filenames. Thus, for example,
+If the input or output format is not specified explicitly, `pandoc` will attempt to guess it from the extensions of the filenames. Thus, for example,
 
 ```
 pandoc -o hello.tex hello.txt
 ```
 
-will convert `hello.txt` from Markdown to LaTeX. If no output file is specified (so that output goes to *stdout*), or if the output file's extension is unknown, the output format will default to HTML. If no input file is specified (so that input comes from *stdin*), or if the input files' extensions are unknown, the input format will be assumed to be Markdown.
+will convert `hello.txt` from Markdown to LaTeX. If no output file is specified (so that output goes to *stdout*), or if the output file's extension is unknown, the output format will default to HTML. If no input file is specified (so that input comes from *stdin*), or if the input files' extensions are unknown, the input format will be assumed to be Markdown.
 
 ## Character encoding
 
-Pandoc uses the UTF-8 character encoding for both input and output. If your local character encoding is not UTF-8, you should pipe input and output through [`iconv`](https://www.gnu.org/software/libiconv/):
+Pandoc uses the UTF-8 character encoding for both input and output. If your local character encoding is not UTF-8, you should pipe input and output through [`iconv`](https://www.gnu.org/software/libiconv/):
 
 ```
 iconv -t utf-8 input.txt | pandoc | iconv -f utf-8
 ```
 
-Note that in some output formats (such as HTML, LaTeX, ConTeXt, RTF, OPML, DocBook, and Texinfo), information about the character encoding is included in the document header, which will only be included if you use the `-s/--standalone` option.
+Note that in some output formats (such as HTML, LaTeX, ConTeXt, RTF, OPML, DocBook, and Texinfo), information about the character encoding is included in the document header, which will only be included if you use the `-s/--standalone` option.
 
 ## Creating a PDF
 
-To produce a PDF, specify an output file with a `.pdf` extension:
+To produce a PDF, specify an output file with a `.pdf` extension:
 
 ```
 pandoc test.txt -o test.pdf
 ```
 
-By default, pandoc will use LaTeX to create the PDF, which requires that a LaTeX engine be installed (see `--pdf-engine` below). Alternatively, pandoc can use ConTeXt, roff ms, or HTML as an intermediate format. To do this, specify an output file with a `.pdf` extension, as before, but add the `--pdf-engine` option or `-t context`, `-t html`, or `-t ms` to the command line. The tool used to generate the PDF from the intermediate format may be specified using `--pdf-engine`.
+By default, pandoc will use LaTeX to create the PDF, which requires that a LaTeX engine be installed (see `--pdf-engine` below). Alternatively, pandoc can use ConTeXt, roff ms, or HTML as an intermediate format. To do this, specify an output file with a `.pdf` extension, as before, but add the `--pdf-engine` option or `-t context`, `-t html`, or `-t ms` to the command line. The tool used to generate the PDF from the intermediate format may be specified using `--pdf-engine`.
 
-You can control the PDF style using variables, depending on the intermediate format used: see [variables for LaTeX](https://pandoc.org/demo/example1.html#variables-for-latex), [variables for ConTeXt](https://pandoc.org/demo/example1.html#variables-for-context), [variables for `wkhtmltopdf`](https://pandoc.org/demo/example1.html#variables-for-wkhtmltopdf), [variables for ms](https://pandoc.org/demo/example1.html#variables-for-ms). When HTML is used as an intermediate format, the output can be styled using `--css`.
+You can control the PDF style using variables, depending on the intermediate format used: see [variables for LaTeX](https://pandoc.org/demo/example1.html#variables-for-latex), [variables for ConTeXt](https://pandoc.org/demo/example1.html#variables-for-context), [variables for `wkhtmltopdf`](https://pandoc.org/demo/example1.html#variables-for-wkhtmltopdf), [variables for ms](https://pandoc.org/demo/example1.html#variables-for-ms). When HTML is used as an intermediate format, the output can be styled using `--css`.
 
-To debug the PDF creation, it can be useful to look at the intermediate representation: instead of `-o test.pdf`, use for example `-s -o test.tex` to output the generated LaTeX. You can then test it with `pdflatex test.tex`.
+To debug the PDF creation, it can be useful to look at the intermediate representation: instead of `-o test.pdf`, use for example `-s -o test.tex` to output the generated LaTeX. You can then test it with `pdflatex test.tex`.
 
-When using LaTeX, the following packages need to be available (they are included with all recent versions of [TeX Live](https://www.tug.org/texlive/)): [`amsfonts`](https://ctan.org/pkg/amsfonts), [`amsmath`](https://ctan.org/pkg/amsmath), [`lm`](https://ctan.org/pkg/lm), [`unicode-math`](https://ctan.org/pkg/unicode-math), [`iftex`](https://ctan.org/pkg/iftex), [`listings`](https://ctan.org/pkg/listings) (if the `--listings` option is used), [`fancyvrb`](https://ctan.org/pkg/fancyvrb), [`longtable`](https://ctan.org/pkg/longtable), [`booktabs`](https://ctan.org/pkg/booktabs), [`graphicx`](https://ctan.org/pkg/graphicx) (if the document contains images), [`hyperref`](https://ctan.org/pkg/hyperref), [`xcolor`](https://ctan.org/pkg/xcolor), [`ulem`](https://ctan.org/pkg/ulem), [`geometry`](https://ctan.org/pkg/geometry) (with the `geometry` variable set), [`setspace`](https://ctan.org/pkg/setspace) (with `linestretch`), and [`babel`](https://ctan.org/pkg/babel) (with `lang`). The use of `xelatex` or `lualatex` as the PDF engine requires [`fontspec`](https://ctan.org/pkg/fontspec). `lualatex` uses [`selnolig`](https://ctan.org/pkg/selnolig). `xelatex` uses [`polyglossia`](https://ctan.org/pkg/polyglossia) (with `lang`), [`xecjk`](https://ctan.org/pkg/xecjk), and [`bidi`](https://ctan.org/pkg/bidi) (with the `dir` variable set). If the `mathspec` variable is set, `xelatex` will use [`mathspec`](https://ctan.org/pkg/mathspec) instead of [`unicode-math`](https://ctan.org/pkg/unicode-math). The [`upquote`](https://ctan.org/pkg/upquote) and [`microtype`](https://ctan.org/pkg/microtype) packages are used if available, and [`csquotes`](https://ctan.org/pkg/csquotes) will be used for [typography](https://pandoc.org/demo/example1.html#typography) if the `csquotes` variable or metadata field is set to a true value. The [`natbib`](https://ctan.org/pkg/natbib), [`biblatex`](https://ctan.org/pkg/biblatex), [`bibtex`](https://ctan.org/pkg/bibtex), and [`biber`](https://ctan.org/pkg/biber) packages can optionally be used for [citation rendering](https://pandoc.org/demo/example1.html#citation-rendering). The following packages will be used to improve output quality if present, but pandoc does not require them to be present: [`upquote`](https://ctan.org/pkg/upquote) (for straight quotes in verbatim environments), [`microtype`](https://ctan.org/pkg/microtype) (for better spacing adjustments), [`parskip`](https://ctan.org/pkg/parskip) (for better inter-paragraph spaces), [`xurl`](https://ctan.org/pkg/xurl) (for better line breaks in URLs), [`bookmark`](https://ctan.org/pkg/bookmark) (for better PDF bookmarks), and [`footnotehyper`](https://ctan.org/pkg/footnotehyper) or [`footnote`](https://ctan.org/pkg/footnote) (to allow footnotes in tables).
+When using LaTeX, the following packages need to be available (they are included with all recent versions of [TeX Live](https://www.tug.org/texlive/)): [`amsfonts`](https://ctan.org/pkg/amsfonts), [`amsmath`](https://ctan.org/pkg/amsmath), [`lm`](https://ctan.org/pkg/lm), [`unicode-math`](https://ctan.org/pkg/unicode-math), [`iftex`](https://ctan.org/pkg/iftex), [`listings`](https://ctan.org/pkg/listings) (if the `--listings` option is used), [`fancyvrb`](https://ctan.org/pkg/fancyvrb), [`longtable`](https://ctan.org/pkg/longtable), [`booktabs`](https://ctan.org/pkg/booktabs), [`graphicx`](https://ctan.org/pkg/graphicx) (if the document contains images), [`hyperref`](https://ctan.org/pkg/hyperref), [`xcolor`](https://ctan.org/pkg/xcolor), [`ulem`](https://ctan.org/pkg/ulem), [`geometry`](https://ctan.org/pkg/geometry) (with the `geometry` variable set), [`setspace`](https://ctan.org/pkg/setspace) (with `linestretch`), and [`babel`](https://ctan.org/pkg/babel) (with `lang`). The use of `xelatex` or `lualatex` as the PDF engine requires [`fontspec`](https://ctan.org/pkg/fontspec). `lualatex` uses [`selnolig`](https://ctan.org/pkg/selnolig). `xelatex` uses [`polyglossia`](https://ctan.org/pkg/polyglossia) (with `lang`), [`xecjk`](https://ctan.org/pkg/xecjk), and [`bidi`](https://ctan.org/pkg/bidi) (with the `dir` variable set). If the `mathspec` variable is set, `xelatex` will use [`mathspec`](https://ctan.org/pkg/mathspec) instead of [`unicode-math`](https://ctan.org/pkg/unicode-math). The [`upquote`](https://ctan.org/pkg/upquote) and [`microtype`](https://ctan.org/pkg/microtype) packages are used if available, and [`csquotes`](https://ctan.org/pkg/csquotes) will be used for [typography](https://pandoc.org/demo/example1.html#typography) if the `csquotes` variable or metadata field is set to a true value. The [`natbib`](https://ctan.org/pkg/natbib), [`biblatex`](https://ctan.org/pkg/biblatex), [`bibtex`](https://ctan.org/pkg/bibtex), and [`biber`](https://ctan.org/pkg/biber) packages can optionally be used for [citation rendering](https://pandoc.org/demo/example1.html#citation-rendering). The following packages will be used to improve output quality if present, but pandoc does not require them to be present: [`upquote`](https://ctan.org/pkg/upquote) (for straight quotes in verbatim environments), [`microtype`](https://ctan.org/pkg/microtype) (for better spacing adjustments), [`parskip`](https://ctan.org/pkg/parskip) (for better inter-paragraph spaces), [`xurl`](https://ctan.org/pkg/xurl) (for better line breaks in URLs), [`bookmark`](https://ctan.org/pkg/bookmark) (for better PDF bookmarks), and [`footnotehyper`](https://ctan.org/pkg/footnotehyper) or [`footnote`](https://ctan.org/pkg/footnote) (to allow footnotes in tables).
 
 ## Reading from the Web
 
@@ -101,132 +101,132 @@ pandoc -f html -t markdown --request-header User-Agent:"Mozilla/5.0"\
 
 ## General options
 
-`-f` *FORMAT*, `-r` *FORMAT*, `--from=`_FORMAT_, `--read=`_FORMAT_
+`-f` *FORMAT*, `-r` *FORMAT*, `--from=`_FORMAT_, `--read=`_FORMAT_
 
-Specify input format. *FORMAT* can be:
+Specify input format. *FORMAT* can be:
 
-- `bibtex` ([BibTeX](https://ctan.org/pkg/bibtex) bibliography)
-- `biblatex` ([BibLaTeX](https://ctan.org/pkg/biblatex) bibliography)
-- `commonmark` ([CommonMark](https://commonmark.org/) Markdown)
-- `commonmark_x` ([CommonMark](https://commonmark.org/) Markdown with extensions)
-- `creole` ([Creole 1.0](http://www.wikicreole.org/wiki/Creole1.0))
-- `csljson` ([CSL JSON](https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html) bibliography)
-- `csv` ([CSV](https://tools.ietf.org/html/rfc4180) table)
-- `docbook` ([DocBook](https://docbook.org/))
-- `docx` ([Word docx](https://en.wikipedia.org/wiki/Office_Open_XML))
-- `dokuwiki` ([DokuWiki markup](https://www.dokuwiki.org/dokuwiki))
-- `epub` ([EPUB](http://idpf.org/epub))
-- `fb2` ([FictionBook2](http://www.fictionbook.org/index.php/Eng:XML_Schema_Fictionbook_2.1) e-book)
-- `gfm` ([GitHub-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)), or the deprecated and less accurate `markdown_github`; use [`markdown_github`](https://pandoc.org/demo/example1.html#markdown-variants) only if you need extensions not supported in [`gfm`](https://pandoc.org/demo/example1.html#markdown-variants).
-- `haddock` ([Haddock markup](https://www.haskell.org/haddock/doc/html/ch03s08.html))
-- `html` ([HTML](https://www.w3.org/html/))
-- `ipynb` ([Jupyter notebook](https://nbformat.readthedocs.io/en/latest/))
-- `jats` ([JATS](https://jats.nlm.nih.gov/) XML)
-- `jira` ([Jira](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=all)/Confluence wiki markup)
-- `json` (JSON version of native AST)
-- `latex` ([LaTeX](https://www.latex-project.org/))
-- `markdown` ([Pandoc's Markdown](https://pandoc.org/demo/example1.html#pandocs-markdown))
-- `markdown_mmd` ([MultiMarkdown](https://fletcherpenney.net/multimarkdown/))
-- `markdown_phpextra` ([PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra/))
-- `markdown_strict` (original unextended [Markdown](https://daringfireball.net/projects/markdown/))
-- `mediawiki` ([MediaWiki markup](https://www.mediawiki.org/wiki/Help:Formatting))
-- `man` ([roff man](<https://man.cx/groff_man(7)>))
-- `muse` ([Muse](https://amusewiki.org/library/manual))
-- `native` (native Haskell)
-- `odt` ([ODT](https://en.wikipedia.org/wiki/OpenDocument))
-- `opml` ([OPML](http://dev.opml.org/spec2.html))
-- `org` ([Emacs Org mode](https://orgmode.org/))
-- `rtf` ([Rich Text Format](https://en.wikipedia.org/wiki/Rich_Text_Format))
-- `rst` ([reStructuredText](https://docutils.sourceforge.io/docs/ref/rst/introduction.html))
-- `t2t` ([txt2tags](https://txt2tags.org/))
-- `textile` ([Textile](https://www.promptworks.com/textile))
-- `tikiwiki` ([TikiWiki markup](https://doc.tiki.org/Wiki-Syntax-Text#The_Markup_Language_Wiki-Syntax))
-- `twiki` ([TWiki markup](https://twiki.org/cgi-bin/view/TWiki/TextFormattingRules))
-- `vimwiki` ([Vimwiki](https://vimwiki.github.io/))
+- `bibtex` ([BibTeX](https://ctan.org/pkg/bibtex) bibliography)
+- `biblatex` ([BibLaTeX](https://ctan.org/pkg/biblatex) bibliography)
+- `commonmark` ([CommonMark](https://commonmark.org/) Markdown)
+- `commonmark_x` ([CommonMark](https://commonmark.org/) Markdown with extensions)
+- `creole` ([Creole 1.0](http://www.wikicreole.org/wiki/Creole1.0))
+- `csljson` ([CSL JSON](https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html) bibliography)
+- `csv` ([CSV](https://tools.ietf.org/html/rfc4180) table)
+- `docbook` ([DocBook](https://docbook.org/))
+- `docx` ([Word docx](https://en.wikipedia.org/wiki/Office_Open_XML))
+- `dokuwiki` ([DokuWiki markup](https://www.dokuwiki.org/dokuwiki))
+- `epub` ([EPUB](http://idpf.org/epub))
+- `fb2` ([FictionBook2](http://www.fictionbook.org/index.php/Eng:XML_Schema_Fictionbook_2.1) e-book)
+- `gfm` ([GitHub-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)), or the deprecated and less accurate `markdown_github`; use [`markdown_github`](https://pandoc.org/demo/example1.html#markdown-variants) only if you need extensions not supported in [`gfm`](https://pandoc.org/demo/example1.html#markdown-variants).
+- `haddock` ([Haddock markup](https://www.haskell.org/haddock/doc/html/ch03s08.html))
+- `html` ([HTML](https://www.w3.org/html/))
+- `ipynb` ([Jupyter notebook](https://nbformat.readthedocs.io/en/latest/))
+- `jats` ([JATS](https://jats.nlm.nih.gov/) XML)
+- `jira` ([Jira](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=all)/Confluence wiki markup)
+- `json` (JSON version of native AST)
+- `latex` ([LaTeX](https://www.latex-project.org/))
+- `markdown` ([Pandoc's Markdown](https://pandoc.org/demo/example1.html#pandocs-markdown))
+- `markdown_mmd` ([MultiMarkdown](https://fletcherpenney.net/multimarkdown/))
+- `markdown_phpextra` ([PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra/))
+- `markdown_strict` (original unextended [Markdown](https://daringfireball.net/projects/markdown/))
+- `mediawiki` ([MediaWiki markup](https://www.mediawiki.org/wiki/Help:Formatting))
+- `man` ([roff man](<https://man.cx/groff_man(7)>))
+- `muse` ([Muse](https://amusewiki.org/library/manual))
+- `native` (native Haskell)
+- `odt` ([ODT](https://en.wikipedia.org/wiki/OpenDocument))
+- `opml` ([OPML](http://dev.opml.org/spec2.html))
+- `org` ([Emacs Org mode](https://orgmode.org/))
+- `rtf` ([Rich Text Format](https://en.wikipedia.org/wiki/Rich_Text_Format))
+- `rst` ([reStructuredText](https://docutils.sourceforge.io/docs/ref/rst/introduction.html))
+- `t2t` ([txt2tags](https://txt2tags.org/))
+- `textile` ([Textile](https://www.promptworks.com/textile))
+- `tikiwiki` ([TikiWiki markup](https://doc.tiki.org/Wiki-Syntax-Text#The_Markup_Language_Wiki-Syntax))
+- `twiki` ([TWiki markup](https://twiki.org/cgi-bin/view/TWiki/TextFormattingRules))
+- `vimwiki` ([Vimwiki](https://vimwiki.github.io/))
 
-Extensions can be individually enabled or disabled by appending `+EXTENSION` or `-EXTENSION` to the format name. See [Extensions](https://pandoc.org/demo/example1.html#extensions) below, for a list of extensions and their names. See `--list-input-formats` and `--list-extensions`, below.
+Extensions can be individually enabled or disabled by appending `+EXTENSION` or `-EXTENSION` to the format name. See [Extensions](https://pandoc.org/demo/example1.html#extensions) below, for a list of extensions and their names. See `--list-input-formats` and `--list-extensions`, below.
 
-`-t` *FORMAT*, `-w` *FORMAT*, `--to=`_FORMAT_, `--write=`_FORMAT_
+`-t` *FORMAT*, `-w` *FORMAT*, `--to=`_FORMAT_, `--write=`_FORMAT_
 
-Specify output format. *FORMAT* can be:
+Specify output format. *FORMAT* can be:
 
-- `asciidoc` ([AsciiDoc](https://www.methods.co.nz/asciidoc/)) or `asciidoctor` ([AsciiDoctor](https://asciidoctor.org/))
-- `beamer` ([LaTeX beamer](https://ctan.org/pkg/beamer) slide show)
-- `bibtex` ([BibTeX](https://ctan.org/pkg/bibtex) bibliography)
-- `biblatex` ([BibLaTeX](https://ctan.org/pkg/biblatex) bibliography)
-- `commonmark` ([CommonMark](https://commonmark.org/) Markdown)
-- `commonmark_x` ([CommonMark](https://commonmark.org/) Markdown with extensions)
-- `context` ([ConTeXt](https://www.contextgarden.net/))
-- `csljson` ([CSL JSON](https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html) bibliography)
-- `docbook` or `docbook4` ([DocBook](https://docbook.org/) 4)
-- `docbook5` (DocBook 5)
-- `docx` ([Word docx](https://en.wikipedia.org/wiki/Office_Open_XML))
-- `dokuwiki` ([DokuWiki markup](https://www.dokuwiki.org/dokuwiki))
-- `epub` or `epub3` ([EPUB](http://idpf.org/epub) v3 book)
-- `epub2` (EPUB v2)
-- `fb2` ([FictionBook2](http://www.fictionbook.org/index.php/Eng:XML_Schema_Fictionbook_2.1) e-book)
-- `gfm` ([GitHub-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)), or the deprecated and less accurate `markdown_github`; use [`markdown_github`](https://pandoc.org/demo/example1.html#markdown-variants) only if you need extensions not supported in [`gfm`](https://pandoc.org/demo/example1.html#markdown-variants).
-- `haddock` ([Haddock markup](https://www.haskell.org/haddock/doc/html/ch03s08.html))
-- `html` or `html5` ([HTML](https://www.w3.org/html/), i.e. [HTML5](https://html.spec.whatwg.org/)/XHTML [polyglot markup](https://www.w3.org/TR/html-polyglot/))
-- `html4` ([XHTML](https://www.w3.org/TR/xhtml1/) 1.0 Transitional)
-- `icml` ([InDesign ICML](https://wwwimages.adobe.com/www.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/idml/idml-cookbook.pdf))
-- `ipynb` ([Jupyter notebook](https://nbformat.readthedocs.io/en/latest/))
-- `jats_archiving` ([JATS](https://jats.nlm.nih.gov/) XML, Archiving and Interchange Tag Set)
-- `jats_articleauthoring` ([JATS](https://jats.nlm.nih.gov/) XML, Article Authoring Tag Set)
-- `jats_publishing` ([JATS](https://jats.nlm.nih.gov/) XML, Journal Publishing Tag Set)
-- `jats` (alias for `jats_archiving`)
-- `jira` ([Jira](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=all)/Confluence wiki markup)
-- `json` (JSON version of native AST)
-- `latex` ([LaTeX](https://www.latex-project.org/))
-- `man` ([roff man](<https://man.cx/groff_man(7)>))
-- `markdown` ([Pandoc's Markdown](https://pandoc.org/demo/example1.html#pandocs-markdown))
-- `markdown_mmd` ([MultiMarkdown](https://fletcherpenney.net/multimarkdown/))
-- `markdown_phpextra` ([PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra/))
-- `markdown_strict` (original unextended [Markdown](https://daringfireball.net/projects/markdown/))
-- `mediawiki` ([MediaWiki markup](https://www.mediawiki.org/wiki/Help:Formatting))
-- `ms` ([roff ms](<https://man.cx/groff_ms(7)>))
-- `muse` ([Muse](https://amusewiki.org/library/manual)),
-- `native` (native Haskell),
-- `odt` ([OpenOffice text document](https://en.wikipedia.org/wiki/OpenDocument))
-- `opml` ([OPML](http://dev.opml.org/spec2.html))
-- `opendocument` ([OpenDocument](http://opendocument.xml.org/))
-- `org` ([Emacs Org mode](https://orgmode.org/))
-- `pdf` ([PDF](https://www.adobe.com/pdf/))
-- `plain` (plain text),
-- `pptx` ([PowerPoint](https://en.wikipedia.org/wiki/Microsoft_PowerPoint) slide show)
-- `rst` ([reStructuredText](https://docutils.sourceforge.io/docs/ref/rst/introduction.html))
-- `rtf` ([Rich Text Format](https://en.wikipedia.org/wiki/Rich_Text_Format))
-- `texinfo` ([GNU Texinfo](https://www.gnu.org/software/texinfo/))
-- `textile` ([Textile](https://www.promptworks.com/textile))
-- `slideous` ([Slideous](https://goessner.net/articles/slideous/) HTML and JavaScript slide show)
-- `slidy` ([Slidy](https://www.w3.org/Talks/Tools/Slidy2/) HTML and JavaScript slide show)
-- `dzslides` ([DZSlides](https://paulrouget.com/dzslides/) HTML5 + JavaScript slide show),
-- `revealjs` ([reveal.js](https://revealjs.com/) HTML5 + JavaScript slide show)
-- `s5` ([S5](https://meyerweb.com/eric/tools/s5/) HTML and JavaScript slide show)
-- `tei` ([TEI Simple](https://github.com/TEIC/TEI-Simple))
-- `xwiki` ([XWiki markup](https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/XWikiSyntax/))
-- `zimwiki` ([ZimWiki markup](https://zim-wiki.org/manual/Help/Wiki_Syntax.html))
-- the path of a custom Lua writer, see [Custom writers](https://pandoc.org/demo/example1.html#custom-writers) below
+- `asciidoc` ([AsciiDoc](https://www.methods.co.nz/asciidoc/)) or `asciidoctor` ([AsciiDoctor](https://asciidoctor.org/))
+- `beamer` ([LaTeX beamer](https://ctan.org/pkg/beamer) slide show)
+- `bibtex` ([BibTeX](https://ctan.org/pkg/bibtex) bibliography)
+- `biblatex` ([BibLaTeX](https://ctan.org/pkg/biblatex) bibliography)
+- `commonmark` ([CommonMark](https://commonmark.org/) Markdown)
+- `commonmark_x` ([CommonMark](https://commonmark.org/) Markdown with extensions)
+- `context` ([ConTeXt](https://www.contextgarden.net/))
+- `csljson` ([CSL JSON](https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html) bibliography)
+- `docbook` or `docbook4` ([DocBook](https://docbook.org/) 4)
+- `docbook5` (DocBook 5)
+- `docx` ([Word docx](https://en.wikipedia.org/wiki/Office_Open_XML))
+- `dokuwiki` ([DokuWiki markup](https://www.dokuwiki.org/dokuwiki))
+- `epub` or `epub3` ([EPUB](http://idpf.org/epub) v3 book)
+- `epub2` (EPUB v2)
+- `fb2` ([FictionBook2](http://www.fictionbook.org/index.php/Eng:XML_Schema_Fictionbook_2.1) e-book)
+- `gfm` ([GitHub-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)), or the deprecated and less accurate `markdown_github`; use [`markdown_github`](https://pandoc.org/demo/example1.html#markdown-variants) only if you need extensions not supported in [`gfm`](https://pandoc.org/demo/example1.html#markdown-variants).
+- `haddock` ([Haddock markup](https://www.haskell.org/haddock/doc/html/ch03s08.html))
+- `html` or `html5` ([HTML](https://www.w3.org/html/), i.e. [HTML5](https://html.spec.whatwg.org/)/XHTML [polyglot markup](https://www.w3.org/TR/html-polyglot/))
+- `html4` ([XHTML](https://www.w3.org/TR/xhtml1/) 1.0 Transitional)
+- `icml` ([InDesign ICML](https://wwwimages.adobe.com/www.adobe.com/content/dam/acom/en/devnet/indesign/sdk/cs6/idml/idml-cookbook.pdf))
+- `ipynb` ([Jupyter notebook](https://nbformat.readthedocs.io/en/latest/))
+- `jats_archiving` ([JATS](https://jats.nlm.nih.gov/) XML, Archiving and Interchange Tag Set)
+- `jats_articleauthoring` ([JATS](https://jats.nlm.nih.gov/) XML, Article Authoring Tag Set)
+- `jats_publishing` ([JATS](https://jats.nlm.nih.gov/) XML, Journal Publishing Tag Set)
+- `jats` (alias for `jats_archiving`)
+- `jira` ([Jira](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=all)/Confluence wiki markup)
+- `json` (JSON version of native AST)
+- `latex` ([LaTeX](https://www.latex-project.org/))
+- `man` ([roff man](<https://man.cx/groff_man(7)>))
+- `markdown` ([Pandoc's Markdown](https://pandoc.org/demo/example1.html#pandocs-markdown))
+- `markdown_mmd` ([MultiMarkdown](https://fletcherpenney.net/multimarkdown/))
+- `markdown_phpextra` ([PHP Markdown Extra](https://michelf.ca/projects/php-markdown/extra/))
+- `markdown_strict` (original unextended [Markdown](https://daringfireball.net/projects/markdown/))
+- `mediawiki` ([MediaWiki markup](https://www.mediawiki.org/wiki/Help:Formatting))
+- `ms` ([roff ms](<https://man.cx/groff_ms(7)>))
+- `muse` ([Muse](https://amusewiki.org/library/manual)),
+- `native` (native Haskell),
+- `odt` ([OpenOffice text document](https://en.wikipedia.org/wiki/OpenDocument))
+- `opml` ([OPML](http://dev.opml.org/spec2.html))
+- `opendocument` ([OpenDocument](http://opendocument.xml.org/))
+- `org` ([Emacs Org mode](https://orgmode.org/))
+- `pdf` ([PDF](https://www.adobe.com/pdf/))
+- `plain` (plain text),
+- `pptx` ([PowerPoint](https://en.wikipedia.org/wiki/Microsoft_PowerPoint) slide show)
+- `rst` ([reStructuredText](https://docutils.sourceforge.io/docs/ref/rst/introduction.html))
+- `rtf` ([Rich Text Format](https://en.wikipedia.org/wiki/Rich_Text_Format))
+- `texinfo` ([GNU Texinfo](https://www.gnu.org/software/texinfo/))
+- `textile` ([Textile](https://www.promptworks.com/textile))
+- `slideous` ([Slideous](https://goessner.net/articles/slideous/) HTML and JavaScript slide show)
+- `slidy` ([Slidy](https://www.w3.org/Talks/Tools/Slidy2/) HTML and JavaScript slide show)
+- `dzslides` ([DZSlides](https://paulrouget.com/dzslides/) HTML5 + JavaScript slide show),
+- `revealjs` ([reveal.js](https://revealjs.com/) HTML5 + JavaScript slide show)
+- `s5` ([S5](https://meyerweb.com/eric/tools/s5/) HTML and JavaScript slide show)
+- `tei` ([TEI Simple](https://github.com/TEIC/TEI-Simple))
+- `xwiki` ([XWiki markup](https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/XWikiSyntax/))
+- `zimwiki` ([ZimWiki markup](https://zim-wiki.org/manual/Help/Wiki_Syntax.html))
+- the path of a custom Lua writer, see [Custom writers](https://pandoc.org/demo/example1.html#custom-writers) below
 
-Note that `odt`, `docx`, `epub`, and `pdf` output will not be directed to *stdout* unless forced with `-o -`.
+Note that `odt`, `docx`, `epub`, and `pdf` output will not be directed to *stdout* unless forced with `-o -`.
 
-Extensions can be individually enabled or disabled by appending `+EXTENSION` or `-EXTENSION` to the format name. See [Extensions](https://pandoc.org/demo/example1.html#extensions) below, for a list of extensions and their names. See `--list-output-formats` and `--list-extensions`, below.
+Extensions can be individually enabled or disabled by appending `+EXTENSION` or `-EXTENSION` to the format name. See [Extensions](https://pandoc.org/demo/example1.html#extensions) below, for a list of extensions and their names. See `--list-output-formats` and `--list-extensions`, below.
 
-`-o` *FILE*, `--output=`_FILE_
+`-o` *FILE*, `--output=`_FILE_
 
-Write output to *FILE* instead of *stdout*. If *FILE* is `-`, output will go to *stdout*, even if a non-textual format (`docx`, `odt`, `epub2`, `epub3`) is specified.
+Write output to *FILE* instead of *stdout*. If *FILE* is `-`, output will go to *stdout*, even if a non-textual format (`docx`, `odt`, `epub2`, `epub3`) is specified.
 
 `--data-dir=`_DIRECTORY_
 
-Specify the user data directory to search for pandoc data files. If this option is not specified, the default user data directory will be used. On \*nix and macOS systems this will be the `pandoc` subdirectory of the XDG data directory (by default, `$HOME/.local/share`, overridable by setting the `XDG_DATA_HOME` environment variable). If that directory does not exist and `$HOME/.pandoc` exists, it will be used (for backwards compatibility). On Windows the default user data directory is `C:\Users\USERNAME\AppData\Roaming\pandoc`. You can find the default user data directory on your system by looking at the output of `pandoc --version`. Data files placed in this directory (for example, `reference.odt`, `reference.docx`, `epub.css`, `templates`) will override pandoc's normal defaults.
+Specify the user data directory to search for pandoc data files. If this option is not specified, the default user data directory will be used. On \*nix and macOS systems this will be the `pandoc` subdirectory of the XDG data directory (by default, `$HOME/.local/share`, overridable by setting the `XDG_DATA_HOME` environment variable). If that directory does not exist and `$HOME/.pandoc` exists, it will be used (for backwards compatibility). On Windows the default user data directory is `C:\Users\USERNAME\AppData\Roaming\pandoc`. You can find the default user data directory on your system by looking at the output of `pandoc --version`. Data files placed in this directory (for example, `reference.odt`, `reference.docx`, `epub.css`, `templates`) will override pandoc's normal defaults.
 
-`-d` *FILE*, `--defaults=`_FILE_
+`-d` *FILE*, `--defaults=`_FILE_
 
-Specify a set of default option settings. *FILE* is a YAML file whose fields correspond to command-line option settings. All options for document conversion, including input and output files, can be set using a defaults file. The file will be searched for first in the working directory, and then in the `defaults` subdirectory of the user data directory (see `--data-dir`). The `.yaml` extension may be omitted. See the section [Default files](https://pandoc.org/demo/example1.html#default-files) for more information on the file format. Settings from the defaults file may be overridden or extended by subsequent options on the command line.
+Specify a set of default option settings. *FILE* is a YAML file whose fields correspond to command-line option settings. All options for document conversion, including input and output files, can be set using a defaults file. The file will be searched for first in the working directory, and then in the `defaults` subdirectory of the user data directory (see `--data-dir`). The `.yaml` extension may be omitted. See the section [Default files](https://pandoc.org/demo/example1.html#default-files) for more information on the file format. Settings from the defaults file may be overridden or extended by subsequent options on the command line.
 
 `--bash-completion`
 
-Generate a bash completion script. To enable bash completion with pandoc, add this to your `.bashrc`:
+Generate a bash completion script. To enable bash completion with pandoc, add this to your `.bashrc`:
 
 ```
 eval "$(pandoc --bash-completion)"
@@ -246,7 +246,7 @@ Exit with error status if there are any warnings.
 
 `--log=`_FILE_
 
-Write log messages in machine-readable JSON format to *FILE*. All messages above DEBUG level will be written, regardless of verbosity settings (`--verbose`, `--quiet`).
+Write log messages in machine-readable JSON format to *FILE*. All messages above DEBUG level will be written, regardless of verbosity settings (`--verbose`, `--quiet`).
 
 `--list-input-formats`
 
@@ -258,7 +258,7 @@ List supported output formats, one per line.
 
 `--list-extensions`[`=`*FORMAT*]
 
-List supported extensions for *FORMAT*, one per line, preceded by a `+` or `-` indicating whether it is enabled by default in *FORMAT*. If *FORMAT* is not specified, defaults for pandoc's Markdown are given.
+List supported extensions for *FORMAT*, one per line, preceded by a `+` or `-` indicating whether it is enabled by default in *FORMAT*. If *FORMAT* is not specified, defaults for pandoc's Markdown are given.
 
 `--list-highlight-languages`
 
@@ -266,13 +266,13 @@ List supported languages for syntax highlighting, one per line.
 
 `--list-highlight-styles`
 
-List supported styles for syntax highlighting, one per line. See `--highlight-style`.
+List supported styles for syntax highlighting, one per line. See `--highlight-style`.
 
-`-v`, `--version`
+`-v`, `--version`
 
 Print version.
 
-`-h`, `--help`
+`-h`, `--help`
 
 Show usage message.
 
@@ -280,19 +280,19 @@ Show usage message.
 
 `--shift-heading-level-by=`_NUMBER_
 
-Shift heading levels by a positive or negative integer. For example, with `--shift-heading-level-by=-1`, level 2 headings become level 1 headings, and level 3 headings become level 2 headings. Headings cannot have a level less than 1, so a heading that would be shifted below level 1 becomes a regular paragraph. Exception: with a shift of -N, a level-N heading at the beginning of the document replaces the metadata title. `--shift-heading-level-by=-1` is a good choice when converting HTML or Markdown documents that use an initial level-1 heading for the document title and level-2+ headings for sections. `--shift-heading-level-by=1` may be a good choice for converting Markdown documents that use level-1 headings for sections to HTML, since pandoc uses a level-1 heading to render the document title.
+Shift heading levels by a positive or negative integer. For example, with `--shift-heading-level-by=-1`, level 2 headings become level 1 headings, and level 3 headings become level 2 headings. Headings cannot have a level less than 1, so a heading that would be shifted below level 1 becomes a regular paragraph. Exception: with a shift of -N, a level-N heading at the beginning of the document replaces the metadata title. `--shift-heading-level-by=-1` is a good choice when converting HTML or Markdown documents that use an initial level-1 heading for the document title and level-2+ headings for sections. `--shift-heading-level-by=1` may be a good choice for converting Markdown documents that use level-1 headings for sections to HTML, since pandoc uses a level-1 heading to render the document title.
 
 `--base-header-level=`_NUMBER_
 
-*Deprecated. Use `--shift-heading-level-by`=X instead, where X = NUMBER - 1.* Specify the base level for headings (defaults to 1).
+*Deprecated. Use `--shift-heading-level-by`=X instead, where X = NUMBER - 1.* Specify the base level for headings (defaults to 1).
 
 `--strip-empty-paragraphs`
 
-*Deprecated. Use the `+empty_paragraphs` extension instead.* Ignore paragraphs with no content. This option is useful for converting word processing documents where users have used empty paragraphs to create inter-paragraph space.
+*Deprecated. Use the `+empty_paragraphs` extension instead.* Ignore paragraphs with no content. This option is useful for converting word processing documents where users have used empty paragraphs to create inter-paragraph space.
 
 `--indented-code-classes=`_CLASSES_
 
-Specify classes to use for indented code blocks--for example, `perl,numberLines` or `haskell`. Multiple classes may be separated by spaces or commas.
+Specify classes to use for indented code blocks--for example, `perl,numberLines` or `haskell`. Multiple classes may be separated by spaces or commas.
 
 `--default-image-extension=`_EXTENSION_
 
@@ -300,9 +300,9 @@ Specify a default extension to use when image paths/URLs have no extension. This
 
 `--file-scope`
 
-Parse each file individually before combining for multifile documents. This will allow footnotes in different files with the same identifiers to work as expected. If this option is set, footnotes and links will not work across files. Reading binary files (docx, odt, epub) implies `--file-scope`.
+Parse each file individually before combining for multifile documents. This will allow footnotes in different files with the same identifiers to work as expected. If this option is set, footnotes and links will not work across files. Reading binary files (docx, odt, epub) implies `--file-scope`.
 
-`-F` *PROGRAM*, `--filter=`_PROGRAM_
+`-F` *PROGRAM*, `--filter=`_PROGRAM_
 
 Specify an executable to be used as a filter transforming the pandoc AST after the input is parsed and before the output is written. The executable should read JSON from stdin and write JSON to stdout. The JSON must be formatted like pandoc's own JSON input and output. The name of the output format will be passed to the filter as the first argument. Hence,
 
@@ -318,43 +318,43 @@ pandoc -t json | ./caps.py latex | pandoc -f json -t latex
 
 The latter form may be useful for debugging filters.
 
-Filters may be written in any language. `Text.Pandoc.JSON` exports `toJSONFilter` to facilitate writing filters in Haskell. Those who would prefer to write filters in python can use the module [`pandocfilters`](https://github.com/jgm/pandocfilters), installable from PyPI. There are also pandoc filter libraries in [PHP](https://github.com/vinai/pandocfilters-php), [perl](https://metacpan.org/pod/Pandoc::Filter), and [JavaScript/node.js](https://github.com/mvhenderson/pandoc-filter-node).
+Filters may be written in any language. `Text.Pandoc.JSON` exports `toJSONFilter` to facilitate writing filters in Haskell. Those who would prefer to write filters in python can use the module [`pandocfilters`](https://github.com/jgm/pandocfilters), installable from PyPI. There are also pandoc filter libraries in [PHP](https://github.com/vinai/pandocfilters-php), [perl](https://metacpan.org/pod/Pandoc::Filter), and [JavaScript/node.js](https://github.com/mvhenderson/pandoc-filter-node).
 
 In order of preference, pandoc will look for filters in
 
 1.  a specified full or relative path (executable or non-executable)
 
-2.  `$DATADIR/filters` (executable or non-executable) where `$DATADIR` is the user data directory (see `--data-dir`, above).
+2.  `$DATADIR/filters` (executable or non-executable) where `$DATADIR` is the user data directory (see `--data-dir`, above).
 
-3.  `$PATH` (executable only)
+3.  `$PATH` (executable only)
 
 Filters, Lua-filters, and citeproc processing are applied in the order specified on the command line.
 
-`-L` *SCRIPT*, `--lua-filter=`_SCRIPT_
+`-L` *SCRIPT*, `--lua-filter=`_SCRIPT_
 
-Transform the document in a similar fashion as JSON filters (see `--filter`), but use pandoc's built-in Lua filtering system. The given Lua script is expected to return a list of Lua filters which will be applied in order. Each Lua filter must contain element-transforming functions indexed by the name of the AST element on which the filter function should be applied.
+Transform the document in a similar fashion as JSON filters (see `--filter`), but use pandoc's built-in Lua filtering system. The given Lua script is expected to return a list of Lua filters which will be applied in order. Each Lua filter must contain element-transforming functions indexed by the name of the AST element on which the filter function should be applied.
 
-The `pandoc` Lua module provides helper functions for element creation. It is always loaded into the script's Lua environment.
+The `pandoc` Lua module provides helper functions for element creation. It is always loaded into the script's Lua environment.
 
-See the [Lua filters documentation](https://pandoc.org/lua-filters.html) for further details.
+See the [Lua filters documentation](https://pandoc.org/lua-filters.html) for further details.
 
 In order of preference, pandoc will look for Lua filters in
 
 1.  a specified full or relative path
 
-2.  `$DATADIR/filters` where `$DATADIR` is the user data directory (see `--data-dir`, above).
+2.  `$DATADIR/filters` where `$DATADIR` is the user data directory (see `--data-dir`, above).
 
 Filters, Lua filters, and citeproc processing are applied in the order specified on the command line.
 
-`-M` *KEY*[`=`*VAL*], `--metadata=`_KEY_[`:`*VAL*]
+`-M` *KEY*[`=`*VAL*], `--metadata=`_KEY_[`:`*VAL*]
 
-Set the metadata field *KEY* to the value *VAL*. A value specified on the command line overrides a value specified in the document using [YAML metadata blocks](https://pandoc.org/demo/example1.html#extension-yaml_metadata_block). Values will be parsed as YAML boolean or string values. If no value is specified, the value will be treated as Boolean true. Like `--variable`, `--metadata` causes template variables to be set. But unlike `--variable`, `--metadata` affects the metadata of the underlying document (which is accessible from filters and may be printed in some output formats) and metadata values will be escaped when inserted into the template.
+Set the metadata field *KEY* to the value *VAL*. A value specified on the command line overrides a value specified in the document using [YAML metadata blocks](https://pandoc.org/demo/example1.html#extension-yaml_metadata_block). Values will be parsed as YAML boolean or string values. If no value is specified, the value will be treated as Boolean true. Like `--variable`, `--metadata` causes template variables to be set. But unlike `--variable`, `--metadata` affects the metadata of the underlying document (which is accessible from filters and may be printed in some output formats) and metadata values will be escaped when inserted into the template.
 
 `--metadata-file=`_FILE_
 
-Read metadata from the supplied YAML (or JSON) file. This option can be used with every input format, but string scalars in the YAML file will always be parsed as Markdown. Generally, the input will be handled the same as in [YAML metadata blocks](https://pandoc.org/demo/example1.html#extension-yaml_metadata_block). This option can be used repeatedly to include multiple metadata files; values in files specified later on the command line will be preferred over those specified in earlier files. Metadata values specified inside the document, or by using `-M`, overwrite values specified with this option.
+Read metadata from the supplied YAML (or JSON) file. This option can be used with every input format, but string scalars in the YAML file will always be parsed as Markdown. Generally, the input will be handled the same as in [YAML metadata blocks](https://pandoc.org/demo/example1.html#extension-yaml_metadata_block). This option can be used repeatedly to include multiple metadata files; values in files specified later on the command line will be preferred over those specified in earlier files. Metadata values specified inside the document, or by using `-M`, overwrite values specified with this option.
 
-`-p`, `--preserve-tabs`
+`-p`, `--preserve-tabs`
 
 Preserve tabs instead of converting them to spaces. (By default, pandoc converts tabs to spaces before parsing its input.) Note that this will only affect tabs in literal code spans and code blocks. Tabs in regular text are always treated as spaces.
 
@@ -364,43 +364,43 @@ Specify the number of spaces per tab (default is 4).
 
 `--track-changes=accept`|`reject`|`all`
 
-Specifies what to do with insertions, deletions, and comments produced by the MS Word "Track Changes" feature. `accept` (the default) processes all the insertions and deletions. `reject` ignores them. Both `accept` and `reject` ignore comments. `all` includes all insertions, deletions, and comments, wrapped in spans with `insertion`, `deletion`, `comment-start`, and `comment-end` classes, respectively. The author and time of change is included. `all` is useful for scripting: only accepting changes from a certain reviewer, say, or before a certain date. If a paragraph is inserted or deleted, `track-changes=all` produces a span with the class `paragraph-insertion`/`paragraph-deletion` before the affected paragraph break. This option only affects the docx reader.
+Specifies what to do with insertions, deletions, and comments produced by the MS Word "Track Changes" feature. `accept` (the default) processes all the insertions and deletions. `reject` ignores them. Both `accept` and `reject` ignore comments. `all` includes all insertions, deletions, and comments, wrapped in spans with `insertion`, `deletion`, `comment-start`, and `comment-end` classes, respectively. The author and time of change is included. `all` is useful for scripting: only accepting changes from a certain reviewer, say, or before a certain date. If a paragraph is inserted or deleted, `track-changes=all` produces a span with the class `paragraph-insertion`/`paragraph-deletion` before the affected paragraph break. This option only affects the docx reader.
 
 `--extract-media=`_DIR_
 
-Extract images and other media contained in or linked from the source document to the path *DIR*, creating it if necessary, and adjust the images references in the document so they point to the extracted files. Media are downloaded, read from the file system, or extracted from a binary container (e.g. docx), as needed. The original file paths are used if they are relative paths not containing `..`. Otherwise filenames are constructed from the SHA1 hash of the contents.
+Extract images and other media contained in or linked from the source document to the path *DIR*, creating it if necessary, and adjust the images references in the document so they point to the extracted files. Media are downloaded, read from the file system, or extracted from a binary container (e.g. docx), as needed. The original file paths are used if they are relative paths not containing `..`. Otherwise filenames are constructed from the SHA1 hash of the contents.
 
 `--abbreviations=`_FILE_
 
-Specifies a custom abbreviations file, with abbreviations one to a line. If this option is not specified, pandoc will read the data file `abbreviations` from the user data directory or fall back on a system default. To see the system default, use `pandoc --print-default-data-file=abbreviations`. The only use pandoc makes of this list is in the Markdown reader. Strings found in this list will be followed by a nonbreaking space, and the period will not produce sentence-ending space in formats like LaTeX. The strings may not contain spaces.
+Specifies a custom abbreviations file, with abbreviations one to a line. If this option is not specified, pandoc will read the data file `abbreviations` from the user data directory or fall back on a system default. To see the system default, use `pandoc --print-default-data-file=abbreviations`. The only use pandoc makes of this list is in the Markdown reader. Strings found in this list will be followed by a nonbreaking space, and the period will not produce sentence-ending space in formats like LaTeX. The strings may not contain spaces.
 
 ## General writer options
 
-`-s`, `--standalone`
+`-s`, `--standalone`
 
-Produce output with an appropriate header and footer (e.g. a standalone HTML, LaTeX, TEI, or RTF file, not a fragment). This option is set automatically for `pdf`, `epub`, `epub3`, `fb2`, `docx`, and `odt` output. For `native` output, this option causes metadata to be included; otherwise, metadata is suppressed.
+Produce output with an appropriate header and footer (e.g. a standalone HTML, LaTeX, TEI, or RTF file, not a fragment). This option is set automatically for `pdf`, `epub`, `epub3`, `fb2`, `docx`, and `odt` output. For `native` output, this option causes metadata to be included; otherwise, metadata is suppressed.
 
 `--template=`_FILE_|_URL_
 
-Use the specified file as a custom template for the generated document. Implies `--standalone`. See [Templates](https://pandoc.org/demo/example1.html#templates), below, for a description of template syntax. If no extension is specified, an extension corresponding to the writer will be added, so that `--template=special` looks for `special.html` for HTML output. If the template is not found, pandoc will search for it in the `templates` subdirectory of the user data directory (see `--data-dir`). If this option is not used, a default template appropriate for the output format will be used (see `-D/--print-default-template`).
+Use the specified file as a custom template for the generated document. Implies `--standalone`. See [Templates](https://pandoc.org/demo/example1.html#templates), below, for a description of template syntax. If no extension is specified, an extension corresponding to the writer will be added, so that `--template=special` looks for `special.html` for HTML output. If the template is not found, pandoc will search for it in the `templates` subdirectory of the user data directory (see `--data-dir`). If this option is not used, a default template appropriate for the output format will be used (see `-D/--print-default-template`).
 
-`-V` *KEY*[`=`*VAL*], `--variable=`_KEY_[`:`*VAL*]
+`-V` *KEY*[`=`*VAL*], `--variable=`_KEY_[`:`*VAL*]
 
-Set the template variable *KEY* to the value *VAL* when rendering the document in standalone mode. If no *VAL* is specified, the key will be given the value `true`.
+Set the template variable *KEY* to the value *VAL* when rendering the document in standalone mode. If no *VAL* is specified, the key will be given the value `true`.
 
-`-D` *FORMAT*, `--print-default-template=`_FORMAT_
+`-D` *FORMAT*, `--print-default-template=`_FORMAT_
 
-Print the system default template for an output *FORMAT*. (See `-t` for a list of possible *FORMAT*s.) Templates in the user data directory are ignored. This option may be used with `-o`/`--output` to redirect output to a file, but `-o`/`--output` must come before `--print-default-template` on the command line.
+Print the system default template for an output *FORMAT*. (See `-t` for a list of possible *FORMAT*s.) Templates in the user data directory are ignored. This option may be used with `-o`/`--output` to redirect output to a file, but `-o`/`--output` must come before `--print-default-template` on the command line.
 
-Note that some of the default templates use partials, for example `styles.html`. To print the partials, use `--print-default-data-file`: for example, `--print-default-data-file=templates/styles.html`.
+Note that some of the default templates use partials, for example `styles.html`. To print the partials, use `--print-default-data-file`: for example, `--print-default-data-file=templates/styles.html`.
 
 `--print-default-data-file=`_FILE_
 
-Print a system default data file. Files in the user data directory are ignored. This option may be used with `-o`/`--output` to redirect output to a file, but `-o`/`--output` must come before `--print-default-data-file` on the command line.
+Print a system default data file. Files in the user data directory are ignored. This option may be used with `-o`/`--output` to redirect output to a file, but `-o`/`--output` must come before `--print-default-data-file` on the command line.
 
 `--eol=crlf`|`lf`|`native`
 
-Manually specify line endings: `crlf` (Windows), `lf` (macOS/Linux/UNIX), or `native` (line endings appropriate to the OS on which pandoc is being run). The default is `native`.
+Manually specify line endings: `crlf` (Windows), `lf` (macOS/Linux/UNIX), or `native` (line endings appropriate to the OS on which pandoc is being run). The default is `native`.
 
 `--dpi`=_NUMBER_
 
@@ -408,17 +408,17 @@ Specify the default dpi (dots per inch) value for conversion from pixels to inch
 
 `--wrap=auto`|`none`|`preserve`
 
-Determine how text is wrapped in the output (the source code, not the rendered version). With `auto` (the default), pandoc will attempt to wrap lines to the column width specified by `--columns` (default 72). With `none`, pandoc will not wrap lines at all. With `preserve`, pandoc will attempt to preserve the wrapping from the source document (that is, where there are nonsemantic newlines in the source, there will be nonsemantic newlines in the output as well). Automatic wrapping does not currently work in HTML output. In `ipynb` output, this option affects wrapping of the contents of markdown cells.
+Determine how text is wrapped in the output (the source code, not the rendered version). With `auto` (the default), pandoc will attempt to wrap lines to the column width specified by `--columns` (default 72). With `none`, pandoc will not wrap lines at all. With `preserve`, pandoc will attempt to preserve the wrapping from the source document (that is, where there are nonsemantic newlines in the source, there will be nonsemantic newlines in the output as well). Automatic wrapping does not currently work in HTML output. In `ipynb` output, this option affects wrapping of the contents of markdown cells.
 
 `--columns=`_NUMBER_
 
-Specify length of lines in characters. This affects text wrapping in the generated source code (see `--wrap`). It also affects calculation of column widths for plain text tables (see [Tables](https://pandoc.org/demo/example1.html#tables) below).
+Specify length of lines in characters. This affects text wrapping in the generated source code (see `--wrap`). It also affects calculation of column widths for plain text tables (see [Tables](https://pandoc.org/demo/example1.html#tables) below).
 
-`--toc`, `--table-of-contents`
+`--toc`, `--table-of-contents`
 
-Include an automatically generated table of contents (or, in the case of `latex`, `context`, `docx`, `odt`, `opendocument`, `rst`, or `ms`, an instruction to create one) in the output document. This option has no effect unless `-s/--standalone` is used, and it has no effect on `man`, `docbook4`, `docbook5`, or `jats` output.
+Include an automatically generated table of contents (or, in the case of `latex`, `context`, `docx`, `odt`, `opendocument`, `rst`, or `ms`, an instruction to create one) in the output document. This option has no effect unless `-s/--standalone` is used, and it has no effect on `man`, `docbook4`, `docbook5`, or `jats` output.
 
-Note that if you are producing a PDF via `ms`, the table of contents will appear at the beginning of the document, before the title. If you would prefer it to be at the end of the document, use the option `--pdf-engine-opt=--no-toc-relocation`.
+Note that if you are producing a PDF via `ms`, the table of contents will appear at the beginning of the document, before the title. If you would prefer it to be at the end of the document, use the option `--pdf-engine-opt=--no-toc-relocation`.
 
 `--toc-depth=`_NUMBER_
 
@@ -426,7 +426,7 @@ Specify the number of section levels to include in the table of contents. The de
 
 `--strip-comments`
 
-Strip out HTML comments in the Markdown or Textile source, rather than passing them on to Markdown, Textile or HTML output as raw HTML. This does not apply to HTML comments inside raw HTML blocks when the `markdown_in_html_blocks` extension is not set.
+Strip out HTML comments in the Markdown or Textile source, rather than passing them on to Markdown, Textile or HTML output as raw HTML. This does not apply to HTML comments inside raw HTML blocks when the `markdown_in_html_blocks` extension is not set.
 
 `--no-highlight`
 
@@ -434,39 +434,39 @@ Disables syntax highlighting for code blocks and inlines, even when a language a
 
 `--highlight-style=`_STYLE_|_FILE_
 
-Specifies the coloring style to be used in highlighted source code. Options are `pygments` (the default), `kate`, `monochrome`, `breezeDark`, `espresso`, `zenburn`, `haddock`, and `tango`. For more information on syntax highlighting in pandoc, see [Syntax highlighting](https://pandoc.org/demo/example1.html#syntax-highlighting), below. See also `--list-highlight-styles`.
+Specifies the coloring style to be used in highlighted source code. Options are `pygments` (the default), `kate`, `monochrome`, `breezeDark`, `espresso`, `zenburn`, `haddock`, and `tango`. For more information on syntax highlighting in pandoc, see [Syntax highlighting](https://pandoc.org/demo/example1.html#syntax-highlighting), below. See also `--list-highlight-styles`.
 
-Instead of a *STYLE* name, a JSON file with extension `.theme` may be supplied. This will be parsed as a KDE syntax highlighting theme and (if valid) used as the highlighting style.
+Instead of a *STYLE* name, a JSON file with extension `.theme` may be supplied. This will be parsed as a KDE syntax highlighting theme and (if valid) used as the highlighting style.
 
-To generate the JSON version of an existing style, use `--print-highlight-style`.
+To generate the JSON version of an existing style, use `--print-highlight-style`.
 
 `--print-highlight-style=`_STYLE_|_FILE_
 
-Prints a JSON version of a highlighting style, which can be modified, saved with a `.theme` extension, and used with `--highlight-style`. This option may be used with `-o`/`--output` to redirect output to a file, but `-o`/`--output` must come before `--print-highlight-style` on the command line.
+Prints a JSON version of a highlighting style, which can be modified, saved with a `.theme` extension, and used with `--highlight-style`. This option may be used with `-o`/`--output` to redirect output to a file, but `-o`/`--output` must come before `--print-highlight-style` on the command line.
 
 `--syntax-definition=`_FILE_
 
 Instructs pandoc to load a KDE XML syntax definition file, which will be used for syntax highlighting of appropriately marked code blocks. This can be used to add support for new languages or to use altered syntax definitions for existing languages. This option may be repeated to add multiple syntax definitions.
 
-`-H` *FILE*, `--include-in-header=`_FILE_|_URL_
+`-H` *FILE*, `--include-in-header=`_FILE_|_URL_
 
-Include contents of *FILE*, verbatim, at the end of the header. This can be used, for example, to include special CSS or JavaScript in HTML documents. This option can be used repeatedly to include multiple files in the header. They will be included in the order specified. Implies `--standalone`.
+Include contents of *FILE*, verbatim, at the end of the header. This can be used, for example, to include special CSS or JavaScript in HTML documents. This option can be used repeatedly to include multiple files in the header. They will be included in the order specified. Implies `--standalone`.
 
-`-B` *FILE*, `--include-before-body=`_FILE_|_URL_
+`-B` *FILE*, `--include-before-body=`_FILE_|_URL_
 
-Include contents of *FILE*, verbatim, at the beginning of the document body (e.g. after the `<body>` tag in HTML, or the `\begin{document}` command in LaTeX). This can be used to include navigation bars or banners in HTML documents. This option can be used repeatedly to include multiple files. They will be included in the order specified. Implies `--standalone`.
+Include contents of *FILE*, verbatim, at the beginning of the document body (e.g. after the `<body>` tag in HTML, or the `\begin{document}` command in LaTeX). This can be used to include navigation bars or banners in HTML documents. This option can be used repeatedly to include multiple files. They will be included in the order specified. Implies `--standalone`.
 
-`-A` *FILE*, `--include-after-body=`_FILE_|_URL_
+`-A` *FILE*, `--include-after-body=`_FILE_|_URL_
 
-Include contents of *FILE*, verbatim, at the end of the document body (before the `</body>` tag in HTML, or the `\end{document}` command in LaTeX). This option can be used repeatedly to include multiple files. They will be included in the order specified. Implies `--standalone`.
+Include contents of *FILE*, verbatim, at the end of the document body (before the `</body>` tag in HTML, or the `\end{document}` command in LaTeX). This option can be used repeatedly to include multiple files. They will be included in the order specified. Implies `--standalone`.
 
 `--resource-path=`_SEARCHPATH_
 
-List of paths to search for images and other resources. The paths should be separated by `:` on Linux, UNIX, and macOS systems, and by `;` on Windows. If `--resource-path` is not specified, the default resource path is the working directory. Note that, if `--resource-path` is specified, the working directory must be explicitly listed or it will not be searched. For example: `--resource-path=.:test` will search the working directory and the `test` subdirectory, in that order. This option can be used repeatedly. Search path components that come later on the command line will be searched before those that come earlier, so `--resource-path foo:bar --resource-path baz:bim` is equivalent to `--resource-path baz:bim:foo:bar`.
+List of paths to search for images and other resources. The paths should be separated by `:` on Linux, UNIX, and macOS systems, and by `;` on Windows. If `--resource-path` is not specified, the default resource path is the working directory. Note that, if `--resource-path` is specified, the working directory must be explicitly listed or it will not be searched. For example: `--resource-path=.:test` will search the working directory and the `test` subdirectory, in that order. This option can be used repeatedly. Search path components that come later on the command line will be searched before those that come earlier, so `--resource-path foo:bar --resource-path baz:bim` is equivalent to `--resource-path baz:bim:foo:bar`.
 
 `--request-header=`_NAME_`:`_VAL_
 
-Set the request header *NAME* to the value *VAL* when making HTTP requests (for example, when a URL is given on the command line, or when resources used in a document must be downloaded). If you're behind a proxy, you also need to set the environment variable `http_proxy` to `http://...`.
+Set the request header *NAME* to the value *VAL* when making HTTP requests (for example, when a URL is given on the command line, or when resources used in a document must be downloaded). If you're behind a proxy, you also need to set the environment variable `http_proxy` to `http://...`.
 
 `--no-check-certificate`
 
@@ -476,11 +476,11 @@ Disable the certificate verification to allow access to unsecure HTTP resources 
 
 `--self-contained`
 
-Produce a standalone HTML file with no external dependencies, using `data:` URIs to incorporate the contents of linked scripts, stylesheets, images, and videos. Implies `--standalone`. The resulting file should be "self-contained," in the sense that it needs no external files and no net access to be displayed properly by a browser. This option works only with HTML output formats, including `html4`, `html5`, `html+lhs`, `html5+lhs`, `s5`, `slidy`, `slideous`, `dzslides`, and `revealjs`. Scripts, images, and stylesheets at absolute URLs will be downloaded; those at relative URLs will be sought relative to the working directory (if the first source file is local) or relative to the base URL (if the first source file is remote). Elements with the attribute `data-external="1"` will be left alone; the documents they link to will not be incorporated in the document. Limitation: resources that are loaded dynamically through JavaScript cannot be incorporated; as a result, `--self-contained` does not work with `--mathjax`, and some advanced features (e.g. zoom or speaker notes) may not work in an offline "self-contained" `reveal.js` slide show.
+Produce a standalone HTML file with no external dependencies, using `data:` URIs to incorporate the contents of linked scripts, stylesheets, images, and videos. Implies `--standalone`. The resulting file should be "self-contained," in the sense that it needs no external files and no net access to be displayed properly by a browser. This option works only with HTML output formats, including `html4`, `html5`, `html+lhs`, `html5+lhs`, `s5`, `slidy`, `slideous`, `dzslides`, and `revealjs`. Scripts, images, and stylesheets at absolute URLs will be downloaded; those at relative URLs will be sought relative to the working directory (if the first source file is local) or relative to the base URL (if the first source file is remote). Elements with the attribute `data-external="1"` will be left alone; the documents they link to will not be incorporated in the document. Limitation: resources that are loaded dynamically through JavaScript cannot be incorporated; as a result, `--self-contained` does not work with `--mathjax`, and some advanced features (e.g. zoom or speaker notes) may not work in an offline "self-contained" `reveal.js` slide show.
 
 `--html-q-tags`
 
-Use `<q>` tags for quotes in HTML. (This option only has an effect if the `smart` extension is enabled for the input format used.)
+Use `<q>` tags for quotes in HTML. (This option only has an effect if the `smart` extension is enabled for the input format used.)
 
 `--ascii`
 
@@ -488,65 +488,65 @@ Use only ASCII characters in output. Currently supported for XML and HTML format
 
 `--reference-links`
 
-Use reference-style links, rather than inline links, in writing Markdown or reStructuredText. By default inline links are used. The placement of link references is affected by the `--reference-location` option.
+Use reference-style links, rather than inline links, in writing Markdown or reStructuredText. By default inline links are used. The placement of link references is affected by the `--reference-location` option.
 
 `--reference-location=block`|`section`|`document`
 
-Specify whether footnotes (and references, if `reference-links` is set) are placed at the end of the current (top-level) block, the current section, or the document. The default is `document`. Currently only affects the markdown writer.
+Specify whether footnotes (and references, if `reference-links` is set) are placed at the end of the current (top-level) block, the current section, or the document. The default is `document`. Currently only affects the markdown writer.
 
 `--markdown-headings=setext`|`atx`
 
-Specify whether to use ATX-style (`#`-prefixed) or Setext-style (underlined) headings for level 1 and 2 headings in Markdown output. (The default is `atx`.) ATX-style headings are always used for levels 3+. This option also affects Markdown cells in `ipynb` output.
+Specify whether to use ATX-style (`#`-prefixed) or Setext-style (underlined) headings for level 1 and 2 headings in Markdown output. (The default is `atx`.) ATX-style headings are always used for levels 3+. This option also affects Markdown cells in `ipynb` output.
 
 `--atx-headers`
 
-_Deprecated synonym for `--markdown-headings=atx`._
+_Deprecated synonym for `--markdown-headings=atx`._
 
 `--top-level-division=default`|`section`|`chapter`|`part`
 
-Treat top-level headings as the given division type in LaTeX, ConTeXt, DocBook, and TEI output. The hierarchy order is part, chapter, then section; all headings are shifted such that the top-level heading becomes the specified type. The default behavior is to determine the best division type via heuristics: unless other conditions apply, `section` is chosen. When the `documentclass` variable is set to `report`, `book`, or `memoir` (unless the `article` option is specified), `chapter` is implied as the setting for this option. If `beamer` is the output format, specifying either `chapter` or `part` will cause top-level headings to become `\part{..}`, while second-level headings remain as their default type.
+Treat top-level headings as the given division type in LaTeX, ConTeXt, DocBook, and TEI output. The hierarchy order is part, chapter, then section; all headings are shifted such that the top-level heading becomes the specified type. The default behavior is to determine the best division type via heuristics: unless other conditions apply, `section` is chosen. When the `documentclass` variable is set to `report`, `book`, or `memoir` (unless the `article` option is specified), `chapter` is implied as the setting for this option. If `beamer` is the output format, specifying either `chapter` or `part` will cause top-level headings to become `\part{..}`, while second-level headings remain as their default type.
 
-`-N`, `--number-sections`
+`-N`, `--number-sections`
 
-Number section headings in LaTeX, ConTeXt, HTML, Docx, ms, or EPUB output. By default, sections are not numbered. Sections with class `unnumbered` will never be numbered, even if `--number-sections` is specified.
+Number section headings in LaTeX, ConTeXt, HTML, Docx, ms, or EPUB output. By default, sections are not numbered. Sections with class `unnumbered` will never be numbered, even if `--number-sections` is specified.
 
 `--number-offset=`_NUMBER_[`,`*NUMBER*`,`*...*]
 
-Offset for section headings in HTML output (ignored in other output formats). The first number is added to the section number for top-level headings, the second for second-level headings, and so on. So, for example, if you want the first top-level heading in your document to be numbered "6", specify `--number-offset=5`. If your document starts with a level-2 heading which you want to be numbered "1.5", specify `--number-offset=1,4`. Offsets are 0 by default. Implies `--number-sections`.
+Offset for section headings in HTML output (ignored in other output formats). The first number is added to the section number for top-level headings, the second for second-level headings, and so on. So, for example, if you want the first top-level heading in your document to be numbered "6", specify `--number-offset=5`. If your document starts with a level-2 heading which you want to be numbered "1.5", specify `--number-offset=1,4`. Offsets are 0 by default. Implies `--number-sections`.
 
 `--listings`
 
-Use the [`listings`](https://ctan.org/pkg/listings) package for LaTeX code blocks. The package does not support multi-byte encoding for source code. To handle UTF-8 you would need to use a custom template. This issue is fully documented here: [Encoding issue with the listings package](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Encoding_issue).
+Use the [`listings`](https://ctan.org/pkg/listings) package for LaTeX code blocks. The package does not support multi-byte encoding for source code. To handle UTF-8 you would need to use a custom template. This issue is fully documented here: [Encoding issue with the listings package](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Encoding_issue).
 
-`-i`, `--incremental`
+`-i`, `--incremental`
 
 Make list items in slide shows display incrementally (one by one). The default is for lists to be displayed all at once.
 
 `--slide-level=`_NUMBER_
 
-Specifies that headings with the specified level create slides (for `beamer`, `s5`, `slidy`, `slideous`, `dzslides`). Headings above this level in the hierarchy are used to divide the slide show into sections; headings below this level create subheads within a slide. Valid values are 0-6. If a slide level of 0 is specified, slides will not be split automatically on headings, and horizontal rules must be used to indicate slide boundaries. If a slide level is not specified explicitly, the slide level will be set automatically based on the contents of the document; see [Structuring the slide show](https://pandoc.org/demo/example1.html#structuring-the-slide-show).
+Specifies that headings with the specified level create slides (for `beamer`, `s5`, `slidy`, `slideous`, `dzslides`). Headings above this level in the hierarchy are used to divide the slide show into sections; headings below this level create subheads within a slide. Valid values are 0-6. If a slide level of 0 is specified, slides will not be split automatically on headings, and horizontal rules must be used to indicate slide boundaries. If a slide level is not specified explicitly, the slide level will be set automatically based on the contents of the document; see [Structuring the slide show](https://pandoc.org/demo/example1.html#structuring-the-slide-show).
 
 `--section-divs`
 
-Wrap sections in `<section>` tags (or `<div>` tags for `html4`), and attach identifiers to the enclosing `<section>` (or `<div>`) rather than the heading itself. See [Heading identifiers](https://pandoc.org/demo/example1.html#heading-identifiers), below.
+Wrap sections in `<section>` tags (or `<div>` tags for `html4`), and attach identifiers to the enclosing `<section>` (or `<div>`) rather than the heading itself. See [Heading identifiers](https://pandoc.org/demo/example1.html#heading-identifiers), below.
 
 `--email-obfuscation=none`|`javascript`|`references`
 
-Specify a method for obfuscating `mailto:` links in HTML documents. `none` leaves `mailto:` links as they are. `javascript` obfuscates them using JavaScript. `references` obfuscates them by printing their letters as decimal or hexadecimal character references. The default is `none`.
+Specify a method for obfuscating `mailto:` links in HTML documents. `none` leaves `mailto:` links as they are. `javascript` obfuscates them using JavaScript. `references` obfuscates them by printing their letters as decimal or hexadecimal character references. The default is `none`.
 
 `--id-prefix=`_STRING_
 
 Specify a prefix to be added to all identifiers and internal links in HTML and DocBook output, and to footnote numbers in Markdown and Haddock output. This is useful for preventing duplicate identifiers when generating fragments to be included in other pages.
 
-`-T` *STRING*, `--title-prefix=`_STRING_
+`-T` *STRING*, `--title-prefix=`_STRING_
 
-Specify *STRING* as a prefix at the beginning of the title that appears in the HTML header (but not in the title as it appears at the beginning of the HTML body). Implies `--standalone`.
+Specify *STRING* as a prefix at the beginning of the title that appears in the HTML header (but not in the title as it appears at the beginning of the HTML body). Implies `--standalone`.
 
-`-c` *URL*, `--css=`_URL_
+`-c` *URL*, `--css=`_URL_
 
 Link to a CSS style sheet. This option can be used repeatedly to include multiple files. They will be included in the order specified.
 
-A stylesheet is required for generating EPUB. If none is provided using this option (or the `css` or `stylesheet` metadata fields), pandoc will look for a file `epub.css` in the user data directory (see `--data-dir`). If it is not found there, sensible defaults will be used.
+A stylesheet is required for generating EPUB. If none is provided using this option (or the `css` or `stylesheet` metadata fields), pandoc will look for a file `epub.css` in the user data directory (see `--data-dir`). If it is not found there, sensible defaults will be used.
 
 `--reference-doc=`_FILE_
 
@@ -554,9 +554,9 @@ Use the specified file as a style reference in producing a docx or ODT file.
 
 Docx
 
-For best results, the reference docx should be a modified version of a docx file produced using pandoc. The contents of the reference docx are ignored, but its stylesheets and document properties (including margins, page size, header, and footer) are used in the new docx. If no reference docx is specified on the command line, pandoc will look for a file `reference.docx` in the user data directory (see `--data-dir`). If this is not found either, sensible defaults will be used.
+For best results, the reference docx should be a modified version of a docx file produced using pandoc. The contents of the reference docx are ignored, but its stylesheets and document properties (including margins, page size, header, and footer) are used in the new docx. If no reference docx is specified on the command line, pandoc will look for a file `reference.docx` in the user data directory (see `--data-dir`). If this is not found either, sensible defaults will be used.
 
-To produce a custom `reference.docx`, first get a copy of the default `reference.docx`: `pandoc -o custom-reference.docx --print-default-data-file reference.docx`. Then open `custom-reference.docx` in Word, modify the styles as you wish, and save the file. For best results, do not make changes to this file other than modifying the styles used by pandoc:
+To produce a custom `reference.docx`, first get a copy of the default `reference.docx`: `pandoc -o custom-reference.docx --print-default-data-file reference.docx`. Then open `custom-reference.docx` in Word, modify the styles as you wish, and save the file. For best results, do not make changes to this file other than modifying the styles used by pandoc:
 
 Paragraph styles:
 
@@ -605,13 +605,13 @@ Table style:
 
 ODT
 
-For best results, the reference ODT should be a modified version of an ODT produced using pandoc. The contents of the reference ODT are ignored, but its stylesheets are used in the new ODT. If no reference ODT is specified on the command line, pandoc will look for a file `reference.odt` in the user data directory (see `--data-dir`). If this is not found either, sensible defaults will be used.
+For best results, the reference ODT should be a modified version of an ODT produced using pandoc. The contents of the reference ODT are ignored, but its stylesheets are used in the new ODT. If no reference ODT is specified on the command line, pandoc will look for a file `reference.odt` in the user data directory (see `--data-dir`). If this is not found either, sensible defaults will be used.
 
-To produce a custom `reference.odt`, first get a copy of the default `reference.odt`: `pandoc -o custom-reference.odt --print-default-data-file reference.odt`. Then open `custom-reference.odt` in LibreOffice, modify the styles as you wish, and save the file.
+To produce a custom `reference.odt`, first get a copy of the default `reference.odt`: `pandoc -o custom-reference.odt --print-default-data-file reference.odt`. Then open `custom-reference.odt` in LibreOffice, modify the styles as you wish, and save the file.
 
 PowerPoint
 
-Templates included with Microsoft PowerPoint 2013 (either with `.pptx` or `.potx` extension) are known to work, as are most templates derived from these.
+Templates included with Microsoft PowerPoint 2013 (either with `.pptx` or `.potx` extension) are known to work, as are most templates derived from these.
 
 The specific requirement is that the template should contain layouts with the following names (as seen within PowerPoint):
 
@@ -622,30 +622,30 @@ The specific requirement is that the template should contain layouts with the fo
 
 For each name, the first layout found with that name will be used. If no layout is found with one of the names, pandoc will output a warning and use the layout with that name from the default reference doc instead.
 
-All templates included with a recent version of MS PowerPoint will fit these criteria. (You can click on `Layout` under the `Home` menu to check.)
+All templates included with a recent version of MS PowerPoint will fit these criteria. (You can click on `Layout` under the `Home` menu to check.)
 
-You can also modify the default `reference.pptx`: first run `pandoc -o custom-reference.pptx --print-default-data-file reference.pptx`, and then modify `custom-reference.pptx` in MS PowerPoint (pandoc will use the first four layout slides, as mentioned above).
+You can also modify the default `reference.pptx`: first run `pandoc -o custom-reference.pptx --print-default-data-file reference.pptx`, and then modify `custom-reference.pptx` in MS PowerPoint (pandoc will use the first four layout slides, as mentioned above).
 
 `--epub-cover-image=`_FILE_
 
-Use the specified image as the EPUB cover. It is recommended that the image be less than 1000px in width and height. Note that in a Markdown source document you can also specify `cover-image` in a YAML metadata block (see [EPUB Metadata](https://pandoc.org/demo/example1.html#epub-metadata), below).
+Use the specified image as the EPUB cover. It is recommended that the image be less than 1000px in width and height. Note that in a Markdown source document you can also specify `cover-image` in a YAML metadata block (see [EPUB Metadata](https://pandoc.org/demo/example1.html#epub-metadata), below).
 
 `--epub-metadata=`_FILE_
 
-Look in the specified XML file for metadata for the EPUB. The file should contain a series of [Dublin Core elements](https://www.dublincore.org/specifications/dublin-core/dces/). For example:
+Look in the specified XML file for metadata for the EPUB. The file should contain a series of [Dublin Core elements](https://www.dublincore.org/specifications/dublin-core/dces/). For example:
 
 ```
  <dc:rights>Creative Commons</dc:rights>
  <dc:language>es-AR</dc:language>
 ```
 
-By default, pandoc will include the following metadata elements: `<dc:title>` (from the document title), `<dc:creator>` (from the document authors), `<dc:date>` (from the document date, which should be in [ISO 8601 format](https://www.w3.org/TR/NOTE-datetime)), `<dc:language>` (from the `lang` variable, or, if is not set, the locale), and `<dc:identifier id="BookId">` (a randomly generated UUID). Any of these may be overridden by elements in the metadata file.
+By default, pandoc will include the following metadata elements: `<dc:title>` (from the document title), `<dc:creator>` (from the document authors), `<dc:date>` (from the document date, which should be in [ISO 8601 format](https://www.w3.org/TR/NOTE-datetime)), `<dc:language>` (from the `lang` variable, or, if is not set, the locale), and `<dc:identifier id="BookId">` (a randomly generated UUID). Any of these may be overridden by elements in the metadata file.
 
-Note: if the source document is Markdown, a YAML metadata block in the document can be used instead. See below under [EPUB Metadata](https://pandoc.org/demo/example1.html#epub-metadata).
+Note: if the source document is Markdown, a YAML metadata block in the document can be used instead. See below under [EPUB Metadata](https://pandoc.org/demo/example1.html#epub-metadata).
 
 `--epub-embed-font=`_FILE_
 
-Embed the specified font in the EPUB. This option can be repeated to embed multiple fonts. Wildcards can also be used: for example, `DejaVuSans-*.ttf`. However, if you use wildcards on the command line, be sure to escape them or put the whole filename in single quotes, to prevent them from being interpreted by the shell. To use the embedded fonts, you will need to add declarations like the following to your CSS (see `--css`):
+Embed the specified font in the EPUB. This option can be repeated to embed multiple fonts. Wildcards can also be used: for example, `DejaVuSans-*.ttf`. However, if you use wildcards on the command line, be sure to escape them or put the whole filename in single quotes, to prevent them from being interpreted by the shell. To use the embedded fonts, you will need to add declarations like the following to your CSS (see `--css`):
 
 ```
 @font-face {
@@ -681,74 +681,74 @@ Specify the heading level at which to split the EPUB into separate "chapter" fil
 
 `--epub-subdirectory=`_DIRNAME_
 
-Specify the subdirectory in the OCF container that is to hold the EPUB-specific contents. The default is `EPUB`. To put the EPUB contents in the top level, use an empty string.
+Specify the subdirectory in the OCF container that is to hold the EPUB-specific contents. The default is `EPUB`. To put the EPUB contents in the top level, use an empty string.
 
 `--ipynb-output=all|none|best`
 
-Determines how ipynb output cells are treated. `all` means that all of the data formats included in the original are preserved. `none` means that the contents of data cells are omitted. `best` causes pandoc to try to pick the richest data block in each output cell that is compatible with the output format. The default is `best`.
+Determines how ipynb output cells are treated. `all` means that all of the data formats included in the original are preserved. `none` means that the contents of data cells are omitted. `best` causes pandoc to try to pick the richest data block in each output cell that is compatible with the output format. The default is `best`.
 
 `--pdf-engine=`_PROGRAM_
 
-Use the specified engine when producing PDF output. Valid values are `pdflatex`, `lualatex`, `xelatex`, `latexmk`, `tectonic`, `wkhtmltopdf`, `weasyprint`, `prince`, `context`, and `pdfroff`. If the engine is not in your PATH, the full path of the engine may be specified here. If this option is not specified, pandoc uses the following defaults depending on the output format specified using `-t/--to`:
+Use the specified engine when producing PDF output. Valid values are `pdflatex`, `lualatex`, `xelatex`, `latexmk`, `tectonic`, `wkhtmltopdf`, `weasyprint`, `prince`, `context`, and `pdfroff`. If the engine is not in your PATH, the full path of the engine may be specified here. If this option is not specified, pandoc uses the following defaults depending on the output format specified using `-t/--to`:
 
-- `-t latex` or none: `pdflatex` (other options: `xelatex`, `lualatex`, `tectonic`, `latexmk`)
-- `-t context`: `context`
-- `-t html`: `wkhtmltopdf` (other options: `prince`, `weasyprint`; see [print-css.rocks](https://print-css.rocks/) for a good introduction to PDF generation from HTML/CSS.)
-- `-t ms`: `pdfroff`
+- `-t latex` or none: `pdflatex` (other options: `xelatex`, `lualatex`, `tectonic`, `latexmk`)
+- `-t context`: `context`
+- `-t html`: `wkhtmltopdf` (other options: `prince`, `weasyprint`; see [print-css.rocks](https://print-css.rocks/) for a good introduction to PDF generation from HTML/CSS.)
+- `-t ms`: `pdfroff`
 
 `--pdf-engine-opt=`_STRING_
 
-Use the given string as a command-line argument to the `pdf-engine`. For example, to use a persistent directory `foo` for `latexmk`'s auxiliary files, use `--pdf-engine-opt=-outdir=foo`. Note that no check for duplicate options is done.
+Use the given string as a command-line argument to the `pdf-engine`. For example, to use a persistent directory `foo` for `latexmk`'s auxiliary files, use `--pdf-engine-opt=-outdir=foo`. Note that no check for duplicate options is done.
 
 ## Citation rendering
 
-`-C`, `--citeproc`
+`-C`, `--citeproc`
 
-Process the citations in the file, replacing them with rendered citations and adding a bibliography. Citation processing will not take place unless bibliographic data is supplied, either through an external file specified using the `--bibliography` option or the `bibliography` field in metadata, or via a `references` section in metadata containing a list of citations in CSL YAML format with Markdown formatting. The style is controlled by a [CSL](https://docs.citationstyles.org/en/stable/specification.html) stylesheet specified using the `--csl` option or the `csl` field in metadata. (If no stylesheet is specified, the `chicago-author-date` style will be used by default.) The citation processing transformation may be applied before or after filters or Lua filters (see `--filter`, `--lua-filter`): these transformations are applied in the order they appear on the command line. For more information, see the section on [Citations](https://pandoc.org/demo/example1.html#citations).
+Process the citations in the file, replacing them with rendered citations and adding a bibliography. Citation processing will not take place unless bibliographic data is supplied, either through an external file specified using the `--bibliography` option or the `bibliography` field in metadata, or via a `references` section in metadata containing a list of citations in CSL YAML format with Markdown formatting. The style is controlled by a [CSL](https://docs.citationstyles.org/en/stable/specification.html) stylesheet specified using the `--csl` option or the `csl` field in metadata. (If no stylesheet is specified, the `chicago-author-date` style will be used by default.) The citation processing transformation may be applied before or after filters or Lua filters (see `--filter`, `--lua-filter`): these transformations are applied in the order they appear on the command line. For more information, see the section on [Citations](https://pandoc.org/demo/example1.html#citations).
 
 `--bibliography=`_FILE_
 
-Set the `bibliography` field in the document's metadata to *FILE*, overriding any value set in the metadata. If you supply this argument multiple times, each *FILE* will be added to bibliography. If *FILE* is a URL, it will be fetched via HTTP. If *FILE* is not found relative to the working directory, it will be sought in the resource path (see `--resource-path`).
+Set the `bibliography` field in the document's metadata to *FILE*, overriding any value set in the metadata. If you supply this argument multiple times, each *FILE* will be added to bibliography. If *FILE* is a URL, it will be fetched via HTTP. If *FILE* is not found relative to the working directory, it will be sought in the resource path (see `--resource-path`).
 
 `--csl=`_FILE_
 
-Set the `csl` field in the document's metadata to *FILE*, overriding any value set in the metadata. (This is equivalent to `--metadata csl=FILE`.) If *FILE* is a URL, it will be fetched via HTTP. If *FILE* is not found relative to the working directory, it will be sought in the resource path (see `--resource-path`) and finally in the `csl` subdirectory of the pandoc user data directory.
+Set the `csl` field in the document's metadata to *FILE*, overriding any value set in the metadata. (This is equivalent to `--metadata csl=FILE`.) If *FILE* is a URL, it will be fetched via HTTP. If *FILE* is not found relative to the working directory, it will be sought in the resource path (see `--resource-path`) and finally in the `csl` subdirectory of the pandoc user data directory.
 
 `--citation-abbreviations=`_FILE_
 
-Set the `citation-abbreviations` field in the document's metadata to *FILE*, overriding any value set in the metadata. (This is equivalent to `--metadata citation-abbreviations=FILE`.) If *FILE* is a URL, it will be fetched via HTTP. If *FILE* is not found relative to the working directory, it will be sought in the resource path (see `--resource-path`) and finally in the `csl` subdirectory of the pandoc user data directory.
+Set the `citation-abbreviations` field in the document's metadata to *FILE*, overriding any value set in the metadata. (This is equivalent to `--metadata citation-abbreviations=FILE`.) If *FILE* is a URL, it will be fetched via HTTP. If *FILE* is not found relative to the working directory, it will be sought in the resource path (see `--resource-path`) and finally in the `csl` subdirectory of the pandoc user data directory.
 
 `--natbib`
 
-Use [`natbib`](https://ctan.org/pkg/natbib) for citations in LaTeX output. This option is not for use with the `--citeproc` option or with PDF output. It is intended for use in producing a LaTeX file that can be processed with [`bibtex`](https://ctan.org/pkg/bibtex).
+Use [`natbib`](https://ctan.org/pkg/natbib) for citations in LaTeX output. This option is not for use with the `--citeproc` option or with PDF output. It is intended for use in producing a LaTeX file that can be processed with [`bibtex`](https://ctan.org/pkg/bibtex).
 
 `--biblatex`
 
-Use [`biblatex`](https://ctan.org/pkg/biblatex) for citations in LaTeX output. This option is not for use with the `--citeproc` option or with PDF output. It is intended for use in producing a LaTeX file that can be processed with [`bibtex`](https://ctan.org/pkg/bibtex) or [`biber`](https://ctan.org/pkg/biber).
+Use [`biblatex`](https://ctan.org/pkg/biblatex) for citations in LaTeX output. This option is not for use with the `--citeproc` option or with PDF output. It is intended for use in producing a LaTeX file that can be processed with [`bibtex`](https://ctan.org/pkg/bibtex) or [`biber`](https://ctan.org/pkg/biber).
 
 ## Math rendering in HTML
 
-The default is to render TeX math as far as possible using Unicode characters. Formulas are put inside a `span` with `class="math"`, so that they may be styled differently from the surrounding text if needed. However, this gives acceptable results only for basic math, usually you will want to use `--mathjax` or another of the following options.
+The default is to render TeX math as far as possible using Unicode characters. Formulas are put inside a `span` with `class="math"`, so that they may be styled differently from the surrounding text if needed. However, this gives acceptable results only for basic math, usually you will want to use `--mathjax` or another of the following options.
 
 `--mathjax`[`=`*URL*]
 
-Use [MathJax](https://www.mathjax.org/) to display embedded TeX math in HTML output. TeX math will be put between `\(...\)` (for inline math) or `\[...\]` (for display math) and wrapped in `<span>` tags with class `math`. Then the MathJax JavaScript will render it. The *URL* should point to the `MathJax.js` load script. If a *URL* is not provided, a link to the Cloudflare CDN will be inserted.
+Use [MathJax](https://www.mathjax.org/) to display embedded TeX math in HTML output. TeX math will be put between `\(...\)` (for inline math) or `\[...\]` (for display math) and wrapped in `<span>` tags with class `math`. Then the MathJax JavaScript will render it. The *URL* should point to the `MathJax.js` load script. If a *URL* is not provided, a link to the Cloudflare CDN will be inserted.
 
 `--mathml`
 
-Convert TeX math to [MathML](https://www.w3.org/Math/) (in `epub3`, `docbook4`, `docbook5`, `jats`, `html4` and `html5`). This is the default in `odt` output. Note that currently only Firefox and Safari (and select e-book readers) natively support MathML.
+Convert TeX math to [MathML](https://www.w3.org/Math/) (in `epub3`, `docbook4`, `docbook5`, `jats`, `html4` and `html5`). This is the default in `odt` output. Note that currently only Firefox and Safari (and select e-book readers) natively support MathML.
 
 `--webtex`[`=`*URL*]
 
-Convert TeX formulas to `<img>` tags that link to an external script that converts formulas to images. The formula will be URL-encoded and concatenated with the URL provided. For SVG images you can for example use `--webtex https://latex.codecogs.com/svg.latex?`. If no URL is specified, the CodeCogs URL generating PNGs will be used (`https://latex.codecogs.com/png.latex?`). Note: the `--webtex` option will affect Markdown output as well as HTML, which is useful if you're targeting a version of Markdown without native math support.
+Convert TeX formulas to `<img>` tags that link to an external script that converts formulas to images. The formula will be URL-encoded and concatenated with the URL provided. For SVG images you can for example use `--webtex https://latex.codecogs.com/svg.latex?`. If no URL is specified, the CodeCogs URL generating PNGs will be used (`https://latex.codecogs.com/png.latex?`). Note: the `--webtex` option will affect Markdown output as well as HTML, which is useful if you're targeting a version of Markdown without native math support.
 
 `--katex`[`=`*URL*]
 
-Use [KaTeX](https://github.com/Khan/KaTeX) to display embedded TeX math in HTML output. The *URL* is the base URL for the KaTeX library. That directory should contain a `katex.min.js` and a `katex.min.css` file. If a *URL* is not provided, a link to the KaTeX CDN will be inserted.
+Use [KaTeX](https://github.com/Khan/KaTeX) to display embedded TeX math in HTML output. The *URL* is the base URL for the KaTeX library. That directory should contain a `katex.min.js` and a `katex.min.css` file. If a *URL* is not provided, a link to the KaTeX CDN will be inserted.
 
 `--gladtex`
 
-Enclose TeX math in `<eq>` tags in HTML output. The resulting HTML can then be processed by [GladTeX](https://humenda.github.io/GladTeX/) to produce SVG images of the typeset formulas and an HTML file with these images embedded.
+Enclose TeX math in `<eq>` tags in HTML output. The resulting HTML can then be processed by [GladTeX](https://humenda.github.io/GladTeX/) to produce SVG images of the typeset formulas and an HTML file with these images embedded.
 
 ```
 pandoc -s --gladtex input.md -o myfile.htex
@@ -760,7 +760,7 @@ gladtex -d image_dir myfile.htex
 
 `--dump-args`
 
-Print information about command-line arguments to *stdout*, then exit. This option is intended primarily for use in wrapper scripts. The first line of output contains the name of the output file specified with the `-o` option, or `-` (for *stdout*) if no output file was specified. The remaining lines contain the command-line arguments, one per line, in the order they appear. These do not include regular pandoc options and their arguments, but do include any options appearing after a `--` separator at the end of the line.
+Print information about command-line arguments to *stdout*, then exit. This option is intended primarily for use in wrapper scripts. The first line of output contains the name of the output file specified with the `-o` option, or `-` (for *stdout*) if no output file was specified. The remaining lines contain the command-line arguments, one per line, in the order they appear. These do not include regular pandoc options and their arguments, but do include any options appearing after a `--` separator at the end of the line.
 
 `--ignore-args`
 
@@ -811,7 +811,7 @@ If pandoc completes successfully, it will return exit code 0. Nonzero exit codes
 
 # Default files
 
-The `--defaults` option may be used to specify a package of options. Here is a sample defaults file demonstrating all of the fields that may be used:
+The `--defaults` option may be used to specify a package of options. Here is a sample defaults file demonstrating all of the fields that may be used:
 
 ```
 from: markdown+emoji
@@ -1001,9 +1001,9 @@ In fields that expect a file path (or list of file paths), the following syntax 
 csl:  ${HOME}/mycsldir/special.csl
 ```
 
-`${USERDATA}` may also be used; this will always resolve to the user data directory that is current when the defaults file is parsed, regardless of the setting of the environment variable `USERDATA`.
+`${USERDATA}` may also be used; this will always resolve to the user data directory that is current when the defaults file is parsed, regardless of the setting of the environment variable `USERDATA`.
 
-`${.}` will resolve to the directory containing the default file itself. This allows you to refer to resources contained in that directory:
+`${.}` will resolve to the directory containing the default file itself. This allows you to refer to resources contained in that directory:
 
 ```
 epub-cover-image: ${.}/cover.jpg
@@ -1014,47 +1014,47 @@ resource-path:
                 # containing this defaults file
 ```
 
-This environment variable interpolation syntax *only* works in fields that expect file paths.
+This environment variable interpolation syntax *only* works in fields that expect file paths.
 
-Default files can be placed in the `defaults` subdirectory of the user data directory and used from any directory. For example, one could create a file specifying defaults for writing letters, save it as `letter.yaml` in the `defaults` subdirectory of the user data directory, and then invoke these defaults from any directory using `pandoc --defaults letter` or `pandoc -dletter`.
+Default files can be placed in the `defaults` subdirectory of the user data directory and used from any directory. For example, one could create a file specifying defaults for writing letters, save it as `letter.yaml` in the `defaults` subdirectory of the user data directory, and then invoke these defaults from any directory using `pandoc --defaults letter` or `pandoc -dletter`.
 
 When multiple defaults are used, their contents will be combined.
 
-Note that, where command-line arguments may be repeated (`--metadata-file`, `--css`, `--include-in-header`, `--include-before-body`, `--include-after-body`, `--variable`, `--metadata`, `--syntax-definition`), the values specified on the command line will combine with values specified in the defaults file, rather than replacing them.
+Note that, where command-line arguments may be repeated (`--metadata-file`, `--css`, `--include-in-header`, `--include-before-body`, `--include-after-body`, `--variable`, `--metadata`, `--syntax-definition`), the values specified on the command line will combine with values specified in the defaults file, rather than replacing them.
 
 # Templates
 
-When the `-s/--standalone` option is used, pandoc uses a template to add header and footer material that is needed for a self-standing document. To see the default template that is used, just type
+When the `-s/--standalone` option is used, pandoc uses a template to add header and footer material that is needed for a self-standing document. To see the default template that is used, just type
 
 ```
 pandoc -D *FORMAT*
 ```
 
-where *FORMAT* is the name of the output format. A custom template can be specified using the `--template` option. You can also override the system default templates for a given output format *FORMAT* by putting a file `templates/default.*FORMAT*` in the user data directory (see `--data-dir`, above). *Exceptions:*
+where *FORMAT* is the name of the output format. A custom template can be specified using the `--template` option. You can also override the system default templates for a given output format *FORMAT* by putting a file `templates/default.*FORMAT*` in the user data directory (see `--data-dir`, above). *Exceptions:*
 
-- For `odt` output, customize the `default.opendocument` template.
-- For `pdf` output, customize the `default.latex` template (or the `default.context` template, if you use `-t context`, or the `default.ms` template, if you use `-t ms`, or the `default.html` template, if you use `-t html`).
-- `docx` and `pptx` have no template (however, you can use `--reference-doc` to customize the output).
+- For `odt` output, customize the `default.opendocument` template.
+- For `pdf` output, customize the `default.latex` template (or the `default.context` template, if you use `-t context`, or the `default.ms` template, if you use `-t ms`, or the `default.html` template, if you use `-t html`).
+- `docx` and `pptx` have no template (however, you can use `--reference-doc` to customize the output).
 
-Templates contain *variables*, which allow for the inclusion of arbitrary information at any point in the file. They may be set at the command line using the `-V/--variable` option. If a variable is not set, pandoc will look for the key in the document's metadata, which can be set using either [YAML metadata blocks](https://pandoc.org/demo/example1.html#extension-yaml_metadata_block) or with the `-M/--metadata` option. In addition, some variables are given default values by pandoc. See [Variables](https://pandoc.org/demo/example1.html#variables) below for a list of variables used in pandoc's default templates.
+Templates contain *variables*, which allow for the inclusion of arbitrary information at any point in the file. They may be set at the command line using the `-V/--variable` option. If a variable is not set, pandoc will look for the key in the document's metadata, which can be set using either [YAML metadata blocks](https://pandoc.org/demo/example1.html#extension-yaml_metadata_block) or with the `-M/--metadata` option. In addition, some variables are given default values by pandoc. See [Variables](https://pandoc.org/demo/example1.html#variables) below for a list of variables used in pandoc's default templates.
 
-If you use custom templates, you may need to revise them as pandoc changes. We recommend tracking the changes in the default templates, and modifying your custom templates accordingly. An easy way to do this is to fork the [pandoc-templates](https://github.com/jgm/pandoc-templates) repository and merge in changes after each pandoc release.
+If you use custom templates, you may need to revise them as pandoc changes. We recommend tracking the changes in the default templates, and modifying your custom templates accordingly. An easy way to do this is to fork the [pandoc-templates](https://github.com/jgm/pandoc-templates) repository and merge in changes after each pandoc release.
 
 ## Template syntax
 
 ### Comments
 
-Anything between the sequence `$--` and the end of the line will be treated as a comment and omitted from the output.
+Anything between the sequence `$--` and the end of the line will be treated as a comment and omitted from the output.
 
 ### Delimiters
 
-To mark variables and control structures in the template, either `$`...`$` or `${`...`}` may be used as delimiters. The styles may also be mixed in the same template, but the opening and closing delimiter must match in each case. The opening delimiter may be followed by one or more spaces or tabs, which will be ignored. The closing delimiter may be followed by one or more spaces or tabs, which will be ignored.
+To mark variables and control structures in the template, either `$`...`$` or `${`...`}` may be used as delimiters. The styles may also be mixed in the same template, but the opening and closing delimiter must match in each case. The opening delimiter may be followed by one or more spaces or tabs, which will be ignored. The closing delimiter may be followed by one or more spaces or tabs, which will be ignored.
 
-To include a literal `$` in the document, use `$$`.
+To include a literal `$` in the document, use `$$`.
 
 ### Interpolated variables
 
-A slot for an interpolated variable is a variable name surrounded by matched delimiters. Variable names must begin with a letter and can contain letters, numbers, `_`, `-`, and `.`. The keywords `it`, `if`, `else`, `endif`, `for`, `sep`, and `endfor` may not be used as variable names. Examples:
+A slot for an interpolated variable is a variable name surrounded by matched delimiters. Variable names must begin with a letter and can contain letters, numbers, `_`, `-`, and `.`. The keywords `it`, `if`, `else`, `endif`, `for`, `sep`, and `endfor` may not be used as variable names. Examples:
 
 ```
 $foo$
@@ -1067,16 +1067,16 @@ ${foo_bar.baz-bim}
 ${ foo }
 ```
 
-Variable names with periods are used to get at structured variable values. So, for example, `employee.salary` will return the value of the `salary` field of the object that is the value of the `employee` field.
+Variable names with periods are used to get at structured variable values. So, for example, `employee.salary` will return the value of the `salary` field of the object that is the value of the `employee` field.
 
 - If the value of the variable is simple value, it will be rendered verbatim. (Note that no escaping is done; the assumption is that the calling program will escape the strings appropriately for the output format.)
 - If the value is a list, the values will be concatenated.
-- If the value is a map, the string `true` will be rendered.
+- If the value is a map, the string `true` will be rendered.
 - Every other value will be rendered as the empty string.
 
 ### Conditionals
 
-A conditional begins with `if(variable)` (enclosed in matched delimiters) and ends with `endif` (enclosed in matched delimiters). It may optionally contain an `else` (enclosed in matched delimiters). The `if` section is used if `variable` has a non-empty value, otherwise the `else` section is used (if present). Examples:
+A conditional begins with `if(variable)` (enclosed in matched delimiters) and ends with `endif` (enclosed in matched delimiters). It may optionally contain an `else` (enclosed in matched delimiters). The `if` section is used if `variable` has a non-empty value, otherwise the `else` section is used (if present). Examples:
 
 ```
 $if(foo)$bar$endif$
@@ -1104,7 +1104,7 @@ no foo!
 ${endif}
 ```
 
-The keyword `elseif` may be used to simplify complex nested conditionals:
+The keyword `elseif` may be used to simplify complex nested conditionals:
 
 ```
 $if(foo)$

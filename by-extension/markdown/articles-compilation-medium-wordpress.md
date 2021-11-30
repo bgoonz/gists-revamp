@@ -45,7 +45,7 @@ This extension converts Markdown files to pdf, html, png or jpeg files.
 
 [Japanese README](https://github.com/yzane/vscode-markdown-pdf/blob/master/README.ja.md)
 
-### Table of Contents
+### Table of Contents
 
 - [Features](https://trusting-aryabhata-e5438d.netlify.app/#features)
 - [Install](https://trusting-aryabhata-e5438d.netlify.app/#install)
@@ -93,7 +93,7 @@ OUTPUT
 
 ### markdown-it-include
 
-Include markdown fragment files: `:[alternate-text]([https://github.com/yzane/vscode-markdown-pdf/blob/master/relative-path-to-file.md](https://github.com/yzane/vscode-markdown-pdf/blob/master/relative-path-to-file.md))`.
+Include markdown fragment files: `:[alternate-text]([https://github.com/yzane/vscode-markdown-pdf/blob/master/relative-path-to-file.md](https://github.com/yzane/vscode-markdown-pdf/blob/master/relative-path-to-file.md))`.
 
     ├── [plugins]
     │  └── README.md
@@ -318,9 +318,9 @@ CategoryOption name[Configuration scope](https://code.visualstudio.com/api/refer
 
 #### `markdown-pdf.highlightStyle`
 
-- Set the style file name. for example: github.css, monokai.css …
+- Set the style file name. for example: github.css, monokai.css …
 - [file name list](https://github.com/isagalaev/highlight.js/tree/master/src/styles)
-- demo site : [https://highlightjs.org/static/demo/](https://highlightjs.org/static/demo/)
+- demo site : [https://highlightjs.org/static/demo/](https://highlightjs.org/static/demo/)
 
   "markdown-pdf.highlightStyle": "github.css",
 
@@ -371,11 +371,11 @@ CategoryOption name[Configuration scope](https://code.visualstudio.com/api/refer
 #### `markdown-pdf.footerTemplate`
 
 - HTML template for the print header and footer
-- `<span class='date'></span>` : formatted print date
-- `<span class='title'></span>` : markdown file name
-- `<span class='url'></span>` : markdown full path name
-- `<span class='pageNumber'></span>` : current page number
-- `<span class='totalPages'></span>` : total pages in the document
+- `<span class='date'></span>` : formatted print date
+- `<span class='title'></span>` : markdown file name
+- `<span class='url'></span>` : markdown full path name
+- `<span class='pageNumber'></span>` : current page number
+- `<span class='totalPages'></span>` : total pages in the document
 
   "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span class='title'></span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
 
@@ -432,7 +432,7 @@ CategoryOption name[Configuration scope](https://code.visualstudio.com/api/refer
   "markdown-pdf.margin.right": "1cm",
   "markdown-pdf.margin.left": "1cm",
 
-### PNG JPEG options
+### PNG JPEG options
 
 - png and jpeg only. [puppeteer page.screenshot options](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions)
 
@@ -486,7 +486,7 @@ CategoryOption name[Configuration scope](https://code.visualstudio.com/api/refer
 
 - Plantuml server. e.g. [http://localhost:8080](http://localhost:8080/)
 - Default: [http://www.plantuml.com/plantuml](http://www.plantuml.com/plantuml)
-- For example, to run Plantuml Server locally [#139](https://github.com/yzane/vscode-markdown-pdf/issues/139) :
+- For example, to run Plantuml Server locally [#139](https://github.com/yzane/vscode-markdown-pdf/issues/139) :
 - `docker run -d -p 8080:8080 plantuml/plantuml-server:jetty`
 - [plantuml/plantuml-server — Docker Hub](https://hub.docker.com/r/plantuml/plantuml-server/)
 
@@ -506,7 +506,7 @@ CategoryOption name[Configuration scope](https://code.visualstudio.com/api/refer
 
 ### FAQ
 
-### How can I change emoji size ?
+### How can I change emoji size ?
 
 1.  Add the following to your stylesheet which was specified in the markdown-pdf.styles
 
@@ -514,7 +514,7 @@ CategoryOption name[Configuration scope](https://code.visualstudio.com/api/refer
     height: 2em;
     }
 
-### Auto guess encoding of files
+### Auto guess encoding of files
 
 Using `files.autoGuessEncoding` option of the Visual Studio Code is useful because it automatically guesses the character code. See [files.autoGuessEncoding](https://code.visualstudio.com/updates/v1_11#_auto-guess-encoding-of-files)
 
@@ -571,7 +571,7 @@ NEXT
 
 ---
 
-### Ruby for Visual Studio Code
+### Ruby for Visual Studio Code
 
 This extension provides enhanced Ruby language and debugging support for Visual Studio Code.
 
@@ -592,7 +592,7 @@ Search for `ruby` in the [VS Code Extension Gallery](https://code.visualstudio.c
 
 By default, the extension provides sensible defaults for developers to get a better experience using Ruby in Visual Studio Code. However, these defaults do not include settings to enable features like formatting or linting. Given how dynamic Ruby projects can be (are you using rvm, rbenv, chruby, or asdf? Are your gems globally installed or via bundler? etc), the extension requires additional configuration for additional features to be available.
 
-### Using the Language Server
+### Using the Language Server
 
 It is **highly recommended** that you enable the Ruby language server (via the Use Language Server setting or `ruby.useLanguageServer` config option). The server does not default to enabled while it is under development but it provides a significantly better experience than the legacy extension functionality. See [docs/language-server.md](https://github.com/rubyide/vscode-ruby/blob/master/docs/language-server.md) for more information on the language server.
 
@@ -651,7 +651,7 @@ This is [**Visual Studio Code**](https://github.com/Microsoft/vscode) extension,
 
 ### Commands
 
-### Make main header
+### Make main header
 
 - Default Shortcut:
 - `**Shift**` + `**Alt**` + `**X**`
@@ -665,7 +665,7 @@ This is [**Visual Studio Code**](https://github.com/Microsoft/vscode) extension,
 - Default Style:
 - `/* ------------------------------ Example text ------------------------------ */`
 
-### Insert solid line
+### Insert solid line
 
 - Default Shortcut:
 - `**Alt**` + `**Y**`
@@ -763,7 +763,7 @@ Automatically finds, parses and provides code actions and code completion for al
 
 ---
 
-### PostgreSQL for Visual Studio Code
+### PostgreSQL for Visual Studio Code
 
 Welcome to PostgreSQL for Visual Studio Code! An extension for developing PostgreSQL with functionalities including:
 
@@ -791,7 +791,7 @@ You can save the query results to JSON, csv or Excel.
 
 ### Offline Installation
 
-The extension will download and install a required PostgreSQL Tools Service package during activation. For machines with no Internet access, you can still use the extension by choosing the `Install from VSIX...` option in the Extension view and installing a bundled release from our [Releases](https://github.com/Microsoft/vscode-postgresql/releases) page. Each operating system has a .vsix file with the required service included. Pick the file for your OS, download and install to get started. We recommend you choose a full release and ignore any alpha or beta releases as these are our daily builds used in testing.
+The extension will download and install a required PostgreSQL Tools Service package during activation. For machines with no Internet access, you can still use the extension by choosing the `Install from VSIX...` option in the Extension view and installing a bundled release from our [Releases](https://github.com/Microsoft/vscode-postgresql/releases) page. Each operating system has a .vsix file with the required service included. Pick the file for your OS, download and install to get started. We recommend you choose a full release and ignore any alpha or beta releases as these are our daily builds used in testing.
 
 ### Support
 
@@ -801,7 +801,7 @@ Support for this extension is provided on our [GitHub Issue Tracker](https://git
 
 ---
 
-### JS JSX Snippets
+### JS JSX Snippets
 
 ### Supported languages (file extensions)
 
@@ -818,7 +818,7 @@ After install this snippets add this inside your settings
 
 ### Snippets
 
-### Import and export
+### Import and export
 
 TriggerContent`impimport name from 'module';imdimport { } from 'module';`
 
@@ -854,7 +854,7 @@ NEXT
 
 ### Indent-Rainbow
 
-### A simple extension to make indentation more readable
+### A simple extension to make indentation more readable
 
 If you like this plugin, please consider a small donation:
 
@@ -992,7 +992,7 @@ Path Intellisense removes the file extension by default if the statement is a im
         "path-intellisense.extensionOnImport": true,
     }
 
-### Show hidden files
+### Show hidden files
 
 Per default, hidden files are not displayed. Set this to true to show hidden files.
 
@@ -1008,7 +1008,7 @@ If set to false, PathIntellisense ignores the default “files.exclude” as wel
         }
     }
 
-### Auto slash when navigating to folder
+### Auto slash when navigating to folder
 
 Per default, the autocompletion does not add a slash after a directory.
 
@@ -1076,13 +1076,13 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
 
     }
 
-#### `fo⇥` for of loop (ES6)
+#### `fo⇥` for of loop (ES6)
 
     for (let ${1:key} of ${2:source}) {
       ${0}
     }
 
-#### `wl⇥` while loop
+#### `wl⇥` while loop
 
     while (${1:condition}) {
       ${0}
@@ -1098,7 +1098,7 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
 
 ### Functions
 
-#### `fn⇥` named function
+#### `fn⇥` named function
 
     function ${1:name}(${2:arguments}) {
       ${0}
@@ -1110,11 +1110,11 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
       ${0}
     })(${2});
 
-#### `af⇥` arrow function (ES6)
+#### `af⇥` arrow function (ES6)
 
     (${1:arguments}) => ${2:statement}
 
-#### `afb⇥` arrow function with body (ES6)
+#### `afb⇥` arrow function with body (ES6)
 
     (${1:arguments}) => {
     \t${0}
@@ -1146,9 +1146,9 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
       ${0}
     });
 
-### Objects and classes
+### Objects and classes
 
-#### `cls⇥` class (ES6)
+#### `cls⇥` class (ES6)
 
     class ${1:name} {
       constructor(${2:arguments}) {
@@ -1156,7 +1156,7 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
       }
     }
 
-#### `cex⇥` child class (ES6)
+#### `cex⇥` child class (ES6)
 
     class ${1:name} extends ${2:base} {
       constructor(${2:arguments}) {
@@ -1165,19 +1165,19 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
       }
     }
 
-#### `med⇥` method (ES6 syntax)
+#### `med⇥` method (ES6 syntax)
 
     ${1:method}(${2:arguments}) {
       ${0}
     }
 
-#### `get⇥` getter (ES6 syntax)
+#### `get⇥` getter (ES6 syntax)
 
     get ${1:property}() {
       ${0}
     }
 
-#### `set⇥` setter (ES6 syntax)
+#### `set⇥` setter (ES6 syntax)
 
     set ${1:property}(${2:value}) {
       ${0}
@@ -1189,7 +1189,7 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
       ${0}
     };
 
-#### `oa⇥` Object assign
+#### `oa⇥` Object assign
 
     Object.assign(${1:dest}, ${2:source})
 
@@ -1199,7 +1199,7 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
 
 ### Promises
 
-#### `rp⇥` return Promise (ES6)
+#### `rp⇥` return Promise (ES6)
 
     return new Promise((resolve, reject) => {
       ${0}
@@ -1207,19 +1207,19 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
 
 ### ES6 modules
 
-#### `ex⇥` module export
+#### `ex⇥` module export
 
     export ${1:member};
 
-#### `exd⇥` module default export
+#### `exd⇥` module default export
 
     export default ${1:member};
 
-#### `im⇥` module import
+#### `im⇥` module import
 
     import ${1:*} from '${2:module}';
 
-#### `ima⇥` module import as
+#### `ima⇥` module import as
 
     import ${1:*} as ${2:name} from '${3:module}';
 
@@ -1259,11 +1259,11 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
 
 ### Node.js specifics
 
-#### `re⇥` require a module
+#### `re⇥` require a module
 
     require('${1:module}');
 
-#### `cre⇥` require a module
+#### `cre⇥` require a module
 
     const ${1:name} = require('${2:module}');
 
@@ -1273,7 +1273,7 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
 
 ### Miscellaneous
 
-#### `us⇥` use strict
+#### `us⇥` use strict
 
     'use strict';
 
@@ -1281,7 +1281,7 @@ Turbo-js for vscode is forked from [atom-turbo-javascript](https://github.com/ex
 
 Optinionated set of JS snippets. Originally forked from [https://github.com/gaboesquivel/atom-standardjs-snippets,](https://github.com/gaboesquivel/atom-standardjs-snippets,) but we’ve added couple more. Also these are not using special characters because vscode doesn’t accept them in the snippets.
 
-### Standard JavaScript Snippets for Visual studio code
+### Standard JavaScript Snippets for Visual studio code
 
 A collection of javascript and react snippets for faster JavaScript development in [Visual studio Code](https://code.visualstudio.com/).
 
@@ -1397,13 +1397,13 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       ${0}
     }
 
-#### `fl⇥` for loop (ES6)
+#### `fl⇥` for loop (ES6)
 
     for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length ${1:i} < ${2:len}; ${1:i}++) {
       ${0}
     }
 
-#### `fi⇥` for in loop (ES6)
+#### `fi⇥` for in loop (ES6)
 
     for (let ${1:key} in ${2:source}) {
       if (${2:source}.hasOwnProperty(${1:key})) {
@@ -1411,13 +1411,13 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       }
     }
 
-#### `fo⇥` for of loop (ES6)
+#### `fo⇥` for of loop (ES6)
 
     for (const ${1:key} of ${2:source}) {
       ${0}
     }
 
-#### `wl⇥` while loop
+#### `wl⇥` while loop
 
     while (${1:condition}) {
       ${0}
@@ -1462,19 +1462,19 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     function (${1:arguments}) {${0}}
 
-#### `fn⇥` named function
+#### `fn⇥` named function
 
     function ${1:name}(${2:arguments}) {
       ${0}
     }
 
-#### `asf⇥` async function
+#### `asf⇥` async function
 
     async function (${1:arguments}) {
       ${0}
     }
 
-#### `aa⇥` async arrow function with
+#### `aa⇥` async arrow function with
 
     async (${1:arguments}) => {
       ${0}
@@ -1492,19 +1492,19 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       ${0}
     })(${2})
 
-#### `fa⇥` function apply
+#### `fa⇥` function apply
 
     ${1:fn}.apply(${2:this}, ${3:arguments})
 
-#### `fc⇥` function call
+#### `fc⇥` function call
 
     ${1:fn}.call(${2:this}, ${3:arguments})
 
-#### `fb⇥` function bind
+#### `fb⇥` function bind
 
     ${1:fn}.bind(${2:this}, ${3:arguments})
 
-#### `af⇥` arrow function (ES6)
+#### `af⇥` arrow function (ES6)
 
     (${1:arguments}) => ${2:statement}
 
@@ -1516,25 +1516,25 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     ({${1:arguments}}) => ${1:arguments}
 
-#### `f⇥` arrow function with body (ES6)
+#### `f⇥` arrow function with body (ES6)
 
     (${1:arguments}) => {
       ${0}
     }
 
-#### `fr⇥` arrow function with return (ES6)
+#### `fr⇥` arrow function with return (ES6)
 
     (${1:arguments}) => {
       return ${0}
     }
 
-#### `gf⇥` generator function (ES6)
+#### `gf⇥` generator function (ES6)
 
     function* (${1:arguments}) {
       ${0}
     }
 
-#### `gfn⇥` named generator function (ES6)
+#### `gfn⇥` named generator function (ES6)
 
     function* ${1:name}(${1:arguments}) {
       ${0}
@@ -1542,51 +1542,51 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
 ### Iterables
 
-#### `fe⇥` forEach loop
+#### `fe⇥` forEach loop
 
     ${1:iterable}.forEach((${2:item}) => {
       ${0}
     })
 
-#### `map⇥` map function
+#### `map⇥` map function
 
     ${1:iterable}.map((${2:item}) => {
       ${0}
     })
 
-#### `reduce⇥` reduce function
+#### `reduce⇥` reduce function
 
     ${1:iterable}.reduce((${2:previous}, ${3:current}) => {
       ${0}
     }${4:, initial})
 
-#### `filter⇥` filter function
+#### `filter⇥` filter function
 
     ${1:iterable}.filter((${2:item}) => {
       ${0}
     })
 
-#### `find⇥` ES6 find function
+#### `find⇥` ES6 find function
 
     ${1:iterable}.find((${2:item}) => {
       ${0}
     })
 
-#### `every⇥` every function
+#### `every⇥` every function
 
     ${1:iterable}.every((${2:item}) => {
       ${0}
     })
 
-#### `some⇥` some function
+#### `some⇥` some function
 
     ${1:iterable}.some((${2:item}) => {
       ${0}
     })
 
-### Objects and classes
+### Objects and classes
 
-#### `cs⇥` class (ES6)
+#### `cs⇥` class (ES6)
 
     class ${1:name} {
       constructor(${2:arguments}) {
@@ -1594,7 +1594,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       }
     }
 
-#### `csx⇥` extend a class (ES6)
+#### `csx⇥` extend a class (ES6)
 
     class ${1:name} extends ${2:base} {
       constructor(${2:arguments}) {
@@ -1603,25 +1603,25 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       }
     }
 
-#### `m⇥` method (ES6 syntax)
+#### `m⇥` method (ES6 syntax)
 
     ${1:method} (${2:arguments}) {
       ${0}
     }
 
-#### `get⇥` getter (ES6 syntax)
+#### `get⇥` getter (ES6 syntax)
 
     get ${1:property} () {
       ${0}
     }
 
-#### `set⇥` setter (ES6 syntax)
+#### `set⇥` setter (ES6 syntax)
 
     set ${1:property} (${2:value}) {
       ${0}
     }
 
-#### `gs⇥` getter and setter (ES6 syntax)
+#### `gs⇥` getter and setter (ES6 syntax)
 
     get ${1:property} () {
       ${0}
@@ -1672,27 +1672,27 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     return ${0}
 
-#### `rt⇥` return this
+#### `rt⇥` return this
 
     return this
 
-#### `rn⇥` return null
+#### `rn⇥` return null
 
     return null
 
-#### `ro⇥` return new object
+#### `ro⇥` return new object
 
     return {
       ${0}
     }
 
-#### `ra⇥` return new array
+#### `ra⇥` return new array
 
     return [
       ${0}
     ]
 
-#### `rp⇥` return Promise (ES6)
+#### `rp⇥` return Promise (ES6)
 
     return new Promise((resolve, reject) => {
       ${0}
@@ -1720,7 +1720,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     Promise.all(${1:value})
 
-#### `p⇥` new Promise (ES6)
+#### `p⇥` new Promise (ES6)
 
     new Promise((resolve, reject) => {
       ${0}
@@ -1740,31 +1740,31 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
 ### ES6 modules
 
-#### `e⇥` module export
+#### `e⇥` module export
 
     export ${1:member}
 
-#### `ed⇥` module default export
+#### `ed⇥` module default export
 
     export default ${1:member}
 
-#### `edf⇥` module default export function
+#### `edf⇥` module default export function
 
     export default function ${1:name} (${2:arguments}) {\n\t${0}\n}
 
-#### `ec⇥` module export const
+#### `ec⇥` module export const
 
     export const ${1:member} = ${2:value}
 
-#### `ef⇥` module export const
+#### `ef⇥` module export const
 
     export function ${1:member} (${2:arguments}) {\n\t${0}\n}
 
-#### `im⇥` module import
+#### `im⇥` module import
 
     import ${1:*} from '${2:module}'
 
-#### `ia⇥` module import as
+#### `ia⇥` module import as
 
     import ${1:*} as ${2:name} from '${3:module}'
 
@@ -1772,7 +1772,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     import { $1 } from '${2:module}'
 
-### BDD testing (Mocha, Jasmine, etc.)
+### BDD testing (Mocha, Jasmine, etc.)
 
 #### `desc⇥` describe
 
@@ -1786,7 +1786,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       ${0}
     })
 
-#### `itd⇥` “it” with callback
+#### `itd⇥` “it” with callback
 
     it('${1:description}', (done) => {
       ${0}
@@ -1798,25 +1798,25 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       ${0}
     })
 
-#### `bf⇥` before test suite
+#### `bf⇥` before test suite
 
     before(function () {
       ${0}
     })
 
-#### `bfe⇥` before each test
+#### `bfe⇥` before each test
 
     beforeEach(function () {
       ${0}
     })
 
-#### `aft⇥` after test suite
+#### `aft⇥` after test suite
 
     after(function () {
       ${0}
     })
 
-#### `afe⇥` after each test
+#### `afe⇥` after each test
 
     afterEach(function () {
       ${0}
@@ -1922,22 +1922,22 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
 ### Node.js
 
-#### `cb⇥` Node.js style callback
+#### `cb⇥` Node.js style callback
 
     function (err, ${1:value}) {
       if (err) throw err
       t${0}
     }
 
-#### `rq⇥` require a module
+#### `rq⇥` require a module
 
     require('${1:module}')
 
-#### `cr⇥` require and assign a module
+#### `cr⇥` require and assign a module
 
     const ${1:module} = require('${1:module}')
 
-#### `em⇥` export member
+#### `em⇥` export member
 
     exports.${1:name} = ${2:value}
 
@@ -1945,7 +1945,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     module.exports = ${1:name}
 
-#### `on⇥` attach an event handler
+#### `on⇥` attach an event handler
 
     ${1:emitter}.on('${2:event}', (${3:arguments}) => {
       ${0}
@@ -1953,7 +1953,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
 ### Miscellaneous
 
-#### `uss⇥` use strict
+#### `uss⇥` use strict
 
     'use strict'
 
@@ -1961,7 +1961,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     JSON.stringify($0)
 
-#### `jp⇥` JSON Parse
+#### `jp⇥` JSON Parse
 
     JSON.parse($0)
 
@@ -1977,7 +1977,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
     await Promise.all(${1:array}.map((async ${2:value}) => {\n\t${0}\n}))
 
-#### `ast⇥` Promise sleep
+#### `ast⇥` Promise sleep
 
     await new Promise((r) => setTimeout(r, ${0}))
 
@@ -2009,7 +2009,7 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
 
 Are only enabled in `jsx` or `tsx` files. If you write your jsx in `js` files, you need to copy the `react.json` files manually and add it to your custom snippets.
 
-### Why do we include them here?
+### Why do we include them here?
 
 If you’re not writing react, including them should not really bother you because they are not short as the regular JS snippets. Also IMHO react is the leading solution for FE apps deserves to be included by default, because any JS dev will have to write some react eventually over the course of his/her careeer. By having them in a single package we can easily make sure -there aren’t any conflicts in the trigger prefixes.
 
@@ -2036,7 +2036,7 @@ TriggerContent`ptaPropTypes.array,ptarPropTypes.array.isRequired,ptbPropTypes.bo
 
 ---
 
-### C/C++ for Visual Studio Code
+### C/C++ for Visual Studio Code
 
 #### [Repository](https://github.com/microsoft/vscode-cpptools) | [Issues](https://github.com/microsoft/vscode-cpptools/issues) | [Documentation](https://code.visualstudio.com/docs/languages/cpp) | [Code Samples](https://github.com/microsoft/vscode-cpptools/tree/master/Code%20Samples) | [Offline Installers](https://github.com/microsoft/vscode-cpptools/releases)
 
@@ -2057,7 +2057,7 @@ C/C++ extension tutorials per compiler and platform \* [Microsoft C++ compiler (
 - [Debug configuration](https://code.visualstudio.com/docs/cpp/launch-json-reference)
 - [Enable logging for IntelliSense or debugging](https://code.visualstudio.com/docs/cpp/enable-logging-cpp)
 
-### Questions and feedback
+### Questions and feedback
 
 [**FAQs**](https://code.visualstudio.com/docs/cpp/faq-cpp)  
 Check out the FAQs before filing a question.
@@ -2081,7 +2081,7 @@ PackagePlatform`cpptools-linux.vsix`Linux 64-bit`cpptools-linux-armhf.vsix`Linux
 
 Contributions are always welcome. Please see our [contributing guide](https://github.com/Microsoft/vscode-cpptools/blob/master/CONTRIBUTING.md) for more details.
 
-### Microsoft Open Source Code of Conduct
+### Microsoft Open Source Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact opencode@microsoft.com with any additional questions or comments.
 
@@ -2123,31 +2123,31 @@ Install the Visual Studio IntelliCode extension by clicking the install link on 
 
 That’s it — just open a TypeScript or JavaScript file, and start editing.
 
-### For Python users:
+### For Python users:
 
 1.  Set up the Python extension by following the steps in the [Python tutorial](https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites)
 2.  Start editing Python files, you should get a prompt to enable the Microsoft Python Language Server, which itself is a preview release.
 3.  Reload Visual Studio Code after enabling the language server
 4.  After the language server finishes initializing, you should now see recommended completions
 
-### For Java users:
+### For Java users:
 
 1.  Set up the Java extension for Visual Studio Code by following the steps in the [Java Tutorial](https://code.visualstudio.com/docs/java/java-tutorial)
 2.  Make sure that you have a minimum of Java 8 Update 151 installed
 3.  Reload Visual Studio Code after enabling the Java extension
 4.  After the Java language server finishes initializing, you should now see recommended completions
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
-#### A condensed summary of the entire “JavaScript the Good Parts” book
+#### A condensed summary of the entire “JavaScript the Good Parts” book
 
 I hope these notes help shed some light and save some time… (this is the most I could condense an entire book)
 
 ![](https://webdevhubcom.files.wordpress.com/2021/04/7cdec-15oamo6qxv9dztouc5oe-uq.png)
 
-### Chapter 1 — Good Parts
+### Chapter 1 — Good Parts
 
 > _Most programming languages contain good parts and bad parts. I discovered that I could be a better programmer by using only the good parts and avoiding the bad parts. After all, how can you build something good out of bad parts?_
 
@@ -2223,7 +2223,7 @@ for (myvariable in object) {
 
 - For `expression ? expression2 : expression3`, if expression is _truthy_, execute expresion2; if it’s _falsy_, execute expression3
 - _Invocation_ is `(expression1, expression2, etc)`
-- _refinement_ is either `.name` or `[expression]` as used in an array
+- _refinement_ is either `.name` or `[expression]` as used in an array
 
 ### Literals
 
@@ -2376,7 +2376,7 @@ function name (parameterA, parameterB){
 
 #### Method Invocation Pattern
 
-- When a function is stored as the property of the object (invoked with a dot . expression) it is called on and is called a _method_
+- When a function is stored as the property of the object (invoked with a dot . expression) it is called on and is called a _method_
 
 myObject.incrementFunction();
 
@@ -2450,7 +2450,7 @@ var sum = add.apply(null, array); //value of 'this' is null and value of sum is 
 
 //inside the function for (i = 0; i < arguments.length; i++) { dosomething; //e.g. sum +=arguments\[i\] }
 
-- `arguments` lacks all the array methods except .length because of a bug
+- `arguments` lacks all the array methods except .length because of a bug
 
 ### Return
 
@@ -2574,7 +2574,7 @@ var Serial_maker = function() {
 
 - Some methods return nothing, albeit `undefined`
 - If we alter these methods to return `this` instead of `undefined`, they return the object which can then be passed to the next method, e.g `getElement(myBox).move(350,150)` gets the element and then passes is to the _move_ function for the next action
-- This enables _cascades_, where you call many methods on the same object in sequence because the object is passed from one method to the next (usually separated by `.` as above)
+- This enables _cascades_, where you call many methods on the same object in sequence because the object is passed from one method to the next (usually separated by `.` as above)
 - Cascades also stop you from trying to do too much in one method and makes your code more descriptive
 
 ### Curry
@@ -2721,7 +2721,7 @@ Arrays have their own literal format and their own set of methods ([Chapter 8 
 ### Length
 
 - If you add to the array, the `length` property will increase to contain the new element – it will not give an error
-- If you set the `.length` to a smaller number than the current length of the array, it will delete any properties with a subscript >= the new `length`
+- If you set the `.length` to a smaller number than the current length of the array, it will delete any properties with a subscript >= the new `length`
 - The `push()` method is sometimes useful to add an element to the end of an array
 - `numbers.push('go') //adds the element 'go' to the end of the numbers array`
 
@@ -2791,7 +2791,7 @@ Breaking it down one portion ([factor](https://github.com/Lambda-April/Unsorted-
 - `ˆ` indicates the beginning of a string
 - `(?:([A-Za-z]+):)?`
 - `(?:...)` indicates a [_noncapturing group_](https://github.com/Lambda-April/Unsorted-Notes/blob/main), where the ‘…’ is replaced by the group that you wish to match, but not save to anywhere
-- Suffix `?` indicates the group is optional, so it could or could not exist in the string – it could even exist more than once
+- Suffix `?` indicates the group is optional, so it could or could not exist in the string – it could even exist more than once
 - `()` around the _(\[A-Za-z\]+)_ indicates a [_capturing group_](https://github.com/Lambda-April/Unsorted-Notes/blob/main) which is therefore captured and placed in the `result` array
 - They groups are placed in the array in order, so the first will appear in `result[1]`
 - Noncapturing groups are preferred to capturing groups because capturing groups have a performance penalty (on account of saving to the result array)
@@ -2799,7 +2799,7 @@ Breaking it down one portion ([factor](https://github.com/Lambda-April/Unsorted-
 - `[...]` indicates a character class
 - `A-Za-z` is a character class containing all 26 letters of the alphabet in both upper and lower case
 - Suffix `+` means character class will be matched _one or more times_
-- Suffix `:` is matched literally (so the letters will be followed by a colon in this case)
+- Suffix `:` is matched literally (so the letters will be followed by a colon in this case)
 - `(\/{0,3})`
 - `\/` The backslash `\` _escapes_ the forward slash `/` (which traditionally symbolises the end of the regular expression literal) and together they indicate that the forward slash `/` should be matched
 - Suffix `{0,3}` means the slash `/` will be matched between 0 and 3 times
@@ -2808,15 +2808,15 @@ Breaking it down one portion ([factor](https://github.com/Lambda-April/Unsorted-
 - Note that the hyphen was escaped with a backslash `\-` as hyphens usually denote a _range_ but in this case is a hyphen within the expression
 - `(?::(\d+))?`
 - `\d` represents a _digit character_ so this will be a sequence of _one or more_ digit characters (as per the `+`)
-- The digit characters will be immediately preceded by a colon `:`
+- The digit characters will be immediately preceded by a colon `:`
 - `(\d+)` will be the fourth capturing group in this expression, it is also _optional_ (`?`) and inside a non-capturing group `(?:...)`
 - `(?:\/([ˆ?#]*))?`
 - Another optional group (`?`), beginning with a literal slash `/` (escaped by the backslash)
-- The `ˆ` at the beginning of character class `[ˆ?#]` means it includes _all_ characters *except* ? and #
+- The `ˆ` at the beginning of character class `[ˆ?#]` means it includes _all_ characters *except* ? and #
 - This actually leaves the regexp open to attack because too many characters are included in the character class
 - The `*` indicates the character class will appear _zero or more_ times
 - `(?:\?([ˆ#]*))?`
-- We’ve seen everything here before: An optional capturing group starting with a literal `?` (escaped by the backslash) with zero or more characters that are not #
+- We’ve seen everything here before: An optional capturing group starting with a literal `?` (escaped by the backslash) with zero or more characters that are not #
 - `(?:#(.*))?`
 - Final optional group beginning with a `#`
 - `.` matches any character _except a line ending character_
@@ -2864,7 +2864,7 @@ In `"into".match(/in|int/);`, the _in_ will be a match so it doesn’t even look
 
 #### Regexp Sequence
 
-A _regexp sequence_ is made up of one or more regexp [factors](https://github.com/Lambda-April/Unsorted-Notes/blob/main). If there are no quantifiers after the factor (like `?`, `*` or `+`), the factor will be matched one time.
+A _regexp sequence_ is made up of one or more regexp [factors](https://github.com/Lambda-April/Unsorted-Notes/blob/main). If there are no quantifiers after the factor (like `?`, `*` or `+`), the factor will be matched one time.
 
 #### Regexp Factor
 
@@ -2872,7 +2872,7 @@ A _regexp sequence_ is made up of one or more regexp [factors](https://github.co
 
 It’s essentially a portion of the full `RegExp`, like what we broke down the regexp above into.
 
-- The following special characters must all be _escaped_ with a backslash `\` to be taken literally, or they will take on an alternative meaning: / \[ \] ( ) { } ? + \* | . ˆ$
+- The following special characters must all be _escaped_ with a backslash `\` to be taken literally, or they will take on an alternative meaning: / \[ \] ( ) { } ? + \* | . ˆ$
 - The `\` prefix does not make letters or digits literal
 - When unescaped:
 - `.` matches any character except line-ending
@@ -2908,7 +2908,7 @@ Four kinds of groups:
 - Can shorten specification of all 32 ASCII special characters to \[!-/:-@\[-\`{-˜\] (note that the \` in this piece of code is a back-tick)
 - Also allows `ˆ` as the first character after the opening `[` to mean _NOT_ the characters in the character set
 
-#### Regexp Class Escape
+#### Regexp Class Escape
 
 There are _specific_ characters that must be escaped in a character class: — / \[ \] ˆ
 
@@ -2918,7 +2918,7 @@ A _quantifier_ at the end of a factor indicates how many times the factor should
 
 - A number in curly braces means the factor should match that many times, so `/o{3}` matches _ooo_
 - Two comma-seperated numbers in curly braces provide the _range_ of times a factor should match, so `{3,5}` indicates it will match 3, 4 or 5 times
-- _Zero or one_ times (same thing as saying something is optional) can be `?` or `{0,1}`
+- _Zero or one_ times (same thing as saying something is optional) can be `?` or `{0,1}`
 - _Zero or more_ times can be `*` or `{0,}`
 - _One or more_ times can be `+` or `{1,}`
 
@@ -2950,7 +2950,7 @@ _Modifies_ the array by reversing the order of the elements.
 
 #### array.shift()
 
-Removes the _first_ element of the array (does not leave a hole in the array — same effect as using the `.splice(a,b)` method) and returns that first element.
+Removes the _first_ element of the array (does not leave a hole in the array — same effect as using the `.splice(a,b)` method) and returns that first element.
 
 #### array.slice(start, end)
 
@@ -3090,7 +3090,7 @@ If `replaceValue` is a:
 
 #### string.search(regexp)
 
-Similar to `.indexOf(string)` but takes a `regexp` instead of a `string`, returning the position of the first match (or -1 if there is no match). The `g` flag is ignored.
+Similar to `.indexOf(string)` but takes a `regexp` instead of a `string`, returning the position of the first match (or -1 if there is no match). The `g` flag is ignored.
 
 #### string.slice(start, end)
 
@@ -3166,7 +3166,7 @@ Each feature you add to something has a lot of different costs (documentation co
 
 > _We cope with the complexity of feature-driven design by finding and sticking with the good parts. For example, microwaves do a ton of different things, but most people just use one setting, the timer and the clock. So why not design with just the good parts?_
 
-### Appendix A — the Awful Parts
+### Appendix A — the Awful Parts
 
 Need to know what all the pitfalls are with these parts.
 
@@ -3267,11 +3267,11 @@ JavaScript objects inherit members from the prototype chain so they are _never t
 
 To test for membership without prototype chain involvement, use the `hasOwnProperty` method or limit your results (for example, to specific types like number so you know you’re not dragging in object members from up the prototype for example if that’s what’s causing the problem).
 
-### Appendix B — the Bad Parts
+### Appendix B — the Bad Parts
 
 Avoid these altogether
 
-- `==` and `!=`: Don’t function properly when result is false, use `===` or `!==` instead
+- `==` and `!=`: Don’t function properly when result is false, use `===` or `!==` instead
 - `with` statement: Intended to provide a shortcut to properties of an object but results vary every time it is run
 - `eval`: Adds unnecessary complication and compromises the security of the application
 - Giving string arguments to `setTimeout` and `setInterval` should also be avoided as this makes them act like `eval`
@@ -3336,7 +3336,7 @@ Having read through this appendix (you can read more about [JSLint here](http://
 
 ---
 
-#### Here’s a REPL to practice with:
+#### Here’s a REPL to practice with:
 
 [https://replit.com/@bgoonz/lambda-prep#README.html](https://replit.com/@bgoonz/lambda-prep#README.html)
 
@@ -3348,16 +3348,16 @@ Having read through this appendix (you can read more about [JSLint here](http://
 
 ### Hello World
 
-- **console.log** : command used to print something onto the screen.
-- **syntax** : the exact arrangement of the symbols, characters, and keywords in our code.
-- **//** : notation for creating a code comment in JS.
-- **code comment** : useful for annotating pieces of code to explain how something works, ignored by computer.
+- **console.log** : command used to print something onto the screen.
+- **syntax** : the exact arrangement of the symbols, characters, and keywords in our code.
+- **//** : notation for creating a code comment in JS.
+- **code comment** : useful for annotating pieces of code to explain how something works, ignored by computer.
 
 > **_“Simplicity is prerequisite for reliability.” — Edsger W. Dijkstra_**
 
 ---
 
-### The Number Data Type
+### The Number Data Type
 
 The **number** data type in JS is used to represent any numerical values, including integers and decimal numbers.
 
@@ -3373,17 +3373,17 @@ Operators are the symbols that perform particular operations.
 
 JS evaluates more complex expressions using the general math order of operations aka PEMDAS.
 
-- **PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.
+- **PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.
 - _To force a specific order of operation, use the group operator ( ) around a part of the expression._
 
-**Modulo** : Very useful operation to check divisibility of numbers, check for even & odd, whether a number is prime, and much more! _(Discrete Math concept, circular problems can be solved with modulo)_
+**Modulo** : Very useful operation to check divisibility of numbers, check for even & odd, whether a number is prime, and much more! _(Discrete Math concept, circular problems can be solved with modulo)_
 
 - Whenever you have a smaller number % a larger number, the answer will just be the initial small number.
 - `console.log(7 % 10); // => 7;`
 
 ---
 
-### The String Data Type
+### The String Data Type
 
 The **string** data type is a primitive data type that used to represent textual data.
 
@@ -3394,9 +3394,9 @@ The **string** data type is a primitive data type that used to represent textual
 - `'That's a bad string'; (invalid)`
 - Alt. way to add other quotes within strings is to use template literals.
 - `` `This is a temp'l'ate literal ${function}` // use ${} to invoke functions within.``
-- **.length** : property that can be appended to data to return the length.
+- **.length** : property that can be appended to data to return the length.
 - empty strings have a length of zero.
-- **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].
+- **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].
 
 `console.log("bootcamp"[0]); // => "b"`
 
@@ -3408,30 +3408,30 @@ The **string** data type is a primitive data type that used to represent textual
 
 - we can pass expressions through the brackets as well since JS always evaluates expressions first.
 - The index of the last character of a string is always one less than it’s length.
-- **indexOf()** : method used to find the first index of a given character within a string.
+- **indexOf()** : method used to find the first index of a given character within a string.
 - `console.log("bagel".indexOf("b")); // => 0 console.log("bagel".indexOf("z")); // => -1`
 - if the character inside the indexOf() search does not exist in the string, the output will be -1.
 - the indexOf() search will return the first instanced index of the the char in the string.
-- **concatenate** : word to describe joining strings together into a single string.
+- **concatenate** : word to describe joining strings together into a single string.
 
 ---
 
-### The Boolean Data Type
+### The Boolean Data Type
 
 The **boolean** data type is the simplest data type since there are only two values: **true** and **false**.
 
 - **Logical Operators** (B*oolean Operators*) are used to establish logic in our code.
-- **!** (not) : reverses a boolean value.
+- **!** (not) : reverses a boolean value.
 - `console.log(!true); // => false console.log(!!false); // => false`
 - **&&** (and) **Truth Table**
 
 ![](https://webdevhubcom.files.wordpress.com/2021/04/f25af-1aw4icm7-fq7znecbvh3ftw.png)
 
-- **Logical Order of Operations** : JS will evaluate !, then &&, then ||.
-- **De Morgan’s Law** : Common mistake in boolean logic is incorrectly distributing ! across parentheses.
+- **Logical Order of Operations** : JS will evaluate !, then &&, then ||.
+- **De Morgan’s Law** : Common mistake in boolean logic is incorrectly distributing ! across parentheses.
 - `!(A || B) === !A && !B; !(A && B) === !A || !B;`
-- In summary, to correctly distribute ! across parentheses we must also flip the operation within.
-- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.
+- In summary, to correctly distribute ! across parentheses we must also flip the operation within.
+- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.
 - `console.log(true || !false); // => stops after it sees "true ||"`
 
 ---
@@ -3455,8 +3455,8 @@ All comparison operators will result in a boolean output.
 
 **Difference between == and ===**
 
-- **\===** : Strict Equality, will only return true if the two comparisons are entirely the same.
-- **\==** : Loose Equality, will return true even if the values are of a different type, due to coercion. (Avoid using this)
+- **\===** : Strict Equality, will only return true if the two comparisons are entirely the same.
+- **\==** : Loose Equality, will return true even if the values are of a different type, due to coercion. (Avoid using this)
 
 ---
 
@@ -3480,9 +3480,9 @@ Variables are used to store information to be referenced and manipulated in a pr
     num /= 4; // same as num = num / 4
     num *= 7; // same as num = num * 7
 
-- In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.
-- **declaration** : process of simply introducing a variable name.
-- **initialization** : process of both declaring and assigning a variable on the same line.
+- In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.
+- **declaration** : process of simply introducing a variable name.
+- **initialization** : process of both declaring and assigning a variable on the same line.
 
 ---
 
@@ -3490,12 +3490,12 @@ Variables are used to store information to be referenced and manipulated in a pr
 
 A function is a procedure of code that will run when called. Functions are used so that we do not have to rewrite code to do the same thing over and over. (Think of them as ‘subprograms’)
 
-- **Function Declaration** : Process when we first initially write our function.
+- **Function Declaration** : Process when we first initially write our function.
 - Includes three things:
 - Name of the function.
 - A list of _parameters_ ()
 - The code to execute {}
-- **Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)
+- **Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)
 - JS evaluates code top down, left to right.
 - When we execute a declared function later on in our program we refer to this as **invoking** our function.
 - Every function in JS returns undefined unless otherwise specified.
@@ -3506,8 +3506,8 @@ A function is a procedure of code that will run when called. Functions are used 
 
 ### Parameters and Arguments
 
-- **Parameters** : Comma seperated variables specified as part of a function’s declaration.
-- **Arguments** : Values passed to the function when it is invoked.
+- **Parameters** : Comma seperated variables specified as part of a function’s declaration.
+- **Arguments** : Values passed to the function when it is invoked.
 - _If the number of arguments passed during a function invocation is different than the number of parameters listed, it will still work._
 - However, is there are not enough arguments provided for parameters our function will likely yield **Nan**.
 
@@ -3532,7 +3532,7 @@ A all encompassing list of tools and resources for web developers
 - [Git Flight Rules](https://github.com/k88hudson/git-flight-rules): A guide for astronauts (now, programmers using Git) about what to do when things go wrong.
 - [browser-2020](https://github.com/luruke/browser-2020): Things you can do with a browser in 2020 ![☕️](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2615.svg)
 
-### ![📦](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f4e6.svg) Finding and vetting npm packages
+### ![📦](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f4e6.svg) Finding and vetting npm packages
 
 - [pika](https://www.pikapkg.com/): A searchable catalog of modern “module” packages on npm
 - [npms](https://npms.io/): A better and open source search for node packages
@@ -3570,7 +3570,7 @@ A all encompassing list of tools and resources for web developers
 
 ### JavaScript
 
-### Useful JS links
+### Useful JS links
 
 - [JS module import/export syntax](https://stackoverflow.com/a/34842087/91359)
 - [JavaScript Event KeyCodes](http://keycode.info/)
@@ -3580,7 +3580,7 @@ A all encompassing list of tools and resources for web developers
 - [modern-js-cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet)
 - [HTML DOM](https://htmldom.dev/): Common tasks of managing HTML DOM with vanilla JavaScript
 
-### Framework agnostic packages
+### Framework agnostic packages
 
 ### General utilities
 
@@ -3669,7 +3669,7 @@ A all encompassing list of tools and resources for web developers
 - [tornis](https://github.com/robb0wen/tornis): Tornis helps you watch and respond to changes in your browser’s viewport ![🌲](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f332.svg)
 - [actual](https://github.com/ryanve/actual): Determine actual CSS media query breakpoints via JavaScript
 
-### Media and Images
+### Media and Images
 
 - [images-loaded](https://github.com/awcross/images-loaded): Wait for images to load using promises. No dependencies.
 - [lazysizes](https://github.com/aFarkas/lazysizes): High performance and SEO friendly lazy loader for images (responsive and normal), iframes and more, that detects any visibility changes triggered through user interaction, CSS or JavaScript without configuration.
@@ -3782,7 +3782,7 @@ A all encompassing list of tools and resources for web developers
 - [react-typescript-cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet): a cheatsheet for react users using typescript with react for the first (or nth!) time
 - [clean-code-typescript](https://github.com/labs42io/clean-code-typescript): Clean Code concepts adapted for TypeScript
 
-### Command Line, Terminal and shells
+### Command Line, Terminal and shells
 
 [Fish shell](https://fishshell.com/): The user-friendly command line shell
 
@@ -3791,7 +3791,7 @@ A all encompassing list of tools and resources for web developers
 - [Starship](https://starship.rs/): Cross-Shell Prompt
 - [tide](https://github.com/IlanCosman/tide): ![🌊](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f30a.svg) A modern prompt manager for the Fish shell
 
-### Creating CLI apps
+### Creating CLI apps
 
 - [gluegun](https://github.com/infinitered/gluegun): A delightful toolkit for building Node-powered CLIs
 - [inquirer](https://github.com/SBoudrias/Inquirer.js): A collection of common interactive command line user interfaces
@@ -3825,7 +3825,7 @@ A all encompassing list of tools and resources for web developers
 
 ### Testing
 
-### Code formatting and linting
+### Code formatting and linting
 
 - [Prettier](https://prettier.io/)
 - [precise-commits](https://github.com/nrwl/precise-commits): Painlessly apply Prettier by only formatting lines you have modified anyway!
@@ -3842,7 +3842,7 @@ A all encompassing list of tools and resources for web developers
 - [envinfo](https://github.com/tabrindle/envinfo): Generate a report about your development environment for debugging and issue reporting
 - [mkcert](https://github.com/FiloSottile/mkcert): A simple zero-config tool to make locally trusted development certificates with any names you’d like
 
-### Progressive Web Apps
+### Progressive Web Apps
 
 - [Workbox](https://developers.google.com/web/tools/workbox/) & ([repo](https://github.com/GoogleChrome/workbox)): JavaScript libraries for Progressive Web Apps
 
@@ -3903,7 +3903,7 @@ A all encompassing list of tools and resources for web developers
 - [Squoosh](https://squoosh.app/)
 - [SVGOMG](https://jakearchibald.github.io/svgomg/): SVGO’s Missing GUI
 
-### Conversions and unicode
+### Conversions and unicode
 
 ### Features and feature detection
 
@@ -3970,7 +3970,7 @@ Accessibility is an extremely important part of any web project. While the SOW, 
 - [Adaptive Modular Scale](https://codepen.io/getflourish/full/vXqewy/)
 - [Type Scale — A Visual Calculator](http://type-scale.com/)
 
-### IDEs and Text Editors
+### IDEs and Text Editors
 
 ### VS Code
 
@@ -3987,7 +3987,7 @@ Accessibility is an extremely important part of any web project. While the SOW, 
 - [fantasque-sans](https://github.com/belluzj/fantasque-sans)
 - [Jet Brains Mono](https://github.com/JetBrains/JetBrainsMono)
 
-### Code colour schemes
+### Code colour schemes
 
 ### Regular expressions
 
@@ -3997,11 +3997,11 @@ Accessibility is an extremely important part of any web project. While the SOW, 
 
 [https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)
 
-### OR GitHub/gists where I host similar content:
+### OR GitHub/gists where I host similar content:
 
 [https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)[https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)
 
@@ -4019,7 +4019,7 @@ Here’s the repo that the website is built on:
 
 Here’s a live code editor where you can mess with any of the examples…
 
-### Resources (article content below):
+### Resources (article content below):
 
 #### Videos
 
@@ -4055,7 +4055,7 @@ Here’s a live code editor where you can mess with any of the examples…
 
 > _In contrary to algorithms, when you look at the time complexity for data structures you need to express it for several operations that you can do with data structures. It can be adding elements, deleting elements, accessing an element or even searching for an element._
 
-### _Dependent on data_
+### _Dependent on data_
 
 > _Something that data structure and algorithms have in common when talking about time complexity is that they are both dealing with data. When you deal with data you become dependent on them and as a result the time complexity is also dependent of the data that you received. To solve this problem we talk about 3 different time complexity._
 
@@ -4063,7 +4063,7 @@ Here’s a live code editor where you can mess with any of the examples…
 - **The worst-case complexity: when the data looks the worst**
 - **The average-case complexity: when the data looks average**
 
-### Big O notation
+### Big O notation
 
 The complexity is usually expressed with the Big O notation. The wikipedia page about this subject is pretty complex but you can find here a good summary of the different complexity for the most famous data structures and sorting algorithms.
 
@@ -4085,7 +4085,7 @@ O(1) O(n) O(1) O(n)
 
 ![](https://webdevhubcom.files.wordpress.com/2021/03/b95b2-1-bj2hu-czo2kuzu4x5a53g.png)
 
-indexvalue0 … this is the first value, stored at zero position
+indexvalue0 … this is the first value, stored at zero position
 
 1.  The index of an array **runs in sequence**
 
@@ -4105,7 +4105,7 @@ The main difference is that object’s “index” need not be numbers and is no
 
 ![](https://webdevhubcom.files.wordpress.com/2021/03/c8daa-1kvzkd2zrgea_47igw8hq8g.png)
 
-### The Hash Table
+### The Hash Table
 
 ![](https://webdevhubcom.files.wordpress.com/2021/03/bd913-0avbxlafocsv6vsl5.gif)
 
@@ -4151,7 +4151,7 @@ Access Search Insertion Deletion
 
 > _The code_
 
-### The Singly Linked List
+### The Singly Linked List
 
 ![](https://webdevhubcom.files.wordpress.com/2021/03/5081e-0fls64rv-xq19avca.gif)
 
@@ -4168,7 +4168,7 @@ O(n) O(n) O(1) O(1)
 
 > _The code_
 
-### The Doubly Linked List
+### The Doubly Linked List
 
 ![](https://webdevhubcom.files.wordpress.com/2021/03/6878a-0tqxir-l_itig3wp-.gif)
 
@@ -4269,15 +4269,15 @@ Graph
 
 > _The code_
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 #### [CODEX](http://medium.com/codex)
 
 #### VSCode Extensions that are indispensable in JavaScript development
 
-### Back and Forth
+### Back and Forth
 
 - Adds backwards and forwards buttons to the toolbar in VSCode
 - [https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth "https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth")
@@ -4311,7 +4311,7 @@ Graph
 
 ### Code Runner
 
-> Run code snippet or code file for multiple languages: **C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6, Ruby, Go, Lua, Groovy, PowerShell, BAT/CMD, BASH/SH, F# Script, F# (.NET Core), C# Script, C# (.NET Core), VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml Script, R, AppleScript, Elixir, Visual Basic .NET, Clojure, Haxe, Objective-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Free Pascal, Haskell, Nim, D, Lisp, Kit, V, SCSS, Sass, CUDA, Less, Fortran**, and custom command
+> Run code snippet or code file for multiple languages: **C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6, Ruby, Go, Lua, Groovy, PowerShell, BAT/CMD, BASH/SH, F# Script, F# (.NET Core), C# Script, C# (.NET Core), VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml Script, R, AppleScript, Elixir, Visual Basic .NET, Clojure, Haxe, Objective-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Free Pascal, Haskell, Nim, D, Lisp, Kit, V, SCSS, Sass, CUDA, Less, Fortran**, and custom command
 
 ### Features
 
@@ -4339,7 +4339,7 @@ Graph
 
 ### Usages
 
-#### To run code:
+#### To run code:
 
 - use shortcut `Ctrl+Alt+N`
 - or press `F1` and then select/type `Run Code`,
@@ -4425,7 +4425,7 @@ Here are just some of the **features** that GitLens provides,
 
 ---
 
-### Markdown All in One
+### Markdown All in One
 
 - Everything you need to help you write markdown files in VSCode
 - [https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one "https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one")
@@ -4442,7 +4442,7 @@ Here are just some of the **features** that GitLens provides,
 
 See full key binding list in the [keyboard shortcuts](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one#keyboard-shortcuts-1) section
 
-### Table of contents
+### Table of contents
 
 ![](https://cdn-images-1.medium.com/max/800/0*T1aP3qXU9HHLvrkZ.png)
 
@@ -4469,15 +4469,15 @@ See full key binding list in the [keyboard shortcuts](https://marketplace.visual
 
 **_Note_**: By default, this extension tries to determine indentation size for different lists according to [CommonMark Spec](https://spec.commonmark.org/0.29/#list-items). If you prefer to use a fixed tab size, please change the `list.indentationSize` setting.
 
-### Print Markdown to HTML
+### Print Markdown to HTML
 
 - Commands `Markdown: Print current document to HTML` and `Markdown: Print documents to HTML` (batch mode)
 - **Compatible** with other installed Markdown plugins (e.g. [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes)) The exported HTML should look the same as inside VSCode.
 - Use comment `<!-- title: Your Title -->` to specify a title of the exported HTML.
-- Plain links to `.md` files will be converted to `.html`.
+- Plain links to `.md` files will be converted to `.html`.
 - It’s recommended to print the exported HTML to PDF with browser (e.g. Chrome) if you want to share your documents with others.
 
-### GitHub Flavored Markdown
+### GitHub Flavored Markdown
 
 - Table formatter
 
@@ -4506,7 +4506,7 @@ Tip: also support the option `completion.root`
 
 ---
 
-### Mocah Test Explorer
+### Mocah Test Explorer
 
 - Lets you run mocha tests in the VSCode sidebar
 - [https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter "https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter")
@@ -4519,7 +4519,7 @@ Tip: also support the option `completion.root`
 
     {	"npm-intellisense.importES6": true,	"npm-intellisense.importQuotes": "'",	"npm-intellisense.importLinebreak": ";\r\n",	"npm-intellisense.importDeclarationType": "const",}
 
-### Import command (ES5)
+### Import command (ES5)
 
 ![](https://cdn-images-1.medium.com/max/800/0*srfRIxEbcL_yxBey.gif)
 
@@ -4540,7 +4540,7 @@ Tip: also support the option `completion.root`
 
     {	"npm-intellisense.importES6": true,	"npm-intellisense.importQuotes": "'",	"npm-intellisense.importLinebreak": ";\r\n",	"npm-intellisense.importDeclarationType": "const",}
 
-### Import command (ES5)
+### Import command (ES5)
 
 ![](https://cdn-images-1.medium.com/max/800/0*pCEaJc8pJmJi_dMk.gif)
 
@@ -4580,11 +4580,11 @@ Quokka.js is a developer productivity tool for rapid JavaScript / TypeScript pro
 
 [https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)
 
-### OR GitHub/gists where I host similar content:
+### OR GitHub/gists where I host similar content:
 
 [https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)[https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)
 
@@ -4594,9 +4594,9 @@ Quokka.js is a developer productivity tool for rapid JavaScript / TypeScript pro
 
 ![](https://cdn-images-1.medium.com/max/800/1*dTDrkYZJYhASUP2TTknAgA.png)
 
-> **… Speaking of which … stay tuned till the end of the article or skip down to it for a list of web development companies with reportedly fair hiring practices!**
+> **… Speaking of which … stay tuned till the end of the article or skip down to it for a list of web development companies with reportedly fair hiring practices!**
 
-#### Here’s parts one and two; they’re both much more technical in nature than this one!
+#### Here’s parts one and two; they’re both much more technical in nature than this one!
 
 [View at Medium.com](https://medium.com/star-gazers/the-web-developers-technical-interview-e347d7db3822)[View at Medium.com](https://medium.com/star-gazers/the-web-developers-technical-interview-e347d7db3822)
 
@@ -4616,7 +4616,7 @@ Quokka.js is a developer productivity tool for rapid JavaScript / TypeScript pro
 
 ---
 
-### What are some side projects you’re currently working on?
+### What are some side projects you’re currently working on?
 
 _Current Experience_
 
@@ -4648,7 +4648,7 @@ _Current Experience_
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Whether you’re a proactive communicator and a good planner of your time
 
-### How you strike a balance between multiple ongoing projects
+### How you strike a balance between multiple ongoing projects
 
 D**_escribe one or two instances where you had several projects running simultaneously and how you managed to prioritize different tasks, make progress, meet milestones, and work on iterations based on feedback._**
 
@@ -4678,7 +4678,7 @@ D**_escribe one or two instances where you had several projects running simultan
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Key accomplishments
 
-#### For the second question, showcase your excitement for the job. Hiring managers want to see your excitement for these reasons:
+#### For the second question, showcase your excitement for the job. Hiring managers want to see your excitement for these reasons:
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)1>_**Excitement will fuel your performance
 
@@ -4702,7 +4702,7 @@ D**_escribe one or two instances where you had several projects running simultan
 
 ---
 
-### Commitment to the company
+### Commitment to the company
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Are you passionate about the company and will you stay committed to this company? If the interviewer already asked you “Where do you see yourself in 5 years?” then you don’t have to stress too much about showing your long-term commitment when answering this question. However, if you haven’t had the opportunity to show your commitment to the company, the most organic way to show your commitment is to talk about your long term plans in the company. Here are some things you can talk about:_**
 
@@ -4714,7 +4714,7 @@ D**_escribe one or two instances where you had several projects running simultan
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Processes you’d like to participate in improving
 
-### Why should we hire you?
+### Why should we hire you?
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Ultimately, every single question interviewers ask you is related to this overarching question: “Why should we hire you?” Interviewers want to know, as confidently as possible, that you will be a good hire. Therefore, your answer should confirm that you’ll be a good hire.
 
@@ -4740,7 +4740,7 @@ D**_escribe one or two instances where you had several projects running simultan
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)!!!!!!!_**Practice, practice, and practice, but DO NOT TRY TO MEMORIZE YOUR PITCH!!!!!!!!!
 
-### ![📝](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f4dd.svg) Interview Etiquette & Other Tips
+### ![📝](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f4dd.svg) Interview Etiquette & Other Tips
 
 Nailing an interview takes more than just knowing how to answer common interview questions. You’ll also need to prepare questions of your own, think about salary, and get your communications right. Here’s how.
 
@@ -4770,7 +4770,7 @@ Professional growth opportunities
 
 ⮕Do senior engineers and engineering leads usually get promoted from within the company?
 
-### Closing questions and next steps
+### Closing questions and next steps
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Is there anything unclear or concerning about my background that I can help clarify?
 
@@ -4784,7 +4784,7 @@ Professional growth opportunities
 
 ---
 
-### Follow up ?????
+### Follow up ?????
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Depending on how many rounds of interviews you’ve gone through, you may feel differently about how close you are to getting the job. The closer you get to the end of the hiring process, the more likely it is for you to start feeling anxious due to higher expectations. As a result, you may be eager to follow up with the hiring manager regarding your interview results. With that said, there’s a fine line between showing your eager attitude and coming off as desperate.
 
@@ -4792,11 +4792,11 @@ Professional growth opportunities
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**There are four types of follow up emails you should send at different times after the interview: Thank you email, checking-in email, second follow up email, final follow up email.
 
-#### Thank you email
+#### Thank you email
 
 **A thank you email should be sent out on the same day of the interview or one day after your interview. The main purpose of this email is to show your excitement and appreciation. This email should be short and sweet and should include:**
 
-#### A thank you note for their time
+#### A thank you note for their time
 
 ⮕**A brief mention of the specific job you interviewed for**
 
@@ -4810,9 +4810,9 @@ Professional growth opportunities
 
 ---
 
-### **_Technical interview :_**
+### **_Technical interview :_**
 
-#### ⮕**_questions examine a candidate’s thought processes and assess what approaches they adopt to solve problems. The most common end-to-end software development questions are listed below._**
+#### ⮕**_questions examine a candidate’s thought processes and assess what approaches they adopt to solve problems. The most common end-to-end software development questions are listed below._**
 
 ### Here’s the repo that I use to practice my technical chops for interviews:
 
@@ -4844,7 +4844,7 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg) Ensure that you come across humbled from the failures, not exasperated and that you know better than everyone else — even if you truly feel this way! Explain how you tried to positively encourage your team to correct the course rather than staying silent and going with a consensus majority._**
 
-### **_3\. Based on the project, what programming languages / tools / services did you use? And why did you choose them?_**
+### **_3\. Based on the project, what programming languages / tools / services did you use? And why did you choose them?_**
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg) Questions like this are designed to allow you to showcase your way of thinking. The interviewer is looking to hear your ability to make choices based on rational decisions — so make sure that you show that you can do this!_**
 
@@ -4852,7 +4852,7 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg) Next, describe the goal of the project, and briefly go through your responsibilities when it came to the toolchain decision-making process. Within Agile work practices, it’s usually a team effort to decide the best programming languages/tools/services are the best fit for the project, within customer requirements. Outline the consultation process you went through with both the customer and your team to arrive at the best solutions._**
 
-### 4\. Describe the biggest toolchain-related challenge you encountered in the project:
+### 4\. Describe the biggest toolchain-related challenge you encountered in the project:
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Outline the situation, the goal you expected, and the reason why there was a challenge._**
 
@@ -4860,7 +4860,7 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Remember: the most important thing is not what you ultimately used, but how many options you referred to during the process, and which metrics you adopted to decide which tech to go for. Remember to share the pros and cons of your decision, and if, looking back now, whether you would do it differently._**
 
-### 5\. How would you design this system for scale?
+### 5\. How would you design this system for scale?
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)First of all, the interviewer would like to know the traffic level we’re expecting: 1,000, 100,000, or 10 million users per second? Think about the data expectations for each system user, database connections (blocking/nonblocking actions), downtime specifics, and cloud considerations (if any)._**
 
@@ -4868,7 +4868,7 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Different traffic levels may have different system architectures. List the options you think best fit your scenario and explain why you choose them. Many apps utilize a stripped-back product (which can be achieved through system architecture) when high traffic levels affect systems, rather than crashing the product completely or users experiencing unacceptable wait times._**
 
-### 6\. Testing: What is your process to test a code when developing a software or application? How do you decide the scope of your test case?
+### 6\. Testing: What is your process to test a code when developing a software or application? How do you decide the scope of your test case?
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)First, do your groundwork to ensure that you thoroughly understand the different testing types. Do you know your unit testing from your regression testing from your user acceptance testing? If you need to brush up, check out this great resource._**
 
@@ -4882,7 +4882,7 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 ### Monitoring
 
-### 7\. What kind of tools / services do you use for logging? What kind of data will you log? And what’s the next step when you get the log?
+### 7\. What kind of tools / services do you use for logging? What kind of data will you log? And what’s the next step when you get the log?
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Time for some details! When answering this question, give an example of a project that you’ve monitored before._**
 
@@ -4896,7 +4896,7 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 ---
 
-### What to avoid
+### What to avoid
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Complaining about having to handle the problem
 
@@ -4912,9 +4912,9 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 ### NOW; Here’s some for you guys to answer in the comments!
 
-#### 8\. Which logging services have you researched and used before?
+#### 8\. Which logging services have you researched and used before?
 
-#### 9\. Why did you choose or look into each particular logging service?
+#### 9\. Why did you choose or look into each particular logging service?
 
 #### 10\. Was your decision because of the scale, the features, or the size of the community?
 
@@ -4928,21 +4928,21 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 [https://gist.github.com/bgoonz/15a638abb3b4026abc8e5ca05f8d90f1](https://gist.github.com/bgoonz/15a638abb3b4026abc8e5ca05f8d90f1)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [View at Medium.com](https://medium.com/star-gazers/the-web-developers-technical-interview-e347d7db3822)[View at Medium.com](https://medium.com/star-gazers/the-web-developers-technical-interview-e347d7db3822)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [View at Medium.com](https://medium.com/star-gazers/the-web-developers-technical-interview-e347d7db3822)
 
-#### Translation if you read this today (3/21/2021) it will be exceedingly short… because it’s just gonna accumulate entries as I learn of them over time.
+#### Translation if you read this today (3/21/2021) it will be exceedingly short… because it’s just gonna accumulate entries as I learn of them over time.
 
 ![](https://cdn-images-1.medium.com/max/800/0*YcyGivGEhdeVNAUk.jpg)
 
 ---
 
-### 1.) Stack Overflow for Teams is now free forever for up to 50 users
+### 1.) Stack Overflow for Teams is now free forever for up to 50 users
 
 [**_https://stackoverflow.blog/2021/03/17/stack-overflow-for-teams-is-now-free-forever-for-up-to-50-users/_**](https://stackoverflow.blog/2021/03/17/stack-overflow-for-teams-is-now-free-forever-for-up-to-50-users/)
 
@@ -4982,13 +4982,13 @@ R**_emember to keep positive because the interviewers are always looking for con
 
 ### My personal favorite for it’s simplicity, versatility and capabilities.
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)No downloads, no configs, no setups
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)No downloads, no configs, no setups
 
 In your browser. Repl.it runs fully in your browser, so you can get started coding in seconds. No more ZIPs, PKGs, DMGs and WTFs.
 
-> Any OS, any device**_(I’m looking at you chromebook coders)_**. You can use Repl.it on macOS, Windows, Linux, or any other OS .
+> Any OS, any device**_(I’m looking at you chromebook coders)_**. You can use Repl.it on macOS, Windows, Linux, or any other OS .
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Clone, commit and push to any GitHub repo.
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Clone, commit and push to any GitHub repo.
 
 Repl from Repo. Get started with any Github repo, right from your browser. Commit and push without touching your terminal.
 
@@ -4996,17 +4996,17 @@ Repl from Repo. Get started with any Github repo, right from your browser. Commi
 
 **\>A new but fundamentally important feature**
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)[No-setup Unit Testing](https://blog.replit.com/unit-tests)
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)[No-setup Unit Testing](https://blog.replit.com/unit-tests)
 
 **\>Unit testing is a powerful way to verify that code works as intended and creates a quick feedback loop for development & learning. However, setting up a reproducible unit-testing environment is a time-consuming and delicate affair. Repl.it now features zero-setup unit testing!**
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)[HTTPS by default](https://blog.replit.com/https)
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)[HTTPS by default](https://blog.replit.com/https)
 
-#### In the example below I have 72 solved Javascript Leetcode Problems but REPL.IT can handle almost any language you can think of.
+#### In the example below I have 72 solved Javascript Leetcode Problems but REPL.IT can handle almost any language you can think of.
 
 [https://repl.it/@bgoonz/leetcode-level-1](https://repl.it/@bgoonz/leetcode-level-1)
 
-### Here’s another one that contains the Repl.it Docs:
+### Here’s another one that contains the Repl.it Docs:
 
 [https://replit.com/@bgoonz/replit-docs-1#curriculum/introHTMLCSS.md](https://replit.com/@bgoonz/replit-docs-1#curriculum/introHTMLCSS.md)
 
@@ -5016,7 +5016,7 @@ Repl from Repo. Get started with any Github repo, right from your browser. Commi
 
 > [**_jsFiddle_**](https://jsfiddle.net/) **_is a cloud-based JavaScript code playground that allows web developers to tweak their code and see the results of this tweaking in real time. The editor supports not only JavaScript and its variants but also HTML and CSS code, and it further supports popular JavaScript frameworks, such as jQuery, AngularJS, ReactiveJS and D3. The ad-supported site is also completely free to use._**
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Entering and running code
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Entering and running code
 
 > JSFiddle has the notion of panels (or tabs if you switch into the tabbed layout), there are 4 panels, 3 where you can enter code, and 1 to see the result.
 
@@ -5026,7 +5026,7 @@ Repl from Repo. Get started with any Github repo, right from your browser. Commi
 
 Once you enter code, just hit **Run** in the top actions bar, and the fourth panel with results will appear.
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Saving and Forking code
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Saving and Forking code
 
 - **Save** / **Update** will do what you think, it’ll save a new fiddle or update an existing one (and add a version number to it)
 - **Fork** will split out an existing fiddle into a new one, starting with version 0
@@ -5049,7 +5049,7 @@ Once you enter code, just hit **Run** in the top actions bar, and the fourth pan
 
 ![](https://cdn-images-1.medium.com/max/800/1*sl4vb3fP9-MErkioiCOyKQ.png)
 
-### Then just paste the embed code in an iframe and you’re good to go!
+### Then just paste the embed code in an iframe and you’re good to go!
 
 ![](https://cdn-images-1.medium.com/max/800/0*PjhrjtInF1dPudtO.png)
 
@@ -5063,13 +5063,13 @@ Once you enter code, just hit **Run** in the top actions bar, and the fourth pan
 
 > 🡩 **Alternatively, you can also use StackBlitz’s** [**Javascript SDK methods**](https://developer.stackblitz.com/docs/platform/embedding#open-and-embed-stackblitz-projects) **for easily embedding StackBlitz projects on the page & avoid all the hassles of creating/configuring iframes.**
 
-H**ere’s a sample project of mine, it’s a medium clone… _(So Metta)_… feel free to write a post… or don’t …but either way … as you can see… Stack Blitz enables you to write serious web applications in a fraction of the time it would take with a conventional setup.**
+H**ere’s a sample project of mine, it’s a medium clone… _(So Metta)_… feel free to write a post… or don’t …but either way … as you can see… Stack Blitz enables you to write serious web applications in a fraction of the time it would take with a conventional setup.**
 
 ---
 
 ### Glitch
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)[**_Glitch_**](https://glitch.com/) **provides two project templates that you can use to start creating your app:**
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)[**_Glitch_**](https://glitch.com/) **provides two project templates that you can use to start creating your app:**
 
 1.  **Classic Website**
 2.  **Node.js**
@@ -5094,7 +5094,7 @@ An existing project will be identified by Glitch as a **static** site if it does
 
 If you are looking to build a full-stack JavaScript application, choose the **Node.js** template. This template includes both front-end and back-end code using the popular [Express](https://expressjs.com/) Node.js application framework.
 
-### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)**Here are some other ways to get started on Glitch…**
+### ![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)**Here are some other ways to get started on Glitch…**
 
 ![](https://cdn-images-1.medium.com/max/800/0*duFOnYTuCHLsfxFi.png)
 
@@ -5112,25 +5112,25 @@ If you are looking to build a full-stack JavaScript application, choose the **No
 - [Building Blocks](https://glitch.com/@glitch/building-blocks)
 - [Learn to Code](https://glitch.com/@glitch/learn-to-code)
 
-### Here’s a (temporarily) broken version of my personal portfolio .. hosted on glitch
+### Here’s a (temporarily) broken version of my personal portfolio .. hosted on glitch
 
-#### Click ‘view app’ below to see how it renders
+#### Click ‘view app’ below to see how it renders
 
 [https://glitch.com/edit/#!/yielding-auspicious-periwinkle?path=README.md%3A1%3A0](https://glitch.com/edit/#!/yielding-auspicious-periwinkle?path=README.md%3A1%3A0)
 
 ---
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
 #### [CODEX](http://medium.com/codex)
 
-#### These will focus more on vocabulary and concepts than the application-driven approach in my last post!
+#### These will focus more on vocabulary and concepts than the application-driven approach in my last post!
 
 ![](https://cdn-images-1.medium.com/max/1200/0*D3yQI42gBkYpnLXY.jpg)
 
@@ -5145,7 +5145,7 @@ Semantic HTML is markup that conveys meaning, not appearance, to search engines 
 - **Name two big differences between display: block; and display: inline;.**
 
 block starts on a new line and takes up the full width of the content.  
- inline starts on the same line as previous content, in line with other content, and takes up only the space needed for the content.
+ inline starts on the same line as previous content, in line with other content, and takes up only the space needed for the content.
 
 · **What are the 4 areas of the box model?**
 
@@ -5179,7 +5179,7 @@ Preprocessing is basically a bunch of functions and variables you can use to sto
 
 Favorite is (parametric) mixins; but I don’t have a lot of trouble with preprocessing. What gives me the most trouble is knowing ahead of time what would be good to go in a mixin for a given site.
 
-· **Describe the biggest difference between .forEach & .map.**
+· **Describe the biggest difference between .forEach & .map.**
 
 forEach iterates over an array item by item, and map calls a function on each array item, but returns another/additional array, unlike forEach.
 
@@ -5375,11 +5375,11 @@ Having an algorithm that hashes the information multiple times (rounds) means an
 
 Header, payload, signature
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822](https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822)[https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822](https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822](https://bryanguner.medium.com/the-web-developers-technical-interview-e347d7db3822)
 
@@ -5425,7 +5425,7 @@ Header, payload, signature
 - [Awesome Scalability](https://github.com/binhnguyennus/awesome-scalability)
 - [Awesome Drone](https://github.com/drone/awesome-drone)
 
-### Epic Github Repos
+### Epic Github Repos
 
 - [mlabouardy](https://github.com/mlabouardy?tab=repositories)
 
@@ -5443,7 +5443,7 @@ Header, payload, signature
 
 ### Docker
 
-#### Deploy Stacks to your Swarm: ![🐳](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f433.svg) ![❤️](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg)
+#### Deploy Stacks to your Swarm: ![🐳](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f433.svg) ![❤️](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg)
 
 Logging:
 
@@ -5454,12 +5454,12 @@ Metrics:
 - [StefanProdan — Prometheus, Grafana, cAdvisor, Node Exporter and Alert Manager](https://github.com/stefanprodan/swarmprom)
 - [Mlabouardy — Telegraf, InfluxDB, Chronograf, Kapacitor & Slack](https://github.com/mlabouardy/swarm-tick)
 
-#### Awesome Docker Repos
+#### Awesome Docker Repos
 
 - [Jess’s Dockerfiles](https://github.com/jessfraz/dockerfiles)
 - [Firecat53’s Dockerfiles](https://github.com/firecat53/dockerfiles)
 
-#### RaspberryPi ARM Images:
+#### RaspberryPi ARM Images:
 
 - [arm32v6/alpine:edge](https://hub.docker.com/r/arm32v6/alpine/)
 - [arm32v6/golang:alpine](https://hub.docker.com/r/arm32v6/golang/)
@@ -5524,7 +5524,7 @@ Metrics:
 - [FaaS Releases](https://github.com/openfaas/faas/releases)
 - [FaaS Workshop](https://github.com/openfaas/workshop)
 
-#### Prometheus / Grafana on Swarm:
+#### Prometheus / Grafana on Swarm:
 
 - [StefanProdan — SwarmProm](https://github.com/stefanprodan/swarmprom)
 - [Monitoring with Prometheus](https://medium.com/@soumyadipde/monitoring-in-docker-stacks-its-that-easy-with-prometheus-5d71c1042443)
@@ -5532,7 +5532,7 @@ Metrics:
 - [Chmod-Org Promethus with Blackbox](https://github.com/chmod666org/docker-swarm-prometheus)
 - [Finestructure: Prometheus Tutorial](https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1)
 
-### Logging / Kibana / Beats
+### Logging / Kibana / Beats
 
 ### Libraries
 
@@ -5589,7 +5589,7 @@ Metrics:
 - [Choosing the Right Partition Key](https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/)
 - [10 Things you should know](https://cloudacademy.com/blog/amazon-dynamodb-ten-things/)
 
-#### DynamoDB General Info
+#### DynamoDB General Info
 
 - [Understanding DynamoDB](https://medium.com/@yaofei/understand-dynamodb-b278f718ddb8)
 
@@ -5716,7 +5716,7 @@ Metrics:
 - [Docker Swarm Promethus Setup #3 (Blackbox)](https://medium.com/the-telegraph-engineering/how-prometheus-and-the-blackbox-exporter-makes-monitoring-microservice-endpoints-easy-and-free-of-a986078912ee)
 - [Uptime (fzaninotto)](https://github.com/fzaninotto/uptime)
 
-### Monitoring and Alerting
+### Monitoring and Alerting
 
 - [Cabot (Lightweight Pagerduty)](https://github.com/arachnys/cabot)
 - [Nagios](https://www.nagios.org/)
@@ -5747,7 +5747,7 @@ Metrics:
 - [Learn Ruby: Arrays](https://gistpages.com/posts/ruby_arrays_insert_append_length_index_remove)
 - [Install Ruby Environment on Mac](https://gorails.com/setup/osx/10.12-sierra)
 
-#### Ruby on Rails:
+#### Ruby on Rails:
 
 - [Tutorial: Ruby On Rails](https://www.railstutorial.org/book/beginning)
 - [Tutorial: ROR on Docker](http://codingnudge.com/2017/03/17/tutorial-how-to-run-ruby-on-rails-on-docker-part-1/)
@@ -5769,7 +5769,7 @@ Metrics:
 
 ### Self Hosting
 
-#### Email Server Setups
+#### Email Server Setups
 
 - [Extratione: Postfix Dovecot MySQL Virtual Users Postfixadmin](https://www.exratione.com/2016/05/a-mailserver-on-ubuntu-16-04-postfix-dovecot-mysql/)
 - [Extratione: Postfix Dovecot MySQL Virtual Users Postfixadmin (Ubuntu 18)](https://www.exratione.com/2019/02/a-mailserver-on-ubuntu-18-04-postfix-dovecot-mysql/)
@@ -5777,7 +5777,7 @@ Metrics:
 - [Howtoforge: Postfix, MySQL, Dovecto, Dspam](https://www.howtoforge.com/postfix_mysql_dovecot_dspam_clamav_postgrey_rbl_debian_etch)
 - [Linuxsize: VirtualUsers, MySQL, Postfix, Dovecot](https://linuxize.com/post/set-up-an-email-server-with-postfixadmin/)
 
-#### Mailscanner Server Setups
+#### Mailscanner Server Setups
 
 - [Spamassassin with Debian 8](https://syslint.com/blog/tutorial/how-to-install-and-configure-spamassassin-with-postfix-in-debian-8/)
 
@@ -5822,15 +5822,15 @@ Metrics:
 - [Flask Advanced Patterns](https://speakerdeck.com/mitsuhiko/advanced-flask-patterns-1)
 - [Flask MVC Boilerplate](https://github.com/tojrobinson/flask-mvc)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-#### Questions….Answers… and links to the missing pieces.
+#### Questions….Answers… and links to the missing pieces.
 
 > **_Resources first… the actual article is below!_**
 
@@ -5854,7 +5854,7 @@ Metrics:
 
 [https://trusting-dijkstra-4d3b17.netlify.app/](https://trusting-dijkstra-4d3b17.netlify.app/)
 
-#### All the code provided in this article will be embeded at the bottom of this article as a gist so that you can see the proper syntax highlighting… and copy it all at once if you like!
+#### All the code provided in this article will be embeded at the bottom of this article as a gist so that you can see the proper syntax highlighting… and copy it all at once if you like!
 
 ### Asymptotic Notation
 
@@ -5897,7 +5897,7 @@ Big-Omega refers to the lower bound of time or space complexity of an algorithm,
 
 Big-Theta refers to the tight bound of time or space complexity of an algorithm. Another way to think of it is the intersection of Big-O and Big-Omega, or more simply runtime is guaranteed to be a given complexity, such as `n log n`.
 
-#### What you need to know
+#### What you need to know
 
 - Big-O and Big-Theta are the most common and helpful notations
 - Big-O does _not_ mean Worst Case Scenario, Big-Theta does _not_ mean average case, and Big-Omega does _not_ mean Best Case Scenario. They only connote the algorithm’s performance for a particular scenario, and all three can be used for any scenario.
@@ -5915,7 +5915,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Based on [tuples](http://en.wikipedia.org/wiki/Tuple) from set theory.
 - They are one of the oldest, most commonly used data structures.
 
-#### What you need to know
+#### What you need to know
 
 - Optimal for indexing; bad at searching, inserting, and deleting (except at the end).
 - **Linear arrays**, or one dimensional arrays, are the most basic.
@@ -5939,7 +5939,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Nodes, at its most basic it has one datum and one reference (another node).
 - A linked list _chains_ nodes together by pointing one node’s reference towards another node.
 
-#### What you need to know
+#### What you need to know
 
 - Designed to optimize insertion and deletion, slow at indexing and searching.
 - **Doubly linked list** has nodes that also reference the previous node.
@@ -5960,7 +5960,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Prepend: Linked Lists: `O(1)`
 - Insertion: Linked Lists: `O(n)`
 
-### Hash Table or Hash Map
+### Hash Table or Hash Map
 
 #### Definition
 
@@ -5969,7 +5969,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - This is known as **hashing**, which is the concept that an input and an output have a one-to-one correspondence to map information.
 - Hash functions return a unique address in memory for that data.
 
-#### What you need to know
+#### What you need to know
 
 - Designed to optimize searching, insertion, and deletion.
 - **Hash collisions** are when a hash function returns the same output for two distinct inputs.
@@ -5990,7 +5990,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Is a tree like data structure where every node has at most two children.
 - There is one left and right child node.
 
-#### What you need to know
+#### What you need to know
 
 - Designed to optimize searching and sorting.
 - A **degenerate tree** is an unbalanced tree, which if entirely one-sided, is essentially a linked list.
@@ -6020,7 +6020,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - **Recursive case** a conditional statement that is used to trigger the recursion.
 - **Base case** a conditional statement that is used to break the recursion.
 
-#### What you need to know
+#### What you need to know
 
 - **Stack level too deep** and **stack overflow**.
 - If you’ve seen either of these from a recursive algorithm, you messed up.
@@ -6035,7 +6035,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - An algorithm that is called repeatedly but for a finite number of times, each time being a single iteration.
 - Often used to move incrementally through a data set.
 
-#### What you need to know
+#### What you need to know
 
 - Generally you will see iteration as loops, for, while, and until statements.
 - Think of iteration as moving one at a time through a set.
@@ -6050,7 +6050,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - **Imperative languages** tend to use iteration. (i.e. Ruby)
 - Check out this [Stack Overflow post](http://stackoverflow.com/questions/19794739/what-is-the-difference-between-iteration-and-recursion) for more info.
 
-#### Pseudo Code of Moving Through an Array
+#### Pseudo Code of Moving Through an Array
 
     Recursion                         | Iteration----------------------------------|----------------------------------recursive method (array, n)       | iterative method (array)  if array[n] is not nil          |   for n from 0 to size of array    print array[n]                |     print(array[n])    recursive method(array, n+1)  |  else                            |    exit loop                     |
 
@@ -6066,13 +6066,13 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - An objective function, which assigns a value to a solution, or a partial solution.
 - A solution function, which will indicate when we have discovered a complete solution.
 
-#### What you need to know
+#### What you need to know
 
 - Used to find the expedient, though non-optimal, solution for a given problem.
 - Generally used on sets of data where only a small proportion of the information evaluated meets the desired result.
 - Often a greedy algorithm can help reduce the Big O of an algorithm.
 
-#### Pseudo Code of a Greedy Algorithm to Find Largest Difference of any Two Numbers in an Array.
+#### Pseudo Code of a Greedy Algorithm to Find Largest Difference of any Two Numbers in an Array.
 
     greedy algorithm (array)  let largest difference = 0  let new difference = find next difference (array[n], array[n+1])  largest difference = new difference if new difference is > largest difference  repeat above two steps until all differences have been found  return largest difference
 
@@ -6080,7 +6080,7 @@ This algorithm never needed to compare all the differences to one another, savin
 
 ### Search Algorithms
 
-### Breadth First Search
+### Breadth First Search
 
 #### Definition
 
@@ -6090,7 +6090,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - When finished examining a level it moves to the left most node on the next level.
 - The bottom-right most node is evaluated last (the node that is deepest and is farthest right of it’s level).
 
-#### What you need to know
+#### What you need to know
 
 - Optimal for searching a tree that is wider than it is deep.
 - Uses a queue to store information about the tree while it traverses a tree.
@@ -6103,7 +6103,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - E is number of edges
 - V is number of vertices
 
-### Depth First Search
+### Depth First Search
 
 #### Definition
 
@@ -6113,7 +6113,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - When finished examining a branch it moves to the node right of the root then tries to go left on all it’s children until it reaches the bottom.
 - The right most node is evaluated last (the node that is right of all it’s ancestors).
 
-#### What you need to know
+#### What you need to know
 
 - Optimal for searching a tree that is deeper than it is wide.
 - Uses a stack to push nodes onto.
@@ -6126,7 +6126,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - E is number of edges
 - V is number of vertices
 
-#### Breadth First Search Vs. Depth First Search
+#### Breadth First Search Vs. Depth First Search
 
 - The simple answer to this question is that it depends on the size and shape of the tree.
 - For wide, shallow trees use Breadth First Search
@@ -6154,7 +6154,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - As the algorithm processes the data set, it builds a fully sorted left side of the data until the entire data set is sorted
 - Changes the array in place.
 
-#### What you need to know
+#### What you need to know
 
 - Inefficient for large data sets.
 - Very simple to implement.
@@ -6185,7 +6185,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - As the algorithm processes the data set, the left side becomes increasingly sorted until it is fully sorted.
 - Changes the array in place.
 
-#### What you need to know
+#### What you need to know
 
 - Inefficient for large data sets, but can be faster for than other algorithms for small ones.
 - Although it has an `O(n^2)`, in practice it slightly less since its comparison scheme only requires checking place if its smaller than its neighbor.
@@ -6215,7 +6215,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - Once the base case is reached results are returned and sorted ascending left to right.
 - Recursive calls are returned and the sorts double in size until the entire array is sorted.
 
-#### What you need to know
+#### What you need to know
 
 - This is one of the fundamental sorting algorithms.
 - Know that it divides all the data into as small possible sets then compares them.
@@ -6247,7 +6247,7 @@ This algorithm never needed to compare all the differences to one another, savin
 - Computer architecture favors the quicksort process.
 - Changes the array in place.
 
-#### What you need to know
+#### What you need to know
 
 - While it has the same Big O as (or worse in some cases) many other sorting algorithms it is often faster in practice than many other sorting algorithms, such as merge sort.
 
@@ -6277,7 +6277,7 @@ This algorithm never needed to compare all the differences to one another, savin
 
 [Khan Academy’s Algorithm Course](https://www.khanacademy.org/computing/computer-science/algorithms)
 
-### What is ARIA and when should you use it?
+### What is ARIA and when should you use it?
 
 #### Answer
 
@@ -6309,7 +6309,7 @@ Additional links
 - [WAI-ARIA Spec](https://www.w3.org/TR/wai-aria/)
 - [ARIA Serious? Eric Eggert presentation](https://youtu.be/4bH57rWPnYo)
 
-### What is the minimum recommended ratio of contrast between foreground text and background to comply with WCAG? Why does this matter?
+### What is the minimum recommended ratio of contrast between foreground text and background to comply with WCAG? Why does this matter?
 
 #### Answer
 
@@ -6369,7 +6369,7 @@ Additional links
 
 - [Accessibility APIs](https://www.smashingmagazine.com/2015/03/web-accessibility-with-accessibility-api/)
 
-### What is the purpose of the `alt` attribute on images?
+### What is the purpose of the `alt` attribute on images?
 
 #### Answer
 
@@ -6379,13 +6379,13 @@ The `alt` attribute provides alternative information for an image if a user cann
 
 - Decorative images should have an empty `alt` attribute.
 - Web crawlers use `alt` tags to understand image content, so they are considered important for Search Engine Optimization (SEO).
-- Put the `.` at the end of `alt` tag to improve accessibility.
+- Put the `.` at the end of `alt` tag to improve accessibility.
 
 Additional links
 
 - [A good basis for accessibility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
 
-### What are `defer` and `async` attributes on a `<script>` tag?
+### What are `defer` and `async` attributes on a `<script>` tag?
 
 #### Answer
 
@@ -6449,7 +6449,7 @@ Additional links
 - [MDN Docs — async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [MDN Docs — await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
-### Create a function `batches` that returns the maximum number of whole batches that can be cooked from a recipe.
+### Create a function `batches` that returns the maximum number of whole batches that can be cooked from a recipe.
 
 /\*\*  
 It accepts two objects as arguments: the first object is the recipe  
@@ -6487,7 +6487,7 @@ We must have all ingredients of the recipe available, and in quantities that are
 
 Use `Object.keys()` to return the ingredients of the recipe as an array, then use `Array.prototype.map()` to map each ingredient to the ratio of available units to the amount required by the recipe. If one of the ingredients required by the recipe is not available at all, the ratio will evaluate to `NaN`, so the logical OR operator can be used to fallback to `0` in this case.
 
-Use the spread `...` operator to feed the array of all the ingredient ratios into `Math.min()` to determine the lowest ratio. Passing this entire result into `Math.floor()` rounds down to return the maximum number of whole batches.
+Use the spread `...` operator to feed the array of all the ingredient ratios into `Math.min()` to determine the lowest ratio. Passing this entire result into `Math.floor()` rounds down to return the maximum number of whole batches.
 
 const batches = (recipe, available) =>  
  Math.floor(  
@@ -6498,7 +6498,7 @@ const batches = (recipe, available) =>
 
 Additional links
 
-### What is CSS BEM?
+### What is CSS BEM?
 
 #### Answer
 
@@ -6624,7 +6624,7 @@ boundExample.call({ b: true }) // logs { a: true }
 
 #### Answer
 
-Return a function that accepts an arbitrary number of arguments by gathering them with the rest `...` operator. From that function, return the result of calling the `fn` with `Function.prototype.apply` to apply the context and the array of arguments to the function.
+Return a function that accepts an arbitrary number of arguments by gathering them with the rest `...` operator. From that function, return the result of calling the `fn` with `Function.prototype.apply` to apply the context and the array of arguments to the function.
 
 const bind = (fn, context) => (...args) => fn.apply(context, args)
 
@@ -6632,7 +6632,7 @@ const bind = (fn, context) => (...args) => fn.apply(context, args)
 
 Additional links
 
-### What is the purpose of cache busting and how can you achieve it?
+### What is the purpose of cache busting and how can you achieve it?
 
 #### Answer
 
@@ -6654,7 +6654,7 @@ Additional links
 
 - [Strategies for cache-busting CSS](https://css-tricks.com/strategies-for-cache-busting-css/)
 
-### How can you avoid callback hells?
+### How can you avoid callback hells?
 
 getData(function(a) {  
  getMoreData(a, function(b) {  
@@ -6754,7 +6754,7 @@ Additional links
 
 - [React docs on Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html#exposing-dom-refs-to-parent-components)
 
-### What is a callback? Can you show an example using one?
+### What is a callback? Can you show an example using one?
 
 #### Answer
 
@@ -6788,7 +6788,7 @@ Additional links
 
 - [MDN docs for callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 
-### What is the `children` prop?
+### What is the `children` prop?
 
 #### Answer
 
@@ -6815,7 +6815,7 @@ Additional links
 
 - [React docs on Children](https://reactjs.org/docs/jsx-in-depth.html#children-in-jsx)
 
-### Why does React use `className` instead of `class` like in HTML?
+### Why does React use `className` instead of `class` like in HTML?
 
 #### Answer
 
@@ -6852,7 +6852,7 @@ Additional links
 
 #### Answer
 
-Using the object spread operator `...`, the object’s own enumerable properties can be copied into the new object. This creates a shallow clone of the object.
+Using the object spread operator `...`, the object’s own enumerable properties can be copied into the new object. This creates a shallow clone of the object.
 
 const obj = { a: 1, b: 2 }  
 const shallowClone = { ...obj }
@@ -6875,7 +6875,7 @@ Additional links
 - [MDN docs for Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 - [Clone an object in vanilla JS](http://voidcanvas.com/clone-an-object-in-vanilla-js-in-depth/)
 
-### What is a closure? Can you give a useful example of one?
+### What is a closure? Can you give a useful example of one?
 
 #### Answer
 
@@ -6960,7 +6960,7 @@ Additional links
 - [Object Equality in JavaScript](http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html)
 - [Deep comparison between two values](https://30secondsofcode.org/object#equals)
 
-### What is context?
+### What is context?
 
 #### Answer
 
@@ -6977,7 +6977,7 @@ Additional links
 
 - [React docs on Context](https://reactjs.org/docs/context.html)
 
-### What is CORS?
+### What is CORS?
 
 #### Answer
 
@@ -7110,7 +7110,7 @@ Additional links
 
 - [Debouncing explained](https://css-tricks.com/debouncing-throttling-explained-examples/)
 
-### What is the DOM?
+### What is the DOM?
 
 #### Answer
 
@@ -7127,7 +7127,7 @@ Additional links
 
 - [MDN docs for DOM](https://developer.mozilla.org/en-US/docs/DOM)
 
-### What is the difference between the equality operators `==` and `===`?
+### What is the difference between the equality operators `==` and `===`?
 
 #### Answer
 
@@ -7143,7 +7143,7 @@ Additional links
 
 - [MDN docs for comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 
-### What is the difference between an element and a component in React?
+### What is the difference between an element and a component in React?
 
 #### Answer
 
@@ -7165,7 +7165,7 @@ Additional links
 - [React docs on Rendering Elements](https://reactjs.org/docs/rendering-elements.html)
 - [React docs on Components and Props](https://reactjs.org/docs/components-and-props.html)
 
-### What is the difference between `em` and `rem` units?
+### What is the difference between `em` and `rem` units?
 
 #### Answer
 
@@ -7184,7 +7184,7 @@ Additional links
 
 - [CSS units for font-size: px | em | rem](https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97)
 
-### What are error boundaries in React?
+### What are error boundaries in React?
 
 #### Answer
 
@@ -7227,7 +7227,7 @@ Additional links
 
 [https://trusting-dijkstra-4d3b17.netlify.app/](https://trusting-dijkstra-4d3b17.netlify.app/)
 
-### What is event delegation and why is it useful? Can you show an example of how to use it?
+### What is event delegation and why is it useful? Can you show an example of how to use it?
 
 #### Answer
 
@@ -7383,7 +7383,7 @@ A value’s truthiness can be examined by passing it into the `Boolean` function
 Boolean("") // false  
 Boolean(\[\]) // true
 
-There is a shortcut for this using the logical NOT `!` operator. Using `!` once will convert a value to its inverse boolean equivalent (i.e. not false is true), and `!` once more will convert back, thus effectively converting the value to a boolean.
+There is a shortcut for this using the logical NOT `!` operator. Using `!` once will convert a value to its inverse boolean equivalent (i.e. not false is true), and `!` once more will convert back, thus effectively converting the value to a boolean.
 
 !!"" // false  
 !!\[\] // true
@@ -7395,7 +7395,7 @@ Additional links
 - [Truthy on MDN](https://developer.mozilla.org/en/docs/Glossary/Truthy)
 - [Falsy on MDN](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
 
-### Generate an array, containing the Fibonacci sequence, up until the nth term.
+### Generate an array, containing the Fibonacci sequence, up until the nth term.
 
 #### Answer
 
@@ -7469,7 +7469,7 @@ Additional links
 
 #### Answer
 
-Set the `.row` parent to `display: flex;` and use the `flex` shorthand property to give the column classes a `flex-grow` value that corresponds to its ratio value.
+Set the `.row` parent to `display: flex;` and use the `flex` shorthand property to give the column classes a `flex-grow` value that corresponds to its ratio value.
 
     .row {  display: flex;}
 
@@ -7486,7 +7486,7 @@ Additional links
 - [MDN docs for basic concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 - [A complete guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-### What does `0.1 + 0.2 === 0.3` evaluate to?
+### What does `0.1 + 0.2 === 0.3` evaluate to?
 
 #### Answer
 
@@ -7508,7 +7508,7 @@ Additional links
 - [A simple helper function to check equality](https://github.com/Chalarangelo/30-seconds-of-code#approximatelyequal)
 - [Fix “0.1 + 0.2 = 0.300000004” in JavaScript](http://blog.blakesimpson.co.uk/read/61-fix-0-1-0-2-0-300000004-in-javascript)
 
-### What is a focus ring? What is the correct solution to handle them?
+### What is a focus ring? What is the correct solution to handle them?
 
 #### Answer
 
@@ -7518,7 +7518,7 @@ In the past, many people specified `outline: 0;` on the element to remove the fo
 
 In recent times, frameworks like Bootstrap have opted to use a more appealing `box-shadow` outline to replace the default focus ring. However, this is still not ideal for mouse users.
 
-The best solution is an upcoming pseudo-selector `:focus-visible` which can be polyfilled today with JavaScript. It will only show a focus ring if the user is using a keyboard and leave it hidden for mouse users. This keeps both aesthetics for mouse use and accessibility for keyboard use.
+The best solution is an upcoming pseudo-selector `:focus-visible` which can be polyfilled today with JavaScript. It will only show a focus ring if the user is using a keyboard and leave it hidden for mouse users. This keeps both aesthetics for mouse use and accessibility for keyboard use.
 
 #### Don’t forget:
 
@@ -7588,7 +7588,7 @@ Functional programming is a paradigm in which programs are built in a declarativ
 
 - Cleaner, more concise development experience
 - Simple function composition
-- Features of JavaScript that enable functional programming (`.map`, `.reduce` etc.)
+- Features of JavaScript that enable functional programming (`.map`, `.reduce` etc.)
 - JavaScript is multi-paradigm programming language (Object-Oriented Programming and Functional Programming live in harmony)
 
 Additional links
@@ -7596,7 +7596,7 @@ Additional links
 - [Javascript and Functional Programming: An Introduction](https://hackernoon.com/javascript-and-functional-programming-an-introduction-286aa625e26d)
 - [Master the JavaScript Interview: What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
 
-### Describe your thoughts on how a single page web app should handle focus when changing routes
+### Describe your thoughts on how a single page web app should handle focus when changing routes
 
 #### Answer
 
@@ -7644,7 +7644,7 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent)
 
 Additional links
 
-### What will the console log in this example?
+### What will the console log in this example?
 
 var foo = 1  
 var foobar = function() {  
@@ -7772,7 +7772,7 @@ Additional links
 
 - [React docs on Handling Events](https://reactjs.org/docs/handling-events.html)
 
-### What are some differences that XHTML has compared to HTML?
+### What are some differences that XHTML has compared to HTML?
 
 #### Answer
 
@@ -7924,7 +7924,7 @@ function App({ messages, isVisible }) {
  )  
 }
 
-Logical AND `&&` and the ternary `? :` operator replace the `if`/`else` statements.
+Logical AND `&&` and the ternary `? :` operator replace the `if`/`else` statements.
 
 function App({ messages, isVisible }) {  
  return (
@@ -7946,7 +7946,7 @@ Additional links
 
 - [React docs on Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
 
-### What is a key? What are the benefits of using it in lists?
+### What is a key? What are the benefits of using it in lists?
 
 #### Answer
 
@@ -7967,7 +7967,7 @@ Additional links
 
 - [React docs on Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
 
-### What are landmark roles and how can they be useful?
+### What are landmark roles and how can they be useful?
 
 #### Answer
 
@@ -7987,7 +7987,7 @@ Additional links
 - [ARIA Landmark Roles](https://www.washington.edu/accessibility/web/landmarks/)
 - [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
 
-### What is the difference between lexical scoping and dynamic scoping?
+### What is the difference between lexical scoping and dynamic scoping?
 
 #### Answer
 
@@ -8003,7 +8003,7 @@ Additional links
 
 - [Mozilla Docs — Closures & Lexical Scoping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
-### What are the lifecycle methods in React?
+### What are the lifecycle methods in React?
 
 #### Answer
 
@@ -8025,7 +8025,7 @@ Additional links
 
 Additional links
 
-### What are the different phases of the component lifecycle in React?
+### What are the different phases of the component lifecycle in React?
 
 #### Answer
 
@@ -8045,7 +8045,7 @@ There are four different phases of component’s lifecycle:
 
 Additional links
 
-### What does lifting state up in React mean?
+### What does lifting state up in React mean?
 
 #### Answer
 
@@ -8163,7 +8163,7 @@ Additional links
 - [React docs on Handling Events](https://reactjs.org/docs/handling-events.html)
 - [React docs on Passing Functions to Components](https://reactjs.org/docs/faq-functions.html#how-do-i-bind-a-function-to-a-component-instance)
 
-### What is a MIME type and what is it used for?
+### What is a MIME type and what is it used for?
 
 #### Answer
 
@@ -8220,7 +8220,7 @@ Additional links
 
 - [MDN docs for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) `[NaN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)`
 
-### NodeJS often uses a callback pattern where if an error is encountered during execution, this error is passed as the first argument to the callback. What are the advantages of this pattern?
+### NodeJS often uses a callback pattern where if an error is encountered during execution, this error is passed as the first argument to the callback. What are the advantages of this pattern?
 
 fs.readFile(filePath, function(err, data) {  
  if (err) {  
@@ -8280,7 +8280,7 @@ Additional links
 - [The Node.js Way — Understanding Error-First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
 - [What are the error conventions?](https://docs.nodejitsu.com/articles/errors/what-are-the-error-conventions)
 
-### What is the event loop in Node.js?
+### What is the event loop in Node.js?
 
 #### Answer
 
@@ -8311,7 +8311,7 @@ Additional links
 - [MDN docs for null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)
 - [MDN docs for undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
 
-### Describe the different ways to create an object. When should certain ways be preferred over others?
+### Describe the different ways to create an object. When should certain ways be preferred over others?
 
 #### Answer
 
@@ -8443,7 +8443,7 @@ res(3) // 19; addOne(double(square(3)))
 
 #### Answer
 
-Gather all supplied arguments using the rest operator `...` and return a unary function that uses `Array.prototype.reduce()` to run the value through the series of functions before returning the final value.
+Gather all supplied arguments using the rest operator `...` and return a unary function that uses `Array.prototype.reduce()` to run the value through the series of functions before returning the final value.
 
 const pipe = (...fns) => x => fns.reduce((v, fn) => fn(v), x)
 
@@ -8455,7 +8455,7 @@ Additional links
 
 - [What is function composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)
 
-### What are portals in React?
+### What are portals in React?
 
 #### Answer
 
@@ -8493,7 +8493,7 @@ let i = 0
 
 Additional links
 
-### In which states can a Promise be?
+### In which states can a Promise be?
 
 #### Answer
 
@@ -8533,7 +8533,7 @@ Additional links
 
 - [Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e772618)
 
-### How to apply prop validation in React?
+### How to apply prop validation in React?
 
 #### Answer
 
@@ -8612,7 +8612,7 @@ Additional links
 
 - [Pure functions in JavaScript](http://www.nicoespeon.com/en/2015/01/pure-functions-javascript/)
 
-### How do you write comments inside a JSX tree in React?
+### How do you write comments inside a JSX tree in React?
 
 #### Answer
 
@@ -8626,7 +8626,7 @@ const tree = (
   </div>  
 )
 
-### What is recursion and when is it useful?
+### What is recursion and when is it useful?
 
 #### Answer
 
@@ -8690,7 +8690,7 @@ Additional links
 
 - [JavaScript Value vs Reference](https://medium.com/dailyjs/back-to-roots-javascript-value-vs-reference-8fb69d587a18)
 
-### What are refs in React? When should they be used?
+### What are refs in React? When should they be used?
 
 #### Answer
 
@@ -8741,7 +8741,7 @@ Additional links
 - [Open external anchors using rel=”noopener”](https://developers.google.com/web/tools/lighthouse/audits/noopener)
 - [About rel=”noopener”](https://mathiasbynens.github.io/rel-noopener/)
 
-### What is REST?
+### What is REST?
 
 #### Answer
 
@@ -8767,7 +8767,7 @@ Additional links
 
 - [What is REST — A Simple Explanation for Beginners, Part 1: Introduction](https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f)
 
-### What does the following function return?
+### What does the following function return?
 
 function greet() {  
  return  
@@ -8893,7 +8893,7 @@ Additional links
 
 - [CSS Sprites explained by CSS Tricks](https://css-tricks.com/css-sprites/)
 
-### What is a stateful component in React?
+### What is a stateful component in React?
 
 #### Answer
 
@@ -8942,7 +8942,7 @@ Additional links
 
 - [React docs on State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 
-### Explain the difference between a static method and an instance method.
+### Explain the difference between a static method and an instance method.
 
 #### Answer
 
@@ -8984,7 +8984,7 @@ In JavaScript, all code is synchronous due to the single-threaded nature of it. 
 
 Additional links
 
-### What is the `this` keyword and how does it work?
+### What is the `this` keyword and how does it work?
 
 #### Answer
 
@@ -9076,7 +9076,7 @@ Additional links
 
 - `[this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)` [on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
-### What does the following code evaluate to?
+### What does the following code evaluate to?
 
 typeof typeof 0
 
@@ -9092,7 +9092,7 @@ Additional links
 
 - [MDN docs for typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
 
-### What are JavaScript data types?
+### What are JavaScript data types?
 
 #### Answer
 
@@ -9126,7 +9126,7 @@ Additional links
 
 - [Virtual DOM in Hyperapp](https://github.com/hyperapp/hyperapp#view)
 
-### What does `'use strict'` do and what are some of the key benefits to using it?
+### What does `'use strict'` do and what are some of the key benefits to using it?
 
 #### Answer
 
@@ -9168,7 +9168,7 @@ Below, by the time the the `setTimeout` callback executes, the loop has already 
 Resources:  
 [https://gist.github.com/bgoonz/e3f9e82a133b0a8dca00f61d9ddcd62b](https://gist.github.com/bgoonz/e3f9e82a133b0a8dca00f61d9ddcd62b)
 
-### Here’s the code from this article:
+### Here’s the code from this article:
 
 for (var i = 0; i < 10; i++) {  
  setTimeout(() => {  
@@ -9285,7 +9285,7 @@ Additional links
 - [Web Content Accessibility Guidelines (WCAG) Overview](https://www.w3.org/WAI/standards-guidelines/wcag/)
 - [How to Meet WCAG](https://www.w3.org/WAI/WCAG21/quickref/)
 
-### What is a cross-site scripting attack (XSS) and how do you prevent it?
+### What is a cross-site scripting attack (XSS) and how do you prevent it?
 
 #### Answer
 
@@ -9316,11 +9316,11 @@ Resources:
 
 [https://gist.github.com/bgoonz/e4b19c1425ffce9744b23a7d337e147e](https://gist.github.com/bgoonz/e4b19c1425ffce9744b23a7d337e147e)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://trusting-dijkstra-4d3b17.netlify.app/](https://trusting-dijkstra-4d3b17.netlify.app/)[https://trusting-dijkstra-4d3b17.netlify.app/](https://trusting-dijkstra-4d3b17.netlify.app/)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://trusting-dijkstra-4d3b17.netlify.app/](https://trusting-dijkstra-4d3b17.netlify.app/)
 
@@ -9328,19 +9328,19 @@ Resources:
 
 ![](https://cdn-images-1.medium.com/max/800/0*LUQe60D2FeVzDEi8.png)
 
-- `**HTTP**` : Hypertext Transfer Protocol.
-- `**HT**` : Hypertext – content with references to other content.
+- `**HTTP**` : Hypertext Transfer Protocol.
+- `**HT**` : Hypertext – content with references to other content.
 - Term used to refer to content in computing.
 - What makes the Web a “web”.
 - Most fundamental part of how we interact.
-- `**Hyperlinks**` : Links; references between HT resources.
-- `**TP**` : Transfer Protocol – set of guidelines surrounding the transmission of data.
+- `**Hyperlinks**` : Links; references between HT resources.
+- `**TP**` : Transfer Protocol – set of guidelines surrounding the transmission of data.
 - Defines the expectations for both ends of the transer.
 - Defines some ways the transfer might fail.
 - HTTP is a `**request/response**` protocol.
 - HTTP works between `**clients**` & `**servers**`.
-- `**Clients**` : User Agent – the data consumer.
-- `**Servers**` : Origin – Data provider & where the application is running.
+- `**Clients**` : User Agent – the data consumer.
+- `**Servers**` : Origin – Data provider & where the application is running.
 
 ![](https://cdn-images-1.medium.com/max/800/0*OBVdK39aaS5sjV9B.png)
 
@@ -9354,15 +9354,15 @@ Each individual request is sent to a server, which handles it and provides an an
 
 **Properties of HTTP**
 
-- `**Reliable Connections**` : Messages passed between a client & server sacrifice a little speed for the sake of trust.
+- `**Reliable Connections**` : Messages passed between a client & server sacrifice a little speed for the sake of trust.
 - `**TCP**` is HTTP’s preferred connection type.
-- `**Stateless Transfer**` : HTTP is a stateless protocol – meaning it does not store any kind of information.
+- `**Stateless Transfer**` : HTTP is a stateless protocol – meaning it does not store any kind of information.
 - HTTP supports cookies.
-- `**Intermediaries**` : Servers or devices that pass your request along which come in three types:
+- `**Intermediaries**` : Servers or devices that pass your request along which come in three types:
 
-1.  `**Proxies**` : Modify your request so it appears to come from a different source.
-2.  `**Gateways**` : Pretend to be the resource server you requested.
-3.  `**Tunnels**` : Simply passes your request along.
+1.  `**Proxies**` : Modify your request so it appears to come from a different source.
+2.  `**Gateways**` : Pretend to be the resource server you requested.
+3.  `**Tunnels**` : Simply passes your request along.
 
 ---
 
@@ -9372,44 +9372,44 @@ Each individual request is sent to a server, which handles it and provides an an
 
     GET / HTTP/1.1Host: appacademy.ioConnection: keep-aliveUpgrade-Insecure-Requests: 1User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3Accept-Encoding: gzip, deflateAccept-Language: en-US,en;q=0.9
 
-### Example of a request:
+### Example of a request:
 
 ![](https://cdn-images-1.medium.com/max/1200/1*tq-BRYuzZ_Dx8s1g5xJKKQ.png)
 
 - **Request-line & HTTP verbs**
 - The first line of an HTTP Request made up of three parts:
 
-1.  The `**Method**` : Indicated by an HTTP Verb.
-2.  The `**URI**` : Uniform Resource Indicator that ID’s our request.
-3.  THe `**HTTP**` **Version** : Version we expect to use.
+1.  The `**Method**` : Indicated by an HTTP Verb.
+2.  The `**URI**` : Uniform Resource Indicator that ID’s our request.
+3.  THe `**HTTP**` **Version** : Version we expect to use.
 
 - HTTP Verbs are a simply way of declaring our intention to the server.
-- `**GET**` : Used for direct requests.
+- `**GET**` : Used for direct requests.
 - `**POST**`: Used for creating new resources on the server.
 - `**PUT**`: Used to updated a resource on the server.
-- `**PATCH**` : Similar to PUT, but do not require the whole resource to perform the update.
-- `**DELETE**` : Used to destroy resources on the server.
+- `**PATCH**` : Similar to PUT, but do not require the whole resource to perform the update.
+- `**DELETE**` : Used to destroy resources on the server.
 
 **Headers**
 
 - Key-Value pairs that come after the request line — they appear on sep. lines and define metadata needed to process the request.
 - Some common headers:
-- `**Host**` : Root path for our URI.
-- `**User-Agent**` : Displays information about which browser the request originated from.
-- `**Referer**` : Defines the URL you’re coming from.
-- `**Accept**` : Indicates what the client will receive.
-- `**Content**`**–** : Define Details about the body of the request.
+- `**Host**` : Root path for our URI.
+- `**User-Agent**` : Displays information about which browser the request originated from.
+- `**Referer**` : Defines the URL you’re coming from.
+- `**Accept**` : Indicates what the client will receive.
+- `**Content**`**–** : Define Details about the body of the request.
 
 **Body**
 
 - For when we need to send data that doesn’t fit into the header & is too complex for the URI we can use the _body_.
-- `**URL encoding**` : Most common way form data is formatted.
+- `**URL encoding**` : Most common way form data is formatted.
 - `name=claire&age=29&iceCream=vanilla`
 - We can also format using JSON or XML.
 
 **Sending an HTTP request from the command line**
 
-- **netcat** : (nc) A Utility that comes as part of Unix-line environments such as Ubuntu and macOS.
+- **netcat** : (nc) A Utility that comes as part of Unix-line environments such as Ubuntu and macOS.
 - Allows us to open a direct connection with a URL and manually send HTTP requests.
 - `nc -v appacademy.io 80`
 - `man nc` to open the netcat manual.
@@ -9428,7 +9428,7 @@ Each individual request is sent to a server, which handles it and provides an an
 
 - First line of an HTTP response — gives us a high level overview of the server’s intentions. (`**status line**`)
 - `HTTP/1.1 200 OK`
-- `**HTTP status codes**` : numeric way of representing a server’s response.
+- `**HTTP status codes**` : numeric way of representing a server’s response.
 - Follow the structure: x: xxx — xxx;
 
 ### `**Status codes 100 - 199: Informational**`
@@ -9455,36 +9455,36 @@ Each individual request is sent to a server, which handles it and provides an an
 - Indicates request was formatted correctly, but the server couldn’t do what you asked due to an internal problem.
 - Common Examples: 500 Internal Server Error (Server had trouble processing) & 504 Gateway Timeout (Server timeout);
 
-### **Headers** : Work just like HTTP requests.
+### **Headers** : Work just like HTTP requests.
 
 > Common Examples:
 
-- `**Location**` : Used by client for redirection responses.
-- `**Content-Type**` : Let’s client know what format the body is in.
-- `**Expires**` : When response is no longer valid
-- `**Content-Disposition**` : Let’s client know how to display the response.
-- `**Set-Cookie**` : Sends data back to the client to set on the cookie.
-- `**Data**` : If the request is successful, the body of the response will contain the resource you have requested.
+- `**Location**` : Used by client for redirection responses.
+- `**Content-Type**` : Let’s client know what format the body is in.
+- `**Expires**` : When response is no longer valid
+- `**Content-Disposition**` : Let’s client know how to display the response.
+- `**Set-Cookie**` : Sends data back to the client to set on the cookie.
+- `**Data**` : If the request is successful, the body of the response will contain the resource you have requested.
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 **Currently under development and very buggy!**
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-If you want to learn more and get some practice in … download [Postman](https://www.postman.com/) and start going through some tutorials!
+If you want to learn more and get some practice in … download [Postman](https://www.postman.com/) and start going through some tutorials!
 
 Happy Coding!
 
-#### My Awesome JavaScript List Part 2
+#### My Awesome JavaScript List Part 2
 
 ![](https://cdn-images-1.medium.com/max/800/0*9riCKLCPutYxPEtE)
 
-#### Here’s the rest of my stash!
+#### Here’s the rest of my stash!
 
 **_…well… not really… here’s the rest of my stash:_**
 
@@ -9496,13 +9496,13 @@ Happy Coding!
 
 ‌
 
-> · ​[Next.js](https://github.com/vercel/next.js) — Framework for server-rendered or statically-exported React apps.
+> · ​[Next.js](https://github.com/vercel/next.js) — Framework for server-rendered or statically-exported React apps.
 
 > · ​[San](https://github.com/baidu/san) — Flexible JavaScript component framework.
 
 > · ​[hapi](https://hapijs.com/) — Rich framework for building applications and services.
 
-> · ​[Koa](https://koajs.com/#introduction) — Smaller, more expressive, and more robust foundation for web applications and APIs.
+> · ​[Koa](https://koajs.com/#introduction) — Smaller, more expressive, and more robust foundation for web applications and APIs.
 
 > · ​[Umi](https://github.com/umijs/umi) — Pluggable enterprise-level react application framework.
 
@@ -9514,9 +9514,9 @@ Happy Coding!
 
 > · ​[Neutrino dev](https://github.com/mozilla-neutrino/neutrino-dev)​
 
-> · ​[Alpine.js](https://github.com/alpinejs/alpine) — Rugged, minimal framework for composing JavaScript behavior in your markup. ([Awesome Alpine](https://github.com/alpine-collective/awesome))
+> · ​[Alpine.js](https://github.com/alpinejs/alpine) — Rugged, minimal framework for composing JavaScript behavior in your markup. ([Awesome Alpine](https://github.com/alpine-collective/awesome))
 
-> · ​[After.js](https://github.com/jaredpalmer/after.js) — Next.js-like framework for server-rendered React apps built with React Router 4.
+> · ​[After.js](https://github.com/jaredpalmer/after.js) — Next.js-like framework for server-rendered React apps built with React Router 4.
 
 > · ​[Torus](https://github.com/thesephist/torus) — Event-driven model-view UI framework for the web, focused on being tiny, efficient, and free of dependencies. ([Web](https://thesephist.github.io/torus/))
 
@@ -9524,67 +9524,67 @@ Happy Coding!
 
 > · ​[Hyperapp FX](https://github.com/okwolf/hyperapp-fx) — Effects for use with Hyperapp.
 
-> · ​[Phenomic](https://github.com/phenomic/phenomic) — Modular website compiler (React, Webpack, Reason and whatever you want).
+> · ​[Phenomic](https://github.com/phenomic/phenomic) — Modular website compiler (React, Webpack, Reason and whatever you want).
 
-> · ​[Halfmoon](https://github.com/halfmoonui/halfmoon) — Front-end framework with a built-in dark mode and full customizability using CSS variables; great for building dashboards and tools. ([Docs](https://www.gethalfmoon.com/docs/introduction/))
+> · ​[Halfmoon](https://github.com/halfmoonui/halfmoon) — Front-end framework with a built-in dark mode and full customizability using CSS variables; great for building dashboards and tools. ([Docs](https://www.gethalfmoon.com/docs/introduction/))
 
 > · ​[Sinuous](https://github.com/luwes/sinuous) — Low-level UI library with a tiny footprint. ([Docs](https://sinuous.dev/docs/getting-started/))
 
-> · ​[Overture](https://github.com/fastmail/overture) — Powerful JS library for building really slick web applications, with performance at, or surpassing, native apps.
+> · ​[Overture](https://github.com/fastmail/overture) — Powerful JS library for building really slick web applications, with performance at, or surpassing, native apps.
 
-> · ​[Lucia](https://github.com/aidenybai/lucia) — Tiny library for tiny web apps. ([Docs](https://lucia.js.org/))
+> · ​[Lucia](https://github.com/aidenybai/lucia) — Tiny library for tiny web apps. ([Docs](https://lucia.js.org/))
 
 > · ​[Ractive.js](https://github.com/ractivejs/ractive) — Next-generation DOM manipulation.
 
-> · ​[JSX Lite](https://github.com/BuilderIO/jsx-lite) — Write components once, run everywhere. Compiles to Vue, React, Solid, Liquid, and more.
+> · ​[JSX Lite](https://github.com/BuilderIO/jsx-lite) — Write components once, run everywhere. Compiles to Vue, React, Solid, Liquid, and more.
 
-> · ​[Perlite](https://github.com/PaulMaly/perlite) — Hyperactiv + lit-html + extensions. Simple and declarative way to create rich client-side widgets designed with server-side apps in mind.
+> · ​[Perlite](https://github.com/PaulMaly/perlite) — Hyperactiv + lit-html + extensions. Simple and declarative way to create rich client-side widgets designed with server-side apps in mind.
 
-> · ​[Democrat](https://github.com/etienne-dldc/democrat) — Library that mimic the API of React (Components, hooks, Context…) but instead of producing DOM mutation it produces a state tree.
+> · ​[Democrat](https://github.com/etienne-dldc/democrat) — Library that mimic the API of React (Components, hooks, Context…) but instead of producing DOM mutation it produces a state tree.
 
 > · ​[Raj](https://github.com/andrejewski/raj) — Elm Architecture for JavaScript.
 
 > · ​[Reframe](https://github.com/reframejs/reframe) — New kind of web framework.
 
-> · ​[observablehq/stdlib](https://github.com/observablehq/stdlib) — Observable standard library.
+> · ​[observablehq/stdlib](https://github.com/observablehq/stdlib) — Observable standard library.
 
 > · ​[Choo](https://github.com/choojs/choo) — Sturdy 4kb frontend framework. ([Web](https://www.choo.io/))
 
-> · ​[Typera](https://github.com/akheron/typera) — Type-safe routes for Express and Koa.
+> · ​[Typera](https://github.com/akheron/typera) — Type-safe routes for Express and Koa.
 
 > · ​[Frourio](https://github.com/frouriojs/frourio) — Fast and type-safe full stack framework, for TypeScript. ([Web](https://frourio.io/))
 
-> · ​[Svelto](https://github.com/svelto/svelto) — Modular front end framework for modern browsers, with battery included: 100+ widgets and tools.
+> · ​[Svelto](https://github.com/svelto/svelto) — Modular front end framework for modern browsers, with battery included: 100+ widgets and tools.
 
-> · ​[modular](https://github.com/jpmorganchase/modular) — Collection of tools and guidance to enable UI development at scale. ([Tweet](https://twitter.com/threepointone/status/1340620223993540608))
+> · ​[modular](https://github.com/jpmorganchase/modular) — Collection of tools and guidance to enable UI development at scale. ([Tweet](https://twitter.com/threepointone/status/1340620223993540608))
 
 > · ​[Turbo](https://github.com/hotwired/turbo) — Speed of a single-page web application without having to write any JavaScript. ([Web](https://turbo.hotwire.dev/))
 
-> · ​[Fre](https://github.com/yisar/fre) — Tiny Coroutine framework with Fiber.
+> · ​[Fre](https://github.com/yisar/fre) — Tiny Coroutine framework with Fiber.
 
-> · ​[Glimmer](https://glimmerjs.com/) — Fast and light-weight UI components for the web. ([Code](https://github.com/glimmerjs/glimmer.js))
+> · ​[Glimmer](https://glimmerjs.com/) — Fast and light-weight UI components for the web. ([Code](https://github.com/glimmerjs/glimmer.js))
 
-> · ​[Glimmer VM](https://github.com/glimmerjs/glimmer-vm) — Flexible, low-level rendering pipeline for building a “live” DOM from Handlebars templates that can subsequently be updated cheaply when data changes.
+> · ​[Glimmer VM](https://github.com/glimmerjs/glimmer-vm) — Flexible, low-level rendering pipeline for building a “live” DOM from Handlebars templates that can subsequently be updated cheaply when data changes.
 
 > · ​[frint](https://github.com/frintjs/frint) — Modular JavaScript framework for building scalable and reactive applications.
 
-> · ​[Nano Router](https://github.com/sunesimonsen/nano-router) — Framework agnostic minimalistic router with a focus on named routes.
+> · ​[Nano Router](https://github.com/sunesimonsen/nano-router) — Framework agnostic minimalistic router with a focus on named routes.
 
-> · ​[tiny-request-router](https://github.com/berstend/tiny-request-router) — Fast, generic and type safe router (match request method and path).
+> · ​[tiny-request-router](https://github.com/berstend/tiny-request-router) — Fast, generic and type safe router (match request method and path).
 
 > · ​[Synergy](https://github.com/defx/synergy) — Tiny runtime library for building web user interfaces. ([HN](https://news.ycombinator.com/item?id=25677272))
 
 > · ​[dflex](https://github.com/jalal246/dflex) — JavaScript Project to Manipulate DOM Elements.
 
-> · ​[morphdom](https://github.com/patrick-steele-idem/morphdom) — Fast and lightweight DOM diffing/patching (no virtual DOM needed).
+> · ​[morphdom](https://github.com/patrick-steele-idem/morphdom) — Fast and lightweight DOM diffing/patching (no virtual DOM needed).
 
-> · ​[Forgo](https://github.com/forgojs/forgo) — Ultra-light UI runtime. Makes it super easy to create modern web apps using JSX (like React).
+> · ​[Forgo](https://github.com/forgojs/forgo) — Ultra-light UI runtime. Makes it super easy to create modern web apps using JSX (like React).
 
 > · ​[Whats Up](https://github.com/whatsup/whatsup) — Front-end framework based on ideas of streams and fractals.
 
 > · ​[Boost](https://github.com/milesj/boost) — Collection of type-safe cross-platform packages for building robust server-side and client-side systems.
 
-> · ​[Nostalgie](https://github.com/ggoodman/nostalgie) — Opinionated, full-stack, runtime-agnostic framework for building web apps and web pages using react. ([Web](https://nostalgie.dev/))
+> · ​[Nostalgie](https://github.com/ggoodman/nostalgie) — Opinionated, full-stack, runtime-agnostic framework for building web apps and web pages using react. ([Web](https://nostalgie.dev/))
 
 > · ​[Lumino](https://github.com/jupyterlab/lumino) — Library for building interactive web applications.
 
@@ -9600,7 +9600,7 @@ Happy Coding!
 
 > · ​[Pts](https://github.com/williamngan/pts) — Library for visualization and creative-coding.
 
-> · ​[lax.js](https://github.com/alexfoxy/laxxx) — Simple & light weight (<2kb gzipped) vanilla JS plugin to create smooth & beautiful animations when you scroll.
+> · ​[lax.js](https://github.com/alexfoxy/laxxx) — Simple & light weight (<2kb gzipped) vanilla JS plugin to create smooth & beautiful animations when you scroll.
 
 > · ​[Flipping](https://github.com/davidkpiano/flipping) — Library (and collection of adapters) for implementing FLIP transitions.
 
@@ -9612,7 +9612,7 @@ Happy Coding!
 
 > · ​[React Easy Flip](https://github.com/jlkiri/react-easy-flip) — Lightweight React library for smooth FLIP animations.
 
-> · ​[AOS](https://github.com/michalsnik/aos) — Animate on scroll library.
+> · ​[AOS](https://github.com/michalsnik/aos) — Animate on scroll library.
 
 > · ​[flubber](https://github.com/veltman/flubber) — Tools for smoother shape animations.
 
@@ -9632,13 +9632,13 @@ Happy Coding!
 
 > ‌
 
-> · ​[Unexpected](https://github.com/unexpectedjs/unexpected) — Extensible BDD assertion toolkit. ([Docs](https://unexpected.js.org/))
+> · ​[Unexpected](https://github.com/unexpectedjs/unexpected) — Extensible BDD assertion toolkit. ([Docs](https://unexpected.js.org/))
 
-> · ​[Fishery](https://github.com/thoughtbot/fishery) — Library for setting up JavaScript objects as test data.
+> · ​[Fishery](https://github.com/thoughtbot/fishery) — Library for setting up JavaScript objects as test data.
 
 > · ​[pentf](https://github.com/boxine/pentf) — Parallel end-to-end test framework.
 
-> · ​[test-flat](https://github.com/kettanaito/test-flat) — Test framework extension to support resources teardown and cleanup in flat tests.
+> · ​[test-flat](https://github.com/kettanaito/test-flat) — Test framework extension to support resources teardown and cleanup in flat tests.
 
 > · ​[zora](https://github.com/lorenzofox3/zora) — Lightest, yet Fastest JavaScript test runner for nodejs and browsers.
 
@@ -9652,11 +9652,11 @@ Happy Coding!
 
 > ‌
 
-> · ​[Mutik](https://github.com/jaredpalmer/mutik) — Tiny (495B) immutable state management library based on Immer.
+> · ​[Mutik](https://github.com/jaredpalmer/mutik) — Tiny (495B) immutable state management library based on Immer.
 
-> · ​[Overmind](https://github.com/cerebral/overmind) — Frictionless state management. ([Docs](https://overmindjs.org/)) ([HN](https://news.ycombinator.com/item?id=24750620))
+> · ​[Overmind](https://github.com/cerebral/overmind) — Frictionless state management. ([Docs](https://overmindjs.org/)) ([HN](https://news.ycombinator.com/item?id=24750620))
 
-> · ​[Storeon](https://github.com/ai/storeon) — Tiny event-based Redux-like state manager for React and Preact.
+> · ​[Storeon](https://github.com/ai/storeon) — Tiny event-based Redux-like state manager for React and Preact.
 
 > · ​[Overstated](https://github.com/fabiospampinato/overstated) — React state management library that’s delightful to use, without sacrificing performance or scalability.
 
@@ -9668,11 +9668,11 @@ Happy Coding!
 
 > · ​[Cerebral](https://github.com/cerebral/cerebral) — Declarative state and side effects management solution for popular JavaScript frameworks.
 
-> · ​[Hooksy](https://github.com/pie6k/hooksy) — State management solution based on react hooks.
+> · ​[Hooksy](https://github.com/pie6k/hooksy) — State management solution based on react hooks.
 
-> · ​[React Easy State](https://github.com/RisingStack/react-easy-state) — Simple React state management. Made with ![❤️](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg) and ES6 Proxies.
+> · ​[React Easy State](https://github.com/RisingStack/react-easy-state) — Simple React state management. Made with ![❤️](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg) and ES6 Proxies.
 
-> · ​[wana](https://github.com/alloc/wana) — Easy observable state for React.
+> · ​[wana](https://github.com/alloc/wana) — Easy observable state for React.
 
 > · ​[Recoil](https://github.com/facebookexperimental/Recoil) — Experimental set of utilities for state management with React. ([Web](https://recoiljs.org/)) ([Video](https://www.youtube.com/watch?v=fb3cOMFkEzs)) ([Reddit](https://www.reddit.com/r/reactjs/comments/gjpbjc/facebook_has_open_sourced_an_experimental_state/)) ([Rewriting from scratch](https://bennetthardwick.com/blog/recoil-js-clone-from-scratch-in-100-lines/)) ([Recoilize — Recoil developer tool](https://github.com/open-source-labs/Recoilize))
 
@@ -9680,7 +9680,7 @@ Happy Coding!
 
 > · ​[Fluxible](https://github.com/yahoo/fluxible) — Pluggable container for universal flux applications.
 
-> · ​[Logux State](https://github.com/logux/state) — Tiny state manager with CRDT, cross-tab, and Logux support.
+> · ​[Logux State](https://github.com/logux/state) — Tiny state manager with CRDT, cross-tab, and Logux support.
 
 > · ​[Statery](https://github.com/hmans/statery) — Surprise-Free State Management. Designed for React with functional components.
 
@@ -9692,7 +9692,7 @@ Happy Coding!
 
 > ‌
 
-> · ​[NodeJS Instagram private API client](https://github.com/dilame/instagram-private-api)​
+> · ​[NodeJS Instagram private API client](https://github.com/dilame/instagram-private-api)​
 
 ---
 
@@ -9702,7 +9702,7 @@ Happy Coding!
 
 > ‌
 
-> · ​[sql.js](https://github.com/sql-js/sql.js) — SQLite compiled to JavaScript. Allows you to create a relational database and query it entirely in the browser. ([Docs](https://sql.js.org/#/)) ([HN](https://news.ycombinator.com/item?id=25008308))
+> · ​[sql.js](https://github.com/sql-js/sql.js) — SQLite compiled to JavaScript. Allows you to create a relational database and query it entirely in the browser. ([Docs](https://sql.js.org/#/)) ([HN](https://news.ycombinator.com/item?id=25008308))
 
 > · ​[SQigiL](https://github.com/twooster/sqigil) — Postgres SQL template string for Javascript.
 
@@ -9718,33 +9718,33 @@ Happy Coding!
 
 > This is gonna be a big section….‌
 
-> · ​[state-machines-in-react](https://github.com/tanem/state-machines-in-react) — Small React, xstate and Framer Motion demo.
+> · ​[state-machines-in-react](https://github.com/tanem/state-machines-in-react) — Small React, xstate and Framer Motion demo.
 
 > UI Components
 
-> Table / Data Grid
+> Table / Data Grid
 
-> [reactable](https://github.com/glittershark/reactable) — Fast, flexible, and simple data tables in React.
+> [reactable](https://github.com/glittershark/reactable) — Fast, flexible, and simple data tables in React.
 
 > [ag-grid](https://github.com/ceolter/ag-grid) — Advanced Data Grid / Data Table supporting Javascript / React / AngularJS / Web Components.
 
-> [griddle-react](https://github.com/GriddleGriddle/Griddle) — Simple Grid Component written in React.
+> [griddle-react](https://github.com/GriddleGriddle/Griddle) — Simple Grid Component written in React.
 
-> [react-data-components](https://github.com/carlosrocha/react-data-components) — React components for sorting, filtering and pagination of data.
+> [react-data-components](https://github.com/carlosrocha/react-data-components) — React components for sorting, filtering and pagination of data.
 
 > [react-bootstrap-table](https://github.com/AllenFang/react-bootstrap-table) — It’ s a react table for bootstrap.
 
-> [react-data-grid](https://github.com/adazzle/react-data-grid) — Excel-like grid component built with React, with editors, keyboard navigation, copy & paste, and the like.
+> [react-data-grid](https://github.com/adazzle/react-data-grid) — Excel-like grid component built with React, with editors, keyboard navigation, copy & paste, and the like.
 
 > [react-pivot](https://github.com/davidguttman/react-pivot) — React-Pivot is a data-grid component with pivot-table-like functionality for data display, filtering, and exploration.
 
-> [autoresponsive-react](https://github.com/xudafeng/autoresponsive-react) — Auto Responsive Layout Library For React.
+> [autoresponsive-react](https://github.com/xudafeng/autoresponsive-react) — Auto Responsive Layout Library For React.
 
-> [reactabular](https://github.com/reactabular/reactabular) — Spectacular tables for React.
+> [reactabular](https://github.com/reactabular/reactabular) — Spectacular tables for React.
 
-> [fixed-data-table](https://github.com/facebook/fixed-data-table) — A React table component designed to allow presenting thousands of rows of data.
+> [fixed-data-table](https://github.com/facebook/fixed-data-table) — A React table component designed to allow presenting thousands of rows of data.
 
-> [sematable](https://github.com/sematext/sematable) — Client side sorting, pagination, and text filter for redux/react based apps.
+> [sematable](https://github.com/sematext/sematable) — Client side sorting, pagination, and text filter for redux/react based apps.
 
 > Infinite Scroll
 
@@ -9758,11 +9758,11 @@ Happy Coding!
 
 > [react-list](https://github.com/orgsync/react-list) — A versatile infinite scroll React component.
 
-> [react-virtualized](https://github.com/bvaughn/react-virtualized) — React components for efficiently rendering large lists and tabular data.
+> [react-virtualized](https://github.com/bvaughn/react-virtualized) — React components for efficiently rendering large lists and tabular data.
 
 > Overlay
 
-> _Display overlay / modal / alert / dialog / lightbox / popup_
+> _Display overlay / modal / alert / dialog / lightbox / popup_
 
 > [react-dock](https://github.com/alexkuz/react-dock) — Resizable dockable react component.
 
@@ -9770,11 +9770,11 @@ Happy Coding!
 
 > [boron](https://github.com/yuanyan/boron) — A collection of dialog animations with React.js.
 
-> [react-modal2](https://github.com/cloudflare/react-modal2) — Simple modal component for React.
+> [react-modal2](https://github.com/cloudflare/react-modal2) — Simple modal component for React.
 
-> [react-modal](https://github.com/reactjs/react-modal) — Accessible modal dialog component for React.
+> [react-modal](https://github.com/reactjs/react-modal) — Accessible modal dialog component for React.
 
-> [react-skylight](https://github.com/marcio/react-skylight) — A react component for modals and dialogs.
+> [react-skylight](https://github.com/marcio/react-skylight) — A react component for modals and dialogs.
 
 > [rodal](https://github.com/chenjiahan/rodal) — A React modal with animations.
 
@@ -9784,15 +9784,15 @@ Happy Coding!
 
 > Notification
 
-> _Toaster / snackbar — Notify the user with a modeless temporary little popup_
+> _Toaster / snackbar — Notify the user with a modeless temporary little popup_
 
-> [react-notification-system](https://github.com/igorprado/react-notification-system) — A complete and totally customizable component for notifications in React.
+> [react-notification-system](https://github.com/igorprado/react-notification-system) — A complete and totally customizable component for notifications in React.
 
-> [react-notification](https://github.com/pburtchaell/react-notification) — Snackbar notifications for React.
+> [react-notification](https://github.com/pburtchaell/react-notification) — Snackbar notifications for React.
 
 > [react-s-alert](https://github.com/juliancwirko/react-s-alert) — Alerts / Notifications for React with rich configuration options.
 
-> [react-crouton](https://github.com/xeodou/react-crouton) — A message component for reactjs.
+> [react-crouton](https://github.com/xeodou/react-crouton) — A message component for reactjs.
 
 > [reapop](https://github.com/LouisBarranqueiro/reapop) — A React & Redux notifications system.
 
@@ -9800,43 +9800,43 @@ Happy Coding!
 
 > [react-tooltip](https://github.com/wwayne/react-tooltip) — React tooltip component.
 
-> [rc-tooltip](https://github.com/react-component/tooltip) — React Tooltip.
+> [rc-tooltip](https://github.com/react-component/tooltip) — React Tooltip.
 
 > [react-portal-tooltip](https://github.com/romainberger/react-portal-tooltip) — Awesome React tooltips.
 
 > Menu
 
-> _Menus / sidebars_
+> _Menus / sidebars_
 
 > [react-burger-menu](https://github.com/negomi/react-burger-menu) — An off-canvas sidebar component with a collection of effects and styles using CSS transitions and SVG path animations.
 
-> [react-sidebar](https://github.com/balloob/react-sidebar) — A sidebar component for React.
+> [react-sidebar](https://github.com/balloob/react-sidebar) — A sidebar component for React.
 
-> [react-motion-menu](https://github.com/bokuweb/react-motion-menu) — Motion menu component powered by React Motion.
+> [react-motion-menu](https://github.com/bokuweb/react-motion-menu) — Motion menu component powered by React Motion.
 
-> [react-offcanvas](https://github.com/vutran/react-offcanvas) — Off-canvas menus for React.
+> [react-offcanvas](https://github.com/vutran/react-offcanvas) — Off-canvas menus for React.
 
-> [react-tree-menu](https://github.com/MandarinConLaBarba/react-tree-menu) — A stateless tree menu component for React.
+> [react-tree-menu](https://github.com/MandarinConLaBarba/react-tree-menu) — A stateless tree menu component for React.
 
-> [react-metismenu](https://github.com/alpertuna/react-metismenu) — A ready-to-use menu component for React.
+> [react-metismenu](https://github.com/alpertuna/react-metismenu) — A ready-to-use menu component for React.
 
-> [react-contextmenu](https://github.com/vkbansal/react-contextmenu) — Context Menu implemented in React.
+> [react-contextmenu](https://github.com/vkbansal/react-contextmenu) — Context Menu implemented in React.
 
-> [rc-menu](https://github.com/react-component/menu) — React Menu.
+> [rc-menu](https://github.com/react-component/menu) — React Menu.
 
 > Sticky
 
-> _Fixed headers / scroll-up headers / sticky elements_
+> _Fixed headers / scroll-up headers / sticky elements_
 
-> [react-sticky](https://github.com/captivationsoftware/react-sticky) — < Sticky /> component for awesome React apps.
+> [react-sticky](https://github.com/captivationsoftware/react-sticky) — < Sticky /> component for awesome React apps.
 
-> [react-headroom](https://github.com/KyleAMathews/react-headroom) — Hide your header until you need it.
+> [react-headroom](https://github.com/KyleAMathews/react-headroom) — Hide your header until you need it.
 
-> [react-listview-sticky-header](https://github.com/cht8687/react-listview-sticky-header) — React listview with sticky section header.
+> [react-listview-sticky-header](https://github.com/cht8687/react-listview-sticky-header) — React listview with sticky section header.
 
-> [react-sticky-state](https://github.com/soenkekluth/react-sticky-state) — React StickyState Component makes native position:sticky statefull and polyfills the missing sticky browser feature.
+> [react-sticky-state](https://github.com/soenkekluth/react-sticky-state) — React StickyState Component makes native position:sticky statefull and polyfills the missing sticky browser feature.
 
-> [react-stickynode](https://github.com/yahoo/react-stickynode) — A performant and comprehensive React sticky.
+> [react-stickynode](https://github.com/yahoo/react-stickynode) — A performant and comprehensive React sticky.
 
 > [react-sticky-node](https://github.com/visortelle/react-sticky-node) — Sticky react component.
 
@@ -9844,93 +9844,93 @@ Happy Coding!
 
 > [react-tabs](https://github.com/reactjs/react-tabs) — React tabs component.
 
-> [react-simpletabs](https://github.com/pedronauck/react-simpletabs) — Just a simple tabs component built with React.
+> [react-simpletabs](https://github.com/pedronauck/react-simpletabs) — Just a simple tabs component built with React.
 
-> [react-tabtab](https://github.com/ctxhou/react-tabtab) — React, tabs.
+> [react-tabtab](https://github.com/ctxhou/react-tabtab) — React, tabs.
 
 > Loader
 
-> _Loaders / spinners / progress bars — Let the user know that something is loading_
+> _Loaders / spinners / progress bars — Let the user know that something is loading_
 
 > [halogen](https://github.com/yuanyan/halogen) — A collection of loading spinners with React.js.
 
-> [react-ladda](https://github.com/jsdir/react-ladda) — React wrapper for Ladda buttons.
+> [react-ladda](https://github.com/jsdir/react-ladda) — React wrapper for Ladda buttons.
 
 > [react-progress-button](https://github.com/mathieudutour/react-progress-button) — Simple react.js component for an inline progress indicator.
 
-> [react-loader](https://github.com/TheCognizantFoundry/react-loader) — React component that displays a spinner via spin.js until your component is loaded.
+> [react-loader](https://github.com/TheCognizantFoundry/react-loader) — React component that displays a spinner via spin.js until your component is loaded.
 
-> [react-spinkit](https://github.com/KyleAMathews/react-spinkit) — A collection of loading indicators animated with CSS for React.
+> [react-spinkit](https://github.com/KyleAMathews/react-spinkit) — A collection of loading indicators animated with CSS for React.
 
 > [react-progress-label](https://github.com/wangzuo/react-progress-label) — Progress label component.
 
-> [react-redux-loading-bar](https://github.com/mironov/react-redux-loading-bar) — Simple Loading Bar for Redux and React.
+> [react-redux-loading-bar](https://github.com/mironov/react-redux-loading-bar) — Simple Loading Bar for Redux and React.
 
 > [react-loaders](https://github.com/jonjaques/react-loaders) — Lightweight wrapper around Loaders.css.
 
 > [react-md-spinner](https://github.com/tsuyoshiwada/react-md-spinner) — Material Design spinner components for React.js.
 
-> [rc-progress](https://github.com/react-component/progress) — React Progress Bar.
+> [rc-progress](https://github.com/react-component/progress) — React Progress Bar.
 
-> [react-block-ui](https://github.com/availity/react-block-ui) — Easy way to block the user from interacting with your UI.
+> [react-block-ui](https://github.com/availity/react-block-ui) — Easy way to block the user from interacting with your UI.
 
 > Carousel
 
 > [react-slick](https://github.com/akiran/react-slick) — React carousel component.
 
-> [react-responsive-carousel](https://github.com/leandrowd/react-responsive-carousel) — React.js Responsive Carousel (with Swipe).
+> [react-responsive-carousel](https://github.com/leandrowd/react-responsive-carousel) — React.js Responsive Carousel (with Swipe).
 
 > Collapse
 
-> [react-collapse](https://github.com/nkbt/react-collapse) — Component-wrapper for collapse animation with react-motion for elements with variable (and dynamic) height.
+> [react-collapse](https://github.com/nkbt/react-collapse) — Component-wrapper for collapse animation with react-motion for elements with variable (and dynamic) height.
 
-> [react-accessible-accordion](https://github.com/springload/react-accessible-accordion) — Accessible Accordion component for React.
+> [react-accessible-accordion](https://github.com/springload/react-accessible-accordion) — Accessible Accordion component for React.
 
 > Chart
 
-> _Display data in charts / graphs / diagrams_
+> _Display data in charts / graphs / diagrams_
 
 > [react-chartist](https://github.com/fraserxu/react-chartist) — React component for Chartist.js.
 
-> [d3-react-squared](https://github.com/bgrsquared/d3-react-squared) — Lightweight event system for (d3) charts and other components for ReactJS.
+> [d3-react-squared](https://github.com/bgrsquared/d3-react-squared) — Lightweight event system for (d3) charts and other components for ReactJS.
 
-> [react-d3-components](https://github.com/codesuki/react-d3-components) — D3 Components for React.
+> [react-d3-components](https://github.com/codesuki/react-d3-components) — D3 Components for React.
 
-> [recharts](https://github.com/recharts/recharts) — Redefined chart library built with React and D3.
+> [recharts](https://github.com/recharts/recharts) — Redefined chart library built with React and D3.
 
 > [react-chartjs](https://github.com/reactjs/react-chartjs) — Common react charting components using chart.js.
 
-> [react-dazzle](https://github.com/Raathigesh/Dazzle) — Dashboards made easy in React JS.
+> [react-dazzle](https://github.com/Raathigesh/Dazzle) — Dashboards made easy in React JS.
 
-> [react-vis](https://github.com/uber/react-vis) — Data visualization library based on React and d3.
+> [react-vis](https://github.com/uber/react-vis) — Data visualization library based on React and d3.
 
 > [react-sparkline](https://github.com/KyleAMathews/react-sparkline) — React component for rendering simple sparklines.
 
 > [react-sparklines](https://github.com/borisyankov/react-sparklines) — Beautiful and expressive Sparklines React component.
 
-> [rumble-charts](https://github.com/RumbleInc/rumble-js-charts) — React components for building composable and flexible charts.
+> [rumble-charts](https://github.com/RumbleInc/rumble-js-charts) — React components for building composable and flexible charts.
 
-> [react-micro-bar-chart](https://github.com/KyleAMathews/react-micro-bar-chart) — React component for micro bar-charts rendered with D3.
+> [react-micro-bar-chart](https://github.com/KyleAMathews/react-micro-bar-chart) — React component for micro bar-charts rendered with D3.
 
 > [react-timeseries-charts](https://github.com/esnet/react-timeseries-charts) — Declarative timeseries charts.
 
 > [react-google-charts](https://github.com/RakanNimer/react-google-charts) — React-google-charts React component.
 
-> [victory](https://github.com/FormidableLabs/victory) — Data viz for React.
+> [victory](https://github.com/FormidableLabs/victory) — Data viz for React.
 
-> [react-sigmajs](https://github.com/dunnock/react-sigma) — Lightweight but powerful library for drawing network graphs built on top of SigmaJS.
+> [react-sigmajs](https://github.com/dunnock/react-sigma) — Lightweight but powerful library for drawing network graphs built on top of SigmaJS.
 
 > [chartify](https://github.com/kirillstepkin/chartify) — React.js plugin for building animated draggable and customizable charts.
 
 > [react-highcharts](https://github.com/kirjs/react-highcharts) — React-highcharts.
 
-> [react-trend](https://github.com/unsplash/react-trend) — Simple, elegant spark lines.
+> [react-trend](https://github.com/unsplash/react-trend) — Simple, elegant spark lines.
 
 > Tree
 
 > _Display a tree data structure_
 
-> [react-treeview](https://github.com/chenglou/react-treeview) — Easy, light, flexible tree view made with React.
+> [react-treeview](https://github.com/chenglou/react-treeview) — Easy, light, flexible tree view made with React.
 
 > [react-ui-tree](https://github.com/pqx/react-ui-tree) — React tree component.
 
@@ -9938,7 +9938,7 @@ Happy Coding!
 
 > UI Navigation
 
-> _Ways to navigate views_
+> _Ways to navigate views_
 
 > [react-scroll](https://github.com/fisshy/react-scroll) — React scroll component.
 
@@ -9948,7 +9948,7 @@ Happy Coding!
 
 > [react-custom-scrollbars](https://github.com/malte-wessel/react-custom-scrollbars) — React scrollbars component.
 
-> [react-scrollbar](https://github.com/souhe/reactScrollbar) — Scrollbar component for React.
+> [react-scrollbar](https://github.com/souhe/reactScrollbar) — Scrollbar component for React.
 
 > [react-smooth-scrollbar](https://github.com/idiotWu/react-smooth-scrollbar) — React implementation of smooth-scrollbar.
 
@@ -9956,89 +9956,89 @@ Happy Coding!
 
 > [react-custom-scroll](https://github.com/rommguy/react-custom-scroll) — Easily customize the browser scroll bar with native OS scroll behavior.
 
-> Audio / Video
+> Audio / Video
 
-> [react-player](https://github.com/CookPete/react-player) — A react component for playing a variety of URLs, including file paths, YouTube, SoundCloud and Vimeo.
+> [react-player](https://github.com/CookPete/react-player) — A react component for playing a variety of URLs, including file paths, YouTube, SoundCloud and Vimeo.
 
 > [react-youtube](https://github.com/troybetz/react-youtube) — React.js powered YouTube player component.
 
-> [react-soundplayer](https://github.com/soundblogs/react-soundplayer) — Create custom SoundCloud players with React.
+> [react-soundplayer](https://github.com/soundblogs/react-soundplayer) — Create custom SoundCloud players with React.
 
-> [react-video](https://github.com/pedronauck/react-video) — React component to load video from Vimeo or Youtube across any device.
+> [react-video](https://github.com/pedronauck/react-video) — React component to load video from Vimeo or Youtube across any device.
 
-> [react-music](https://github.com/FormidableLabs/react-music) — Make beats with React.
+> [react-music](https://github.com/FormidableLabs/react-music) — Make beats with React.
 
-> [react-dailymotion](https://github.com/u-wave/react-dailymotion) — Dailymotion player component for React.
+> [react-dailymotion](https://github.com/u-wave/react-dailymotion) — Dailymotion player component for React.
 
-> [video-react](https://github.com/video-react/video-react) — A web video player built for the HTML5 world using React library.
+> [video-react](https://github.com/video-react/video-react) — A web video player built for the HTML5 world using React library.
 
 > Map
 
 > [react-gmaps](https://github.com/MicheleBertoli/react-gmaps) — A Google Maps component for React.js.
 
-> [google-map-react](https://github.com/istarkov/google-map-react) — Universal google map react component, allows render react components on the google map.
+> [google-map-react](https://github.com/istarkov/google-map-react) — Universal google map react component, allows render react components on the google map.
 
-> [react-googlemaps](https://github.com/pieterv/react-googlemaps) — A declarative React interface to Google Maps.
+> [react-googlemaps](https://github.com/pieterv/react-googlemaps) — A declarative React interface to Google Maps.
 
-> [react-leaflet](https://github.com/PaulLeCam/react-leaflet) — React components for Leaflet maps.
+> [react-leaflet](https://github.com/PaulLeCam/react-leaflet) — React components for Leaflet maps.
 
-> [react-geosuggest](https://github.com/ubilabs/react-geosuggest) — A React autosuggest for the Google Maps Places API.
+> [react-geosuggest](https://github.com/ubilabs/react-geosuggest) — A React autosuggest for the Google Maps Places API.
 
-> [react-map-gl](https://github.com/uber/react-map-gl) — A React wrapper for MapboxGL-js and overlay API.
+> [react-map-gl](https://github.com/uber/react-map-gl) — A React wrapper for MapboxGL-js and overlay API.
 
 > [react-mapbox-gl](https://github.com/alex3165/react-mapbox-gl) — A React binding of mapbox-gl-js.
 
-> Time / Date / Age
+> Time / Date / Age
 
-> _Display time / date / age_
+> _Display time / date / age_
 
-> [react-time](https://github.com/andreypopp/react-time) — Component for React to render relative and/or formatted dates into < time> HTML5 element.
+> [react-time](https://github.com/andreypopp/react-time) — Component for React to render relative and/or formatted dates into < time> HTML5 element.
 
-> [react-timeago](https://github.com/nmn/react-timeago) — A simple time-ago component for ReactJs.
+> [react-timeago](https://github.com/nmn/react-timeago) — A simple time-ago component for ReactJs.
 
-> [timeago-react](https://github.com/hustcc/timeago-react) — Simple and efficient react component to format date with `*** time ago` statement. eg: ‘3 hours ago’.
+> [timeago-react](https://github.com/hustcc/timeago-react) — Simple and efficient react component to format date with `*** time ago` statement. eg: ‘3 hours ago’.
 
-> Photo / Image
+> Photo / Image
 
-> _Display images / photos_
+> _Display images / photos_
 
 > [react-image-gallery](https://github.com/xiaolin/react-image-gallery) — Responsive image gallery, carousel, image slider react component.
 
-> [react-images](https://github.com/jossmac/react-images) — A simple lightbox component for displaying an array of images.
+> [react-images](https://github.com/jossmac/react-images) — A simple lightbox component for displaying an array of images.
 
-> [react-photo-gallery](https://github.com/neptunian/react-photo-gallery) — Responsive React Photo Gallery.
+> [react-photo-gallery](https://github.com/neptunian/react-photo-gallery) — Responsive React Photo Gallery.
 
-> [react-svg-pan-zoom](https://github.com/chrvadala/react-svg-pan-zoom) — A React component that adds pan and zoom features to SVG.
+> [react-svg-pan-zoom](https://github.com/chrvadala/react-svg-pan-zoom) — A React component that adds pan and zoom features to SVG.
 
 > [react-image-lightbox](https://github.com/fritz-c/react-image-lightbox) — React lightbox component.
 
-> [react-intense](https://github.com/brycedorn/react-intense) — A React component for viewing large images up close.
+> [react-intense](https://github.com/brycedorn/react-intense) — A React component for viewing large images up close.
 
 > Icons
 
-> _Display icons / icon set / emojis_
+> _Display icons / icon set / emojis_
 
-> [react-icons](https://github.com/gorangajic/react-icons) — Svg react icons of popular icon packs using ES6 imports.
+> [react-icons](https://github.com/gorangajic/react-icons) — Svg react icons of popular icon packs using ES6 imports.
 
-> [react-emoji](https://github.com/banyan/react-emoji) — An emoji mixin for React.
+> [react-emoji](https://github.com/banyan/react-emoji) — An emoji mixin for React.
 
-> [react-emoji-react](https://github.com/conorhastings/react-emoji-react) — A clone of slack emoji reactions in react.
+> [react-emoji-react](https://github.com/conorhastings/react-emoji-react) — A clone of slack emoji reactions in react.
 
 > Paginator
 
-> _Display a control element to paginate_
+> _Display a control element to paginate_
 
 > [react-paginate](https://github.com/AdeleD/react-paginate) — A ReactJS component that creates a pagination.
 
 > Markdown Viewer
 
-> _Display parsed markdow source_
+> _Display parsed markdow source_
 
 > [react-markdown](https://github.com/rexxars/react-markdown) — Render Markdown as React components.
 
 > Miscellaneous
 
-> [react-timesheet](https://github.com/yuanyan/react-timesheet) — Time Sheet Component for React.
+> [react-timesheet](https://github.com/yuanyan/react-timesheet) — Time Sheet Component for React.
 
 > [react-blur](https://github.com/javierbyte/react-blur) — React component for blurred backgrounds.
 
@@ -10048,49 +10048,49 @@ Happy Coding!
 
 > [react-json-tree](https://github.com/alexkuz/react-json-tree) — React JSON Viewer Component, Extracted from redux-devtools.
 
-> [react-resizable-and-movable](https://github.com/bokuweb/react-resizable-and-movable) — Resizable and movable component for React.
+> [react-resizable-and-movable](https://github.com/bokuweb/react-resizable-and-movable) — Resizable and movable component for React.
 
 > [react-dnr](https://github.com/yongxu/react-DnR) — Dragable and Resizable window build with React.js.
 
 > [react-resizable-box](https://github.com/bokuweb/react-resizable-box) — Resizable component for React. #reactjs.
 
-> [react-file-reader-input](https://github.com/ngokevin/react-file-reader-input) — React file input component for complete control over styling and abstraction from file reading.
+> [react-file-reader-input](https://github.com/ngokevin/react-file-reader-input) — React file input component for complete control over styling and abstraction from file reading.
 
 > [react-pagespeed-score](https://github.com/cauealves/react-pagespeed-score) — A React component for display a dial-type chart of PageSpeed Insights.
 
-> [react-autolink](https://github.com/banyan/react-autolink) — An autolink mixin for React.
+> [react-autolink](https://github.com/banyan/react-autolink) — An autolink mixin for React.
 
-> [react-svg-buttons](https://github.com/plouc/react-svg-buttons) — Configurable animated SVG buttons for react.
+> [react-svg-buttons](https://github.com/plouc/react-svg-buttons) — Configurable animated SVG buttons for react.
 
 > [react-avatar](https://github.com/Sitebase/react-avatar) — Universal React avatar component makes it possible to generate avatars based on user information.
 
 > [react-joyride](https://github.com/gilbarbara/react-joyride) — Create walkthroughs and guided tours for your ReactJS apps. Now with standalone tooltips!.
 
-> [material-color-hash](https://github.com/BelkaLab/material-color-hash) — Hash strings to Material UI colors.
+> [material-color-hash](https://github.com/BelkaLab/material-color-hash) — Hash strings to Material UI colors.
 
-> [react-facebook](https://github.com/CherryProjects/react-facebook) — Facebook components like a Login button, Like, Share, Comments, Page or Embedded Post.
+> [react-facebook](https://github.com/CherryProjects/react-facebook) — Facebook components like a Login button, Like, Share, Comments, Page or Embedded Post.
 
 > Form Components
 
-> _Let the user enter data_
+> _Let the user enter data_
 
-> Date / Time picker
+> Date / Time picker
 
-> _Date picker / time picker / datetime picker / date range picker_
+> _Date picker / time picker / datetime picker / date range picker_
 
-> [react-datepicker](https://github.com/Hacker0x01/react-datepicker) — A simple and reusable datepicker component for React.
+> [react-datepicker](https://github.com/Hacker0x01/react-datepicker) — A simple and reusable datepicker component for React.
 
 > [rc-calendar](https://github.com/react-component/calendar) — React Calendar.
 
-> [react-date-range](https://github.com/Adphorus/react-date-range) — A React component for choosing dates and date ranges.
+> [react-date-range](https://github.com/Adphorus/react-date-range) — A React component for choosing dates and date ranges.
 
-> [react-day-picker](https://github.com/gpbl/react-day-picker) — Flexible date picker for React.
+> [react-day-picker](https://github.com/gpbl/react-day-picker) — Flexible date picker for React.
 
-> [react-daterange-picker](https://github.com/onefinestay/react-daterange-picker) — A React based date range picker.
+> [react-daterange-picker](https://github.com/onefinestay/react-daterange-picker) — A React based date range picker.
 
 > [react-yearly-calendar](https://github.com/BelkaLab/react-yearly-calendar) — React.js Yearly Calendar Component.
 
-> [react-calendar](https://github.com/freiksenet/react-calendar) — A modular toolkit to build calendar-related things in React.
+> [react-calendar](https://github.com/freiksenet/react-calendar) — A modular toolkit to build calendar-related things in React.
 
 > [input-moment](https://github.com/wangzuo/input-moment) — React datetime picker powered by momentjs.
 
@@ -10104,23 +10104,23 @@ Happy Coding!
 
 > [react-date-select](https://github.com/JedWatson/react-date-select) — A React Date Select / Picker Input Component.
 
-> [react-infinite-calendar](https://github.com/clauderic/react-infinite-calendar) — Infinite scrolling date-picker built with React, with localization, themes, keyboard support, and more.
+> [react-infinite-calendar](https://github.com/clauderic/react-infinite-calendar) — Infinite scrolling date-picker built with React, with localization, themes, keyboard support, and more.
 
-> [react-dates](https://github.com/airbnb/react-dates) — An easily internationalizable, mobile-friendly datepicker library for the web.
+> [react-dates](https://github.com/airbnb/react-dates) — An easily internationalizable, mobile-friendly datepicker library for the web.
 
-> [react-flatpickr](https://github.com/coderhaoxin/react-flatpickr) — Flatpickr for React.
+> [react-flatpickr](https://github.com/coderhaoxin/react-flatpickr) — Flatpickr for React.
 
 > Input Types
 
-> _Masked inputs, specialized inputs; email / telephone number / credit card / etc._
+> _Masked inputs, specialized inputs; email / telephone number / credit card / etc._
 
-> [react-input-mask](https://github.com/sanniassin/react-input-mask) — Yet another react component for input masking.
+> [react-input-mask](https://github.com/sanniassin/react-input-mask) — Yet another react component for input masking.
 
 > [react-maskedinput](https://github.com/insin/react-maskedinput) — Masked < input/> React component.
 
-> [react-text-mask](https://github.com/msafi/text-mask) — Input mask for React, Angular, and vanilla JavaScript. Flexible, robust & tiny.
+> [react-text-mask](https://github.com/msafi/text-mask) — Input mask for React, Angular, and vanilla JavaScript. Flexible, robust & tiny.
 
-> [react-credit-cards](https://github.com/amarofashion/react-credit-cards) — Beautiful credit cards for your payment forms.
+> [react-credit-cards](https://github.com/amarofashion/react-credit-cards) — Beautiful credit cards for your payment forms.
 
 > Autocomplete
 
@@ -10130,25 +10130,25 @@ Happy Coding!
 
 > [react-typeahead](https://github.com/fmoo/react-typeahead) — Pure react-based typeahead and typeahead-tokenizer.
 
-> [react-typeahead-component](https://github.com/ezequiel/react-typeahead-component) — Typeahead, written using the React.js library.
+> [react-typeahead-component](https://github.com/ezequiel/react-typeahead-component) — Typeahead, written using the React.js library.
 
 > Select
 
 > [react-selectize](https://github.com/furqanZafar/react-selectize) — A Stateless & Flexible Select component for React inspired by Selectize.
 
-> [react-aria-menubutton](https://github.com/davidtheclark/react-aria-menubutton) — A fully accessible, easily themeable, React-powered menu button.
+> [react-aria-menubutton](https://github.com/davidtheclark/react-aria-menubutton) — A fully accessible, easily themeable, React-powered menu button.
 
-> [react-select](https://github.com/JedWatson/react-select) — A Select control built with and for React JS.
+> [react-select](https://github.com/JedWatson/react-select) — A Select control built with and for React JS.
 
-> [react-select-box](https://github.com/instructure-react/react-select-box) — An accessible select box component for React.
+> [react-select-box](https://github.com/instructure-react/react-select-box) — An accessible select box component for React.
 
 > Color Picker
 
-> [react-input-color](https://github.com/wangzuo/react-input-color) — React input color component with hsv color picker.
+> [react-input-color](https://github.com/wangzuo/react-input-color) — React input color component with hsv color picker.
 
-> [react-color](https://github.com/casesandberg/react-color) — Color Pickers from Sketch, Photoshop, Chrome & more.
+> [react-color](https://github.com/casesandberg/react-color) — Color Pickers from Sketch, Photoshop, Chrome & more.
 
-> [coloreact](https://github.com/elrumordelaluz/coloreact) — A tiny Color Picker for React.
+> [coloreact](https://github.com/elrumordelaluz/coloreact) — A tiny Color Picker for React.
 
 > Toggle
 
@@ -10158,41 +10158,41 @@ Happy Coding!
 
 > Slider
 
-> [rc-slider](https://github.com/react-component/slider) — React Slider.
+> [rc-slider](https://github.com/react-component/slider) — React Slider.
 
-> [react-slider](https://github.com/mpowaga/react-slider) — Slider component for React.
+> [react-slider](https://github.com/mpowaga/react-slider) — Slider component for React.
 
 > Radio Button
 
-> [react-radio-group](https://github.com/chenglou/react-radio-group) — Better radio buttons.
+> [react-radio-group](https://github.com/chenglou/react-radio-group) — Better radio buttons.
 
 > Type Select
 
-> _Let the user select something (e.g. a tag) while typing_
+> _Let the user select something (e.g. a tag) while typing_
 
-> [react-tagsinput](https://github.com/olahol/react-tagsinput) — A simple react component for inputing tags.
+> [react-tagsinput](https://github.com/olahol/react-tagsinput) — A simple react component for inputing tags.
 
 > [react-tag-input](https://github.com/prakhar1989/react-tags) — A fantastically simple tagging component for your React projects.
 
 > [react-mentions](https://github.com/effektif/react-mentions) — Mention people in a textarea.
 
-> [react-tokeninput](https://github.com/instructure-react/react-tokeninput) — Tokeninput component for React.
+> [react-tokeninput](https://github.com/instructure-react/react-tokeninput) — Tokeninput component for React.
 
-> [react-autocomplete-input](https://github.com/yury-dymov/react-autocomplete-input) — Autocomplete input field for React.
+> [react-autocomplete-input](https://github.com/yury-dymov/react-autocomplete-input) — Autocomplete input field for React.
 
-> Autosize Input / Textarea
+> Autosize Input / Textarea
 
-> [react-input-autosize](https://github.com/JedWatson/react-input-autosize) — Auto-resizing input field for React.
+> [react-input-autosize](https://github.com/JedWatson/react-input-autosize) — Auto-resizing input field for React.
 
-> [react-textarea-autosize](https://github.com/andreypopp/react-textarea-autosize) — < textarea /> component for React which grows with content.
+> [react-textarea-autosize](https://github.com/andreypopp/react-textarea-autosize) — < textarea /> component for React which grows with content.
 
 > Star Rating
 
-> [react-star-rating](https://github.com/cameronroe/react-star-rating) — A simple star rating component built with React.
+> [react-star-rating](https://github.com/cameronroe/react-star-rating) — A simple star rating component built with React.
 
-> [react-star-rating-input](https://github.com/ikr/react-star-rating-input) — React.js component for entering 0-5 (or more) stars.
+> [react-star-rating-input](https://github.com/ikr/react-star-rating-input) — React.js component for entering 0-5 (or more) stars.
 
-> Drag and Drop
+> Drag and Drop
 
 > [react-draggable](https://github.com/mzabriskie/react-draggable) — React draggable component.
 
@@ -10200,29 +10200,29 @@ Happy Coding!
 
 > [react-dropzone](https://github.com/okonet/react-dropzone) — Simple HTML5 drag-drop zone with React.js.
 
-> [react-dnd](https://github.com/gaearon/react-dnd) — Drag and Drop for React.
+> [react-dnd](https://github.com/gaearon/react-dnd) — Drag and Drop for React.
 
-> [react-sortable-pane](https://github.com/bokuweb/react-sortable-pane) — Sortable and resizable pane component for React.
+> [react-sortable-pane](https://github.com/bokuweb/react-sortable-pane) — Sortable and resizable pane component for React.
 
-> [react-dragula](https://github.com/bevacqua/react-dragula) — Drag and drop so simple it hurts.
+> [react-dragula](https://github.com/bevacqua/react-dragula) — Drag and drop so simple it hurts.
 
-> [react-droparea](https://github.com/avocode/react-droparea) — Drag and Drop library for React.
+> [react-droparea](https://github.com/avocode/react-droparea) — Drag and Drop library for React.
 
 > Sortable List
 
-> _Let the user define an order on a list_
+> _Let the user define an order on a list_
 
 > [sortablejs](https://github.com/RubaXa/Sortable) — Sortable — is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery. Supports Meteor, AngularJS, React, Polymer, Knockout and any CSS library, e.g. Bootstrap.
 
 > [react-anything-sortable](https://github.com/jasonslyvia/react-anything-sortable) — A ReactJS component that can sort any children with touch support and IE8 compatibility.
 
-> [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc) — A set of higher-order components to turn any list into an animated, touch-friendly, sortable list.
+> [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc) — A set of higher-order components to turn any list into an animated, touch-friendly, sortable list.
 
-> [react-sortable](https://github.com/danielstocks/react-sortable) — A sortable list component built with React.
+> [react-sortable](https://github.com/danielstocks/react-sortable) — A sortable list component built with React.
 
-> Rich Text Editor
+> Rich Text Editor
 
-> [react-quill](https://github.com/zenoamaro/react-quill) — A Quill component for React.
+> [react-quill](https://github.com/zenoamaro/react-quill) — A Quill component for React.
 
 > [react-ace](https://github.com/securingsincity/react-ace) — React Ace Component.
 
@@ -10232,9 +10232,9 @@ Happy Coding!
 
 > [react-medium-editor](https://github.com/wangzuo/react-medium-editor) — React wrapper for medium-editor.
 
-> [draft-js](https://github.com/facebook/draft-js) — A React framework for building text editors.
+> [draft-js](https://github.com/facebook/draft-js) — A React framework for building text editors.
 
-> [ritzy](https://github.com/ritzyed/ritzy) — Collaborative web-based rich text editor.
+> [ritzy](https://github.com/ritzyed/ritzy) — Collaborative web-based rich text editor.
 
 > [megadraft](https://github.com/globocom/megadraft) — Rich Text editor built on top of draft.js.
 
@@ -10242,7 +10242,7 @@ Happy Coding!
 
 > [alloyeditor](https://github.com/liferay/alloy-editor) — WYSIWYG editor based on CKEditor with completely rewritten UI.
 
-> [react-draft-wysiwyg](https://github.com/jpuri/react-draft-wysiwyg) — A Wysiwyg editor build on top of ReactJS and DraftJS.
+> [react-draft-wysiwyg](https://github.com/jpuri/react-draft-wysiwyg) — A Wysiwyg editor build on top of ReactJS and DraftJS.
 
 > Markdown Editor
 
@@ -10254,13 +10254,13 @@ Happy Coding!
 
 > _Image manipulation_
 
-> [react-avatar-cropper](https://github.com/DropsOfSerenity/react-avatar-cropper) — Aiming to be a complete solution for avatar cropping in react.
+> [react-avatar-cropper](https://github.com/DropsOfSerenity/react-avatar-cropper) — Aiming to be a complete solution for avatar cropping in react.
 
 > [react-avatar-editor](https://github.com/mosch/react-avatar-editor) — Facebook like, avatar / profile picture component. Resize and crop your uploaded image using a clear user interface.
 
-> [react-image-crop](https://github.com/DominicTobias/react-image-crop) — A responsive image cropping tool for React.
+> [react-image-crop](https://github.com/DominicTobias/react-image-crop) — A responsive image cropping tool for React.
 
-> [react-image-cropper](https://github.com/jerryshew/react-image-cropper) — React image crop.
+> [react-image-cropper](https://github.com/jerryshew/react-image-cropper) — React image crop.
 
 > Form Component Collections
 
@@ -10268,15 +10268,15 @@ Happy Coding!
 
 > [formsy-material-ui](https://github.com/mbrookes/formsy-material-ui) — A Formsy compatibility wrapper for Material-UI form components.
 
-> [react-input-enhancements](https://github.com/alexkuz/react-input-enhancements) — Set of enhancements for input control.
+> [react-input-enhancements](https://github.com/alexkuz/react-input-enhancements) — Set of enhancements for input control.
 
-> [react-widgets](https://github.com/jquense/react-widgets) — An à la carte set of polished, extensible, and accessible inputs built for React.
+> [react-widgets](https://github.com/jquense/react-widgets) — An à la carte set of polished, extensible, and accessible inputs built for React.
 
 > Miscellaneous
 
 > [react-designer](https://github.com/fatiherikli/react-designer) — Easy to configure, lightweight, editable vector graphics in your react components.
 
-> [react-images-uploader](https://github.com/aleksei0807/react-images-uploader) — React.js component for uploading images to the server.
+> [react-images-uploader](https://github.com/aleksei0807/react-images-uploader) — React.js component for uploading images to the server.
 
 > [react-tabguard](https://github.com/avocode/react-tabguard) — React Tabguard.
 
@@ -10294,15 +10294,15 @@ Happy Coding!
 
 > · ​[ReLaXeD](https://github.com/RelaxedJS/ReLaXed) — Create PDF documents using web technologies. ([Examples](https://github.com/RelaxedJS/ReLaXed-examples))
 
-> · ​[Dragula](https://github.com/bevacqua/dragula) — Drag and drop so simple it hurts.
+> · ​[Dragula](https://github.com/bevacqua/dragula) — Drag and drop so simple it hurts.
 
 > · ​[Hammer.js](https://github.com/hammerjs/hammer.js) — Multi-touch gestures.
 
-> · ​[emittery](https://github.com/sindresorhus/emittery) — Simple and modern async event emitter.
+> · ​[emittery](https://github.com/sindresorhus/emittery) — Simple and modern async event emitter.
 
 > · ​[Xstate](https://github.com/davidkpiano/xstate) — State machines and statecharts for the modern web. ([State Machines Workshop](https://github.com/ooade/state-machines-workshop))
 
-> · ​[xstate-component-tree](https://github.com/tivac/xstate-component-tree) — Build a tree of UI components based on your state chart.
+> · ​[xstate-component-tree](https://github.com/tivac/xstate-component-tree) — Build a tree of UI components based on your state chart.
 
 > · [virtual-scroller](https://github.com/valdrinkoshi/virtual-scroller) — Maps a provided set of JavaScript objects onto DOM nodes, and renders only the DOM nodes that are currently visible, leaving the rest “virtualized”.
 
@@ -10310,87 +10310,87 @@ Happy Coding!
 
 > · ​[ForgJS](https://github.com/oussamahamdaoui/forgJs) — JavaScript lightweight object validator.
 
-> · ​[faker.js](https://github.com/Marak/faker.js) — Generate massive amounts of realistic fake data in Node.js and the browser.
+> · ​[faker.js](https://github.com/Marak/faker.js) — Generate massive amounts of realistic fake data in Node.js and the browser.
 
-> · ​[arg](https://github.com/vercel/arg) — Simple argument parsing.
+> · ​[arg](https://github.com/vercel/arg) — Simple argument parsing.
 
 > · ​[fbt](https://github.com/facebookincubator/fbt) — JavaScript Internationalization Framework.
 
 > · ​[fuzzysearch](https://github.com/bevacqua/fuzzysearch) — Tiny and blazing-fast fuzzy search in JavaScript.
 
-> · ​[normalizr](https://github.com/paularmstrong/normalizr) — Normalizes nested JSON according to a schema.
+> · ​[normalizr](https://github.com/paularmstrong/normalizr) — Normalizes nested JSON according to a schema.
 
 > · ​[FBJS](https://github.com/facebook/fbjs) — Collection of utility libraries used by other Facebook JS projects.
 
 > · ​[Uppy](https://github.com/transloadit/uppy) — Next open source file uploader for web browsers. ([Web](https://uppy.io/))
 
-> · ​[ScrollReveal](https://github.com/scrollreveal/scrollreveal) — Animate elements as they scroll into view.
+> · ​[ScrollReveal](https://github.com/scrollreveal/scrollreveal) — Animate elements as they scroll into view.
 
 > · ​[Shiny](https://github.com/rikschennink/shiny) — Add shiny reflections to text, backgrounds, and borders on devices that support the DeviceMotion event.
 
-> · ​[Hotkey Behavior](https://github.com/github/hotkey) — Trigger a action on element when keyboard hotkey is pressed.
+> · ​[Hotkey Behavior](https://github.com/github/hotkey) — Trigger a action on element when keyboard hotkey is pressed.
 
 > · ​[Bili](https://github.com/egoist/bili) — Makes it easier to bundle JavaScript libraries.
 
 > · ​[Memoizee](https://github.com/medikoo/memoizee) — Complete memoize/cache solution for JavaScript.
 
-> · ​[Immer](https://github.com/mweststrate/immer/#async-producers) — Create the next immutable state by mutating the current one.
+> · ​[Immer](https://github.com/mweststrate/immer/#async-producers) — Create the next immutable state by mutating the current one.
 
 > · ​[FlexSearch](https://github.com/nextapps-de/flexsearch) — Web’s fastest and most memory-flexible full-text search library with zero dependencies.
 
-> · ​[cofx](https://github.com/neurosnap/cofx) — Node and javascript library that helps developers describe side-effects as data in a declarative, flexible API.
+> · ​[cofx](https://github.com/neurosnap/cofx) — Node and javascript library that helps developers describe side-effects as data in a declarative, flexible API.
 
-> · ​[Mercury Parser](https://github.com/postlight/mercury-parser) — Extracts the bits that humans care about from any URL you give it.
+> · ​[Mercury Parser](https://github.com/postlight/mercury-parser) — Extracts the bits that humans care about from any URL you give it.
 
 > · ​[Refract](https://github.com/fanduel-oss/refract) — Harness the power of reactive programming to supercharge your components.
 
 > · ​[MemJS](https://github.com/memcachier/memjs) — Memcache client for node using the binary protocol and SASL authentication.
 
-> · ​[memfs](https://github.com/streamich/memfs) — In-memory filesystem with Node’s API.
+> · ​[memfs](https://github.com/streamich/memfs) — In-memory filesystem with Node’s API.
 
-> · ​[Accounts](https://github.com/accounts-js/accounts) — Fullstack authentication and accounts-management for GraphQL and REST.
+> · ​[Accounts](https://github.com/accounts-js/accounts) — Fullstack authentication and accounts-management for GraphQL and REST.
 
-> · ​[Cleave.js](https://github.com/nosir/cleave.js) — Format input text content when you are typing…
+> · ​[Cleave.js](https://github.com/nosir/cleave.js) — Format input text content when you are typing…
 
-> · ​[Unistore](https://github.com/developit/unistore) — Tiny 350b centralized state container with component bindings for Preact & React.
+> · ​[Unistore](https://github.com/developit/unistore) — Tiny 350b centralized state container with component bindings for Preact & React.
 
 > · ​[Ramda](https://github.com/ramda/ramda) — Practical functional library for JavaScript programmers.
 
-> · ​[fromfrom](https://github.com/tomi/fromfrom) — JS library written in TS to transform sequences of data from format to another.
+> · ​[fromfrom](https://github.com/tomi/fromfrom) — JS library written in TS to transform sequences of data from format to another.
 
-> · ​[Editor.js](https://github.com/codex-team/editor.js) — Block-styled editor with clean JSON output.
+> · ​[Editor.js](https://github.com/codex-team/editor.js) — Block-styled editor with clean JSON output.
 
-> · ​[ijk](https://github.com/lukejacksonn/ijk) — Transforms arrays into virtual DOM trees.
+> · ​[ijk](https://github.com/lukejacksonn/ijk) — Transforms arrays into virtual DOM trees.
 
-> · ​[Cleave.js](https://github.com/nosir/cleave.js) — Format input text content when you are typing.
+> · ​[Cleave.js](https://github.com/nosir/cleave.js) — Format input text content when you are typing.
 
 > · ​[Oboe.js](https://github.com/jimhigson/oboe.js) — Streaming approach to JSON. Oboe.js speeds up web applications by providing parsed objects before the response completes.
 
-> · ​[Choices.js](https://github.com/jshjohnson/Choices) — Vanilla JS customisable select box/text input plugin.
+> · ​[Choices.js](https://github.com/jshjohnson/Choices) — Vanilla JS customisable select box/text input plugin.
 
-> · ​[Shepherd](https://github.com/shipshapecode/shepherd) — Guide your users through a tour of your app.
+> · ​[Shepherd](https://github.com/shipshapecode/shepherd) — Guide your users through a tour of your app.
 
-> · ​[object-cull](https://github.com/Rich-Harris/object-cull) — Create a copy of an object with just the bits you actually need.
+> · ​[object-cull](https://github.com/Rich-Harris/object-cull) — Create a copy of an object with just the bits you actually need.
 
-> · ​[Sigma](https://github.com/jacomyal/sigma.js) — JavaScript library dedicated to graph drawing.
+> · ​[Sigma](https://github.com/jacomyal/sigma.js) — JavaScript library dedicated to graph drawing.
 
 > · ​[interact.js](https://github.com/taye/interact.js) — JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping for modern browsers.
 
-> · ​[flru](https://github.com/lukeed/flru) — Tiny (215B) and fast Least Recently Used (LRU) cache.
+> · ​[flru](https://github.com/lukeed/flru) — Tiny (215B) and fast Least Recently Used (LRU) cache.
 
 > · ​[Yup](https://github.com/jquense/yup) — Dead simple Object schema validation.
 
 > · ​[Lerna](https://github.com/lerna/lerna) — Tool for managing JavaScript projects with multiple packages.
 
-> · ​[WikiJs](https://github.com/dijs/wiki) — Wikipedia Interface for Node.js.
+> · ​[WikiJs](https://github.com/dijs/wiki) — Wikipedia Interface for Node.js.
 
-> · ​[virtual-audio-graph](https://github.com/benji6/virtual-audio-graph) — Library for declaratively manipulating the Web Audio API.
+> · ​[virtual-audio-graph](https://github.com/benji6/virtual-audio-graph) — Library for declaratively manipulating the Web Audio API.
 
 > · ​[deep-object-diff](https://github.com/mattphillips/deep-object-diff) — Deep diffs two objects, including nested structures of arrays and objects, and returns the difference.
 
 > · ​[Snarkdown](https://github.com/developit/snarkdown) — Snarky 1kb Markdown parser written in JavaScript.
 
-> · ​[Terser](https://github.com/terser-js/terser) — JavaScript parser, mangler, optimizer and beautifier toolkit for ES6+.
+> · ​[Terser](https://github.com/terser-js/terser) — JavaScript parser, mangler, optimizer and beautifier toolkit for ES6+.
 
 > · ​[AppAuthJS](https://github.com/openid/AppAuth-JS) — JavaScript client SDK for communicating with OAuth 2.0 and OpenID Connect providers.
 
@@ -10400,51 +10400,51 @@ Happy Coding!
 
 > · ​[Sanctuary](https://github.com/sanctuary-js/sanctuary) — JavaScript functional programming library inspired by Haskell and PureScript.
 
-> · ​[modali](https://github.com/upmostly/modali) — Delightful modal dialog component for React, built from the ground up to support React Hooks.
+> · ​[modali](https://github.com/upmostly/modali) — Delightful modal dialog component for React, built from the ground up to support React Hooks.
 
-> · ​[Tweakpane](https://github.com/cocopon/tweakpane) — Compact GUI for fine-tuning parameters and monitoring value changes.
+> · ​[Tweakpane](https://github.com/cocopon/tweakpane) — Compact GUI for fine-tuning parameters and monitoring value changes.
 
 > · ​[crocks](https://github.com/evilsoft/crocks) — Collection of well known Algebraic Data Types for your utter enjoyment.
 
-> · ​[Just](https://github.com/angus-c/just) — Library of zero-dependency npm modules that do just do one thing.
+> · ​[Just](https://github.com/angus-c/just) — Library of zero-dependency npm modules that do just do one thing.
 
 > · ​[nanoid](https://github.com/ai/nanoid) — Tiny (139 bytes), secure, URL-friendly, unique string ID generator for JavaScript.
 
 > · ​[debug](https://github.com/visionmedia/debug) — Tiny JavaScript debugging utility modelled after Node.js core’s debugging technique. Works in Node.js and web browsers.
 
-> · ​[roughViz.js](https://github.com/jwilber/roughViz) — Reusable JavaScript library for creating sketchy/hand-drawn styled charts in the browser.
+> · ​[roughViz.js](https://github.com/jwilber/roughViz) — Reusable JavaScript library for creating sketchy/hand-drawn styled charts in the browser.
 
-> · ​[Mitt](https://github.com/developit/mitt) — Tiny 200 byte functional event emitter / pubsub.
+> · ​[Mitt](https://github.com/developit/mitt) — Tiny 200 byte functional event emitter / pubsub.
 
 > · ​[RequireJS](https://github.com/requirejs/requirejs) — File and module loader for JavaScript.
 
 > · ​[Zero](https://github.com/sinclairzx81/zero) — 3D graphics rendering pipeline. Implemented in JavaScript. Run in a terminal.
 
-> · ​[xstate-viz](https://github.com/statecharts/xstate-viz) — Visualize state charts.
+> · ​[xstate-viz](https://github.com/statecharts/xstate-viz) — Visualize state charts.
 
 > · ​[htmr](https://github.com/pveyes/htmr) — Simple and lightweight (< 2kB) HTML string to React element conversion library.
 
 > · ​[react-jsx-parser](https://github.com/TroyAlford/react-jsx-parser) — React component which can parse JSX and output rendered React Components.
 
-> · ​[Static Land](https://github.com/fantasyland/static-land) — Specification for common algebraic structures in JavaScript based on Fantasy Land.
+> · ​[Static Land](https://github.com/fantasyland/static-land) — Specification for common algebraic structures in JavaScript based on Fantasy Land.
 
-> · ​[sorted-queue](https://github.com/jviide/sorted-queue) — Sorted queue, based on an array-backed binary heap.
+> · ​[sorted-queue](https://github.com/jviide/sorted-queue) — Sorted queue, based on an array-backed binary heap.
 
 > · ​[polendina](https://github.com/rvagg/polendina) — Non-UI browser testing for JavaScript libraries from the command-line.
 
 > · ​[agadoo](https://github.com/Rich-Harris/agadoo) — Check whether a package is tree-shakeable.
 
-> · ​[Fielder](https://github.com/andyrichardson/fielder) — React form library which adapts to change.
+> · ​[Fielder](https://github.com/andyrichardson/fielder) — React form library which adapts to change.
 
-> · ​[lemonad](https://github.com/fogus/lemonad) — Functional programming library for JavaScript. An experiment in elegant JS.
+> · ​[lemonad](https://github.com/fogus/lemonad) — Functional programming library for JavaScript. An experiment in elegant JS.
 
 > · ​[Mockttp](https://github.com/httptoolkit/mockttp) — Lets you quickly & reliably test HTTP requests & responses in JavaScript, in both Node and browsers.
 
 > · ​[Flowy](https://github.com/alyssaxuu/flowy) — Minimal javascript library to create flowcharts.
 
-> · ​[d3-dag](https://github.com/erikbrinkman/d3-dag) — Layout algorithms for visualizing directed acyclic graphs.
+> · ​[d3-dag](https://github.com/erikbrinkman/d3-dag) — Layout algorithms for visualizing directed acyclic graphs.
 
-> · ​[renature](https://github.com/FormidableLabs/renature) — Physics-based animation library for React focused on modeling natural world forces.
+> · ​[renature](https://github.com/FormidableLabs/renature) — Physics-based animation library for React focused on modeling natural world forces.
 
 > · ​[Morphism](https://github.com/nobrainr/morphism) — Do not repeat anymore your objects transformations.
 
@@ -10452,7 +10452,7 @@ Happy Coding!
 
 > · ​[Quiet.js](https://github.com/quiet/quiet-js) — Transmit data with sound using Web Audio — Javascript binding for libquiet.
 
-> · ​[Bindery](https://github.com/evnbr/bindery) — Library for designing printable books with HTML and CSS.
+> · ​[Bindery](https://github.com/evnbr/bindery) — Library for designing printable books with HTML and CSS.
 
 > · ​[Wretch](https://github.com/elbywan/wretch) — Tiny wrapper built around fetch with an intuitive syntax.
 
@@ -10462,9 +10462,9 @@ Happy Coding!
 
 > · ​[Bacon.js](https://github.com/baconjs/bacon.js) — Functional reactive programming library for TypeScript and JavaScript.
 
-> · ​[GGEditor](https://github.com/alibaba/GGEditor) — Visual graph editor based on G6 and React.
+> · ​[GGEditor](https://github.com/alibaba/GGEditor) — Visual graph editor based on G6 and React.
 
-> · ​[Arbor](https://github.com/samizdatco/arbor) — Graph visualization library using web workers and jQuery. ([Web](http://arborjs.org/))
+> · ​[Arbor](https://github.com/samizdatco/arbor) — Graph visualization library using web workers and jQuery. ([Web](http://arborjs.org/))
 
 > · ​[fsm-as-promised](https://github.com/vstirbu/fsm-as-promised) — Finite state machine library using ES6 promises.
 
@@ -10478,33 +10478,33 @@ Happy Coding!
 
 > · ​[react-isomorphic-data](https://github.com/jackyef/react-isomorphic-data) — Easily fetch data in your React components, with similar APIs to react-apollo.
 
-> · ​[klona](https://github.com/lukeed/klona) — Tiny (228B) and fast utility to “deep clone” Objects, Arrays, Dates, RegExps, and more.
+> · ​[klona](https://github.com/lukeed/klona) — Tiny (228B) and fast utility to “deep clone” Objects, Arrays, Dates, RegExps, and more.
 
 > · ​[ScrollMagic](https://github.com/janpaepke/ScrollMagic) — JavaScript library for magical scroll interactions.
 
-> · ​[GoJS](https://gojs.net/latest/index.html) — JavaScript and TypeScript library for building interactive diagrams and graphs.
+> · ​[GoJS](https://gojs.net/latest/index.html) — JavaScript and TypeScript library for building interactive diagrams and graphs.
 
-> · ​[Rete](https://github.com/retejs/rete) — JavaScript framework for visual programming and creating node editor. ([HN](https://news.ycombinator.com/item?id=22024201))
+> · ​[Rete](https://github.com/retejs/rete) — JavaScript framework for visual programming and creating node editor. ([HN](https://news.ycombinator.com/item?id=22024201))
 
 > · ​[Pre3d](https://github.com/deanm/pre3d) — JavaScript 3d rendering engine.
 
 > · ​[dancer.js](https://github.com/jsantell/dancer.js) — High-level audio API, designed to make sweet visualizations.
 
-> · ​[model-viewer](https://github.com/GoogleWebComponents/model-viewer) — Easily display interactive 3D models on the web and in AR.
+> · ​[model-viewer](https://github.com/GoogleWebComponents/model-viewer) — Easily display interactive 3D models on the web and in AR.
 
 > · ​[Spars](https://github.com/TimvanScherpenzeel/spars) — General toolkit for creating interactive web experiences.
 
-> · ​[NeuroJS](https://github.com/janhuenermann/neurojs) — JavaScript deep learning and reinforcement learning library.
+> · ​[NeuroJS](https://github.com/janhuenermann/neurojs) — JavaScript deep learning and reinforcement learning library.
 
 > · ​[Hareactive](https://github.com/funkia/hareactive) — Purely functional reactive programming library.
 
 > · ​[Mirage JS](https://github.com/miragejs/miragejs) — Client-side server to develop, test and prototype your JavaScript app.
 
-> · ​[dfa](https://github.com/foliojs/dfa) — State machine compiler with regular expression style syntax.
+> · ​[dfa](https://github.com/foliojs/dfa) — State machine compiler with regular expression style syntax.
 
 > · ​[Jtree](https://github.com/treenotation/jtree) — Tree Notation TypeScript/Javascript library.
 
-> · ​[Hydra](https://github.com/ojack/hydra) — Livecoding networked visuals in the browser.
+> · ​[Hydra](https://github.com/ojack/hydra) — Livecoding networked visuals in the browser.
 
 > · ​[p-queue](https://github.com/sindresorhus/p-queue) — Promise queue with concurrency control.
 
@@ -10514,87 +10514,87 @@ Happy Coding!
 
 > · ​[Chart.js](https://github.com/chartjs/Chart.js) — Simple HTML5 Charts using the tag. ([Awesome](https://github.com/chartjs/awesome))
 
-> · ​[on-change](https://github.com/sindresorhus/on-change) — Watch an object or array for changes.
+> · ​[on-change](https://github.com/sindresorhus/on-change) — Watch an object or array for changes.
 
 > · ​[clean-set](https://github.com/fwilkerson/clean-set) — Deep assignment alternative to the object spread operator and Object.assign.
 
-> · ​[Search Query Syntax Parser](https://github.com/nepsilon/search-query-parser)​
+> · ​[Search Query Syntax Parser](https://github.com/nepsilon/search-query-parser)​
 
-> · ​[Uppload](https://github.com/elninotech/uppload) — Better JavaScript image uploader with 30+ plugins.
+> · ​[Uppload](https://github.com/elninotech/uppload) — Better JavaScript image uploader with 30+ plugins.
 
-> · ​[pino](https://github.com/pinojs/pino) — Super fast, all natural JSON logger.
+> · ​[pino](https://github.com/pinojs/pino) — Super fast, all natural JSON logger.
 
 > · ​[Orbit](https://github.com/orbitjs/orbit) — Composable data framework for ambitious web applications.
 
-> · ​[panzoom](https://github.com/anvaka/panzoom) — Universal pan and zoom library (DOM, SVG, Custom).
+> · ​[panzoom](https://github.com/anvaka/panzoom) — Universal pan and zoom library (DOM, SVG, Custom).
 
 > · ​[intl-tel-input](https://github.com/jackocnr/intl-tel-input) — JavaScript plugin for entering and validating international telephone numbers.
 
-> · ​[three.js](https://github.com/mrdoob/three.js) — JavaScript 3D library.
+> · ​[three.js](https://github.com/mrdoob/three.js) — JavaScript 3D library.
 
 > · ​[shortid](https://github.com/dylang/shortid) — Short id generator. Url-friendly. Non-predictable. Cluster-compatible.
 
 > · ​[styx](https://github.com/mariusschulz/styx) — Derives a control flow graph from a JavaScript AST.
 
-> · ​[Crossfilter](https://github.com/crossfilter/crossfilter) — JavaScript library for exploring large multivariate datasets in the browser.
+> · ​[Crossfilter](https://github.com/crossfilter/crossfilter) — JavaScript library for exploring large multivariate datasets in the browser.
 
-> · ​[SiriWave](https://github.com/kopiro/siriwave) — Apple Siri wave-form replicated in a JS library.
+> · ​[SiriWave](https://github.com/kopiro/siriwave) — Apple Siri wave-form replicated in a JS library.
 
 > · ​[Shades](https://github.com/jamesmcnamara/shades) — Lodash-inspired lens-like library for Javascript.
 
 > · ​[mxGraph](https://github.com/jgraph/mxgraph) — Fully client side JavaScript diagramming library.
 
-> · ​[cacache](https://github.com/npm/cacache) — Node.js library for managing local key and content address caches.
+> · ​[cacache](https://github.com/npm/cacache) — Node.js library for managing local key and content address caches.
 
 > · ​[enhanced-resolve](https://github.com/webpack/enhanced-resolve) — Offers an async require.resolve function. It’s highly configurable.
 
-> · ​[notevil](https://github.com/mmckegg/notevil) — Evalulate javascript like the built-in javascript eval() method but safely.
+> · ​[notevil](https://github.com/mmckegg/notevil) — Evalulate javascript like the built-in javascript eval() method but safely.
 
-> · ​[react-digraph](https://github.com/uber/react-digraph) — Library for creating directed graph editors.
+> · ​[react-digraph](https://github.com/uber/react-digraph) — Library for creating directed graph editors.
 
-> · ​[bent](https://github.com/mikeal/bent) — Functional JS HTTP client (Node.js & Fetch) w/ async await.
+> · ​[bent](https://github.com/mikeal/bent) — Functional JS HTTP client (Node.js & Fetch) w/ async await.
 
 > · ​[CLUI](https://github.com/replit/clui) — Collection of JavaScript libraries for building command-line interfaces with context-aware autocomplete.
 
-> · ​[cosha](https://github.com/robinloeffel/cosha) — Colorful shadows for your images.
+> · ​[cosha](https://github.com/robinloeffel/cosha) — Colorful shadows for your images.
 
-> · ​[Rambda](https://github.com/selfrefactor/rambda) — Faster and smaller alternative to Ramda.
+> · ​[Rambda](https://github.com/selfrefactor/rambda) — Faster and smaller alternative to Ramda.
 
-> · ​[MathJax](https://github.com/mathjax/MathJax) — Open-source JavaScript display engine for LaTeX, MathML, and AsciiMath notation that works in all modern browsers. ([Web](https://www.mathjax.org/)) ([HN](https://news.ycombinator.com/item?id=24741077))
+> · ​[MathJax](https://github.com/mathjax/MathJax) — Open-source JavaScript display engine for LaTeX, MathML, and AsciiMath notation that works in all modern browsers. ([Web](https://www.mathjax.org/)) ([HN](https://news.ycombinator.com/item?id=24741077))
 
 > · ​[Litepicker](https://github.com/wakirin/Litepicker) — Date range picker — lightweight, no dependencies.
 
 > · ​[core-js](https://github.com/zloirock/core-js) — Modular standard library for JavaScript.
 
-> · ​[timeago.js](https://github.com/hustcc/timeago.js) — Nano library (less than 2 kb) used to format datetime with \*\*\* time ago statement. eg: ‘3 hours ago’.
+> · ​[timeago.js](https://github.com/hustcc/timeago.js) — Nano library (less than 2 kb) used to format datetime with \*\*\* time ago statement. eg: ‘3 hours ago’.
 
 > · ​[Serialize JavaScript](https://github.com/yahoo/serialize-javascript) — Serialize JavaScript to a superset of JSON that includes regular expressions, dates and functions.
 
-> · ​[Tippy.js](https://github.com/atomiks/tippyjs) — Tooltip, popover, dropdown, and menu library.
+> · ​[Tippy.js](https://github.com/atomiks/tippyjs) — Tooltip, popover, dropdown, and menu library.
 
-> · ​[howler.js](https://github.com/goldfire/howler.js) — JavaScript audio library for the modern web.
+> · ​[howler.js](https://github.com/goldfire/howler.js) — JavaScript audio library for the modern web.
 
-> · ​[date-fns](https://github.com/date-fns/date-fns) — Modern JavaScript date utility library.
+> · ​[date-fns](https://github.com/date-fns/date-fns) — Modern JavaScript date utility library.
 
 > · ​[Midi](https://github.com/Tonejs/Midi) — Convert MIDI into Tone.js-friendly JSON.
 
 > · ​[face-api.js](https://github.com/justadudewhohacks/face-api.js) — JavaScript API for face detection and face recognition in the browser and nodejs with tensorflow.js.
 
-> · ​[Spotlight](https://github.com/karlisup/spotlight) — Search widget for your web API.
+> · ​[Spotlight](https://github.com/karlisup/spotlight) — Search widget for your web API.
 
 > · ​[Fuse](https://github.com/krisk/Fuse) — Lightweight fuzzy-search, in JavaScript.
 
-> · ​[Xterm.js](https://github.com/xtermjs/xterm.js) — Terminal for the web.
+> · ​[Xterm.js](https://github.com/xtermjs/xterm.js) — Terminal for the web.
 
-> · ​[Change Case](https://github.com/blakeembrey/change-case) — Convert strings between camelCase, PascalCase, Capital Case, snake_case and more.
+> · ​[Change Case](https://github.com/blakeembrey/change-case) — Convert strings between camelCase, PascalCase, Capital Case, snake_case and more.
 
 > · ​[ChronoGraph](https://github.com/bryntum/chronograph) — Reactive, graph-based, computation engine.
 
-> · ​[Sprotty](https://github.com/eclipse/sprotty) — Diagramming framework for the web.
+> · ​[Sprotty](https://github.com/eclipse/sprotty) — Diagramming framework for the web.
 
-> · ​[prerender.js](https://github.com/genderev/prerender.js) — Loads pages quickly on any browser.
+> · ​[prerender.js](https://github.com/genderev/prerender.js) — Loads pages quickly on any browser.
 
-> · ​[on-finished](https://github.com/jshttp/on-finished) — Execute a callback when a request closes, finishes, or errors.
+> · ​[on-finished](https://github.com/jshttp/on-finished) — Execute a callback when a request closes, finishes, or errors.
 
 > · ​[ColorFns](https://github.com/baianat/color-fns) — Modern JavaScript color utilities library.
 
@@ -10604,11 +10604,11 @@ Happy Coding!
 
 > · ​[p-limit](https://github.com/sindresorhus/p-limit) — Run multiple promise-returning & async functions with limited concurrency.
 
-> · ​[Highcharts JS](https://github.com/highcharts/highcharts) — JavaScript charting library based on SVG.
+> · ​[Highcharts JS](https://github.com/highcharts/highcharts) — JavaScript charting library based on SVG.
 
-> · ​[μPlot](https://github.com/leeoniya/uPlot) — Small, fast chart for time series, lines, areas, ohlc & bars.
+> · ​[μPlot](https://github.com/leeoniya/uPlot) — Small, fast chart for time series, lines, areas, ohlc & bars.
 
-> · ​[Baobab](https://github.com/Yomguithereal/baobab) — JavaScript & TypeScript persistent and optionally immutable data tree with cursors.
+> · ​[Baobab](https://github.com/Yomguithereal/baobab) — JavaScript & TypeScript persistent and optionally immutable data tree with cursors.
 
 > · ​[emoji-regex](https://github.com/mathiasbynens/emoji-regex) — Regular expression to match all Emoji-only symbols as per the Unicode Standard.
 
@@ -10618,35 +10618,35 @@ Happy Coding!
 
 > · ​[Thwack](https://github.com/donavon/thwack) — Tiny modern data fetching solution.
 
-> · ​[Regenerate](https://github.com/mathiasbynens/regenerate) — Generate JavaScript-compatible regular expressions based on a given set of Unicode symbols or code points.
+> · ​[Regenerate](https://github.com/mathiasbynens/regenerate) — Generate JavaScript-compatible regular expressions based on a given set of Unicode symbols or code points.
 
-> · ​[Crank.js](https://github.com/bikeshaving/crank) — Write JSX-driven components with functions, promises and generators. ([Article](https://crank.js.org/blog/introducing-crank)) ([Reddit](https://www.reddit.com/r/reactjs/comments/g2u135/crankjs_introducting_crank/)) ([HN](https://news.ycombinator.com/item?id=22903967))
+> · ​[Crank.js](https://github.com/bikeshaving/crank) — Write JSX-driven components with functions, promises and generators. ([Article](https://crank.js.org/blog/introducing-crank)) ([Reddit](https://www.reddit.com/r/reactjs/comments/g2u135/crankjs_introducting_crank/)) ([HN](https://news.ycombinator.com/item?id=22903967))
 
-> · ​[redaxios](https://github.com/developit/redaxios) — Axios API, as an 800 byte Fetch wrapper.
+> · ​[redaxios](https://github.com/developit/redaxios) — Axios API, as an 800 byte Fetch wrapper.
 
-> · ​[Math.js](https://github.com/josdejong/mathjs) — Extensive math library for JavaScript and Node.js.
+> · ​[Math.js](https://github.com/josdejong/mathjs) — Extensive math library for JavaScript and Node.js.
 
 > · ​[pixelmatch](https://github.com/mapbox/pixelmatch) — Smallest, simplest and fastest JavaScript pixel-level image comparison library.
 
-> · ​[quilt](https://github.com/Shopify/quilt) — Loosely related set of packages for JavaScript / TypeScript projects at Shopify.
+> · ​[quilt](https://github.com/Shopify/quilt) — Loosely related set of packages for JavaScript / TypeScript projects at Shopify.
 
 > · ​[jsondiffpatch](https://github.com/benjamine/jsondiffpatch) — Diff & patch JavaScript objects.
 
 > · ​[RVal](https://github.com/mweststrate/rval) — Minimalistic transparent reactive programming library.
 
-> · ​[orbit-controls](https://github.com/Jam3/orbit-controls) — Generic controls for orbiting a target in 3D.
+> · ​[orbit-controls](https://github.com/Jam3/orbit-controls) — Generic controls for orbiting a target in 3D.
 
 > · ​[estree-walker](https://github.com/Rich-Harris/estree-walker) — Traverse an ESTree-compliant AST.
 
-> · ​[Jitsi Meet API library](https://github.com/jitsi/lib-jitsi-meet) — Can use Jitsi Meet API to create Jitsi Meet video conferences with a custom GUI.
+> · ​[Jitsi Meet API library](https://github.com/jitsi/lib-jitsi-meet) — Can use Jitsi Meet API to create Jitsi Meet video conferences with a custom GUI.
 
-> · ​[isomer](https://github.com/jdan/isomer) — Simple isometric graphics library for HTML5 canvas.
+> · ​[isomer](https://github.com/jdan/isomer) — Simple isometric graphics library for HTML5 canvas.
 
-> · ​[Schema to Yup schema](https://github.com/kristianmandrup/schema-to-yup)​
+> · ​[Schema to Yup schema](https://github.com/kristianmandrup/schema-to-yup)​
 
-> · ​[Mordred](https://github.com/egoist/mordred) — Source data from anywhere, for Next.js, Nuxt.js, Eleventy and many more.
+> · ​[Mordred](https://github.com/egoist/mordred) — Source data from anywhere, for Next.js, Nuxt.js, Eleventy and many more.
 
-> · ​[ASScroll](https://github.com/ashthornton-gc/asscroll) — Hybrid smooth scroll setup that combines the performance gains of virtual scroll with the reliability of native scroll.
+> · ​[ASScroll](https://github.com/ashthornton-gc/asscroll) — Hybrid smooth scroll setup that combines the performance gains of virtual scroll with the reliability of native scroll.
 
 > · ​[Gallery](https://github.com/bendc/gallery) — Light, responsive, and performant JavaScript gallery.
 
@@ -10654,49 +10654,49 @@ Happy Coding!
 
 > · ​[@expo/results](https://github.com/expo/results) — Efficient, standards-compliant library for representing results of successful or failed operations.
 
-> · ​[Emojibase](https://github.com/milesj/emojibase) — Collection of lightweight, up-to-date, pre-generated, specification compliant, localized emoji JSON datasets, regex patterns, and more.
+> · ​[Emojibase](https://github.com/milesj/emojibase) — Collection of lightweight, up-to-date, pre-generated, specification compliant, localized emoji JSON datasets, regex patterns, and more.
 
-> · ​serve-favicon — Node.js middleware for serving a favicon.
+> · ​serve-favicon — Node.js middleware for serving a favicon.
 
-> · ​[download](https://github.com/kevva/download) — Download and extract files.
+> · ​[download](https://github.com/kevva/download) — Download and extract files.
 
-> · ​[color2k](https://github.com/ricokahler/color2k) — Color parsing and manipulation lib served in 2kB or less.
+> · ​[color2k](https://github.com/ricokahler/color2k) — Color parsing and manipulation lib served in 2kB or less.
 
-> · ​[Sandstorm](https://sandstorm.io/) — Open source platform for self-hosting web apps. ([Code](https://github.com/sandstorm-io/sandstorm))
+> · ​[Sandstorm](https://sandstorm.io/) — Open source platform for self-hosting web apps. ([Code](https://github.com/sandstorm-io/sandstorm))
 
-> · ​[transformation-matrix](https://github.com/chrvadala/transformation-matrix) — JS isomorphic 2D affine transformations written in ES6 syntax.
+> · ​[transformation-matrix](https://github.com/chrvadala/transformation-matrix) — JS isomorphic 2D affine transformations written in ES6 syntax.
 
 > · ​[Muuri](https://github.com/haltu/muuri) — JavaScript layout engine that allows you to build all kinds of layouts and make them responsive, sortable, filterable, draggable and/or animated.
 
-> · ​[Split](https://github.com/nathancahill/split) — Unopinionated utilities for resizeable split views.
+> · ​[Split](https://github.com/nathancahill/split) — Unopinionated utilities for resizeable split views.
 
-> · ​[Parallax Engine](https://github.com/wagerfield/parallax) — Reacts to the orientation of a smart device.
+> · ​[Parallax Engine](https://github.com/wagerfield/parallax) — Reacts to the orientation of a smart device.
 
-> · ​[fastq](https://github.com/mcollina/fastq) — Fast, in memory work queue.
+> · ​[fastq](https://github.com/mcollina/fastq) — Fast, in memory work queue.
 
-> · ​[ac-colors](https://github.com/vinaypillai/ac-colors) — Reactive JavaScript color library that can freely convert color formats.
+> · ​[ac-colors](https://github.com/vinaypillai/ac-colors) — Reactive JavaScript color library that can freely convert color formats.
 
 > · ​[sonic-boom](https://github.com/mcollina/sonic-boom) — Extremely fast utf8 only stream implementation.
 
-> · ​[Rough Notation](https://github.com/pshihn/rough-notation) — Small JavaScript library to create and animate annotations on a web page. ([HN](https://news.ycombinator.com/item?id=23339244))
+> · ​[Rough Notation](https://github.com/pshihn/rough-notation) — Small JavaScript library to create and animate annotations on a web page. ([HN](https://news.ycombinator.com/item?id=23339244))
 
-> · ​[SqueakJS](https://github.com/codefrau/SqueakJS) — Squeak VM for the Web and Node.js. ([Web](https://squeak.js.org/))
+> · ​[SqueakJS](https://github.com/codefrau/SqueakJS) — Squeak VM for the Web and Node.js. ([Web](https://squeak.js.org/))
 
-> · ​[fit-textarea](https://github.com/fregante/fit-textarea) — Automatically expand a to fit its content, in a few bytes.
+> · ​[fit-textarea](https://github.com/fregante/fit-textarea) — Automatically expand a to fit its content, in a few bytes.
 
-> · ​[NanoPop](https://github.com/Simonwep/nanopop) — Ultra Tiny, Opinionated Positioning Engine. ([Web](https://simonwep.github.io/nanopop/))
+> · ​[NanoPop](https://github.com/Simonwep/nanopop) — Ultra Tiny, Opinionated Positioning Engine. ([Web](https://simonwep.github.io/nanopop/))
 
-> · ​[Angelfire](https://github.com/rish-16/Angelfire) — Lets you quickly build right-click-enabled context menus and drop-down menus for any element on your webpage.
+> · ​[Angelfire](https://github.com/rish-16/Angelfire) — Lets you quickly build right-click-enabled context menus and drop-down menus for any element on your webpage.
 
-> · ​[csv-parser](https://github.com/mafintosh/csv-parser) — Streaming csv parser inspired by binary-csv that aims to be faster than everyone else.
+> · ​[csv-parser](https://github.com/mafintosh/csv-parser) — Streaming csv parser inspired by binary-csv that aims to be faster than everyone else.
 
 > · ​[updeep](https://github.com/substantial/updeep) — Easily update nested frozen objects and arrays in a declarative and immutable manner.
 
-> · ​[Hull.js](https://github.com/AndriiHeonia/hull) — JavaScript library that builds concave hull by set of points.
+> · ​[Hull.js](https://github.com/AndriiHeonia/hull) — JavaScript library that builds concave hull by set of points.
 
 > · ​[StegCloak](https://github.com/KuroLabs/stegcloak) — Hide secrets with invisible characters in plain text securely using passwords.
 
-> · ​[p-min-delay](https://github.com/sindresorhus/p-min-delay) — Delay a promise a minimum amount of time.
+> · ​[p-min-delay](https://github.com/sindresorhus/p-min-delay) — Delay a promise a minimum amount of time.
 
 > · ​[match-when](https://github.com/FGRibreau/match-when) — Pattern matching for modern JavaScript.
 
@@ -10708,79 +10708,79 @@ Happy Coding!
 
 > · ​[js-ipld-block](https://github.com/ipld/js-ipld-block) — Implementation of the Block data structure in JavaScript.
 
-> · ​[wildcard-api](https://github.com/reframejs/wildcard-api) — Functions as API.
+> · ​[wildcard-api](https://github.com/reframejs/wildcard-api) — Functions as API.
 
-> · ​[bpmn-js](https://github.com/bpmn-io/bpmn-js) — BPMN 2.0 rendering toolkit and web modeler.
+> · ​[bpmn-js](https://github.com/bpmn-io/bpmn-js) — BPMN 2.0 rendering toolkit and web modeler.
 
 > · ​[fit-curve](https://github.com/soswow/fit-curve) — JavaScript implementation of Philip J. Schneider’s “Algorithm for Automatically Fitting Digitized Curves” from the book “Graphics Gems”.
 
-> · ​[clean-deep](https://github.com/nunofgs/clean-deep) — Remove falsy, empty or nullable values from objects.
+> · ​[clean-deep](https://github.com/nunofgs/clean-deep) — Remove falsy, empty or nullable values from objects.
 
-> · ​[regular-table](https://github.com/jpmorganchase/regular-table) — Regular library, for async and virtual data models.
+> · ​[regular-table](https://github.com/jpmorganchase/regular-table) — Regular library, for async and virtual data models.
 
-> · ​[Stimulus](https://github.com/hotwired/stimulus) — Modest JavaScript framework for the HTML you already have. ([Web](https://stimulus.hotwire.dev/))
+> · ​[Stimulus](https://github.com/hotwired/stimulus) — Modest JavaScript framework for the HTML you already have. ([Web](https://stimulus.hotwire.dev/))
 
-> · ​[bigpicture.js](https://github.com/josephernest/bigpicture.js/) — Library that allows infinite panning and infinite zooming in HTML pages. ([Web](https://josephernest.github.io/bigpicture.js/index.html))
+> · ​[bigpicture.js](https://github.com/josephernest/bigpicture.js/) — Library that allows infinite panning and infinite zooming in HTML pages. ([Web](https://josephernest.github.io/bigpicture.js/index.html))
 
-> · ​[Tragopan](https://github.com/team-video/tragopan) — Minimal dependency-free pan/zoom library. ([HN](https://news.ycombinator.com/item?id=23579102))
+> · ​[Tragopan](https://github.com/team-video/tragopan) — Minimal dependency-free pan/zoom library. ([HN](https://news.ycombinator.com/item?id=23579102))
 
-> · ​[Deakins](https://github.com/terkelg/deakins) — Small Canvas 2D Camera.
+> · ​[Deakins](https://github.com/terkelg/deakins) — Small Canvas 2D Camera.
 
 > · ​[Turbolinks](https://github.com/turbolinks/turbolinks) — Makes navigating your web application faster.
 
-> · ​[CindyJS](https://github.com/CindyJS/CindyJS) — Framework to create interactive (mathematical) content for the web. ([Web](https://cindyjs.org/)) ([HN](https://news.ycombinator.com/item?id=23589296))
+> · ​[CindyJS](https://github.com/CindyJS/CindyJS) — Framework to create interactive (mathematical) content for the web. ([Web](https://cindyjs.org/)) ([HN](https://news.ycombinator.com/item?id=23589296))
 
-> · ​[axios](https://github.com/axios/axios) — Promise based HTTP client for the browser and nodeJS.
+> · ​[axios](https://github.com/axios/axios) — Promise based HTTP client for the browser and nodeJS.
 
-> · ​[astray](https://github.com/lukeed/astray) — Walk an AST without being led astray.
+> · ​[astray](https://github.com/lukeed/astray) — Walk an AST without being led astray.
 
 > · ​[vnopts](https://github.com/ikatyang/vnopts) — Validate and normalize options.
 
-> · ​[canvas confetti](https://github.com/catdad/canvas-confetti) — On-demand confetti gun. ([Docs](https://www.kirilv.com/canvas-confetti/))
+> · ​[canvas confetti](https://github.com/catdad/canvas-confetti) — On-demand confetti gun. ([Docs](https://www.kirilv.com/canvas-confetti/))
 
-> · ​[Graphlib](https://github.com/dagrejs/graphlib) — JavaScript library that provides data structures for undirected and directed multi-graphs along with algorithms that can be used with them.
+> · ​[Graphlib](https://github.com/dagrejs/graphlib) — JavaScript library that provides data structures for undirected and directed multi-graphs along with algorithms that can be used with them.
 
 > · ​[Dagre](https://github.com/dagrejs/dagre) — JavaScript library that makes it easy to lay out directed graphs on the client-side.
 
 > · ​[ecsy](https://github.com/MozillaReality/ecsy) — Highly experimental Entity Component System framework implemented in javascript, aiming to be lightweight, easy to use and with good performance. ([Docs](https://ecsy.io/docs/#/))
 
-> · ​[Object Visualizer](https://github.com/iendeavor/object-visualizer) — Visualize the JSON object to the DOM. ([HN](https://news.ycombinator.com/item?id=23860568))
+> · ​[Object Visualizer](https://github.com/iendeavor/object-visualizer) — Visualize the JSON object to the DOM. ([HN](https://news.ycombinator.com/item?id=23860568))
 
 > · ​[Reach Schema](https://github.com/open-draft/reach-schema) — Functional schema-driven JavaScript object validation library.
 
-> · ​[@cycle/callbags](https://github.com/cyclejs/callbags) — Set of commonly used stream operators implemented as callbags with Typescript and ES modules.
+> · ​[@cycle/callbags](https://github.com/cyclejs/callbags) — Set of commonly used stream operators implemented as callbags with Typescript and ES modules.
 
 > · ​[umbrella](https://github.com/thi-ng/umbrella/) — Broadly scoped ecosystem & mono-repository of ~135 TypeScript projects for functional, data driven development.
 
 > · ​[HTM](https://github.com/developit/htm) — JSX-like syntax in plain JavaScript — no transpiler necessary.
 
-> · ​[NativeScript](https://github.com/nativescript/nativescript) — Framework for building native iOS and Android apps using JavaScript and CSS.
+> · ​[NativeScript](https://github.com/nativescript/nativescript) — Framework for building native iOS and Android apps using JavaScript and CSS.
 
 > · ​[schema-dts](https://github.com/google/schema-dts) — JSON-LD TypeScript types for Schema.org vocabulary.
 
-> · ​[flatpickr](https://github.com/flatpickr/flatpickr) — JS date time picker.
+> · ​[flatpickr](https://github.com/flatpickr/flatpickr) — JS date time picker.
 
-> · ​[superjson](https://github.com/blitz-js/superjson) — Safely serialize JavaScript expressions to a superset of JSON, which includes Dates, BigInts, and more.
+> · ​[superjson](https://github.com/blitz-js/superjson) — Safely serialize JavaScript expressions to a superset of JSON, which includes Dates, BigInts, and more.
 
 > · ​[lazy-collections](https://github.com/RobinMalfait/lazy-collections) — Collection of fast and lazy operations.
 
-> · ​[Perfect Arrows](https://github.com/steveruizok/perfect-arrows) — Set of functions for drawing perfect arrows between points and shapes.
+> · ​[Perfect Arrows](https://github.com/steveruizok/perfect-arrows) — Set of functions for drawing perfect arrows between points and shapes.
 
 > · ​[Autocomplete.js](https://github.com/algolia/autocomplete.js) — Fast and full-featured autocomplete library.
 
 > · ​[urlcat](https://github.com/balazsbotond/urlcat) — URL builder library for JavaScript. ([Docs](https://urlcat.dev/))
 
-> · ​[Diagram Maker](https://github.com/awslabs/diagram-maker) — Library to display an interactive editor for any graph-like data. ([Docs](https://awslabs.github.io/diagram-maker/)) ([HN](https://news.ycombinator.com/item?id=24688860))
+> · ​[Diagram Maker](https://github.com/awslabs/diagram-maker) — Library to display an interactive editor for any graph-like data. ([Docs](https://awslabs.github.io/diagram-maker/)) ([HN](https://news.ycombinator.com/item?id=24688860))
 
 > · ​[js-coroutines](https://github.com/miketalbot/js-coroutines) — 60fps with JavaScript Coroutines for idle processing and animation.
 
-> · ​[Transducist](https://github.com/dphilipson/transducist) — Ergonomic JavaScript/TypeScript transducers for beginners and experts.
+> · ​[Transducist](https://github.com/dphilipson/transducist) — Ergonomic JavaScript/TypeScript transducers for beginners and experts.
 
 > · ​[decimal.js](https://github.com/MikeMcl/decimal.js) — Arbitrary-precision Decimal type for JavaScript.
 
 > · ​[Constant-Time JavaScript](https://github.com/soatok/constant-time-js) — Constant-time algorithms written in TypeScript.
 
-> · ​[SheetJS](https://github.com/SheetJS/sheetjs) — Spreadsheet Data Toolkit. Read, edit, and export spreadsheets. Works in web browsers and servers. ([Web](https://sheetjs.com/))
+> · ​[SheetJS](https://github.com/SheetJS/sheetjs) — Spreadsheet Data Toolkit. Read, edit, and export spreadsheets. Works in web browsers and servers. ([Web](https://sheetjs.com/))
 
 > · ​[Z](https://github.com/z-pattern-matching/z) — Pattern Matching for JavaScript. ([Web](https://z-pattern-matching.github.io/))
 
@@ -10794,7 +10794,7 @@ Happy Coding!
 
 > · ​[Detect features](https://github.com/TimvanScherpenzeel/detect-features) — Detect and report browser and hardware features.
 
-> · ​[JSZip](https://github.com/Stuk/jszip) — Create, read and edit .zip files with JavaScript.
+> · ​[JSZip](https://github.com/Stuk/jszip) — Create, read and edit .zip files with JavaScript.
 
 > · ​[Classnames](https://github.com/JedWatson/classnames) — Simple javascript utility for conditionally joining classNames together.
 
@@ -11058,7 +11058,7 @@ Or checkout my personal resource site:
 
 [https://github.com/bgoonz/Cumulative-Resource-List/tree/master/README-s](https://github.com/bgoonz/Cumulative-Resource-List/tree/master/README-s)
 
-#### Everyone’s seen the ‘Awesome’ lists on GitHub… and they are indeed awesome… so today I am going to attempt to curate my own…
+#### Everyone’s seen the ‘Awesome’ lists on GitHub… and they are indeed awesome… so today I am going to attempt to curate my own…
 
 ![](https://cdn-images-1.medium.com/max/800/1*3pwY-HRi2sjgBBJ0eISwqw.png)
 
@@ -11327,15 +11327,15 @@ Or checkout my personal resource Site:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-#### Every extension or tool you could possibly need
+#### Every extension or tool you could possibly need
 
 ![](https://cdn-images-1.medium.com/max/1200/1*gcp0kkiWQY6qd1Y4qEcqxw.png)
 
-### Here’s a rudimentary static site I made that goes into more detail on the extensions I use…
+### Here’s a rudimentary static site I made that goes into more detail on the extensions I use…
 
 [https://5fff5b9a2430bb564bfd451d–stoic-mccarthy-2c335f.netlify.app/#h18](https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18)
 
-### Here’s the repo it was deployed from:
+### Here’s the repo it was deployed from:
 
 [https://github.com/bgoonz/vscode-Extension-readmes](https://github.com/bgoonz/vscode-Extension-readmes)
 
@@ -11451,7 +11451,7 @@ You can also use [keyboard shortcuts](https://code.visualstudio.com/docs/editor/
 
 - [Microsoft’s tutorial on using VSCode for remote C/C++ development](https://devblogs.microsoft.com/cppblog/vscode-cpp-may-2019-update/)
 
-### C#, ASP .NET and .NET Core
+### C#, ASP .NET and .NET Core
 
 > [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) — C# extension by [Microsoft](https://www.microsoft.com/), read [official documentation](https://code.visualstudio.com/docs/languages/csharp) for the details
 
@@ -11534,13 +11534,13 @@ See the difference between these two [here](https://github.com/michaelgmcd/vscod
 
 Framework-specific:
 
-#### [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) — Toolkit for Vue.js
+#### [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) — Toolkit for Vue.js
 
 ![](https://cdn-images-1.medium.com/max/800/0*F7J_vW0ISbVMTXIZ.png)
 
 ---
 
-### [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+### [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 
 > _A VS Code extension to debug your JavaScript code in the Chrome browser, or other targets that support the Chrome Debugging Protocol._
 
@@ -11562,7 +11562,7 @@ Framework-specific:
 
 > _Linter for_ [_markdownlint_](https://github.com/DavidAnson/markdownlint)_._
 
-### [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+### [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
 > _All-in-one markdown plugin (keyboard shortcuts, table of contents, auto preview, list editing and more)_
 
@@ -11641,19 +11641,19 @@ These extensions provide slightly different sets of features. While the first on
 
 ### Productivity
 
-### [ARM Template Viewer](https://marketplace.visualstudio.com/items?itemName=bencoleman.armview)
+### [ARM Template Viewer](https://marketplace.visualstudio.com/items?itemName=bencoleman.armview)
 
 > _Displays a graphical preview of Azure Resource Manager (ARM) templates. The view will show all resources with the official Azure icons and also linkage between the resources._
 
 ![](https://cdn-images-1.medium.com/max/800/0*p8bvCI9DXF44m4z3.png)
 
-### [Azure Cosmos DB](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
+### [Azure Cosmos DB](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
 
 > _Browse your database inside the vs code editor_
 
 ![](https://cdn-images-1.medium.com/max/800/0*VWvSU6Hbf20Kfc_P.gif)
 
-### [Azure IoT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
+### [Azure IoT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
 
 > _Everything you need for the Azure IoT development: Interact with Azure IoT Hub, manage devices connected to Azure IoT Hub, and develop with code snippets for Azure IoT Hub_
 
@@ -11699,7 +11699,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ### [Gi](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi)
 
-> _Generating .gitignore files made easy_
+> _Generating .gitignore files made easy_
 
 ![](https://cdn-images-1.medium.com/max/800/0*sfddghz8B1D362UB.gif)
 
@@ -11713,7 +11713,7 @@ These extensions provide slightly different sets of features. While the first on
 
 > _View git log, file or line History_
 
-### [Git Project Manager](https://marketplace.visualstudio.com/items?itemName=felipecaputo.git-project-manager)
+### [Git Project Manager](https://marketplace.visualstudio.com/items?itemName=felipecaputo.git-project-manager)
 
 > _Automatically indexes your git projects and lets you easily toggle between them_
 
@@ -11743,7 +11743,7 @@ These extensions provide slightly different sets of features. While the first on
 
 > _Provides GitHub workflow support. For example browse project, issues, file (the current line), create and manage pull request. Support for other providers (e.g. gitlab or bitbucket) is planned. Have a look at the_ [_README.md_](https://github.com/KnisterPeter/vscode-github/blob/master/README.md) _on how to get started with the setup for this extension._
 
-### [GitHub Pull Request Monitor](https://marketplace.visualstudio.com/items?itemName=erichbehrens.pull-request-monitor)
+### [GitHub Pull Request Monitor](https://marketplace.visualstudio.com/items?itemName=erichbehrens.pull-request-monitor)
 
 > _This extension uses the GitHub api to monitor the state of your pull requests and let you know when it’s time to merge or if someone requested changes._
 
@@ -11801,7 +11801,7 @@ These extensions provide slightly different sets of features. While the first on
 
 > _Override the regular Copy and Cut commands to keep selections in a clipboard ring_
 
-### [ngrok for VSCode](https://marketplace.visualstudio.com/items?itemName=philnash.ngrok-for-vscode)
+### [ngrok for VSCode](https://marketplace.visualstudio.com/items?itemName=philnash.ngrok-for-vscode)
 
 > _ngrok allows you to expose a web server running on your local machine to the internet. Just tell ngrok what port your web server is listening on. This extension allows you to control_ [_ngrok_](https://ngrok.com/) _from the VSCode command palette_
 
@@ -11831,7 +11831,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ![](https://cdn-images-1.medium.com/max/800/0*KHki85jdv1hZeY3V.gif)
 
-### [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
+### [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
 
 > _Infer the structure of JSON and paste is as types in many programming languages_
 
@@ -11893,7 +11893,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ![](https://cdn-images-1.medium.com/max/800/0*ilH91MRgGnMF6C8c.gif)
 
-### [Text Power Tools](https://marketplace.visualstudio.com/items?itemName=qcz.text-power-tools)
+### [Text Power Tools](https://marketplace.visualstudio.com/items?itemName=qcz.text-power-tools)
 
 > _All-in-one extension for text manipulation: filtering (grep), remove lines, insert number sequences and GUIDs, format content as table, change case, converting numbers and more. Great for finding information in logs and manipulating text._
 
@@ -11933,13 +11933,13 @@ These extensions provide slightly different sets of features. While the first on
 
 ![](https://cdn-images-1.medium.com/max/800/0*5maDjvvH57MAks1l.gif)
 
-### [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+### [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
 
 > _Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text_
 
 ![](https://cdn-images-1.medium.com/max/800/0*h6Q6HLQ8jfHLnPlJ.gif)
 
-### [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+### [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 
 > _Auto rename paired HTML/XML tags_
 
@@ -11959,7 +11959,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ![](https://cdn-images-1.medium.com/max/800/0*W1Z1fIvOGgPclFMJ.gif)
 
-### [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
+### [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 
 > _Paste code with “correct” indentation_
 
@@ -12007,7 +12007,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ### Explorer Icons
 
-### [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+### [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
 ![](https://cdn-images-1.medium.com/max/800/0*67ZZ9mhoISPk_lM4.png)
 
@@ -12057,13 +12057,13 @@ These extensions provide slightly different sets of features. While the first on
 
 ![Dash integration screenshot](https://cdn-images-1.medium.com/max/800/1*sqGllC-pgXNaEBfB-cxG9Q.png)
 
-### [Edit with Shell Command](https://marketplace.visualstudio.com/items?itemName=ryu1kn.edit-with-shell)
+### [Edit with Shell Command](https://marketplace.visualstudio.com/items?itemName=ryu1kn.edit-with-shell)
 
 > _Leverage your favourite shell commands to edit text_
 
 ![](https://cdn-images-1.medium.com/max/800/0*2wW31HJ1nUCjORZe.gif)
 
-### [Editor Config for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+### [Editor Config for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
 > _Editor Config for VS Code_
 
@@ -12073,7 +12073,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ![](https://cdn-images-1.medium.com/max/800/0*-viKhwxpeYQdWHRE.gif)
 
-### [Highlight JSX/HTML tags](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
+### [Highlight JSX/HTML tags](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
 
 > _Highlights matching tags in the file._
 
@@ -12105,7 +12105,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ### [Quokka](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)
 
-#### This one is super cool!
+#### This one is super cool!
 
 > _Rapid prototyping playground for JavaScript and TypeScript in VS Code, with access to your project’s files, inline reporting, code coverage and rich output formatting._
 
@@ -12121,7 +12121,7 @@ Personally I found this extension to slow down my editor in addition to conflict
 
 ### [Spotify](https://marketplace.visualstudio.com/items?itemName=shyykoserhiy.vscode-spotify)
 
-_No real advantage over just using Spotify normally… it’s problematic enough in implementation that you won’t save any time using it. Further, it’s a bit tricky to configure … or at least it was the last time I tried syncing it with my spotify account._
+_No real advantage over just using Spotify normally… it’s problematic enough in implementation that you won’t save any time using it. Further, it’s a bit tricky to configure … or at least it was the last time I tried syncing it with my spotify account._
 
 > _Provides integration with Spotify Desktop client. Shows the currently playing song in status bar, search lyrics and provides commands for controlling Spotify with buttons and hotkeys._
 
@@ -12145,7 +12145,7 @@ _No real advantage over just using Spotify normally… it’s problematic enough
 
 ### [ESDOC MDN](https://marketplace.visualstudio.com/items?itemName=samundrak.esdoc-mdn)
 
-### THIS IS A MUST HAVE
+### THIS IS A MUST HAVE
 
 > _Quickly bring up helpful MDN documentation in the editor_
 
@@ -12161,15 +12161,15 @@ In the interest of not making the reader scroll endlessly as I often do… I’v
 
 ---
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://5fff5b9a2430bb564bfd451d–stoic-mccarthy-2c335f.netlify.app/#h18](https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18)[https://5fff5b9a2430bb564bfd451d–stoic-mccarthy-2c335f.netlify.app/#h18](https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://5fff5b9a2430bb564bfd451d–stoic-mccarthy-2c335f.netlify.app/#h18](https://5fff5b9a2430bb564bfd451d--stoic-mccarthy-2c335f.netlify.app/#h18)
 
-### Product Icon Themes:
+### Product Icon Themes:
 
 ### Fluent Icons
 
@@ -12189,7 +12189,7 @@ A product icon theme for Visual Studio Code
 
 ---
 
-### [Monokai Oblique by pushqrdx](https://vscodethemes.com/e/pushqrdx.theme-monokai-oblique-vscode)
+### [Monokai Oblique by pushqrdx](https://vscodethemes.com/e/pushqrdx.theme-monokai-oblique-vscode)
 
 Monokai inspired theme for [Visual Studio Code](https://vscodethemes.com/e/pushqrdx.theme-monokai-oblique-vscode) and [Visual Studio IDE](https://github.com/pushqrdx/monokai).
 
@@ -12201,13 +12201,13 @@ Beautiful functionality for professional developers, from the author of the orig
 
 ![](https://cdn-images-1.medium.com/max/800/0*qwLfKRWuJl0hLZ2m.png)
 
-### [Night Owl by Sarah Drasner](https://vscodethemes.com/e/sdras.night-owl)
+### [Night Owl by Sarah Drasner](https://vscodethemes.com/e/sdras.night-owl)
 
 A VS Code theme for the night owls out there. Works well in the daytime, too, but this theme is fine-tuned for those of us who like to code late into the night. Color choices have taken into consideration what is accessible to people with color blindness and in low-light circumstances. Decisions were also based on meaningful contrast for reading comprehension and for optimal razzle dazzle. ![✨](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2728.svg)
 
 ![](https://cdn-images-1.medium.com/max/800/0*w4jwUZlACQz-ndRu.png)
 
-### [Plastic by Will Stone](https://vscodethemes.com/e/will-stone.plastic)
+### [Plastic by Will Stone](https://vscodethemes.com/e/will-stone.plastic)
 
 A simple theme.
 
@@ -12219,43 +12219,43 @@ An arctic, north-bluish clean and elegant Visual Studio Code theme.
 
 ![](https://cdn-images-1.medium.com/max/800/0*yQMVpYfepk53HNxN.png)
 
-### [Rainglow by Dayle Rees](https://vscodethemes.com/e/daylerees.rainglow)
+### [Rainglow by Dayle Rees](https://vscodethemes.com/e/daylerees.rainglow)
 
 Collection of 320+ beautiful syntax and UI themes.
 
 ![](https://cdn-images-1.medium.com/max/800/0*FpJBK3DBT1FUmuLF.png)
 
-### [Relaxed Theme by Michael Kühnel](https://vscodethemes.com/e/mischah.relaxed-theme)
+### [Relaxed Theme by Michael Kühnel](https://vscodethemes.com/e/mischah.relaxed-theme)
 
 A relaxed theme to take a more relaxed view of things.
 
 ![](https://cdn-images-1.medium.com/max/800/0*bdPe8FIrL8F9qFqx.png)
 
-### [Shades of Purple by Ahmad Awais](https://vscodethemes.com/e/ahmadawais.shades-of-purple)
+### [Shades of Purple by Ahmad Awais](https://vscodethemes.com/e/ahmadawais.shades-of-purple)
 
 ![⚡](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26a1.svg) A professional theme with hand-picked & bold shades of purple ![💜](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f49c.svg) to go along with your VS Code. A custom VS Code theme with style.
 
 ![](https://cdn-images-1.medium.com/max/800/0*lyNNDrSPE5fpaMBZ.png)
 
-### [2077 theme by Endormi](https://vscodethemes.com/e/Endormi.2077-theme)
+### [2077 theme by Endormi](https://vscodethemes.com/e/Endormi.2077-theme)
 
 Cyberpunk 2077 inspired theme
 
 ![](https://cdn-images-1.medium.com/max/800/0*1VdJDagHs-YTIicE.png)
 
-### [An Old Hope Theme by Dustin Sanders](https://vscodethemes.com/e/dustinsanders.an-old-hope-theme-vscode)
+### [An Old Hope Theme by Dustin Sanders](https://vscodethemes.com/e/dustinsanders.an-old-hope-theme-vscode)
 
 VSCode theme inspired by a galaxy far far away…
 
 ![](https://cdn-images-1.medium.com/max/800/0*8JZCxiWSVdupy-HQ.png)
 
-### [Ariake Dark by wart](https://vscodethemes.com/e/wart.ariake-dark)
+### [Ariake Dark by wart](https://vscodethemes.com/e/wart.ariake-dark)
 
 Dark VSCode theme inspired by Japanese traditional colors and the poetry composed 1000 years ago.
 
 ![](https://cdn-images-1.medium.com/max/800/0*Pm8gFuyXa_xNniuP.png)
 
-### [Atom One Dark Theme by Mahmoud Ali](https://vscodethemes.com/e/akamud.vscode-theme-onedark)
+### [Atom One Dark Theme by Mahmoud Ali](https://vscodethemes.com/e/akamud.vscode-theme-onedark)
 
 One Dark Theme based on Atom.
 
@@ -12267,7 +12267,7 @@ A detailed and accurate Atom One Dark Theme.
 
 ![](https://cdn-images-1.medium.com/max/800/0*trGkLz0fLzZMjNX_.png)
 
-### [Ayu by teabyii](https://vscodethemes.com/e/teabyii.ayu)
+### [Ayu by teabyii](https://vscodethemes.com/e/teabyii.ayu)
 
 A simple theme with bright colors and comes in three versions — dark, light and mirage for all day long comfortable work.
 
@@ -12285,49 +12285,49 @@ Tuff but sweet theme.
 
 ![](https://cdn-images-1.medium.com/max/800/0*93oi3wFSt7uH62VR.png)
 
-### [City Lights by Yummygum](https://vscodethemes.com/e/Yummygum.city-lights-theme)
+### [City Lights by Yummygum](https://vscodethemes.com/e/Yummygum.city-lights-theme)
 
 ![🏙](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f3d9.svg) Yummygum’s Official City Lights suite
 
 ![](https://cdn-images-1.medium.com/max/800/0*LwpZlufyoKuCVjqn.png)
 
-### [Cobalt2 Theme Official by Wes Bos](https://vscodethemes.com/e/wesbos.theme-cobalt2)
+### [Cobalt2 Theme Official by Wes Bos](https://vscodethemes.com/e/wesbos.theme-cobalt2)
 
 ![🔥](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f525.svg) Official theme by Wes Bos.
 
 ![](https://cdn-images-1.medium.com/max/800/0*8KsnUfTVU-A9Aqcl.png)
 
-### [Dracula Official by Dracula Theme](https://vscodethemes.com/e/dracula-theme.theme-dracula)
+### [Dracula Official by Dracula Theme](https://vscodethemes.com/e/dracula-theme.theme-dracula)
 
 Official Dracula Theme. A dark theme for many editors, shells, and more.
 
 ![](https://cdn-images-1.medium.com/max/800/0*xGaF3Cs8iHoC5gUr.png)
 
-### [Edge by Bogdan Lazar](https://vscodethemes.com/e/bogdanlazar.edge)
+### [Edge by Bogdan Lazar](https://vscodethemes.com/e/bogdanlazar.edge)
 
 A simple theme with bright colors in three variants — Night Sky, Serene and Ocean for all day long comfortable work.
 
 ![](https://cdn-images-1.medium.com/max/800/0*qELxjfUYJNuRISgB.png)
 
-### [Eva Theme by fisheva](https://vscodethemes.com/e/fisheva.eva-theme)
+### [Eva Theme by fisheva](https://vscodethemes.com/e/fisheva.eva-theme)
 
 A colorful and semantic coloring code theme.
 
 ![](https://cdn-images-1.medium.com/max/800/0*Dzw_28GVEGa10m-9.png)
 
-### [Fairy Floss by nopjmp and sailorhg](https://vscodethemes.com/e/nopjmp.fairyfloss)
+### [Fairy Floss by nopjmp and sailorhg](https://vscodethemes.com/e/nopjmp.fairyfloss)
 
 A fun, purple-based pastel/candy/daydream fairyfloss theme made by sailorhg.
 
 ![](https://cdn-images-1.medium.com/max/800/0*wJkmVL0w1tz4n4_H.png)
 
-### [GitHub Theme by Thomas Pink](https://vscodethemes.com/e/thomaspink.theme-github)
+### [GitHub Theme by Thomas Pink](https://vscodethemes.com/e/thomaspink.theme-github)
 
 GitHub Theme for Visual Studio Code.
 
 ![](https://cdn-images-1.medium.com/max/800/0*H4ZAOtLrAniVho93.png)
 
-### [Jellybeans Theme by Dimitar Nonov](https://vscodethemes.com/e/DimitarNonov.jellybeans-theme)
+### [Jellybeans Theme by Dimitar Nonov](https://vscodethemes.com/e/DimitarNonov.jellybeans-theme)
 
 Jellybeans Theme for Visual Studio Code.
 
@@ -12339,13 +12339,13 @@ An elegant and juicy material-like theme for Visual Studio Code.
 
 ![](https://cdn-images-1.medium.com/max/800/0*cw3IGUQSFahiPgiH.png)
 
-### [Material Theme by Mattia Astorino](https://vscodethemes.com/e/Equinusocio.vsc-material-theme)
+### [Material Theme by Mattia Astorino](https://vscodethemes.com/e/Equinusocio.vsc-material-theme)
 
 The most epic theme now for Visual Studio Code.
 
 ![](https://cdn-images-1.medium.com/max/800/0*2YvsABxfZ4Cv1Y_j.png)
 
-### [Mno by u29dc](https://vscodethemes.com/e/u29dc.mno)
+### [Mno by u29dc](https://vscodethemes.com/e/u29dc.mno)
 
 Minimal monochrome theme.
 
@@ -12357,17 +12357,17 @@ A dark syntax/workbench theme for Visual Studio Code — optimized for SCSS,
 
 ![](https://cdn-images-1.medium.com/max/800/0*-ldv4DoOVntnZbBt.png)
 
-### [Niketa Theme by Dejan Toteff](https://vscodethemes.com/e/selfrefactor.niketa-theme)
+### [Niketa Theme by Dejan Toteff](https://vscodethemes.com/e/selfrefactor.niketa-theme)
 
 Collection of 18 light themes separated in 4 groups by background’s brightness.
 
 ![](https://cdn-images-1.medium.com/max/800/0*n_iRSy_1IDOgajFu.png)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 > \==> currently under development & very buggy
 
@@ -12383,20 +12383,20 @@ Collection of 18 light themes separated in 4 groups by background’s brightness
 
 - The mechanism that puts behavior and data together behind methods that hide the specific implementation of a class.
 
-#### How can a `CommonJS Module import functionality` from another module?
+#### How can a `CommonJS Module import functionality` from another module?
 
 - Through the use of the require function.
 
-#### How can an ES6 module import functionality from another module?
+#### How can an ES6 module import functionality from another module?
 
 - Through the use of the import-from syntax that looks like this:
 - `import SymbolName from './relative-path.js';`
 
-#### How do `CommonJS Modules` allow other modules to access exported symbols?
+#### How do `CommonJS Modules` allow other modules to access exported symbols?
 
 - Through the use of the module.exports property.
 
-#### How do `ES6 Modules export` functionality so other modules can use them?
+#### How do `ES6 Modules export` functionality so other modules can use them?
 
 - Through the use of the export keyword.
 
@@ -12420,7 +12420,7 @@ Collection of 18 light themes separated in 4 groups by background’s brightness
 
 - Functionality that your class depends on should be provided as parameters to methods rather than using new in the class to create a new instance of a dependency.
 
-#### The `extends` keyword
+#### The `extends` keyword
 
 - The keyword in JavaScript that allows one class to inherit from another.
 
@@ -12467,7 +12467,7 @@ const fellowshipOfTheRing = {
 
 > `**Behaviors**` **are represented by methods.**
 
-- `Constructor Functions` : Handle the creation of an object – it’s a factory for creating objects of a specific type.
+- `Constructor Functions` : Handle the creation of an object – it’s a factory for creating objects of a specific type.
 - There are a few specific things to constructors worth noting:
 - **_The name of the constructor function is capitalized_**
 - The Function _does not explicitly return a value_
@@ -12506,17 +12506,17 @@ console.log(fellowshipOfTheRing); // Book { title: 'The Fellowship of the Ring',
 
 ### Understanding New Object Instances
 
-- `Instance` : term to describe an objected created from a constructor function.
+- `Instance` : term to describe an objected created from a constructor function.
 - Every instance created is a unique object and therefore not equal to each other.
 
-### Using the instanceof operator to check an object’s type
+### Using the instanceof operator to check an object’s type
 
 console.log(fellowshipOfTheRing instanceof Book); // true
 
 - By using the `instanceof` operator we can verify that an object was created from a certain object type.
 - _The instanceOf operator works by checking to see if the prototype object of the left side of the operator is the same as the prototype object of the right side of the operator._
 
-### Invoking a constructor function without the new keyword
+### Invoking a constructor function without the new keyword
 
 - If we invoke a constructor function without the `new` keyword, we may result in one of two unexpected outcomes:
 
@@ -12525,13 +12525,13 @@ console.log(fellowshipOfTheRing instanceof Book); // true
 
 - You can enable strict mode by typing `"use strict"` at the top of your file.
 
-### Defining Sharable Methods
+### Defining Sharable Methods
 
 - _Avoid the temptation to store an object method inside a constructor function, it is inefficient with computer memory usage b/c each object instance would have it’s own method definition._
-- `Prototype` : An object that is delegated to when a reference to an object property or method can’t be resolved.
+- `Prototype` : An object that is delegated to when a reference to an object property or method can’t be resolved.
 - Every instance created by a constructor function shares the same prototype.
 - `Object.setPrototypeOf()` and `Object.getPrototypeOf()` are just used to set a prototype of one object to another object; and also the verify a prototype.
-- `proto` : aka “dunder proto” is a property used to gain easy access to an object’s prototype – it is widely supported by browsers but is considered deprecated.
+- `proto` : aka “dunder proto” is a property used to gain easy access to an object’s prototype – it is widely supported by browsers but is considered deprecated.
 
 function Book(title, series, author) {  
  this.title = title;  
@@ -12566,7 +12566,7 @@ The Problem with Arrow Functions
 
 In ES2015, JS gained the `class` keyword – replacing the need to use only constructor functions & prototypes to mimic classes!
 
-- `class` : keyword that gives developers a formal way to create a class definition to specify an object type’s attributes and behavior; also used to create objects of that specific type.
+- `class` : keyword that gives developers a formal way to create a class definition to specify an object type’s attributes and behavior; also used to create objects of that specific type.
 
 Defining a ES2015 class
 
@@ -12583,11 +12583,11 @@ class Book {
 - They don’t explicitly return a value.
 - The this keyword references the newly created object instance.
 
-### Instantiating an instance of a class
+### Instantiating an instance of a class
 
 > We can also use the `new`.
 
-### Four things occur when instantiating an instance of a class:
+### Four things occur when instantiating an instance of a class:
 
 1.  New empty object is created {};
 2.  The new obj’s prototype is set to the class prototype’s property value.
@@ -12596,7 +12596,7 @@ class Book {
 
 - **Don’t try to instatiate a class object without the new keyword.**
 
-#### Class Definitions are NOT hoisted
+#### Class Definitions are NOT hoisted
 
 test();
 
@@ -12610,9 +12610,9 @@ function test() {
 Defining Methods
 
 - A class can contain two types of methods:
-- `Instance Method` : Methods that are invoked on an instance of the class – useful for performing an action on a specific instance.
+- `Instance Method` : Methods that are invoked on an instance of the class – useful for performing an action on a specific instance.
 - Instance methods are also sometimes referred to as `prototype` methods because they are defined on a shared prototype object.
-- `Static Method` : Methods that invoked directly on a class, not on an instance.
+- `Static Method` : Methods that invoked directly on a class, not on an instance.
 - `Important`: Invoking a static method on an instance will result in a runtime error.
 - Prepending the `static` keyword at the beginning on the method name will make it static.
 
@@ -12700,9 +12700,9 @@ console.log(bookTitles.join(", ")); // The Fellowship of the Ring, The Two Tower
 
 ### Javascript Inheritance
 
-- `Child Class` : Class that is based upon another class and inherits properties and methods from that other class.
-- `Parent Class` : Class that is being inherited downwards.
-- `Inheritance` : The process of basing a class upon another class.
+- `Child Class` : Class that is based upon another class and inherits properties and methods from that other class.
+- `Parent Class` : Class that is being inherited downwards.
+- `Inheritance` : The process of basing a class upon another class.
 
 class CatalogItem {  
  constructor(title, series) {  
@@ -12760,7 +12760,7 @@ console.log(theGrapesOfWrath.getInformation()); // The Grapes of Wrath
 
 Overriding a method in a parent class
 
-- `Method Overriding` : when a child class provides an implementation of a method that’s already defined in a parent class.
+- `Method Overriding` : when a child class provides an implementation of a method that’s already defined in a parent class.
 
 class Movie extends CatalogItem {  
  constructor(title, series, director) {  
@@ -12790,11 +12790,11 @@ Introducing Node.js modules
 
 - In Node.js, each JS file in a project defines a `module`.
 - Module’s contents are private by default.
-- `Local Modules` : Modules defined within your project.
-- `Core Modules` : Native modules contained within Node.js that you can use to perform tasks or to add functionality to your application.
-- `CommonJS` : A legacy module system.
-- `ES Modules` : Newer module sysem that will eventually replace CommonJS.
-- `Entry Point` : JS File that is passed to Node for access to the entire application.
+- `Local Modules` : Modules defined within your project.
+- `Core Modules` : Native modules contained within Node.js that you can use to perform tasks or to add functionality to your application.
+- `CommonJS` : A legacy module system.
+- `ES Modules` : Newer module sysem that will eventually replace CommonJS.
+- `Entry Point` : JS File that is passed to Node for access to the entire application.
 
 ### Syntax for exporting modules:
 
@@ -12808,14 +12808,14 @@ Introducing Node.js modules
 
 **const { Book, Movie } = require(“./classes”);**
 
-#### Using Single Item Modules
+#### Using Single Item Modules
 
 - Following the convention of a single exported item per module helps to keep modules focused and less likely to become bloted with too much code.
 
-#### Understanding Module Loading
+#### Understanding Module Loading
 
 - When loading a module, Node will examine the identifier passed to the require() function to determine if our module is local, core, or third-party:
-- `Local Module`: identifier starts with ./ ../ or /
+- `Local Module`: identifier starts with ./ ../ or /
 - `Node.js Core`: identifier matches name
 - `Third-Party`: identifier matches a module in the node modules folder (installed package)
 
@@ -12828,7 +12828,7 @@ Introducing Node.js modules
 ### `Inheritance`
 
 - `**Implementation Inheritance**` **:** Means that data and methods defined on a parent class are available on objects created from classes that inherit from those parent classes.
-- `**Prototypal Inheritance**` : Means that JS uses prototype objects to make its `**implementation inheritance**` actually work.
+- `**Prototypal Inheritance**` : Means that JS uses prototype objects to make its `**implementation inheritance**` actually work.
 - Parent Class === Prototype === Super Class === Base Class
 - Inheritance === Subtyping
 
@@ -12942,9 +12942,9 @@ _Subtype Requirement: Let ϕ(x) be a property provable about objects x of type T
 - `Dependency Inversion Principle`
 - Functionality that your class depends on should be provided as parameters to methods rather than using new in the class to create a new instance.
 
-### Controlling Coupling with The Law of Demeter
+### Controlling Coupling with The Law of Demeter
 
-- `Coupling` : The degree of interdependence between two or more classes.
+- `Coupling` : The degree of interdependence between two or more classes.
 - The fewer the connections between classes, the less chance there is for the _ripple effect_.
 - Here is the formal definition:
 - A method of an object can only invoke the methods (or use the properties) of the following kind of objects:
@@ -12957,7 +12957,7 @@ _Subtype Requirement: Let ϕ(x) be a property provable about objects x of type T
 - Easiest way to implement it is to _not us more than one dot_
 - You cannot cheat by separating extra calls onto different lines.
 
-### When to ignore the Law of Demeter
+### When to ignore the Law of Demeter
 
 - When you work with objects that come from code that you didn’t create — you will often have to break the LoD.
 
@@ -12968,17 +12968,17 @@ document
 - This breaks the law but there is way about it because your code needs to know about both elements and you have to use the API provided by the DOM.
 - UI’s will break LoD because they are not object-oriented programs.
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
 #### [CODEX](http://medium.com/codex)
 
-### Explanation for Rotate Right
+### Explanation for Rotate Right
 
 ![](https://cdn-images-1.medium.com/max/1200/0*3_vbGvHeWOgSTxk7.png)
 
@@ -12997,7 +12997,7 @@ Write a function `rotateRight(array, num)` that takes in an array and a number a
 
 > JavaScript gives us four methods to add or remove items from the beginning or end of arrays:
 
-### pop(): Remove an item from the end of an array
+### pop(): Remove an item from the end of an array
 
     let cats = ['Bob', 'Willy', 'Mini'];
 
@@ -13005,7 +13005,7 @@ Write a function `rotateRight(array, num)` that takes in an array and a number a
 
 > pop() returns the removed item.
 
-### push(): Add items to the end of an array
+### push(): Add items to the end of an array
 
     let cats = ['Bob'];
 
@@ -13015,7 +13015,7 @@ Write a function `rotateRight(array, num)` that takes in an array and a number a
 
 > push() returns the new array length.
 
-### shift(): Remove an item from the beginning of an array
+### shift(): Remove an item from the beginning of an array
 
     let cats = ['Bob', 'Willy', 'Mini'];
 
@@ -13023,7 +13023,7 @@ Write a function `rotateRight(array, num)` that takes in an array and a number a
 
 > shift() returns the removed item.
 
-### unshift(): Add items to the beginning of an array
+### unshift(): Add items to the beginning of an array
 
     let cats = ['Bob'];
 
@@ -13083,17 +13083,17 @@ Now that our for loop has ended and our copied array looks just like how the ans
 
 [https://gist.github.com/bgoonz/4e2a040cd94006bb887a77a68f4287b9](https://gist.github.com/bgoonz/4e2a040cd94006bb887a77a68f4287b9)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
-### **\==>currently under development & very buggy**
+### **\==>currently under development & very buggy**
 
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
-#### What is HTML, CSS & JS and why do we need all three?
+#### What is HTML, CSS & JS and why do we need all three?
 
 ![](https://cdn-images-1.medium.com/max/800/0*KxF-AuqgX7UklUa4.png)
 
@@ -13111,7 +13111,7 @@ Tags and attributes are the basis of HTML.
 
 They work together but perform different functions — it is worth investing 2 minutes in **differentiating the two**.
 
-#### What Are HTML Tags?
+#### What Are HTML Tags?
 
 [Tags](https://html.com/tags/) are used to **mark up the start of an HTML element** and they are usually enclosed in angle brackets. An example of a tag is: `<h1>`.
 
@@ -13127,7 +13127,7 @@ An example of an attribute is:
 
 In this instance, the image source (src) and the alt text (alt) are attributes of the `<img>` tag.
 
-#### Golden Rules To Remember
+#### Golden Rules To Remember
 
 1.  The vast majority of tags must be **opened** (`<tag>`) and **closed** (`</tag>`) with the element information such as a title or text resting between the tags.
 2.  When using multiple tags, the tags must be **closed in the order in which they were opened**. For example:
@@ -13135,7 +13135,7 @@ In this instance, the image source (src) and the alt text (alt) are attributes o
 
 Let’s have a look at how CodePen works, firstly, you need to go to their website. After that, you must create an account. After you do that, You will see something like this
 
-### How to get started
+### How to get started
 
 If you’re using Visual Studio Code, congrats! There is Emmet support built into VSCode, so you won’t need to install any extensions. If you’re working in Atom you’ll need to install the Emmet plugin, which can be [found here](https://atom.io/packages/emmet).
 
@@ -13200,7 +13200,7 @@ The three block level tags every HTML document needs to contain are **<html>**, 
 4.  **<li>**List item 3**</li>**
 5.  **</ul>**
 
-### **Structure of an HTML Document**
+### **Structure of an HTML Document**
 
 An HTML Document is mainly divided into two parts:
 
@@ -13231,7 +13231,7 @@ Images are inline elements too. You can add one using **_<img>_** without any cl
 
 1.  **<img** **src=**”/images/example.jpg” **alt=**”Example image”**\>**
 
-#### **BODY**: This contains everything you want to display on the Web Page.
+#### **BODY**: This contains everything you want to display on the Web Page.
 
 <body>
 
@@ -13243,7 +13243,7 @@ Let us now have a look on the basic structure of HTML. That is the code which is
 
 **_<!DOCTYPE html>_**
 
-#### Here is some boilerplate html you can use as a starting point:!!Every Webpage must contain this code.!!
+#### Here is some boilerplate html you can use as a starting point:!!Every Webpage must contain this code.!!
 
 ---
 
@@ -13297,7 +13297,7 @@ As such <title>This is the title</title> it is always found between <head> tags 
 
 ![](https://cdn-images-1.medium.com/max/800/0*CSqPk3mD0fR-oOAb)
 
-### Here’s a handy Cheat Sheet:
+### Here’s a handy Cheat Sheet:
 
 ![](https://cdn-images-1.medium.com/max/800/0*c9Vyer_N97InJsUB.png)
 
@@ -13313,11 +13313,11 @@ that super small text at the bottom is actually one giant button:
 
 ![](https://cdn-images-1.medium.com/max/2560/1*gdM-6smOEc2ChCI_8_Ql_g.png)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
@@ -13330,7 +13330,7 @@ You can access and query the data using the findByPk, findOne, and findAll metho
 **Terminology:**
 
 - [NodeJS](https://nodejs.org/en/) We re going to use this to run JavaScript code on the server. I ve decided to use the latest version of Node, v6.3.0 at the time of writing, so that we ll have access to most of the new features introduced in ES6.
-- [Express](https://expressjs.com/) As per their website, Express is a Fast, unopinionated, minimalist web framework for Node.js , that we re going to be building our Todo list application on.
+- [Express](https://expressjs.com/) As per their website, Express is a Fast, unopinionated, minimalist web framework for Node.js , that we re going to be building our Todo list application on.
 - [PostgreSQL](https://www.postgresql.org/docs/9.5/static/index.html) This is a powerful open-source database that we re going to use. I ve attached an article I published on the setup below!
 
 [**PostgreSQL Setup For Windows & WSL/Ubuntu**  
@@ -13345,7 +13345,7 @@ _If you follow this guide to a tee you will install PostgreSQL itself on your Wi
 
 - RDBMS stands for Relational Database Management System
 - A software application that you run that your programs can connect to so that they can store, modify, and retrieve data.
-- An RDBMS can track many databases. We will use PostgreSQL, or postgres , primarily for our RDBMS and it will be able to create individual databases for each of our projects.
+- An RDBMS can track many databases. We will use PostgreSQL, or postgres , primarily for our RDBMS and it will be able to create individual databases for each of our projects.
 
 **Describe what relational data is**
 
@@ -13374,7 +13374,7 @@ _If you follow this guide to a tee you will install PostgreSQL itself on your Wi
 **Describe the purpose of a foreign key**
 
 - A foreign key is used as the connector from this record to the primary key of another table s record.
-- In our pets example, we can imagine two tables to demonstrate: a table to represent cats and a table to represent toys. Each of these tables has a primary key of id that is used as the unique identifier. In order to make a connection between a toy and a cat, we can add another field to the cat table called owner_id , indicating that it is a foreign key for the cat table. By setting a toy s owner_id to the same value as a particular cat s id , we can indicate that the cat is the owner of that toy.
+- In our pets example, we can imagine two tables to demonstrate: a table to represent cats and a table to represent toys. Each of these tables has a primary key of id that is used as the unique identifier. In order to make a connection between a toy and a cat, we can add another field to the cat table called owner_id , indicating that it is a foreign key for the cat table. By setting a toy s owner_id to the same value as a particular cat s id , we can indicate that the cat is the owner of that toy.
 
 **Describe how to properly name things in PostgreSQL**
 
@@ -13503,7 +13503,7 @@ FOREIGN KEY (person_id) REFERENCES people (id)
 
 **SQL**
 
-1\. How to use the SELECT … FROM … statement to select data from a single table
+1\. How to use the SELECT … FROM … statement to select data from a single table
 
 - Supply the column names in the SELECT clause. If we want all columns, we can also use \*
 - Supply the table names in the FROM clause
@@ -13620,7 +13620,7 @@ name IN (‘Floofy’, ‘Doggo’) OR id = 3;
 - Seed files are a great way for us to create records that we want to start our database out with.
 - Instead of having to individually add records to our tables or manually entering them in psql or postbird, we can create a file that has all of these records and then just pass this file to psql to run.
 - Seed files are also great if we ever need to reset our database. We can clear out any records that we have by dropping all of our tables, then just run our seed files to get it into a predetermined starting point. This is great for our personal projects, testing environments, starting values for new tables we create, etc.
-- There are two main ways we can use a seed file with psql, the < and the | operators. They perform the same function for us, just in slightly different orders, taking the content of a .sql file and executing in within the psql environment:
+- There are two main ways we can use a seed file with psql, the < and the | operators. They perform the same function for us, just in slightly different orders, taking the content of a .sql file and executing in within the psql environment:
 - psql -d {database} < {sql filepath}
 - cat {sql filepath} | psql -d {database}
 
@@ -13712,7 +13712,7 @@ selectAllAirports();
 
 - The return value of this asynchronous function is an object with a rows key that points to an array of objects, each object representing a record with field names as keys.
 
-**Explain how to write prepared statements with placeholders for parameters of the form $1 , $2 , and so on**
+**Explain how to write prepared statements with placeholders for parameters of the form $1 , $2 , and so on**
 
 - The prepared statement (SQL string that we wrote) can also be made more dynamic by allowing for parameters to be passed in.
 - The Pool instance s query function allows us to pass a second argument, an array of parameters to be used in the query string. The location of the parameter substitutions are designated with $1, $2, etc., to signify the first, second, etc., arguments.
@@ -13913,10 +13913,10 @@ return queryInterface.bulkDelete(‘<<TableName>>’, null, {});
 
 - Running npx sequelize-cli db:seed:all will run all of our seeder files.
 - npx sequelize-cli db:seed:undo:all will undo all of our seeding.
-- If we omit the :all we can run specific seed files
+- If we omit the :all we can run specific seed files
 - Inserting with Build and Create
 - In addition to seed files, which we generally use for starter data, we can create new records in our database by using build and save, or the combined create
-- Use the .build method of the Cat model to create a new Cat instance in index.js
+- Use the .build method of the Cat model to create a new Cat instance in index.js
 
 // Constructs an instance of the JavaScript \`Cat\` class. \*\*Does not  
 // save anything to the database yet\*\*. Attributes are passed in as a  
@@ -13987,7 +13987,7 @@ console.log(JSON.stringify(cats, null, 2));
 - Providing additional key/value pairs to the where object indicates all filters must match
 - { where: { field1: value1, field2: value2 } } => WHERE field1 = value1 AND field2 = value2
 
-### Sequelize Op operator
+### Sequelize Op operator
 
 - By requiring Op from the sequelize library we can provide more advanced comparison operators
 - const { Op } = require(“sequelize”);
@@ -14004,7 +14004,7 @@ const cats = await Cat.findAll({
 });  
 console.log(JSON.stringify(cats, null, 2));
 
-### Op.and: and operator
+### Op.and: and operator
 
 const cats = await Cat.findAll({  
  where: {  
@@ -14021,7 +14021,7 @@ const cats = await Cat.findAll({
 });  
 console.log(JSON.stringify(cats, null, 2));
 
-### Op.or: or operator
+### Op.or: or operator
 
 const cats = await Cat.findAll({  
  where: {  
@@ -14108,7 +14108,7 @@ specification: {
 **How to use transactions with Sequelize**
 
 - We can create a transaction block in order to make sure either all operations are performed or none of them are
-- We use the .transaction method in order to create our block. The method takes in a callback with an argument to track our transaction id (typically just a simple tx variable).
+- We use the .transaction method in order to create our block. The method takes in a callback with an argument to track our transaction id (typically just a simple tx variable).
 - All of our sequelize operations can be passed a transaction key on their options argument which points to our transaction id. This indicates that this operation is part of the transaction block and should only be executed in the database when the whole block executes without error.
 
 async function main() {  
@@ -14186,25 +14186,25 @@ npx sequelize-cli db:migrate:undo
 
 npx sequelize-cli db:migrate:undo:all
 
-#### Generate a new seed file
+#### Generate a new seed file
 
 npx sequelize-cli seed:generate --name <descriptiveName>
 
-#### Run all pending seeds
+#### Run all pending seeds
 
 npx sequelize-cli db:seed:all
 
-#### Rollback one seed
+#### Rollback one seed
 
 npx sequelize-cli db:seed:undo
 
-#### Rollback all seeds
+#### Rollback all seeds
 
 npx sequelize-cli db:seed:undo:all
 
 #### Migrations
 
-### Create Table (usually used in the up() method)
+### Create Table (usually used in the up() method)
 
 // This uses the short form for references  
 return queryInterface.createTable(<TableName>, {  
@@ -14234,7 +14234,7 @@ return queryInterface.createTable(<TableName>, {
 
 return queryInterface.dropTable(<TableName>);
 
-### Adding a column
+### Adding a column
 
 return queryInteface.addColumn(<TableName>, <columnName>: {  
  type: Sequelize.<type>,  
@@ -14244,7 +14244,7 @@ return queryInteface.addColumn(<TableName>, <columnName>: {
  // that the column references.  
 });
 
-### Removing a column
+### Removing a column
 
 return queryInterface.removeColumn(<TableName>, <columnName>);
 
@@ -14260,7 +14260,7 @@ Student.hasOne(models.Scholarship, { foreignKey: 'studentId' });
 
 Scholarship.belongsTo(models.Student, { foreignKey: 'studentId' });
 
-### One to Many between Student and Class
+### One to Many between Student and Class
 
 `student.js`
 
@@ -14290,7 +14290,7 @@ const columnMapping = {
 }  
 Lesson.belongsToMany(models.Student, columnMapping);
 
-### Inserting a new item
+### Inserting a new item
 
 // Way 1 - With build and save  
 const pet = Pet.build({  
@@ -14304,7 +14304,7 @@ const pet = await Pet.create({
  petTypeId: 1  
 });
 
-### Updating an item
+### Updating an item
 
 // Find the pet with id = 1  
 const pet = await Pet.findByPk(1);  
@@ -14316,14 +14316,14 @@ await pet.update({
  name: "Fido, Sr."  
 });
 
-### Deleting a single item
+### Deleting a single item
 
 // Find the pet with id = 1  
 const pet = await Pet.findByPk(1);  
 // Notice this is an instance method  
 pet.destroy();
 
-### Deleting multiple items
+### Deleting multiple items
 
 // Notice this is a static class method  
 await Pet.destroy({  
@@ -14363,7 +14363,7 @@ await <Model>.findByPk(<primary_key>, {
  include: <include_specifier>  
 });
 
-### Eager loading associations with `include`
+### Eager loading associations with `include`
 
 Simple include of one related model.
 
@@ -14436,7 +14436,7 @@ const Op = Sequelize.Op
 
 ![](https://cdn-images-1.medium.com/max/2560/1*bgZjuBly2EBDtGiCFaFoFw.png)
 
-### Accessing the Data
+### Accessing the Data
 
 You can access and query the data using the `findByPk`, `findOne`, and `findAll` methods. First, make sure you import the models in your JavaScript file. In this case, we are assuming your JavaScript file is in the root of your project and so is the models folder.
 
@@ -14480,7 +14480,7 @@ return await Recipe.findByPk(chickenRecipe.recipeId);
 
 ### Data Access to Create/Update/Delete Rows
 
-You have two options when you want to create a row in a table (where you are saving one record into the table). You can either `.build` the row and then `.save` it, or you can `.create` it. Either way it does the same thing. Here are some examples:
+You have two options when you want to create a row in a table (where you are saving one record into the table). You can either `.build` the row and then `.save` it, or you can `.create` it. Either way it does the same thing. Here are some examples:
 
 Let’s say we have a form that accepts the name of the recipe (for simplicity). When we get the results of the form, we can:
 
@@ -14504,7 +14504,7 @@ const deleteThis = await Recipe.findOne({ where: { title: 'Chicken Noodle Soup w
 
 await deleteThis.destroy();
 
-**NOTE:** If you do not await these, you will receive a promise, so you will need to use `.then` and `.catch` to do more with the items you are accessing and modifying.
+**NOTE:** If you do not await these, you will receive a promise, so you will need to use `.then` and `.catch` to do more with the items you are accessing and modifying.
 
 ### Documentation
 
@@ -14516,7 +14516,7 @@ When you access the data in your queries, here are the operators available, agai
 The documentation for building, saving, creating, updating and destroying is linked here, it does a pretty good job of explaining in my opinion, it just has a title that we have not been using in this course. When they talk about an instance, they mean an item stored in your table.  
 **Create/Update/Destroy:** [_https://sequelize.org/v5/manual/instances.html_](https://sequelize.org/v5/manual/instances.html)
 
-#### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
@@ -14526,7 +14526,7 @@ Or Checkout my personal Resource Site:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Resources, Cheat Sheets & Links @Bottom of the Page!
+### Resources, Cheat Sheets & Links @Bottom of the Page!
 
 ![](https://cdn-images-1.medium.com/max/800/0*68fyM5AI85U_I3vo.jpg)
 
@@ -14534,7 +14534,7 @@ For More Advanced Readers, or those with very limited free time… here’s an a
 
 [https://bryanguner.medium.com/git-tricks-57e8d0292285](https://bryanguner.medium.com/git-tricks-57e8d0292285)
 
-### What’s a distributed version control system?
+### What’s a distributed version control system?
 
 Git is an example of a distributed version control system (DVCS) commonly used for open source and commercial software development. DVCSs allow full access to every file, branch, and iteration of a project, and allows every user access to a full and self-contained history of all changes. Unlike once popular centralized version control systems, DVCSs like Git don’t need a constant connection to a central repository. Developers can work anywhere and collaborate asynchronously from any time zone.
 
@@ -14566,7 +14566,7 @@ According to the latest [Stack Overflow developer survey](https://insights.stack
 
 > [_2\. Make your own repo_](#2-sweet-you-have-the-cloned-repo-in-your-preferred-directory-now-lets-make-your-own-repo-on-github-create-a-new-repository)_._
 
-> [_3\. Next, copy the .git link that is on the next page._](#3-next-copy-thegit-link-that-is-on-the-next-page-do-not-do-any-other-steps-on-this-pagethat-is-for-when-you-do-not-clone-arepo)
+> [_3\. Next, copy the .git link that is on the next page._](#3-next-copy-thegit-link-that-is-on-the-next-page-do-not-do-any-other-steps-on-this-pagethat-is-for-when-you-do-not-clone-arepo)
 
 > [_4\. Whenver you clone a repo_](#4-whenver-you-clone-a-repo-it-already-has-agit-directory-with-certain-configurations-set-up-to-be-able-to-push-this-repo-to-your-newly-created-github-repo-we-have-to-change-the-remoteorigin)
 
@@ -14636,11 +14636,11 @@ Working in repositories keeps development projects organized and protected. Deve
 
 ### Git Flow
 
-### Cloning a repo and changing the remote url
+### Cloning a repo and changing the remote url
 
 (These steps are only for when you initially clone a project repo. Not when you clone your partners repo to collaborate together. To do that, you only have to complete step 1!)
 
-### 1\. The first step is to clone the repo!
+### 1\. The first step is to clone the repo!
 
 - Navigate to the repo you want to clone and hit the big green code button. Copy the link given.
 
@@ -14661,13 +14661,13 @@ Working in repositories keeps development projects organized and protected. Deve
 
 ### 3\. Next,
 
-**_copy the .git link that is on the next page. Do not do any other steps on this page — That is for when you do not clone a repo._**
+**_copy the .git link that is on the next page. Do not do any other steps on this page — That is for when you do not clone a repo._**
 
 ---
 
-### These are the commands GitHub provides when you create a new Repo:
+### These are the commands GitHub provides when you create a new Repo:
 
-#### Quick setup — if you’ve done this kind of thing before
+#### Quick setup — if you’ve done this kind of thing before
 
 Set up in Desktop
 
@@ -14675,9 +14675,9 @@ or
 
 HTTPSSSH
 
-Get started by [creating a new file](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master) or [uploading an existing file](https://github.com/bgoonz/the-meaning-of-life-is-42/upload). We recommend every repository include a [README](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master?readme=1), [LICENSE](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master?filename=LICENSE.md), and [.gitignore](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master?filename=.gitignore).
+Get started by [creating a new file](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master) or [uploading an existing file](https://github.com/bgoonz/the-meaning-of-life-is-42/upload). We recommend every repository include a [README](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master?readme=1), [LICENSE](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master?filename=LICENSE.md), and [.gitignore](https://github.com/bgoonz/the-meaning-of-life-is-42/new/master?filename=.gitignore).
 
-### …or create a new repository on the command line
+### …or create a new repository on the command line
 
 echo "# the-meaning-of-life-is-42" >> README.md  
 git init  
@@ -14687,7 +14687,7 @@ git branch -M master
 git remote add origin [https://github.com/bgoonz/the-meaning-of-life-is-42.git](https://github.com/bgoonz/the-meaning-of-life-is-42.git)  
 git push -u origin master
 
-### …or push an existing repository from the command line
+### …or push an existing repository from the command line
 
 git remote add origin [https://github.com/bgoonz/the-meaning-of-life-is-42.git](https://github.com/bgoonz/the-meaning-of-life-is-42.git)  
 git branch -M master  
@@ -14699,9 +14699,9 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 [Import code](https://github.com/bgoonz/the-meaning-of-life-is-42/import)
 
-### 4\. Whenever you clone a repo:
+### 4\. Whenever you clone a repo:
 
-#### It already has a .git directory with certain configurations set up. To be able to push this repo to your newly created GitHub repo we have to change the remote origin.
+#### It already has a .git directory with certain configurations set up. To be able to push this repo to your newly created GitHub repo we have to change the remote origin.
 
 - To do that, just run this command: (Make sure you are inside the repo you cloned)
 
@@ -14711,9 +14711,9 @@ OR:
 
 ![](https://cdn-images-1.medium.com/max/800/1*HTnMuxJ4tCDJ3I49cUrP8w.png)
 
-### 5\. You can now run `git push` and it will push to your newly created repo.
+### 5\. You can now run `git push` and it will push to your newly created repo.
 
-### Basic Git Work Flow.
+### Basic Git Work Flow.
 
 - After making changes to a file and you are ready to commit / push to your repo you can run the following commands:
 - `git add .` – stages modified files to be committed.
@@ -14737,7 +14737,7 @@ Like many disciplines, learning Git is just a matter of learning a new language.
 
 It’s also important to note that Git is a complex and powerful tool. As such, its documentation and advanced examples may be tough to understand. As your knowledge grows, you may choose to dive deeper into Git. Today, you’ll focus on the commands you’ll use every day — possibly for the rest of your programming career! Get comfortable with these commands and resist the urge to copy/paste or create keyboard shortcuts as you’re getting started.
 
-### A glance into GIT
+### A glance into GIT
 
 Before you look at any practical examples, let’s talk about how Git works behind the scenes.
 
@@ -14763,7 +14763,7 @@ Now, let’s get practical!
 
 You can create a repository with `git init`. Running this command will initialize a new Git repo in your current directory. It’s important to remember that you only want a repository for your project and not your whole hard drive, so always run this command inside a project folder and not your home folder or desktop. You can create a new repo in an empty folder or within a project directory you’ve already created.
 
-What good is an empty repo? Not much! To add content to your repository, use `git add`. You can pass this command a specific filename, a directory, a “wildcard” to select a series of similarly-named files, or a `.` to add every untracked file in the current directory:
+What good is an empty repo? Not much! To add content to your repository, use `git add`. You can pass this command a specific filename, a directory, a “wildcard” to select a series of similarly-named files, or a `.` to add every untracked file in the current directory:
 
     # This will add only my_app.js to the repo:
 
@@ -14789,7 +14789,7 @@ In this example, “Changes to be committed” is your staging area and “Chang
 
 Once you’re happy with your files and have staged them, you’ll use `git commit` to push them into the commit history. It’s significantly more work to make changes after a commit, so be sure your files are staged and exactly as you’d like them before running this command. Your default text editor will pop up, and you’ll be asked to enter a commit message for this group of changes.
 
-**Heads Up:** You may find yourself in an unfamiliar place! The default text editor for MacOS (and many variants of Linux) is called _Vim_. Vim is a terminal-based text editor you’ll discuss in the near future. It’s visually bare and may just look like terminal text to you! If this happens, don’t worry — just type `:q` and press your “return” key to exit.
+**Heads Up:** You may find yourself in an unfamiliar place! The default text editor for MacOS (and many variants of Linux) is called _Vim_. Vim is a terminal-based text editor you’ll discuss in the near future. It’s visually bare and may just look like terminal text to you! If this happens, don’t worry — just type `:q` and press your “return” key to exit.
 
 You’ll want to ensure that future commit messages open in a more familiar editor. You can run the following commands in your terminal to ensure that Visual Studio Code is your `git commit` editor from now on:
 
@@ -14809,7 +14809,7 @@ Like many Git commands, `git commit` includes some helpful shorthand. If you nee
 
 This will commit your changes with the message “Fix typo” and avoid opening your default text editor. Remember the commit messages are how you make your project’s history friendly to humans, so don’t use the `-m` flag as an excuse to write lame commit messages! A commit message should always explain why changes were made in clear, concise language. It is also best practice to use imperative voice in commit messages (i.e. use “Fix typo” instead of “Fixing the typo” or “Typo was fixed”).
 
-### Branches and workflow
+### Branches and workflow
 
 ![](https://cdn-images-1.medium.com/max/800/0*7RBsBGvfmvj4T4jm.png)
 
@@ -14825,7 +14825,7 @@ Notice how your refs help to identify branches here: `master` stays to itself an
 
 You can create a new branch or visit an existing branch in your repository. This is especially helpful for returning the `master` branch or for projects you’ve received from teammates. To open an existing branch, use `git checkout <name-of-branch>`.
 
-### Bringing it back together
+### Bringing it back together
 
 Once you’re happy with the code in the branch you’ve been working on, you’ll likely want to integrate the code into the `master` branch. You can do this via `git merge`. Merging will bring the changes in from another branch and integrate them into yours. Here’s an example workflow:
 
@@ -14851,7 +14851,7 @@ You can refer to a repository source that’s not local as a _remote_. Your Git 
 
 You can add a remote to an existing repository on your computer, or you can retrieve a repository from a remote source. You can refer to this as _cloning_ the repo. Once you have a repository with a remote, you can update your local code from the remote by _pulling_ code down, and you can _push_ up your own code so others have access to it.
 
-### I ![❤️](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg) Open Source
+### I ![❤️](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg) Open Source
 
 While a remote Git server can be run anywhere, there are a few places online that have become industry standards for hosting remote Git repositories. The best-known and most widely-used Git source is a website called [GitHub](https://github.com/). As the name suggests, GitHub is a global hub for Git repositories. It’s free to make a Github account, and you’ll find literally millions of public repositories you can browse.
 
@@ -14891,7 +14891,7 @@ Fetching retrieves the repository code and updates any remote tracking branches 
 
 It’s important to remember to use `git pull` often. A dynamic team may commit and push code many times during the day, and it’s easy to fall behind. The more often you `pull`, the more certain you can be that your own code is based on the “latest and greatest”.
 
-### Merging your code on GitHub
+### Merging your code on GitHub
 
 If you’re paying close attention, you may have noticed that there’s a missing step in your workflows so far: how do you get your code merged into your default branch? This is done by a process called a _Pull Request_.
 
@@ -14925,7 +14925,7 @@ Comparing changes with `git diff`
 
 Browsing through our code “checkpoints” with `git checkout`
 
-### Seeing changes in real time
+### Seeing changes in real time
 
 Git is all about change tracking, so it makes sense that it would include a utility for visualizing a set of changes. We refer to a list of differences between two files (or the same file over time) as a _diff_, and we can use `git diff` to visualize diffs in our repo!
 
@@ -15007,7 +15007,7 @@ Most of Git’s power comes from a simple ability: viewing commits in the past a
 
 That said, you’ll likely use shortcuts like `git checkout -` far more often than specifically checking out commit hashes. Especially with the advent of user-friendly tools like GitHub, it’s much easier to visualize changes outside the command line. We’ll demonstrate browsing commit histories on GitHub in a future lesson.
 
-### Git ‘Do-Overs’: Reset & Rebase
+### Git ‘Do-Overs’: Reset & Rebase
 
 ![](https://cdn-images-1.medium.com/max/800/0*5yBLWI2EMAqgm01n.jpg)
 
@@ -15023,7 +15023,7 @@ Have an understanding of how rebasing affects your commit history.
 
 Know when to rebase/reset and when **not** to.
 
-### Resetting the past
+### Resetting the past
 
 Remember how our commits form a timeline? We can see the state of our project at any point using `git checkout`. What if we want to travel back in time to a point before we caused a new bug or chose a terrible font? `git reset` is the answer!
 
@@ -15053,7 +15053,7 @@ Our changes are still present in the staging area, ready to be re-committed when
 
 Notice that the new commit has a totally new hash. The old commit messages (and their associated hashes) have been lost, but our code changes are safe and sound!
 
-### Risky Business: Mixed resets
+### Risky Business: Mixed resets
 
 If soft resets are the safest form of `git reset`, mixed resets are the most average! This is exactly why they’re the default: running `git reset` without adding a flag is the same as running `git reset --mixed`.
 
@@ -15103,7 +15103,7 @@ _Rebasing_ involves changing your current branch’s base branch. We might do th
 
 `git merge`?” In almost all cases, you’d be right. Rebasing is a dangerous process that effectively rewrites history.
 
-### I see you too like to live life Dangerously… tell me about Rebase..
+### I see you too like to live life Dangerously… tell me about Rebase..
 
 Let’s look at a situation where we might be tempted to rebase. We’ve added a couple commits to a feature branch while other team members have been merging their code into the `master` branch. Once we’re ready to merge our own branch, we probably want to follow a tried-and-true procedure:
 
@@ -15129,7 +15129,7 @@ Notice that both branches start at `9c5e2fc`. That’s our common ancestor commi
 
 See how we changed the color of our commits after the rebase? Take a close look at the commit history changes as well. Even though our commits have the same content, they have a new hash assigned, meaning they’re entirely new commits! This is what we mean by “rewriting history”: we’ve actually changed how Git refers to these changes now.
 
-### “Golden Rule of Git”
+### “Golden Rule of Git”
 
 These tools can all feel pretty nifty, but be very wary of using them too much! While they can augment your Git skills from good to great, they can also have catastrophic side effects.
 
@@ -15151,49 +15151,49 @@ With the command below you can configure your user name:
 
     git config --global user.name "Fabio"
 
-### How to setup your Git user email:
+### How to setup your Git user email:
 
 This command lets you setup the user email address you’ll use in your commits.
 
     git config --global user.email "signups@fabiopacifici.com"
 
-### How to cache your login credentials in Git:
+### How to cache your login credentials in Git:
 
 You can store login credentials in the cache so you don’t have to type them in each time. Just use this command:
 
     git config --global credential.helper cache
 
-### How to initialize a Git repo:
+### How to initialize a Git repo:
 
 Everything starts from here. The first step is to initialize a new Git repo locally in your project root. You can do so with the command below:
 
     git init
 
-### How to add a file to the staging area in Git:
+### How to add a file to the staging area in Git:
 
 The command below will add a file to the staging area. Just replace `filename_here` with the name of the file you want to add to the staging area.
 
     git add filename_here
 
-### How to add all files in the staging area in Git
+### How to add all files in the staging area in Git
 
-If you want to add all files in your project to the staging area, you can use a wildcard `.` and every file will be added for you.
+If you want to add all files in your project to the staging area, you can use a wildcard `.` and every file will be added for you.
 
     git add .
 
-### How to add only certain files to the staging area in Git
+### How to add only certain files to the staging area in Git
 
 With the asterisk in the command below, you can add all files starting with ‘fil’ in the staging area.
 
     git add fil*
 
-### How to check a repository’s status in Git:
+### How to check a repository’s status in Git:
 
 This command will show the status of the current repository including staged, unstaged, and untracked files.
 
     git status
 
-### How to commit changes in the editor in Git:
+### How to commit changes in the editor in Git:
 
 This command will open a text editor in the terminal where you can write a full commit message.
 
@@ -15201,31 +15201,31 @@ A commit message is made up of a short summary of changes, an empty line, and a 
 
     git commit
 
-### How to commit changes with a message in Git:
+### How to commit changes with a message in Git:
 
 You can add a commit message without opening the editor. This command lets you only specify a short summary for your commit message.
 
     git commit -m "your commit message here"
 
-### How to commit changes (and skip the staging area) in Git:
+### How to commit changes (and skip the staging area) in Git:
 
 You can add and commit tracked files with a single command by using the -a and -m options.
 
     git commit -a -m"your commit message here"
 
-### How to see your commit history in Git:
+### How to see your commit history in Git:
 
 This command shows the commit history for the current repository:
 
     git log
 
-### How to see your commit history including changes in Git:
+### How to see your commit history including changes in Git:
 
 This command shows the commit’s history including all files and their changes:
 
     git log -p
 
-### How to see a specific commit in Git:
+### How to see a specific commit in Git:
 
 This command shows a specific commit.
 
@@ -15233,13 +15233,13 @@ Replace commit-id with the id of the commit that you find in the commit log afte
 
     git show commit-id
 
-### How to see log stats in Git:
+### How to see log stats in Git:
 
 This command will cause the Git log to show some statistics about the changes in each commit, including line(s) changed and file names.
 
     git log --stat
 
-### How to see changes made before committing them using “diff” in Git:
+### How to see changes made before committing them using “diff” in Git:
 
 You can pass a file as a parameter to only see changes on a specific file.  
 `git diff` shows only unstaged changes by default.
@@ -15248,39 +15248,39 @@ We can call diff with the `--staged` flag to see any staged changes.
 
     git diffgit diff all_checks.pygit diff --staged
 
-### How to see changes using “git add -p”:
+### How to see changes using “git add -p”:
 
 This command opens a prompt and asks if you want to stage changes or not, and includes other options.
 
     git add -p
 
-### How to remove tracked files from the current working tree in Git:
+### How to remove tracked files from the current working tree in Git:
 
 This command expects a commit message to explain why the file was deleted.
 
     git rm filename
 
-### How to rename files in Git:
+### How to rename files in Git:
 
 This command stages the changes, then it expects a commit message.
 
     git mv oldfile newfile
 
-### How to ignore files in Git:
+### How to ignore files in Git:
 
-Create a `.gitignore` file and commit it.
+Create a `.gitignore` file and commit it.
 
-### How to revert unstaged changes in Git:
+### How to revert unstaged changes in Git:
 
     git checkout filename
 
-### How to revert staged changes in Git:
+### How to revert staged changes in Git:
 
 You can use the -p option flag to specify the changes you want to reset.
 
     git reset HEAD filenamegit reset HEAD -p
 
-### How to amend the most recent commit in Git:
+### How to amend the most recent commit in Git:
 
 `git commit --amend` allows you to modify and add changes to the most recent commit.
 
@@ -15288,32 +15288,32 @@ You can use the -p option flag to specify the changes you want to reset.
 
 !!Note!!: fixing up a local commit with amend is great and you can push it to a shared repository after you’ve fixed it. But you should avoid amending commits that have already been made public.
 
-### How to rollback the last commit in Git:
+### How to rollback the last commit in Git:
 
 `git revert` will create a new commit that is the opposite of everything in the given commit.  
 We can revert the latest commit by using the head alias like this:
 
     git revert HEAD
 
-### How to rollback an old commit in Git:
+### How to rollback an old commit in Git:
 
 You can revert an old commit using its commit id. This opens the editor so you can add a commit message.
 
     git revert comit_id_here
 
-### How to create a new branch in Git:
+### How to create a new branch in Git:
 
 By default, you have one branch, the main branch. With this command, you can create a new branch. Git won’t switch to it automatically — you will need to do it manually with the next command.
 
     git branch branch_name
 
-### How to switch to a newly created branch in Git:
+### How to switch to a newly created branch in Git:
 
 When you want to use a different or a newly created branch you can use this command:
 
     git checkout branch_name
 
-### How to list branches in Git:
+### How to list branches in Git:
 
 You can view all created branches using the `git branch` command. It will show a list of all branches and mark the current branch with an asterisk and highlight it in green.
 
@@ -15325,63 +15325,63 @@ In a single command, you can create and switch to a new branch right away.
 
     git checkout -b branch_name
 
-### How to delete a branch in Git:
+### How to delete a branch in Git:
 
 When you are done working with a branch and have merged it, you can delete it using the command below:
 
     git branch -d branch_name
 
-### How to merge two branches in Git:
+### How to merge two branches in Git:
 
 To merge the history of the branch you are currently in with the `branch_name`, you will need to use the command below:
 
     git merge branch_name
 
-### How to show the commit log as a graph in Git:
+### How to show the commit log as a graph in Git:
 
 We can use `--graph` to get the commit log to show as a graph. Also,  
 `--oneline` will limit commit messages to a single line.
 
     git log --graph --oneline
 
-### How to show the commit log as a graph of all branches in Git:
+### How to show the commit log as a graph of all branches in Git:
 
 Does the same as the command above, but for all branches.
 
     git log --graph --online --all
 
-### How to abort a conflicting merge in Git:
+### How to abort a conflicting merge in Git:
 
 If you want to throw a merge away and start over, you can run the following command:
 
     git merge --abort
 
-### How to add a remote repository in Git
+### How to add a remote repository in Git
 
 This command adds a remote repository to your local repository (just replace `[https://repo_here](https://repo_here/)` with your remote repo URL).
 
     git add remote https://repo_here
 
-### How to see remote URLs in Git:
+### How to see remote URLs in Git:
 
 You can see all remote repositories for your local repository with this command:
 
     git remote -v
 
-### How to get more info about a remote repo in Git:
+### How to get more info about a remote repo in Git:
 
 Just replace `origin` with the name of the remote obtained by  
 running the git remote -v command.
 
     git remote show origin
 
-### How to push changes to a remote repo in Git:
+### How to push changes to a remote repo in Git:
 
 When all your work is ready to be saved on a remote repository, you can push all changes using the command below:
 
     git push
 
-### How to pull changes from a remote repo in Git:
+### How to pull changes from a remote repo in Git:
 
 If other team members are working on your repository, you can retrieve the latest changes made to the remote repository with the command below:
 
@@ -15393,19 +15393,19 @@ This command shows the name of all remote branches that Git is tracking for the 
 
     git branch -r
 
-### How to fetch remote repo changes in Git:
+### How to fetch remote repo changes in Git:
 
 This command will download the changes from a remote repo but will not perform a merge on your local branch (as git pull does that instead).
 
     git fetch
 
-### How to check the current commits log of a remote repo in Git
+### How to check the current commits log of a remote repo in Git
 
 Commit after commit, Git builds up a log. You can find out the remote repository log by using this command:
 
     git log origin/main
 
-### How to merge a remote repo with your local repo in Git:
+### How to merge a remote repo with your local repo in Git:
 
 If the remote repository has changes you want to merge with your local, then this command will do that for you:
 
@@ -15418,19 +15418,19 @@ local branches. You can call git merge or git checkout to do the merge.
 
     git remote update
 
-### How to push a new branch to a remote repo in Git:
+### How to push a new branch to a remote repo in Git:
 
 If you want to push a branch to a remote repository you can use the command below. Just remember to add -u to create the branch upstream:
 
     git push -u origin branch_name
 
-### How to remove a remote branch in Git:
+### How to remove a remote branch in Git:
 
 If you no longer need a remote branch you can remove it using the command below:
 
     git push --delete origin branch_name_here
 
-### How to use Git rebase:
+### How to use Git rebase:
 
 You can transfer completed work from one branch to another using `git rebase`.
 
@@ -15438,14 +15438,14 @@ You can transfer completed work from one branch to another using `git rebase`.
 
 Git Rebase can get really messy if you don’t do it properly. Before using this command I suggest that you re-read the official documentation [here](https://git-scm.com/book/it/v2/Git-Branching-Rebasing)
 
-### How to run rebase interactively in Git:
+### How to run rebase interactively in Git:
 
 You can run git rebase interactively using the -i flag.  
 It will open the editor and present a set of commands you can use.
 
     git rebase -i master# p, pick = use commit# r, reword = use commit, but edit the commit message# e, edit = use commit, but stop for amending# s, squash = use commit, but meld into previous commit# f, fixup = like "squash", but discard this commit's log message# x, exec = run command (the rest of the line) using shell# d, drop = remove commit
 
-### How to force a push request in Git:
+### How to force a push request in Git:
 
 This command will force a push request. This is usually fine for pull request branches because nobody else should have cloned them.  
 But this isn’t something that you want to do with public repos.
@@ -15454,7 +15454,7 @@ But this isn’t something that you want to do with public repos.
 
 ---
 
-### Git Alias Overview
+### Git Alias Overview
 
 It is important to note that there is no direct `git alias` command. Aliases are created through the use of the `[git config](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config)` command and the Git configuration files. As with other configuration values, aliases can be created in a local or global scope.
 
@@ -15474,7 +15474,7 @@ Git aliasing is enabled through the use of `git config`, For command-line option
 
 ### Examples
 
-### Using aliases to create new Git commands
+### Using aliases to create new Git commands
 
 A common Git pattern is to remove recently added files from the staging area. This is achieved by leveraging options to the `git reset` command. A new alias can be created to encapsulate this behavior and create a new alias-command-keyword which is easy to remember:
 
@@ -15494,7 +15494,7 @@ The preceding code example creates a new alias `unstage`. This now enables the i
 
 ![](https://cdn-images-1.medium.com/max/800/1*cFb6UcCGmIcNU1-woncSTA.png)
 
-### Here are some tips on troubleshooting and resolving issues with Git.
+### Here are some tips on troubleshooting and resolving issues with Git.
 
 ### Broken pipe errors on `git push`
 
@@ -15504,7 +15504,7 @@ The preceding code example creates a new alias `unstage`. This now enables the i
 
 To fix this issue, here are some possible solutions.
 
-### Increase the POST buffer size in Git
+### Increase the POST buffer size in Git
 
 **If you’re using Git over HTTP instead of SSH**, you can try increasing the POST buffer size in Git’s configuration.
 
@@ -15540,7 +15540,7 @@ Configuring both the client and the server is unnecessary.
 
     git repackgit push
 
-### Upgrade your Git client
+### Upgrade your Git client
 
 In case you’re running an older version of Git (< 2.9), consider upgrading to >= 2.9 (see [Broken pipe when pushing to Git repository](https://stackoverflow.com/questions/19120120/broken-pipe-when-pushing-to-git-repository/36971469#36971469)).
 
@@ -15594,11 +15594,11 @@ The default value of `http.postBuffer`, 1 MiB, is applied if the setting is not 
 
 [https://gist.github.com/bgoonz/140a268bdc42f03bbb4ab47a9cd11263](https://gist.github.com/bgoonz/140a268bdc42f03bbb4ab47a9cd11263)[https://gist.github.com/bgoonz/69bb5ef5e62f9350d2766df123cc6e54](https://gist.github.com/bgoonz/69bb5ef5e62f9350d2766df123cc6e54)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://bryanguner.medium.com/git-tricks-57e8d0292285](https://bryanguner.medium.com/git-tricks-57e8d0292285)[https://bryanguner.medium.com/git-tricks-57e8d0292285](https://bryanguner.medium.com/git-tricks-57e8d0292285)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://bryanguner.medium.com/git-tricks-57e8d0292285](https://bryanguner.medium.com/git-tricks-57e8d0292285)
 
@@ -15630,7 +15630,7 @@ The default value of `http.postBuffer`, 1 MiB, is applied if the setting is not 
 
 ---
 
-### Getting visual feedback in your programs
+### Getting visual feedback in your programs
 
 The first command we’ll learn in JavaScript is `console.log`. This command is used to _print_ something onto the screen. As we write our first lines of code, we’ll be using `console.log` frequently as a way to visually see the output of our programs. Let’s write our first program:
 
@@ -15684,13 +15684,13 @@ Operators are the symbols that perform particular operations.
 
 JS evaluates more complex expressions using the general math order of operations aka PEMDAS.
 
-- **PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.
+- **PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.
 - _To force a specific order of operation, use the group operator ( ) around a part of the expression._
 
-**Modulo** : Very useful operation to check divisibility of numbers, check for even & odd, whether a number is prime, and much more! _(Discrete Math concept, circular problems can be solved with modulo)_
+**Modulo** : Very useful operation to check divisibility of numbers, check for even & odd, whether a number is prime, and much more! _(Discrete Math concept, circular problems can be solved with modulo)_
 
-- Whenever you have a smaller number % a larger number, the answer will just be the initial small number.   
-   console.log(7 % 10) // => 7;
+- Whenever you have a smaller number % a larger number, the answer will just be the initial small number.   
+   console.log(7 % 10) // => 7;
 
 **The String Data Type**
 
@@ -15698,41 +15698,41 @@ The **string** data type is a primitive data type that used to represent textual
 
 - can be wrapped by either **single** or **double** quotation marks, _best to choose one and stick with it for consistency_.
 - If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.  
-   “That’s a great string”; (valid)
+   “That’s a great string”; (valid)
 
   ‘Shakespeare wrote, “To be or not to be”’; (valid)
 
   ‘That’s a bad string’; (invalid)
 
 - Alt. way to add other quotes within strings is to use template literals.  
-   \`This is a temp’l’ate literal ${function}\` // use ${} to invoke functions within.
-- **.length** : property that can be appended to data to return the length.
+   \`This is a temp’l’ate literal ${function}\` // use ${} to invoke functions within.
+- **.length** : property that can be appended to data to return the length.
 - empty strings have a length of zero.
-- **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].  
-   console.log(“bootcamp”\[0\]); // => “b”  
-   console.log(“bootcamp”\[10\]); // => “undefined”  
-   console.log(“boots”\[1 \* 2\]); // => “o”  
-   console.log(“boots”\[“boot”.length-1\]); // => “t”
+- **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].  
+   console.log(“bootcamp”\[0\]); // => “b”  
+   console.log(“bootcamp”\[10\]); // => “undefined”  
+   console.log(“boots”\[1 \* 2\]); // => “o”  
+   console.log(“boots”\[“boot”.length-1\]); // => “t”
 - we can pass expressions through the brackets as well since JS always evaluates expressions first.
 - The index of the last character of a string is always one less than it’s length.
-- **indexOf()** : method used to find the first index of a given character within a string.  
-   console.log(“bagel”.indexOf(“b”)); // => 0  
-   console.log(“bagel”.indexOf(“z”)); // => -1
+- **indexOf()** : method used to find the first index of a given character within a string.  
+   console.log(“bagel”.indexOf(“b”)); // => 0  
+   console.log(“bagel”.indexOf(“z”)); // => -1
 - if the character inside the indexOf() search does not exist in the string, the output will be -1.
 - the indexOf() search will return the first instanced index of the the char in the string.
-- **concatenate** : word to describe joining strings together into a single string.
+- **concatenate** : word to describe joining strings together into a single string.
 
 **The Boolean Data Type**
 
 The **Boolean** data type is the simplest data type since there are only two values: **true** and **false**.
 
 - **Logical Operators** (B*oolean Operators*) are used to establish logic in our code.
-- **!** (not) : reverses a Boolean value.  
-   console.log(!true); // => false  
-   console.log(!!false); // => false
-- **Logical Order of Operations** : JS will evaluate !, then &&, then ||.
-- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.  
-   console.log(true || !false) // => stops after it sees “true ||”
+- **!** (not) : reverses a Boolean value.  
+   console.log(!true); // => false  
+   console.log(!!false); // => false
+- **Logical Order of Operations** : JS will evaluate !, then &&, then ||.
+- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.  
+   console.log(true || !false) // => stops after it sees “true ||”
 
 **Comparison Operators**
 
@@ -15765,36 +15765,36 @@ Loose Equality, will return true even if the values are of a different type, due
 
 Variables are used to store information to be referenced and manipulated in a program.
 
-- We initialize a variable by using the **let** keyword and a **\=** single equals sign (assignment operator).   
-   let bootcamp = “WebDevHub”;  
-   console.log(bootcamp); // “WebDevHub”
+- We initialize a variable by using the **let** keyword and a **\=** single equals sign (assignment operator).   
+   let bootcamp = “WebDevHub”;  
+   console.log(bootcamp); // “WebDevHub”
 - JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).
-- If you do not declare a value for a variable, undefined is automatically set.   
-   let bootcamp;  
-   console.log(bootcamp); // undefined
+- If you do not declare a value for a variable, undefined is automatically set.   
+   let bootcamp;  
+   console.log(bootcamp); // undefined
 - We can change the value of a previously declared variable (let, not const) by re-assigning it another value.
 - **let** is the updated version of **var**; there are some differences in terms of hoisting and global/block scope
 
 **Assignment Shorthand**
 
 let num = 0;  
- num += 10; // same as num = num + 10  
- num -= 2; // same as num = num — 2  
- num /= 4; // same as num = num / 4  
- num \*= 7; // same as num = num \* 7
+ num += 10; // same as num = num + 10  
+ num -= 2; // same as num = num — 2  
+ num /= 4; // same as num = num / 4  
+ num \*= 7; // same as num = num \* 7
 
-- In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.
+- In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.
 
 **Functions**
 
 A function is a procedure of code that will run when called. Functions are used so that we do not have to rewrite code to do the same thing over and over. (Think of them as ‘subprograms’)
 
-- **Function Declaration** : Process when we first initially write our function.
+- **Function Declaration** : Process when we first initially write our function.
 - Includes three things:
 - Name of the function.
 - A list of _parameters_ ()
 - The code to execute {}
-- **Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)
+- **Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)
 - JS evaluates code top down, left to right.
 - When we execute a declared function later on in our program we refer to this as **invoking** our function.
 - Every function in JS returns undefined unless otherwise specified.
@@ -15805,8 +15805,8 @@ Greate code reads like English and almost explains itself. Think: Elegant, reada
 
 **Parameters and Arguments**
 
-- **Parameters** : Comma seperated variables specified as part of a function’s declaration.
-- **Arguments** : Values passed to the function when it is invoked.
+- **Parameters** : Comma seperated variables specified as part of a function’s declaration.
+- **Arguments** : Values passed to the function when it is invoked.
 - _If the number of arguments passed during a function invocation is different than the number of paramters listed, it will still work._
 - However, is there are not enough arguments provided for parameters our function will likely yield **Nan**.
 
@@ -15823,7 +15823,7 @@ In JavaScript you have two different options:
 
 Variables are stand-in values that you can use to perform operations. You should be familiar with them from math class.
 
-### var, const, let
+### var, const, let
 
 You have three different possibilities for declaring a variable in JavaScript, each with their own specialties:
 
@@ -15861,7 +15861,7 @@ nationality:”German”
 
 };
 
-### The Next Level: Arrays
+### The Next Level: Arrays
 
 Next up in our JavaScript cheat sheet are arrays. Arrays are part of many different programming languages. They are a way of organizing variables and properties into groups. Here’s how to create one in JavaScript:
 
@@ -16104,7 +16104,7 @@ Regular expressions are search patterns used to match character combinations in 
 - `?=n` — Any string that is followed by a specific string n
 - `?!n` — String that is not followed by a specific string ni
 
-### Numbers and Math
+### Numbers and Math
 
 In JavaScript, you can also work with numbers, constants and perform mathematical functions.
 
@@ -16166,7 +16166,7 @@ You can also work with and modify dates and time with JavaScript. This is the ne
 - `Date(2017, 5, 21, 3, 23, 10, 0)` — Create a custom date object. The numbers represent a year, month, day, hour, minutes, seconds, milliseconds. You can omit anything you want except for a year and month.
 - `Date("2017-06-23")` — Date declaration as a string
 
-### Pulling Date and Time Values
+### Pulling Date and Time Values
 
 - `getDate()` — Get the day of the month as a number (1-31)
 - `getDay()` — The weekday as a number (0-6)
@@ -16180,7 +16180,7 @@ You can also work with and modify dates and time with JavaScript. This is the ne
 - `getUTCDate()` — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
 - `parse` — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
 
-### Set Part of a Date
+### Set Part of a Date
 
 - `setDate()` — Set the day as a number (1-31)
 - `setFullYear()` — Sets the year (optionally month and day)
@@ -16249,7 +16249,7 @@ The DOM is the [Document Object Model](https://en.wikipedia.org/wiki/Document_Ob
 - `setAttributeNode()` — Sets or changes the specified attribute node
 - `setAttributeNodeNS()` — Adds a new namespaced attribute node to an element
 
-### Working with the User Browser
+### Working with the User Browser
 
 Besides HTML elements, JavaScript is also able to take into account the user browser and incorporate its properties into the code.
 
@@ -16433,7 +16433,7 @@ When working with JavaScript, different errors can occur. There are several ways
 - `throw` — Create custom error messages instead of the standard JavaScript errors
 - `finally` — Lets you execute code, after try and catch, regardless of the result
 
-### Error Name Values
+### Error Name Values
 
 JavaScript also has a built-in error object. It has two properties:
 
@@ -16699,13 +16699,13 @@ sin=Math.sin, cos=Math.cos, tan=Math.tan
 
 ### Expressions and Operators
 
-In JavaScript, the values `null` and `undefined` are the only two values that do not have properties. In a regular property access expression using . or \[\], you get a `TypeError` if the expression on the left evaluates to `null` or `undefined`. You can use `?.` and `?.[]` syntax to guard against errors of this type.
+In JavaScript, the values `null` and `undefined` are the only two values that do not have properties. In a regular property access expression using . or \[\], you get a `TypeError` if the expression on the left evaluates to `null` or `undefined`. You can use `?.` and `?.[]` syntax to guard against errors of this type.
 
-You can also invoke a function using `?.()` instead of `()`.
+You can also invoke a function using `?.()` instead of `()`.
 
-With the `new ?.()` invocation syntax, if the expression to the left of the `?.` evaluates to `null` or `undefined`, then the entire invocation expression evaluates to `undefined` and no exception is thrown.
+With the `new ?.()` invocation syntax, if the expression to the left of the `?.` evaluates to `null` or `undefined`, then the entire invocation expression evaluates to `undefined` and no exception is thrown.
 
-Write the function invocation using `?.(),` knowing that invocation will only happen if there is actually a value to be invoked
+Write the function invocation using `?.(),` knowing that invocation will only happen if there is actually a value to be invoked
 
 function square(x, log) {
 
@@ -16733,11 +16733,11 @@ Because of security issues, some web servers use the HTTP “Content-Security-Po
 
 ### First-Defined (??)
 
-The first-defined operator `??` evaluates to its first defined operand: if its left operand is not `null` and not `undefined`, it returns that value.
+The first-defined operator `??` evaluates to its first defined operand: if its left operand is not `null` and not `undefined`, it returns that value.
 
 `a ?? b` is equivalent to `(a !== null && a !== undefined) ? a : b`
 
-`??` is a useful alternative to `||.` The problem with this idiomatic use is that zero, the empty string, and false are all `falsy` values that may be perfectly valid in some circumstances. In this code example, if `maxWidth` is zero, that value will be ignored. But if we change the `||` operator to `??`, we end up with an expression where zero is a valid value.
+`??` is a useful alternative to `||.` The problem with this idiomatic use is that zero, the empty string, and false are all `falsy` values that may be perfectly valid in some circumstances. In this code example, if `maxWidth` is zero, that value will be ignored. But if we change the `||` operator to `??`, we end up with an expression where zero is a valid value.
 
 `let max = maxWidth || preferences.maxWidth || 500;`
 
@@ -16893,7 +16893,7 @@ The differences between strict mode and non-strict mode are the following:
 
 · In strict mode, functions invoked as functions (rather than as methods) have a `this` value of undefined. (In non-strict mode, functions invoked as functions are always passed the global object as their `this` value.)
 
-· A function is invoked with `call()` or `apply()` , the `this` value is exactly the value passed as the first argument to `call()` or `apply()`. (In non-strict mode, `null` and `undefined` values are replaced with the global object and non-object values are converted to objects.)
+· A function is invoked with `call()` or `apply()` , the `this` value is exactly the value passed as the first argument to `call()` or `apply()`. (In non-strict mode, `null` and `undefined` values are replaced with the global object and non-object values are converted to objects.)
 
 · In strict mode, assignments to non-writable properties and attempts to create new properties on non-extensible objects throw a `TypeError`. (In non-strict mode, these attempts fail silently.)
 
@@ -16962,9 +16962,9 @@ surname: "Flanagan"
 `new`
 
 `let o = new Object();`  
- `let a = new Array();`  
- `let d = new Date();`  
- `let r = new Map();`
+ `let a = new Array();`  
+ `let d = new Date();`  
+ `let r = new Map();`
 
 `Object.create`
 
@@ -16978,7 +16978,7 @@ library.function(Object.create(o));
 
 Note: the library function can modify the passed in object, but not the original `o` object
 
-### Access Object Properties with an array (\[\]) notation
+### Access Object Properties with an array (\[\]) notation
 
 let addr = "";
 
@@ -17046,9 +17046,9 @@ true
 
 To check whether an object has a property with a given name. You can do this with the `in` operator, with the `hasOwnProperty()` and `propertyIsEnumerable()` methods, or simply by querying the property
 
-( `!= undefined`).
+( `!= undefined`).
 
-### in & query
+### in & query
 
 `let o = { x: 1 };`
 
@@ -17176,7 +17176,7 @@ p == {x: 1, y: {z: \[false,null, “”\]}}
 
 s == “\[object Object\]”
 
-### Extended Object Literal Syntax
+### Extended Object Literal Syntax
 
 ### Shorthand Properties
 
@@ -17193,12 +17193,12 @@ y: y
 ←>
 
 `let x = 1, y = 2;`  
- `let o = { x, y };`
+ `let o = { x, y };`
 
-### Computer Property Names
+### Computer Property Names
 
 `const PROPERTY_NAME = "p1";`  
- `function computePropertyName() { return "p" + 2; }`
+ `function computePropertyName() { return "p" + 2; }`
 
 let o = {};
 
@@ -17216,7 +17216,7 @@ let p = {
 
 };
 
-### Symbols as Property Names
+### Symbols as Property Names
 
 const extension = Symbol("my extension symbol");
 
@@ -17234,12 +17234,12 @@ The point of Symbols is not security, but to define a safe extension mechanism f
 
 ### Spread Operator
 
-You can copy the properties of an existing object into a new object using the “spread operator” … inside an object literal:
+You can copy the properties of an existing object into a new object using the “spread operator” … inside an object literal:
 
 `let position = { x: 0, y: 0 };`  
- `let dimensions = { width: 100, height: 75 };`  
- `let rect = { ...position, ...dimensions };`  
- `rect.x + rect.y + rect.width + rect.height`
+ `let dimensions = { width: 100, height: 75 };`  
+ `let rect = { ...position, ...dimensions };`  
+ `rect.x + rect.y + rect.width + rect.height`
 
 ### Shorthand Methods
 
@@ -17293,7 +17293,7 @@ let weirdMethods = {
 
 4
 
-### Property Getters and Setters
+### Property Getters and Setters
 
 let o = {
 
@@ -17311,7 +17311,7 @@ set accessorProp(value) { this.dataProp = value; }
 
 · Array literals
 
-· The … spread operator on an iterable object
+· The … spread operator on an iterable object
 
 · The `Array()` constructor
 
@@ -17335,7 +17335,7 @@ If an array literal contains multiple commas in a row, with no value between, th
 
 Array literal syntax allows an optional trailing comma, so `[,,]` has a length of 2, not 3.
 
-### The Spread Operator
+### The Spread Operator
 
 `let a = [1, 2, 3];`
 
@@ -17346,7 +17346,7 @@ Array literal syntax allows an optional trailing comma, so `[,,]` has a length o
 create a copy of an array — modifying the copy does not change the original
 
 `let original = [1,2,3];`  
- `let copy = [...original];`
+ `let copy = [...original];`
 
 `let digits = [..."0123456789ABCDEF"];`
 
@@ -17388,9 +17388,9 @@ It is also a simple way to make a copy of an array:
 
 `Array.from()` also accepts an optional second argument. If you pass a function as the second argument, then as the new array is being built, each element from the source object will be passed to the function you specify, and the return value of the function will be stored in the array instead of the original value.
 
-### Reading and Writing Array Elements
+### Reading and Writing Array Elements
 
-What is special about arrays is that when you use property names that are non-negative integers , the array automatically maintains the value of the `length` property for you.
+What is special about arrays is that when you use property names that are non-negative integers , the array automatically maintains the value of the `length` property for you.
 
 JavaScript converts the numeric array index you specify to a string — the index 1 becomes the string “1”, then uses that string as a property name.
 
@@ -17444,7 +17444,7 @@ Length is 5, but no elements, like `new Array(5)`
 
 You can also set the length property of an array to a value larger than its current value. Doing this does not actually add any new elements to the array; it simply creates a sparse area at the end of the array.
 
-### Adding and Deleting Array Elements
+### Adding and Deleting Array Elements
 
 `let a = [];`
 
@@ -17550,7 +17550,7 @@ table\[row\]\[col\] = row \* col;
 
 ### Array Methods
 
-### Array Iterator Methods
+### Array Iterator Methods
 
 First, all of these methods accept a function as their first argument and invoke that function once for each element (or some elements) of the array. If the array is sparse, the function you pass is not invoked for nonexistent elements. In most cases, the function you supply is invoked with three arguments: the value of the array element, the index of the array element, and the array itself.
 
@@ -17573,15 +17573,15 @@ a\[i\] = v + 1;
 MAP()
 
 `let a = [1, 2, 3];`  
- `a.map(x => x*x)`
+ `a.map(x => x*x)`
 
 \[1, 4, 9\]
 
 FILTER()
 
 `let a = [5, 4, 3, 2, 1];`  
- `a.filter(x => x < 3)`  
- `a.filter((x,i) => i % 2 === 0)`
+ `a.filter(x => x < 3)`  
+ `a.filter((x,i) => i % 2 === 0)`
 
 \[2, 1\];
 
@@ -17686,13 +17686,13 @@ When you invoke `reduce()` with no initial value, it uses the first element of t
 \[1, 2, 3, 4\]
 
 `let phrases = ["hello world", "the definitive guide"];`  
- `let words = phrases.flatMap(phrase => phrase.split(" "));`
+ `let words = phrases.flatMap(phrase => phrase.split(" "));`
 
 \[“hello”, “world”, “the”, “definitive”, “guide”\];
 
 Calling `a.flatMap(f)` is the same as (but more efficient than) `a.map(f).flat()`:
 
-### Adding arrays with concat()
+### Adding arrays with concat()
 
 `let a = [1,2,3];`
 
@@ -17816,10 +17816,10 @@ Unlike `concat(), splice()` inserts arrays themselves, not the elements of those
 
 `copyWithin()` copies a slice of an array to a new position within the array. It modifies the array in place and returns the modified array, but it will not change the length of the array.
 
-### Array Searching and Sorting Methods
+### Array Searching and Sorting Methods
 
 INDEXOF()  
- LASTINDEXOF()
+ LASTINDEXOF()
 
 `let a = [0,1,2,1,0];`
 
@@ -17870,7 +17870,7 @@ return 0;
 REVERSE()
 
 `let a = [1,2,3];`  
- `a.reverse();`
+ `a.reverse();`
 
 \[3,2,1\]
 
@@ -17980,7 +17980,7 @@ Since array-like objects do not inherit from `Array.prototype`, you cannot invok
 
 \[“a”,”b”,”c”\]
 
-### Strings as Arrays
+### Strings as Arrays
 
 `let s = "test";`
 
@@ -18096,7 +18096,7 @@ JavaScript functions are objects, and like all JavaScript objects, they have met
 
 ### Function Arguments and Parameters
 
-### Optional Parameters and Defaults
+### Optional Parameters and Defaults
 
 When a function is invoked with fewer arguments than declared parameters, the additional parameters are set to their default value, which is normally `undefined`.
 
@@ -18122,7 +18122,7 @@ One interesting case is that, for functions with multiple parameters, you can us
 
 const rectangle = (width, height = width\*2) => ({width, height});
 
-### Rest Parameters and Variable-Length Argument Lists
+### Rest Parameters and Variable-Length Argument Lists
 
 Rest parameters enable us to write functions that can be invoked with arbitrarily more arguments than parameters.
 
@@ -18178,7 +18178,7 @@ max(1, 10, 100, 2, 3, 1000, 4, 5, 6)
 
 you should avoid using it in any new code you write.
 
-### The Spread Operator for Function Calls
+### The Spread Operator for Function Calls
 
 let numbers = \[5, 2, 10, -1, 9, 100, 1\];
 
@@ -18300,7 +18300,7 @@ return total;
 
 `TypeError`: element 2 is not a number
 
-### Functions as Values
+### Functions as Values
 
 function square(x) { return x \* x; }
 
@@ -18332,7 +18332,7 @@ Functions don’t even require names at all, as when they’re assigned to array
 
 `a[0]` accesses first element of the array, which is “`x => x*x`“, `(a[1])` passes parameter, which is 20.
 
-### Examples of using functions as data
+### Examples of using functions as data
 
 function add(x,y) { return x + y; }
 
@@ -18656,11 +18656,11 @@ TypeError: try to set a value ofthe wrong type
 
 Since functions are objects, they can have properties and methods, just like any other object.
 
-### The length Property
+### The length Property
 
 The read-only length property of a function specifies the arity of the function — the number of parameters it declares in its parameter list, which is usually the number of arguments that the function expects.
 
-### The name Property
+### The name Property
 
 This property is primarily useful when writing debugging or error messages.
 
@@ -18668,7 +18668,7 @@ This property is primarily useful when writing debugging or error messages.
 
 When a function is used as a constructor, the newly created object inherits properties from the prototype object.
 
-### The call() and apply() Methods
+### The call() and apply() Methods
 
 `call()` and `apply()` allow you to indirectly invoke a function as if it were a method of some other object. The first argument to both `call()` and `apply()` is the object on which the function is to be invoked; this argument is the invocation context and becomes the value of the `this` keyword within the body of the function.
 
@@ -18706,7 +18706,7 @@ return result;
 
 }
 
-### The bind() Method
+### The bind() Method
 
 The primary purpose of `bind()` is to bind a function to an object.
 
@@ -18984,7 +18984,7 @@ return "(" + this.from + "..." + this.to + ")";
 
 };
 
-### Classes with the class Keyword
+### Classes with the class Keyword
 
 class Range {
 
@@ -19082,11 +19082,11 @@ The method defined by this code is `Range.parse()`, not `Range.prototype.parse()
 
 let r = Range.parse('(1...10)');
 
-### Getters, Setters, and other Method Forms
+### Getters, Setters, and other Method Forms
 
 Within a class body, you can define getter and setter methods just as you can in object literals. The only difference is that in class bodies, you don’t put a comma after the getter or setter.
 
-### Public, Private, and Static Fields
+### Public, Private, and Static Fields
 
 The ES6 standard only allows the creation of methods (including getters, setters, and generators) and static methods; it does not include syntax for defining fields.
 
@@ -19148,7 +19148,7 @@ return new Range(parseInt(matches\[1\]), matches\[2\]);
 
 }
 
-### Adding Methods to Existing Classes
+### Adding Methods to Existing Classes
 
 We can augment JavaScript classes simply by adding new methods to their prototype objects.
 
@@ -19207,12 +19207,12 @@ Span.prototype.constructor = Span;
 `Span` overrides the `toString()` method
 
 `Span.prototype.toString = function() {`  
- `` return `(${this.from}... +${this.to - this.from})`; ``  
- `};`
+ `` return `(${this.from}... +${this.to - this.from})`; ``  
+ `};`
 
 A robust subclassing mechanism needs to allow classes to invoke the methods and constructor of their superclass, but prior to ES6, JavaScript did not have a simple way to do these things.
 
-### Subclasses with extends and super
+### Subclasses with extends and super
 
 class EZArray extends Array {
 
@@ -19316,7 +19316,7 @@ You may not use the `this` keyword in your constructor until after you have invo
 
 Once private fields are supported, we could change these properties to `#keyType` and `#valueType` so that they could not be altered from the outside.
 
-### Class Hierarchies and Abstract Classes
+### Class Hierarchies and Abstract Classes
 
 Define abstract classes — classes that do not include a complete implementation — to serve as a common superclass for a group of related subclasses.
 
@@ -19374,7 +19374,7 @@ s.insert(30);
 
 let average = stats.mean(\[...s\]);
 
-### Modules in ES6
+### Modules in ES6
 
 ES6 adds import and export keywords to JavaScript and finally supports real modularity as a core language feature.
 
@@ -19422,9 +19422,9 @@ With the wildcard import shown in the previous example, the importing module wou
 
 Note: not finished.
 
-### The JavaScript Standard Library
+### The JavaScript Standard Library
 
-### The Set Class
+### The Set Class
 
 Sets are not ordered or indexed, and they do not allow duplicates.
 
@@ -19458,7 +19458,7 @@ sum += p; // and add them up
 
 }
 
-Because Set objects are iterable, you can convert them to arrays and argument lists with the … spread operator
+Because Set objects are iterable, you can convert them to arrays and argument lists with the … spread operator
 
 `[...oneDigitPrimes]`
 
@@ -19470,7 +19470,7 @@ let product = 1;
 
 oneDigitPrimes.forEach(n => { product \*= n; });
 
-### The Map Class
+### The Map Class
 
 let m = new Map();
 
@@ -19527,7 +19527,7 @@ Iterate over map:
 Map class iterates in insertion order
 
 If you want to iterate just the keys or just the associated values of a map, use the `keys()` and `values()` methods: these return iterable objects that iterate keys and values, in insertion order. (The  
- `entries()` method returns an iterable object that iterates key/value pairs, but this is exactly the same as iterating the map directly.)
+ `entries()` method returns an iterable object that iterates key/value pairs, but this is exactly the same as iterating the map directly.)
 
 \[...m.keys()\]
 
@@ -19541,7 +19541,7 @@ m.forEach((value, key) => {...}
 
 Note that the value parameter comes before the key parameter.
 
-### WeakMap and WeakSet
+### WeakMap and WeakSet
 
 The `WeakMap` class is a variant (but not an actual subclass) of the Map class that does not prevent its key values from being garbage collected.
 
@@ -19551,7 +19551,7 @@ WeakMap implements only the `get(), set(), has(),` and `delete()` methods. In pa
 
 Similarly, WeakMap does not implement the size property because the `size` of a WeakMap could change at any time as objects are garbage collected
 
-### Typed Arrays and Binary Data
+### Typed Arrays and Binary Data
 
 They differ from regular arrays in some very important ways
 
@@ -19613,7 +19613,7 @@ Typed arrays are not true arrays, but they re-implement most array methods, so y
 
 Remember that typed arrays have fixed lengths, so the length property is read-only, and methods that change the length of the array (such as `push(), pop(), unshift(), shift(),` and `splice()`) are not implemented for typed arrays. Methods that alter the contents of an array without changing the length (such as `sort(), reverse()`, and `fill()`) are implemented.
 
-### Determine Endianess and DataView
+### Determine Endianess and DataView
 
 let littleEndian = new Int8Array(new Int32Array(\[1\]).buffer)
 
@@ -19741,11 +19741,11 @@ Match zero or more characters that are not open parens
 
 If you want to match repetitions of more complicated expressions, you’ll need to define a group with parentheses
 
-Be careful when using the \* and ? repetition characters. Since these characters may match zero instances of whatever precedes them, they are allowed to match nothing.
+Be careful when using the \* and ? repetition characters. Since these characters may match zero instances of whatever precedes them, they are allowed to match nothing.
 
 ### NON-GREEDY REPETITION
 
-It is also possible to specify that repetition should be done in a non-greedy way. Simply follow the repetition character or characters with a question mark: `??, +?, *?`, or even {1,5}?.
+It is also possible to specify that repetition should be done in a non-greedy way. Simply follow the repetition character or characters with a question mark: `??, +?, *?`, or even {1,5}?.
 
 **String**
 
@@ -19810,7 +19810,7 @@ A related use of parenthesized subexpressions is to allow you to refer back to a
 **Pattern**
 
 zero or more characters within single or double quotes. However, it does not  
- require the opening and closing quotes to match
+ require the opening and closing quotes to match
 
 /\['"\]\[^'"\]\*\['"\]/
 
@@ -19828,7 +19828,7 @@ match either the subexpression to the left or the subexpression to the right.
 
 (…)
 
-Grouping: group items into a single unit that can be used with \*, +, ?, |, and so on. Also remember the characters that match this group for use with later references
+Grouping: group items into a single unit that can be used with \*, +, ?, |, and so on. Also remember the characters that match this group for use with later references
 
 (?:…)
 
@@ -19838,7 +19838,7 @@ Note `(?:...)` syntax:
 
 In pattern `"/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/`” `\2` refers to the text matched by `(fun\w*)` since `(?:[Ss]cript)?)` in not remembered.
 
-### SPECIFYING MATCH POSITION
+### SPECIFYING MATCH POSITION
 
 _regular expression anchors_ because they anchor the pattern to a specific position in the search string. The most commonly used anchor elements are ^, which ties the pattern to the beginning of the string, and $, which anchors the pattern to the end of the string.
 
@@ -19908,7 +19908,7 @@ y
 
 “sticky”. should match at the beginning of a string or at the first character following the previous match
 
-### String Methods for Pattern Matching
+### String Methods for Pattern Matching
 
 ### SEARCH()
 
@@ -20056,14 +20056,14 @@ Surprisingly, if you call `split()` with a RegExp delimiter and the regular expr
 
 \[“Testing”, “br/”,”1,2,3″\]
 
-### The RegExp Class
+### The RegExp Class
 
 The `RegExp()` constructor is useful when a regular expression is being dynamically created and thus cannot be represented with the regular expression literal syntax.
 
 let zipcode = new RegExp("\\\\d{5}", "g");
 
 `let exactMatch = /JavaScript/;`  
- `let caseInsensitive = new RegExp(exactMatch, "i");`
+ `let caseInsensitive = new RegExp(exactMatch, "i");`
 
 ### TEST()
 
@@ -20085,7 +20085,7 @@ console.log(\`Next search begins at ${pattern.lastIndex}\`);
 
 }
 
-### THE LASTINDEX PROPERTY AND REGEXP REUSE
+### THE LASTINDEX PROPERTY AND REGEXP REUSE
 
 The use of the `lastIndex` property with the g and y flags is a particularly awkward part of this API. When you use these flags, you need to be particularly careful when calling the `match(), exec()`, or `test()` methods because the behavior of these methods depends on `lastIndex`, and the value of `lastIndex` depends on what you have previously done with the RegExp object.
 
@@ -20125,7 +20125,7 @@ doubleLetterWords.push(word);
 
 Because we set the g flag on the RegExp, the `lastIndex` property is changed after successful matches, and the `test()` method (which is based on `exec()`) starts searching for a match at the position specified by `lastIndex`. After matching the “pp” in “apple”, `lastIndex` is 3, and so we start searching the word “book” at position 3 and do not see the “oo” that it contains.
 
-### Dates and Times
+### Dates and Times
 
 let now = new Date();
 
@@ -20188,9 +20188,9 @@ console.log(\`Spline reticulation took ${endTime -startTime}ms.\`);
 adds three months and two weeks to the current date:
 
 `let d = new Date();`  
- `d.setMonth(d.getMonth() + 3, d.getDate() + 14);`
+ `d.setMonth(d.getMonth() + 3, d.getDate() + 14);`
 
-### Formatting and Parsing Date Strings
+### Formatting and Parsing Date Strings
 
 let d = new Date(2020, 0, 1, 17, 10, 30);
 
@@ -20258,7 +20258,7 @@ error.name
 
 HTTPError
 
-### JSON Serialization and Parsing
+### JSON Serialization and Parsing
 
 JavaScript supports JSON serialization and deserialization with the two functions `JSON.stringify()` and `JSON.parse().`
 
@@ -20304,7 +20304,7 @@ return value;
 
 });
 
-### The Console API
+### The Console API
 
 Console functions that print their arguments like console.log() have a little-known feature: if the first argument is a string that includes `%s, %i, %d, %f, %o, %O, or %c`, then this first argument is treated as format string, and the values of subsequent arguments are substituted into the string in place of the two-character % sequences.
 
@@ -20473,7 +20473,7 @@ console.log(result.value) // result.value == 99
 When you want to iterate though a “partially used” iterator:
 
 `let list = [1,2,3,4,5];`  
- `let iter = list[Symbol.iterator]();`
+ `let iter = list[Symbol.iterator]();`
 
 `let head = iter.next().value;`
 
@@ -20483,7 +20483,7 @@ head == 1
 
 tail == \[2,3,4,5\]
 
-### Implementing Iterable Objects
+### Implementing Iterable Objects
 
 we will implement the Range class one more time, making it iterable without relying on a generator.
 
@@ -20733,7 +20733,7 @@ yield y;
 
 }
 
-If this generator is used with the … spread operator, it will loop until memory is exhausted and the program crashes.
+If this generator is used with the … spread operator, it will loop until memory is exhausted and the program crashes.
 
 Use it in a `for/of` loop, however
 
@@ -20883,7 +20883,7 @@ function displayUserProfile(profile) { ...}
 
 getJSON("/api/user/profile").then(displayUserProfile);
 
-### HANDLING ERRORS WITH PROMISES
+### HANDLING ERRORS WITH PROMISES
 
 Asynchronous operations, particularly those that involve networking, can typically fail in a number of ways, and robust code has to be written to handle the errors that will inevitably occur.
 
@@ -20945,7 +20945,7 @@ displayUserProfile(profile);
 
 There is a second `then()` in the chain, which means that the first invocation of the `then()` method must itself return a Promise. That is not how Promises work, however.
 
-When we write a chain of `.then()` invocations, we are not registering multiple callbacks on a single Promise object. Instead, each invocation of the `then()` method returns a new Promise object. That new Promise object is not fulfilled until the function passed to `then()` is complete.
+When we write a chain of `.then()` invocations, we are not registering multiple callbacks on a single Promise object. Instead, each invocation of the `then()` method returns a new Promise object. That new Promise object is not fulfilled until the function passed to `then()` is complete.
 
 fetch(theURL) // task 1; returns promise 1
 
@@ -20957,9 +20957,9 @@ fetch(theURL) // task 1; returns promise 1
 
 There is actually a fourth Promise object involved as which brings up the point of what it means for a Promise to be “resolved.”
 
-fetch() returns a Promise object which, when fulfilled, passes a Response object to the callback function we register. This Response object has `.text(), .json(),` and other methods to request the body of the HTTP response in various forms. But since the body may not yet have arrived, these methods must return Promise objects.
+fetch() returns a Promise object which, when fulfilled, passes a Response object to the callback function we register. This Response object has `.text(), .json(),` and other methods to request the body of the HTTP response in various forms. But since the body may not yet have arrived, these methods must return Promise objects.
 
-“task 2” calls the `.json()` method and returns its value. This is the fourth Promise object, and it is the return value of the `callback1()` function.
+“task 2” calls the `.json()` method and returns its value. This is the fourth Promise object, and it is the return value of the `callback1()` function.
 
 Let’s consider:
 
@@ -21011,17 +21011,17 @@ At this stage, p cannot settle until the Promise v settles. If v is fulfilled, t
 
 the Promise has become associated with, or “locked onto,” another Promise. We don’t know yet whether p will be fulfilled or rejected, but our callback c no longer has any control over that. p is “resolved” in the sense that its fate now depends entirely on what happens to Promise v.
 
-Let’s bring this back to our URL-fetching example. When c1 returns p4, p2 is resolved. But being resolved is not the same as being fulfilled, so task 3 does not begin yet. When the full body of the HTTP response becomes available, then the .`json()` method can parse it and use that parsed value to fulfill p4. When p4 is fulfilled, p2 is automatically fulfilled as well, with the same parsed JSON value. At this point, the parsed JSON object is passed to c2, and task 3 begins.
+Let’s bring this back to our URL-fetching example. When c1 returns p4, p2 is resolved. But being resolved is not the same as being fulfilled, so task 3 does not begin yet. When the full body of the HTTP response becomes available, then the .`json()` method can parse it and use that parsed value to fulfill p4. When p4 is fulfilled, p2 is automatically fulfilled as well, with the same parsed JSON value. At this point, the parsed JSON object is passed to c2, and task 3 begins.
 
-### More on Promises and Errors
+### More on Promises and Errors
 
-With synchronous code, if you leave out error-handling code, you’ll at least get an exception and a stack trace that you can use to figure out what is going wrong. With asynchronous code, unhandled exceptions will often go unreported, and errors can occur silently, making them much harder to debug. The good news is that the `.catch()` method makes it easy to handle errors when working with Promises.
+With synchronous code, if you leave out error-handling code, you’ll at least get an exception and a stack trace that you can use to figure out what is going wrong. With asynchronous code, unhandled exceptions will often go unreported, and errors can occur silently, making them much harder to debug. The good news is that the `.catch()` method makes it easy to handle errors when working with Promises.
 
 THE CATCH AND FINALLY METHODS
 
-The `.catch()` method of a Promise is simply a shorthand way to call `.then()` with null as the first argument and an error-handling callback as the second argument.
+The `.catch()` method of a Promise is simply a shorthand way to call `.then()` with null as the first argument and an error-handling callback as the second argument.
 
-Normal exceptions don’t work with asynchronous code. The `.catch()` method of Promises is an alternative that does work for asynchronous code.
+Normal exceptions don’t work with asynchronous code. The `.catch()` method of Promises is an alternative that does work for asynchronous code.
 
 fetch("/api/user/profile")
 
@@ -21085,27 +21085,27 @@ console.error(e);
 
 p1 is the Promise returned by the `fetch()` call
 
-p2 is the Promise returned by the first `.then()` call
+p2 is the Promise returned by the first `.then()` call
 
-c1 is the callback that we pass to that .`then()` call
+c1 is the callback that we pass to that .`then()` call
 
-p3 is the Promise returned by the second `.then()` call
+p3 is the Promise returned by the second `.then()` call
 
 c2 is the callback we pass to that call
 
-c3 is the callback that we pass to the `.catch()` call
+c3 is the callback that we pass to the `.catch()` call
 
 The first thing that could fail is the fetch() request itself. Let’s say p1 was rejected with a NetworkError object.
 
-We didn’t pass an error-handling callback function as the second argument to the `.then()` call, so p2 rejects as well with the same NetworkError object.
+We didn’t pass an error-handling callback function as the second argument to the `.then()` call, so p2 rejects as well with the same NetworkError object.
 
 Without a handler, though, p2 is rejected, and then p3 is rejected for the same reason.
 
 At this point, the c3 error-handling callback is called, and the NetworkError-specific code within it runs.
 
-There are a couple of things worth noting about this code. First, notice that the error object thrown with a regular, synchronous throw statement ends up being handled asynchronously with a `.catch()` method invocation in a Promise chain. This should make it clear why this shorthand method is preferred over passing a second argument to .`then()`, and also why it is so idiomatic to end Promise chains with a `.catch()` call.
+There are a couple of things worth noting about this code. First, notice that the error object thrown with a regular, synchronous throw statement ends up being handled asynchronously with a `.catch()` method invocation in a Promise chain. This should make it clear why this shorthand method is preferred over passing a second argument to .`then()`, and also why it is so idiomatic to end Promise chains with a `.catch()` call.
 
-it is also perfectly valid to use `.catch()` elsewhere in a Promise chain. If one of the stages in your Promise chain can fail with an error, and if the error is some kind of recoverable error that should not stop the rest of the chain from running, then you can insert a `.catch()` call in the chain, resulting in code that might look like this:
+it is also perfectly valid to use `.catch()` elsewhere in a Promise chain. If one of the stages in your Promise chain can fail with an error, and if the error is some kind of recoverable error that should not stop the rest of the chain from running, then you can insert a `.catch()` call in the chain, resulting in code that might look like this:
 
 startAsyncOperation()
 
@@ -21119,10 +21119,10 @@ startAsyncOperation()
 
 .catch(logStageThreeAndFourErrors);
 
-If the callback returns normally, then the `.catch()` callback will be skipped, and the return value of the previous callback will become the input to the next .`then()` callback.
+If the callback returns normally, then the `.catch()` callback will be skipped, and the return value of the previous callback will become the input to the next .`then()` callback.
 
-Once an error has been passed to a `.catch()` callback, it stops propagating down the Promise chain. A `.catch()` callback can throw a new error, but if it returns normally, than that return value is used to resolve and/or fulfill the associated Promise, and  
- the error stops propagating.
+Once an error has been passed to a `.catch()` callback, it stops propagating down the Promise chain. A `.catch()` callback can throw a new error, but if it returns normally, than that return value is used to resolve and/or fulfill the associated Promise, and  
+ the error stops propagating.
 
 Sometimes, in complex network environments, errors can occur more or less at random, and it can be appropriate to handle those errors by simply retrying the asynchronous request.
 
@@ -21134,7 +21134,7 @@ queryDatabase()
 
 .catch(displayDatabaseError);
 
-### Promises in Parallel
+### Promises in Parallel
 
 Sometimes,we want to execute a number of asynchronous operations in parallel. The function `Promise.all()` can do this. `Promise.all()` takes an array of Promise objects as its input and returns a Promise.
 
@@ -21151,7 +21151,7 @@ Promise.all(promises)
 .catch(e => console.error(e));
 
 The Promise returned by `Promise.all()` rejects when any of the input Promises is rejected. This happens immediately upon the first rejection and can happen while other input Promises are still pending. In ES2020, `Promise.allSettled()` takes an array of input  
- Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to “fulfilled” or “rejected.” If the status is “fulfilled”, then the object will also have a value property that gives the fulfillment value. And if the status is “rejected”, then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
+ Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to “fulfilled” or “rejected.” If the status is “fulfilled”, then the object will also have a value property that gives the fulfillment value. And if the status is “rejected”, then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
 
 Promise.allSettled(\[Promise.resolve(1), Promise.reject(2),3\]).then(results => {
 
@@ -21167,9 +21167,9 @@ Occasionally, you may want to run a number of Promises at once but may only care
 
 ### Making Promises
 
-### Promises in Sequence
+### Promises in Sequence
 
-### async and await
+### async and await
 
 These new keywords dramatically simplify the use of Promises and allow us to write Promise-based, asynchronous code that looks like synchronous code that blocks while waiting for network responses or other asynchronous events.
 
@@ -21205,7 +21205,7 @@ The `getHighScore()` function is declared `async`, so it returns a Promise. And 
 
 displayHighScore(await getHighScore());
 
-### Awaiting Multiple Promises
+### Awaiting Multiple Promises
 
 Suppose that we’ve written our `getJSON()` function using async:
 
@@ -21259,7 +21259,7 @@ handle(response);
 
 both examples will only work if they are within functions declared async; a `for/await` loop is no different than a regular await expression in that way
 
-#### If you found this guide helpful feel free to checkout my GitHub/gist’s where I host similar content:
+#### If you found this guide helpful feel free to checkout my GitHub/gist’s where I host similar content:
 
 [**bgoonz’s** gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -21269,7 +21269,7 @@ Or checkout my personal resource site:
 
 [https://github.com/bgoonz](https://github.com/bgoonz)
 
-#### **Differences between Node.js and browsers**
+#### **Differences between Node.js and browsers**
 
 There are many differences between Node.js and browser environments, but many of them are small and inconsequential in practice. For example, in our _Asynchronous_ lesson, we noted how [Node’s setTimeout](https://nodejs.org/api/timers.html#timers_settimeout_callback_delay_args) has a slightly different return value from [a browser’s setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout). Let’s go over a few notable differences between the two environments.
 
@@ -21297,7 +21297,7 @@ If we execute animals.js in Node, the program would print ‘Sennacy is a great 
 
 Browsers don’t have a notion of a file system so we cannot use require or module.exports in the same way.
 
-### The fs module
+### The fs module
 
 Node comes with an [fs module](https://nodejs.org/api/fs.html) that contains methods that allow us to interact with our computer’s **F**ile **S**ystem through JavaScript. No additional installations are required; to access this module we can simply `require` it. We recommend that you code along with this reading. Let’s begin with a `change-some-files.js` script that imports the module:
 
@@ -21311,7 +21311,7 @@ Similar to what we saw in the `readline` lesson, `require` will return to us a o
 
 The `fs` module contains tons of functionality! Chances are that if there is some operation you need to perform regarding files, the `fs` module supports it. The module also offers both synchronous and asynchronous implementations of these methods. We prefer to not block the thread and so we’ll opt for the asynchronous flavors of these methods.
 
-### Creating a new file
+### Creating a new file
 
 To create a file, we can use the `[writeFile](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)` method. According to the documentation, there are a few ways to use it. The most straight forward way is:
 
@@ -21323,7 +21323,7 @@ _Beware! If the file name specified to_ `_writeFile_` _already exists, it will c
 
 We won’t be using the `foo.txt` file in the rest of this reading.
 
-### Reading existing files
+### Reading existing files
 
 To explore how to read a file, we’ll use VSCode to manually create a `poetry.txt` file within the same directory as our `change-some-file.js` script. Be sure to create this if you are following along.
 
@@ -21403,7 +21403,7 @@ Executing the script above will edit the `poetry.txt` file to contain:
 
 [https://gist.github.com/bgoonz/1ad31003fc1b2880201642b48df87e2e](https://gist.github.com/bgoonz/1ad31003fc1b2880201642b48df87e2e)
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -21417,21 +21417,21 @@ Or Checkout my personal Resource Site:
 
 [https://github.com/bgoonz/Markdown-Templates.git](https://github.com/bgoonz/Markdown-Templates.git)
 
-### Basic Syntax Guide
+### Basic Syntax Guide
 
 This topic is meant to give you a very basic overview of how Markdown works, showing only some of the most common operations you use most frequently. Keep in mind that you can also use the Edit menus to inject markdown using the toolbar, which serves as a great way to see how Markdown works. However, Markdown’s greatest strength lies in its simplicity and keyboard friendly approach that lets you focus on writing your text and staying on the keyboard.
 
-### What is Markdown
+### What is Markdown
 
 Markdown is very easy to learn and get comfortable with due it’s relatively small set of markup ‘commands’. It uses already familiar syntax to represent common formatting operations. Markdown understands basic line breaks so you can generally just type text.
 
 Markdown also allows for raw HTML inside of a markdown document, so if you want to embed something more fancy than what Markdowns syntax can do you can always fall back to HTML. However to keep documents readable that’s generally not recommended.
 
-### Basic Markdown Syntax
+### Basic Markdown Syntax
 
 The following are a few examples of the most common things you are likely to do with Markdown while building typical documentation.
 
-### Bold and Italic
+### Bold and Italic
 
 markdown
 
@@ -21528,7 +21528,7 @@ markdown
     This text can be **embedded** into Markdown:  <i class="fa fa-refresh fa-spin fa-lg"></i> Refresh Page
 
 This text can be embedded into Markdown:  
- Refresh Page
+ Refresh Page
 
 ### Unordered Lists
 
@@ -21625,7 +21625,7 @@ text
 
     This is some text that will not be syntax highlightedbut shows up in a code box.
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -21669,7 +21669,7 @@ A regular expression pattern is composed of simple characters, such as `/abc/`, 
 
 The last example includes **parentheses, which are used as a memory device**. _The match made with this part of the pattern is remembered for later use._
 
-### Using simple patterns
+### Using simple patterns
 
 Simple patterns are constructed of characters for which you want to find a direct match.
 
@@ -21841,7 +21841,7 @@ The occurrences of `/d(b+)d/g` in the two statements are different regular expre
 
 If you need to access the properties of a regular expression created with an object initializer, you should first assign it to a variable.
 
-### \[Advanced searching with flags\]
+### \[Advanced searching with flags\]
 
 Regular expressions have **six optional flags** that allow for functionality like global and case insensitive searching.
 
@@ -21857,7 +21857,7 @@ Flag Description Corresponding property
 
 `m` Multi-line search. `RegExp.prototype.multiline`
 
-`s` Allows `.` to match newline characters. `RegExp.prototype.dotAll`
+`s` Allows `.` to match newline characters. `RegExp.prototype.dotAll`
 
 `u` “unicode”; treat a pattern as a sequence of unicode code points. `RegExp.prototype.unicode`
 
@@ -21889,17 +21889,17 @@ with:
 
 and get the same result.
 
-The behavior associated with the `g` flag is different when the `.exec()` method is used.
+The behavior associated with the `g` flag is different when the `.exec()` method is used.
 
 The roles of “class” and “argument” get reversed:
 
-In the case of `.match()`, the string class (or data type) owns the method and the regular expression is just an argument,
+In the case of `.match()`, the string class (or data type) owns the method and the regular expression is just an argument,
 
-while in the case of `.exec()`, it is the regular expression that owns the method, with the string being the argument.
+while in the case of `.exec()`, it is the regular expression that owns the method, with the string being the argument.
 
 Contrast this `_str.match(re)_` versus `_re.exec(str)_`.
 
-The `g` flag is used with the `.exec()` method to get iterative progression.
+The `g` flag is used with the `.exec()` method to get iterative progression.
 
     let xArray; while(xArray = re.exec(str)) console.log(xArray);// produces: // ["fee ", index: 0, input: "fee fi fo fum"]// ["fi ", index: 4, input: "fee fi fo fum"]// ["fo ", index: 7, input: "fee fi fo fum"]
 
@@ -21907,11 +21907,11 @@ The `m` flag is used to specify that a multiline input string should be treated 
 
 If the `m` flag is used, `^` and `$` match at the start or end of any line within the input string instead of the start or end of the entire string.
 
-### Using special characters to verify input
+### Using special characters to verify input
 
 In the following example, the user is expected to enter a phone number. When the user presses the “Check” button, the script checks the validity of the number. If the number is valid (matches the character sequence specified by the regular expression), the script shows a message thanking the user and confirming the number. If the number is invalid, the script informs the user that the phone number is not valid.
 
-Within non-capturing parentheses `(?:` , the regular expression looks for three numeric characters `\d{3}` OR `|` a left parenthesis `\(` followed by three digits `\d{3}`, followed by a close parenthesis `\)`, (end non-capturing parenthesis `)`), followed by one dash, forward slash, or decimal point and when found, remember the character `([-\/\.])`, followed by three digits `\d{3}`, followed by the remembered match of a dash, forward slash, or decimal point `\1`, followed by four digits `\d{4}`.
+Within non-capturing parentheses `(?:` , the regular expression looks for three numeric characters `\d{3}` OR `|` a left parenthesis `\(` followed by three digits `\d{3}`, followed by a close parenthesis `\)`, (end non-capturing parenthesis `)`), followed by one dash, forward slash, or decimal point and when found, remember the character `([-\/\.])`, followed by three digits `\d{3}`, followed by the remembered match of a dash, forward slash, or decimal point `\1`, followed by four digits `\d{4}`.
 
 The `Change` event activated when the user presses Enter sets the value of `RegExp.input`.
 
@@ -21938,7 +21938,7 @@ function testInfo(phoneInput) {
 
 [https://gist.github.com/bgoonz/03e15da8a9f4dd3c536e9fbbd9f380c7](https://gist.github.com/bgoonz/03e15da8a9f4dd3c536e9fbbd9f380c7)
 
-#### If you found this guide helpful feel free to checkout my GitHub/gist’s where I host similar content:
+#### If you found this guide helpful feel free to checkout my GitHub/gist’s where I host similar content:
 
 > [**bgoonz’s** gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -21957,7 +21957,7 @@ close() to close th
 
 As pointed out in a previous article that deals with reading data from files, file handling belongs to the essential knowledge of every professional Python programmer. This feature is a core part of the Python language, and no extra module needs to be loaded to do it properly.
 
-### Basics of Writing Files in Python
+### Basics of Writing Files in Python
 
 The common methods to operate with files are `open()` to open a file, `seek()` to set the file’s current position at the given offset, and `close()` to close the file afterwards. The `open()` method returns a file handle that represents a [file object](https://docs.python.org/3/glossary.html#term-file-object) to be used to access the file for reading, writing, or appending.
 
@@ -21965,7 +21965,7 @@ Writing to a file requires a few decisions — the name of the file in which
 
 In this article we will explain how to write data to a file line by line, as a list of lines, and appending data at the end of a file.
 
-### Writing a Single Line to a File
+### Writing a Single Line to a File
 
 This first example is pretty similar to writing to files with the popular programming languages C and C++, as you’ll see in _Listing 1_. The process is pretty straightforward. First, we open the file using the `open()` method for writing, write a single line of text to the file using the `write()` method, and then close the file using the `close()` method. Keep in mind that due to the way we opened the “helloworld.txt” file it will either be created if it does not exist yet, or it will be completely overwritten.
 
@@ -21982,7 +21982,7 @@ with open('helloworld.txt', 'w') as filehandle:
 
 _Listing 2_
 
-### Writing a List of Lines to a File
+### Writing a List of Lines to a File
 
 In reality a file does not consist only of a single line, but much more data. Therefore, the contents of the file are stored in a list that represents a file buffer. To write the entire file buffer we’ll use the `writelines()` method. _Listing 3_ gives you an example of this.
 
@@ -22057,7 +22057,7 @@ _Listing 8_
 
 This is not necessarily best practice, but it does give you other options for writing lines to a file.
 
-### Appending Data to a File
+### Appending Data to a File
 
 So far, we have stored data in new files or in overwritten data in existing files. But what if we want to append data to the end of an existing file? In this case we would need to open the existing file using a different access mode. We change that to ‘a’ instead of ‘w’.
 
@@ -22087,7 +22087,7 @@ Hello, world!
 
 Writing plain text data to files, or appending data to existing files, is as easy as reading from files in Python. As soon as a file is closed after writing or appending data, Python triggers a synchronization call. As a result, the updated file is immediately written to disk.
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -22099,12 +22099,12 @@ Or Checkout my personal Resource Site:
 
 ### CSS Selectors
 
-- `**CSS Selector**` : Applies styles to a specific DOM element(s), there are various types:
-- `**Type Selectors**` : Matches by node name.
-- `**Class Selectors**` : Matches by class name.
-- `**ID Selectors**` : Matches by ID name.
-- `**Universal Selectors**` : Selects all HTML elements on a page.
-- `**Attribute Selectors**` : Matches elements based on the prescence or value of a given attribute. (i.e. a\[title\] will match all a elements with a title attribute)
+- `**CSS Selector**` : Applies styles to a specific DOM element(s), there are various types:
+- `**Type Selectors**` : Matches by node name.
+- `**Class Selectors**` : Matches by class name.
+- `**ID Selectors**` : Matches by ID name.
+- `**Universal Selectors**` : Selects all HTML elements on a page.
+- `**Attribute Selectors**` : Matches elements based on the prescence or value of a given attribute. (i.e. a\[title\] will match all a elements with a title attribute)
 
 /\* Type selector \*/  
 div {  
@@ -22125,7 +22125,7 @@ a\[title\] {
 
 **Class Selectors**
 
-- Used to select all elements of a certain class denoted with a `.[class name]`
+- Used to select all elements of a certain class denoted with a `.[class name]`
 - You can assign multiple classes to a DOM element by separating them with a space.
 
 **Compound Class Selectors**
@@ -22137,7 +22137,7 @@ a\[title\] {
 <div class="box orange"></div>  
 <div class="circle orange"></div>
 
-- i.e. .box.yellow will select only the first element.
+- i.e. .box.yellow will select only the first element.
 - KEEP IN MIND that if you do include a space it will make the selector into a _descendant selector_.
 
 h1#heading,  
@@ -22167,22 +22167,22 @@ h2.subheading {
 
 **Pseudo-Classes**
 
-- `**Pseudo-Class**` : Specifies a special state of the seleted element(s) and does not refer to any elements or attributes contained in the DOM.
+- `**Pseudo-Class**` : Specifies a special state of the seleted element(s) and does not refer to any elements or attributes contained in the DOM.
 - Format is a `Selector:Pseudo-Class Name` or `A:B`
 - `a:hover { font-family: "Roboto Condensed", sans-serif; color: #4fc3f7; text-decoration: none; border-bottom: 2px solid #4fc3f7; }`
 - Some common pseudo-classes that are frequently used are:
-- `**active**` : ‘push down’, when ele are activated.
-- `**checked**` : applies to things like radio buttons or checkbox inputs.
-- `**disabled**` : any disabled element.
-- `**first-child**` : first element in a group of children/siblings.
-- `**focus**` : elements that have current focus.
-- `**hover**` : elements that have cursor hovering over it.
-- `**invalid**` : any form elements in an invalid state from client-side form validation.
-- `**last-child**` : last element in a group of children/siblings.
-- `**not(selector)**` : elements that do not match the provided selector.
-- `**required**` : form elements that are required.
-- `**valid**` : form elements in a valid state.
-- `**visited**` : anchor tags of whih the user has already been to the URL that the href points to.
+- `**active**` : ‘push down’, when ele are activated.
+- `**checked**` : applies to things like radio buttons or checkbox inputs.
+- `**disabled**` : any disabled element.
+- `**first-child**` : first element in a group of children/siblings.
+- `**focus**` : elements that have current focus.
+- `**hover**` : elements that have cursor hovering over it.
+- `**invalid**` : any form elements in an invalid state from client-side form validation.
+- `**last-child**` : last element in a group of children/siblings.
+- `**not(selector)**` : elements that do not match the provided selector.
+- `**required**` : form elements that are required.
+- `**valid**` : form elements in a valid state.
+- `**visited**` : anchor tags of whih the user has already been to the URL that the href points to.
 
 `**Pseudo-Selectors**`
 
@@ -22207,9 +22207,9 @@ h2.subheading {
 
 **CSS Rules**
 
-- `**CSS Rule**` : Collection of single or compound selectors, a curly brace, zero or more properties
-- `**CSS Rule Specificity**` : Sometimes CSS rules will contain multiple elements and may have overlapping properties rules for those same elements – there is an algorithm in CSS that calculates which rule takes precedence.
-- `**The Four Number Calculation**` : listed in increasing order of importance.
+- `**CSS Rule**` : Collection of single or compound selectors, a curly brace, zero or more properties
+- `**CSS Rule Specificity**` : Sometimes CSS rules will contain multiple elements and may have overlapping properties rules for those same elements – there is an algorithm in CSS that calculates which rule takes precedence.
+- `**The Four Number Calculation**` : listed in increasing order of importance.
 
 Who has the most IDs? If no one, continue.
 
@@ -22248,11 +22248,11 @@ Last Read in the browser wins.
 
 ---
 
-### CSS: Type, Properties, and Imports
+### CSS: Type, Properties, and Imports
 
 **Typography**
 
-- `**font-family**` : change the font.
+- `**font-family**` : change the font.
 
 ![](https://cdn-images-1.medium.com/max/800/0*ssVcT1Bd9Edfo6KF)
 
@@ -22262,17 +22262,17 @@ Last Read in the browser wins.
 - You can import web fonts via an api by using
 - `@import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap');` and pasting it st the top of your CSS file.
 - And then reference it in your font-family.
-- `**font-size**` : Changes the size of your font.
+- `**font-size**` : Changes the size of your font.
 - Keep in mind the two kind of units CSS uses:
-- `**Absolute**` : `**Pixels**`, Points, Inches, Centimeters.
-- `**Relative**` : Em, Rem.
+- `**Absolute**` : `**Pixels**`, Points, Inches, Centimeters.
+- `**Relative**` : Em, Rem.
 - Em: Calulating the size relative to the previous div (bubbles down)
 - Rem: Calulates relative to the parent element always.
-- `**font-style**` : Used to set a font to italics.
-- `**font-weight**` : Used to make a font bold.
-- `**text-align**` : Used to align your text to the left, center, or right.
-- `**text-decoration**` : Use to put lines above, through, or under text. Lines can be solid, dashed, or wavy!
-- `**text-transform**` : Used to set text to all lowercase, uppercase, or capitalize all words.
+- `**font-style**` : Used to set a font to italics.
+- `**font-weight**` : Used to make a font bold.
+- `**text-align**` : Used to align your text to the left, center, or right.
+- `**text-decoration**` : Use to put lines above, through, or under text. Lines can be solid, dashed, or wavy!
+- `**text-transform**` : Used to set text to all lowercase, uppercase, or capitalize all words.
 
 **Background-Images**
 
@@ -22280,14 +22280,14 @@ Last Read in the browser wins.
 
 ---
 
-### CSS: Colors, Borders, and Shadows
+### CSS: Colors, Borders, and Shadows
 
 **Colors**
 
 - You can set colors in CSS in three popular ways: by name, by hexadecimal RGB value, and by their decimal RGB value.
 - rgba() is used to make an rbg value more transparent, the `a` is used to specify the `alpha channel`.
-- **Color** : Property used to change the color of text.
-- **Background-Color** : Property to change the backgrounf color of an element.
+- **Color** : Property used to change the color of text.
+- **Background-Color** : Property to change the backgrounf color of an element.
 
 **Borders**
 
@@ -22302,9 +22302,9 @@ Last Read in the browser wins.
 
 ---
 
-### The Box Model
+### The Box Model
 
-**Box Model** : A concept that basically boils down that every DOM element has a box around it.
+**Box Model** : A concept that basically boils down that every DOM element has a box around it.
 
 Imagine a gift, inside is the gift, wrapped in foam all around (padding), and the giftbox outside of it (border) and then a wrapping paper on the giftbox (margin).- For items that are using `block` as it’s display, the browser will follow these rules to layout the element: – The box fills 100% of the available container space. – Every new box takes on a new line/row. – Width and Height properties are respected. – Padding, Margin, and Border will push other elements away from the box. – Certain elements have `block` as their default display, such as: divs, headers, and paragraphs.- For items that are using `inline` as it’s display, the browser will follow these rules to layout the element: – Each box appears in a single line until it fills up the space. – Width and height are **not** respected. – Padding, Margin, and Border are applied but they **do not** push other elements away from the box. – Certain elements have `inline` as their default display, such as: span tags, anchors, and images.
 
@@ -22335,7 +22335,7 @@ This bothered many programmers so they created the **border box** to include the
 
 - Remains in it’s original position in the page flow.
 - It is positioned _RELATIVE_ to the it’s _ORIGINAL PLACE_ on the page flow.
-- Creates a **stacking context** : overlapping elements whose order can be set by the z-index property.
+- Creates a **stacking context** : overlapping elements whose order can be set by the z-index property.
 
 #pink-box {  
  background-color: #ff69b4;  
@@ -22434,7 +22434,7 @@ This bothered many programmers so they created the **border box** to include the
 
 ---
 
-### Flexible Box Model
+### Flexible Box Model
 
 - Flexbox is a **CSS module** that provides a convenient way for us to display items inside a flexible container so that the layout is responsive.
 - Float was used back in the day to display position of elements in a container.
@@ -22463,11 +22463,11 @@ This bothered many programmers so they created the **border box** to include the
 - `**align-content**` redistributes extra space on the cross axis.
 - By default, flex items will appear in the order they are added to the DOM, but we can use the `order` property to change that.
 - Some other properties we can use on flex items are:
-- `flex-grow` : dictates amount of avail. space the item should take up.
-- `flex-shrink` : defines the ability for a flex item to shrink.
-- `flex-basis` : Default size of an element before the remaining space is distributed.
-- `flex` : shorthand for grow, shrink and basis.
-- `align-self` : Overrides default alignment in the container.
+- `flex-grow` : dictates amount of avail. space the item should take up.
+- `flex-shrink` : defines the ability for a flex item to shrink.
+- `flex-basis` : Default size of an element before the remaining space is distributed.
+- `flex` : shorthand for grow, shrink and basis.
+- `align-self` : Overrides default alignment in the container.
 
 ---
 
@@ -22573,20 +22573,20 @@ The Pseudo Class Selector `**hover**` activates when the cursor goes over the se
 
 **Content Overflow**– You can apply an `overflow` content property to an element if it’s inner contents are spilling over.
 
-There are three members in the overflow family: — `**overflow-x**` : Apply horizontally. – `**overflow-y**` : Apply vertically. – `**overflow**` : Apply both directions.
+There are three members in the overflow family: — `**overflow-x**` : Apply horizontally. – `**overflow-y**` : Apply vertically. – `**overflow**` : Apply both directions.
 
 ### Transitions
 
 - Transitions provide a way to control animation speed when changing CSS properties.
-- **Implicit Transitions** : Animations that involve transitioning between two states.
+- **Implicit Transitions** : Animations that involve transitioning between two states.
 
 **Defining Transitions**
 
-- `**transition-property**` : specifies the name of the CSS property to apply the transition.
-- `**transition-duration**` : during of the transition.
-- `**transition-delay**` : time before the transition should start.
+- `**transition-property**` : specifies the name of the CSS property to apply the transition.
+- `**transition-duration**` : during of the transition.
+- `**transition-delay**` : time before the transition should start.
 
-**Examples** :
+**Examples** :
 
 #delay {  
  font-size: 14px;  
@@ -22671,7 +22671,7 @@ There are three members in the overflow family: — `**overflow-x**` : Appl
 
 [https://gist.github.com/bgoonz/772d898734b648e7a4f3aa47575bc3ef](https://gist.github.com/bgoonz/772d898734b648e7a4f3aa47575bc3ef)
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -22683,9 +22683,9 @@ Or Checkout my personal Resource Site:
 
 ![](https://cdn-images-1.medium.com/max/600/0*mhTM08D1J612VW7J)
 
-If you follow this guide to a tee… you will install PostgreSQL itself on your Windows installation. Then, you will install `psql` in your Ubuntu installation. Then you will also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL ‘allegedly’ …(personally I prefer to just use the command line but PG Admin makes for an immeasurably more complicated tutorial than postbird)… better than just using the **command line tool** `**psql**`**.**
+If you follow this guide to a tee… you will install PostgreSQL itself on your Windows installation. Then, you will install `psql` in your Ubuntu installation. Then you will also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL ‘allegedly’ …(personally I prefer to just use the command line but PG Admin makes for an immeasurably more complicated tutorial than postbird)… better than just using the **command line tool** `**psql**`**.**
 
-### Important Distinction: PSQL is the frontend interface for PostgreSQL … they are not synonymous!
+### Important Distinction: PSQL is the frontend interface for PostgreSQL … they are not synonymous!
 
 **Postgres**, is a [free and open-source](https://en.wikipedia.org/wiki/Free_and_open-source_software "Free and open-source software") [relational database management system](https://en.wikipedia.org/wiki/Relational_database_management_system "Relational database management system") (RDBMS)
 
@@ -22726,7 +22726,7 @@ Once that installer downloads, run it. You need to go through the normal steps o
 
 ### Oooh! A password! I’ll enter **\*\*\*\***. I sure won’t forget that because, if I do, I’ll have to uninstall and reinstall PostgreSQL and lose all of my hard work. **Seriously, write down this password or use one you will not forget!!!!!!!!!!!!!!!**
 
-### I REALLY CANNOT STRESS THE ABOVE POINT ENOUGH… Experience is a great teacher but in this case … it’s not worth it.
+### I REALLY CANNOT STRESS THE ABOVE POINT ENOUGH… Experience is a great teacher but in this case … it’s not worth it.
 
 - Sure. 5432. Good to go. Next.
 - Not even sure what that means. Default! Next.
@@ -22734,7 +22734,7 @@ Once that installer downloads, run it. You need to go through the normal steps o
 
 Insert pop culture reference to pass the time
 
-### Installing PostgreSQL Client Tools on Ubuntu
+### Installing PostgreSQL Client Tools on Ubuntu
 
 Now, to install the PostgreSQL Client tools for Ubuntu. You need to do this so that the Node.js (and later Python) programs running on your Ubuntu installation can access the PostgreSQL server running on your Windows installation. You need to tell `apt`, the package manager, that you want it to go find the PostgreSQL 12 client tools from PostgreSQL itself rather than the common package repositories. You do that by issuing the following two commands. Copy and paste them one at a time into your shell. (If your Ubuntu shell isn’t running, start one.)
 
@@ -22760,13 +22760,13 @@ If it asks you if you want to install them, please tell it “Y”.
 
 Test that it installed by typing `psql --version`. You should see it print out information about the version of the installed tools. If it tells you that it can’t find the command, try these instructions over.
 
-### Configuring the client tools
+### Configuring the client tools
 
 Since you’re going to be accessing the PosgreSQL installation from your Ubuntu installation on your Windows installation, you’re going to have to type that you want to access it over and over, which means extra typing. To prevent you from having to do this, you can customize your shell to always add the extra commands for you.
 
 This assumes you’re still using Bash. If you changed the shell that your Ubuntu installation uses, please follow that shell’s directions for adding an alias to its startup file.
 
-Make sure you’re in your Ubuntu home directory. You can do that by typing `cd` and hitting enter. Use `ls` to find out if you have a `.bashrc` file. Type `ls .bashrc`. If it shows you that one exists, that’s the one you will add the alias to. If it tells you that there is no file named that, then type `ls .profile`. If it shows you that one exists, that’s the one you will add the alias to. If it shows you that it does not exist, then use the file name `.bashrc` in the following section.
+Make sure you’re in your Ubuntu home directory. You can do that by typing `cd` and hitting enter. Use `ls` to find out if you have a `.bashrc` file. Type `ls .bashrc`. If it shows you that one exists, that’s the one you will add the alias to. If it tells you that there is no file named that, then type `ls .profile`. If it shows you that one exists, that’s the one you will add the alias to. If it shows you that it does not exist, then use the file name `.bashrc` in the following section.
 
 Now that you know which profile file to use, type `code «profile file name»` where “profile file name” is the name of the file you determined from the last section. Once Visual Studio Code starts up with your file, at the end of it (or if you’ve already added aliases, in that section), type the following.
 
@@ -22809,7 +22809,7 @@ You can confirm that only you have read/write permission by typing `ls -al ~/.pg
 
 \-rw------- 1 web-dev-hub web-dev-hub 37 Mar 28 21:20 /home/web-dev-hub/.pgpass
 
-Now, try connecting to PostreSQL by typing `psql postgres`. Because you added the alias to your startup script, and because you created your **.pgpass** file, it should now connect without prompting you for any credentials! Type `\q` and press Enter to exit the PostgreSQL command line client.
+Now, try connecting to PostreSQL by typing `psql postgres`. Because you added the alias to your startup script, and because you created your **.pgpass** file, it should now connect without prompting you for any credentials! Type `\q` and press Enter to exit the PostgreSQL command line client.
 
 ### Installing Postbird
 
@@ -22831,7 +22831,7 @@ When it’s done installing, it will launch itself. Test it out by typing the �
 
 You can close it for now. It also installed an icon on your desktop. You can launch it from there or your Start Menu at any time.
 
-### Now.. if you still have some gas in the tank… let’s put our new tools to work:
+### Now.. if you still have some gas in the tank… let’s put our new tools to work:
 
 ### The node-postgres
 
@@ -22874,7 +22874,7 @@ INSERT INTO cars(name, price) VALUES(‘Volkswagen’, 21600);
 
 In some of the examples, we use this `cars` table.
 
-### The node-postgres first example
+### The node-postgres first example
 
 In the first example, we connect to the PostgreSQL database and return a simple SELECT query result.
 
@@ -22923,7 +22923,7 @@ node first.js
 
 This is the output.
 
-### The node-postgres column names
+### The node-postgres column names
 
 In the following example, we get the columns names of a database.
 
@@ -22956,7 +22956,7 @@ node column*names.js
 
 The output shows three column names of the `cars` table.
 
-### Selecting all rows
+### Selecting all rows
 
 In the next example, we select all rows from the database table.
 
@@ -22990,7 +22990,7 @@ client.end()
 
 **TBC…**
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -23023,7 +23023,7 @@ You can use Emmet in two ways:
 
 ### HTML
 
-### Generating HTML 5 DOCTYPE
+### Generating HTML 5 DOCTYPE
 
 `html:5`  
 Will generate
@@ -23103,9 +23103,9 @@ Items can be grouped together using `()`
   </tr>  
 </table>
 
-### Class and ID
+### Class and ID
 
-Class and Id in Emmet can be done using `.` and `#`
+Class and Id in Emmet can be done using `.` and `#`
 
 `div.heading`
 
@@ -23121,7 +23121,7 @@ ID and Class can also be combined together
 
 <div id="heading" class="center"></div>
 
-### Adding Content inside tags
+### Adding Content inside tags
 
 Contents inside tags can be added using `{}`
 
@@ -23132,7 +23132,7 @@ Contents inside tags can be added using `{}`
 <p>This is paragraph</p>  
 <p>This is paragraph</p>
 
-### Attributes inside HTML tags
+### Attributes inside HTML tags
 
 Attributes can be added using `[]`
 
@@ -23176,7 +23176,7 @@ To start the numbering from specific number, use this way
 
 ### Tips
 
-- Use `:` to expand known abbreviations
+- Use `:` to expand known abbreviations
 
 `input:date`
 
@@ -23241,7 +23241,7 @@ You can also use these shorthands
 
 ![](https://cdn-images-1.medium.com/max/800/1*h8hsUrJNyVRLYqBQP63DCA.png)
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -23300,7 +23300,7 @@ HEAD~5 # 5 commits before head
 
 ### Diff
 
-### Diff with stats
+### Diff with stats
 
 git diff --stat  
 app/a.txt | 2 +-  
@@ -23438,7 +23438,7 @@ HEAD~5 # 5 commits before head
 
 ### Diff
 
-### Diff with stats
+### Diff with stats
 
 git diff --stat  
 app/a.txt | 2 +-  
@@ -23526,7 +23526,7 @@ git commit -m "Implement feature Y" --no-gpg-sign # Do not sign
 
 ![](https://cdn-images-1.medium.com/max/800/1*yyaUC-O43Gs1qAVkdHrMdw.png)
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -23542,12 +23542,12 @@ Or Checkout my personal Resource Site:
 
 ### Basics
 
-- **PEP8** : Python Enhancement Proposals, style-guide for Python.
+- **PEP8** : Python Enhancement Proposals, style-guide for Python.
 - `print` is the equivalent of `console.log`.
 
 > ‘print() == console.log()’
 
-### `#` is used to make comments in your code.
+### `#` is used to make comments in your code.
 
 def foo():  
  """  
@@ -23557,7 +23557,7 @@ def foo():
  """  
  secretThing()
 
-> _Python has a built in help function that let’s you see a description of the source code without having to navigate to it… “-SickNasty … Autor Unknown”_
+> _Python has a built in help function that let’s you see a description of the source code without having to navigate to it… “-SickNasty … Autor Unknown”_
 
 ---
 
@@ -23570,7 +23570,7 @@ def foo():
 
 No Decimal Point
 
-> Created by a literal non-decimal point number … **or** … with the `_int()_` constructor.
+> Created by a literal non-decimal point number … **or** … with the `_int()_` constructor.
 
 print(3) # => 3  
 print(int(19)) # => 19  
@@ -23593,7 +23593,7 @@ print(2.) # => 2.0
 print(float()) # => 0.0  
 print(27e-5) # => 0.00027
 
-### KEEP IN MIND:
+### KEEP IN MIND:
 
 > **The** `**i**` **is switched to a** `**j**` **in programming.**
 
@@ -23605,7 +23605,7 @@ print(complex(3, 5)) # => 3+5j
 print(complex(17)) # => 17+0j  
 print(complex()) # => 0j
 
-- **Type Casting** : The process of converting one number to another.
+- **Type Casting** : The process of converting one number to another.
 
 \# Using Float  
 print(17) # => 17  
@@ -23620,8 +23620,8 @@ print(str(17.0) + ' and ' + str(17)) # => 17.0 and 17
 
 **The arithmetic operators are the same between JS and Python, with two additions:**
 
-- _“\*\*” : Double asterisk for exponent._
-- _“//” : Integer Division._
+- _“\*\*” : Double asterisk for exponent._
+- _“//” : Integer Division._
 - **There are no spaces between math operations in Python.**
 - **Integer Division gives the other part of the number from Module; it is a way to do round down numbers replacing** `**Math.floor()**` **in JS.**
 - **There are no** `**++**` **and** `**--**` **in Python, the only shorthand operators are:**
@@ -23648,7 +23648,7 @@ print(len(“Spaghetti”)) # => 9
 
 ### **Python uses** `**zero-based indexing**`
 
-#### Python allows negative indexing (thank god!)
+#### Python allows negative indexing (thank god!)
 
 print(“Spaghetti”\[-1\]) # => i
 
@@ -23656,7 +23656,7 @@ print(“Spaghetti”\[-4\]) # => e
 
 - Python let’s you use ranges
 
-You can think of this as roughly equivalent to the slice method called on a JavaScript object or string… _(mind you that in JS … strings are wrapped in an object (under the hood)… upon which the string methods are actually called. As a immutable privative type_ **_by textbook definition_**_, a string literal could not hope to invoke most of it’s methods without violating the state it was bound to on initialization if it were not for this bit of syntactic sugar.)_
+You can think of this as roughly equivalent to the slice method called on a JavaScript object or string… _(mind you that in JS … strings are wrapped in an object (under the hood)… upon which the string methods are actually called. As a immutable privative type_ **_by textbook definition_**_, a string literal could not hope to invoke most of it’s methods without violating the state it was bound to on initialization if it were not for this bit of syntactic sugar.)_
 
 print(“Spaghetti”\[1:4\]) # => pag  
 print(“Spaghetti”\[4:-1\]) # => hett  
@@ -23700,7 +23700,7 @@ print('Your name is {0} {1}'.format(first_name, last_name)) # => Your name is Bi
 - _Shorthand way to use format function is:  
   _`print(f'Your name is {first_name} {last_name}')`
 
-#### Some useful string methods.
+#### Some useful string methods.
 
 - **Note that in JS** `**join**` **is used on an Array, in Python it is used on String.**
 
@@ -23714,7 +23714,7 @@ print('Your name is {0} {1}'.format(first_name, last_name)) # => Your name is Bi
 
 ### Variables and Expressions
 
-- **Duck-Typing** : Programming Style which avoids checking an object’s type to figure out what it can do.
+- **Duck-Typing** : Programming Style which avoids checking an object’s type to figure out what it can do.
 - Duck Typing is the fundamental approach of Python.
 - Assignment of a value automatically declares a variable.
 
@@ -23732,7 +23732,7 @@ print(count) # => 0
 print(max) # => 0  
 print(min) # => 0
 
-#### The value and type of a variable can be re-assigned at any time.
+#### The value and type of a variable can be re-assigned at any time.
 
 a = 17  
 print(a) # => 17  
@@ -23747,7 +23747,7 @@ print(a) # => seventeen
 
 ---
 
-### Boolean Data Type
+### Boolean Data Type
 
 - One of the biggest benefits of Python is that it reads more like English than JS does.
 
@@ -23788,13 +23788,13 @@ print(not True or False) # => False
 
 > Just like in JS, you can use `parentheses` to change the inherent order of operations.
 
-> **Short Circuit** : Stopping a program when a `true` or `false` has been reached.
+> **Short Circuit** : Stopping a program when a `true` or `false` has been reached.
 
 ![](https://cdn-images-1.medium.com/max/800/0*qHzGRLTOMTf30miT.png)
 
 ---
 
-### Identity vs Equality
+### Identity vs Equality
 
 print (2 == '2') # => False  
 print (2 is '2') # => False
@@ -23806,7 +23806,7 @@ print ("2" is '2') # => True
 print (2 == 2.0) # => True  
 print (2 is 2.0) # => False
 
-- In the Python community it is better to use `is` and `is not` over `==` or `!=`
+- In the Python community it is better to use `is` and `is not` over `==` or `!=`
 
 ---
 
@@ -23968,7 +23968,7 @@ if hasattr(b, '\_\_len\_\_'):
 
 ### Pass
 
-- Pass Keyword is required to write the JS equivalent of :
+- Pass Keyword is required to write the JS equivalent of :
 
 if (true) {  
 }
@@ -24039,7 +24039,7 @@ print(‘,’.join(shopping_list))
 print(‘{:,}’.format(1234567890))  
 ‘1,234,567,890’
 
-### Date and Time
+### Date and Time
 
 d = datetime.datetime(2020, 7, 4, 12, 15, 58)  
 print(‘{:%Y-%m-%d %H:%M:%S}’.format(d))  
@@ -24073,12 +24073,12 @@ _It is common to use Python as an API (Application Programming Interface)_
 
 #### Structured Data
 
-#### Sequence : The most basic data structure in Python where the index determines the order.
+#### Sequence : The most basic data structure in Python where the index determines the order.
 
 > List  
 > Tuple  
 > Range  
-> Collections : Unordered data structures, hashable values.
+> Collections : Unordered data structures, hashable values.
 
 ---
 
@@ -24086,15 +24086,15 @@ _It is common to use Python as an API (Application Programming Interface)_
 
 Sets
 
-#### Iterable : Generic name for a sequence or collection; any object that can be iterated through.
+#### Iterable : Generic name for a sequence or collection; any object that can be iterated through.
 
 #### Can be mutable or immutable.
 
-Built In Data Types
+Built In Data Types
 
 ---
 
-### Lists are the python equivalent of arrays.
+### Lists are the python equivalent of arrays.
 
 empty_list = \[\]  
 departments = \[‘HR’,’Development’,’Sales’,’Finance’,’IT’,’Customer Support’\]
@@ -24103,7 +24103,7 @@ departments = \[‘HR’,’Development’,’Sales’,’Finance’,’IT’,�
 
 specials = list()
 
-#### Test if a value is in a list.
+#### Test if a value is in a list.
 
 print(1 in \[1, 2, 3\]) #> True  
 print(4 in \[1, 2, 3\]) #> False  
@@ -24118,19 +24118,19 @@ time_blocks = (‘AM’,’PM’)
 colors = ‘red’,’blue’,’green’  
 numbers = 1, 2, 3
 
-#### Tuple() built in can be used to convert other data into a tuple
+#### Tuple() built in can be used to convert other data into a tuple
 
 tuple(‘abc’) # returns (‘a’, ‘b’, ‘c’)  
 tuple(\[1,2,3\]) # returns (1, 2, 3)  
 \# Think of tuples as constant variables.
 
-#### Ranges : A list of numbers which can’t be changed; often used with for loops.
+#### Ranges : A list of numbers which can’t be changed; often used with for loops.
 
 **Declared using one to three parameters**.
 
-> Start : opt. default 0, first # in sequence.  
-> Stop : required next number past the last number in the sequence.  
-> Step : opt. default 1, difference between each number in the sequence.
+> Start : opt. default 0, first # in sequence.  
+> Stop : required next number past the last number in the sequence.  
+> Step : opt. default 1, difference between each number in the sequence.
 
 range(5) # \[0, 1, 2, 3, 4\]  
 range(1,5) # \[1, 2, 3, 4\]  
@@ -24142,7 +24142,7 @@ for let (i = 0; i < 25; i+=5)
 for let(i = 0; i = 0; i++)  
 \# Keep in mind that stop is not included in the range.
 
-#### Dictionaries : Mappable collection where a hashable value is used as a key to ref. an object stored in the dictionary.
+#### Dictionaries : Mappable collection where a hashable value is used as a key to ref. an object stored in the dictionary.
 
 #### Mutable.
 
@@ -24157,7 +24157,7 @@ c = dict(\[(‘two’, 2), (‘one’, 1), (‘three’, 3)\])
 
 **Use the in operator to see if a key exists in a dictionary.**
 
-S**ets : Unordered collection of distinct objects; objects that need to be hashable.**
+S**ets : Unordered collection of distinct objects; objects that need to be hashable.**
 
 > _Always be unique, duplicate items are auto dropped from the set._
 
@@ -24173,18 +24173,18 @@ Sets created by putting comma seperated values inside braces:**
 school_bag = {‘book’,’paper’,’pencil’,’pencil’,’book’,’book’,’book’,’eraser’}  
 print(school_bag)
 
-#### Also can use set constructor to automatically put it into a set.
+#### Also can use set constructor to automatically put it into a set.
 
 letters = set(‘abracadabra’)  
 print(letters)  
 #Built-In Functions  
 #Functions using iterables
 
-**filter(function, iterable) : creates new iterable of the same type which includes each item for which the function returns true.**
+**filter(function, iterable) : creates new iterable of the same type which includes each item for which the function returns true.**
 
-**map(function, iterable) : creates new iterable of the same type which includes the result of calling the function on every item of the iterable.**
+**map(function, iterable) : creates new iterable of the same type which includes the result of calling the function on every item of the iterable.**
 
-**sorted(iterable, key=None, reverse=False) : creates a new sorted list from the items in the iterable.**
+**sorted(iterable, key=None, reverse=False) : creates a new sorted list from the items in the iterable.**
 
 **Output is always a list**
 
@@ -24192,7 +24192,7 @@ print(letters)
 
 **reverse: optional boolean.**
 
-**enumerate(iterable, start=0) : starts with a sequence and converts it to a series of tuples**
+**enumerate(iterable, start=0) : starts with a sequence and converts it to a series of tuples**
 
 quarters = \[‘First’, ‘Second’, ‘Third’, ‘Fourth’\]  
 print(enumerate(quarters))  
@@ -24202,45 +24202,45 @@ print(enumerate(quarters, start=1))
 
 #### (1, ‘First’), (2, ‘Second’), (3, ‘Third’), (4, ‘Fourth’)
 
-> zip(\*iterables) : creates a zip object filled with tuples that combine 1 to 1 the items in each provided iterable.  
+> zip(\*iterables) : creates a zip object filled with tuples that combine 1 to 1 the items in each provided iterable.  
 > Functions that analyze iterable
 
-**len(iterable) : returns the count of the number of items.**
+**len(iterable) : returns the count of the number of items.**
 
-**max(\*args, key=None) : returns the largest of two or more arguments.**
+**max(\*args, key=None) : returns the largest of two or more arguments.**
 
-**max(iterable, key=None) : returns the largest item in the iterable.**
+**max(iterable, key=None) : returns the largest item in the iterable.**
 
 _key optional function which converts an item to a value to be compared.  
 min works the same way as max_
 
-**sum(iterable) : used with a list of numbers to generate the total.**
+**sum(iterable) : used with a list of numbers to generate the total.**
 
 _There is a faster way to concatenate an array of strings into one string, so do not use sum for that._
 
-**any(iterable) : returns True if any items in the iterable are true.**
+**any(iterable) : returns True if any items in the iterable are true.**
 
-**all(iterable) : returns True is all items in the iterable are true.**
+**all(iterable) : returns True is all items in the iterable are true.**
 
 ### Working with dictionaries
 
-**dir(dictionary) : returns the list of keys in the dictionary.  
+**dir(dictionary) : returns the list of keys in the dictionary.  
 Working with sets**
 
-**Union : The pipe | operator or union(\*sets) function can be used to produce a new set which is a combination of all elements in the provided set.**
+**Union : The pipe | operator or union(\*sets) function can be used to produce a new set which is a combination of all elements in the provided set.**
 
 a = {1, 2, 3}  
 b = {2, 4, 6}  
 print(a | b) # => {1, 2, 3, 4, 6}
 
-#### Intersection : The & operator ca be used to produce a new set of only the elements that appear in all sets.
+#### Intersection : The & operator ca be used to produce a new set of only the elements that appear in all sets.
 
 a = {1, 2, 3}  
 b = {2, 4, 6}  
 print(a & b) # => {2}  
 Difference : The — operator can be used to produce a new set of only the elements that appear in the first set and NOT the others.
 
-**Symmetric Difference : The ^ operator can be used to produce a new set of only the elements that appear in exactly one set and not in both.**
+**Symmetric Difference : The ^ operator can be used to produce a new set of only the elements that appear in exactly one set and not in both.**
 
 a = {1, 2, 3}  
 b = {2, 4, 6}  
@@ -24252,7 +24252,7 @@ print(a ^ b) # => {1, 3, 4, 6}
 
 ### \*\*For Statements
 
-In python, there is only one for loop.\*\*
+In python, there is only one for loop.\*\*
 
 Always Includes:
 
@@ -24361,7 +24361,7 @@ pass
 
 ---
 
-### **Importing in Python**
+### **Importing in Python**
 
 **Modules are similar to packages in Node.js**  
 Come in different types:
@@ -24378,11 +24378,11 @@ Custom.
 
 ### **Terms**
 
-> module : Python code in a separate file.  
-> package : Path to a directory that contains modules.  
-> [**init.py**](http://init.py/) : Default file for a package.  
-> submodule : Another file in a module’s folder.  
-> function : Function in a module.
+> module : Python code in a separate file.  
+> package : Path to a directory that contains modules.  
+> [**init.py**](http://init.py/) : Default file for a package.  
+> submodule : Another file in a module’s folder.  
+> function : Function in a module.
 
 **A module can be any file but it is usually created by placing a special file init.py into a folder. pic**
 
@@ -24401,9 +24401,9 @@ urlopen,
 
 ---
 
-### Watching Out for Python 2
+### Watching Out for Python 2
 
-**Python 3 removed <> and only uses !=**
+**Python 3 removed <> and only uses !=**
 
 **format() was introduced with P3**
 
@@ -24413,9 +24413,9 @@ md5 was removed.**
 **ConfigParser was renamed to configparser  
 sets were killed in favor of set() class.**
 
-#### **print was a statement in P2, but is a function in P3.**
+#### **print was a statement in P2, but is a function in P3.**
 
-### Topics revisited (in python syntax)
+### Topics revisited (in python syntax)
 
 [https://gist.github.com/bgoonz/82154f50603f73826c27377ebaa498b5](https://gist.github.com/bgoonz/82154f50603f73826c27377ebaa498b5)
 
@@ -24423,7 +24423,7 @@ sets were killed in favor of set() class.**
 
 [https://gist.github.com/bgoonz/282774d28326ff83d8b42ae77ab1fee3](https://gist.github.com/bgoonz/282774d28326ff83d8b42ae77ab1fee3)
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -24433,15 +24433,15 @@ Or Checkout my personal Resource Site:
 
 [https://github.com/bgoonz](https://github.com/bgoonz)
 
-### Python Cheat Sheet:
+### Python Cheat Sheet:
 
 [https://gist.github.com/bgoonz/999163a278b987fe47fb247fd4d66904](https://gist.github.com/bgoonz/999163a278b987fe47fb247fd4d66904)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://github.com/bgoonz](https://github.com/bgoonz)[https://github.com/bgoonz](https://github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://github.com/bgoonz](https://github.com/bgoonz)
 
@@ -24473,13 +24473,13 @@ Or Checkout my personal Resource Site:
 
 Non-2xx responses are still successful requests. Use another function to turn them to errors.
 
-### Using with node.js
+### Using with node.js
 
     const fetch = require('isomorphic-fetch')
 
 See: [isomorphic-fetch](https://npmjs.com/package/isomorphic-fetch) _(npmjs.com)_
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -24515,7 +24515,7 @@ Or Checkout my personal Resource Site:
 
 ---
 
-### Request & response
+### Request & response
 
 ### Request
 
@@ -24617,7 +24617,7 @@ The `dev:backend` and `dev:frontend` scripts are optional and will not be used f
 
 Finally, commit your changes.
 
-### Phase 3: Deploy to Heroku
+### Phase 3: Deploy to Heroku
 
 Once you’re finished setting this up, navigate to your application’s Heroku dashboard. Under “Settings” there is a section for “Config Vars”. Click the `Reveal Config Vars` button to see all your production environment variables. You should have a `DATABASE_URL` environment variable already from the Heroku Postgres add-on.
 
@@ -24667,7 +24667,7 @@ If you want to open a connection to the logs to continuously output to your term
 
 The logs may clue you into why you are experiencing errors or different behavior.
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -24679,7 +24679,7 @@ Or Checkout my personal Resource Site:
 
 #### [CODEX](http://medium.com/codex)
 
-#### **Each table is made up of rows and columns. If you think of a table as a grid, the column go from left to right across the grid and each entry of data is listed down as a row.**
+#### **Each table is made up of rows and columns. If you think of a table as a grid, the column go from left to right across the grid and each entry of data is listed down as a row.**
 
 Each row in a relational is uniquely identified by a primary key. This can be by one or more sets of column values. In most scenarios it is a single column, such as employeeID.
 
@@ -24803,7 +24803,7 @@ Removing a specified index from a table
 
     DROP INDEX index_name;
 
-### Querying data from tables
+### Querying data from tables
 
 Query all data from a table:
 
@@ -24917,9 +24917,9 @@ Collect statistics:
 
 ---
 
-### Postgres & JSON:
+### Postgres & JSON:
 
-### Creating the DB and the Table
+### Creating the DB and the Table
 
     DROP DATABASE IF EXISTS books_db;CREATE DATABASE books_db WITH ENCODING='UTF8' TEMPLATE template0;
 
@@ -24927,7 +24927,7 @@ Collect statistics:
 
     CREATE TABLE books (  id SERIAL PRIMARY KEY,  client VARCHAR NOT NULL,  data JSONb NOT NULL);
 
-### Populating the DB
+### Populating the DB
 
 INSERT INTO books(client, data) values( 'Joe', '{ "title": "Siddhartha", "author": { "first_name": "Herman", "last_name": "Hesse" } }' ); INSERT INTO books(client, data) values('Jenny', '{ "title": "Bryan Guner", "author": { "first_name": "Jack", "last_name": "Kerouac" } }'); INSERT INTO books(client, data) values('Jenny', '{ "title": "100 años de soledad", "author": { "first_name": "Gabo", "last_name": "Marquéz" } }');
 
@@ -24939,7 +24939,7 @@ Output:
 
 ![](https://cdn-images-1.medium.com/max/800/0*GOQQ0qNGak2yIrtQ)
 
-### `->` operator returns values out of JSON columns
+### `->` operator returns values out of JSON columns
 
 Selecting 1 column:
 
@@ -24957,11 +24957,11 @@ Output:
 
 ![](https://cdn-images-1.medium.com/max/800/0*fEzPkSY8yGexKOk4)
 
-### `->` vs `->>`
+### `->` vs `->>`
 
 The `->` operator returns the original JSON type (which might be an object), whereas `->>` returns text.
 
-### Return NESTED objects
+### Return NESTED objects
 
 You can use the `->` to return a nested object and thus chain the operators:
 
@@ -24995,7 +24995,7 @@ Output:
 
 ![](https://cdn-images-1.medium.com/max/800/0*R1kOhDK19ntdUYkq)
 
-### A real world example
+### A real world example
 
     CREATE TABLE events (  name varchar(200),  visitor_id varchar(200),  properties json,  browser json);
 
@@ -25037,7 +25037,7 @@ Output:
 
 ![](https://cdn-images-1.medium.com/max/800/0*iyv4Iv4Rc8M8mwt1)
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
@@ -25047,11 +25047,11 @@ Or Checkout my personal Resource Site:
 
 [https://github.com/bgoonz](https://github.com/bgoonz)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://github.com/bgoonz](https://github.com/bgoonz)[https://github.com/bgoonz](https://github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://github.com/bgoonz](https://github.com/bgoonz)
 
@@ -25065,7 +25065,7 @@ Or Checkout my personal Resource Site:
 - We also need to ask if our code remains performant if we increase the size of the input.
 - The real question we need to answering is: `How does our performance scale?`.
 
-### big ‘O’ notation
+### big ‘O’ notation
 
 - Big O Notation is a tool for describing the efficiency of algorithms with respect to the size of the input arguments.
 - Since we use mathematical functions in Big-O, there are a few big picture ideas that we’ll want to keep in mind:
@@ -25074,14 +25074,14 @@ Or Checkout my personal Resource Site:
 - Big O is used to describe the worst case scenario.
 - Big O is simplified to show only its most dominant mathematical term.
 
-### Simplifying Math Terms
+### Simplifying Math Terms
 
 - We can use the following rules to simplify the our Big O functions:
-- `Simplify Products` : If the function is a product of many terms, we drop the terms that don’t depend on n.
-- `Simplify Sums` : If the function is a sum of many terms, we drop the non-dominant terms.
-- `n` : size of the input
-- `T(f)` : unsimplified math function
-- `O(f)` : simplified math function.
+- `Simplify Products` : If the function is a product of many terms, we drop the terms that don’t depend on n.
+- `Simplify Sums` : If the function is a sum of many terms, we drop the non-dominant terms.
+- `n` : size of the input
+- `T(f)` : unsimplified math function
+- `O(f)` : simplified math function.
 
 `Putting it all together`
 
@@ -25144,7 +25144,7 @@ Common Complexity Classes
 
 ### Memoization
 
-- Memoization : a design pattern used to reduce the overall number of calculations that can occur in algorithms that use recursive strategies to solve.
+- Memoization : a design pattern used to reduce the overall number of calculations that can occur in algorithms that use recursive strategies to solve.
 - MZ stores the results of the sub-problems in some other data structure, so that we can avoid duplicate calculations and only ‘solve’ each problem once.
 - Two features that comprise memoization:
 
@@ -25174,11 +25174,11 @@ Our memo object is _mapping_ out our arguments of factorial to it’s return val
 > _Rules:_
 
 1.  _Write the unoptimized brute force recursion (make sure it works);_
-2.  _Add memo object as an additional argument ._
+2.  _Add memo object as an additional argument ._
 3.  _Add a base case condition that returns the stored value if the function’s argument is in the memo._
 4.  _Before returning the result of the recursive case, store it in the memo as a value and make the function’s argument it’s key._
 
-#### Things to remember
+#### Things to remember
 
 1.  _When solving DP problems with Memoization, it is helpful to draw out the visual tree first._
 2.  _When you notice duplicate sub-tree’s that means we can memoize._
@@ -25228,7 +25228,7 @@ function fibonacci(n) {
 
 [https://gist.github.com/eengineergz/b1b1f7e259193ecdc432350b6199f2d3](https://gist.github.com/eengineergz/b1b1f7e259193ecdc432350b6199f2d3)
 
-### Example of Linear Search
+### Example of Linear Search
 
 [https://gist.github.com/eengineergz/e98354b287ce2f80da4ab943399eb555](https://gist.github.com/eengineergz/e98354b287ce2f80da4ab943399eb555)
 
@@ -25322,7 +25322,7 @@ function fibonacci(n) {
 
 ![](https://cdn-images-1.medium.com/max/800/0*IxqGb72XDVDeeiMl)
 
-### Example of Merge Sort
+### Example of Merge Sort
 
 [https://gist.github.com/eengineergz/18fbb7edc9f5c4820ccfcecacf3c5e48](https://gist.github.com/eengineergz/18fbb7edc9f5c4820ccfcecacf3c5e48)[https://gist.github.com/eengineergz/cbb533137a7f957d3bc4077395c1ff64](https://gist.github.com/eengineergz/cbb533137a7f957d3bc4077395c1ff64)
 
@@ -25392,11 +25392,11 @@ function fibonacci(n) {
 
 [https://gist.github.com/eengineergz/ffead1de0836c4bcc6445780a604f617](https://gist.github.com/eengineergz/ffead1de0836c4bcc6445780a604f617)
 
-### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
+### If you found this guide helpful feel free to checkout my GitHub/gists where I host similar content:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)[https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
-### Or Checkout my personal Resource Site:
+### Or Checkout my personal Resource Site:
 
 [https://gist.github.com/bgoonz](https://gist.github.com/bgoonz)
 
@@ -25404,7 +25404,7 @@ function fibonacci(n) {
 
 [https://gist.github.com/bgoonz/af844eda5a20b0fdc0b813304401602b](https://gist.github.com/bgoonz/af844eda5a20b0fdc0b813304401602b)
 
-#### Windows Subsystem for Linux (WSL) and Ubuntu
+#### Windows Subsystem for Linux (WSL) and Ubuntu
 
 ‌
 
@@ -25464,7 +25464,7 @@ Test if you have Node.js installed by opening an Ubuntu terminal and typing `nod
 1.  In the Ubuntu terminal, type `sudo apt update` and press Enter
 2.  In the Ubuntu terminal, type `sudo apt install build-essential` and press Enter
 3.  In the Ubuntu terminal, type `curl -o- [https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh](https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh) | bash` and press Enter
-4.  In the Ubuntu terminal, type `. ./.bashrc` and press Enter
+4.  In the Ubuntu terminal, type `. ./.bashrc` and press Enter
 5.  In the Ubuntu terminal, type `nvm install --lts` and press Enter
 6.  Confirm that **node** is installed by typing `node --version` and seeing it print something that is not “Command not found”!
 
@@ -25486,7 +25486,7 @@ Ubuntu does not come with Python 3. Install it using the command `sudo apt insta
 
 ‌
 
-### Note about WSL
+### Note about WSL
 
 ‌
 
@@ -25536,7 +25536,7 @@ sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar
 \# FileZilla - a FTP client  
 sudo apt-get install -y filezilla
 
-#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
+#### If you found this guide helpful feel free to checkout my github/gists where I host similar content:
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 

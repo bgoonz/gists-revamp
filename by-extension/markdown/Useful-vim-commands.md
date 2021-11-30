@@ -54,7 +54,7 @@ This is _not_ a complete reference or a tutorial. It is just the commands that w
 ## Markers
 
 - `ma`: set marker `a` at the cursor location (can use any letter a-z)
-- `` `a ``: jump to marker `a` (can use any letter a-z)
+- `` `a``: jump to marker `a` (can use any letter a-z)
 
 ## Visual Blocks
 
@@ -91,7 +91,7 @@ The following use [regexes](http://vimregex.com/):
 - `p`: paste after cursor position
 - `P`: paste before cursor position
 
-GUI-based vims often support `COMMAND-c`/`CTRL-c` and `COMMAND-v`/`CTRL-v` for copying and pasting from the system buffer. (Note that the system copy/paste buffer is different from that used by the `y` and `p` commands.) If you’re using the console-based vim, you might have to select the text to copy with the mouse if you want to copy it to the system copy/paste buffer.
+GUI-based vims often support `COMMAND-c`/`CTRL-c` and `COMMAND-v`/`CTRL-v` for copying and pasting from the system buffer. (Note that the system copy/paste buffer is different from that used by the `y` and `p` commands.) If you're using the console-based vim, you might have to select the text to copy with the mouse if you want to copy it to the system copy/paste buffer.
 
 ## Counting
 
@@ -110,8 +110,8 @@ GUI-based vims often support `COMMAND-c`/`CTRL-c` and `COMMAND-v`/`CTRL-v` for c
 
 ## Misc
 
-- `.`: repeat the last edit command, e.g. `AHello[ESC]j.` will add `Hello` to the end of the current and next line
-- `xp`: transpose the character under the cursor with the next one; not really a special command–simply `x` to cut the current character under the cursor followed by `p` to paste it after the cursor position
+- `.`: repeat the last edit command, e.g. `AHello[ESC]j.` will add `Hello` to the end of the current and next line
+- `xp`: transpose the character under the cursor with the next one; not really a special command--simply `x` to cut the current character under the cursor followed by `p` to paste it after the cursor position
 - `!!ls[RET]`: run the `ls` command and insert its output into the document (can run any command)
 - `:sh[RET]`: spawn an interactive shell (hit `CTRL-d` or type `exit[RET]` to get back to vim)
 

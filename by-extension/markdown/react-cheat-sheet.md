@@ -628,8 +628,8 @@ Also see: [Hooks FAQ](https://reactjs.org/docs/hooks-faq.html)
 
 | Hook                       | Description                               |
 | -------------------------- | ----------------------------------------- |
-| `useState`_(initialState)_ |                                           |
-| `useEffect`_(() => { … })_ |                                           |
+| `useState`_(initialState)_ |                                           |
+| `useEffect`_(() => { … })_ |                                           |
 | `useContext`_(MyContext)_  | value returned from `React.createContext` |
 
 Full details: [Basic Hooks](https://reactjs.org/docs/hooks-reference.html#basic-hooks)
@@ -638,11 +638,11 @@ Full details: [Basic Hooks](https://reactjs.org/docs/hooks-reference.html#basic-
 
 | Hook                                      | Description                                                                  |
 | ----------------------------------------- | ---------------------------------------------------------------------------- |
-| `useReducer`_(reducer, initialArg, init)_ |                                                                              |
-| `useCallback`_(() => { … })_              |                                                                              |
-| `useMemo`_(() => { … })_                  |                                                                              |
-| `useRef`_(initialValue)_                  |                                                                              |
-| `useImperativeHandle`_(ref, () => { … })_ |                                                                              |
+| `useReducer`_(reducer, initialArg, init)_ |                                                                              |
+| `useCallback`_(() => { … })_              |                                                                              |
+| `useMemo`_(() => { … })_                  |                                                                              |
+| `useRef`_(initialValue)_                  |                                                                              |
+| `useImperativeHandle`_(ref, () => { … })_ |                                                                              |
 | `useLayoutEffect`                         | identical to `useEffect`, but it fires synchronously after all DOM mutations |
 | `useDebugValue`_(value)_                  | display a label for custom hooks in React DevTools                           |
 
@@ -901,8 +901,8 @@ See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-pr
 
 | Key      | Description   |
 | -------- | ------------- |
-| `string` |               |
-| `number` |               |
+| `string` |               |
+| `number` |               |
 | `func`   | Function      |
 | `bool`   | True or false |
 
@@ -917,17 +917,17 @@ See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-pr
 
 | Key            | Description |
 | -------------- | ----------- |
-| `array`        |             |
-| `arrayOf`_(…)_ |             |
+| `array`        |             |
+| `arrayOf`_(…)_ |             |
 
 #### Object
 
 | Key               | Description                          |
 | ----------------- | ------------------------------------ |
-| `object`          |                                      |
+| `object`          |                                      |
 | `objectOf`_(…)_   | Object with values of a certain type |
 | `instanceOf`_(…)_ | Instance of a class                  |
-| `shape`_(…)_      |                                      |
+| `shape`_(…)_      |                                      |
 
 #### Elements
 

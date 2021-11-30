@@ -70,7 +70,7 @@ Repl from Repo. Get started with any Github repo, right from your browser. Commi
 
 > JSFiddle has the notion of panels (or tabs if you switch into the tabbed layout), there are 4 panels, 3 where you can enter code, and 1 to see the result.
 
-- <span id="0c0b">**HTML** — structure code, no need to add `body` `doctype` `head`, that’s added automatically</span>
+- <span id="0c0b">**HTML** — structure code, no need to add `body` `doctype` `head`, that's added automatically</span>
 - <span id="b95b">**CSS** — styles. You can switch pre-pocessor to SCSS</span>
 - <span id="1709">**JavaScript** — behavior. There are many frameworks and code pre-processors you can use</span>
 
@@ -114,7 +114,7 @@ Once you enter code, just hit **Run** in the top actions bar, and the fourth pan
 
 ### Glitch
 
-### ⚫<a href="https://glitch.com/" class="markup--anchor markup--h3-anchor"><strong><em>Glitch</em></strong></a> \*\* provides two project templates that you can use to start creating your app:\*\*
+### ⚫<a href="https://glitch.com/" class="markup--anchor markup--h3-anchor"><strong><em>Glitch</em></strong></a> ** provides two project templates that you can use to start creating your app:**
 
 1.  <span id="9488">**Classic Website**</span>
 2.  <span id="ff69">**Node.js**</span>

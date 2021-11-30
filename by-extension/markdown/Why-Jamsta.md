@@ -40,7 +40,7 @@ API is the acronym for Application Programming Interface. It defines interaction
 
 - <span id="2b9a">You don’t generally do anything that consumes enough volume of static assets to cause your application to struggle with performance at least sometimes.</span>
 - <span id="d002">Your development team is used to different tech, and the cost of migration is higher than the reward.</span>
-- <span id="fc18">You are dealing with tons of real-time/user data, (i.e. audio or video processing in real time)</span>
+- <span id="fc18">You are dealing with tons of real-time/user data, (i.e. audio or video processing in real time)</span>
 - <span id="c4bd">In most cases, it does not make sense to migrate a legacy project that is functioning just fine with no signs of depreciation on the horizon.</span>
 
 ### What is Jamstack?

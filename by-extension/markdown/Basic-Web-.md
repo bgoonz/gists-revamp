@@ -39,8 +39,8 @@ Git comes with Ubuntu, so there’s nothing to install. However, you should conf
 
 ‌Open an Ubuntu terminal if you don’t have one open already.
 
-1.  <span id="8cfe">You need to configure Git, so type `git config --global user.name "Your Name"` with replacing “Your Name” with your real name.</span>
-2.  <span id="0e0d">You need to configure Git, so type `git config --global user.email your@email.com` with replacing “<a href="mailto:your@email.com" class="markup--anchor markup--li-anchor">your@email.com</a>” with your real email.</span>
+1.  <span id="8cfe">You need to configure Git, so type `git config --global user.name "Your Name"` with replacing "Your Name" with your real name.</span>
+2.  <span id="0e0d">You need to configure Git, so type `git config --global user.email your@email.com` with replacing "<a href="mailto:your@email.com" class="markup--anchor markup--li-anchor">your@email.com</a>" with your real email.</span>
 
 **Note: if you want git to remember your login credentials type:**
 
@@ -59,14 +59,14 @@ Test if you have Chrome installed by typing “Chrome” in the search box in th
 
 ### Node.js
 
-Test if you have Node.js installed by opening an Ubuntu terminal and typing `node --version`. If it reports “Command ‘node’ not found”, then you need to follow these directions.
+Test if you have Node.js installed by opening an Ubuntu terminal and typing `node --version`. If it reports "Command 'node' not found", then you need to follow these directions.
 
 1.  <span id="9098">In the Ubuntu terminal, type `sudo apt update` and press Enter</span>
 2.  <span id="806b">In the Ubuntu terminal, type `sudo apt install build-essential` and press Enter</span>
 3.  <span id="5f3a">In the Ubuntu terminal, type `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash` and press Enter</span>
 4.  <span id="2abd">In the Ubuntu terminal, type `. ./.bashrc` and press Enter</span>
 5.  <span id="3c16">In the Ubuntu terminal, type `nvm install --lts` and press Enter</span>
-6.  <span id="d567">Confirm that **node** is installed by typing `node --version` and seeing it print something that is not “Command not found”!</span>
+6.  <span id="d567">Confirm that **node** is installed by typing `node --version` and seeing it print something that is not "Command not found"!</span>
 
 ### Unzip
 
@@ -76,7 +76,7 @@ You will often have to download a zip file and unzip it. It is easier to do this
 
 ‌Mocha.js
 
-Test if you have Mocha.js installed by opening an Ubuntu terminal and typing `which mocha`. If it prints a path, then you’re good. Otherwise, if it prints nothing, install Mocha.js by typing `npm install -g mocha`.
+Test if you have Mocha.js installed by opening an Ubuntu terminal and typing `which mocha`. If it prints a path, then you're good. Otherwise, if it prints nothing, install Mocha.js by typing `npm install -g mocha`.
 
 ‌
 

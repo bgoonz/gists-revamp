@@ -6,7 +6,7 @@ A collection of awesome web crawler,spider and resources in different languages.
 
 - [Python](#python)
 - [Java](#java)
-- [C\#](#c)
+- [C#](#c)
 - [JavaScript](#javascript)
 - [PHP](#php)
 - [C++](#c-1)
@@ -65,17 +65,17 @@ A collection of awesome web crawler,spider and resources in different languages.
 - [StormCrawler](http://github.com/DigitalPebble/storm-crawler/) - An open source collection of resources for building low-latency, scalable web crawlers on Apache Storm
 - [Spark-Crawler](https://github.com/USCDataScience/sparkler) - Evolving Apache Nutch to run on Spark.
 - [webBee](https://github.com/pkwenda/webBee) - A DFS web spider.
-- [spider-flow](https://github.com/ssssssss-team/spider-flow) - A visual spider framework, it’s so good that you don’t need to write any code to crawl the website.
+- [spider-flow](https://github.com/ssssssss-team/spider-flow) - A visual spider framework, it's so good that you don't need to write any code to crawl the website.
 
-## C
+## C#
 
-- [ccrawler](http://www.findbestopensource.com/product/ccrawler) - Built in C\# 3.5 version. it contains a simple extension of web content categorizer, which can saparate between the web page depending on their content.
+- [ccrawler](http://www.findbestopensource.com/product/ccrawler) - Built in C# 3.5 version. it contains a simple extension of web content categorizer, which can saparate between the web page depending on their content.
 - [SimpleCrawler](https://github.com/lei-zhu/SimpleCrawler) - Simple spider base on mutithreading, regluar expression.
-- [DotnetSpider](https://github.com/zlzforever/DotnetSpider) - This is a cross platfrom, ligth spider develop by C\#.
-- [Abot](https://github.com/sjdirect/abot) - C\# web crawler built for speed and flexibility.
-- [Hawk](https://github.com/ferventdesert/Hawk) - Advanced Crawler and ETL tool written in C\#/WPF.
+- [DotnetSpider](https://github.com/zlzforever/DotnetSpider) - This is a cross platfrom, ligth spider develop by C#.
+- [Abot](https://github.com/sjdirect/abot) - C# web crawler built for speed and flexibility.
+- [Hawk](https://github.com/ferventdesert/Hawk) - Advanced Crawler and ETL tool written in C#/WPF.
 - [SkyScraper](https://github.com/JonCanning/SkyScraper) - An asynchronous web scraper / web crawler using async / await and Reactive Extensions.
-- [Infinity Crawler](https://github.com/TurnerSoftware/InfinityCrawler) - A simple but powerful web crawler library in C\#.
+- [Infinity Crawler](https://github.com/TurnerSoftware/InfinityCrawler) - A simple but powerful web crawler library in C#.
 
 ## JavaScript
 

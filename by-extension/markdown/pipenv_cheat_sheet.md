@@ -2,63 +2,93 @@
 
 ## Install pipenv
 
-    pip3 install pipenv
+```
+pip3 install pipenv
+```
 
 ## Activate
 
-    pipenv shell
+```
+pipenv shell
+```
 
 ## Check version of Python
 
-    python --version
+```
+python --version
+```
 
 ## Check path
 
-    python
-    >>> import sys
-    >>> sys.executable
-    quit()
+```
+python
+>>> import sys
+>>> sys.executable
+quit()
+```
 
 ## Install a package
 
-    pipenv install camelcase
+```
+pipenv install camelcase
+```
 
 ## Check local packages
 
-    pipenv lock -r
+```
+pipenv lock -r
+```
 
 ## Uninstall a package
 
-    pipenv uninstall camelcase
+```
+pipenv uninstall camelcase
+```
 
 ## Install a dev package
 
-    pipenv install nose --dev
+```
+pipenv install nose --dev
+```
 
 ## Install from requirements.txt
 
-    pipenv install -r ./requirements.txt
+```
+pipenv install -r ./requirements.txt
+```
 
 ## Check security vulnerabilities
 
-    pipenv check
+```
+pipenv check
+```
 
 ## Check dependency graph
 
-    pipenv graph
+```
+pipenv graph
+```
 
 ## Ignore pipfile
 
-    pipenv install --ignore-pipfile
+```
+pipenv install --ignore-pipfile
+```
 
 ## Set lockfile - before deployment
 
-    pipenv lock
+```
+pipenv lock
+```
 
 ## Exiting the virtualenv
 
-    exit
+```
+exit
+```
 
 ## Run with pipenv
 
-    pipenv run *
+```
+pipenv run *
+```

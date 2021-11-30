@@ -100,7 +100,7 @@
 ### Command-line apps
 
 - [np](https://github.com/sindresorhus/np) - Better `npm publish`.
-- [npm-name](https://github.com/sindresorhus/npm-name) - Check a package name’s availability on npm.
+- [npm-name](https://github.com/sindresorhus/npm-name) - Check a package name's availability on npm.
 - [gh-home](https://github.com/sindresorhus/gh-home) - Open the GitHub page of the repo in the current directory.
 - [npm-home](https://github.com/sindresorhus/npm-home) - Open the npm page of a package.
 - [trash](https://github.com/sindresorhus/trash) - Safer alternative to `rm`.
@@ -125,7 +125,7 @@
 - [normit](https://github.com/pawurb/normit) - Google Translate with speech synthesis in your terminal.
 - [fkill](https://github.com/sindresorhus/fkill-cli) - Fabulously kill processes. Cross-platform.
 - [pjs](https://github.com/danielstjules/pjs) - Pipeable JavaScript. Quickly filter, map, and reduce from the terminal.
-- [license-checker](https://github.com/davglass/license-checker) - Check licenses of your app’s dependencies.
+- [license-checker](https://github.com/davglass/license-checker) - Check licenses of your app's dependencies.
 - [browser-run](https://github.com/juliangruber/browser-run) - Easily run code in a browser environment.
 - [tmpin](https://github.com/sindresorhus/tmpin) - Adds stdin support to any CLI app that accepts file input.
 - [wifi-password](https://github.com/kevva/wifi-password-cli) - Get the current wifi password.
@@ -195,7 +195,7 @@
 - [ironNode](https://github.com/s-a/iron-node) - Node.js debugger supporting ES2015 out of the box.
 - [node-inspector](https://github.com/node-inspector/node-inspector) - Debugger based on Blink Developer Tools.
 - [debug](https://github.com/visionmedia/debug) - Tiny debugging utility.
-- [why-is-node-running](https://github.com/mafintosh/why-is-node-running) - Node.js is running but you don’t know why?
+- [why-is-node-running](https://github.com/mafintosh/why-is-node-running) - Node.js is running but you don't know why?
 - [njsTrace](https://github.com/valyouw/njstrace) - Instrument and trace your code, see all function calls, arguments, return values, as well as the time spent in each function.
 - [vstream](https://github.com/joyent/node-vstream) - Instrumentable streams mix-ins to inspect a pipeline of streams.
 - [stackman](https://github.com/watson/stackman) - Enhance an error stacktrace with code excerpts and other goodies.
@@ -236,7 +236,7 @@
 - [terminal-image](https://github.com/sindresorhus/terminal-image) - Display images in the terminal.
 - [string-width](https://github.com/sindresorhus/string-width) - Get the visual width of a string - the number of columns required to display it.
 - [cli-truncate](https://github.com/sindresorhus/cli-truncate) - Truncate a string to a specific width in the terminal.
-- [first-run](https://github.com/sindresorhus/first-run) - Check if it’s the first time the process is run.
+- [first-run](https://github.com/sindresorhus/first-run) - Check if it's the first time the process is run.
 - [blessed](https://github.com/chjj/blessed) - Curses-like library.
 - [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) - Interactive command-line prompt.
 - [yn](https://github.com/sindresorhus/yn) - Parse yes/no like values.
@@ -272,7 +272,7 @@
 - [Broccoli](https://github.com/broccolijs/broccoli) - Fast, reliable asset pipeline, supporting constant-time rebuilds and compact build definitions.
 - [Brunch](https://github.com/brunch/brunch) - Front-end web app build tool with simple declarative config, fast incremental compilation, and an opinionated workflow.
 - [Start](https://github.com/deepsweet/start) - Functional task runner with shareable presets.
-- [ygor](https://github.com/shannonmoeller/ygor) - Promising task runner for when `npm run` isn’t enough and everything else is too much.
+- [ygor](https://github.com/shannonmoeller/ygor) - Promising task runner for when `npm run` isn't enough and everything else is too much.
 - [FuseBox](https://github.com/fuse-box/fuse-box) - Fast build system that combines the power of webpack, JSPM and SystemJS, with first-class TypeScript support.
 - [pkg](https://github.com/zeit/pkg) - Package your Node.js project into an executable.
 
@@ -566,7 +566,7 @@
   - [Finale](https://github.com/tommybananas/finale) - RESTful endpoint generator for your Sequelize models.
   - [database-js](https://github.com/mlaanderson/database-js) - Wrapper for multiple databases with a JDBC-like connection.
   - [Mongo Seeding](https://github.com/pkosiec/mongo-seeding) - Populate MongoDB databases with JavaScript and JSON files.
-  - <span class="citation" data-cites="databases">\[@databases\]</span>(https://github.com/ForbesLindesay/atdatabases) - Query PostgreSQL, MySQL and SQLite3 with plain SQL without risking SQL injection.
+  - [@databases](https://github.com/ForbesLindesay/atdatabases) - Query PostgreSQL, MySQL and SQLite3 with plain SQL without risking SQL injection.
   - [pg-mem](https://github.com/oguimbal/pg-mem) - In-memory PostgreSQL instance for your tests.
 
 ### Testing
@@ -654,9 +654,9 @@
 
 - [n](https://github.com/tj/n) - Node.js version management.
 - [nave](https://github.com/isaacs/nave) - Virtual Environments for Node.js.
-- [nodeenv](https://github.com/ekalinin/nodeenv) - Node.js virtual environment compatible to Python’s virtualenv.
+- [nodeenv](https://github.com/ekalinin/nodeenv) - Node.js virtual environment compatible to Python's virtualenv.
 - [nvm for Windows](https://github.com/coreybutler/nvm-windows) - Version management for Windows.
-- [nodenv](https://github.com/nodenv/nodenv) - Version manager that is similar to Ruby’s rbenv. It supports auto version switching.
+- [nodenv](https://github.com/nodenv/nodenv) - Version manager that is similar to Ruby's rbenv. It supports auto version switching.
 - [fnm](https://github.com/Schniz/fnm) - Cross-platform Node.js version manager built in Rust.
 
 ### Natural language processing
@@ -729,7 +729,7 @@
 
 ### Serialization
 
-- [snappy](https://github.com/kesla/node-snappy) - Native bindings for Google’s Snappy compression library.
+- [snappy](https://github.com/kesla/node-snappy) - Native bindings for Google's Snappy compression library.
 - [protobuf](https://github.com/dcodeIO/protobuf.js) - Implementation of Protocol Buffers.
 - [compactr](https://github.com/compactr/compactr.js) - Implementation of the Compactr protocol.
 
@@ -766,7 +766,7 @@
 - [simplecrawler](https://github.com/cgiffard/node-simplecrawler) - Event driven web crawler.
 - [jsdom](https://github.com/tmpvar/jsdom) - JavaScript implementation of HTML and the DOM.
 - [hypernova](https://github.com/airbnb/hypernova) - Server-side rendering your JavaScript views.
-- <span class="citation" data-cites="sindresorhus/is">\[@sindresorhus/is\]</span>(https://github.com/sindresorhus/is) - Type check values.
+- [@sindresorhus/is](https://github.com/sindresorhus/is) - Type check values.
 - [env-dot-prop](https://github.com/simonepri/env-dot-prop) - Get, set, or delete nested properties of process.env using a dot path.
 - [emittery](https://github.com/sindresorhus/emittery) - Simple and modern async event emitter.
 - [node-video-lib](https://github.com/gkozlenko/node-video-lib) - Pure JavaScript library for working with MP4 and FLV video files and creating MPEG-TS chunks for HLS streaming.
@@ -787,7 +787,7 @@
 - [stream-handbook](https://github.com/substack/stream-handbook) - How to write Node.js programs with streams.
 - [module-best-practices](https://github.com/mattdesl/module-best-practices) - Some good practices when writing new npm modules.
 - [The Node Way](http://thenodeway.io) - An entire philosophy of Node.js best practices and guiding principles exists for writing maintainable modules, scalable applications, and code that is actually pleasant to read.
-- [You Don’t Know Node.js](https://github.com/azat-co/you-dont-know-node) - Introduction to Node.js core features and asynchronous JavaScript.
+- [You Don't Know Node.js](https://github.com/azat-co/you-dont-know-node) - Introduction to Node.js core features and asynchronous JavaScript.
 - [Portable Node.js guide](https://github.com/ehmicky/portable-node-guide) - Practical guide on how to write portable/cross-platform Node.js code.
 - [Build a real web app with no frameworks](https://frameworkless.js.org/course) - A set of video tutorials/livestreams to help you build and deploy a real, live web app using a handful of simple libraries and the core Node.js modules.
 
@@ -828,9 +828,9 @@
 - [Google I/O 2012 - Breaking the JavaScript Speed Limit with V8](https://www.youtube.com/watch?v=UJPdhx5zTaw) - How V8 optimizes JavaScript execution.
 - [Google I/O 2013 - Accelerating Oz with V8: Follow the Yellow Brick Road to JavaScript Performance](https://www.youtube.com/watch?v=VhpdsjBUS3g) - How to detect app bottlenecks and optimize performance with V8 knowledge.
 - [Node.js Internal Architecture | Ignition, Turbofan, Libuv](https://www.youtube.com/watch?v=OCjvhCFFPTw) - How Node.js works internally, with a focus on V8 and libuv.
-- [Introduction to libuv: What’s a Unicorn Velociraptor?](https://www.youtube.com/watch?v=_c51fcXRLGw) - `libuv` architecture, thread pool, and event loop, with its source code.
-- [libuv Cross platform asynchronous i/o](https://www.youtube.com/watch?v=kCJ3PFU8Ke8) - `libuv` architecture in detail, such as where it’s actually using threads.
-- [You Don’t Know Node - ForwardJS San Francisco](https://www.youtube.com/watch?v=oPo4EQmkjvY) - Explaining Node.js internals with quizzes about V8, libuv, event loop, module, stream, and cluster.
+- [Introduction to libuv: What's a Unicorn Velociraptor?](https://www.youtube.com/watch?v=_c51fcXRLGw) - `libuv` architecture, thread pool, and event loop, with its source code.
+- [libuv Cross platform asynchronous i/o](https://www.youtube.com/watch?v=kCJ3PFU8Ke8) - `libuv` architecture in detail, such as where it's actually using threads.
+- [You Don't Know Node - ForwardJS San Francisco](https://www.youtube.com/watch?v=oPo4EQmkjvY) - Explaining Node.js internals with quizzes about V8, libuv, event loop, module, stream, and cluster.
 
 ### Books
 
@@ -840,7 +840,7 @@
 - [Node.js 8 the Right Way](https://pragprog.com/book/jwnode2/node-js-8-the-right-way)
 - [Professional Node.js: Building JavaScript Based Scalable Software](http://www.amazon.com/Professional-Node-js-Building-Javascript-Scalable-ebook/dp/B009L7QETY/)
 - [Practical Node.js: Building Real-World Scalable Web Apps](http://practicalnodebook.com)
-- [Mixu’s Node book](http://book.mixu.net/node/)
+- [Mixu's Node book](http://book.mixu.net/node/)
 - [Pro Express.js](http://proexpressjs.com)
 - [Secure Your Node.js Web Application](http://www.amazon.com/Secure-Your-Node-js-Web-Application/dp/1680500856)
 - [Express in Action](https://www.manning.com/books/express-in-action)
@@ -870,7 +870,7 @@
 ### Tools
 
 - [OctoLinker](https://chrome.google.com/webstore/detail/octolinker/jlmafbaeoofdegohdhinkhilhclaklkp) - Chrome extension that linkifies dependencies in package.json, .js, .jsx, .coffee and .md files on GitHub.
-- [npm-hub](https://chrome.google.com/webstore/detail/npm-hub/kbbbjimdjbjclaebffknlabpogocablj) - Chrome extension to display npm dependencies at the bottom of a repo’s readme.
+- [npm-hub](https://chrome.google.com/webstore/detail/npm-hub/kbbbjimdjbjclaebffknlabpogocablj) - Chrome extension to display npm dependencies at the bottom of a repo's readme.
 - [RunKit](http://blog.tonicdev.com/2015/09/30/embedded-tonic.html) - Embed a Node.js environment on any website.
 - [github-npm-stats](https://chrome.google.com/webstore/detail/github-npm-stats/oomfflokggoffaiagenekchfnpighcef) - Chrome extension that displays npm download stats on GitHub.
 - [npm semver calculator](https://semver.npmjs.com) - Visually explore what versions of a package a semver range matches.
@@ -901,6 +901,14 @@
 - [awesome-npm](https://github.com/sindresorhus/awesome-npm) - Resources and tips for using npm.
 - [awesome-cross-platform-nodejs](https://github.com/bcoe/awesome-cross-platform-nodejs) - Resources for writing and testing cross-platform code.
 
+---
+
+---
+
+---
+
+---
+
 ## Articles
 
 - [One-line node modules](https://github.com/sindresorhus/ama/issues/10)
@@ -912,7 +920,7 @@
 - [In Defense of Hyper Modular JavaScript](https://medium.freecodecamp.com/in-defense-of-hyper-modular-javascript-33934c79e113)
 - [Tiny npm package: Guidelines to create a Node.js module following the small package philosophy](http://g14n.info/2015/12/tiny-npm-package/)
 - [The cost of small modules](https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/)
-- [Why I think “micro-packages” are a good thing.](http://codetunnel.io/why-i-think-micro-packages-are-a-good-thing/)
+- [Why I think "micro-packages" are a good thing.](http://codetunnel.io/why-i-think-micro-packages-are-a-good-thing/)
 
 ## Modules
 
@@ -952,7 +960,7 @@
 - [rtrim](https://github.com/sergejmueller/rtrim) - Strip whitespace - or other characters - from the end of a string.
 - [slice.js](https://github.com/hustcc/slice.js) - Javascript library to enhance String.substring / Array.slice with python slice style.
 - [strip-ansi](https://github.com/chalk/strip-ansi) - Strip ANSI escape codes.
-- [striptags](https://github.com/ericnorris/striptags) - An implementation of PHP’s strip_tags in Node.js.
+- [striptags](https://github.com/ericnorris/striptags) - An implementation of PHP's strip_tags in Node.js.
 - [parse-next-json-value](https://github.com/ErikOnBike/parse-next-json-value) - Parse next JSON value from string allowing extraneous characters after value.
 - [pluralize](https://github.com/DaniAkash/pluralizer) - A very tiny library to pluralize words
 
@@ -962,21 +970,21 @@
 - [hirestime](https://github.com/seriousManual/hirestime) - A wrapper around the built-in high resolution timer which simplifies the calculation of timestamps.
 - [periods](https://github.com/timruffles/periods) - Defined time-periods constants for Javascript, in milliseconds.
 - [fecha](https://github.com/taylorhakes/fecha) - Javascript Date formatting and parsing.
-- [akamai-time-reference](https://github.com/jucrouzet/akamai-time-reference) - Get reference time using Akamai’s time reference service.
+- [akamai-time-reference](https://github.com/jucrouzet/akamai-time-reference) - Get reference time using Akamai's time reference service.
 - [timeago.js](https://github.com/hustcc/timeago.js) - A tiny(~1.7kb) library used to format date with `*** time ago` statement.
 - [count-days-in-month](https://github.com/shinnn/count-days-in-month) - Get the number of days in a given month.
 - [time-stamp](https://github.com/jonschlinkert/time-stamp) - Get a formatted timestamp.
-- [twas](https://github.com/vutran/twas) - Generate a relative time string (Example: “3 seconds ago”)
+- [twas](https://github.com/vutran/twas) - Generate a relative time string (Example: "3 seconds ago")
 
 ### Object
 
 - [map-obj](https://github.com/sindresorhus/map-obj) - Map object keys and values into a new object.
 - [filter-obj](https://github.com/sindresorhus/filter-obj) - Filter object keys and values into a new object.
 - [object-values](https://github.com/sindresorhus/object-values) - Get the values of an object.
-- [object-pairs](https://github.com/eush77/object-pairs) - Turn an object into list of \[key, value\] pairs for mapping, iterating or other purposes.
+- [object-pairs](https://github.com/eush77/object-pairs) - Turn an object into list of [key, value] pairs for mapping, iterating or other purposes.
 - [zipmap](https://github.com/landau/zipmap) - Returns a map with the keys mapped to the corresponding vals. zipmap also accepts a single value of objects or pairs.
 - [just-pluck](https://github.com/jarofghosts/just-pluck) - Pluck without the madness.
-- [deep-equal](https://github.com/substack/node-deep-equal) - Node’s assert.deepEqual() algorithm as a standalone module.
+- [deep-equal](https://github.com/substack/node-deep-equal) - Node's assert.deepEqual() algorithm as a standalone module.
 - [deep-assign](https://github.com/sindresorhus/deep-assign) - Recursive Object.assign().
 - [set-value](https://github.com/jonschlinkert/set-value) - Create nested values and any intermediaries dot notation (`'a.b.c'`) paths.
 - [get-value](https://github.com/jonschlinkert/get-value) - Use property paths (a.b.c) to get a nested value from an object.
@@ -1052,7 +1060,7 @@
 - [image-promise](https://github.com/bfred-it/image-promise) - Load one or more `<img>`s in a Promise.
 - [get-media-size](https://github.com/bfred-it/get-media-size) - Get the original size of any `img`/`video`/`svg`/`canvas` tags or canvas context.
 - [document-ready](https://github.com/bendrucker/document-ready) - Document ready listener for modern browsers.
-- [copee](https://github.com/styfle/copee) - Copy text from browser to clipboard…natively!
+- [copee](https://github.com/styfle/copee) - Copy text from browser to clipboard...natively!
 
 ### Semver
 
@@ -1067,7 +1075,7 @@
 - [username](https://github.com/sindresorhus/username) - Get the username of the current user.
 - [minimist](https://github.com/substack/minimist) - Parse argument options.
 - [png-to-ico](https://github.com/steambap/png-to-ico) - Convert png to windows ico format.
-- [help-version](https://github.com/eush77/help-version) - Easily handle –help and –version arguments in your CLI application
+- [help-version](https://github.com/eush77/help-version) - Easily handle --help and --version arguments in your CLI application
 
 ### Module management
 
@@ -1082,7 +1090,7 @@
 
 - [uuid](https://github.com/kelektiv/node-uuid) - Generate RFC-compliant UUIDs in JavaScript.
 - [node-mime](https://github.com/broofa/node-mime) - Comprehensive MIME type mapping API based on mime-db module.
-- [not-defined](https://github.com/fibo/not-defined) - Checks if foo is not defined, i.e. undefined, null, an empty string, array or object.
+- [not-defined](https://github.com/fibo/not-defined) - Checks if foo is not defined, i.e. undefined, null, an empty string, array or object.
 - [is-fqdn](https://github.com/parro-it/is-fqdn) - Check if a string represent a fully qualified domain name.
 - [shurley](https://github.com/BrunoBernardino/shurley) - Parses URLs from user input (with potential typos in protocols, bad copy+paste, etc.) and returns a proper URL.
 - [mime-type-check](https://github.com/RocktimSaikia/mime-type-check) - Get the MIME type of a file by its extension.
@@ -1096,13 +1104,18 @@ This section contains awesome lists that you may find useful if you use or write
 
 ## Small modules rockstars to follow
 
-These people are used to develop awesome NPM modules that follows the single responsibility philosophy. Follow them to discover new great modules:
+These people are used to develop awesome NPM modules that follows the single responsibility philosophy.
+Follow them to discover new great modules:
 
-<table style="width:96%;"><colgroup><col style="width: 16%" /><col style="width: 16%" /><col style="width: 16%" /><col style="width: 16%" /><col style="width: 16%" /><col style="width: 16%" /></colgroup><thead><tr class="header"><th><a href="https://github.com/sindresorhus"><img src="https://avatars.githubusercontent.com/u/170270?s=130" alt="Sindre Sorhus" /></a></th><th><a href="https://github.com/substack"><img src="https://avatars1.githubusercontent.com/u/12631?s=130" alt="James Halliday" /></a></th><th><a href="https://github.com/eush77"><img src="https://avatars3.githubusercontent.com/u/4472489?s=130" alt="Eugene Sharygin" /></a></th><th><a href="https://github.com/isaacs"><img src="https://avatars3.githubusercontent.com/u/9287?s=130" alt="Isaac Z. Schlueter" /></a></th><th><a href="https://github.com/jonschlinkert"><img src="https://avatars1.githubusercontent.com/u/383994?s=130" alt="Jon Schlinkert" /></a></th><th><a href="https://github.com/dominictarr"><img src="https://avatars3.githubusercontent.com/u/259374?s=130" alt="Dominic Tarr" /></a></th></tr></thead><tbody><tr class="odd"><td><a href="https://github.com/sindresorhus">Sindre Sorhus</a></td><td><a href="https://github.com/substack">James Halliday</a></td><td><a href="https://github.com/eush77">Eugene Sharygin</a></td><td><a href="https://github.com/isaacs">Isaac Z. Schlueter</a></td><td><a href="https://github.com/jonschlinkert">Jon Schlinkert</a></td><td><a href="https://github.com/dominictarr">Dominic Tarr</a></td></tr></tbody></table>
+| [![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](https://github.com/sindresorhus) | [![James Halliday](https://avatars1.githubusercontent.com/u/12631?s=130)](https://github.com/substack) | [![Eugene Sharygin](https://avatars3.githubusercontent.com/u/4472489?s=130)](https://github.com/eush77) | [![Isaac Z. Schlueter](https://avatars3.githubusercontent.com/u/9287?s=130)](https://github.com/isaacs) | [![Jon Schlinkert](https://avatars1.githubusercontent.com/u/383994?s=130)](https://github.com/jonschlinkert) | [![Dominic Tarr](https://avatars3.githubusercontent.com/u/259374?s=130)](https://github.com/dominictarr) |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| [Sindre Sorhus](https://github.com/sindresorhus)                                                          | [James Halliday](https://github.com/substack)                                                          | [Eugene Sharygin](https://github.com/eush77)                                                            | [Isaac Z. Schlueter](https://github.com/isaacs)                                                         | [Jon Schlinkert](https://github.com/jonschlinkert)                                                           | [Dominic Tarr](https://github.com/dominictarr)                                                           |
 
-<table><thead><tr class="header"><th><a href="https://github.com/rvagg"><img src="https://avatars0.githubusercontent.com/u/495647?s=130" alt="Rod Vagg" /></a></th><th><a href="https://github.com/maxogden"><img src="https://avatars3.githubusercontent.com/u/39759?s=130" alt="Max Ogden" /></a></th><th><a href="https://github.com/doowb"><img src="https://avatars1.githubusercontent.com/u/995160?s=130" alt="Brian Woodward" /></a></th></tr></thead><tbody><tr class="odd"><td><a href="https://github.com/rvagg">Rod Vagg</a></td><td><a href="https://github.com/maxogden">Max Ogden</a></td><td><a href="https://github.com/doowb">Brian Woodward</a></td></tr></tbody></table>
+| [![Rod Vagg](https://avatars0.githubusercontent.com/u/495647?s=130)](https://github.com/rvagg) | [![Max Ogden](https://avatars3.githubusercontent.com/u/39759?s=130)](https://github.com/maxogden) | [![Brian Woodward](https://avatars1.githubusercontent.com/u/995160?s=130)](https://github.com/doowb) |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [Rod Vagg](https://github.com/rvagg)                                                           | [Max Ogden](https://github.com/maxogden)                                                          | [Brian Woodward](https://github.com/doowb)                                                           |
 
-## —Contents
+## ---Contents
 
 - [Articles](https://project-awesome.org/sindresorhus/awesome-npm#articles)
 - [Tools](https://project-awesome.org/sindresorhus/awesome-npm#tools)
@@ -1183,7 +1196,7 @@ These people are used to develop awesome NPM modules that follows the single res
 - [npm-user](https://github.com/sindresorhus/npm-user) - Get user info of an npm user.
 - [npm-email](https://github.com/sindresorhus/npm-email) - Get the email of an npm user.
 - [npm-user-packages](https://github.com/kevva/npm-user-packages-cli) - Get packages by an npm user.
-- [dpn](https://github.com/gillstrom/dpn) - Get the dependents of a user’s npm packages.
+- [dpn](https://github.com/gillstrom/dpn) - Get the dependents of a user's npm packages.
 - [npm-stats](https://github.com/hughsk/npm-stats) - Get data from an npm registry.
 - [npm-cli-login](https://github.com/postmanlabs/npm-cli-login) - Log in to npm.
 - [nrm](https://github.com/Pana/nrm) - Registry manager.
@@ -1211,7 +1224,7 @@ These people are used to develop awesome NPM modules that follows the single res
 - [engine-deps](https://github.com/samccone/engine-deps) - Manage Node.js version specific dependencies with ease.
 - [enpeem-search](https://github.com/amovah/enpeem-search) - Search packages by scraping the npm web search.
 - [npm-issues](https://github.com/seanzarrin/npm-issues) - Search known issues of all your packages at once.
-- [john](https://github.com/davej/john) - Make npm3’s flat dependencies easier to find and sort.
+- [john](https://github.com/davej/john) - Make npm3's flat dependencies easier to find and sort.
 - [ntl](https://github.com/ruyadorno/ntl) - Interactive CLI menu to list & run npm tasks.
 - [decheck](https://github.com/egoist/decheck) - Explore dependencies of npm packages in the command-line.
 - [shrinkpack](https://github.com/JamieMason/shrinkpack) - Lock down your dependencies and install offline.
@@ -1235,7 +1248,10 @@ These people are used to develop awesome NPM modules that follows the single res
 
 ### Update to the latest npm version
 
-    $ npm install --global npm
+```
+$ npm install --global npm
+
+```
 
 _[Windows users, read more.](https://github.com/felixrieseberg/npm-windows-upgrade)_
 
@@ -1255,63 +1271,84 @@ Speed up your common npm tasks.
 
 In your `.zshrc`/`.bashrc`:
 
-    alias ni='npm install'
-    alias nid='npm install --save-dev'
-    alias nig='npm install --global'
-    alias nt='npm test'
-    alias nit='npm install && npm test'
-    alias nk='npm link'
-    alias nr='npm run'
-    alias ns='npm start'
-    alias nf='npm cache clean && rm -rf node_modules && npm install'
-    alias nlg='npm list --global --depth=0'
+```
+alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nig='npm install --global'
+alias nt='npm test'
+alias nit='npm install && npm test'
+alias nk='npm link'
+alias nr='npm run'
+alias ns='npm start'
+alias nf='npm cache clean && rm -rf node_modules && npm install'
+alias nlg='npm list --global --depth=0'
 
-### Don’t add to package.json when installing
+```
+
+### Don't add to package.json when installing
 
 By default npm adds packages you install to the `dependencies` field in package.json (since v5). You can prevent this by specifying the `--no-save` flag. You can add a package to `devDependencies` with `--save-dev`/`-D`:
 
-    $ npm install --save-dev ava
+```
+$ npm install --save-dev ava
+
+```
 
 ### Run scripts
 
 You can easily [run scripts](https://docs.npmjs.com/cli/run-script) using npm by adding them to the `"scripts"` field in package.json and run them with `npm run <script-name>`. Run `npm run` to see available scripts. Binaries of locally install packages are made available in the [PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>), so you can run them by name.
 
-    {
-        "name": "awesome-package",
-        "scripts": {
-            "cat": "cat-names"
-        },
-        "dependencies": {
-            "cat-names": "^1.0.0"
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"scripts": {
+		"cat": "cat-names"
+	},
+	"dependencies": {
+		"cat-names": "^1.0.0"
+	}
+}
 
-    $ npm run cat
-    Max
+```
+
+```
+$ npm run cat
+Max
+
+```
 
 All package.json properties are [exposed](https://docs.npmjs.com/misc/scripts#packagejson-vars) as environment variables:
 
-    {
-        "name": "awesome-package",
-        "scripts": {
-            "name": "echo $npm_package_name"
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"scripts": {
+		"name": "echo $npm_package_name"
+	}
+}
 
-    $ npm run name
-    awesome-package
+```
+
+```
+$ npm run name
+awesome-package
+
+```
 
 #### Passing options to commands
 
 You can pass options to the command you are using in your npm script by adding `-- --flag` like in the example below. The `--` [marks the end of options parsing](https://unix.stackexchange.com/questions/11376/what-does-double-dash-mean-also-known-as-bare-double-dash), so `npm run` will just ignore it and pass it to the command.
 
-    {
-        "name": "awesome-package",
-        "scripts": {
-            "xo": "xo",
-            "xo:fix": "npm run xo -- --fix",
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"scripts": {
+		"xo": "xo",
+		"xo:fix": "npm run xo -- --fix",
+	}
+}
+
+```
 
 _Adding the `-- --fix` option is like executing `xo --fix`_.
 
@@ -1321,13 +1358,16 @@ _Adding the `-- --fix` option is like executing `xo --fix`_.
 
 Imagine you have a setup for linting your JavaScript files like the following:
 
-    {
-        "name": "awesome-package",
-        "scripts": {
-            "xo": "xo",
-            "xo:fix": "npm run xo --silent -- --fix",
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"scripts": {
+		"xo": "xo",
+		"xo:fix": "npm run xo --silent -- --fix",
+	}
+}
+
+```
 
 _Using the `--silent` option reduces the output in the terminal. See [this comparison](https://twitter.com/mkuehnel/status/957965749473210369)._
 
@@ -1335,15 +1375,18 @@ _Using the `--silent` option reduces the output in the terminal. See [this co
 
 npm comes with predefined [lifecyle scripts](https://docs.npmjs.com/misc/scripts) which are excuted under specific conditions if they are defined in your package.json.
 
-    {
-        "name": "awesome-package",
-        "scripts": {
-            "prepublishOnly": "nsp check"
-        },
-        "devDependencies": {
-            "nsp": "^3.0.0"
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"scripts": {
+		"prepublishOnly": "nsp check"
+	},
+	"devDependencies": {
+		"nsp": "^3.0.0"
+	}
+}
+
+```
 
 This will be executed automatically before your npm package is published to the registry via `npm publish` to check for known vulnerabilties in your dependencies.
 
@@ -1353,81 +1396,108 @@ _Note: prepublishOnly is available since npm v4.0.0. See [npm docs](https://d
 
 `npm start` and `npm test` are also lifecycle scripts but are not executed automatically.
 
-    {
-        "name": "awesome-package",
-        "scripts": {
-            "start": "node server.js",
-            "test": "ava"
-        },
-        "devDependencies": {
-            "ava": "^1.0.0"
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"scripts": {
+		"start": "node server.js",
+		"test": "ava"
+	},
+	"devDependencies": {
+		"ava": "^1.0.0"
+	}
+}
+
+```
 
 Therefore they can be executed simply with:
 
-    $ npm test
-    $ npm start
+```
+$ npm test
+$ npm start
+
+```
 
 #### `pre` and `post` scripts
 
 These are special lifecycle scripts which can be used to run scripts automatically in sequence.
 
-    {
-        "name": "awesome-package",
-        "scripts": {
-            "pretest": "eslint .",
-            "test": "ava"
-        },
-        "devDependencies": {
-            "eslint": "^4.19.0",
-            "ava": "^1.0.0"
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"scripts": {
+		"pretest": "eslint .",
+		"test": "ava"
+	},
+	"devDependencies": {
+		"eslint": "^4.19.0",
+		"ava": "^1.0.0"
+	}
+}
 
-    $ npm test
+```
 
-This will lint your files before running your tests. The tests will not run if linting fails. Or more generally spoken: the following script won’t be executed if one of the scripts running in sequence exits with an exit code other than 0.
+```
+$ npm test
+
+```
+
+This will lint your files before running your tests. The tests will not run if linting fails. Or more generally spoken: the following script won't be executed if one of the scripts running in sequence exits with an exit code other than 0.
 
 _Note: `pre` and `post` scripts can also be used for your custom npm scripts. So `npm run foo` will also run `prefoo` and `postfoo` if defined._
 
 ### Run script with `npx`
 
-`npm` [comes bundled](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) with `npx` (Since v5.2.0) — a tool to execute package binaries. Each command is executed either from the local `node_modules/.bin` directory, or from a central cache, installing any packages needed in order for `<command>` to run.
+`npm` [comes bundled](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) with `npx` (Since v5.2.0) --- a tool to execute package binaries. Each command is executed either from the local `node_modules/.bin` directory, or from a central cache, installing any packages needed in order for `<command>` to run.
 
-    {
-        "name": "awesome-package",
-        "dependencies": {
-            "cat-names": "^1.0.0"
-        }
-    }
+```
+{
+	"name": "awesome-package",
+	"dependencies": {
+		"cat-names": "^1.0.0"
+	}
+}
+
+```
 
 If the binary is already installed, it will be executed from `node_modules/.bin`.
 
-    $ npx cat-names
-    Max
+```
+$ npx cat-names
+Max
+
+```
 
 But if the binary is missing, it will be installed first.
 
-    $ npx dog-names
-    npx: installed 46 in 3.136s
-    Bentley
+```
+$ npx dog-names
+npx: installed 46 in 3.136s
+Bentley
+
+```
 
 ### Run commands with different Node.js versions
 
 With `npx` (Comes bundled with npm v5.2.0 or newer) and the [`node-bin`](https://www.npmjs.com/package/node-bin) package, you can easily try out code in different Node.js versions without having to use a version manager like [`nvm`](http://nvm.sh/), [`nave`](https://github.com/isaacs/nave), or [`n`](https://github.com/tj/n).
 
-    $ npx --package=node-bin@6.11.0 -- node --version
-    v6.11.0
+```
+$ npx --package=node-bin@6.11.0 -- node --version
+v6.11.0
+
+```
 
 ### Link local packages
 
 Sometimes it can be useful to have a local version of a package as a dependency. You can use `npm link` to link one local package into another. Run `npm link` in the package you want to use. This creates a global reference. Then go into your original package and run `npm link <package-name>` to link in the other package.
 
-    $ cd rainbow
-    $ npm link
-    $ cd ../unicorn
-    $ npm link rainbow
+```
+$ cd rainbow
+$ npm link
+$ cd ../unicorn
+$ npm link rainbow
+
+```
 
 You can now use `rainbow` as a dependency in the `unicorn` package.
 
@@ -1435,56 +1505,80 @@ You can now use `rainbow` as a dependency in the `unicorn` package.
 
 npm supports using a shorthand for installing a package directly from a GitHub repo:
 
-    $ npm install sindresorhus/chalk
+```
+$ npm install sindresorhus/chalk
 
-Let’s target a specific commit as the main branch is a moving target:
+```
 
-    $ npm install 'sindresorhus/chalk#51b8f32'
+Let's target a specific commit as the main branch is a moving target:
+
+```
+$ npm install 'sindresorhus/chalk#51b8f32'
+
+```
 
 Specify either a commit SHA, branch, tag, or nothing.
 
 You can also install Git dependencies with semver: *(Requires npm v5 or newer)*
 
-    $ npm install 'sindresorhus/chalk#semver:^2.0.0'
+```
+$ npm install 'sindresorhus/chalk#semver:^2.0.0'
+
+```
 
 ### Install a specific version of a package
 
-    $ npm install chalk@1.0.0
+```
+$ npm install chalk@1.0.0
+
+```
 
 ### List top-level installed packages and their version
 
-    $ npm ls --depth=0
+```
+$ npm ls --depth=0
+
+```
 
 ### Command help
 
 Get help docs for a command:
 
-    $ npm help <command>
+```
+$ npm help <command>
+
+```
 
 Example:
 
-    $ npm help install
+```
+$ npm help install
+
+```
 
 ### Standalone version of a package
 
 Quickly get a standalone version of a package that is browserified and usable in the browser.
 
-    https://wzrd.in/standalone/<package-name>[@<version>]
+```
+https://wzrd.in/standalone/<package-name>[@<version>]
+
+```
 
 Examples:
 
-- <a href="https://wzrd.in/standalone/object-assign" class="uri">https://wzrd.in/standalone/object-assign</a>
-- <a href="https://wzrd.in/standalone/object-assign@4.0.0" class="uri">https://wzrd.in/standalone/object-assign@4.0.0</a>
+- <https://wzrd.in/standalone/object-assign>
+- <https://wzrd.in/standalone/object-assign@4.0.0>
 
 Great for prototyping, but download the file or use Browserify yourself for production.
 
 ## FAQ
 
-- [Check in node_modules vs. shrinkwrap](https://stackoverflow.com/questions/11459733/check-in-node-modules-vs-shrinkwrap)
+- [Check in node_modules vs. shrinkwrap](https://stackoverflow.com/questions/11459733/check-in-node-modules-vs-shrinkwrap)
 - [What is the difference between Bower and npm?](https://stackoverflow.com/questions/18641899/what-is-the-difference-between-bower-and-npm)
 - [What does `^` mean in package.json versioning?](https://stackoverflow.com/questions/22137778/what-does-mean-in-package-json-versioning)
 - [Find the version of an installed npm package](https://stackoverflow.com/questions/10972176/find-the-version-of-an-installed-npm-package)
-- [What’s the difference between dependencies, devDependencies, and peerDependencies in package.json?](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies)
+- [What's the difference between dependencies, devDependencies, and peerDependencies in package.json?](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies)
 
 ## Community
 

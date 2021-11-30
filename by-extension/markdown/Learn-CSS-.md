@@ -13,7 +13,7 @@ CSS Selectors
 - <span id="9826">`Class Selectors` : Matches by class name.</span>
 - <span id="10a7">`ID Selectors` : Matches by ID name.</span>
 - <span id="64c0">`Universal Selectors` : Selects all HTML elements on a page.</span>
-- <span id="9c6b">`Attribute Selectors` : Matches elements based on the prescence or value of a given attribute. (i.e. a\[title\] will match all a elements with a title attribute)</span>
+- <span id="9c6b">`Attribute Selectors` : Matches elements based on the prescence or value of a given attribute. (i.e. a\[title\] will match all a elements with a title attribute)</span>
 
 <!-- -->
 
@@ -136,7 +136,21 @@ Who has the most tags? If no one, continue.
 
 Last Read in the browser wins.
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*Ub47AaMXuT1m8_T-" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*t0oXzsLPxpMwNbKo.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*2xr0vyHwf6UN905l" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*oq83hQ5qvtT6gDd9.png" class="graf-image" /></figure><div class="box yellow"></div>
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*Ub47AaMXuT1m8_T-" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*t0oXzsLPxpMwNbKo.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*2xr0vyHwf6UN905l" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*oq83hQ5qvtT6gDd9.png" class="graf-image" /></figure><style>
+      .box {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+        border: 1px solid purple;
+      }
+    </style>
+    <div class="box yellow"></div>
     <div class="box orange"></div>
 
 - <span id="1939">Coming back to our example where all the CSS Rules have tied, the last step 4 wins out so our element will have a `purple border`.</span>
@@ -151,7 +165,7 @@ Last Read in the browser wins.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*ssVcT1Bd9Edfo6KF" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*WmqUyKiumM8RCJQo.png" class="graf-image" /></figure>-   <span id="daba">Remember that not all computers have the same fonts on them.</span>
 -   <span id="0aa8">You can import web fonts via an api by using</span>
--   <span id="0c5d">`@import             url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap');` and pasting it st the top of your CSS file.</span>
+-   <span id="0c5d">`@import                     url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap');` and pasting it st the top of your CSS file.</span>
 -   <span id="d8ff">And then reference it in your font-family.</span>
 -   <span id="ee9f">`font-size` : Changes the size of your font.</span>
 -   <span id="782e">Keep in mind the two kind of units CSS uses:</span>
@@ -182,7 +196,7 @@ Last Read in the browser wins.
 
 **Borders**
 
-- <span id="d922">Borders take three values: The width of the border, the style (i.e. solid, dotted, dashed), color of the border.</span>
+- <span id="d922">Borders take three values: The width of the border, the style (i.e. solid, dotted, dashed), color of the border.</span>
 
 **Shadows**
 
