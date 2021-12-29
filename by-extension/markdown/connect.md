@@ -2,7 +2,7 @@
 
 We now recommend using [the React-Redux hooks API as the default](../api/hooks.md). However, the `connect` API still works fine.
 
-This tutorial also shows some older practices we no longer recommend, like separating Redux logic into folders by type. We’ve kept this tutorial as-is for completeness, but recommend reading through [the “Redux Essentials” tutorial](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) and the [Redux Style Guide](https://redux.js.org/style-guide/style-guide) in the Redux docs for our current best practices.
+This tutorial also shows some older practices we no longer recommend, like separating Redux logic into folders by type. We’ve kept this tutorial as-is for completeness, but recommend reading through [the “Redux Essentials " tutorial](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) and the [Redux Style Guide](https://redux.js.org/style-guide/style-guide) in the Redux docs for our current best practices.
 
 We’re working on a new tutorial that will introduce the hooks APIs. Until then, we suggest reading [**Redux Fundamentals, Part 5: UI and React**](https://redux.js.org/tutorials/fundamentals/part-5-ui-react) for a hooks tutorial.
 
@@ -21,9 +21,9 @@ To see how to use React Redux in practice, we’ll show a step-by-step example b
 We have implemented our React UI components as follows:
 
 - `TodoApp` is the entry component for our app. It renders the header, the `AddTodo`, `TodoList`, and `VisibilityFilters` components.
-- `AddTodo` is the component that allows a user to input a todo item and add to the list upon clicking its “Add Todo” button:
+- `AddTodo` is the component that allows a user to input a todo item and add to the list upon clicking its “Add Todo " button:
   - It uses a controlled input that sets state upon `onChange`.
-  - When the user clicks on the “Add Todo” button, it dispatches the action (that we will provide using React Redux) to add the todo to the store.
+  - When the user clicks on the “Add Todo " button, it dispatches the action (that we will provide using React Redux) to add the todo to the store.
 - `TodoList` is the component that renders the list of todos:
   - It renders the filtered list of todos when one of the `VisibilityFilters` is selected.
 - `Todo` is the component that renders a single todo item:
@@ -97,7 +97,7 @@ The `connect` function takes two arguments, both optional:
 
 - `mapDispatchToProps`: this parameter can either be a function, or an object.
   - If it’s a function, it will be called once on component creation. It will receive `dispatch` as an argument, and should return an object full of functions that use `dispatch` to dispatch actions.
-  - If it’s an object full of action creators, each action creator will be turned into a prop function that automatically dispatches its action when called. **Note**: We recommend using this “object shorthand” form.
+  - If it’s an object full of action creators, each action creator will be turned into a prop function that automatically dispatches its action when called. **Note**: We recommend using this “object shorthand " form.
 
 Normally, you’ll call `connect` in this way:
 
@@ -244,7 +244,7 @@ Luckily we have a selector that does exactly this. We may simply import the sele
 
     export default connect(state => ({ todos: getTodos(state) }))(TodoList);
 
-We recommend encapsulating any complex lookups or computations of data in selector functions. In addition, you can further optimize the performance by using [Reselect](https://github.com/reduxjs/reselect) to write “memoized” selectors that can skip unnecessary work. (See [the Redux docs page on Computing Derived Data](https://redux.js.org/recipes/computing-derived-data#sharing-selectors-across-multiple-components) and the blog post [Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance](https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/) for more information on why and how to use selector functions.)
+We recommend encapsulating any complex lookups or computations of data in selector functions. In addition, you can further optimize the performance by using [Reselect](https://github.com/reduxjs/reselect) to write “memoized " selectors that can skip unnecessary work. (See [the Redux docs page on Computing Derived Data](https://redux.js.org/recipes/computing-derived-data#sharing-selectors-across-multiple-components) and the blog post [Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance](https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/) for more information on why and how to use selector functions.)
 
 Now that our `<TodoList />` is connected to the store. It should receive the list of todos, map over them, and pass each todo to the `<Todo />` component. `<Todo />` will in turn render them to the screen. Now try adding a todo. It should come up on our todo list!
 

@@ -40,9 +40,13 @@
 
 ### Official Actions
 
+<!--lint disable no-dead-urls-->
+
 #### Workflow Tool Actions
 
 Tool actions for your workflow.
+
+<!--lint ignore awesome-spell-check-->
 
 - [actions/checkout](https://github.com/actions/checkout) - Setup your repository on your workflow.
 - [actions/upload-artifact](https://github.com/actions/upload-artifact) - Upload artifacts from your workflow.
@@ -111,7 +115,7 @@ Set up your GitHub Actions workflow with a specific version of your programming 
 - [Add Label to your Pull Requests based on the author team name](https://github.com/JulienKode/team-labeler-action)
 - [Get a list of file changes with PR/Push](https://github.com/trilom/file-changes-action)
 - [Use private actions in any workflow](https://github.com/InVisionApp/private-action-loader)
-- [Label Your Issues Using the Issue’s Contents](https://github.com/damccorm/tag-ur-it)
+- [Label Your Issues Using the Issue's Contents](https://github.com/damccorm/tag-ur-it)
 - [Rollback a GitHub Release](https://github.com/author/action-rollback)
 - [Lock Closed Issues and Pull Requests after a Period of Inactivity](https://github.com/dessant/lock-threads)
 - [Get Commit Difference Count Between Two Branches](https://github.com/jessicalostinspace/commit-difference-action)
@@ -134,11 +138,11 @@ Set up your GitHub Actions workflow with a specific version of your programming 
 
 ### Collection of Actions
 
-- [Use HashiCorp’s Terraform](https://github.com/hashicorp/setup-terraform)
+- [Use HashiCorp's Terraform](https://github.com/hashicorp/setup-terraform)
 - [GitHub Actions for Yarn 1](https://github.com/Borales/actions-yarn)
 - [GitHub Actions for Yarn 2](https://github.com/sergioramos/yarn-actions)
 - [GitHub Actions for Golang](https://github.com/cedrickring/golang-action)
-- [GitHub Actions for R and accompanying \#rstats package](http://maxheld.de/ghactions/)
+- [GitHub Actions for R and accompanying #rstats package](http://maxheld.de/ghactions/)
 - [GitHub Actions for WordPress](https://github.com/10up/actions-wordpress/)
 - [GitHub Actions for Composer](https://github.com/MilesChou/composer-action)
 - [GitHub Actions for Flutter](https://github.com/subosito/flutter-action)
@@ -171,7 +175,7 @@ Set up your GitHub Actions workflow with a specific version of your programming 
 - [Generate build numbers across multiple scopes](https://github.com/zyborg/gh-action-buildnum)
 - [Publish GitHub release artifacts](https://github.com/skx/github-action-publish-binaries)
 - [Jekyll Diff Action](https://github.com/David-Byrne/jekyll-diff-action) - Diffs the built Jekyll site after a change, and comments the result back to GitHub.
-- [Branch Protection Bot](https://github.com/benjefferies/branch-protection-bot) - Temporarily disable and re-enable “Include administrators” option in branch protection.
+- [Branch Protection Bot](https://github.com/benjefferies/branch-protection-bot) - Temporarily disable and re-enable "Include administrators" option in branch protection.
 - [Wait for commit statuses](https://github.com/WyriHaximus/github-action-wait-for-status) - Wait until all statuses and checks are successful or any of them has failed and set its status output accordingly.
 - [Get Latest Tag](https://github.com/WyriHaximus/github-action-get-previous-tag) - Get the previous tag from git.
 - [Create Milestone](https://github.com/WyriHaximus/github-action-create-milestone) - Create a new open milestone given the title and description.
@@ -183,7 +187,7 @@ Set up your GitHub Actions workflow with a specific version of your programming 
 - [Build Slate documentation](https://github.com/Decathlon/slate-builder-action)
 - [Read Properties](https://github.com/christian-draeger/read-properties) - Read values from `.properties` files.
 - [Write Properties](https://github.com/christian-draeger/write-properties) - Write values to `.properties` files.
-- [Autotag](https://github.com/butlerlogic/action-autotag) - Automatically generate a new tag when the manifest file (i.e. `package.json`) version changes.
+- [Autotag](https://github.com/butlerlogic/action-autotag) - Automatically generate a new tag when the manifest file (i.e. `package.json`) version changes.
 - [Apply templates with Jinja2](https://github.com/cuchi/jinja2-action) - Use the Jinja2 template engine to generate files from templates.
 - [Has Changes](https://github.com/UnicornGlobal/has-changes-action) - Check if there are code changes from previous steps.
 - [Mind Your Language Action](https://github.com/tailaiw/mind-your-language-action) - Detect offensive comments in issues and pull requests, and warn senders.
@@ -196,12 +200,12 @@ Set up your GitHub Actions workflow with a specific version of your programming 
 - [Setup Xamarin](https://github.com/maxim-lobanov/setup-xamarin) - Switch between pre-installed versions of Xamarin and Mono for macOS images.
 - [Memer Action](https://github.com/Bhupesh-V/memer-action) - A GitHub Action for Programmer Memes xD.
 - [Setup Cocoapods](https://github.com/maxim-lobanov/setup-cocoapods) - Setup specific version of Cocoapods.
-- [Public IP](https://github.com/haythem/public-ip) - Queries GitHub actions runner’s public IP address.
+- [Public IP](https://github.com/haythem/public-ip) - Queries GitHub actions runner's public IP address.
 - [GitHub Actions for Lazarus/FPC](https://github.com/gcarreno/setup-lazarus)
 - [Twilio Fax](https://github.com/fabasoad/twilio-fax-action/) - Sends a document by fax using your Twilio account.
 - [Setup Kubernetes tools](https://github.com/yokawasa/action-setup-kube-tools) - Install Kubernetes tools (kubectl, kustomize, helm, kubeval, conftest, and yq) on the runner.
 - [Setup Elastic Cloud Control Tool](https://github.com/yokawasa/action-setup-ecctl) - Install a specific version of ecctl on the runner.
-- [PowerShell Script](https://github.com/Amadevus/pwsh-script) - Run PowerShell scripts with workflow contexts (e.g. `$github.token`) and cmdlets, return value =&gt; action output.
+- [PowerShell Script](https://github.com/Amadevus/pwsh-script) - Run PowerShell scripts with workflow contexts (e.g. `$github.token`) and cmdlets, return value => action output.
 - [Upload and Scan Files with VirusTotal](https://github.com/crazy-max/ghaction-virustotal)
 - [Import a GPG Key](https://github.com/crazy-max/ghaction-import-gpg)
 - [Compress with UPX](https://github.com/crazy-max/ghaction-upx) - The Ultimate Packer for eXecutables.
@@ -313,7 +317,7 @@ Set up your GitHub Actions workflow with a specific version of your programming 
 
 ### Monitoring
 
-- [Audit a webpage with Google Chrome’s Lighthouse tests](https://github.com/jakejarvis/lighthouse-action)
+- [Audit a webpage with Google Chrome's Lighthouse tests](https://github.com/jakejarvis/lighthouse-action)
 - [Runs Lighthouse and posts results to PRs and Slack](https://github.com/foo-software/lighthouse-check-action)
 - [Run Lighthouse in CI using GitHub Actions](https://github.com/treosh/lighthouse-ci-action)
 - [Continuous Benchmarking and Benchmark Visualization for Go](https://github.com/bobheadxi/gobenchdata)
@@ -435,7 +439,7 @@ Set up your GitHub Actions workflow with a specific version of your programming 
 
 - [Update a Docker Hub repository description from README.md](https://github.com/peter-evans/dockerhub-description)
 - [Publish Docker Images to the GitHub Package Registry (GPR)](https://github.com/machine-learning-apps/gpr-docker-publish)
-- [Update a repository’s “Full description” on Docker Hub](https://github.com/mpepping/github-actions/tree/master/docker-hub-metadata)
+- [Update a repository's "Full description" on Docker Hub](https://github.com/mpepping/github-actions/tree/master/docker-hub-metadata)
 - [Build and publish docker images to any registry using Kaniko](https://github.com/outillage/kaniko-action)
 - [Monitor and limit your docker image size](https://github.com/wemake-services/docker-image-size-limit)
 - [Publish Docker Images to the Amazon Elastic Container Registry (ECR)](https://github.com/appleboy/docker-ecr-action)

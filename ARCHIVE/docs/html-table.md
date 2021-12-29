@@ -10,11 +10,11 @@ Use this tool to generate an HTML table code for your website or blog. Its simpl
 
 <span class="underline"></span>
 
-Rows:   Columns:   Table Width:   (%) Background Color:   Text Color:   Header Color:   Row Highlight     Font:   Sans-Serif Trebuchet MS Arial Tahoma Verdana Calibri Monospace Century Gothic Theme:   Mint Grape Fire Imperial Denim
+Rows:   Columns:   Table Width:   (%) Background Color:   Text Color:   Header Color:   Row Highlight     Font:   Sans-Serif Trebuchet MS Arial Tahoma Verdana Calibri Monospace Century Gothic Theme:   Mint Grape Fire Imperial Denim
 
 #### Border
 
-Style: Solid Dashed Dotted Double Groove Ridge Inset Outset Width: px (pixels) Color:   Collapse
+Style: Solid Dashed Dotted Double Groove Ridge Inset Outset Width: px (pixels) Color:   Collapse
 
 #### Here's the sample table!
 

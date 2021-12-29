@@ -1,6 +1,6 @@
 # Hooks
 
-React’s new [“hooks” APIs](https://reactjs.org/docs/hooks-intro.html) give function components the ability to use local component state, execute side effects, and more. React also lets us write [custom hooks](https://reactjs.org/docs/hooks-custom.html), which let us extract reusable hooks to add our own behavior on top of React’s built-in hooks.
+React’s new [“hooks " APIs](https://reactjs.org/docs/hooks-intro.html) give function components the ability to use local component state, execute side effects, and more. React also lets us write [custom hooks](https://reactjs.org/docs/hooks-custom.html), which let us extract reusable hooks to add our own behavior on top of React’s built-in hooks.
 
 React Redux includes its own custom hook APIs, which allow your React components to subscribe to the Redux store and dispatch actions.
 

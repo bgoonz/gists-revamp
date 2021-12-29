@@ -84,7 +84,7 @@ Basic:
 - <span id="680b">{3,} 3 or more</span>
 - <span id="0ebe">{2,5} 2, 3, 4 or 5</span>
 
-### Groups and Ranges
+### Groups and Ranges
 
 ###
 
@@ -94,8 +94,8 @@ Basic:
 - <span id="d4df">(?:…) Passive (non-capturing) group</span>
 - <span id="0100">\[abc\] Single character (a or b or c)</span>
 - <span id="ab55">\[^abc\] Single character (not a or b or c)</span>
-- <span id="e77c">\[a-q\] Single character range (a or b … or q)</span>
-- <span id="23aa">\[A-Z\] Single character range (A or B … or Z)</span>
+- <span id="e77c">\[a-q\] Single character range (a or b … or q)</span>
+- <span id="23aa">\[A-Z\] Single character range (A or B … or Z)</span>
 - <span id="a250">\[0–9\] Single digit from 0 to 9</span>
 
 ### Assertions
@@ -103,7 +103,7 @@ Basic:
 - <span id="a14a">?= Lookahead assertion</span>
 - <span id="003e">?! Negative lookahead</span>
 - <span id="21b4">?&lt;= Lookbehind assertion</span>
-- <span id="ce65">?!= / ?&lt;! Negative lookbehind</span>
+- <span id="ce65">?!= / ?&lt;! Negative lookbehind</span>
 - <span id="cad3">?&gt; Once-only Subexpression</span>
 - <span id="db25">?() Condition \[if then\]</span>
 - <span id="f677">?()| Condition \[if then else\]</span>

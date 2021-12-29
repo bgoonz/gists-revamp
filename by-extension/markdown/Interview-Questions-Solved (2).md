@@ -1268,7 +1268,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Fizz Buzz** - Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
+### **Fizz Buzz** - Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz " instead of the number and for the multiples of five print “Buzz ". For numbers which are multiples of both three and five print “FizzBuzz ".
 
 - [[_eush77(Befunge)_]](https://github.com/eush77/Projects-Solutions/blob/solutions/Befunge/fizzbuzz.bf)
 
@@ -1583,7 +1583,7 @@ subgraph that is a tree, contains all the vertices, and the sum of its weights i
 
 ---
 
-### **Check if Palindrome** - Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar” \* [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
+### **Check if Palindrome** - Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar " \* [[_Drhealsgood (Python)_]](https://github.com/Drhealsgood/miniprojects/blob/master/text_projects/string_editing.py)
 
 ---
 

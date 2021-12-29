@@ -2,7 +2,7 @@
 
 > $ youtube-dl –list-extractors | grep udemy
 
-\#\# Steps 1. Get link to the course to download. e.g. https://www.udemy.com/course-name/ 2. Login into udemy website, save the cookie from chrome using Chrome (Cookie.txt)[1](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg) export extension. Save it to file udemy-cookies.txt 3. Get the link of the video that you want to download. usually in format. Use the command provided below where you have to replace the {course_link} and {path_to_cookies_file} with respective paths.
+\#\# Steps 1. Get link to the course to download. e.g. https://www.udemy.com/course-name/ 2. Login into udemy website, save the cookie from chrome using Chrome (Cookie.txt)[1](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg) export extension. Save it to file udemy-cookies.txt 3. Get the link of the video that you want to download. usually in format. Use the command provided below where you have to replace the {course_link} and {path_to_cookies_file} with respective paths.
 
     $ youtube-dl {course_link} --cookies {path_to_cookies_file}
 

@@ -48,7 +48,7 @@ While Google recommends concatenating longer strings (as shown below) Airbnb’s
 
 // bad (sorry, this doesn't show up well on mobile)const longString = 'This is a very long string that \ far exceeds the 80 column limit. It unfortunately \ contains long stretches of spaces due to how the \ continued lines are indented.';
 // goodconst longString = 'This is a very long string that ' + 'far exceeds the 80 column limit. It does not contain ' + 'long stretches of spaces since the concatenated ' + 'strings are cleaner.';
-“for… of” is the preferred type of ‘for loop’
+“for… of " is the preferred type of ‘for loop’
 With ES6, the language now has three different kinds of for loops. All may be used, though for-of loops should be preferred when possible.
 This is a strange one if you ask me, but I thought I’d include it because it is pretty interesting that Google declares a preferred type of for loop.
 
@@ -58,7 +58,7 @@ While Google’s specification here doesn’t necessarily contradict that idea, 
 
 Don’t use eval()
 Do not use eval or the Function(...string) constructor (except for code loaders). These features are potentially dangerous and simply do not work in CSP environments.
-The MDN page for eval() even has a section called “Don’t use eval!”
+The MDN page for eval() even has a section called “Don’t use eval! "
 
 // badlet obj = { a: 20, b: 30 };let propName = getPropName(); // returns "a" or "b"eval( 'var result = obj.' + propName );
 // goodlet obj = { a: 20, b: 30 };let propName = getPropName(); // returns "a" or "b"let result = obj[ propName ]; // obj[ "a" ] is the same as obj.a

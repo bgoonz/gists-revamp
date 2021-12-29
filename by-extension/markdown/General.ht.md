@@ -54,7 +54,7 @@ If you believe that another site is abusing Google’s quality guidelines, pleas
 
 - <span id="0251">Make pages primarily for users, not for search engines.</span>
 - <span id="f565">Don’t deceive your users.</span>
-- <span id="5f8a">Avoid tricks intended to improve search engine rankings. A good rule of thumb is whether you’d feel comfortable explaining what you’ve done to a website that competes with you, or to a Google employee. Another useful test is to ask, “Does this help my users? Would I do this if search engines didn’t exist?”</span>
+- <span id="5f8a">Avoid tricks intended to improve search engine rankings. A good rule of thumb is whether you’d feel comfortable explaining what you’ve done to a website that competes with you, or to a Google employee. Another useful test is to ask, “Does this help my users? Would I do this if search engines didn’t exist? "</span>
 - <span id="9acc">Think about what makes your website unique, valuable, or engaging. Make your website stand out from others in your field.</span>
 
 ### Specific guidelines

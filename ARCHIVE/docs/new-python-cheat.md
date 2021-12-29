@@ -1815,7 +1815,7 @@ Oh no, we got a nasty error! The reason is that the ‘delicious’ directory do
 
 And all is good :)
 
-### Absolute vs. Relative Paths
+### Absolute vs. Relative Paths
 
 There are two ways to specify a file path.
 

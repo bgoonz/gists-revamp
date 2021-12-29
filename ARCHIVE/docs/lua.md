@@ -106,7 +106,7 @@ those of pandoc elements (e.g., `Str`, `Para`, `Meta`, or
 
 For each filter, the document is traversed and each element
 subjected to the filter. Elements for which the filter contains
-an entry (i.e. a function of the same name) are passed to Lua
+an entry (i.e. a function of the same name) are passed to Lua
 element filtering function. In other words, filter entries will
 be called for each corresponding element in the document,
 getting the respective element as input.
@@ -790,7 +790,7 @@ Fields:
 
 ### MetaBool {#type-metabool}
 
-Alias for Lua boolean, i.e. the values `true` and `false`.
+Alias for Lua boolean, i.e. the values `true` and `false`.
 
 ### MetaInlines {#type-metainlines}
 
@@ -987,7 +987,7 @@ Fields:
 
 ### LineBlock {#type-lineblock}
 
-A line block, i.e. a list of lines, each separated from the next
+A line block, i.e. a list of lines, each separated from the next
 by a newline.
 
 Values of this type can be created with the
@@ -1719,7 +1719,7 @@ Fields:
 (boolean)
 
 `tab_stop`
-: width (i.e. equivalent number of spaces) of tab stops
+: width (i.e. equivalent number of spaces) of tab stops
 (integer)
 
 `track_changes`
@@ -3435,7 +3435,7 @@ Returns:
 
 ### is_absolute (filepath) {#pandoc.path.is_absolute}
 
-Checks whether a path is absolute, i.e. not fixed to a root.
+Checks whether a path is absolute, i.e. not fixed to a root.
 
 Parameters:
 

@@ -108,7 +108,7 @@ Kite and TabNine are AI-powered coding assistants that provide some very impress
 - [Kite](https://www.kite.com/)
 - [TabNine](https://www.tabnine.com/)
 
-Terminals, sometimes casually referred to as “command lines” or “consoles”, are desktop applications that allow you to interact with a shell.
+Terminals, sometimes casually referred to as “command lines " or “consoles ", are desktop applications that allow you to interact with a shell.
 
 A shell is a _text-based user interface_ that allows you to control your computer. Instead of using a mouse to click UI elements and icons, you type commands into the shell that allow you to do things like open desktop applications, run code, navigate your computer’s file system, automate tedious or repetitive tasks, and so much more.
 
@@ -162,7 +162,7 @@ Browser engines, in short, are the core pieces of software built into web browse
 
 These engines are the primary reason that the frontend code you write may not work or look the same across browsers. Browsers will often use different engines that have unique implementation details which can cause differences in how a website is laid out or interpreted.
 
-_A Quick Note: It is also common for the term “browser engine” to only refer to the part of a browser that is in charge of rendering a webpage. This is because it’s very common for JavaScript engines to be built in a way that they can function independently from a browser, whereas the rendering engine is a fundamental and baked in part of browsers. So keep that all in mind as you learn more about these engines in the wild._
+_A Quick Note: It is also common for the term “browser engine " to only refer to the part of a browser that is in charge of rendering a webpage. This is because it’s very common for JavaScript engines to be built in a way that they can function independently from a browser, whereas the rendering engine is a fundamental and baked in part of browsers. So keep that all in mind as you learn more about these engines in the wild._
 
 - 🔥 [Browser Engines: The Crux Of Cross Browser Compatibility](https://www.lambdatest.com/blog/browser-engines-the-crux-of-cross-browser-compatibility/)
 - 🔥 [Quantum Up Close: What Is A Browser Engine?](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
@@ -240,7 +240,7 @@ Tag Reference resources can be thought of as a sort of HTML tag dictionary. It�
 - 🔥 [HTML Dog — Tag Reference](https://htmldog.com/references/html/tags/)
 - 🔥 [MDN — Tag Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
-HTML attributes are special words that you can use inside an HTML tag to modify or define behaviors in those tags. For example, by using the “class” attribute in a tag you can associate some CSS styles with that tag.
+HTML attributes are special words that you can use inside an HTML tag to modify or define behaviors in those tags. For example, by using the “class " attribute in a tag you can associate some CSS styles with that tag.
 
 These references below are once again a sort of dictionary with definitions of all the attributes you can use in an HTML file.
 
@@ -250,7 +250,7 @@ These references below are once again a sort of dictionary with definitions of a
 
 Character code references are another type of dictionary that defines all the possible characters you can use in an HTML document and their associated code that you type.
 
-Say, for example, you wanted to include the division symbol on a webpage you can type “&divide;” and it will be converted into ÷.
+Say, for example, you wanted to include the division symbol on a webpage you can type “&divide; " and it will be converted into ÷.
 
 - 🔥 [HTML Character Code Reference](https://www.toptal.com/designers/htmlarrows/arrows/)
 - [HTML Dog — Character Code Reference](https://htmldog.com/references/html/characters/)
@@ -300,7 +300,7 @@ Once again, here are some more comprehensive tutorials for those looking for a s
 - [Getting To Know CSS](https://learn.shayhowe.com/html-css/getting-to-know-css/)
 - [Good And Bad CSS Practices For Beginners](https://speckyboy.com/good-bad-css-practices/)
 
-A part of learning CSS includes learning some special vocabulary for the syntax you’re looking at. Knowing what a “property” is, or what a “selector” is, or what the difference between a “rule set” and “declaration block” is will make your process of learning CSS much easier.
+A part of learning CSS includes learning some special vocabulary for the syntax you’re looking at. Knowing what a “property " is, or what a “selector " is, or what the difference between a “rule set " and “declaration block " is will make your process of learning CSS much easier.
 
 - 🔥 [CSS Terms & Definitions](https://www.impressivewebs.com/css-terms-definitions/)
 - 🔥 [CSS Vocab](http://apps.workflower.fi/vocabs/css/en)
@@ -322,7 +322,7 @@ One of the most powerful aspects of CSS is the fact that it lets you define the 
 Flexbox is, from my experience, an absolute-must-learn topic when picking up CSS. It is a much easier and more powerful way of defining the layout of elements on a webpage.
 
 - 🔥 [CSS Flexbox In 100 Seconds](https://www.youtube.com/watch?v=K74l26pE4YA)
-- 🔥 [A Complete Guide to CSS Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) –– Make sure to read “Background” and “Terminology” sections of this guide.
+- 🔥 [A Complete Guide to CSS Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) –– Make sure to read “Background " and “Terminology " sections of this guide.
 - 🔥 [Flexbox Froggy](https://flexboxfroggy.com/)
 - [Internetting Is Hard — Flexbox Tutorial](https://www.internetingishard.com/html-and-css/flexbox/)
 - [Flexplorer](https://bennettfeely.com/flexplorer/)
@@ -330,7 +330,7 @@ Flexbox is, from my experience, an absolute-must-learn topic when picking up CSS
 Grid is another incredibly powerful way to layout elements on a webpage. As the name suggests it allows you to orient elements on a webpage in a grid.
 
 - 🔥 [CSS Grid In 100 Seconds](https://www.youtube.com/watch?v=uuOXPWCh-6o)
-- 🔥 [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) –– Make sure to read all the collapsed sections at the beginning such as the “Introduction”.
+- 🔥 [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) –– Make sure to read all the collapsed sections at the beginning such as the “Introduction ".
 - 🔥 [Grid Garden](https://codepip.com/games/grid-garden/)
 - [The Joy Of CSS Grid — Build 3 Beautifully Simple Responsive Layouts](https://www.youtube.com/watch?v=705XCEruZFs)
 - [Learn CSS Grid](https://learncssgrid.com/)
@@ -443,7 +443,7 @@ Below are some nice resources that cover various JavaScript basics.
 - 🔥 [What Is ‘this’ In JavaScript? In 100 Seconds](https://www.youtube.com/watch?v=YOlr79NaAtQ)
 - 🔥 [Beyond Console Log In 100 Seconds](https://www.youtube.com/watch?v=L8CDt1J3DAw)
 - [JavaScript Fundamentals](https://info340.github.io/javascript.html)
-- [A Gentle Explanation Of “this” In JavaScript](https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/)
+- [A Gentle Explanation Of “this " In JavaScript](https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/)
 
 Understanding the DOM (Document Object Model) is one of the most important parts of learning client-side JavaScript.
 
@@ -458,7 +458,7 @@ This is how JavaScript has the power to dynamically create, manipulate, or delet
 
 Events are another very important topic to understand when learning about client-side JavaScript.
 
-They enable your website to have dynamic interactivity with a user. There are many events that you can set up your JavaScript to “listen” for such as a mouse click, keyboard input, or even if the user has access to the internet. When one of those events occurs you can define a piece of code that will be executed as a result.
+They enable your website to have dynamic interactivity with a user. There are many events that you can set up your JavaScript to “listen " for such as a mouse click, keyboard input, or even if the user has access to the internet. When one of those events occurs you can define a piece of code that will be executed as a result.
 
 The combination of listening for events and then executing code, as a result, enables some truly complex behavior in your websites.
 
@@ -468,7 +468,7 @@ The combination of listening for events and then executing code, as a result, en
 
 JSON (JavaScript Object Notation) maintains a special importance in the world of web development because a majority of the data sent across the internet is formatted as JSON.
 
-Most modern programming languages have methods for writing/reading (often referred to as “serializing/deserializing”) JSON which means that you can have a frontend website written in JavaScript sending data and communicating with backend server written in something like Go without any issues.
+Most modern programming languages have methods for writing/reading (often referred to as “serializing/deserializing ") JSON which means that you can have a frontend website written in JavaScript sending data and communicating with backend server written in something like Go without any issues.
 
 Below you will find some links for learning more about JSON and its syntax.
 
@@ -484,7 +484,7 @@ In particular, Fetch offers a very clean way of requesting and receiving data fr
 
 In short, promises and async/await allow JavaScript developers to do asynchronous programming. I’ll let the resources below explain the benefit of asynchronous programming in more detail, but it’s basically a way of achieving faster programs using concurrency.
 
-As an example, a regular synchronous HTTP request will “block” your JavaScript from running other code until the results of that request are returned. However, by using promises/async/await your JavaScript can execute other code while it waits on the HTTP request to be returned. The ultimate result is that more code is run in the same amount of time when using promises and async/await.
+As an example, a regular synchronous HTTP request will “block " your JavaScript from running other code until the results of that request are returned. However, by using promises/async/await your JavaScript can execute other code while it waits on the HTTP request to be returned. The ultimate result is that more code is run in the same amount of time when using promises and async/await.
 
 Additionally, to be even more clear, promises are JavaScript’s way of handling asynchronous values, while async/await is a cleaner syntax for working with promises.
 
@@ -515,9 +515,9 @@ Modules are simply JavaScript files/functions that can be imported into another 
 - [MDN — JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [Unbundling The JavaScript Module Bundler](https://www.youtube.com/watch?v=WGlT921ixx4)
 
-Fun fact, “ECMAScript” is actually the official name of JavaScript. This is because the committee that defines the language specification of JavaScript is part of the European Computer Manufacturers Association (ECMA).
+Fun fact, “ECMAScript " is actually the official name of JavaScript. This is because the committee that defines the language specification of JavaScript is part of the European Computer Manufacturers Association (ECMA).
 
-In 2015, the ECMA released a new specification for JavaScript that brought a ton of new features and improvements to the language. The name of this release was “ECMAScript 2015,” but since it is considered the sixth version of the language to be released it is commonly referred to as simply “ES6.”
+In 2015, the ECMA released a new specification for JavaScript that brought a ton of new features and improvements to the language. The name of this release was “ECMAScript 2015, " but since it is considered the sixth version of the language to be released it is commonly referred to as simply “ES6. "
 
 Below are a number of resources that cover those changes and improvements.
 
@@ -574,7 +574,7 @@ That’s right! You can create 3D graphics using JavaScript. It’s pretty neat.
 
 Moving on from JavaScript we start to enter the territory of languages, libraries, and tools that are not strictly necessary for creating frontend websites but sure do make the job of creating them easier.
 
-One such language is TypeScript. Created by Microsoft, TypeScript is a “superset of JavaScript” meaning it’s JavaScript with extra features. Those extra features are namely a type system.
+One such language is TypeScript. Created by Microsoft, TypeScript is a “superset of JavaScript " meaning it’s JavaScript with extra features. Those extra features are namely a type system.
 
 Instead of letting JavaScript determine what types of data (i.e. numbers, strings, etc.) your variables contain or your functions return, you explicitly define the data types yourself like you would in a language such as Java or C.
 
@@ -647,7 +647,7 @@ Why not combine two great technologies? Well, you can!
 
 Application Programming Interfaces (APIs) are the way that different pieces of software are able to interact with each other.
 
-As the “What Is An API?” article below describes, an API is like a menu at a restaurant. When thinking of APIs from a client-side perspective you are the customer who is ordering food, while comparatively, when thinking of APIs from a server-side perspective you are the restaurant making/delivering the food.
+As the “What Is An API? " article below describes, an API is like a menu at a restaurant. When thinking of APIs from a client-side perspective you are the customer who is ordering food, while comparatively, when thinking of APIs from a server-side perspective you are the restaurant making/delivering the food.
 
 As a client/customer, you don’t have to worry about how the food is sourced or made. You simply just have to know the phone number of the restaurant, order a dish that’s on the menu, and it will be delivered to you.
 
@@ -757,7 +757,7 @@ Currently, there is active and evolving development on two primary WebAssembly r
 
 Taken from WASI’s introductory document, it is:
 
-_“An API designed by the Wasmtime project that provides access to several operating-system-like features, including files and filesystems, Berkeley sockets, clocks, and random numbers.”_
+_“An API designed by the Wasmtime project that provides access to several operating-system-like features, including files and filesystems, Berkeley sockets, clocks, and random numbers. "_
 
 The goal is for this API to be standardized and designed to work independently of browsers and JavaScript.
 
@@ -876,7 +876,7 @@ The most famous and widely used JavaScript runtime is Node.js. However, a new ru
 
 ![](https://miro.medium.com/max/3200/0*3D_d0tGI-ycAFtC1.png)
 
-As stated above, Node.js (also sometimes referred to as “Node”) is easily the most famous and widely used JavaScript runtime for executing JS code outside a browser.
+As stated above, Node.js (also sometimes referred to as “Node ") is easily the most famous and widely used JavaScript runtime for executing JS code outside a browser.
 
 These are some great resources to get oriented with Node.js and dive deeper into its core topics. The Introduction to Node.js tutorials are one of the primary sources I used to learn Node and are well worth a read.
 
@@ -965,7 +965,7 @@ As an additional aside, this way of approaching package management is once again
 
 Since Deno is such a new runtime the landscape of popular frameworks and libraries is still evolving. Oak seems to be gathering some popularity since it takes a lot of design inspiration from Express and could be worth checking out.
 
-That being said, I also left a link to the “Modules” section of the Awesome Deno GitHub where you can find links to other web frameworks as well.
+That being said, I also left a link to the “Modules " section of the Awesome Deno GitHub where you can find links to other web frameworks as well.
 
 - [Oak Website](https://oakserver.github.io/oak/)
 - [Oak GitHub](https://github.com/oakserver/oak)
@@ -1068,7 +1068,7 @@ It does not run quite as fast as [C++](https://benchmarksgame-team.pages.debian.
 
 Along with some of its other [features](https://go.dev/solutions/webdev/), it makes Go an amazing language to work with for server-side development.
 
-_Pro-Tip: If you’re just starting out with Go always type “Golang” instead of “Go” into Google searches — the results will be far more relevant._
+_Pro-Tip: If you’re just starting out with Go always type “Golang " instead of “Go " into Google searches — the results will be far more relevant._
 
 These are a few great resources for getting started with Go, however, the server-side tutorials by Dave Stearns discussed below were my primary method for learning Go.
 
@@ -1140,7 +1140,7 @@ On the downside, Rust has some fairly complicated syntax and idioms compared to 
 
 With all that being said, Rust’s position sat squarely in the world of [WebAssembly](https://www.rust-lang.org/what/wasm) and [server-side](https://www.rust-lang.org/what/networking) use cases that have caught my attention in a big way.
 
-When it comes to learning Rust you will find that the primary method of conferring information is through books. In fact, the official method for learning Rust is often called “The Book” in the Rust community and it’s well worth reading.
+When it comes to learning Rust you will find that the primary method of conferring information is through books. In fact, the official method for learning Rust is often called “The Book " in the Rust community and it’s well worth reading.
 
 There is also a counter-part to the book that teaches Rust using a more hands-on example-based approach which I’ve personally found very helpful.
 
@@ -1154,7 +1154,7 @@ This is the official getting started page found on the Rust website. It covers i
 
 - 🔥 [Getting Started With Rust](https://www.rust-lang.org/learn/get-started)
 
-Rust has a fantastic package management ecosystem that is very similar to NPM. Rust provides a command-line tool called Cargo that operates very similar to NPMs command-line tool. Also instead of calling third-party code “packages”, the term “crates” is used.
+Rust has a fantastic package management ecosystem that is very similar to NPM. Rust provides a command-line tool called Cargo that operates very similar to NPMs command-line tool. Also instead of calling third-party code “packages ", the term “crates " is used.
 
 - [Crates.io](https://crates.io/)
 - [The Cargo Book](https://doc.rust-lang.org/cargo/index.html)
@@ -1183,7 +1183,7 @@ Just as fridges come in many different shapes and sizes, there are a variety of 
 
 For the purposes of this guide (and my own limited knowledge of the entire database ecosystem), we will mainly focus on the most popular type of database — _relational databases_. The most simple analogy I can think of is that relational databases are like spreadsheets that can be connected together. They use SQL (Structured Query Language) to create and maintain these spreadsheets. Below you will find resources for a popular dialect of SQL called MySQL.
 
-Additionally, relational databases and SQL are so dominant that you will sometimes see non-relational database options casually referred to as “NoSQL databases.” That being said, I would once again highly recommend watching the video linked below to get a better understanding of what else is out there.
+Additionally, relational databases and SQL are so dominant that you will sometimes see non-relational database options casually referred to as “NoSQL databases. " That being said, I would once again highly recommend watching the video linked below to get a better understanding of what else is out there.
 
 - 🔥🔥🔥 [7 Database Paradigms](https://www.youtube.com/watch?v=W2Z7fbCLSTw)
 
@@ -1228,7 +1228,7 @@ Take your time to research these various services along with there drawbacks and
 - [What Is The Cloud?](https://mashable.com/2013/08/26/what-is-the-cloud/)
 - [Beginner’s Guide To Understanding The Cloud](https://linchpinseo.com/guide-to-the-cloud/)
 
-At a high-level (that leaves out a lot of details), Docker is a way of packaging your web applications into what are called “containers” so that they can be deployed basically anywhere. This is very powerful because it means you as a developer don’t have to worry about getting your application to run on different servers with different operating systems.
+At a high-level (that leaves out a lot of details), Docker is a way of packaging your web applications into what are called “containers " so that they can be deployed basically anywhere. This is very powerful because it means you as a developer don’t have to worry about getting your application to run on different servers with different operating systems.
 
 Kubernetes (sometimes called K8s for short) is essentially a piece of software for organizing and managing Docker containers in the Cloud.
 

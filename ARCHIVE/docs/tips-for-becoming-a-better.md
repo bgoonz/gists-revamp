@@ -14,11 +14,11 @@ Designers provide solutions to user pain points. Learn from them and work cohesi
 
 # [](https://dev.to/emmabostian/101-tips-for-being-a-great-programmer-human-36nl#4-find-a-mentor)4. Find a mentor
 
-Find someone you can learn from and bounce ideas off of. [Coding Coach](https://codingcoach.io/) is a great place to get started if you need a technical mentor!
+Find someone you can learn from and bounce ideas off of. [Coding Coach](https://codingcoach.io/) is a great place to get started if you need a technical mentor!
 
 # [](https://dev.to/emmabostian/101-tips-for-being-a-great-programmer-human-36nl#5-be-a-mentor)5. Be a mentor
 
-Be someone others can learn from and bounce ideas off of. We’d love to have you as a mentor over at [Coding Coach](https://codingcoach.io/)
+Be someone others can learn from and bounce ideas off of. We’d love to have you as a mentor over at [Coding Coach](https://codingcoach.io/)
 
 # [](https://dev.to/emmabostian/101-tips-for-being-a-great-programmer-human-36nl#6-write-useful-comments)6. Write useful comments
 
@@ -26,7 +26,7 @@ Write comments which explain the “why” and not the “what”.
 
 # [](https://dev.to/emmabostian/101-tips-for-being-a-great-programmer-human-36nl#7-name-variables-and-functions-appropriately)7. Name variables and functions appropriately
 
-Functions and variables should accurately denote their purpose, so `myCoolFunction` won’t fly.
+Functions and variables should accurately denote their purpose, so `myCoolFunction` won’t fly.
 
 # [](https://dev.to/emmabostian/101-tips-for-being-a-great-programmer-human-36nl#8-take-vacations)8. Take vacations
 
@@ -388,7 +388,7 @@ You could write all of your code in one long file, but this isn’t maintainable
 
 # [](https://dev.to/emmabostian/101-tips-for-being-a-great-programmer-human-36nl#90-dont-just-copy-and-paste)90. Don’t JUST copy and paste
 
-If you’re going to copy and paste a solution from Stack Overflow, you should understand *exactly* what it does. Be intentional about the code you choose to introduce.
+If you’re going to copy and paste a solution from Stack Overflow, you should understand *exactly* what it does. Be intentional about the code you choose to introduce.
 
 [![Coding](https://res.cloudinary.com/practicaldev/image/fetch/s--YyPmerE5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/uts4vd8ab10x8oct7fwb.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--YyPmerE5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/uts4vd8ab10x8oct7fwb.png)
 
@@ -410,7 +410,7 @@ Just because something works now doesn’t mean it always will. Re-evaluate your
 
 # [](https://dev.to/emmabostian/101-tips-for-being-a-great-programmer-human-36nl#95-learn-how-to-work-from-home)95. Learn how to work from home
 
-If you have the ability to work from home, learn to do so effectively. Find a separate office space, devoid of distractions. [Boneskull](https://dev.to/boneskull/pro-tips-for-devs-working-at-home-3b63) wrote a great article on working from home you should check out.
+If you have the ability to work from home, learn to do so effectively. Find a separate office space, devoid of distractions. [Boneskull](https://dev.to/boneskull/pro-tips-for-devs-working-at-home-3b63) wrote a great article on working from home you should check out.
 
 [![Accessibility](https://res.cloudinary.com/practicaldev/image/fetch/s--Y-0GPXeE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/a45rv6rwqin3pzs3ztoo.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--Y-0GPXeE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/a45rv6rwqin3pzs3ztoo.png)
 

@@ -110,7 +110,7 @@ GUI-based vims often support `COMMAND-c`/`CTRL-c` and `COMMAND-v`/`CTRL-v` for c
 
 ## Misc
 
-- `.`: repeat the last edit command, e.g. `AHello[ESC]j.` will add `Hello` to the end of the current and next line
+- `.`: repeat the last edit command, e.g. `AHello[ESC]j.` will add `Hello` to the end of the current and next line
 - `xp`: transpose the character under the cursor with the next one; not really a special command–simply `x` to cut the current character under the cursor followed by `p` to paste it after the cursor position
 - `!!ls[RET]`: run the `ls` command and insert its output into the document (can run any command)
 - `:sh[RET]`: spawn an interactive shell (hit `CTRL-d` or type `exit[RET]` to get back to vim)

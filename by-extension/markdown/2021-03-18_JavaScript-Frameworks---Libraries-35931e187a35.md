@@ -89,7 +89,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://glimmerjs.com/" class="markup--anchor markup--pullquote-anchor">Glimmer</a> — Fast and light-weight UI components for the web. (<a href="https://github.com/glimmerjs/glimmer.js" class="markup--anchor markup--pullquote-anchor">Code</a>)
 
-> · ​<a href="https://github.com/glimmerjs/glimmer-vm" class="markup--anchor markup--pullquote-anchor">Glimmer VM</a> — Flexible, low-level rendering pipeline for building a “live” DOM from Handlebars templates that can subsequently be updated cheaply when data changes.
+> · ​<a href="https://github.com/glimmerjs/glimmer-vm" class="markup--anchor markup--pullquote-anchor">Glimmer VM</a> — Flexible, low-level rendering pipeline for building a “live " DOM from Handlebars templates that can subsequently be updated cheaply when data changes.
 
 > · ​<a href="https://github.com/frintjs/frint" class="markup--anchor markup--pullquote-anchor">frint</a> — Modular JavaScript framework for building scalable and reactive applications.
 
@@ -829,7 +829,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://github.com/tivac/xstate-component-tree" class="markup--anchor markup--pullquote-anchor">xstate-component-tree</a> — Build a tree of UI components based on your state chart.
 
-> · <a href="https://github.com/valdrinkoshi/virtual-scroller" class="markup--anchor markup--pullquote-anchor">virtual-scroller</a> — Maps a provided set of JavaScript objects onto DOM nodes, and renders only the DOM nodes that are currently visible, leaving the rest “virtualized”.
+> · <a href="https://github.com/valdrinkoshi/virtual-scroller" class="markup--anchor markup--pullquote-anchor">virtual-scroller</a> — Maps a provided set of JavaScript objects onto DOM nodes, and renders only the DOM nodes that are currently visible, leaving the rest “virtualized ".
 
 > · ​<a href="https://github.com/MrRio/jsPDF" class="markup--anchor markup--pullquote-anchor">jSPDF</a> — Client-side JavaScript PDF generation for everyone.
 
@@ -1003,7 +1003,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://github.com/jackyef/react-isomorphic-data" class="markup--anchor markup--pullquote-anchor">react-isomorphic-data</a> — Easily fetch data in your React components, with similar APIs to react-apollo.
 
-> · ​<a href="https://github.com/lukeed/klona" class="markup--anchor markup--pullquote-anchor">klona</a> — Tiny (228B) and fast utility to “deep clone” Objects, Arrays, Dates, RegExps, and more.
+> · ​<a href="https://github.com/lukeed/klona" class="markup--anchor markup--pullquote-anchor">klona</a> — Tiny (228B) and fast utility to “deep clone " Objects, Arrays, Dates, RegExps, and more.
 
 > · ​<a href="https://github.com/janpaepke/ScrollMagic" class="markup--anchor markup--pullquote-anchor">ScrollMagic</a> — JavaScript library for magical scroll interactions.
 
@@ -1237,7 +1237,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://github.com/bpmn-io/bpmn-js" class="markup--anchor markup--pullquote-anchor">bpmn-js</a> — BPMN 2.0 rendering toolkit and web modeler.
 
-> · ​<a href="https://github.com/soswow/fit-curve" class="markup--anchor markup--pullquote-anchor">fit-curve</a> — JavaScript implementation of Philip J. Schneider’s “Algorithm for Automatically Fitting Digitized Curves” from the book “Graphics Gems”.
+> · ​<a href="https://github.com/soswow/fit-curve" class="markup--anchor markup--pullquote-anchor">fit-curve</a> — JavaScript implementation of Philip J. Schneider’s “Algorithm for Automatically Fitting Digitized Curves " from the book “Graphics Gems ".
 
 > · ​<a href="https://github.com/nunofgs/clean-deep" class="markup--anchor markup--pullquote-anchor">clean-deep</a> — Remove falsy, empty or nullable values from objects.
 
@@ -1411,7 +1411,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://github.com/sindresorhus/execa" class="markup--anchor markup--blockquote-anchor">Execa</a> — Process execution for humans.
 
-> · ​<a href="https://github.com/sindresorhus/quick-lru" class="markup--anchor markup--blockquote-anchor">quick-lru</a> — Simple “Least Recently Used” (LRU) cache.
+> · ​<a href="https://github.com/sindresorhus/quick-lru" class="markup--anchor markup--blockquote-anchor">quick-lru</a> — Simple “Least Recently Used " (LRU) cache.
 
 > · ​<a href="https://github.com/YuriGor/deepdash" class="markup--anchor markup--blockquote-anchor">Deepdash</a> — Tree traversal library written in Underscore/Lodash fashion. (<a href="https://deepdash.io/" class="markup--anchor markup--blockquote-anchor">Docs</a>)
 
@@ -1531,7 +1531,7 @@ My Awesome JavaScript List Part 2
 
 > · ​<a href="https://github.com/alojs/alo" class="markup--anchor markup--blockquote-anchor">Alo</a> — Full-fledged state management. (<a href="http://www.alojs.com/index.html" class="markup--anchor markup--blockquote-anchor">Docs</a>)
 
-> · ​<a href="https://github.com/form-data/form-data" class="markup--anchor markup--blockquote-anchor">Form-Data</a> — Library to create readable “multipart/form-data” streams. Can be used to submit forms and file uploads to other web applications.
+> · ​<a href="https://github.com/form-data/form-data" class="markup--anchor markup--blockquote-anchor">Form-Data</a> — Library to create readable “multipart/form-data " streams. Can be used to submit forms and file uploads to other web applications.
 
 > · ​<a href="https://github.com/sindresorhus/conf" class="markup--anchor markup--blockquote-anchor">conf</a> — Simple config handling for your app or module.
 
@@ -1621,7 +1621,7 @@ My Awesome JavaScript List Part 2
 - <span id="1c45">​<a href="https://github.com/hotwired/turbo" class="markup--anchor markup--li-anchor">Turbo</a> — Speed of a single-page web application without having to write any JavaScript. (<a href="https://turbo.hotwire.dev/" class="markup--anchor markup--li-anchor">Web</a>)</span>
 - <span id="6fb6">​<a href="https://github.com/yisar/fre" class="markup--anchor markup--li-anchor">Fre</a> — Tiny Coroutine framework with Fiber.</span>
 - <span id="7531">​<a href="https://glimmerjs.com/" class="markup--anchor markup--li-anchor">Glimmer</a> — Fast and light-weight UI components for the web. (<a href="https://github.com/glimmerjs/glimmer.js" class="markup--anchor markup--li-anchor">Code</a>)</span>
-- <span id="4291">​<a href="https://github.com/glimmerjs/glimmer-vm" class="markup--anchor markup--li-anchor">Glimmer VM</a> — Flexible, low-level rendering pipeline for building a “live” DOM from Handlebars templates that can subsequently be updated cheaply when data changes.</span>
+- <span id="4291">​<a href="https://github.com/glimmerjs/glimmer-vm" class="markup--anchor markup--li-anchor">Glimmer VM</a> — Flexible, low-level rendering pipeline for building a “live " DOM from Handlebars templates that can subsequently be updated cheaply when data changes.</span>
 - <span id="4ca1">​<a href="https://github.com/frintjs/frint" class="markup--anchor markup--li-anchor">frint</a> — Modular JavaScript framework for building scalable and reactive applications.</span>
 - <span id="85b4">​<a href="https://github.com/sunesimonsen/nano-router" class="markup--anchor markup--li-anchor">Nano Router</a> — Framework agnostic minimalistic router with a focus on named routes.</span>
 - <span id="fe43">​<a href="https://github.com/berstend/tiny-request-router" class="markup--anchor markup--li-anchor">tiny-request-router</a> — Fast, generic and type safe router (match request method and path).</span>
@@ -1739,7 +1739,7 @@ My Awesome JavaScript List Part 2
 - <span id="48e0">​<a href="https://github.com/sindresorhus/emittery" class="markup--anchor markup--li-anchor">emittery</a> — Simple and modern async event emitter.</span>
 - <span id="2a1b">​<a href="https://github.com/davidkpiano/xstate" class="markup--anchor markup--li-anchor">Xstate</a> — State machines and statecharts for the modern web. (<a href="https://github.com/ooade/state-machines-workshop" class="markup--anchor markup--li-anchor">State Machines Workshop</a>)</span>
 - <span id="396e">​<a href="https://github.com/tivac/xstate-component-tree" class="markup--anchor markup--li-anchor">xstate-component-tree</a> — Build a tree of UI components based on your state chart.</span>
-- <span id="34e1">​<a href="https://github.com/valdrinkoshi/virtual-scroller" class="markup--anchor markup--li-anchor">virtual-scroller</a> — Maps a provided set of JavaScript objects onto DOM nodes, and renders only the DOM nodes that are currently visible, leaving the rest “virtualized”.</span>
+- <span id="34e1">​<a href="https://github.com/valdrinkoshi/virtual-scroller" class="markup--anchor markup--li-anchor">virtual-scroller</a> — Maps a provided set of JavaScript objects onto DOM nodes, and renders only the DOM nodes that are currently visible, leaving the rest “virtualized ".</span>
 - <span id="88ae">​<a href="https://github.com/MrRio/jsPDF" class="markup--anchor markup--li-anchor">jSPDF</a> — Client-side JavaScript PDF generation for everyone.</span>
 - <span id="8e6b">​<a href="https://github.com/oussamahamdaoui/forgJs" class="markup--anchor markup--li-anchor">ForgJS</a> — JavaScript lightweight object validator.</span>
 - <span id="07fc">​<a href="https://github.com/Marak/faker.js" class="markup--anchor markup--li-anchor">faker.js</a> — Generate massive amounts of realistic fake data in Node.js and the browser.</span>
@@ -1826,7 +1826,7 @@ My Awesome JavaScript List Part 2
 - <span id="a7c9">​<a href="https://github.com/pakastin/car" class="markup--anchor markup--li-anchor">car</a> — Simple 2d car physics with JavaScript. (<a href="https://news.ycombinator.com/item?id=21927076" class="markup--anchor markup--li-anchor">HN</a>)</span>
 - <span id="87c6">​<a href="https://github.com/micromatch/picomatch" class="markup--anchor markup--li-anchor">Picomatch</a> — Blazing fast and accurate glob matcher written in JavaScript.</span>
 - <span id="a5b2">​<a href="https://github.com/jackyef/react-isomorphic-data" class="markup--anchor markup--li-anchor">react-isomorphic-data</a> — Easily fetch data in your React components, with similar APIs to react-apollo.</span>
-- <span id="671b">​<a href="https://github.com/lukeed/klona" class="markup--anchor markup--li-anchor">klona</a> — Tiny (228B) and fast utility to “deep clone” Objects, Arrays, Dates, RegExps, and more.</span>
+- <span id="671b">​<a href="https://github.com/lukeed/klona" class="markup--anchor markup--li-anchor">klona</a> — Tiny (228B) and fast utility to “deep clone " Objects, Arrays, Dates, RegExps, and more.</span>
 - <span id="c650">​<a href="https://github.com/janpaepke/ScrollMagic" class="markup--anchor markup--li-anchor">ScrollMagic</a> — JavaScript library for magical scroll interactions.</span>
 - <span id="16ee">​<a href="https://gojs.net/latest/index.html" class="markup--anchor markup--li-anchor">GoJS</a> — JavaScript and TypeScript library for building interactive diagrams and graphs.</span>
 - <span id="5a8a">​<a href="https://github.com/retejs/rete" class="markup--anchor markup--li-anchor">Rete</a> — JavaScript framework for visual programming and creating node editor. (<a href="https://news.ycombinator.com/item?id=22024201" class="markup--anchor markup--li-anchor">HN</a>)</span>
@@ -1943,7 +1943,7 @@ My Awesome JavaScript List Part 2
 - <span id="8c18">​<a href="https://github.com/ipld/js-ipld-block" class="markup--anchor markup--li-anchor">js-ipld-block</a> — Implementation of the Block data structure in JavaScript.</span>
 - <span id="116f">​<a href="https://github.com/reframejs/wildcard-api" class="markup--anchor markup--li-anchor">wildcard-api</a> — Functions as API.</span>
 - <span id="5b4d">​<a href="https://github.com/bpmn-io/bpmn-js" class="markup--anchor markup--li-anchor">bpmn-js</a> — BPMN 2.0 rendering toolkit and web modeler.</span>
-- <span id="09db">​<a href="https://github.com/soswow/fit-curve" class="markup--anchor markup--li-anchor">fit-curve</a> — JavaScript implementation of Philip J. Schneider’s “Algorithm for Automatically Fitting Digitized Curves” from the book “Graphics Gems”.</span>
+- <span id="09db">​<a href="https://github.com/soswow/fit-curve" class="markup--anchor markup--li-anchor">fit-curve</a> — JavaScript implementation of Philip J. Schneider’s “Algorithm for Automatically Fitting Digitized Curves " from the book “Graphics Gems ".</span>
 - <span id="d72b">​<a href="https://github.com/nunofgs/clean-deep" class="markup--anchor markup--li-anchor">clean-deep</a> — Remove falsy, empty or nullable values from objects.</span>
 - <span id="b449">​<a href="https://github.com/jpmorganchase/regular-table" class="markup--anchor markup--li-anchor">regular-table</a> — Regular library, for async and virtual data models.</span>
 - <span id="dacf">​<a href="https://github.com/hotwired/stimulus" class="markup--anchor markup--li-anchor">Stimulus</a> — Modest JavaScript framework for the HTML you already have. (<a href="https://stimulus.hotwire.dev/" class="markup--anchor markup--li-anchor">Web</a>)</span>
@@ -2030,7 +2030,7 @@ My Awesome JavaScript List Part 2
 - <span id="f80f">​<a href="https://github.com/caroso1222/notyf" class="markup--anchor markup--li-anchor">Notyf</a> — Minimalistic, responsive, vanilla JavaScript library to show toast notifications.</span>
 - <span id="3808">​<a href="https://github.com/daybrush/moveable" class="markup--anchor markup--li-anchor">Moveable</a> — Draggable, Resizable, Scalable, Rotatable, Warpable, Pinchable, Groupable, Snappable.</span>
 - <span id="9087">​<a href="https://github.com/sindresorhus/execa" class="markup--anchor markup--li-anchor">Execa</a> — Process execution for humans.</span>
-- <span id="09bc">​<a href="https://github.com/sindresorhus/quick-lru" class="markup--anchor markup--li-anchor">quick-lru</a> — Simple “Least Recently Used” (LRU) cache.</span>
+- <span id="09bc">​<a href="https://github.com/sindresorhus/quick-lru" class="markup--anchor markup--li-anchor">quick-lru</a> — Simple “Least Recently Used " (LRU) cache.</span>
 - <span id="1d00">​<a href="https://github.com/YuriGor/deepdash" class="markup--anchor markup--li-anchor">Deepdash</a> — Tree traversal library written in Underscore/Lodash fashion. (<a href="https://deepdash.io/" class="markup--anchor markup--li-anchor">Docs</a>)</span>
 - <span id="7a2b">​<a href="https://github.com/ai/nanodelay" class="markup--anchor markup--li-anchor">Nano Delay</a> — Tiny (25 bytes) Promise wrapper around setTimeout.</span>
 - <span id="3fca">​<a href="https://github.com/guybedford/es-module-lexer" class="markup--anchor markup--li-anchor">ES Module Lexer</a> — Low-overhead lexer dedicated to ES module parsing for fast analysis.</span>
@@ -2091,7 +2091,7 @@ My Awesome JavaScript List Part 2
 - <span id="9205">​<a href="https://github.com/steveruizok/perfect-freehand" class="markup--anchor markup--li-anchor">Perfect Freehand</a> — Draw perfect freehand lines.</span>
 - <span id="fcc6">​<a href="https://github.com/alojs/alo" class="markup--anchor markup--li-anchor">Alo</a> — Full-fledged state management. (<a href="http://www.alojs.com/index.html" class="markup--anchor markup--li-anchor">Docs</a>)</span>
 
-​<a href="https://github.com/form-data/form-data" class="markup--anchor markup--p-anchor">Form-Data</a> — Library to create readable “multipart/form-data” streams. Can be used to submit forms and file uploads to other web applications.
+​<a href="https://github.com/form-data/form-data" class="markup--anchor markup--p-anchor">Form-Data</a> — Library to create readable “multipart/form-data " streams. Can be used to submit forms and file uploads to other web applications.
 
 - <span id="81ce">​<a href="https://github.com/sindresorhus/conf" class="markup--anchor markup--li-anchor">conf</a> — Simple config handling for your app or module.</span>
 - <span id="2ee7">​<a href="https://github.com/mattdesl/gifenc" class="markup--anchor markup--li-anchor">gifenc</a> — Fast and lightweight pure-JavaScript GIF encoder.</span>

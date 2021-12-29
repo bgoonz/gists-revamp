@@ -31,7 +31,7 @@ When you run your program (`node promises.js` ), you should see something like t
     num1 1
     num2 Promise { 2 }
 
-Notice that the “plain” function just returns the value and the “async” function returns a promise. Now add another call to the `async` function and attach the `then` function to get its result and log it.
+Notice that the “plain " function just returns the value and the “async " function returns a promise. Now add another call to the `async` function and attach the `then` function to get its result and log it.
 
     num2().then(result => console.log(result));
 
@@ -227,7 +227,7 @@ In order to really appreciate the asynchronous nature of Promises, you may add o
 
     console.log('END OF PROGRAM');
 
-Before you run your program, you can challenge yourself to predict the order and timing of the log messages (try to predict when “END OF PROGRAM” will be logged). Also, feel free to rerun your program as many times as you’d like until you feel like you fully understand why the order and timing happens as it does.
+Before you run your program, you can challenge yourself to predict the order and timing of the log messages (try to predict when “END OF PROGRAM " will be logged). Also, feel free to rerun your program as many times as you’d like until you feel like you fully understand why the order and timing happens as it does.
 
 ### Solutions:
 

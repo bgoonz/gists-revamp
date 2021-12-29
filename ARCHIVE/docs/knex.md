@@ -307,7 +307,7 @@ In many places in APIs identifiers like table name or column name can be passed 
 
 Most commonly one needs just plain `tableName.columnName`, `tableName` or `columnName`, but in many cases one also needs to pass an alias how that identifier is referred later on in the query.
 
-There are two ways to declare an alias for identifier. One can directly give `as aliasName` suffix for the identifier (e.g. `identifierName as aliasName`) or one can pass an object `{ aliasName: 'identifierName' }`.
+There are two ways to declare an alias for identifier. One can directly give `as aliasName` suffix for the identifier (e.g. `identifierName as aliasName`) or one can pass an object `{ aliasName: 'identifierName' }`.
 
 If the object has multiple aliases `{ alias1: 'identifier1', alias2: 'identifier2' }`, then all the aliased identifiers are expanded to comma separated list.
 
@@ -1526,7 +1526,7 @@ Creates an intersect query, taking an array or a list of callbacks, builders, or
 
 `.insert(data, [returning], [options])`
 
-Creates an insert query, taking either a hash of properties to be inserted into the row, or an array of inserts, to be executed as a single insert command. If returning array is passed e.g. \[‘id’, ‘title’\], it resolves the promise / fulfills the callback with an array of all the added rows with specified columns. It’s a shortcut for [returning method](https://knexjs.org/#Builder-returning)
+Creates an insert query, taking either a hash of properties to be inserted into the row, or an array of inserts, to be executed as a single insert command. If returning array is passed e.g. \[‘id’, ‘title’\], it resolves the promise / fulfills the callback with an array of all the added rows with specified columns. It’s a shortcut for [returning method](https://knexjs.org/#Builder-returning)
 
     knex('books').insert({title: 'Slaughterhouse Five'})
 
@@ -1660,7 +1660,7 @@ It is also possible to specify data to update seperately from the data to insert
 
 `.update(data, [returning], [options]) / .update(key, value, [returning], [options])`
 
-Creates an update query, taking a hash of properties or a key/value pair to be updated based on the other query constraints. If returning array is passed e.g. \[‘id’, ‘title’\], it resolves the promise / fulfills the callback with an array of all the updated rows with specified columns. It’s a shortcut for [returning method](https://knexjs.org/#Builder-returning)
+Creates an update query, taking a hash of properties or a key/value pair to be updated based on the other query constraints. If returning array is passed e.g. \[‘id’, ‘title’\], it resolves the promise / fulfills the callback with an array of all the updated rows with specified columns. It’s a shortcut for [returning method](https://knexjs.org/#Builder-returning)
 
     knex("books").where("published_date", "<", 2000).update({
       status: "archived",

@@ -12,24 +12,24 @@ Mute!
 
 ## Listen to music while you study!
 
-- [🧭NAVIGATION🧭 ](./directory.html)
-- [🧭External Links (most used websites)🧭 ](https://links4242.netlify.app/)
-- [Books ]()
-- [🧰Tools🔨 ](./7-assets/web-dev-utils/lambda-prep/directory.html)
-- [📖Lambda Prep-Resource Site📗 ](https://lambda-prep.netlify.app/)
-- [🖥️Code Playground🖲️ ](https://code-playground.netlify.app/)
-- [✨applied-js-1.html✨ ](./WEEKS/wk1/0-notes/d2/applied-js-1.html)
-- [🧱HTML_PATTERNS🕸️  ](.5-websites\lambda-prep\one-of-every-tag.html)
-- [✨js-fundamentals✨ ](./WEEKS/wk1/0-notes/d2/js-fundamentals.html)
-- [😺using-git😺 ](./WEEKS/wk1/0-notes/d2/using-git.html)
-- [🎄DATA STRUCTURES🌐 ](https://trusting-dijkstra-4d3b17.netlify.app/)
-- [📗Agenda📗 ](./WEEKS\wk1\2-resources\agenda.html)
-- [📼Video Previewer📹 ](./WEEKS\wk1\2-resources\agenda.html)
-- [📊Using Canvas📊 ](./about\Using_Canvas.html)
-- [🖋️Brit's Code Pens✏️ ](./6-about/BritHemmingCodePen.html)
-- [Cheat Sheets ](2-resources/__CHEAT-SHEETS/right.html)
-- [Networking ](./networking.html)
-- [ToDo ](https://www.notion.so/0c25ca36d2184ea2b7f2aad2e44f7628?v=940dee8552a5455f8f6abf4c270aec57)
+- [🧭NAVIGATION🧭 ](./directory.html)
+- [🧭External Links (most used websites)🧭 ](https://links4242.netlify.app/)
+- [Books ]()
+- [🧰Tools🔨 ](./7-assets/web-dev-utils/lambda-prep/directory.html)
+- [📖Lambda Prep-Resource Site📗 ](https://lambda-prep.netlify.app/)
+- [🖥️Code Playground🖲️ ](https://code-playground.netlify.app/)
+- [✨applied-js-1.html✨ ](./WEEKS/wk1/0-notes/d2/applied-js-1.html)
+- [🧱HTML_PATTERNS🕸️  ](.5-websites\lambda-prep\one-of-every-tag.html)
+- [✨js-fundamentals✨ ](./WEEKS/wk1/0-notes/d2/js-fundamentals.html)
+- [😺using-git😺 ](./WEEKS/wk1/0-notes/d2/using-git.html)
+- [🎄DATA STRUCTURES🌐 ](https://trusting-dijkstra-4d3b17.netlify.app/)
+- [📗Agenda📗 ](./WEEKS\wk1\2-resources\agenda.html)
+- [📼Video Previewer📹 ](./WEEKS\wk1\2-resources\agenda.html)
+- [📊Using Canvas📊 ](./about\Using_Canvas.html)
+- [🖋️Brit's Code Pens✏️ ](./6-about/BritHemmingCodePen.html)
+- [Cheat Sheets ](2-resources/__CHEAT-SHEETS/right.html)
+- [Networking ](./networking.html)
+- [ToDo ](https://www.notion.so/0c25ca36d2184ea2b7f2aad2e44f7628?v=940dee8552a5455f8f6abf4c270aec57)
 
 Mute!
 
@@ -67,13 +67,13 @@ Mute!
 
 ## World Clock(Click To See Localized Time)
 
-[📗Page2📗 ](./page2.html)
+[📗Page2📗 ](./page2.html)
 
-[🧭NAVIGATION🧭 ](./WEEKS/wk1/0-notes/d2/directory.html)
+[🧭NAVIGATION🧭 ](./WEEKS/wk1/0-notes/d2/directory.html)
 
-[ABOUT ](https://elastic-franklin-ce3a55.netlify.app/)
+[ABOUT ](https://elastic-franklin-ce3a55.netlify.app/)
 
-[🏠HOME! ](https://lambda-w-1-notes.netlify.app/)
+[🏠HOME! ](https://lambda-w-1-notes.netlify.app/)
 
 <a href="javascript:(function()%7B%0Af=&#39;https://www.addtoany.com/share#url=&#39;+encodeURIComponent(window.location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title);%0Aa=function()%7B%0Aif(!window.open(f,&#39;addtoany&#39;,&#39;width=800,height=600,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes&#39;))%7B%0Alocation.href=f+&#39;jump=yes&#39;;%0A%7D;%0Aif(/Firefox/.test(navigator.userAgent))%7B%0AsetTimeout(a,0)%0A%7D%0Aelse%7B%0Aa()%0A%7D%0A%7D)()" class="bookmarklet_button" title="AddToAny">Drag to Bookmarks to add to Bookmarks!</a>
 

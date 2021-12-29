@@ -72,9 +72,9 @@ Now you are able to push your changes to the selected remote server
 
 ### branching
 
-Branches are used to develop features isolated from each other. The _master_ branch is the “default” branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+Branches are used to develop features isolated from each other. The _master_ branch is the “default " branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
 
-create a new branch named “feature*x” and switch to it using  
+create a new branch named “feature*x " and switch to it using  
 `git checkout -b feature_x`  
 switch back to master  
 `git checkout master`  
@@ -180,7 +180,7 @@ Clones, or copies, an existing repository into a new directory. It also adds rem
 
 ### commit
 
-Stores the current contents of the index in a new “commit.” This commit contains the changes made and a message created by the user.
+Stores the current contents of the index in a new “commit. " This commit contains the changes made and a message created by the user.
 
     # commit with a message
     $ git commit -m "Added multiplyNumbers() function to HelloWorld.c"

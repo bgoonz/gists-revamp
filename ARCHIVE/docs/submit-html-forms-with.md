@@ -2,7 +2,7 @@ Netlify comes with built-in form handling that’s enabled by default. Our build
 
 ## [#](https://docs.netlify.com/forms/setup/#html-forms) HTML forms
 
-Code an HTML form into any page on your site, add `data-netlify="true"` or a `netlify` attribute to the `<form>` tag, and you can start receiving [submissions](https://docs.netlify.com/forms/submissions) in your Netlify site admin panel.
+Code an HTML form into any page on your site, add `data-netlify="true"` or a `netlify` attribute to the `<form>` tag, and you can start receiving [submissions](https://docs.netlify.com/forms/submissions) in your Netlify site admin panel.
 
 Your form’s `name` attribute determines what we call the form in the Netlify app interface. If you have more than one form on a site, each form should have a different `name` attribute.
 

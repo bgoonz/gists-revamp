@@ -1,12 +1,12 @@
 # Understanding Async Await In The Context Of The Event Loop
 
-There’s a special syntax to work with promises in a more comfortable fashion, called “async/await”. It’s surprisingly easy to understand…
+There’s a special syntax to work with promises in a more comfortable fashion, called “async/await ". It’s surprisingly easy to understand…
 
 ---
 
 ### Understanding Async Await In The Context Of The Event Loop
 
-#### There’s a special syntax to work with promises in a more comfortable fashion, called “async/await”. It’s surprisingly easy to understand and use.
+#### There’s a special syntax to work with promises in a more comfortable fashion, called “async/await ". It’s surprisingly easy to understand and use.
 
 The <a href="https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke" class="markup--anchor markup--p-anchor">following excerpt</a> comes from the phenomenally written article on the subject of the <a href="https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke" class="markup--anchor markup--p-anchor">callstack</a> and <a href="https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif" class="markup--anchor markup--p-anchor">event-queue</a> by <a href="https://dev.to/lydiahallie" class="markup--anchor markup--p-anchor">Lidia Hallie</a>!
 
@@ -74,7 +74,7 @@ This means that the function has been added to the _queue_ after 1000ms where it
 
 ### Async/await
 
-> There’s a special syntax to work with promises in a more comfortable fashion, called “async/await”. It’s surprisingly easy to understand and use.
+> There’s a special syntax to work with promises in a more comfortable fashion, called “async/await ". It’s surprisingly easy to understand and use.
 
 ### <a href="#async-functions" class="markup--anchor markup--h3-anchor">Async functions</a>
 
@@ -101,9 +101,9 @@ Let’s start with the `async` keyword. It can be placed before a function, like
 
 Here’s an example with a promise that resolves in 1 second:
 
-The function execution “pauses” at line 5 and resumes when the promise resolves, taking the promise’s eventual resolution as it’s value.
+The function execution “pauses " at line 5 and resumes when the promise resolves, taking the promise’s eventual resolution as it’s value.
 
-> The code above shows “done!” in one second.
+> The code above shows “done! " in one second.
 
 ### `Await` suspends the function execution until the promise settles, and then resumes it with the promise result.
 

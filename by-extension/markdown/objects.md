@@ -1,506 +1,245 @@
-# Objects
+# Objects in Javascript
 
-As we know from the chapter <info:types>, there are eight data types in JavaScript. Seven of them are called "primitive", because their values contain only a single thing (be it a string or a number or whatever).
+Codepen with examples for you to practice with below!
 
-In contrast, objects are used to store keyed collections of various data and more complex entities. In JavaScript, objects penetrate almost every aspect of the language. So we must understand them first before going in-depth anywhere else.
+---
 
-An object can be created with figure brackets `{…}` with an optional list of _properties_. A property is a "key: value" pair, where `key` is a string (also called a "property name"), and `value` can be anything.
+### Objects in Javascript
 
-We can imagine an object as a cabinet with signed files. Every piece of data is stored in its file by the key. It's easy to find a file by its name or add/remove a file.
+#### Codepen with examples for you to practice with below!
 
-![](object.svg)
+<figure><img src="https://cdn-images-1.medium.com/max/800/1*F_xu5P1BJ300C3OixplWNA.png" class="graf-image" /></figure>### The Object Type
 
-An empty object ("empty cabinet") can be created using one of two syntaxes:
+The `object` is a data structure that stores other data, similar to how an array stores elements.
 
-```js
-let user = new Object(); // "object constructor" syntax
-let user = {}; // "object literal" syntax
-```
+Javascript simple types:
 
-![](object-user-empty.svg)
+- <span id="5a44">numbers _(has object-like methods but they are immutable)_</span>
+- <span id="8cd7">strings _(has object-like methods but they are immutable)_</span>
+- <span id="7ed9">booleans _(has object-like methods but they are immutable)_</span>
+- <span id="420c">null</span>
+- <span id="b51f">undefined</span>
 
-Usually, the figure brackets `{...}` are used. That declaration is called an _object literal_.
+All other values are _objects_ including arrays and functions.
 
-## Literals and properties
+Objects are class free, can contain other objects and can inherit properties from their prototypes (which can _reduce object initialisation time and memory consumption_).
 
-We can immediately put some properties into `{...}` as "key: value" pairs:
+In other programming languages, objects are referred to as, “dictionaries ", “maps ", or “associative arrays ".
 
-```js
-let user = {
-  // an object
-  name: "John", // by key "name" store value "John"
-  age: 30, // by key "age" store value 30
-};
-```
+- <span id="2839">Objects are indexed with `keys` instead of numbers.</span>
+- <span id="faa0">Order is not guaranteed within an Object.</span>
+- <span id="4575">Objects are defined by using curly braces `{}`</span>
+- <span id="0c11">You can think of Objects as tables.</span>
 
-A property has a key (also known as "name" or "identifier") before the colon `":"` and a value to the right of it.
+> _Fun Fact: Objects are affectionately known as POJO’s (Plain Old Javascript Objects)_
 
-In the `user` object, there are two properties:
+**Setting Keys and Values**
 
-1. The first property has the name `"name"` and the value `"John"`.
-2. The second one has the name `"age"` and the value `30`.
+- <span id="2d68">If we try to access a key that has not yet been assigned within an object we will output undefined.</span>
+- <span id="f945">The **preferred method** for checking to see if an object exists at a key is to use the operator.</span>
 
-The resulting `user` object can be imagined as a cabinet with two signed files labeled "name" and "age".
+**Using Variables as Keys**
 
-![user object](object-user.svg)
+### Using Different Notations
 
-We can add, remove and read files from it any time.
+**Bracket Notation vs Dot Notation**
 
-Property values are accessible using the dot notation:
+Easier To Read
 
-```js
-// get property values of the object:
-alert(user.name); // John
-alert(user.age); // 30
-```
+You can use variables as keys!
 
-The value can be of any type. Let's add a boolean one:
+Easier To Write b/c do not need Quotations.
 
-```js
-user.isAdmin = true;
-```
+Okay to use variables and Strings that start with numbers.
 
-![user object 2](object-user-isadmin.svg)
+Cannot access with Variables
 
-To remove a property, we can use `delete` operator:
+Keys cannot contain numbers as their first character
 
-```js
-delete user.age;
-```
+- <span id="7b34">**When accessing object keys**: Bracket notation needs to refer to that key in quotations, dot notation doesn’t.</span>
+- <span id="9e11">**When accessing object keys via a variable**: Bracket notation can refer to that key w/o use of quotations, dot notation can’t do this at all.</span>
 
-![user object 3](object-user-delete.svg)
+**Putting it All Together**
 
-We can also use multiword property names, but then they must be quoted:
+You can put an object together in a single statement.
 
-```js
-let user = {
-  name: "John",
-  age: 30,
-  "likes birds": true, // multiword property name must be quoted
-};
-```
+**Operator Precedence Revisited**
 
-![](object-user-props.svg)
+### Iterating Through Objects
 
-The last property in the list may end with a comma:
+Because objects store **_unordered_** key-value pairs, we do not rely on indices to access values; instead we rely on our keys.
 
-```js
-let user = {
-  name: "John",
-  age: 30*!*,*/!*
-}
-```
+**Methods vs Functions**
 
-That is called a "trailing" or "hanging" comma. Makes it easier to add/remove/move around properties, because all lines become alike.
+A is a function that _belongs_ to an object. Every method is a function, but _not_ every function is a method.
 
-## Square brackets
+**Useful Object Methods**
 
-For multiword properties, the dot access doesn't work:
+- <span id="b0e3">`Object.keys()` : A method that allows us to iterate through keys, it accepts an obj as the argument and returns an array of the keys.</span>
+- <span id="7fbd">`Object.values()` : Method that accepts an object as the argument and returns an array of the values.</span>
 
-```js run
-// this would give a syntax error
-user.likes birds = true
-```
+**Iterating through an Object’s keys & values**
 
-JavaScript doesn't understand that. It thinks that we address `user.likes`, and then gives a syntax error when comes across unexpected `birds`.
+### References vs Primitives
 
-The dot requires the key to be a valid variable identifier. That implies: contains no spaces, doesn't start with a digit and doesn't include special characters (`$` and `_` are allowed).
+**Primitives vs Objects**
 
-There's an alternative "square bracket notation" that works with any string:
+So far we have learned about 6 different data types:
 
-```js run
-let user = {};
+- <span id="5918">**Primitive** : Boolean, Null, Undefined, Number, String.</span>
+- <span id="d57e">**Reference** : Object (Arrays are a type of object)</span>
+- <span id="f915">Remember that **primitive** types are immutable!</span>
 
-// set
-user["likes birds"] = true;
+**Immutability**
 
-// get
-alert(user["likes birds"]); // true
+- <span id="85e1">When we reassign primitives we simply have our variable point elsewhere in memory.</span>
+- <span id="ae03">In a nutshell, **immutability** cannot change values in memory, but only reassign where our variables are pointing to.</span>
 
-// delete
-delete user["likes birds"];
-```
+**Mutability**
 
-Now everything is fine. Please note that the string inside the brackets is properly quoted (any type of quotes will do).
+### Rest and Spread
 
-Square brackets also provide a way to obtain the property name as the result of any expression -- as opposed to a literal string -- like from a variable as follows:
+**Using the Spread Operator and Rest Parameter Syntax**  
+**Accepting Arguments**
 
-```js
-let key = "likes birds";
+- <span id="5f1f">Just keep in mind that function will still run even if it is not passed any arguments.</span>
+- <span id="e494">Parameters will take just as many arguments they need even if more than enough are offered.</span>
+- <span id="f2c8">We will encounter an error if there are not enough parameters ( &gt; 0).</span>
 
-// same as user["likes birds"] = true;
-user[key] = true;
-```
+**Utilizing Rest Parameters**
 
-Here, the variable `key` may be calculated at run-time or depend on the user input. And then we use it to access the property. That gives us a great deal of flexibility.
+- <span id="e9b5">`Rest Parameter Syntax` : Allows us to capture all of a function’s incoming arguments into an array.</span>
+- <span id="f072">Only the last parameter can be a rest parameter.</span>
 
-For instance:
+**Utilizing Spread Syntax**
 
-```js run
-let user = {
-  name: "John",
-  age: 30,
-};
+- <span id="347a">Takes a data type (i.e. array, obj) and spreads the values of that type where elements are expected.</span>
+- <span id="4612">Takes iterable data and spreads the elements of that type where arguments are expected.</span>
 
-let key = prompt("What do you want to know about the user?", "name");
+### Destructuring
 
-// access by variable
-alert(user[key]); // John (if enter "name")
-```
+**Swapping Variables using destructuring**
 
-The dot notation cannot be used in a similar way:
+**Destructuring objects into variables**
 
-```js run
-let user = {
-  name: "John",
-  age: 30,
-};
+**Destructuring and the Rest Pattern**
 
-let key = "name";
-alert(user.key); // undefined
-```
+### Destructuring Parameters
 
-### Computed properties
+We can also destructure **incoming parameters** of a function.  
+ This is very useful when we’re passing objects around to different functions.
 
-We can use square brackets in an object literal, when creating an object. That's called _computed properties_.
+---
 
-For instance:
+### Object Literals
 
-```js run
-let fruit = prompt("Which fruit to buy?", "apple");
+- <span id="b0a3">An object literal is _zero or more comma-separated name/value pairs surrounded by curly braces_ {}</span>
 
-let bag = {
-*!*
-  [fruit]: 5, // the name of the property is taken from the variable fruit
-*/!*
-};
+<!-- -->
 
-alert( bag.apple ); // 5 if fruit="apple"
-```
+    let empty_object = {};
 
-The meaning of a computed property is simple: `[fruit]` means that the property name should be taken from `fruit`.
+    let today = {
+        day: "Wednesday",
+        month: "April",
+        year: 2014,
 
-So, if a visitor enters `"apple"`, `bag` will become `{apple: 5}`.
+    weather: { //objects can contain nested objects like this one
+            morning: "sunny",
+            afternoon: "cloudy"
+        }
+    }
 
-Essentially, that works the same as:
+### Retrieval
 
-```js run
-let fruit = prompt("Which fruit to buy?", "apple");
-let bag = {};
+- <span id="ee43">Can be done with either dot notation `today.weather.morning` or with square brackets `today['month']`</span>
+- <span id="d7ae">Or operand (||) can be used to fill in default values for nonexistent data to prevent and _undefined_ error: `var weath = today.weather.evening || "unknown"`</span>
 
-// take property name from the fruit variable
-bag[fruit] = 5;
-```
+### Update
 
-...But looks nicer.
+- <span id="2d21">Assigning a property value to an object overwrites any existing property values with that property name</span>
 
-We can use more complex expressions inside square brackets:
+### Reference
 
-```js
-let fruit = "apple";
-let bag = {
-  [fruit + "Computers"]: 5, // bag.appleComputers = 5
-};
-```
+- <span id="413d">Objects refer to each other, they don’t hold duplicate copies of data</span>
 
-Square brackets are much more powerful than the dot notation. They allow any property names and variables. But they are also more cumbersome to write.
+### Prototype
 
-So most of the time, when property names are known and simple, the dot is used. And if we need something more complex, then we switch to square brackets.
+- <span id="b567">Every object has a prototype object from which it inherits properties</span>
+- <span id="943e">_Object.prototype_ comes standard with Javascript and is almost like a ‘root parent’</span>
 
-## Property value shorthand
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*1MKtZt0a5gREie59" class="graf-image" /></figure>-   <span id="2293">The `Object.create` method is now available in ES5 (but the method is in the book if required for older versions)</span>
+-   <span id="5001">If an object does not have a property you ask it for, it will keep looking up the prototype chain until it finds it</span>
+-   <span id="abaf">If the property *does note exist* anywhere in the chain, it will return *undefined*</span>
+-   <span id="03eb">A new property is *immediately visible* to all of the objects below it in the chain once created</span>
 
-In real code we often use existing variables as values for property names.
+More details in <a href="https://github.com/Lambda-April/Unsorted-Notes/blob/main" class="markup--anchor markup--p-anchor">Chapter 6</a>
 
-For instance:
+### Reflection
 
-```js run
-function makeUser(name, age) {
-  return {
-    name: name,
-    age: age,
-    // ...other properties
-  };
-}
+- <span id="60ed">Determining what properties an object has</span>
+- <span id="a00d">Using `typeof` includes all properties in the prototype chain including functions</span>
+- <span id="4365">To avoid inherited properties, use `hasOwnProperty(type);` which returns _true_ if that property exists only in that object itself (not the chain)</span>
 
-let user = makeUser("John", 30);
-alert(user.name); // John
-```
+<!-- -->
 
-In the example above, properties have the same names as variables. The use-case of making a property from a variable is so common, that there's a special _property value shorthand_ to make it shorter.
+    today.hasOwnProperty(‘number’) //will return true today.hasOwnProperty(‘constructor’) //will return false
 
-Instead of `name:name` we can just write `name`, like this:
+### Enumeration
 
-```js
-function makeUser(name, age) {
-*!*
-  return {
-    name, // same as name: name
-    age,  // same as age: age
-    // ...
-  };
-*/!*
-}
-```
+- <span id="ce3f">Best way to enumerate all the properties you want is a for loop:</span>
 
-We can use both normal properties and shorthands in the same object:
+<!-- -->
 
-```js
-let user = {
-  name, // same as name:name
-  age: 30,
-};
-```
+    let i;
+    let properties = [ ‘day’, ‘month’, ‘year’ ];
+    for (i = 0; i < properties.length; i++) {
+        document.writeIn(properties[i] + ‘:’ + today[properties[i]]);
+     }
 
-## Property names limitations
+- <span id="5d1f">This ensures you get the properties you want (i.e. not up the prototype chain) and in the order you want, as opposed to a _for in_ loop which achieves neither of these</span>
 
-As we already know, a variable cannot have a name equal to one of language-reserved words like "for", "let", "return" etc.
+### Delete
 
-But for an object property, there's no such restriction:
+- <span id="546d">Removes property from object, but also reveals property from further up the prototype chain if it exists</span>
+- <span id="9258">Format: `delete today.month`</span>
 
-```js run
-// these properties are all right
-let obj = {
-  for: 1,
-  let: 2,
-  return: 3,
-};
+### Global Abatement
 
-alert(obj.for + obj.let + obj.return); // 6
-```
+- <span id="5b97">One way to mitigate the risks of global variables is to _create a single global variable_ which then contains your whole application</span>
 
-In short, there are no limitations on property names. They can be any strings or symbols (a special type for identifiers, to be covered later).
+<!-- -->
 
-Other types are automatically converted to strings.
+    let MYAPP = {}
 
-For instance, a number `0` becomes a string `"0"` when used as a property key:
+    MYAPP.today = {
+        day: "Wednesday",
+        month: "April",
+        year: 2014,
 
-```js run
-let obj = {
-  0: "test", // same as "0": "test"
-};
+    weather: { //objects can contain nested objects like this one
+            morning: "sunny",
+            afternoon: "cloudy"
+        }
+    }
+    //Making sure all other variables (like today) are contained within this one global variable (MYAPP) means none of them have global scope and therefore the risk of naming conflicts, etc in your application is reduced
 
-// both alerts access the same property (the number 0 is converted to string "0")
-alert(obj["0"]); // test
-alert(obj[0]); // test (same property)
-```
+#### Further resources:
 
-There's a minor gotcha with a special property named `__proto__`. We can't set it to a non-object value:
+<a href="https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b"><strong>A list of all of my articles to link to future posts</strong><br />
+<em>You should probably skip this one… seriously it’s just for internal use!</em>bryanguner.medium.com</a><a href="https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
-```js run
-let obj = {};
-obj.__proto__ = 5; // assign a number
-alert(obj.__proto__); // [object Object] - the value is an object, didn't work as intended
-```
+<a href="https://gist.github.com/bgoonz" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://gist.github.com/bgoonz"><strong>bgoonz’s gists</strong><br />
+<em>Instantly share code, notes, and snippets. Web Developer, Electrical Engineer JavaScript | CSS | Bootstrap | Python |…</em>gist.github.com</a><a href="https://gist.github.com/bgoonz" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-As we see from the code, the assignment to a primitive `5` is ignored.
+<a href="https://github.com/bgoonz" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/bgoonz"><strong>bgoonz — Overview</strong><br />
+<em>Web Developer, Electrical Engineer JavaScript | CSS | Bootstrap | Python | React | Node.js | Express | Sequelize…</em>github.com</a><a href="https://github.com/bgoonz" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-We'll cover the special nature of `__proto__` in [subsequent chapters](info:prototype-inheritance), and suggest the [ways to fix](info:prototype-methods) such behavior.
+<a href="https://web-dev-resource-hub.netlify.app/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://web-dev-resource-hub.netlify.app/"><strong>Web-Dev-Resource-Hub</strong><br />
+<em>Edit description</em>web-dev-resource-hub.netlify.app</a><a href="https://web-dev-resource-hub.netlify.app/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
-## Property existence test, "in" operator
+By <a href="https://medium.com/@bryanguner" class="p-author h-card">Bryan Guner</a> on [April 15, 2021](https://medium.com/p/cc578a781e1d).
 
-A notable feature of objects in JavaScript, compared to many other languages, is that it's possible to access any property. There will be no error if the property doesn't exist!
+<a href="https://medium.com/@bryanguner/objects-in-javascript-cc578a781e1d" class="p-canonical">Canonical link</a>
 
-Reading a non-existing property just returns `undefined`. So we can easily test whether the property exists:
-
-```js run
-let user = {};
-
-alert(user.noSuchProperty === undefined); // true means "no such property"
-```
-
-There's also a special operator `"in"` for that.
-
-The syntax is:
-
-```js
-"key" in object;
-```
-
-For instance:
-
-```js run
-let user = { name: "John", age: 30 };
-
-alert("age" in user); // true, user.age exists
-alert("blabla" in user); // false, user.blabla doesn't exist
-```
-
-Please note that on the left side of `in` there must be a _property name_. That's usually a quoted string.
-
-If we omit quotes, that means a variable, it should contain the actual name to be tested. For instance:
-
-```js run
-let user = { age: 30 };
-
-let key = "age";
-alert( *!*key*/!* in user ); // true, property "age" exists
-```
-
-Why does the `in` operator exist? Isn't it enough to compare against `undefined`?
-
-Well, most of the time the comparison with `undefined` works fine. But there's a special case when it fails, but `"in"` works correctly.
-
-It's when an object property exists, but stores `undefined`:
-
-```js run
-let obj = {
-  test: undefined,
-};
-
-alert(obj.test); // it's undefined, so - no such property?
-
-alert("test" in obj); // true, the property does exist!
-```
-
-In the code above, the property `obj.test` technically exists. So the `in` operator works right.
-
-Situations like this happen very rarely, because `undefined` should not be explicitly assigned. We mostly use `null` for "unknown" or "empty" values. So the `in` operator is an exotic guest in the code.
-
-## The "for..in" loop
-
-To walk over all keys of an object, there exists a special form of the loop: `for..in`. This is a completely different thing from the `for(;;)` construct that we studied before.
-
-The syntax:
-
-```js
-for (key in object) {
-  // executes the body for each key among object properties
-}
-```
-
-For instance, let's output all properties of `user`:
-
-```js run
-let user = {
-  name: "John",
-  age: 30,
-  isAdmin: true,
-};
-
-for (let key in user) {
-  // keys
-  alert(key); // name, age, isAdmin
-  // values for the keys
-  alert(user[key]); // John, 30, true
-}
-```
-
-Note that all "for" constructs allow us to declare the looping variable inside the loop, like `let key` here.
-
-Also, we could use another variable name here instead of `key`. For instance, `"for (let prop in obj)"` is also widely used.
-
-### Ordered like an object
-
-Are objects ordered? In other words, if we loop over an object, do we get all properties in the same order they were added? Can we rely on this?
-
-The short answer is: "ordered in a special fashion": integer properties are sorted, others appear in creation order. The details follow.
-
-As an example, let's consider an object with the phone codes:
-
-```js run
-let codes = {
-  "49": "Germany",
-  "41": "Switzerland",
-  "44": "Great Britain",
-  // ..,
-  "1": "USA"
-};
-
-*!*
-for (let code in codes) {
-  alert(code); // 1, 41, 44, 49
-}
-*/!*
-```
-
-The object may be used to suggest a list of options to the user. If we're making a site mainly for German audience then we probably want `49` to be the first.
-
-But if we run the code, we see a totally different picture:
-
-- USA (1) goes first
-- then Switzerland (41) and so on.
-
-The phone codes go in the ascending sorted order, because they are integers. So we see `1, 41, 44, 49`.
-
-````smart header="Integer properties? What's that?"
-The "integer property" term here means a string that can be converted to-and-from an integer without a change.
-
-So, "49" is an integer property name, because when it's transformed to an integer number and back, it's still the same. But "+49" and "1.2" are not:
-
-```js run
-// Math.trunc is a built-in function that removes the decimal part
-alert( String(Math.trunc(Number("49"))) ); // "49", same, integer property
-alert( String(Math.trunc(Number("+49"))) ); // "49", not same "+49" ⇒ not integer property
-alert( String(Math.trunc(Number("1.2"))) ); // "1", not same "1.2" ⇒ not integer property
-```
-````
-
-...On the other hand, if the keys are non-integer, then they are listed in the creation order, for instance:
-
-```js run
-let user = {
-  name: "John",
-  surname: "Smith"
-};
-user.age = 25; // add one more
-
-*!*
-// non-integer properties are listed in the creation order
-*/!*
-for (let prop in user) {
-  alert( prop ); // name, surname, age
-}
-```
-
-So, to fix the issue with the phone codes, we can "cheat" by making the codes non-integer. Adding a plus `"+"` sign before each code is enough.
-
-Like this:
-
-```js run
-let codes = {
-  "+49": "Germany",
-  "+41": "Switzerland",
-  "+44": "Great Britain",
-  // ..,
-  "+1": "USA",
-};
-
-for (let code in codes) {
-  alert(+code); // 49, 41, 44, 1
-}
-```
-
-Now it works as intended.
-
-## Summary
-
-Objects are associative arrays with several special features.
-
-They store properties (key-value pairs), where:
-
-- Property keys must be strings or symbols (usually strings).
-- Values can be of any type.
-
-To access a property, we can use:
-
-- The dot notation: `obj.property`.
-- Square brackets notation `obj["property"]`. Square brackets allow to take the key from a variable, like `obj[varWithKey]`.
-
-Additional operators:
-
-- To delete a property: `delete obj.prop`.
-- To check if a property with the given key exists: `"key" in obj`.
-- To iterate over an object: `for (let key in obj)` loop.
-
-What we've studied in this chapter is called a "plain object", or just `Object`.
-
-There are many other kinds of objects in JavaScript:
-
-- `Array` to store ordered data collections,
-- `Date` to store the information about the date and time,
-- `Error` to store the information about an error.
-- ...And so on.
-
-They have their special features that we'll study later. Sometimes people say something like "Array type" or "Date type", but formally they are not types of their own, but belong to a single "object" data type. And they extend it in various ways.
-
-Objects in JavaScript are very powerful. Here we've just scratched the surface of a topic that is really huge. We'll be closely working with objects and learning more about them in further parts of the tutorial.
+Exported from [Medium](https://medium.com) on July 13, 2021.

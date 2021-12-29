@@ -18666,7 +18666,7 @@ Let's take the following task as an example.
 
 We have a text and need to replace all quotes `"..."` with guillemet marks: `«...»`. They are preferred for typography in many countries.
 
-For instance: `"Hello, world"` should become `«Hello, world»`. There exist other quotes, such as `„Witam, świat!”` (Polish) or `「你好，世界」` (Chinese), but for our task let's choose `«...»`.
+For instance: `"Hello, world"` should become `«Hello, world»`. There exist other quotes, such as `„Witam, świat! "` (Polish) or `「你好，世界」` (Chinese), but for our task let's choose `«...»`.
 
 The first thing to do is to locate quoted strings, and then we can replace them.
 
@@ -27385,7 +27385,7 @@ Objects allow you to store keyed collections of values. That's fine.
 
 But quite often we find that we need an *ordered collection*, where we have a 1st, a 2nd, a 3rd element and so on. For example, we need that to store a list of something: users, goods, HTML elements etc.
 
-It is not convenient to use an object here, because it provides no methods to manage the order of elements. We can’t insert a new property “between” the existing ones. Objects are just not meant for such use.
+It is not convenient to use an object here, because it provides no methods to manage the order of elements. We can’t insert a new property “between " the existing ones. Objects are just not meant for such use.
 
 There exists a special data structure named `Array`, to store ordered collections.
 

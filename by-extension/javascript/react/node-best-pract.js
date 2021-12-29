@@ -217,7 +217,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**Otherwise:** Consider this – your function expects a numeric argument “Discount " which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
 
 🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
 
@@ -461,7 +461,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
 
-**Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**Otherwise:** A deployment just failed, a test named “Add product " failed. Does this tell you what exactly is malfunctioning?
 
 🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
@@ -631,7 +631,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**Otherwise:** You’ll find that you’re performing many “diagnostic deploys " – shipping code to production only to extract some information for diagnostic purposes
 
 🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 

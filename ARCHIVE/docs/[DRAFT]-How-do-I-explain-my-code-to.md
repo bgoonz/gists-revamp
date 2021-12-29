@@ -18,7 +18,7 @@ When in an interview situation or at work, being able to concisely explain code 
   - similar to don’t read the bullets in powerpoint
 - Comment blocks that say what code does, and why, but not how (unless absolutely needed)
 - Point out and explain anything that’s unusual
-  - e.g. iterating through a list by 3s
+  - e.g. iterating through a list by 3s
 - Be enthusiastic and respectful, show you have fun with it
 - Don’t throw anyone under the bus
 - Don’t be nervous

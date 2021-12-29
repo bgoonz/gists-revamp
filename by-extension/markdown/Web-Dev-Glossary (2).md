@@ -155,7 +155,7 @@ bandwidth that you are using.
 
 **DROP-DOWN:** A drop-down can be one of two elements: A drop-down menu is a
 navigational menu that has sub-menus or categories below it. When clicked on, the sub
-menus “drop down” and are then visible to the user. A drop-down field is found within a
+menus “drop down " and are then visible to the user. A drop-down field is found within a
 form on a website. It acts similar to a drop-down menu, but it requires the user to choose
 an option from multiple choices.
 
@@ -172,7 +172,7 @@ length to get more information displayed on each page.
 
 **FONT FAMILY** : Font family is a group designation for defining the typefaces used in CSS
 documents. The font family tag generally lists multiple fonts to be used, and usually ends
-with the generic font category (such as “serif” or “sans-serif”).
+with the generic font category (such as “serif " or “sans-serif ").
 
 **GIF** : A type of file used for images, especially animated graphics and line-drawn images
 (as opposed to photographs). A .gif image can be saved with a transparent background,
@@ -212,7 +212,7 @@ done over a secure, encrypted connection.
 **HYPERLINK** : A hyperlink is a link from one web page to another, either on the same site or
 another one. Generally, these are text or images, and are highlighted in some way (text is
 often underlined or put in a different color or font weight). The inclusion of hyperlinks are
-the “hyper” part of “hypertext.”
+the “hyper " part of “hypertext. "
 
 **HYPERTEXT** : Hypertext is any computer-based text that includes hyperlinks. Hypertext
 can also include presentation devices like tables or images, in addition to plain text and
@@ -255,7 +255,7 @@ that you are linking to. To have a link from a website means that someone else i
 this piece of code that will bring people to your website or resource.
 
 **META DATA** Meta data is the data contained in the header that offers information about
-the web page that a visitor is currently on. The information contained in the meta data isn”t
+the web page that a visitor is currently on. The information contained in the meta data isn "t
 viewable on the web page (except in the source code). Meta data is contained within meta
 tags.
 
@@ -276,7 +276,7 @@ operating system.
 more ideal for web use. Example: Images used on a website should be optimized to a
 smaller file size to decrease the time it takes to load the page they reside on.
 
-**PERMALINK** : Short for “permanent link.” Generally used only on blogs, a permalink is a
+**PERMALINK** : Short for “permanent link. " Generally used only on blogs, a permalink is a
 link that is the permanent web address of a given blog post. Since most blogs have
 constantly-changing content, the permalink offers a way for readers to bookmark or link to
 specific posts even after those posts have moved off the home page or primary category
@@ -362,7 +362,7 @@ about the technical specifications of a design. It also can save them time from 
 back and forth with the designer.
 
 **SUB PAGE:** Any page on a website that isn’t the home page. Depending upon context, it
-could refer to pages “underneath” one of the pages in the main navigation.
+could refer to pages “underneath " one of the pages in the main navigation.
 
 **TAG** : A tag is a set of markup characters that are used around an _element_ to indicate
 where it starts < > and ends </ >. Tags can also include HTML or other code to specify
@@ -407,7 +407,7 @@ pages not just one page.
 **WEBSITE ADDRESS** : This is the location of your website and is normally typed as
 [http://www.the-name-of-the](http://www.the-name-of-the) website.com
 
-**WHITE SPACE:** This term is commonly mistaken for actual “white” colored space. White
+**WHITE SPACE:** This term is commonly mistaken for actual “white " colored space. White
 space could be red, green or any color. It refers to the space around elements. White
 space allows the elements to stand out to the user.
 

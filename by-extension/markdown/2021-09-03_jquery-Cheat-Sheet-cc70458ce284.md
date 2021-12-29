@@ -11,7 +11,7 @@ jquery methods
 ### Wrapping HTMLElements as jquery objects
 
 - <span id="0e92">wraps HTMLElement and returns jquery object</span>
-- <span id="bb81">const $liList = $(“li”)</span>
+- <span id="bb81">const $liList = $(“li ")</span>
 - <span id="0cc3">const firstLi = $liList\[0\];</span>
 - <span id="d45e">const $firstLi = $(firstLi);</span>
 
@@ -25,9 +25,9 @@ jquery methods
 
 - <span id="2901">data()</span>
 - <span id="2dee">set</span>
-- <span id="cd88">data(“key”,value)</span>
+- <span id="cd88">data(“key ",value)</span>
 - <span id="2289">get</span>
-- <span id="4c2c">data(“key”)</span>
+- <span id="4c2c">data(“key ")</span>
 
 ### traversal
 
@@ -90,8 +90,8 @@ ex:
 
 ### events
 
-- <span id="0a6a">jqueryObject.on(“eventType”, callback)</span>
-- <span id="11a3">jqueryObject.off(“eventType”, \[callback\])</span>
+- <span id="0a6a">jqueryObject.on(“eventType ", callback)</span>
+- <span id="11a3">jqueryObject.off(“eventType ", \[callback\])</span>
 - <span id="ad13">the second argument in .off is optionala BUT recommended. without, removes all listeners for the jquery object. With, will remove only listener w/ same callback</span>
 
 ### e

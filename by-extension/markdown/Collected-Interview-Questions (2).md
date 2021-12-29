@@ -8,7 +8,7 @@ _[Technically any language could be compiled or interpreted, but there are some 
 
 ## Stack vs heap
 
-_[This specific question, “stack vs. heap” is about where a language allocates memory for different types of objects. It’s not directly about the stack data structure or heap data structure.]_
+_[This specific question, “stack vs. heap " is about where a language allocates memory for different types of objects. It’s not directly about the stack data structure or heap data structure.]_
 
 When a program executes, the stack is used to hold local variables and function arguments. When a function gets called, a new stack frame is allocated on top of the stack with just enough room to hold all the local variables and arguments to the function. When the function returns, its stack frame is popped from the stack and the variables are forgotten. (Which is OK, because they were only needed for as long as the function was active.)
 

@@ -167,7 +167,7 @@ The store's reducing function will be called with the current [`getState()`](#ge
 >
 > </span>A Note for Flux Users<a href="#a-note-for-flux-users-1" class="hash-link" title="Direct link to heading">#</a>
 >
-> If you attempt to call `dispatch` from inside the [reducer](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer), it will throw with an error saying “Reducers may not dispatch actions.” This is similar to “Cannot dispatch in a middle of dispatch” error in Flux, but doesn't cause the problems associated with it. In Flux, a dispatch is forbidden while Stores are handling the action and emitting updates. This is unfortunate because it makes it impossible to dispatch actions from component lifecycle hooks or other benign places.
+> If you attempt to call `dispatch` from inside the [reducer](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer), it will throw with an error saying “Reducers may not dispatch actions. " This is similar to “Cannot dispatch in a middle of dispatch " error in Flux, but doesn't cause the problems associated with it. In Flux, a dispatch is forbidden while Stores are handling the action and emitting updates. This is unfortunate because it makes it impossible to dispatch actions from component lifecycle hooks or other benign places.
 >
 > In Redux, subscriptions are called after the root reducer has returned the new state, so you _may_ dispatch in the subscription listeners. You are only disallowed to dispatch inside the reducers because they must have no side effects. If you want to cause a side effect in response to an action, the right place to do this is in the potentially async [action creator](https://redux.js.org/understanding/thinking-in-redux/glossary#action-creator).
 
@@ -187,7 +187,7 @@ The store's reducing function will be called with the current [`getState()`](#ge
 
 </span>Notes<a href="#notes" class="hash-link" title="Direct link to heading">#</a>
 
-<sup>†</sup> The “vanilla” store implementation you get by calling \[\`createStore\`\](/api/createstore) only supports plain object actions and hands them immediately to the reducer.
+<sup>†</sup> The “vanilla " store implementation you get by calling \[\`createStore\`\](/api/createstore) only supports plain object actions and hands them immediately to the reducer.
 
 However, if you wrap [`createStore`](https://redux.js.org/api/createstore) with [`applyMiddleware`](https://redux.js.org/api/applymiddleware), the middleware can interpret actions differently, and provide support for dispatching [async actions](https://redux.js.org/understanding/thinking-in-redux/glossary#async-action). Async actions are usually asynchronous primitives like Promises, Observables, or thunks.
 

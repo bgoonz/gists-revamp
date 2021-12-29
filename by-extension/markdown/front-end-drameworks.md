@@ -77,7 +77,7 @@ HTML KickStart is an ultra–lean set of HTML5, CSS, and jQuery (javascript) fil
 
 ## Baseline
 
-> Baseline is a framework built around the idea of a “real” baseline grid.
+> Baseline is a framework built around the idea of a “real " baseline grid.
 
 Built with typographic standards in mind, Baseline makes it easy to develop a website with a pleasing grid and good typography. Baseline starts with several files to reset the browser’s default behavior, build a basic typographic layout — including style for HTML forms and new HTML 5 elements — and build a simple grid system.
 
@@ -409,7 +409,7 @@ xCSS bases on CSS and empowers a straightforward and object-oriented workflow wh
 
 ## YAML
 
-> “Yet Another Multicolumn Layout” (YAML)
+> “Yet Another Multicolumn Layout " (YAML)
 
 YAML is an (X)HTML/CSS framework for creating modern and flexible floated layouts. The structure is extremely versatile in its programming and absolutely accessible for end users.
 

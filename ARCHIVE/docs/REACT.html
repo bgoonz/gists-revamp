@@ -466,7 +466,7 @@ Use the <code>useState()</code> hook to create a state variable to hold the time
 Use the <code>useState()</code> hook to create the <code>paused</code> and <code>over</code> state variables, used to prevent the timer from ticking if it’s paused or the time has run out.
 </li>
 <li>
-Create a method <code>tick</code>, that updates the time values based on the current value (i.e. decreasing the time by one second).
+Create a method <code>tick</code>, that updates the time values based on the current value (i.e. decreasing the time by one second).
 </li>
 <li>
 Create a method <code>reset</code>, that resets all state variables to their initial states.
@@ -2239,7 +2239,7 @@ Checks if the current environment matches a given media query and returns the ap
 </p>
 <ul>
 <li>
-Check if <code>window</code> and <code>window.matchMedia</code> exist, return <code>whenFalse</code> if not (e.g. SSR environment or unsupported browser).
+Check if <code>window</code> and <code>window.matchMedia</code> exist, return <code>whenFalse</code> if not (e.g. SSR environment or unsupported browser).
 </li>
 <li>
 Use <code>window.matchMedia()</code> to match the given <code>query</code>, cast its <code>matches</code> property to a boolean and store in a state variable, <code>match</code>, using the <code>useState()</code> hook.
@@ -2356,7 +2356,7 @@ When <code>value</code> is updated, use <code>Storage.setItem()</code> to store 
 When <code>name</code> is updated, use <code>Storage.setItem()</code> to create the new key, update the <code>nameRef</code> and use <code>Storage.removeItem()</code> to remove the previous key from <code>localStorage</code>.
 </li>
 <li>
-<strong>NOTE:</strong> The hook is meant for use with primitive values (i.e. not objects) and doesn’t account for changes to <code>localStorage</code> due to other code. Both of these issues can be easily handled (e.g. JSON serialization and handling the <code>‘storage’</code> event).
+<strong>NOTE:</strong> The hook is meant for use with primitive values (i.e. not objects) and doesn’t account for changes to <code>localStorage</code> due to other code. Both of these issues can be easily handled (e.g. JSON serialization and handling the <code>‘storage’</code> event).
 </li>
 </ul>
 <div class="sourceCode" id="cb69"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb69-1" title="1"></a>

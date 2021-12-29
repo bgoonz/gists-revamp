@@ -525,7 +525,7 @@ Using the components we just created (App, FormComponent and MessageComponent), 
 
 When a user clicks submit, show the data that's on state in an `alert` statement.
 
-### Stretch 
+### Stretch
 
 Loop over a list of items showing those items to the screen. (Can be a list of strings). When a user clicks submit, instead of logging the item, push an item into that list, and watch the magic happen.
 

@@ -48,8 +48,8 @@ print(str(17.0) + ’ and ’ + str(17)) # => 17.0 and 17
 
 The arithmetic operators are the same between JS and Python, with two additions:
 
-“\*\*” : Double asterisk for exponent.
-“//” : Integer Division.
+“\*\* " : Double asterisk for exponent.
+“// " : Integer Division.
 There are no spaces between math operations in Python.
 
 Integer Division gives the other part of the number from Module; it is a way to do round down numbers replacing Math.floor() in JS.
@@ -64,7 +64,7 @@ You can escape strings like so 'Jodi asked, "What\'s up, Sam?"'
 
 Multiline strings use triple quotes.
 
-print(’‘’My instructions are very long so to make them more readable in the code I am putting them on more than one line. I can even include “quotes” of any kind because they won’t get confused with the end of the string!’’’)
+print(’‘’My instructions are very long so to make them more readable in the code I am putting them on more than one line. I can even include “quotes " of any kind because they won’t get confused with the end of the string!’’’)
 
 Use the len() function to get the length of a string.
 
@@ -81,26 +81,26 @@ print("Spaghetti"[4:-1]) # => hett
 print("Spaghetti"[4:4]) # => (empty string)
 The end range is exclusive just like slice in JS.
 Shortcut to get from the beginning of a string to a certain index.
-print(“Spaghetti”[:4]) # => Spag print(“Spaghetti”[:-1]) # => Spaghett
+print(“Spaghetti "[:4]) # => Spag print(“Spaghetti "[:-1]) # => Spaghett
 
 Shortcut to get from a certain index to the end of a string.
-print(“Spaghetti”[1:]) # => paghetti print(“Spaghetti”[-4:]) # => etti
+print(“Spaghetti "[1:]) # => paghetti print(“Spaghetti "[-4:]) # => etti
 
 The index string function is the equiv. of indexOf() in JS
 
-print(“Spaghetti”.index(“h”)) # => 4 print(“Spaghetti”.index(“t”)) # => 6
+print(“Spaghetti ".index(“h ")) # => 4 print(“Spaghetti ".index(“t ")) # => 6
 
 The count function finds out how many times a substring appears in a string.
 
-print(“Spaghetti”.count(“h”)) # => 1 print(“Spaghetti”.count(“t”)) # => 2 print(“Spaghetti”.count(“s”)) # => 0 print(’‘’We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.’’‘.count(’the’)) # => 4
+print(“Spaghetti ".count(“h ")) # => 1 print(“Spaghetti ".count(“t ")) # => 2 print(“Spaghetti ".count(“s ")) # => 0 print(’‘’We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.’’‘.count(’the’)) # => 4
 
 You can use + to concatenate strings, just like in JS.
 
-You can also use “\*” to repeat strings or multiply strings.
+You can also use “\* " to repeat strings or multiply strings.
 
 Use the format() function to use placeholders in a string to input values later on.
 
-first_name = “Billy” last_name = “Bob” print(‘Your name is {0} {1}’.format(first_name, last_name)) # => Your name is Billy Bob
+first_name = “Billy " last_name = “Bob " print(‘Your name is {0} {1}’.format(first_name, last_name)) # => Your name is Billy Bob
 
 Shorthand way to use format function is: print(f'Your name is {first_name} {last_name}')
 
@@ -234,8 +234,8 @@ The pass method won’t allow you to bypass every single error so you can chain 
 
 a = 100
 
-b = “5”
-try: print(a / b) except ZeroDivisionError: pass except (TypeError, NameError): print(“ERROR!”)
+b = “5 "
+try: print(a / b) except ZeroDivisionError: pass except (TypeError, NameError): print(“ERROR! ")
 
 You can use an else statement to end a chain of except statements.
 
@@ -247,7 +247,7 @@ for filename in files: try: # open the file in read mode f = open(filename, ‘r
 
 finally is used at the end to clean up all actions under any circumstance.
 
-def divide(x, y): try: result = x / y except ZeroDivisionError: print(“Cannot divide by zero”) else: print(“Result is”, result) finally: print(“Finally…”)
+def divide(x, y): try: result = x / y except ZeroDivisionError: print(“Cannot divide by zero ") else: print(“Result is ", result) finally: print(“Finally… ")
 
 Using duck typing to check to see if some value is able to use a certain method.
 
@@ -255,7 +255,7 @@ Try a number - nothing will print out
 a = 321 if hasattr(a, ‘len’): print(len(a))
 
 Try a string - the length will print out (4 in this case)
-b = “5555” if hasattr(b, ‘len’): print(len(b))
+b = “5555 " if hasattr(b, ‘len’): print(len(b))
 
 Pass
 Pass Keyword is required to write the JS equivalent of :
@@ -278,12 +278,12 @@ A colon at the end of the line.
 One tab indentation for the code to run.
 You can use default parameters just like in JS
 
-def greeting(name, saying=“Hello”): print(saying, name)
+def greeting(name, saying=“Hello "): print(saying, name)
 
-greeting(“Monica”)
+greeting(“Monica ")
 
 Hello Monica
-greeting(“Barry”, “Hey”)
+greeting(“Barry ", “Hey ")
 
 Hey Barry
 Keep in mind, default parameters must always come after regular parameters.
@@ -293,11 +293,11 @@ def increment(delta=1, value): return delta + value
 
 You can specify arguments by name without destructuring in Python.
 
-def greeting(name, saying=“Hello”): print(saying, name)
+def greeting(name, saying=“Hello "): print(saying, name)
 
 name has no default value, so just provide the value
 saying has a default value, so use a keyword argument
-greeting(“Monica”, saying=“Hi”)
+greeting(“Monica ", saying=“Hi ")
 
 The lambda keyword is used to create anonymous functions and are supposed to be one-liners.
 
@@ -430,13 +430,13 @@ for k, v in spam.items(): print(‘Key:’ + k + ’ Value: ’ + str(v))
 
 Prints Key: age Value: 42
 Prints Key: color Value: red
-Looping over string for c in “abcdefg”: print(c) More On Functions Variable-length positional arguments : (args) def add(a, b, args): total = a + b; for n in args: total += n return total
+Looping over string for c in “abcdefg ": print(c) More On Functions Variable-length positional arguments : (args) def add(a, b, args): total = a + b; for n in args: total += n return total
 
 add(1, 2) # Returns 3
 
-add(2, 3, 4, 5) # Returns 14 keyword arguments : (\*kwargs) def print_names_and_countries(greeting, \*\*kwargs): for k, v in kwargs.items(): print(greeting, k, “from”, v)
+add(2, 3, 4, 5) # Returns 14 keyword arguments : (\*kwargs) def print_names_and_countries(greeting, \*\*kwargs): for k, v in kwargs.items(): print(greeting, k, “from ", v)
 
-print_names_and_countries(“Hi”, Monica=“Sweden”, Charles=“British Virgin Islands”, Carlo=“Portugal”)
+print_names_and_countries(“Hi ", Monica=“Sweden ", Charles=“British Virgin Islands ", Carlo=“Portugal ")
 
 Prints
 Hi Monica from Sweden
@@ -444,7 +444,7 @@ Hi Charles from British Virgin Islands
 Hi Carlo from Portugal
 When you order arguments within a function or function call, the args need to occur in a particular order: formal positional args. args keyword args with default values **kwargs def example(arg_1, arg_2, args, **kwargs): pass
 
-def example2(arg_1, arg_2, \*args, kw_1=“shark”, kw_2=“blowfish”, \*\*kwargs): pass Importing in Python Modules are similar to packages in Node.js Come in different types: Built-In, Third-Party, Custom. All loaded using import statements. Terms
+def example2(arg_1, arg_2, \*args, kw_1=“shark ", kw_2=“blowfish ", \*\*kwargs): pass Importing in Python Modules are similar to packages in Node.js Come in different types: Built-In, Third-Party, Custom. All loaded using import statements. Terms
 
 module : Python code in a separate file. package : Path to a directory that contains modules. init.py : Default file for a package. submodule : Another file in a module’s folder. function : Function in a module.
 

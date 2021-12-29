@@ -606,7 +606,7 @@ From – To
 There are two approaches to copying the selected content:
 
 1.  We can use `document.getSelection().toString()` to get it as text.
-2.  Otherwise, to copy the full DOM, e.g. if we need to keep formatting, we can get the underlying ranges with `getRangesAt(...)`. A `Range` object, in turn, has `cloneContents()` method that clones its content and returns as `DocumentFragment` object, that we can insert elsewhere.
+2.  Otherwise, to copy the full DOM, e.g. if we need to keep formatting, we can get the underlying ranges with `getRangesAt(...)`. A `Range` object, in turn, has `cloneContents()` method that clones its content and returns as `DocumentFragment` object, that we can insert elsewhere.
 
 Here’s the demo of copying the selected content both as text and as DOM nodes:
 
@@ -667,7 +667,7 @@ The exception is some selection methods, that replace the existing selection, su
 
 Form elements, such as `input` and `textarea` provide [special API for selection](https://html.spec.whatwg.org/#textFieldSelection), without `Selection` or `Range` objects. As an input value is a pure text, not HTML, there’s no need for such objects, everything’s much simpler.
 
-Properties: - `input.selectionStart` – position of selection start (writeable), - `input.selectionEnd` – position of selection end (writeable), - `input.selectionDirection` – selection direction, one of: “forward”, “backward” or “none” (if e.g. selected with a double mouse click),
+Properties: - `input.selectionStart` – position of selection start (writeable), - `input.selectionEnd` – position of selection end (writeable), - `input.selectionDirection` – selection direction, one of: “forward”, “backward” or “none” (if e.g. selected with a double mouse click),
 
 Events: - `input.onselect` – triggers when something is selected.
 
@@ -775,7 +775,7 @@ To make something unselectable, there are three ways:
 
     This prevents starting the selection on `elem`, but the visitor may start it at another element, then extend to `elem`.
 
-    That’s convenient when there’s another event handler on the same action that triggers the select (e.g. `mousedown`). So we disable the selection to avoid conflict, still allowing `elem` contents to be copied.
+    That’s convenient when there’s another event handler on the same action that triggers the select (e.g. `mousedown`). So we disable the selection to avoid conflict, still allowing `elem` contents to be copied.
 
 3.  We can also clear the selection post-factum after it happens with `document.getSelection().empty()`. That’s rarely used, as this causes unwanted blinking as the selection appears-disappears.
 
@@ -907,7 +907,7 @@ A single run of `count` does a part of the job `(*)`, and then re-schedules itse
 2.  Second run counts: `i=1000001..2000000`.
 3.  …and so on.
 
-Now, if a new side task (e.g. `onclick` event) appears while the engine is busy executing part 1, it gets queued and then executes when part 1 finished, before the next part. Periodic returns to the event loop between `count` executions provide just enough “air” for the JavaScript engine to do something else, to react to other user actions.
+Now, if a new side task (e.g. `onclick` event) appears while the engine is busy executing part 1, it gets queued and then executes when part 1 finished, before the next part. Periodic returns to the event loop between `count` executions provide just enough “air” for the JavaScript engine to do something else, to react to other user actions.
 
 The notable thing is that both variants – with and without splitting the job by `setTimeout` – are comparable in speed. There’s not much difference in the overall counting time.
 
@@ -955,7 +955,7 @@ Here’s the demo, the changes to `i` won’t show up until the function finishe
 
 \`\`\`
 
-…But we also may want to show something during the task, e.g. a progress bar.
+…But we also may want to show something during the task, e.g. a progress bar.
 
 If we split the heavy task into pieces using `setTimeout`, then changes are painted out in-between them.
 
@@ -1029,7 +1029,7 @@ Here’s an example with “counting progress bar”, similar to the one shown p
 
 A more detailed event loop algorithm (though still simplified compared to the [specification](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model)):
 
-1.  Dequeue and run the oldest task from the _macrotask_ queue (e.g. “script”).
+1.  Dequeue and run the oldest task from the _macrotask_ queue (e.g. “script”).
 2.  Execute all _microtasks_:
     - While the microtask queue is not empty:
       - Dequeue and run the oldest microtask.
@@ -1069,7 +1069,7 @@ Popups exist from really ancient times. The initial idea was to show another con
 
 Also, popups are tricky on mobile devices, that don’t show multiple windows simultaneously.
 
-Still, there are tasks where popups are still used, e.g. for OAuth authorization (login with Google/Facebook/…), because:
+Still, there are tasks where popups are still used, e.g. for OAuth authorization (login with Google/Facebook/…), because:
 
 1.  A popup is a separate window which has its own independent JavaScript environment. So opening a popup from a third-party, non-trusted site is safe.
 2.  It’s very easy to open a popup.
@@ -1182,7 +1182,7 @@ Please note: immediately after `window.open`, the new window isn’t loaded yet.
 
 \`\`\`warn header=“Same origin policy” Windows may freely access content of each other only if they come from the same origin (the same protocol://domain:port).
 
-Otherwise, e.g. if the main window is from `site.com`, and the popup from `gmail.com`, that’s impossible for user safety reasons. For the details, see chapter <a href="info:cross-window-communication" class="uri">info:cross-window-communication</a>. \`\`\`
+Otherwise, e.g. if the main window is from `site.com`, and the popup from `gmail.com`, that’s impossible for user safety reasons. For the details, see chapter <a href="info:cross-window-communication" class="uri">info:cross-window-communication</a>. \`\`\`
 
 ## Accessing window from popup
 
@@ -1799,7 +1799,7 @@ To do almost any operation on `ArrayBuffer`, we need a view.
   - `Uint8ClampedArray` – for 8-bit integers, “clamps” them on assignment.
   - `Int8Array`, `Int16Array`, `Int32Array` – for signed integer numbers (can be negative).
   - `Float32Array`, `Float64Array` – for signed floating-point numbers of 32 and 64 bits.
-- Or a `DataView` – the view that uses methods to specify a format, e.g. `getUint8(offset)`.
+- Or a `DataView` – the view that uses methods to specify a format, e.g. `getUint8(offset)`.
 
 In most cases we create and operate directly on typed arrays, leaving `ArrayBuffer` under cover, as a “common denominator”. We can access it as `.buffer` and make another view if needed.
 
@@ -2052,7 +2052,7 @@ The constructor syntax is:
 
 - **`blobParts`** is an array of `Blob`/`BufferSource`/`String` values.
 - **`options`** optional object:
-  - **`type`** – `Blob` type, usually MIME-type, e.g. `image/png`,
+  - **`type`** – `Blob` type, usually MIME-type, e.g. `image/png`,
   - **`endings`** – whether to transform end-of-line to make the `Blob` correspond to current OS newlines (`\r\n` or `\n`). By default `"transparent"` (do nothing), but also can be `"native"` (transform).
 
 For example:
@@ -2339,11 +2339,11 @@ Getting a response is usually a two-stage process.
 
 At this stage we can check HTTP status, to see whether it is successful or not, check headers, but don’t have the body yet.
 
-The promise rejects if the `fetch` was unable to make HTTP-request, e.g. network problems, or there’s no such site. Abnormal HTTP-statuses, such as 404 or 500 do not cause an error.
+The promise rejects if the `fetch` was unable to make HTTP-request, e.g. network problems, or there’s no such site. Abnormal HTTP-statuses, such as 404 or 500 do not cause an error.
 
 We can see HTTP-status in response properties:
 
-- **`status`** – HTTP status code, e.g. 200.
+- **`status`** – HTTP status code, e.g. 200.
 - **`ok`** – boolean, `true` if the HTTP status code is 200-299.
 
 For example:
@@ -2460,9 +2460,9 @@ These headers ensure proper and safe HTTP, so they are controlled exclusively by
 
 To make a `POST` request, or a request with another method, we need to use `fetch` options:
 
-- **`method`** – HTTP-method, e.g. `POST`,
+- **`method`** – HTTP-method, e.g. `POST`,
 - **`body`** – the request body, one of:
-  - a string (e.g. JSON-encoded),
+  - a string (e.g. JSON-encoded),
   - `FormData` object, to submit the data as `form/multipart`,
   - `Blob`/`BufferSource` to send binary data,
   - [URLSearchParams](info:url), to submit the data in `x-www-form-urlencoded` encoding, rarely used.
@@ -2592,7 +2592,7 @@ Picture:
 
 ## Sending a form with Blob data
 
-As we’ve seen in the chapter <a href="info:fetch" class="uri">info:fetch</a>, it’s easy to send dynamically generated binary data e.g. an image, as `Blob`. We can supply it directly as `fetch` parameter `body`.
+As we’ve seen in the chapter <a href="info:fetch" class="uri">info:fetch</a>, it’s easy to send dynamically generated binary data e.g. an image, as `Blob`. We can supply it directly as `fetch` parameter `body`.
 
 In practice though, it’s often convenient to send an image not separately, but as a part of the form, with additional fields, such as “name” and other metadata.
 
@@ -2779,7 +2779,7 @@ Now, to abort, call `controller.abort()`:
 
 We’re done: `fetch` gets the event from `signal` and aborts the request.
 
-When a fetch is aborted, its promise rejects with an error `AbortError`, so we should handle it, e.g. in `try..catch`.
+When a fetch is aborted, its promise rejects with an error `AbortError`, so we should handle it, e.g. in `try..catch`.
 
 Here’s the full example with `fetch` aborted after 1 second:
 
@@ -2887,13 +2887,13 @@ To be precise, there were actually tricks for that, they required special script
 
 Another trick was to use a `script` tag. A script could have any `src`, with any domain, like `<script src="http://another.com/…">`. It’s possible to execute a script from any website.
 
-If a website, e.g. `another.com` intended to expose data for this kind of access, then a so-called “JSONP (JSON with padding)” protocol was used.
+If a website, e.g. `another.com` intended to expose data for this kind of access, then a so-called “JSONP (JSON with padding)” protocol was used.
 
 Here’s how it worked.
 
 Let’s say we, at our site, need to get the data from `http://another.com`, such as the weather:
 
-1.  First, in advance, we declare a global function to accept the data, e.g. `gotWeather`.
+1.  First, in advance, we declare a global function to accept the data, e.g. `gotWeather`.
 
         // 1. Declare the function to process the weather data
         function gotWeather({ temperature, humidity }) {
@@ -2939,7 +2939,7 @@ Any other request is considered “unsafe”. For instance, a request with `PUT`
 
 So, even a very old server should be ready to accept a safe request.
 
-Contrary to that, requests with non-standard headers or e.g. method `DELETE` can’t be created this way. For a long time JavaScript was unable to do such requests. So an old server may assume that such requests come from a privileged source, “because a webpage is unable to send them”.
+Contrary to that, requests with non-standard headers or e.g. method `DELETE` can’t be created this way. For a long time JavaScript was unable to do such requests. So an old server may assume that such requests come from a privileged source, “because a webpage is unable to send them”.
 
 When we try to make a unsafe request, the browser sends a special “preflight” request that asks the server – does it agree to accept such cross-origin requests, or not?
 
@@ -3248,7 +3248,7 @@ Possible values are described in the [Referrer Policy specification](https://w3c
 
 - **`"no-referrer-when-downgrade"`** – the default value: full `Referer` is always sent, unless we send a request from HTTPS to HTTP (to the less secure protocol).
 - **`"no-referrer"`** – never send `Referer`.
-- **`"origin"`** – only send the origin in `Referer`, not the full page URL, e.g. only `http://site.com` instead of `http://site.com/path`.
+- **`"origin"`** – only send the origin in `Referer`, not the full page URL, e.g. only `http://site.com` instead of `http://site.com/path`.
 - **`"origin-when-cross-origin"`** – send the full `Referer` to the same origin, but only the origin part for cross-origin requests (as above).
 - **`"same-origin"`** – send the full `Referer` to the same origin, but no `Referer` for cross-origin requests.
 - **`"strict-origin"`** – send only the origin, not the `Referer` for HTTPS→HTTP requests.
@@ -3274,7 +3274,7 @@ If we’d like other websites know only the origin part, not the URL-path, we ca
 
 We can put it to all `fetch` calls, maybe integrate into JavaScript library of our project that does all requests and uses `fetch` inside.
 
-Its only difference compared to the default behavior is that for requests to another origin `fetch` sends only the origin part of the URL (e.g. `https://javascript.info`, without path). For requests to our origin we still get the full `Referer` (maybe useful for debugging purposes).
+Its only difference compared to the default behavior is that for requests to another origin `fetch` sends only the origin part of the URL (e.g. `https://javascript.info`, without path). For requests to our origin we still get the full `Referer` (maybe useful for debugging purposes).
 
 \`\``smart header="Referrer policy is not only for`fetch`" Referrer policy, described in the [specification](https://w3c.github.io/webappsec-referrer-policy/), is not just for`fetch\`, but more global.
 
@@ -3427,7 +3427,7 @@ It provides convenient methods for search parameters:
 - **`append(name, value)`** – add the parameter by `name`,
 - **`delete(name)`** – remove the parameter by `name`,
 - **`get(name)`** – get the parameter by `name`,
-- **`getAll(name)`** – get all parameters with the same `name` (that’s possible, e.g. `?user=John&user=Pete`),
+- **`getAll(name)`** – get all parameters with the same `name` (that’s possible, e.g. `?user=John&user=Pete`),
 - **`has(name)`** – check for the existence of the parameter by `name`,
 - **`set(name, value)`** – set/replace the parameter,
 - **`sort()`** – sort parameters by name, rarely needed,
@@ -3519,7 +3519,7 @@ So we should use only `encodeURIComponent` for each search parameter, to correct
 
 \`\`\``smart header="Encoding difference compared to`URL`" Classes [URL](https://url.spec.whatwg.org/#url-class) and [URLSearchParams](https://url.spec.whatwg.org/#interface-urlsearchparams) are based on the latest URI specification: [RFC3986](https://tools.ietf.org/html/rfc3986), while`encode\*\` functions are based on the obsolete version [RFC2396](https://www.ietf.org/rfc/rfc2396.txt).
 
-There are a few differences, e.g. IPv6 addresses are encoded differently:
+There are a few differences, e.g. IPv6 addresses are encoded differently:
 
 \`\`\`js run // valid url with IPv6 address let url = ‘http://\[2607:f8b0:4005:802::1007\]/’;
 
@@ -3540,8 +3540,8 @@ Right now, there’s another, more modern method `fetch`, that somewhat deprecat
 In modern web-development `XMLHttpRequest` is used for three reasons:
 
 1.  Historical reasons: we need to support existing scripts with `XMLHttpRequest`.
-2.  We need to support old browsers, and don’t want polyfills (e.g. to keep scripts tiny).
-3.  We need something that `fetch` can’t do yet, e.g. to track upload progress.
+2.  We need to support old browsers, and don’t want polyfills (e.g. to keep scripts tiny).
+3.  We need something that `fetch` can’t do yet, e.g. to track upload progress.
 
 Does that sound familiar? If yes, then all right, go on with `XMLHttpRequest`. Otherwise, please head on to <a href="info:fetch" class="uri">info:fetch</a>.
 
@@ -3579,7 +3579,7 @@ To do the request, we need 3 steps:
     These three events are the most widely used:
 
     - `load` – when the request is complete (even if HTTP status is like 400 or 500), and the response is fully downloaded.
-    - `error` – when the request couldn’t be made, e.g. network down or invalid URL.
+    - `error` – when the request couldn’t be made, e.g. network down or invalid URL.
     - `progress` – triggers periodically while the response is being downloaded, reports how much has been downloaded.
 
       xhr.onload = function() {
@@ -3605,7 +3605,7 @@ Here’s a full example. The code below loads the URL at `/article/xmlhttpreques
 
 // 3. Send the request over the network xhr.send();
 
-// 4. This will be called after the response is received xhr.onload = function() { if (xhr.status != 200) { // analyze HTTP status of the response alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found } else { // show the result alert(`Done, got ${xhr.response.length} bytes`); // response is the server response } };
+// 4. This will be called after the response is received xhr.onload = function() { if (xhr.status != 200) { // analyze HTTP status of the response alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found } else { // show the result alert(`Done, got ${xhr.response.length} bytes`); // response is the server response } };
 
 xhr.onprogress = function(event) { if (event.lengthComputable) { alert(`Received ${event.loaded} of ${event.total} bytes`); } else { alert(`Received ${event.loaded} bytes`); // no Content-Length }
 
@@ -3926,7 +3926,7 @@ There are actually more events, the [modern specification](https://xhr.spec.what
 - `loadstart` – the request has started.
 - `progress` – a data packet of the response has arrived, the whole response body at the moment is in `response`.
 - `abort` – the request was canceled by the call `xhr.abort()`.
-- `error` – connection error has occurred, e.g. wrong domain name. Doesn’t happen for HTTP-errors like 404.
+- `error` – connection error has occurred, e.g. wrong domain name. Doesn’t happen for HTTP-errors like 404.
 - `load` – the request has finished successfully.
 - `timeout` – the request was canceled due to timeout (only happens if it was set).
 - `loadend` – triggers after `load`, `error`, `timeout` or `abort`.
@@ -4266,7 +4266,7 @@ So, in this case, another method is preferred, such as [Websocket](info:websocke
 
 The `WebSocket` protocol, described in the specification [RFC 6455](http://tools.ietf.org/html/rfc6455) provides a way to exchange data between browser and server via a persistent connection. The data can be passed in both directions as “packets”, without breaking the connection and additional HTTP-requests.
 
-WebSocket is especially great for services that require continuous data exchange, e.g. online games, real-time trading systems and so on.
+WebSocket is especially great for services that require continuous data exchange, e.g. online games, real-time trading systems and so on.
 
 ## A simple example
 
@@ -4295,7 +4295,7 @@ socket.onopen = function(e) { alert(“\[open\] Connection established”); aler
 socket.onmessage = function(event) { alert(`[message] Data received from server: ${event.data}`); };
 
 socket.onclose = function(event) { if (event.wasClean) {  
-alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`); } else { // e.g. server process killed or network down // event.code is usually 1006 in this case alert(‘\[close\] Connection died’); } };
+alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`); } else { // e.g. server process killed or network down // event.code is usually 1006 in this case alert(‘\[close\] Connection died’); } };
 
 socket.onerror = function(error) { alert(`[error] ${error.message}`); };
 
@@ -4319,7 +4319,7 @@ socket.onerror = function(error) { alert(`[error] ${error.message}`); };
 
 GET /chat Host: javascript.info Origin: https://javascript.info Connection: Upgrade Upgrade: websocket Sec-WebSocket-Key: Iv8io/9s+lYFgZWcXczP8Q== Sec-WebSocket-Version: 13 \`\`\`
 
-- `Origin` – the origin of the client page, e.g. `https://javascript.info`. WebSocket objects are cross-origin by nature. There are no special headers or other limitations. Old servers are unable to handle WebSocket anyway, so there are no compatibility issues. But `Origin` header is important, as it allows the server to decide whether or not to talk WebSocket with this website.
+- `Origin` – the origin of the client page, e.g. `https://javascript.info`. WebSocket objects are cross-origin by nature. There are no special headers or other limitations. Old servers are unable to handle WebSocket anyway, so there are no compatibility issues. But `Origin` header is important, as it allows the server to decide whether or not to talk WebSocket with this website.
 - `Connection: Upgrade` – signals that the client would like to change the protocol.
 - `Upgrade: websocket` – the requested protocol is “websocket”.
 - `Sec-WebSocket-Key` – a random browser-generated key for security.
@@ -4348,7 +4348,7 @@ For instance:
 
 - `Sec-WebSocket-Protocol: soap, wamp` means that we’d like to transfer not just any data, but the data in [SOAP](http://en.wikipedia.org/wiki/SOAP) or WAMP (“The WebSocket Application Messaging Protocol”) protocols. WebSocket subprotocols are registered in the [IANA catalogue](http://www.iana.org/assignments/websocket/websocket.xml). So, this header describes data formats that we’re going to use.
 
-  This optional header is set using the second parameter of `new WebSocket`. That’s the array of subprotocols, e.g. if we’d like to use SOAP or WAMP:
+  This optional header is set using the second parameter of `new WebSocket`. That’s the array of subprotocols, e.g. if we’d like to use SOAP or WAMP:
 
       let socket = new WebSocket("wss://javascript.info/chat", ["soap", "wamp"]);
 
@@ -4455,7 +4455,7 @@ Most common code values:
 
 There are other codes like:
 
-- `1001` – the party is going away, e.g. server is shutting down, or a browser leaves the page,
+- `1001` – the party is going away, e.g. server is shutting down, or a browser leaves the page,
 - `1009` – the message is too big to process,
 - `1011` – unexpected error on server,
 - …and so on.
@@ -4666,7 +4666,7 @@ The server can set the recommended delay using `retry:` in response (in millisec
 
 The `retry:` may come both together with some data, or as a standalone message.
 
-The browser should wait that many milliseconds before reconnecting. Or longer, e.g. if the browser knows (from OS) that there’s no network connection at the moment, it may wait until the connection appears, and then retry.
+The browser should wait that many milliseconds before reconnecting. Or longer, e.g. if the browser knows (from OS) that there’s no network connection at the moment, it may wait until the connection appears, and then retry.
 
 - If the server wants the browser to stop reconnecting, it should respond with HTTP status 204.
 - If the browser wants to close the connection, it should call `eventSource.close()`:
@@ -4718,7 +4718,7 @@ By default `EventSource` object generates three events:
 
 - `message` – a message received, available as `event.data`.
 - `open` – the connection is open.
-- `error` – the connection could not be established, e.g. the server returned HTTP 500 status.
+- `error` – the connection could not be established, e.g. the server returned HTTP 500 status.
 
 The server may specify another type of event with `event: ...` at the event start.
 
@@ -4997,7 +4997,7 @@ In other words, whether a user follows a link from their mail or submits a form 
 
 If authentication cookies have the `samesite` option, then a XSRF attack has no chances to succeed, because a submission from `evil.com` comes without cookies. So `bank.com` will not recognize the user and will not proceed with the payment.
 
-The protection is quite reliable. Only operations that come from `bank.com` will send the `samesite` cookie, e.g. a form submission from another page at `bank.com`.
+The protection is quite reliable. Only operations that come from `bank.com` will send the `samesite` cookie, e.g. a form submission from another page at `bank.com`.
 
 Although, there’s a small inconvenience.
 
@@ -5011,7 +5011,7 @@ A more relaxed approach that also protects from XSRF and doesn’t break the use
 
 Lax mode, just like `strict`, forbids the browser to send cookies when coming from outside the site, but adds an exception.
 
-A `samesite=lax` cookie is sent if both of these conditions are true: 1. The HTTP method is “safe” (e.g. GET, but not POST).
+A `samesite=lax` cookie is sent if both of these conditions are true: 1. The HTTP method is “safe” (e.g. GET, but not POST).
 
     The full list of safe HTTP methods is in the [RFC7231 specification](https://tools.ietf.org/html/rfc7231). Basically, these are the methods that should be used for reading, but not writing the data. They must not perform any data-changing operations. Following a link is always GET, the safe method.
 
@@ -5158,7 +5158,7 @@ GDPR is not only about cookies, it’s about other privacy-related issues too, b
 
 Cookie options: - `path=/`, by default current path, makes the cookie visible only under that path. - `domain=site.com`, by default a cookie is visible on the current domain only. If the domain is set explicitly, the cookie becomes visible on subdomains. - `expires` or `max-age` sets the cookie expiration time. Without them the cookie dies when the browser is closed. - `secure` makes the cookie HTTPS-only. - `samesite` forbids the browser to send the cookie with requests coming from outside the site. This helps to prevent XSRF attacks.
 
-Additionally: - Third-party cookies may be forbidden by the browser, e.g. Safari does that by default. - When setting a tracking cookie for EU citizens, GDPR requires to ask for permission. \# LocalStorage, sessionStorage
+Additionally: - Third-party cookies may be forbidden by the browser, e.g. Safari does that by default. - When setting a tracking cookie for EU citizens, GDPR requires to ask for permission. \# LocalStorage, sessionStorage
 
 Web storage objects `localStorage` and `sessionStorage` allow to save key/value pairs in the browser.
 
@@ -5258,7 +5258,7 @@ We can use `JSON` to store objects though:
 
 // sometime later let user = JSON.parse( sessionStorage.user ); alert( user.name ); // John \`\`\`
 
-Also it is possible to stringify the whole storage object, e.g. for debugging purposes:
+Also it is possible to stringify the whole storage object, e.g. for debugging purposes:
 
 `js run // added formatting options to JSON.stringify to make the object look nicer alert( JSON.stringify(localStorage, null, 2) );`
 
@@ -5437,7 +5437,7 @@ To delete a database:
 
 \`\``warn header="We can't open an older version of the database" If the current user database has a higher version than in the`open`call, e.g. the existing DB version is`3`, and we try to`open(…2)`, then that's an error,`openRequest.onerror\` triggers.
 
-That’s rare, but such a thing may happen when a visitor loads outdated JavaScript code, e.g. from a proxy cache. So the code is old, but his database is new.
+That’s rare, but such a thing may happen when a visitor loads outdated JavaScript code, e.g. from a proxy cache. So the code is old, but his database is new.
 
 To protect from errors, we should check `db.version` and suggest a page reload. Use proper HTTP caching headers to avoid loading the old code, so that you’ll never have such problems. \`\`\`
 
@@ -5525,9 +5525,9 @@ The syntax to create an object store:
 
 Please note, the operation is synchronous, no `await` needed.
 
-- `name` is the store name, e.g. `"books"` for books,
+- `name` is the store name, e.g. `"books"` for books,
 - `keyOptions` is an optional object with one of two properties:
-  - `keyPath` – a path to an object property that IndexedDB will use as the key, e.g. `id`.
+  - `keyPath` – a path to an object property that IndexedDB will use as the key, e.g. `id`.
   - `autoIncrement` – if `true`, then the key for a newly stored object is generated automatically, as an ever-incrementing number.
 
 If we don’t supply `keyOptions`, then we’ll need to provide a key explicitly later, when storing an object.
@@ -5540,7 +5540,7 @@ For instance, this object store uses `id` property as the key:
 
 That’s a technical limitation. Outside of the handler we’ll be able to add/remove/update the data, but object stores can only be created/removed/altered during a version update.
 
-To perform a database version upgrade, there are two main approaches: 1. We can implement per-version upgrade functions: from 1 to 2, from 2 to 3, from 3 to 4 etc. Then, in `upgradeneeded` we can compare versions (e.g. old 2, now 4) and run per-version upgrades step by step, for every intermediate version (2 to 3, then 3 to 4). 2. Or we can just examine the database: get a list of existing object stores as `db.objectStoreNames`. That object is a [DOMStringList](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#domstringlist) that provides `contains(name)` method to check for existance. And then we can do updates depending on what exists and what doesn’t.
+To perform a database version upgrade, there are two main approaches: 1. We can implement per-version upgrade functions: from 1 to 2, from 2 to 3, from 3 to 4 etc. Then, in `upgradeneeded` we can compare versions (e.g. old 2, now 4) and run per-version upgrades step by step, for every intermediate version (2 to 3, then 3 to 4). 2. Or we can just examine the database: get a list of existing object stores as `db.objectStoreNames`. That object is a [DOMStringList](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#domstringlist) that provides `contains(name)` method to check for existance. And then we can do updates depending on what exists and what doesn’t.
 
 For small databases the second variant may be simpler.
 
@@ -5568,7 +5568,7 @@ A transaction is a group of operations, that should either all succeed or all fa
 
 For instance, when a person buys something, we need to: 1. Subtract the money from their account. 2. Add the item to their inventory.
 
-It would be pretty bad if we complete the 1st operation, and then something goes wrong, e.g. lights out, and we fail to do the 2nd. Both should either succeed (purchase complete, good!) or both fail (at least the person kept their money, so they can retry).
+It would be pretty bad if we complete the 1st operation, and then something goes wrong, e.g. lights out, and we fail to do the 2nd. Both should either succeed (purchase complete, good!) or both fail (at least the person kept their money, so they can retry).
 
 Transactions can guarantee that.
 
@@ -5578,7 +5578,7 @@ To start a transaction:
 
     db.transaction(store[, type]);
 
-- `store` is a store name that the transaction is going to access, e.g. `"books"`. Can be an array of store names if we’re going to access multiple stores.
+- `store` is a store name that the transaction is going to access, e.g. `"books"`. Can be an array of store names if we’re going to access multiple stores.
 - `type` – a transaction type, one of:
   - `readonly` – can only read, the default.
   - `readwrite` – can only read and write the data, but not create/remove/alter object stores.
@@ -5689,7 +5689,7 @@ To detect the moment of successful completion, we can listen to `transaction.onc
       console.log("Transaction is complete");
     };
 
-Only `complete` guarantees that the transaction is saved as a whole. Individual requests may succeed, but the final write operation may go wrong (e.g. I/O error or something).
+Only `complete` guarantees that the transaction is saved as a whole. Individual requests may succeed, but the final write operation may go wrong (e.g. I/O error or something).
 
 To manually abort the transaction, call:
 
@@ -5705,7 +5705,7 @@ That’s to be expected, not only because of possible errors at our side, but al
 
 **A failed request automatically aborts the transaction, canceling all its changes.**
 
-In some situations, we may want to handle the failure (e.g. try another request), without canceling existing changes, and continue the transaction. That’s possible. The `request.onerror` handler is able to prevent the transaction abort by calling `event.preventDefault()`.
+In some situations, we may want to handle the failure (e.g. try another request), without canceling existing changes, and continue the transaction. That’s possible. The `request.onerror` handler is able to prevent the transaction abort by calling `event.preventDefault()`.
 
 In the example below a new book is added with the same key (`id`) as the existing one. The `store.add` method generates a `"ConstraintError"` in that case. We handle it without canceling the transaction:
 
@@ -5768,7 +5768,7 @@ We can stop the bubbling and hence `db.onerror` by using `event.stopPropagation(
 There are two main types of search in an object store:
 
 1.  By a key value or a key range. In our “books” storage that would be a value or range of values of `book.id`.
-2.  By another object field, e.g. `book.price`. This required an additional data structure, named “index”.
+2.  By another object field, e.g. `book.price`. This required an additional data structure, named “index”.
 
 ### By key
 
@@ -5933,7 +5933,7 @@ The syntax:
 - **`direction`** is an optional argument, which order to use:
   - `"next"` – the default, the cursor walks up from the record with the lowest key.
   - `"prev"` – the reverse order: down from the record with the biggest key.
-  - `"nextunique"`, `"prevunique"` – same as above, but skip records with the same key (only for cursors over indexes, e.g. for multiple books with price=5 only the first one will be returned).
+  - `"nextunique"`, `"prevunique"` – same as above, but skip records with the same key (only for cursors over indexes, e.g. for multiple books with price=5 only the first one will be returned).
 
 **The main difference of the cursor is that `request.onsuccess` triggers multiple times: once for each result.**
 
@@ -5968,7 +5968,7 @@ In the example above the cursor was made for the object store.
 
 But we also can make a cursor over an index. As we remember, indexes allow to search by an object field. Cursors over indexes do precisely the same as over object stores – they save memory by returning one value at a time.
 
-For cursors over indexes, `cursor.key` is the index key (e.g. price), and we should use `cursor.primaryKey` property for the object key:
+For cursors over indexes, `cursor.key` is the index key (e.g. price), and we should use `cursor.primaryKey` property for the object key:
 
     let request = priceIdx.openCursor(IDBKeyRange.upperBound(5));
 
@@ -5988,7 +5988,7 @@ For cursors over indexes, `cursor.key` is the index key (e.g. price), and we sh
 
 ## Promise wrapper
 
-Adding `onsuccess/onerror` to every request is quite a cumbersome task. Sometimes we can make our life easier by using event delegation, e.g. set handlers on the whole transactions, but `async/await` is much more convenient.
+Adding `onsuccess/onerror` to every request is quite a cumbersome task. Sometimes we can make our life easier by using event delegation, e.g. set handlers on the whole transactions, but `async/await` is much more convenient.
 
 Let’s use a thin promise wrapper <a href="https://github.com/jakearchibald/idb" class="uri">https://github.com/jakearchibald/idb</a> further in this chapter. It creates a global `idb` object with [promisified](info:promisify) IndexedDB methods.
 
@@ -6353,7 +6353,7 @@ In the example above JavaScript adds the class `.animate` to the element – and
 
     stripe.classList.add('animate');
 
-We could also start it from somewhere in the middle of the transition, from an exact number, e.g. corresponding to the current second, using a negative `transition-delay`.
+We could also start it from somewhere in the middle of the transition, from an exact number, e.g. corresponding to the current second, using a negative `transition-delay`.
 
 Here if you click the digit – it starts the animation from the current second:
 
@@ -7082,7 +7082,7 @@ The OR `||` operator does the following:
 
 - Evaluates operands from left to right.
 - For each operand, converts it to boolean. If the result is `true`, stops and returns the original value of that operand.
-- If all operands have been evaluated (i.e. all were `false`), returns the last operand.
+- If all operands have been evaluated (i.e. all were `false`), returns the last operand.
 
 A value is returned in its original form, without the conversion.
 
@@ -7100,7 +7100,7 @@ This leads to some interesting usage compared to a “pure, classical, boolean-o
 
 1.  **Getting the first truthy value from a list of variables or expressions.**
 
-    For instance, we have `firstName`, `lastName` and `nickName` variables, all optional (i.e. can be undefined or have falsy values).
+    For instance, we have `firstName`, `lastName` and `nickName` variables, all optional (i.e. can be undefined or have falsy values).
 
     Let’s use OR `||` to choose the one that has the data and show it (or `"Anonymous"` if nothing set):
 
@@ -7156,7 +7156,7 @@ The AND `&&` operator does the following:
 
 - Evaluates operands from left to right.
 - For each operand, converts it to a boolean. If the result is `false`, stops and returns the original value of that operand.
-- If all operands have been evaluated (i.e. all were truthy), returns the last operand.
+- If all operands have been evaluated (i.e. all were truthy), returns the last operand.
 
 In other words, AND returns the first falsy value or the last value if none were found.
 
@@ -7275,7 +7275,7 @@ It naturally splits into components:
 4.  Submit form.
 5.  (and also 6, 7) – messages.
 
-Components may have subcomponents, e.g. messages may be parts of a higher-level “message list” component. A clickable user picture itself may be a component, and so on.
+Components may have subcomponents, e.g. messages may be parts of a higher-level “message list” component. A clickable user picture itself may be a component, and so on.
 
 How do we decide, what is a component? That comes from intuition, experience and common sense. Usually it’s a separate visual entity that we can describe in terms of what it does and how it interacts with the page. In the case above, the page has blocks, each of them plays its own role, it’s logical to make these components.
 
@@ -7613,7 +7613,7 @@ For example:
 
 - DOM: <a href="https://dom.spec.whatwg.org/#shadow-trees" class="uri">https://dom.spec.whatwg.org/#shadow-trees</a>
 - Compatibility: <a href="https://caniuse.com/#feat=shadowdomv1" class="uri">https://caniuse.com/#feat=shadowdomv1</a>
-- Shadow DOM is mentioned in many other specifications, e.g. [DOM Parsing](https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin) specifies that shadow root has `innerHTML`.
+- Shadow DOM is mentioned in many other specifications, e.g. [DOM Parsing](https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin) specifies that shadow root has `innerHTML`.
 
 ## Summary
 
@@ -7702,7 +7702,7 @@ To summarize:
 The `<template>` tag is quite unique, because:
 
 - The browser checks HTML syntax inside it (as opposed to using a template string inside a script).
-- …But still allows use of any top-level HTML tags, even those that don’t make sense without proper wrappers (e.g. `<tr>`).
+- …But still allows use of any top-level HTML tags, even those that don’t make sense without proper wrappers (e.g. `<tr>`).
 - The content becomes interactive: scripts run, `<video autoplay>` plays etc, when inserted into the document.
 
 The `<template>` element does not feature any iteration mechanisms, data binding or variable substitutions, but we can implement those on top of it. \# Shadow DOM slots, composition
@@ -8259,7 +8259,7 @@ For example, if a user clicks on `<span slot="username">` in the example below, 
 
 If a click happens on `"John Smith"`, for both inner and outer handlers the target is `<span slot="username">`. That’s an element from the light DOM, so no retargeting.
 
-On the other hand, if the click occurs on an element originating from shadow DOM, e.g. on `<b>Name</b>`, then, as it bubbles out of the shadow DOM, its `event.target` is reset to `<user-card>`.
+On the other hand, if the click occurs on an element originating from shadow DOM, e.g. on `<b>Name</b>`, then, as it bubbles out of the shadow DOM, its `event.target` is reset to `<user-card>`.
 
 ## Bubbling, event.composedPath()
 
@@ -8721,9 +8721,9 @@ Here’s the main character categories and their subcategories:
   - private use `Co`,
   - surrogate `Cs`.
 
-So, e.g. if we need letters in lower case, we can write `pattern:\p{Ll}`, punctuation signs: `pattern:\p{P}` and so on.
+So, e.g. if we need letters in lower case, we can write `pattern:\p{Ll}`, punctuation signs: `pattern:\p{P}` and so on.
 
-There are also other derived categories, like: - `Alphabetic` (`Alpha`), includes Letters `L`, plus letter numbers `Nl` (e.g. Ⅻ - a character for the roman number 12), plus some other symbols `Other_Alphabetic` (`OAlpha`). - `Hex_Digit` includes hexadecimal digits: `0-9`, `a-f`. - …And so on.
+There are also other derived categories, like: - `Alphabetic` (`Alpha`), includes Letters `L`, plus letter numbers `Nl` (e.g. Ⅻ - a character for the roman number 12), plus some other symbols `Other_Alphabetic` (`OAlpha`). - `Hex_Digit` includes hexadecimal digits: `0-9`, `a-f`. - …And so on.
 
 Unicode supports many different properties, their full list would require a lot of space, so here are the references:
 
@@ -8748,7 +8748,7 @@ Let’s look for Chinese hieroglyphs.
 
 There’s a Unicode property `Script` (a writing system), that may have a value: `Cyrillic`, `Greek`, `Arabic`, `Han` (Chinese) and so on, [here’s the full list](<https://en.wikipedia.org/wiki/Script_(Unicode)>).
 
-To look for characters in a given writing system we should use `pattern:Script=<value>`, e.g. for Cyrillic letters: `pattern:\p{sc=Cyrillic}`, for Chinese hieroglyphs: `pattern:\p{sc=Han}`, and so on:
+To look for characters in a given writing system we should use `pattern:Script=<value>`, e.g. for Cyrillic letters: `pattern:\p{sc=Cyrillic}`, for Chinese hieroglyphs: `pattern:\p{sc=Han}`, and so on:
 
 \`\`\`js run let regexp = //gu; // returns Chinese hieroglyphs
 
@@ -9042,11 +9042,11 @@ For example, the pattern `pattern:\b\d\d\b` looks for standalone 2-digit numbers
 
 \`\``warn header="Word boundary`pattern: doesn’t work for non-latin alphabets" The word boundary test `pattern:\b` checks that there should be `pattern:\w` on the one side from the position and “not `pattern:\w`” - on the other side.
 
-But `pattern:\w` means a latin letter `a-z` (or a digit or an underscore), so the test doesn’t work for other characters, e.g. cyrillic letters or hieroglyphs. \`\`\`
+But `pattern:\w` means a latin letter `a-z` (or a digit or an underscore), so the test doesn’t work for other characters, e.g. cyrillic letters or hieroglyphs. \`\`\`
 
 # Escaping, special characters
 
-As we’ve seen, a backslash `pattern:\` is used to denote character classes, e.g. `pattern:\d`. So it’s a special character in regexps (just like in regular strings).
+As we’ve seen, a backslash `pattern:\` is used to denote character classes, e.g. `pattern:\d`. So it’s a special character in regexps (just like in regular strings).
 
 There are other special characters as well, that have special meaning in a regexp. They are used to do more powerful searches. Here’s a full list of them: `pattern:[ \ ^ $ . | ? * + ( )`.
 
@@ -9164,7 +9164,7 @@ We can also use character classes inside `[…]`.
 
 For instance, if we’d like to look for a wordly character `pattern:\w` or a hyphen `pattern:-`, then the set is `pattern:[\w-]`.
 
-Combining multiple classes is also possible, e.g. `pattern:[\s\d]` means “a space character or a digit”.
+Combining multiple classes is also possible, e.g. `pattern:[\s\d]` means “a space character or a digit”.
 
 \`\`\`smart header=“Character classes are shorthands for certain character sets” For instance:
 
@@ -9184,7 +9184,7 @@ Let’s decipher it. Similar to `pattern:\w`, we’re making a set of our own th
 - `Mark` (`M`) - for accents,
 - `Decimal_Number` (`Nd`) - for digits,
 - `Connector_Punctuation` (`Pc`) - for the underscore `'_'` and similar characters,
-- `Join_Control` (`Join_C`) - two special codes `200c` and `200d`, used in ligatures, e.g. in Arabic.
+- `Join_Control` (`Join_C`) - two special codes `200c` and `200d`, used in ligatures, e.g. in Arabic.
 
 An example of use:
 
@@ -9198,7 +9198,7 @@ Of course, we can edit this pattern: add Unicode properties or remove them. Unic
 
 \`\``warn header="Unicode properties aren't supported in IE" Unicode properties`pattern:p{…}\` are not implemented in IE. If we really need them, we can use library [XRegExp](http://xregexp.com/).
 
-Or just use ranges of characters in a language that interests us, e.g. `pattern:[а-я]` for Cyrillic letters. \`\`\`
+Or just use ranges of characters in a language that interests us, e.g. `pattern:[а-я]` for Cyrillic letters. \`\`\`
 
 ## Excluding ranges
 
@@ -9696,7 +9696,7 @@ In regular expressions that’s `pattern:(\w+\.)+\w+`:
 
 alert( “site.com my.site.com”.match(regexp) ); // site.com,my.site.com \`\`\`
 
-The search works, but the pattern can’t match a domain with a hyphen, e.g. `my-site.com`, because the hyphen does not belong to class `pattern:\w`.
+The search works, but the pattern can’t match a domain with a hyphen, e.g. `my-site.com`, because the hyphen does not belong to class `pattern:\w`.
 
 We can fix it by replacing `pattern:\w` with `pattern:[\w-]` in every word except the last one: `pattern:([\w-]+\.)+\w+`.
 
@@ -9779,7 +9779,7 @@ The contents of every group in the string:
 
 ### Optional groups
 
-Even if a group is optional and doesn’t exist in the match (e.g. has the quantifier `pattern:(...)?`), the corresponding `result` array item is present and equals `undefined`.
+Even if a group is optional and doesn’t exist in the match (e.g. has the quantifier `pattern:(...)?`), the corresponding `result` array item is present and equals `undefined`.
 
 For instance, let’s consider the regexp `pattern:a(z)?(c)?`. It looks for `"a"` optionally followed by `"z"` optionally followed by `"c"`.
 
@@ -9885,7 +9885,7 @@ alert( tag1\[0\] ); //
 
 \`\``smart header="Why is a result of`matchAll\` an iterable object, not an array?" Why is the method designed like that? The reason is simple - for the optimization.
 
-The call to `matchAll` does not perform the search. Instead, it returns an iterable object, without the results initially. The search is performed each time we iterate over it, e.g. in the loop.
+The call to `matchAll` does not perform the search. Instead, it returns an iterable object, without the results initially. The search is performed each time we iterate over it, e.g. in the loop.
 
 So, there will be found as many results as needed, not more.
 
@@ -10407,7 +10407,7 @@ Please note: the lookahead is merely a test, the contents of the parentheses `pa
 
 When we look for `pattern:X(?=Y)`, the regular expression engine finds `pattern:X` and then checks if there’s `pattern:Y` immediately after it. If it’s not so, then the potential match is skipped, and the search continues.
 
-More complex tests are possible, e.g. `pattern:X(?=Y)(?=Z)` means:
+More complex tests are possible, e.g. `pattern:X(?=Y)(?=Z)` means:
 
 1.  Find `pattern:X`.
 2.  Check if `pattern:Y` is immediately after `pattern:X` (skip if isn’t).
@@ -10759,7 +10759,7 @@ let str = “An input string that takes a long time or even makes this regex han
 
 alert( regexp.test(str) ); // false, works and fast! \`\`\`
 
-Here `pattern:\2` is used instead of `pattern:\1`, because there are additional outer parentheses. To avoid messing up with the numbers, we can give the parentheses a name, e.g. `pattern:(?<word>\w+)`.
+Here `pattern:\2` is used instead of `pattern:\1`, because there are additional outer parentheses. To avoid messing up with the numbers, we can give the parentheses a name, e.g. `pattern:(?<word>\w+)`.
 
 \`\`\`js run // parentheses are named ?, referenced as word&gt; let regexp = /^((?=(?+))word&gt;?)\*$/;
 
@@ -10779,7 +10779,7 @@ The flag `pattern:y` allows to perform the search at the given position in the s
 
 To grasp the use case of `pattern:y` flag, and better understand the ways of regexps, let’s explore a practical example.
 
-One of common tasks for regexps is “lexical analysis”: we get a text, e.g. in a programming language, and need to find its structural elements. For instance, HTML has tags and attributes, JavaScript code has functions, variables, and so on.
+One of common tasks for regexps is “lexical analysis”: we get a text, e.g. in a programming language, and need to find its structural elements. For instance, HTML has tags and attributes, JavaScript code has functions, variables, and so on.
 
 Writing lexical analyzers is a special area, with its own tools and algorithms, so we don’t go deep in there, but there’s a common task: to read something at the given position.
 
@@ -11624,7 +11624,7 @@ Also, if you’re developing for the browser, then there are other specification
 
   One can find it at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a>.
 
-Although, it’s often best to use an internet search instead. Just use “MDN \[term\]” in the query, e.g. <a href="https://google.com/search?q=MDN+parseInt" class="uri">https://google.com/search?q=MDN+parseInt</a> to search for `parseInt` function.
+Although, it’s often best to use an internet search instead. Just use “MDN \[term\]” in the query, e.g. <a href="https://google.com/search?q=MDN+parseInt" class="uri">https://google.com/search?q=MDN+parseInt</a> to search for `parseInt` function.
 
 ## Compatibility tables
 
@@ -11632,7 +11632,7 @@ JavaScript is a developing language, new features get added regularly.
 
 To see their support among browser-based and other engines, see:
 
-- <a href="http://caniuse.com" class="uri">http://caniuse.com</a> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <a href="http://caniuse.com/#feat=cryptography" class="uri">http://caniuse.com/#feat=cryptography</a>.
+- <a href="http://caniuse.com" class="uri">http://caniuse.com</a> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <a href="http://caniuse.com/#feat=cryptography" class="uri">http://caniuse.com/#feat=cryptography</a>.
 - <a href="https://kangax.github.io/compat-table" class="uri">https://kangax.github.io/compat-table</a> - a table with language features and engines that support those or don’t support.
 
 All these resources are useful in real-life development, as they contain valuable information about language details, their support etc.
@@ -11837,7 +11837,7 @@ Here’s another example:
 
 \`\`\`js run let age = 16; // take 16 as an example
 
-if (age &lt; 18) { _!_ welcome(); //   (runs) _/!_ // | function welcome() { // |  
+if (age &lt; 18) { _!_ welcome(); //   (runs) _/!_ // | function welcome() { // |  
 alert(“Hello!”); // | Function Declaration is available } // | everywhere in the block where it’s declared // | _!_ welcome(); // / (runs) _/!_
 
 } else {
@@ -12312,7 +12312,7 @@ Please open the informational dropdowns to the right (labeled with arrows). They
 
     At the current moment the debugger is inside `hello()` call, called by a script in `index.html` (no function there, so it’s called “anonymous”).
 
-    If you click on a stack item (e.g. “anonymous”), the debugger jumps to the corresponding code, and all its variables can be examined as well.
+    If you click on a stack item (e.g. “anonymous”), the debugger jumps to the corresponding code, and all its variables can be examined as well.
 
 3.  **`Scope` – current variables.**
 
@@ -12423,7 +12423,7 @@ Here are the annotated variants so you can judge their readability for yourself:
 3.  😏 One line without braces - acceptable, if it’s short: `` js if (n < 0) alert(`Power ${n} is not supported`); ``
 4.  😃 The best variant: `` js if (n < 0) { alert(`Power ${n} is not supported`); } ``
 
-For a very brief code, one line is allowed, e.g. `if (cond) return null`. But a code block (the last variant) is usually more readable.
+For a very brief code, one line is allowed, e.g. `if (cond) return null`. But a code block (the last variant) is usually more readable.
 
 ### Line Length
 
@@ -12600,7 +12600,7 @@ That’s because when reading code, we first want to know _what it does_. If the
 
 ## Style Guides
 
-A style guide contains general rules about “how to write” code, e.g. which quotes to use, how many spaces to indent, the maximal line length, etc. A lot of minor things.
+A style guide contains general rules about “how to write” code, e.g. which quotes to use, how many spaces to indent, the maximal line length, etc. A lot of minor things.
 
 When all members of a team use the same style guide, the code looks uniform, regardless of which team member wrote it.
 
@@ -13916,7 +13916,7 @@ The object is stored somewhere in memory (at the right of the picture), while th
 
 We may think of an object variable, such as `user`, as like a sheet of paper with the address of the object on it.
 
-When we perform actions with the object, e.g. take a property `user.name`, the JavaScript engine looks at what’s at that address and performs the operation on the actual object.
+When we perform actions with the object, e.g. take a property `user.name`, the JavaScript engine looks at what’s at that address and performs the operation on the actual object.
 
 Now here’s why it’s important.
 
@@ -14032,7 +14032,7 @@ We also can use `Object.assign` to replace `for..in` loop for simple cloning:
 
 It copies all properties of `user` into the empty object and returns it.
 
-There are also other methods of cloning an object, e.g. using the [spread syntax](info:rest-parameters-spread) `clone = {...user}`, covered later in the tutorial.
+There are also other methods of cloning an object, e.g. using the [spread syntax](info:rest-parameters-spread) `clone = {...user}`, covered later in the tutorial.
 
 ## Nested cloning
 
@@ -14383,7 +14383,7 @@ Technically, it’s also possible to access the object without `this`, by refere
 
     };
 
-…But such code is unreliable. If we decide to copy `user` to another variable, e.g. `admin = user` and overwrite `user` with something else, then it will access the wrong object.
+…But such code is unreliable. If we decide to copy `user` to another variable, e.g. `admin = user` and overwrite `user` with something else, then it will access the wrong object.
 
 That’s demonstrated below:
 
@@ -14732,7 +14732,7 @@ So, if `user` happens to be undefined due to a mistake, we’ll see a programmin
 
 \`\`\``warn header="The variable before`?.`must be declared" If there's no variable`user`at all, then`user?.anything\` triggers an error:
 
-`js run // ReferenceError: user is not defined user?.address;` The variable must be declared (e.g. `let/const/var user` or as a function parameter). The optional chaining works only for declared variables. \`\`\`\`
+`js run // ReferenceError: user is not defined user?.address;` The variable must be declared (e.g. `let/const/var user` or as a function parameter). The optional chaining works only for declared variables. \`\`\`\`
 
 ## Short-circuiting
 
@@ -15166,7 +15166,7 @@ In contrast, `Symbol.toPrimitive` _must_ return a primitive, otherwise there wil
 
 ## Further conversions
 
-As we know already, many operators and functions perform type conversions, e.g. multiplication `*` converts operands to numbers.
+As we know already, many operators and functions perform type conversions, e.g. multiplication `*` converts operands to numbers.
 
 If we pass an object as an argument, then there are two stages: 1. The object is converted to a primitive (using the rules described above). 2. If the resulting primitive isn’t of the right type, it’s converted.
 
@@ -15695,7 +15695,7 @@ There are other, less common “special” characters.
 
 Here’s the full list:
 
-<table style="width:99%;"><colgroup><col style="width: 45%" /><col style="width: 54%" /></colgroup><thead><tr class="header"><th>Character</th><th>Description</th></tr></thead><tbody><tr class="odd"><td><code>\n</code></td><td>New line</td></tr><tr class="even"><td><code>\r</code></td><td>Carriage return: not used alone. Windows text files use a combination of two characters <code>\r\n</code> to represent a line break.</td></tr><tr class="odd"><td><code>\'</code>, <code>\"</code></td><td>Quotes</td></tr><tr class="even"><td><code>\\</code></td><td>Backslash</td></tr><tr class="odd"><td><code>\t</code></td><td>Tab</td></tr><tr class="even"><td><code>\b</code>, <code>\f</code>, <code>\v</code></td><td>Backspace, Form Feed, Vertical Tab – kept for compatibility, not used nowadays.</td></tr><tr class="odd"><td><code>\xXX</code></td><td>Unicode character with the given hexadecimal Unicode <code>XX</code>, e.g. <code>'\x7A'</code> is the same as <code>'z'</code>.</td></tr><tr class="even"><td><code>\uXXXX</code></td><td>A Unicode symbol with the hex code <code>XXXX</code> in UTF-16 encoding, for instance <code>\u00A9</code> – is a Unicode for the copyright symbol <code>©</code>. It must be exactly 4 hex digits.</td></tr><tr class="odd"><td><code>\u{X…XXXXXX}</code> (1 to 6 hex characters)</td><td>A Unicode symbol with the given UTF-32 encoding. Some rare characters are encoded with two Unicode symbols, taking 4 bytes. This way we can insert long codes.</td></tr></tbody></table>
+<table style="width:99%;"><colgroup><col style="width: 45%" /><col style="width: 54%" /></colgroup><thead><tr class="header"><th>Character</th><th>Description</th></tr></thead><tbody><tr class="odd"><td><code>\n</code></td><td>New line</td></tr><tr class="even"><td><code>\r</code></td><td>Carriage return: not used alone. Windows text files use a combination of two characters <code>\r\n</code> to represent a line break.</td></tr><tr class="odd"><td><code>\'</code>, <code>\"</code></td><td>Quotes</td></tr><tr class="even"><td><code>\\</code></td><td>Backslash</td></tr><tr class="odd"><td><code>\t</code></td><td>Tab</td></tr><tr class="even"><td><code>\b</code>, <code>\f</code>, <code>\v</code></td><td>Backspace, Form Feed, Vertical Tab – kept for compatibility, not used nowadays.</td></tr><tr class="odd"><td><code>\xXX</code></td><td>Unicode character with the given hexadecimal Unicode <code>XX</code>, e.g. <code>'\x7A'</code> is the same as <code>'z'</code>.</td></tr><tr class="even"><td><code>\uXXXX</code></td><td>A Unicode symbol with the hex code <code>XXXX</code> in UTF-16 encoding, for instance <code>\u00A9</code> – is a Unicode for the copyright symbol <code>©</code>. It must be exactly 4 hex digits.</td></tr><tr class="odd"><td><code>\u{X…XXXXXX}</code> (1 to 6 hex characters)</td><td>A Unicode symbol with the given UTF-32 encoding. Some rare characters are encoded with two Unicode symbols, taking 4 bytes. This way we can insert long codes.</td></tr></tbody></table>
 
 Examples with Unicode:
 

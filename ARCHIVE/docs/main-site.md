@@ -1,4 +1,4 @@
-\***\* +551-254-5505    \*\*** <a href="%20https://mail.google.com/mail/u/0/h/%20" id="email-nav" class="btn">bryan.guner@gmail.com</a>
+\***\* +551-254-5505    \*\*** <a href="%20https://mail.google.com/mail/u/0/h/%20" id="email-nav" class="btn">bryan.guner@gmail.com</a>
 
 <a href="https://www.linkedin.com/in/bryan-guner-046199128/" class="linkedin" title="Linkedin"><em></em></a> <a href="https://github.com/bgoonz" class="github" title="github"><em></em></a> <a href="https://www.pinterest.com/bryanguner" class="pinterest" title="Pinterest"><em></em></a>
 

@@ -8,7 +8,7 @@ JAMstack websites don’t use the microservices architecture, but they go for th
 
 #### JAMstack websites don’t use the microservices architecture, but they go for the <a href="https://relevant.software/blog/scale-frontend-micro-frontends-architecture/" class="markup--anchor markup--h4-anchor" title="https://relevant.software/blog/scale-frontend-micro-frontends-architecture/">micro frontends architecture</a>. Each static page with HTML and JavaScript is a micro frontend. And they can use any REST API, including the one built on the <a href="https://relevant.software/blog/microservices-on-aws/" class="markup--anchor markup--h4-anchor">microservices</a> architecture.
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*kFwbfuUYkD3-jQq-.jpeg" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/1*ScYd6pUibdFOSaiSuJsaTA.png" class="graf-image" /></figure>### JAM stands for JavaScript, API & Markup.
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*kFwbfuUYkD3-jQq-.jpeg" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/1*ScYd6pUibdFOSaiSuJsaTA.png" class="graf-image" /></figure>### JAM stands for JavaScript, API & Markup.
 
 > _“A modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup”_
 
@@ -32,15 +32,15 @@ Websites are served as static HTML files. These can be generated from source fil
 
 API is the acronym for Application Programming Interface. It defines interactions that allows two applications to talk to each other.
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*AxER6GxoeUPQUmkj.jpeg" class="graf-image" /></figure>### What is the use case?
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*AxER6GxoeUPQUmkj.jpeg" class="graf-image" /></figure>### What is the use case?
 
 ### JAMstack while not suffering from a shortage of virtues is not a one size fits all solution!
 
-#### Don’t use JAMstack when:
+#### Don’t use JAMstack when:
 
 - <span id="2b9a">You don’t generally do anything that consumes enough volume of static assets to cause your application to struggle with performance at least sometimes.</span>
 - <span id="d002">Your development team is used to different tech, and the cost of migration is higher than the reward.</span>
-- <span id="fc18">You are dealing with tons of real-time/user data, (i.e. audio or video processing in real time)</span>
+- <span id="fc18">You are dealing with tons of real-time/user data, (i.e. audio or video processing in real time)</span>
 - <span id="c4bd">In most cases, it does not make sense to migrate a legacy project that is functioning just fine with no signs of depreciation on the horizon.</span>
 
 ### What is Jamstack?
@@ -65,7 +65,7 @@ With the <a href="https://jamstack.org/glossary/markup/" class="markup--anchor m
 
 ---
 
-### Supercharging with services
+### Supercharging with services
 
 The thriving <a href="https://jamstack.org/glossary/api-economy/" class="markup--anchor markup--p-anchor">API economy</a> has become a significant enabler for Jamstack sites. The ability to leverage domain experts who offer their products and service via APIs has allowed teams to build far more complex applications than if they were to take on the risk and burden of such capabilities themselves. Now we can outsource things like authentication and identity, payments, content management, data services, search, and much more.
 
@@ -83,7 +83,7 @@ But why does this templating operation need to happen on the server? Do we _real
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/1*ScYd6pUibdFOSaiSuJsaTA.png" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/600/1*KWOwKbn3NQJ0DcX6TsUp0g.png" class="graf-image" /></figure>### Common Features Of The Jamstack Workflow:
 
-#### Content delivery network
+#### Content delivery network
 
 Since all the markup and assets are pre-built, they can be served via CDN. This provides better performance and easier scalability.
 
@@ -95,7 +95,7 @@ Each deploy is a full snapshot of the site. This helps guarantee a consistent ve
 
 Once your build is uploaded, the CDN invalidates its cache. This means that your new build is live in an instant.
 
-#### Everything in version control
+#### Everything in version control
 
 Your codebase lives in Version Control System, such as Git. The main benefits are: change history of every file, collaborators and traceability.
 
@@ -212,7 +212,7 @@ Here’s a list of hand-picked JAMstack resources ranging from learning material
 
 ### Videos
 
-### resources and links:
+### resources and links:
 
 - <span id="a6ca"><a href="https://julesforrest.com/moving-to-gatsby/" class="markup--anchor markup--li-anchor">Moving to Gatsby</a> _by_ <a href="https://twitter.com/julesforrest" class="markup--anchor markup--li-anchor"><em>Jules Forrest</em></a></span>
 - <span id="b8bf"><a href="https://www.gatsbyjs.org/blog/2017-11-08-migrate-from-jekyll-to-gatsby/" class="markup--anchor markup--li-anchor">Migrate from Jekyll to Gatsby</a> _by_ <a href="https://twitter.com/@singuerinc" class="markup--anchor markup--li-anchor"><em>Nahuel Scotti</em></a></span>

@@ -31,9 +31,9 @@ regex = /[a-zA-Z]/; // matches all lowercase and uppercase letters
 regex = /[^a-za-z]/; // matches non-letters
 
 /_ matching using anchors _/
-regex = / ^The/; // matches any string that starts with “The”
+regex = / ^The/; // matches any string that starts with “The "
 regex = / end$/; // matches a string that ends with end
-regex = / ^The end$/; // exact string match starting with “The” and ending with “End”
+regex = / ^The end$/; // exact string match starting with “The " and ending with “End "
 
 /_ escape characters _/
 regex = / a/; // match a bell or alarm
@@ -55,7 +55,7 @@ regex = / U/; // ungreedy match
 Besides the regular expressions, flags can also be used to help developers with pattern matching.
 
 /_ matching a specific string _/
-regex = /sing/; // looks for the string between the forward slashes 9case-sensitive)… matches “sing”, “sing123”
+regex = /sing/; // looks for the string between the forward slashes 9case-sensitive)… matches “sing ", “sing123 "
 regex = /sing/i; // looks for the string between the forward slashes (case-insensitive)... matches "sing", "SinNG", "123SinNG"
 regex = /hello/g; // looks for multiple occurrences of string between the forward slashes...
 

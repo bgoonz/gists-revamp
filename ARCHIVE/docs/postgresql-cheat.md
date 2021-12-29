@@ -131,7 +131,7 @@ Basic Commands
 
 [source](https://gist.github.com/kagemusha/1569836)
 
-### Find all active sessions and kill them (i.e. for when needing to drop or rename db)
+### Find all active sessions and kill them (i.e. for when needing to drop or rename db)
 
 Source: <http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it>
 

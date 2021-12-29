@@ -2,23 +2,23 @@
 
 1.[React](https://www.npmjs.com/package/react)
 
-React uses a virtual DOM to manage sections of a page as individual components, allowing you to refresh a component without refreshing the entire page. Often used with [React-dom](https://www.npmjs.com/package/react-dom) and [React-router-dom](https://www.npmjs.com/package/react-router-dom).
+React uses a virtual DOM to manage sections of a page as individual components, allowing you to refresh a component without refreshing the entire page. Often used with [React-dom](https://www.npmjs.com/package/react-dom) and [React-router-dom](https://www.npmjs.com/package/react-router-dom).
 
 2.[Vue](https://www.npmjs.com/package/vue)
 
-Vue was built by combining the best approaches from React and others, focusing on features that made writing Web apps faster, easier, and more pleasant. Great documentation. Often used with [Vue-router](https://www.npmjs.com/package/vue-router) and [Vuex](https://www.npmjs.com/package/vuex).
+Vue was built by combining the best approaches from React and others, focusing on features that made writing Web apps faster, easier, and more pleasant. Great documentation. Often used with [Vue-router](https://www.npmjs.com/package/vue-router) and [Vuex](https://www.npmjs.com/package/vuex).
 
 3.[Svelte](https://www.npmjs.com/package/svelte)
 
 Svelte is a new way to build web applications. It’s a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
 
-_Other notable frameworks include _[_Angular_](https://www.npmjs.com/package/angular)_, _[_Ember_](https://www.npmjs.com/package/ember)_, _[_Backbone_](https://www.npmjs.com/package/backbone)_, _[_Preact_](https://www.npmjs.com/package/preact)_ and many others. You can do wonders with any of them, the golden rule is to learn _[_modern JS (ES6 and above)_](https://javascript.info/)_ well before._
+_Other notable frameworks include _[_Angular_](https://www.npmjs.com/package/angular)_, _[_Ember_](https://www.npmjs.com/package/ember)_, _[_Backbone_](https://www.npmjs.com/package/backbone)_, _[_Preact_](https://www.npmjs.com/package/preact)_ and many others. You can do wonders with any of them, the golden rule is to learn _[_modern JS (ES6 and above)_](https://javascript.info/)_ well before._
 
 ## 🎨 Styling frameworks
 
 4.[Bootstrap](https://www.npmjs.com/package/bootstrap)
 
-World’s most popular framework for building responsive, mobile-first sites. Intuitive and powerful, tho relatively bulky in size. Many modern UI kits are based on it like [React Bootstrap](https://www.npmjs.com/package/react-bootstrap) or [Reactstrap](https://www.npmjs.com/package/reactstrap).
+World’s most popular framework for building responsive, mobile-first sites. Intuitive and powerful, tho relatively bulky in size. Many modern UI kits are based on it like [React Bootstrap](https://www.npmjs.com/package/react-bootstrap) or [Reactstrap](https://www.npmjs.com/package/reactstrap).
 
 5.[Tailwind](https://www.npmjs.com/package/tailwindcss)
 
@@ -28,7 +28,7 @@ A low-level, utility-first CSS framework for rapid UI development. Built from th
 
 CSS-in-JS tool that bridges the gap between components and styling, offering numerous features to get you up and running in styling components in a functional and reusable way.
 
-_Other great solutions include _[_Foundation_](https://www.npmjs.com/package/foundation-sites)_, _[_Bulma_](https://www.npmjs.com/package/bulma)_, _[_Materialize_](https://www.npmjs.com/package/materialize-css)_ and _[_Ant Design_](https://www.npmjs.com/package/antd)_. If you prefer to write Vanilla CSS, you can use some CSS extension language like _[_SASS_](https://www.npmjs.com/package/sass)_, to extend its features._
+_Other great solutions include _[_Foundation_](https://www.npmjs.com/package/foundation-sites)_, _[_Bulma_](https://www.npmjs.com/package/bulma)_, _[_Materialize_](https://www.npmjs.com/package/materialize-css)_ and _[_Ant Design_](https://www.npmjs.com/package/antd)_. If you prefer to write Vanilla CSS, you can use some CSS extension language like _[_SASS_](https://www.npmjs.com/package/sass)_, to extend its features._
 
 ## 🔲 Backend frameworks
 
@@ -44,7 +44,7 @@ Hapi was originally used for the Express framework. With Hapi you can build powe
 
 Sails is the most popular MVC framework for Node.js with support for the requirements of modern apps: data-driven APIs with a scalable, service-oriented architecture.
 
-_Same as for frontend frameworks, there are lots of backend alternatives as well like _[_Adonis_](https://www.npmjs.com/package/@adonisjs/cli)_ and _[_Koa_](https://www.npmjs.com/package/koa)_. Pick one that suits your needs and learn it well._
+_Same as for frontend frameworks, there are lots of backend alternatives as well like _[_Adonis_](https://www.npmjs.com/package/@adonisjs/cli)_ and _[_Koa_](https://www.npmjs.com/package/koa)_. Pick one that suits your needs and learn it well._
 
 ## 🔗 CORS and requests
 
@@ -54,7 +54,7 @@ Node.js middleware for providing a Connect/Express middleware that can be used t
 
 11.[Axios](https://www.npmjs.com/package/axios)
 
-A promise-based HTTP client for the browser and Node.js. It’s easy to set-up, intuitive, and simplifies a lot of stuff compared to JS built-in [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+A promise-based HTTP client for the browser and Node.js. It’s easy to set-up, intuitive, and simplifies a lot of stuff compared to JS built-in [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 12.[Body-parser](https://www.npmjs.com/package/body-parser)
 
@@ -170,7 +170,7 @@ Dedicated module to ease work with cloud service that offers a solution to a web
 
 35.[DayJS](https://www.npmjs.com/package/dayjs)
 
-DayJS is a fast and lightweight alternative to [MomentJS](https://www.npmjs.com/package/moment) (in maintenance mode since September, 2020). Uses similar API — if you have used MomentJS, you already know how to use most of DayJS.
+DayJS is a fast and lightweight alternative to [MomentJS](https://www.npmjs.com/package/moment) (in maintenance mode since September, 2020). Uses similar API — if you have used MomentJS, you already know how to use most of DayJS.
 
 36.[Luxon](https://www.npmjs.com/package/luxon)
 
@@ -194,7 +194,7 @@ Useful package for generating massive amounts of fake data in the browser and No
 
 40.[Validator](https://www.npmjs.com/package/validator)
 
-Handy library of string validators and sanitizers. Lots of useful methods available, like `isEmail()`, `isCreditCard()`, `isDate()` and `isURL()`.
+Handy library of string validators and sanitizers. Lots of useful methods available, like `isEmail()`, `isCreditCard()`, `isDate()` and `isURL()`.
 
 41.[Joi](https://www.npmjs.com/package/joi)
 
@@ -312,7 +312,7 @@ Async is a utility module that provides straight-forward, powerful functions for
 
 65.[Fs-extra](https://www.npmjs.com/package/fs-extra)
 
-Fs-extra contains methods that aren’t included in the vanilla Node.js `fs` package like `copy()`, `remove()`, `mkdirs()`.
+Fs-extra contains methods that aren’t included in the vanilla Node.js `fs` package like `copy()`, `remove()`, `mkdirs()`.
 
 66.[Node-dir](https://www.npmjs.com/package/node-dir)
 
@@ -320,7 +320,7 @@ A module for some common directory and file operations, including for getting an
 
 67.[Node-cache](https://www.npmjs.com/package/node-cache)
 
-A simple caching module that has set, get and delete methods and works a little bit like [memcached](https://memcached.org/). Keys can have a timeout (ttl) after which they expire and are deleted from the cache.
+A simple caching module that has set, get and delete methods and works a little bit like [memcached](https://memcached.org/). Keys can have a timeout (ttl) after which they expire and are deleted from the cache.
 
 ## 🧷 Others:
 

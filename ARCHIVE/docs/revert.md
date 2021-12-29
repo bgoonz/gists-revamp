@@ -8,7 +8,7 @@ First, prepare a throw-away branch in case I screw things up.
 
 <table><tbody><tr class="odd"><td style="text-align: left;">$ git checkout -b revert-c99 master</td></tr></tbody></table>
 
-Now I am on the ‘revert-c99’ branch. Let’s figure out which commit to revert. I happen to know that the top of the ‘master’ branch is a merge, and its second parent (i.e. foreign commit I merged from) has the change I would want to undo. Further I happen to know that that merge introduced 5 commits or so:
+Now I am on the ‘revert-c99’ branch. Let’s figure out which commit to revert. I happen to know that the top of the ‘master’ branch is a merge, and its second parent (i.e. foreign commit I merged from) has the change I would want to undo. Further I happen to know that that merge introduced 5 commits or so:
 
 <table style="width:4%;"><colgroup><col style="width: 4%" /></colgroup><thead><tr class="header"><th>$ git show-branch –more=4 master master^2 | head * [master] Merge refs/heads/portable from http://www.cs.berkeley…. ! [master^2] Replace C99 array initializers with code.</th></tr></thead><tbody><tr class="odd"><td>- [master] Merge refs/heads/portable from http://www.cs.berkeley…. <em>+ [master^2] Replace C99 array initializers with code.</em> + [master^2~1] Replace unsetenv() and setenv() with older putenv(). <em>+ [master^2~2] Include sys/time.h in daemon.c.</em> + [master^2~3] Fix ?: statements. <em>+ [master^2~4] Replace zero-length array decls with [].</em> [master~1] tutorial note about git branch</td></tr></tbody></table>
 

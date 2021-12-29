@@ -196,7 +196,7 @@ Creating things that change my every day life.
 
 #### What words of wisdom do you live by?
 
-> \*Disclaimer: The following wisdom is very cliche ... but... “Be the change that you wish to see in the world.”
+> \*Disclaimer: The following wisdom is very cliche ... but... “Be the change that you wish to see in the world. "
 
 > ― Mahatma Gandhi
 

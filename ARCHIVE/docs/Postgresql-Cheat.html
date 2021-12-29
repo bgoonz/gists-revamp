@@ -91,7 +91,7 @@ grant all privileges on table1, table2, table3 to myuser;</code></pre>
 <h3 id="restore-postgres-.dump-file">Restore Postgres .dump file</h3>
 <pre><code>pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump</code></pre>
 <p><a href="https://gist.github.com/kagemusha/1569836">source</a></p>
-<h3 id="find-all-active-sessions-and-kill-them-i.e.-for-when-needing-to-drop-or-rename-db">Find all active sessions and kill them (i.e. for when needing to drop or rename db)</h3>
+<h3 id="find-all-active-sessions-and-kill-them-i.e.-for-when-needing-to-drop-or-rename-db">Find all active sessions and kill them (i.e. for when needing to drop or rename db)</h3>
 <p>Source: <a href="http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it">http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it</a></p>
 <pre><code># Postgres 9.6 and above
 SELECT pg_terminate_backend(pg_stat_activity.pid)

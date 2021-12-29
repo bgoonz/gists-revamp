@@ -1409,7 +1409,7 @@ BaseException
       |    +-- IndexError         # Raised when a sequence index is out of range.
       |    +-- KeyError           # Raised when a dictionary key or set element is not found.
       +-- NameError               # Raised when a variable name is not found.
-      +-- OSError                 # Failures such as “file not found” or “disk full”.
+      +-- OSError                 # Failures such as “file not found " or “disk full ".
       |    +-- FileNotFoundError  # When a file or directory is requested but doesn't exist.
       +-- RuntimeError            # Raised by errors that don't fall into other categories.
       |    +-- RecursionError     # Raised when the maximum recursion depth is exceeded.

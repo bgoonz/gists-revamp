@@ -1,6 +1,6 @@
 # 1\. Displaying Plots
 
-Chances are, the `%matplotlib inline` is one of the earliest magic commands you have ever encountered. It is used to display matplotlib plots onto the notebook directly, such as the following:
+Chances are, the `%matplotlib inline` is one of the earliest magic commands you have ever encountered. It is used to display matplotlib plots onto the notebook directly, such as the following:
 
 import matplotlib.pyplot as plt\
 import numpy as np%matplotlib inline
@@ -20,7 +20,7 @@ matplotlib inline magic command (image from author)
 
 # 2\. Interactive Plotting
 
-Another useful magic command is `%matplotlib widget` that enables your plots to be interactive.
+Another useful magic command is `%matplotlib widget` that enables your plots to be interactive.
 
 You can activate this magic command by:
 
@@ -44,21 +44,21 @@ interactive plot (image from author)
 
 # 3\. Checking and Setting Environment Variable
 
-You can check and set your environment variable easily too using the `%env` command:
+You can check and set your environment variable easily too using the `%env` command:
 
-- check all of your current environment variables: `%env`
-- check specific environment variable: `%env <NAME>` (e.g. `%env HOME` )
-- set environment variable: `%env <NAME> <NEW VALUE>` (e.g. `%env HOME /user/home` )
+- check all of your current environment variables: `%env`
+- check specific environment variable: `%env <NAME>` (e.g. `%env HOME` )
+- set environment variable: `%env <NAME> <NEW VALUE>` (e.g. `%env HOME /user/home` )
 
 # 4\. Running an External File
 
-You can run an external Python script using the `%run <FILENAME.py>` magic command. For instance,
+You can run an external Python script using the `%run <FILENAME.py>` magic command. For instance,
 
 %run hello_world.py
 
 # 5\. Checking Code Execution Time
 
-Sometimes you want to just check how fast (or slow) your program or your piece of code is running. You can now easily do this using the `%%time` in the particular cell that you want to track.
+Sometimes you want to just check how fast (or slow) your program or your piece of code is running. You can now easily do this using the `%%time` in the particular cell that you want to track.
 
 ![](https://miro.medium.com/max/30/1*cQQs66Vr-kdRPUgfPHniDA.png?q=20)
 
@@ -68,16 +68,16 @@ checking execution time (image from author)
 
 # 6\. Copying Code to Another File
 
-Sometimes you want to copy and paste a block of code to an external file, say as a Python script. Now you can easily do this by using `%%writefile <FILENAME>` . An example would be:
+Sometimes you want to copy and paste a block of code to an external file, say as a Python script. Now you can easily do this by using `%%writefile <FILENAME>` . An example would be:
 
 %%writefile hello_world.pydef hello_world():\
  print("hello world")
 
-The resulting file of `hello_world.py` will contain our newly written function!
+The resulting file of `hello_world.py` will contain our newly written function!
 
 # 7\. Displaying Content of a File
 
-Similar to `cat` in any unix-based OS, we have the `%pycat <FILENAME>` to print out the content of any file. For instance,
+Similar to `cat` in any unix-based OS, we have the `%pycat <FILENAME>` to print out the content of any file. For instance,
 
 %pycat hello_world.py
 
@@ -91,14 +91,14 @@ printout from %pycat (image from author)
 
 # 8\. Listing Variables
 
-The magic command `%who` is especially useful to check what are some of the running variables currently stored in-memory.
+The magic command `%who` is especially useful to check what are some of the running variables currently stored in-memory.
 
 If we have the following:
 
 a = [1,2,3]\
 b = "hi there"%who
 
-The printout will look something like this, indicating the variables `a` and `b` (and `np` as the previously loaded numpy library).
+The printout will look something like this, indicating the variables `a` and `b` (and `np` as the previously loaded numpy library).
 
 ![](https://miro.medium.com/max/30/1*jmNy3gYZpF0G51SVurZTqQ.png?q=20)
 
@@ -108,7 +108,7 @@ The printout will look something like this, indicating the variables `a` and 
 
 # 9\. Acquiring Object's Details
 
-In addition to `%who` , we can further inspect our variable of interest using `%pinfo <VARIABLE>` . Using our variables `a` and `b` above, we can run the following:
+In addition to `%who` , we can further inspect our variable of interest using `%pinfo <VARIABLE>` . Using our variables `a` and `b` above, we can run the following:
 
 %pinfo a
 
@@ -120,15 +120,15 @@ And the printout will look something like this:
 
 %pinfo (image from author)
 
-Notice how it provides us with the `type` , `content` , and other information pertaining to the variable we are currently inspecting.
+Notice how it provides us with the `type` , `content` , and other information pertaining to the variable we are currently inspecting.
 
 # 10\. Sharing Data Across Notebooks
 
-If you have multiple data across notebooks that need to be shared, you can easily do so by using the `%store` command. Using our example above, we can store the variable `a` as in
+If you have multiple data across notebooks that need to be shared, you can easily do so by using the `%store` command. Using our example above, we can store the variable `a` as in
 
 %store a
 
-and retrieve it on another notebook by passing in the `-r` argument as in
+and retrieve it on another notebook by passing in the `-r` argument as in
 
 %store -r a
 
@@ -144,7 +144,7 @@ So if you want to autosave your notebook every 120 seconds, you can run
 
 # 12\. Listing all Magic Commands
 
-This is probably the most useful magic commands of all: listing all available magic command by running `%lsmagic` .
+This is probably the most useful magic commands of all: listing all available magic command by running `%lsmagic` .
 
 ![](https://miro.medium.com/max/30/1*OLIydEG9cOBCKn3gcDuiFQ.png?q=20)
 

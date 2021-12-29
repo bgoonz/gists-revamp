@@ -41,7 +41,7 @@ VSCode Theme based on Atom’s One Dark theme. Best rated One Dark theme port in
 
 ### 6. Vscode Winteriscoming
 
-This extension for Visual Studio Code adds themes titled “Winter is Coming”. There are dark, dark with no italics, and light themes.<a href="https://morioh.com/redirect?l=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Djohnpapa.winteriscoming" class="markup--anchor markup--p-anchor">https://marketplace.visualstudio.com/items?itemName=johnpapa.winteriscoming</a>
+This extension for Visual Studio Code adds themes titled “Winter is Coming ". There are dark, dark with no italics, and light themes.<a href="https://morioh.com/redirect?l=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Djohnpapa.winteriscoming" class="markup--anchor markup--p-anchor">https://marketplace.visualstudio.com/items?itemName=johnpapa.winteriscoming</a>
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*qU2plrq8j1ALdlCh.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fjohnpapa%2Fvscode-winteriscoming" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
@@ -53,7 +53,7 @@ Shades of Purple — A professional theme with hand-picked & bold shades of 
 
 ### 8.Vsc Community Material Theme
 
-The community maintained version of Material Theme with ”legacy” color schemes you love!  
+The community maintained version of Material Theme with  "legacy " color schemes you love!  
 This project is community-maintained and the source is encrypted. If you want to maintain it and ship new fixes, ask to become a maintainer so you’ll have full access to the repository.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*s70SyPc9J516sPO_.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fmaterial-theme%2Fvsc-community-material-theme" class="markup--anchor markup--p-anchor">View on GitHub</a>

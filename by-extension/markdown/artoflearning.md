@@ -158,7 +158,7 @@
 
 ### Be able to setup data annotation efficiently
 
-- [ ] [Article: Create A Synthetic Image Dataset — The “What”, The “Why” and The “How”](https://towardsdatascience.com/create-a-synthetic-image-dataset-the-what-the-why-and-the-how-f820e6b6f718)
+- [ ] [Article: Create A Synthetic Image Dataset — The “What ", The “Why " and The “How "](https://towardsdatascience.com/create-a-synthetic-image-dataset-the-what-the-why-and-the-how-f820e6b6f718)
 - [ ] [Article: We need Synthetic Data](https://towardsdatascience.com/we-need-synthetic-data-e6f90a8532a4)
 - [ ] [Article: Weak Supervision for Online Discussions](https://trishalaneeraj.github.io/2020-07-05/weak-supervision)
 - [ ] [Article: ML Infrastructure Tools for Data Preparation](https://towardsdatascience.com/ml-infrastructure-tools-for-data-preparation-70d79e70f8d4)
@@ -1518,7 +1518,7 @@
   - [ ] [Rasa Algorithm Whiteboard - Implementation of Subword Embeddings](https://www.youtube.com/watch?v=8D3Gamk1Jig) `0:10:01`
   - [ ] [Rasa Algorithm Whiteboard - BytePair Embeddings](https://www.youtube.com/watch?v=-0IjF-7OB3s) `0:12:44`
 - [ ] [Youtube: A brief history of the Transformer architecture in NLP](https://www.youtube.com/watch?v=iH-wmtxHunk)
-- [ ] [Youtube: The Transformer neural network architecture explained. “Attention is all you need” (NLP)](https://www.youtube.com/watch?v=FWFA4DGuzSc)
+- [ ] [Youtube: The Transformer neural network architecture explained. “Attention is all you need " (NLP)](https://www.youtube.com/watch?v=FWFA4DGuzSc)
 - [ ] [Youtube: How does a Transformer architecture combine Vision and Language? ViLBERT - NLP meets Computer Vision](https://www.youtube.com/watch?v=dd7nE4nbxN0)
 - [ ] [Youtube: Strategies for pre-training the BERT-based Transformer architecture – language (and vision)](https://www.youtube.com/watch?v=dabFOBE4eZI)
 - [ ] [Youtube: Ilya Sutskever - GPT-2](https://youtu.be/T0I88NhR_9M)
@@ -2186,7 +2186,7 @@
 - [ ] [Article: Kubernetes CronJobs for Machine Learning](https://mlinproduction.com/k8s-cronjobs/)
 - [ ] [Article: Kubernetes Deployments for Machine Learning](https://mlinproduction.com/k8s-deployments/)
 - [ ] [Article: Kubernetes Services for Machine Learning](https://mlinproduction.com/k8s-services/)
-- [ ] [“Let’s use Kubernetes!” Now you have 8 problems](https://pythonspeed.com/articles/dont-need-kubernetes/)
+- [ ] [“Let’s use Kubernetes! " Now you have 8 problems](https://pythonspeed.com/articles/dont-need-kubernetes/)
 - [ ] [Article: Kubernetes for Python Developers: Part 1](https://www.distributedpython.com/2018/11/28/kubernetes-python-developers-part-1/)
 - [ ] [Doc: Environment variables in Compose](https://docs.docker.com/compose/environment-variables/)
 - [ ] [Pluralsight: Docker and Kubernetes: The Big Picture](https://www.pluralsight.com/courses/docker-kubernetes-big-picture)

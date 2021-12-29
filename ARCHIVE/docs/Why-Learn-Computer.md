@@ -150,7 +150,7 @@ Remember: it’s a big computing world out there, yours to pursue as you choose!
 
 #### Write better code:
 
-- Quality Students code with a consistent eye toward scalability and readability, i.e. code that is efficient and easily maintained.
+- Quality Students code with a consistent eye toward scalability and readability, i.e. code that is efficient and easily maintained.
 
 - Quantity Students write large quantities of code every day, building the reps needed to overcome difficult challenges and build confidence.
 

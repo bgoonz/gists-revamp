@@ -24,7 +24,7 @@
 
 ## Node.js
 
-- [Fetch vs. Axios.js for making http requests](https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5) \#\# Sequelize
+- [Fetch vs. Axios.js for making http requests](https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5) \#\# Sequelize
 
 - [Sequelize: Getting Started](https://www.youtube.com/watch?v=6NKNfXtKk0c)
 - <span class="citation" data-cites="tmkelly28">\[Sequelize reference by @tmkelly28\]</span>(https://github.com/tmkelly28/sequelize-reference)

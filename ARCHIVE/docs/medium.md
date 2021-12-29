@@ -4,7 +4,7 @@
 
 Published
 
-on Oct 3
+on Oct 3
 
 12 min read
 
@@ -14,11 +14,11 @@ on Oct 3
 
 Published
 
-on Oct 2
+on Oct 2
 
 10 min read
 
-In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
+In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
 
 ### [Depth-First and Breadth-First In JS](https://levelup.gitconnected.com/depth-first-and-breadth-first-in-js-bd444cf7c30d?source=your_stories_page-------------------------------------)
 
@@ -26,11 +26,11 @@ In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------
 
 Published
 
-on Oct 2
+on Oct 2
 
 4 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Understanding NPM](https://levelup.gitconnected.com/understanding-npm-6a33e7f6ed85?source=your_stories_page-------------------------------------)
 
@@ -38,23 +38,23 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Sep 29
+on Sep 29
 
 20 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Common Page Events](https://medium.com/webdevhub/common-page-events-e46e5cbed803?source=your_stories_page-------------------------------------)
 
-### [Events : When a user interacts with HTML Elements on a website.](https://medium.com/webdevhub/common-page-events-e46e5cbed803?source=your_stories_page-------------------------------------)
+### [Events : When a user interacts with HTML Elements on a website.](https://medium.com/webdevhub/common-page-events-e46e5cbed803?source=your_stories_page-------------------------------------)
 
 Published
 
-on Sep 28
+on Sep 28
 
 5 min read
 
-In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-------------------------------------)
+In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-------------------------------------)
 
 ### [Intro To JQuery](https://bryanguner.medium.com/intro-to-jquery-e6d226a0e1da?source=your_stories_page-------------------------------------)
 
@@ -62,7 +62,7 @@ In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-----------
 
 Published
 
-on Sep 23
+on Sep 23
 
 3 min read
 
@@ -72,11 +72,11 @@ on Sep 23
 
 Published
 
-on Sep 23
+on Sep 23
 
 5 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 Unpublished changes
 
@@ -86,21 +86,21 @@ Unpublished changes
 
 Published
 
-on Sep 22
+on Sep 22
 
 10 min read
 
 ### [Basic Git Workflow](https://medium.com/geekculture/basic-git-workflow-4c5a06ac3507?source=your_stories_page-------------------------------------)
 
-### [A quick intermediate level summary (Exp ...approx. 1 year)](https://medium.com/geekculture/basic-git-workflow-4c5a06ac3507?source=your_stories_page-------------------------------------)
+### [A quick intermediate level summary (Exp ...approx. 1 year)](https://medium.com/geekculture/basic-git-workflow-4c5a06ac3507?source=your_stories_page-------------------------------------)
 
 Published
 
-on Sep 22
+on Sep 22
 
 6 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Explore Promises in JavaScript](https://javascript.plainenglish.io/exploring-promises-f5ebe3ead6ac?source=your_stories_page-------------------------------------)
 
@@ -108,11 +108,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Sep 15
+on Sep 15
 
 9 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Computer Architecture B](https://medium.com/webdevhub/computer-architecture-b-9e7040fe277e?source=your_stories_page-------------------------------------)
 
@@ -120,11 +120,11 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Sep 3
+on Sep 3
 
 6 min read
 
-In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-------------------------------------)
+In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-------------------------------------)
 
 ### [jquery Cheat Sheet](https://bryanguner.medium.com/jquery-cheat-sheet-cc70458ce284?source=your_stories_page-------------------------------------)
 
@@ -132,7 +132,7 @@ In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-----------
 
 Published
 
-on Sep 3
+on Sep 3
 
 1 min read
 
@@ -142,7 +142,7 @@ on Sep 3
 
 Published
 
-on Sep 1
+on Sep 1
 
 3 min read
 
@@ -152,7 +152,7 @@ on Sep 1
 
 Published
 
-on Sep 1
+on Sep 1
 
 1 min read
 
@@ -162,7 +162,7 @@ on Sep 1
 
 Published
 
-on Aug 31
+on Aug 31
 
 15 min read
 
@@ -172,7 +172,7 @@ on Aug 31
 
 Published
 
-on Aug 31
+on Aug 31
 
 9 min read
 
@@ -182,11 +182,11 @@ on Aug 31
 
 Published
 
-on Aug 31
+on Aug 31
 
 20 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 Unpublished changes
 
@@ -196,11 +196,11 @@ Unpublished changes
 
 Published
 
-on Aug 31
+on Aug 31
 
 5 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Everything You Need To Become A Machine Learner](https://levelup.gitconnected.com/everything-you-need-to-become-a-machine-learner-3dd8f14814a1?source=your_stories_page-------------------------------------)
 
@@ -208,11 +208,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Aug 30
+on Aug 30
 
 28 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Here's the expanded list:](https://medium.com/webdevhub/awesome-list-of-awesome-lists-f1bbcd632fd0?source=your_stories_page-------------------------------------)
 
@@ -220,11 +220,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Aug 30
+on Aug 30
 
 68 min read
 
-In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-------------------------------------)
+In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-------------------------------------)
 
 ### [JavaScript Unit Testing & TDD](https://bryanguner.medium.com/javascript-unit-testing-tdd-72908e7730f5?source=your_stories_page-------------------------------------)
 
@@ -232,7 +232,7 @@ In [WebDevHub](https://medium.com/webdevhub?source=your_stories_page-----------
 
 Published
 
-on Aug 25
+on Aug 25
 
 8 min read
 
@@ -242,11 +242,11 @@ on Aug 25
 
 Published
 
-on Aug 24
+on Aug 24
 
 38 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Notes I Wish I Had When I Started Learning Python](https://medium.com/star-gazers/notes-i-wish-i-had-when-i-started-learning-python-16ce4244be12?source=your_stories_page-------------------------------------)
 
@@ -254,11 +254,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Aug 24
+on Aug 24
 
 22 min read
 
-In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
+In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
 
 ### [Awesome List Of Github Repositories](https://bryanguner.medium.com/awesome-list-of-github-repositories-f1c433e32b17?source=your_stories_page-------------------------------------)
 
@@ -266,7 +266,7 @@ In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------
 
 Published
 
-on Aug 24
+on Aug 24
 
 16 min read
 
@@ -276,11 +276,11 @@ on Aug 24
 
 Published
 
-on Aug 24
+on Aug 24
 
 12 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Adding CSS To Your HTML](https://levelup.gitconnected.com/adding-css-to-your-html-3a17ba25ba82?source=your_stories_page-------------------------------------)
 
@@ -288,11 +288,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Aug 22
+on Aug 22
 
 14 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Most Common Javascript Errors](https://medium.com/analytics-vidhya/most-common-javascript-errors-311ea1356a3d?source=your_stories_page-------------------------------------)
 
@@ -300,11 +300,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Aug 22
+on Aug 22
 
 2 min read
 
-In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
+In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
 
 ### [Super Simple Intro To React](https://medium.com/codex/super-simple-intro-to-react-5c78e4207b7f?source=your_stories_page-------------------------------------)
 
@@ -312,11 +312,11 @@ In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_p
 
 Published
 
-on Aug 22
+on Aug 22
 
 6 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [React State](https://medium.com/codex/react-state-d8e0fc340714?source=your_stories_page-------------------------------------)
 
@@ -324,11 +324,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Aug 22
+on Aug 22
 
 9 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Python Problems & Solutions For Beginners](https://levelup.gitconnected.com/beginner-python-problems-solutions-dd631e9c3a9f?source=your_stories_page-------------------------------------)
 
@@ -336,11 +336,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Aug 21
+on Aug 21
 
 5 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Fundamental Concepts In JavaScript](https://medium.com/codex/fundamental-concepts-in-javascript-8e093a665b04?source=your_stories_page-------------------------------------)
 
@@ -348,11 +348,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Aug 10
+on Aug 10
 
 11 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Bash Proficiency In Under 15 Minutes](https://bryanguner.medium.com/bash-proficiency-in-under-15-minutes-3ec9d4e2e65?source=your_stories_page-------------------------------------)
 
@@ -360,7 +360,7 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Aug 9
+on Aug 9
 
 18 min read
 
@@ -370,11 +370,11 @@ on Aug 9
 
 Published
 
-on Aug 6
+on Aug 6
 
 11 min read
 
-In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
+In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
 
 ### [All The Things You Can Embed In A Medium Article](https://bryanguner.medium.com/all-the-things-you-can-embed-in-a-medium-article-b03a85c65d86?source=your_stories_page-------------------------------------)
 
@@ -382,7 +382,7 @@ In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_p
 
 Published
 
-on Aug 6
+on Aug 6
 
 3 min read
 
@@ -394,7 +394,7 @@ Unpublished changes
 
 Published
 
-on Aug 6
+on Aug 6
 
 6 min read
 
@@ -404,11 +404,11 @@ on Aug 6
 
 Published
 
-on Aug 4
+on Aug 4
 
 27 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Heroku Deploy Guides & Cheatsheet Compilation](https://medium.com/analytics-vidhya/heroku-deploy-guides-cheatsheet-compilation-b2897b69ce02?source=your_stories_page-------------------------------------)
 
@@ -416,11 +416,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Jul 29
+on Jul 29
 
 5 min read
 
-In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
+In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
 
 ### [A Comprehensive Deep Dive into React](https://javascript.plainenglish.io/react-in-depth-1965dcde8d4f?source=your_stories_page-------------------------------------)
 
@@ -428,11 +428,11 @@ In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_p
 
 Published
 
-on Jul 15
+on Jul 15
 
 75 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Web Development Resource List #4](https://bryanguner.medium.com/take-a-look-at-the-big-picture-b69e0999a380?source=your_stories_page-------------------------------------)
 
@@ -440,7 +440,7 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Jul 15
+on Jul 15
 
 20 min read
 
@@ -450,7 +450,7 @@ on Jul 15
 
 Published
 
-on Jul 14
+on Jul 14
 
 2 min read
 
@@ -460,7 +460,7 @@ on Jul 14
 
 Published
 
-on Jul 14
+on Jul 14
 
 2 min read
 
@@ -470,7 +470,7 @@ on Jul 14
 
 Published
 
-on Jul 14
+on Jul 14
 
 64 min read
 
@@ -480,11 +480,11 @@ on Jul 14
 
 Published
 
-on Jul 14
+on Jul 14
 
 28 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Why Jamstack Rocks🤘😎🤙](https://medium.com/geekculture/why-jamstack-rocks-666114722f35?source=your_stories_page-------------------------------------)
 
@@ -492,11 +492,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Jul 7
+on Jul 7
 
 11 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [What Are Bash Aliases And Why Should You Be Using Them!](https://bryanguner.medium.com/what-are-bash-aliases-and-why-should-you-be-using-them-30a6cfafdfeb?source=your_stories_page-------------------------------------)
 
@@ -504,7 +504,7 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jul 6
+on Jul 6
 
 2 min read
 
@@ -514,11 +514,11 @@ on Jul 6
 
 Published
 
-on Jul 6
+on Jul 6
 
 7 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Job Boards and The Hunt](https://medium.com/analytics-vidhya/job-boards-and-the-hunt-8cbfefefbb33?source=your_stories_page-------------------------------------)
 
@@ -526,11 +526,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jul 5
+on Jul 5
 
 14 min read
 
-In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
+In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_page-------------------------------------)
 
 ### [Absolutely Everything You Could Need To Know About How JavaScript Works.](https://bryanguner.medium.com/absolutely-everything-you-could-need-to-know-about-how-javascript-works-633549469528?source=your_stories_page-------------------------------------)
 
@@ -538,7 +538,7 @@ In [Analytics Vidhya](https://medium.com/analytics-vidhya?source=your_stories_p
 
 Published
 
-on Jul 3
+on Jul 3
 
 51 min read
 
@@ -548,7 +548,7 @@ on Jul 3
 
 Published
 
-on Jul 1
+on Jul 1
 
 3 min read
 
@@ -558,7 +558,7 @@ on Jul 1
 
 Published
 
-on Jun 29
+on Jun 29
 
 2 min read
 
@@ -568,11 +568,11 @@ on Jun 29
 
 Published
 
-on Jun 29
+on Jun 29
 
 13 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Bash Commands That Save Me Time and Frustration](https://medium.com/geekculture/bash-commands-that-save-time-920fb6ab9d0a?source=your_stories_page-------------------------------------)
 
@@ -580,11 +580,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jun 29
+on Jun 29
 
 15 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Quick Web Developers Website Checklist & A List Of Tools For Improvement](https://bryanguner.medium.com/quick-web-developers-website-checklist-a-list-of-tools-for-improvement-9a52e11c8ee1?source=your_stories_page-------------------------------------)
 
@@ -592,7 +592,7 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jun 23
+on Jun 23
 
 37 min read
 
@@ -602,11 +602,11 @@ on Jun 23
 
 Published
 
-on Jun 10
+on Jun 10
 
 8 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Long List Of Invaluable NodeJS Resources](https://levelup.gitconnected.com/long-list-of-invaluable-nodejs-resources-6a793ae1ce6?source=your_stories_page-------------------------------------)
 
@@ -614,11 +614,11 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Jun 7
+on Jun 7
 
 9 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Open Ended Frontend Interview Questions You Should Answer Before Your Next Interview](https://bryanguner.medium.com/open-ended-frontend-interview-questions-you-should-answer-before-your-next-interview-7c9722712521?source=your_stories_page-------------------------------------)
 
@@ -626,7 +626,7 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Jun 7
+on Jun 7
 
 2 min read
 
@@ -636,7 +636,7 @@ on Jun 7
 
 Published
 
-on Jun 4
+on Jun 4
 
 20 min read
 
@@ -646,11 +646,11 @@ on Jun 4
 
 Published
 
-on Jun 4
+on Jun 4
 
 4 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Beginners Guide To Python](https://medium.com/geekculture/beginners-guide-to-python-e5a59b5bb64d?source=your_stories_page-------------------------------------)
 
@@ -658,11 +658,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jun 4
+on Jun 4
 
 19 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Data Structures & Algorithms Resource List Part 1](https://bryanguner.medium.com/data-structures-algorithms-resource-list-part-1-8bad647a8ad8?source=your_stories_page-------------------------------------)
 
@@ -670,7 +670,7 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jun 4
+on Jun 4
 
 6 min read
 
@@ -680,11 +680,11 @@ on Jun 4
 
 Published
 
-on Jun 3
+on Jun 3
 
 6 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [CSS Interview Prep Quiz](https://bryanguner.medium.com/css-interview-prep-quiz-6e3e4de7ca53?source=your_stories_page-------------------------------------)
 
@@ -692,7 +692,7 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Jun 3
+on Jun 3
 
 21 min read
 
@@ -702,11 +702,11 @@ on Jun 3
 
 Published
 
-on Jun 3
+on Jun 3
 
 11 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Object Methods](https://medium.com/geekculture/object-methods-4066ed24b214?source=your_stories_page-------------------------------------)
 
@@ -714,11 +714,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jun 3
+on Jun 3
 
 4 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [Github Repositories That Will Teach You How To Code For Free!](https://levelup.gitconnected.com/github-repositories-that-will-teach-you-how-to-code-for-free-ad0ecf59d89e?source=your_stories_page-------------------------------------)
 
@@ -726,11 +726,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Jun 2
+on Jun 2
 
 21 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Resources By Programming Language](https://bryanguner.medium.com/resources-by-programming-language-399d9f9ef520?source=your_stories_page-------------------------------------)
 
@@ -738,7 +738,7 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on May 31
+on May 31
 
 2 min read
 
@@ -748,11 +748,11 @@ on May 31
 
 Published
 
-on May 30
+on May 30
 
 24 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [These Are A Few Of My Favorite Things](https://medium.com/codex/these-are-a-few-of-my-favorite-things-82e8b6e61879?source=your_stories_page-------------------------------------)
 
@@ -760,11 +760,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on May 28
+on May 28
 
 17 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Objects In JavaScript](https://medium.com/codex/objects-in-javascript-b212486dade6?source=your_stories_page-------------------------------------)
 
@@ -772,11 +772,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on May 27
+on May 27
 
 5 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Fundamental Javascript Concepts You Should Understand](https://bryanguner.medium.com/fundamental-javascript-concepts-you-should-understand-81c4d839b827?source=your_stories_page-------------------------------------)
 
@@ -784,7 +784,7 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on May 27
+on May 27
 
 19 min read
 
@@ -794,7 +794,7 @@ on May 27
 
 Published
 
-on May 27
+on May 27
 
 2 min read
 
@@ -804,11 +804,11 @@ on May 27
 
 Published
 
-on May 27
+on May 27
 
 3 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Beginner's Guide To React Part 2](https://bryanguner.medium.com/introductory-react-part-2-cda01615a186?source=your_stories_page-------------------------------------)
 
@@ -816,7 +816,7 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on May 19
+on May 19
 
 20 min read
 
@@ -826,7 +826,7 @@ on May 19
 
 Published
 
-on May 19
+on May 19
 
 3 min read
 
@@ -836,11 +836,11 @@ on May 19
 
 Published
 
-on May 19
+on May 19
 
 8 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Scheduling: setTimeout and setInterval](https://javascript.plainenglish.io/scheduling-settimeout-and-setinterval-fcb2f40d16f7?source=your_stories_page-------------------------------------)
 
@@ -848,11 +848,11 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on May 17
+on May 17
 
 7 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [LocalStorage VS SessionStorage](https://bryanguner.medium.com/css-animations-d196a20099a5?source=your_stories_page-------------------------------------)
 
@@ -860,7 +860,7 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on May 17
+on May 17
 
 6 min read
 
@@ -870,11 +870,11 @@ on May 17
 
 Published
 
-on May 15
+on May 15
 
 2 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [How To Implement Native(ES6) Data Structures Using Arrays & Objects](https://bryanguner.medium.com/how-to-implement-native-es6-data-structures-using-arrays-objects-ce953b9f6a07?source=your_stories_page-------------------------------------)
 
@@ -882,7 +882,7 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on May 15
+on May 15
 
 2 min read
 
@@ -892,11 +892,11 @@ on May 15
 
 Published
 
-on Apr 15
+on Apr 15
 
 5 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [The Beginner's Guide To JavaScript](https://javascript.plainenglish.io/absolute-beginners-guide-to-javascript-part-1-e222d166b6e1?source=your_stories_page-------------------------------------)
 
@@ -904,11 +904,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Apr 3
+on Apr 3
 
 6 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Web Developer Resource List Part 4](https://medium.com/star-gazers/web-developer-resource-list-part-4-fd686892b9eb?source=your_stories_page-------------------------------------)
 
@@ -916,11 +916,11 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Mar 28
+on Mar 28
 
 14 min read
 
-In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
+In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
 
 ### [VSCode Extensions Specifically for JavaScript Development](https://medium.com/codex/vscode-extensions-specifically-for-javascript-development-ea91305cbd4a?source=your_stories_page-------------------------------------)
 
@@ -928,11 +928,11 @@ In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------
 
 Published
 
-on Mar 22
+on Mar 22
 
 8 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [A list of all of my articles to link to future posts](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b?source=your_stories_page-------------------------------------)
 
@@ -940,7 +940,7 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Mar 22
+on Mar 22
 
 8 min read
 
@@ -950,11 +950,11 @@ on Mar 22
 
 Published
 
-on Mar 22
+on Mar 22
 
 15 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Web Development Resources Part 3](https://bryanguner.medium.com/web-development-resources-part-3-f862ceb2b82a?source=your_stories_page-------------------------------------)
 
@@ -962,7 +962,7 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Mar 21
+on Mar 21
 
 2 min read
 
@@ -972,11 +972,11 @@ on Mar 21
 
 Published
 
-on Mar 21
+on Mar 21
 
 13 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [The Best Cloud-Based Code Playgrounds of 2021 (Part 1)](https://bryanguner.medium.com/the-best-cloud-based-code-playgrounds-of-2021-part-1-cdae9448db24?source=your_stories_page-------------------------------------)
 
@@ -984,7 +984,7 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Mar 20
+on Mar 20
 
 6 min read
 
@@ -994,11 +994,11 @@ on Mar 20
 
 Published
 
-on Mar 19
+on Mar 19
 
 9 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Web Developer Resource List Part 2](https://medium.com/star-gazers/web-developer-resource-list-part-2-9c5cb56ab263?source=your_stories_page-------------------------------------)
 
@@ -1006,11 +1006,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Mar 18
+on Mar 18
 
 5 min read
 
-In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
+In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
 
 ### [HTTP Basics](https://levelup.gitconnected.com/http-basics-8f02a96a834a?source=your_stories_page-------------------------------------)
 
@@ -1018,11 +1018,11 @@ In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------
 
 Published
 
-on Mar 18
+on Mar 18
 
 6 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [JavaScript Frameworks & Libraries](https://javascript.plainenglish.io/javascript-frameworks-libraries-35931e187a35?source=your_stories_page-------------------------------------)
 
@@ -1030,11 +1030,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 18
+on Mar 18
 
 53 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [My 'awesome' list of JavaScript resources](https://javascript.plainenglish.io/my-take-on-awesome-javascript-243255451e74?source=your_stories_page-------------------------------------)
 
@@ -1042,11 +1042,11 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Mar 18
+on Mar 18
 
 9 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Everything You Need to Get Started With VSCode + Extensions & Resources](https://levelup.gitconnected.com/everything-you-need-to-get-started-with-vscode-extensions-resources-b9f4c8d91931?source=your_stories_page-------------------------------------)
 
@@ -1054,11 +1054,11 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Mar 18
+on Mar 18
 
 17 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [My Favorite VSCode Themes](https://levelup.gitconnected.com/my-favorite-vscode-themes-9bab65af3f0f?source=your_stories_page-------------------------------------)
 
@@ -1066,11 +1066,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 18
+on Mar 18
 
 5 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Object Oriented Programming in JavaScript](https://levelup.gitconnected.com/object-oriented-programming-in-javascript-d45007d06333?source=your_stories_page-------------------------------------)
 
@@ -1078,11 +1078,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 13
+on Mar 13
 
 12 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [JavaScript Rotate (Array) ProblemWalkthrough](https://medium.com/codex/javascript-rotate-array-problemwalkthrough-31deb19ebba1?source=your_stories_page-------------------------------------)
 
@@ -1090,11 +1090,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 13
+on Mar 13
 
 3 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Super Simple Intro To HTML](https://levelup.gitconnected.com/super-simple-intro-to-html-651d695f9bc?source=your_stories_page-------------------------------------)
 
@@ -1102,11 +1102,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Mar 13
+on Mar 13
 
 8 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Everything You Need To Know About Relational Databases, SQL, PostgreSQL and Sequelize To Build...](https://medium.com/codex/everything-you-need-to-know-about-relational-databases-sql-postgresql-and-sequelize-to-build-8acb68284a98?source=your_stories_page-------------------------------------)
 
@@ -1114,11 +1114,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 13
+on Mar 13
 
 32 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Understanding Git (A Beginners Guide Containing Cheat Sheets & Resources)](https://levelup.gitconnected.com/understanding-git-a-beginners-guide-containing-cheat-sheets-resources-b50c9c01a107?source=your_stories_page-------------------------------------)
 
@@ -1126,11 +1126,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Mar 12
+on Mar 12
 
 37 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [The Complete JavaScript Reference Guide](https://javascript.plainenglish.io/complete-javascript-reference-guide-64306cd6b0db?source=your_stories_page-------------------------------------)
 
@@ -1138,11 +1138,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 8
+on Mar 8
 
 94 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [Modules in Javascript](https://medium.com/geekculture/modules-in-javascript-a55333e35978?source=your_stories_page-------------------------------------)
 
@@ -1150,11 +1150,11 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Mar 8
+on Mar 8
 
 4 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [An Introduction to Markdown (Bonus Markdown Templates Included)](https://levelup.gitconnected.com/an-introduction-to-markdown-bonus-markdown-templates-included-3497ce56de3?source=your_stories_page-------------------------------------)
 
@@ -1162,11 +1162,11 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Mar 7
+on Mar 7
 
 5 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Web Dev Resources](https://levelup.gitconnected.com/web-dev-resources-ec1975773d7d?source=your_stories_page-------------------------------------)
 
@@ -1174,11 +1174,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 6
+on Mar 6
 
 2 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Regular Expressions](https://medium.com/codex/regular-expressions-4d8fb3eb146b?source=your_stories_page-------------------------------------)
 
@@ -1186,11 +1186,11 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 6
+on Mar 6
 
 9 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [Writing Files Using Python](https://medium.com/geekculture/writing-files-using-python-d46b4851366f?source=your_stories_page-------------------------------------)
 
@@ -1198,11 +1198,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Mar 6
+on Mar 6
 
 5 min read
 
-In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
+In [Geek Culture](https://medium.com/geekculture?source=your_stories_page-------------------------------------)
 
 ### [A Collection of my most useful Gist Entries](https://bryanguner.medium.com/a-collection-of-my-most-useful-gist-entries-f4314f3ba3ab?source=your_stories_page-------------------------------------)
 
@@ -1210,7 +1210,7 @@ In [Geek Culture](https://medium.com/geekculture?source=your_stories_page------
 
 Published
 
-on Mar 6
+on Mar 6
 
 1 min read
 
@@ -1220,11 +1220,11 @@ on Mar 6
 
 Published
 
-on Mar 6
+on Mar 6
 
 15 min read
 
-In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
+In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=your_stories_page-------------------------------------)
 
 ### [PostgreSQL Setup For Windows & WSL/Ubuntu](https://bryanguner.medium.com/postgresql-setup-for-windows-wsl-ubuntu-801672ab7089?source=your_stories_page-------------------------------------)
 
@@ -1232,7 +1232,7 @@ In [JavaScript in Plain English](https://javascript.plainenglish.io/?source=you
 
 Published
 
-on Mar 5
+on Mar 5
 
 10 min read
 
@@ -1242,7 +1242,7 @@ on Mar 5
 
 Published
 
-on Mar 5
+on Mar 5
 
 3 min read
 
@@ -1252,7 +1252,7 @@ on Mar 5
 
 Published
 
-on Mar 5
+on Mar 5
 
 4 min read
 
@@ -1262,11 +1262,11 @@ on Mar 5
 
 Published
 
-on Mar 5
+on Mar 5
 
 16 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Fetch Quick Sheet](https://bryanguner.medium.com/fetch-quick-sheet-8872650742b4?source=your_stories_page-------------------------------------)
 
@@ -1274,7 +1274,7 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Mar 5
+on Mar 5
 
 1 min read
 
@@ -1284,7 +1284,7 @@ on Mar 5
 
 Published
 
-on Mar 5
+on Mar 5
 
 1 min read
 
@@ -1294,11 +1294,11 @@ on Mar 5
 
 Published
 
-on Mar 5
+on Mar 5
 
 9 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 Unpublished changes
 
@@ -1308,7 +1308,7 @@ Unpublished changes
 
 Published
 
-on Mar 5
+on Mar 5
 
 5 min read
 
@@ -1318,11 +1318,11 @@ on Mar 5
 
 Published
 
-on Mar 5
+on Mar 5
 
 8 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
 
 ### [A Quick Guide to Big-O Notation, Memoization, Tabulation, and Sorting Algorithms by Example](https://medium.com/star-gazers/a-quick-guide-to-big-o-notation-memoization-tabulation-and-sorting-algorithms-by-example-803ff193c522?source=your_stories_page-------------------------------------)
 
@@ -1330,11 +1330,11 @@ In [CodeX](https://medium.com/codex?source=your_stories_page-------------------
 
 Published
 
-on Feb 27
+on Feb 27
 
 8 min read
 
-In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
+In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------------------------------------)
 
 ### [Basic Web Development Environment Setup](https://levelup.gitconnected.com/basic-web-development-environment-setup-9f36c3f15afe?source=your_stories_page-------------------------------------)
 
@@ -1342,11 +1342,11 @@ In [Star Gazers](https://medium.com/star-gazers?source=your_stories_page-------
 
 Published
 
-on Feb 26
+on Feb 26
 
 5 min read
 
-In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
+In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page-------------------------------------)
 
 ### [Everything You Need To Become A Machine Learner](https://medium.com/codex/everything-you-need-to-become-a-machine-learner-382ee243f23c?source=your_stories_page-------------------------------------)
 
@@ -1354,8 +1354,8 @@ In [Level Up Coding](https://levelup.gitconnected.com/?source=your_stories_page
 
 Published
 
-on Nov 11, 2020
+on Nov 11, 2020
 
 22 min read
 
-In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)
+In [CodeX](https://medium.com/codex?source=your_stories_page-------------------------------------)

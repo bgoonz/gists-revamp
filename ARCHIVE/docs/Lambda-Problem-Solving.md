@@ -147,7 +147,7 @@ Remember: **Minutes of planning can be saved by hours of debugging!**
 
 ### Actions
 
-- Start a source code control repo (e.g. a git repo) immediately if one doesn’t already exist.
+- Start a source code control repo (e.g. a git repo) immediately if one doesn’t already exist.
 - Convert your pseudocode and outlines into actual code.
 - Don’t Repeat Yourself (DRY): Remove redundant code as you write it.
 - Document code as you write it.

@@ -125,7 +125,7 @@ _For a more complete list see [StaticGen](https://www.staticgen.com/)._
 - [Netlify Forms](https://www.netlify.com/docs/form-handling/) - Built-in form handling on building time by parsing HTML files directly at deploy time.
 - [StaticKit](https://statickit.com/) - Modern forms for static sites, with client libraries for React and HTML.
 - [Arengu](https://www.arengu.com/) - Build signup and login forms with Arengu, enable social login, add 2FA or use passwordless flows to authenticate users with your API or identity provider.
-- [Static Forms](https://www.staticforms.xyz/) - Integrate HTML forms easily without any server side code. After user submits the form we’ll send you content of the form to your registered email.
+- [Static Forms](https://www.staticforms.xyz/) - Integrate HTML forms easily without any server side code. After user submits the form we'll send you content of the form to your registered email.
 
 ### [](https://github.com/automata/awesome-jamstack#e-commerce)E-commerce
 
@@ -180,8 +180,8 @@ _For a more complete list see [StaticGen](https://www.staticgen.com/)._
   - [Cloud ML Engine](https://cloud.google.com/ml-engine/) - Serverless machine learning services that automatically scales built on custom Google hardware (Tensor Processing Units).
 - [Serverless](https://serverless.com/) - Toolkit for deploying and operating serverless architectures.
 - [Cloudinary](https://cloudinary.com/) - Serverless media (images/videos) management platform. Provides SDKs in every popular language and media widgets for Jamstack to make it easy to manage media, CDN, storage, transformations, and more.
-- [imgix](https://www.imgix.com/) - Serverless image delivery and management service. imgix connects to where your images are stored (e.g. S3, GCS, web folder) and transforms, optimizes, and intelligently delivers your images using simple and robust URL parameters.
-- [Elastictable](https://www.elastictable.com/) - Backend as a Service solution built on AWS that’s on a missing to increase the success rate of online businesses.
+- [imgix](https://www.imgix.com/) - Serverless image delivery and management service. imgix connects to where your images are stored (e.g. S3, GCS, web folder) and transforms, optimizes, and intelligently delivers your images using simple and robust URL parameters.
+- [Elastictable](https://www.elastictable.com/) - Backend as a Service solution built on AWS that's on a missing to increase the success rate of online businesses.
 - [Stormkit](https://stormkit.io/) - Powerful serverless infrastructure for modern javascript apps powered by AWS. It integrates with your git flow and builds, deploys and scales your apps seamlessly.
 
 _For a more complete list see [Awesome Serverless](https://github.com/pmuens/awesome-serverless)._
@@ -204,30 +204,30 @@ _For a more complete list see [Awesome Serverless](https://github.com/pmuens/aw
 
 - [Ghost on the Jamstack](https://blog.ghost.org/jamstack/)
 - [Building a contact form in Gatsby using Getform](https://blog.getform.io/building-a-gatsby-contact-form-using-getform)
-- [Getting Started with Gatsby and Cockpit — Part 1 of 2](https://blog.ginetta.net/getting-started-with-gatsby-and-cockpit-part-1-of-2-d86871932d44)
+- [Getting Started with Gatsby and Cockpit --- Part 1 of 2](https://blog.ginetta.net/getting-started-with-gatsby-and-cockpit-part-1-of-2-d86871932d44)
 - [Creating Static E-commerce site with GatsbyJs](https://medium.com/@pinku1/creating-static-e-commerce-site-with-gatsbyjs-a349d7e022a)
-- [For Static Sites, There’s No Excuse Not to Use a CDN](https://forestry.io/blog/for-static-sites-theres-no-excuse-not-to-use-a-cdn/)
+- [For Static Sites, There's No Excuse Not to Use a CDN](https://forestry.io/blog/for-static-sites-theres-no-excuse-not-to-use-a-cdn/)
 - [E-commerce front-end for Vue.js, Nuxt.js and Snipcart](https://www.sanity.io/blog/e-commerce-vue-nuxt-snipcart)
 - [Building Paul The Octopus](https://www.tomango.co.uk/thinks/paul-the-octopus-2018/)
 - [Jamstack and Netlify: Do We really need another buzzword?](https://noti.st/philhawksworth/qp7jZC/jamstack-and-netlify-do-we-really-need-another-buzzword)
 - [The Jamstack Startup Landscape](https://medium.com/@CRVVC/the-jamstack-startup-landscape-c06cc3cdb917)
 - [How I built my blog using Gatsby and Netlify](https://blog.pavsidhu.com/how-i-built-my-blog-using-gatsby-and-netlify/)
-- [Developer’s Guide to Headless E-Commerce](https://snipcart.com/blog/headless-ecommerce-guide)
+- [Developer's Guide to Headless E-Commerce](https://snipcart.com/blog/headless-ecommerce-guide)
 - [Handling Static Forms, Auth & Serverless Functions with Gatsby on Netlify](https://snipcart.com/blog/static-forms-serverless-gatsby-netlify)
 - [Jamstack for Clients: Benefits, Static Site CMS, & Limitations](https://snipcart.com/blog/jamstack-clients-static-site-cms)
 - [Exploring Netlify CMS, a React & Git-Based Content Management System](https://snipcart.com/blog/netlify-cms-react-git-workflow)
-- [Jamstack PWA — Let’s Build a Polling App. with Gatsby.js, Firebase, and Styled-components Pt. 1](https://medium.com/@UnicornAgency/jamstack-pwa-lets-build-a-polling-app-with-gatsby-js-firebase-and-styled-components-pt-1-78a03a633092)
+- [Jamstack PWA --- Let's Build a Polling App. with Gatsby.js, Firebase, and Styled-components Pt. 1](https://medium.com/@UnicornAgency/jamstack-pwa-lets-build-a-polling-app-with-gatsby-js-firebase-and-styled-components-pt-1-78a03a633092)
 - [Dynamic Static Sites with Netlify and iOS Shortcuts; Use Netlify Functions, a Gulp build process and iOS Shortcuts to publish dynamic content to your static site](https://bryanlrobinson.com/blog/2018/11/12/ios-shortcuts-pushing-data-to-netlify-static-site/)
 - [Gatsby for Apps](https://www.gatsbyjs.org/blog/2018-11-07-gatsby-for-apps/)
 - [Turning the Static Dynamic](https://www.gatsbyjs.org/blog/2018-12-17-turning-the-static-dynamic/)
 - [Going Jamstack with Netlify and Nuxt](https://blog.lichter.io/posts/going-jamstack-with-netlify-and-nuxt/)
 - [Getting Started With Gridsome](https://scotch.io/tutorials/getting-started-with-gridsome)
-- [The Complete Beginner’s Guide to Deploying Your First Static Website to IPFS](https://interplanetarygatsby.com/ipfs-deploy/)
+- [The Complete Beginner's Guide to Deploying Your First Static Website to IPFS](https://interplanetarygatsby.com/ipfs-deploy/)
 - [A Broad Discussion on Jamstack & E-Commerce (Podcast & Transcript)](https://snipcart.com/jamstack-ecommerce-podcast)
-- [The Beginner’s Guide to Static Site Generators](https://bejamas.io/blog/static-site-generators/)
+- [The Beginner's Guide to Static Site Generators](https://bejamas.io/blog/static-site-generators/)
 - [9 Headless CMS Options for Your Jamstack Site](https://bejamas.io/blog/headless-cms/)
 - [State of Jamstack 2020 report](https://kontent.ai/resources/state-of-jamstack-2020-report)
-- [Jamify Tutorials — Publish flaring fast blogs with Gatsby and Ghost](https://www.jamify.org/)
+- [Jamify Tutorials --- Publish flaring fast blogs with Gatsby and Ghost](https://www.jamify.org/)
 - [State of the Headless CMS Market 2020 report](https://tracker.kontent.ai/592920/state-of-the-headless-cms-market-2020)
 - [Why is Next.js my ultimate choice over Gatsby, Gridsome, and Nuxt?](https://kontent.ai/blog/gatsby-vs-next-gridsome-nuxt)
 - [Generating a Static Site with Flask and Deploying it to Netlify](https://testdriven.io/blog/static-site-flask-and-netlify/) - Leverage the JAMstack with Python and Flask by creating a static site and deploying it to Netlify.
@@ -235,11 +235,11 @@ _For a more complete list see [Awesome Serverless](https://github.com/pmuens/aw
 ## [](https://github.com/automata/awesome-jamstack#podcasts)Podcasts
 
 - [Jamstack Radio](https://www.netlify.com/tags/podcast/)
-- [That’s my Jamstack](https://thatsmyjamstack.com/)
+- [That's my Jamstack](https://thatsmyjamstack.com/)
 
 ## [](https://github.com/automata/awesome-jamstack#books)Books
 
-- [Modern Web Development on the Jamstack](https://www.netlify.com/pdf/oreilly-modern-web-development-on-the-jamstack.pdf) - By Mathias Biilmann & Phil Hawksworth (published by O’Reilly).
+- [Modern Web Development on the Jamstack](https://www.netlify.com/pdf/oreilly-modern-web-development-on-the-jamstack.pdf) - By Mathias Biilmann & Phil Hawksworth (published by O'Reilly).
 - [Hugo in Action](https://www.manning.com/books/hugo-in-action)
 - [Jumpstart Jamstack Development](https://www.packtpub.com/web-development/jumpstart-jamstack-development) - By Christopher Pecoraro and Vincenzo Gambino
 - [The Jamstack Book](https://www.manning.com/books/the-jamstack-book) - by Raymond Camden and Brian Rinaldi

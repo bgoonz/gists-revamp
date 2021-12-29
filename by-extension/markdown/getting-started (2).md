@@ -105,9 +105,9 @@ React Redux provides a pair of custom React hooks that allow your React componen
 
 ### Learn Modern Redux Livestream
 
-Redux maintainer Mark Erikson appeared on the “Learn with Jason” show to explain how we recommend using Redux today. The show includes a live-coded example app that shows how to use Redux Toolkit and React-Redux hooks with Typescript, as well as the new RTK Query data fetching APIs.
+Redux maintainer Mark Erikson appeared on the “Learn with Jason " show to explain how we recommend using Redux today. The show includes a live-coded example app that shows how to use Redux Toolkit and React-Redux hooks with Typescript, as well as the new RTK Query data fetching APIs.
 
-See [the “Learn Modern Redux” show notes page](https://www.learnwithjason.dev/let-s-learn-modern-redux) for a transcript and links to the example app source.
+See [the “Learn Modern Redux " show notes page](https://www.learnwithjason.dev/let-s-learn-modern-redux) for a transcript and links to the example app source.
 
 ## Help and Discussion
 

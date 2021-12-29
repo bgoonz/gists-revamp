@@ -845,7 +845,7 @@ Most of utilities are found by native API. Others advanced functions could be ch
 
   - isPlainObject
 
-  Check to see if an object is a plain object (created using “{}” or “new Object”).
+  Check to see if an object is a plain object (created using “{} " or “new Object ").
 
   ```js
   // jQuery

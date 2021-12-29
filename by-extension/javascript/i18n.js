@@ -344,7 +344,7 @@
     );
   };
   window.i18n["sv"]["star_hint"] = function (d) {
-    return "<p>”Stjärnmarkera” en programpunkt genom att klocka på den grå fyrkanten bredvid den. Dina markeringar lagras och visas i denna vy. Du har inte markerat några programpunkter än, så listan är för närvarande tom.";
+    return "<p> "Stjärnmarkera " en programpunkt genom att klocka på den grå fyrkanten bredvid den. Dina markeringar lagras och visas i denna vy. Du har inte markerat några programpunkter än, så listan är för närvarande tom.";
   };
   window.i18n["sv"]["filter_sum_id"] = function (d) {
     return (

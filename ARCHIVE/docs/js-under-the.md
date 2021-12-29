@@ -6,7 +6,7 @@ Seriously… this list is utterly exhaustive it covers more core concepts than I
 
 ### Absolutely Everything You Could Need To Know About How JavaScript Works.
 
-#### Seriously… this list is utterly exhaustive it covers more core concepts than I can hold the names of in working memory on a very good day.
+#### Seriously… this list is utterly exhaustive it covers more core concepts than I can hold the names of in working memory on a very good day.
 
 #### But first a little bit of mildly shameful self promotion:
 
@@ -41,13 +41,13 @@ bryanguner.medium.com</a><a href="https://bryanguner.medium.com/a-list-of-all-of
 
 <figure><img src="https://cdn-images-1.medium.com/max/2560/1*2FC8D_rbP4cT3jukydhtkg.png" class="graf-image" /></figure>### The Beginner’s Guide To JavaScript
 
-> This is a quick intro for complete beginners … skip below for more advanced content and resources! (below the next photo montage of my dog)
+> This is a quick intro for complete beginners … skip below for more advanced content and resources! (below the next photo montage of my dog)
 
 ### Skip The Following **↓** To Get To Main Content!!
 
 <figure><img src="https://cdn-images-1.medium.com/max/600/1*HCYn5Uz_jZ6uRjgp_NA5Yw.png" class="graf-image" /></figure>**If you wanna skip this section you’ll find the main content about 10% of the way down the page… it will look like this:**
 
-<figure><img src="https://cdn-images-1.medium.com/max/600/0*iHxLNzz1MOZACC5u.png" class="graf-image" /></figure>### The Number Data Type
+<figure><img src="https://cdn-images-1.medium.com/max/600/0*iHxLNzz1MOZACC5u.png" class="graf-image" /></figure>### The Number Data Type
 
 The **number** data type in JS is used to represent any numerical  
 values, including integers and decimal numbers. **Basic Arithmetic Operators** are the symbols that perform particular operations.
@@ -61,17 +61,17 @@ values, including integers and decimal numbers. **Basic Arithmetic Operators** a
 JS evaluates more complex expressions using the general math order of  
 operations aka PEMDAS.
 
-- <span id="4923">**PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.</span>
+- <span id="4923">**PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.</span>
 - <span id="e245">_To force a specific order of operation, use the group operator ( ) around a part of the expression._</span>
 
-**Modulo** : Very useful operation to check divisibility of numbers,  
+**Modulo** : Very useful operation to check divisibility of numbers,  
 check for even & odd, whether a number is prime, and much more!  
 _(Discrete Math concept, circular problems can be solved with modulo)_
 
 - <span id="9608">Whenever you have a smaller number % a larger number, the answer will just be the initial small number.</span>
 - <span id="3b00">`console.log(7 % 10); // => 7;`</span>
 
-### The String Data Type
+### The String Data Type
 
 The **string** data type is a primitive data type that used to represent  
 textual data.
@@ -91,11 +91,11 @@ textual data.
 
 `${function} // use ${} to invoke functions within.`
 
-> **.length** : property that can be appended to data to return the length.
+> **.length** : property that can be appended to data to return the length.
 
-> empty strings have a length of zero.
+> empty strings have a length of zero.
 
-> **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].
+> **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].
 
     console.log("bootcamp"[0]); // => "b"
     console.log("bootcamp"[10]); // => "undefined"
@@ -104,28 +104,28 @@ textual data.
 
 - <span id="bcc3">we can pass expressions through the brackets as well since JS always evaluates expressions first.</span>
 - <span id="f60b">The index of the last character of a string is always one less than it’s length.</span>
-- <span id="5329">**indexOf()** : method used to find the first index of a given character within a string.</span>
+- <span id="5329">**indexOf()** : method used to find the first index of a given character within a string.</span>
 - <span id="6813">`console.log("bagel".indexOf("b")); // => 0 console.log("bagel".indexOf("z")); // => -1`</span>
 - <span id="262e">**if the character inside the indexOf() search does not exist in the string, the output will be -1.**</span>
 - <span id="0646">the indexOf() search will return the first instanced index of the the char in the string.</span>
-- <span id="15e0">**concatenate** : word to describe joining strings together into a single string.</span>
+- <span id="15e0">**concatenate** : word to describe joining strings together into a single string.</span>
 
-### The Boolean Data Type
+### The Boolean Data Type
 
 The **Boolean** data type is the simplest data type since there are only  
 two values: **true** and **false**.
 
 - <span id="62d6">**Logical Operators** (Boolean Operators) are used to establish logic in our code.</span>
-- <span id="bae2">**!** (not) : reverses a Boolean value.</span>
+- <span id="bae2">**!** (not) : reverses a Boolean value.</span>
 
 `console.log(!true); // => false console.log(!!false); // => false`
 
 - <span id="71d9">**&&** (and) **Truth Table**</span>
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*Y4qzqSB0C-9AmtXf.png" class="graf-image" /></figure>-   <span id="c706">**Logical Order of Operations** : JS will evaluate !, then &&, then ||.</span>
--   <span id="1e21">**De Morgan’s Law** : Common mistake in Boolean logic is incorrectly distributing ! across parentheses.</span>
--   <span id="2e3e">`!(A || B) === !A && !B; !(A && B) === !A             || !B;`</span>
--   <span id="350f">In summary, to correctly distribute ! across parentheses we must also flip the operation within.</span>
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*Y4qzqSB0C-9AmtXf.png" class="graf-image" /></figure>-   <span id="c706">**Logical Order of Operations** : JS will evaluate !, then &&, then ||.</span>
+-   <span id="1e21">**De Morgan’s Law** : Common mistake in Boolean logic is incorrectly distributing ! across parentheses.</span>
+-   <span id="2e3e">`!(A || B) === !A && !B; !(A && B) === !A             || !B;`</span>
+-   <span id="350f">In summary, to correctly distribute ! across parentheses we must also flip the operation within.</span>
 
 ### Comparison Operators
 
@@ -145,13 +145,13 @@ All comparison operators will result in a Boolean output.
 > so “a” is less than “b” because it appears earlier!
 
 > If there is ever a standstill comparison of two string  
-> lexicographically (i.e. app vs apple) the comparison will deem the  
+> lexicographically (i.e. app vs apple) the comparison will deem the  
 > shorter string lesser.
 
 **Difference between == and ===**
 
-- <span id="3fec">**===** : Strict Equality, will only return true if the two comparisons are entirely the same.</span>
-- <span id="224d">**==** : Loose Equality, will return true even if the values are of a different type, due to coercion. (Avoid using this)</span>
+- <span id="3fec">**===** : Strict Equality, will only return true if the two comparisons are entirely the same.</span>
+- <span id="224d">**==** : Loose Equality, will return true even if the values are of a different type, due to coercion. (Avoid using this)</span>
 
 ### Variables
 
@@ -175,9 +175,9 @@ in a program.
 
     let num = 0;num += 10; // same as num = num + 10num -= 2; // same as num = num - 2num /= 4; // same as num = num / 4num *= 7; // same as num = num * 7
 
-- <span id="7ff5">In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.</span>
-- <span id="2798">**declaration** : process of simply introducing a variable name.</span>
-- <span id="ad51">**initialization** : process of both declaring and assigning a variable on the same line.</span>
+- <span id="7ff5">In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.</span>
+- <span id="2798">**declaration** : process of simply introducing a variable name.</span>
+- <span id="ad51">**initialization** : process of both declaring and assigning a variable on the same line.</span>
 
 ### Functions
 
@@ -185,12 +185,12 @@ A function is a procedure of code that will run when called. Functions
 are used so that we do not have to rewrite code to do the same thing  
 over and over. (Think of them as ‘subprograms’)
 
-- <span id="01bb">**Function Declaration** : Process when we first initially write our function.</span>
+- <span id="01bb">**Function Declaration** : Process when we first initially write our function.</span>
 - <span id="963b">Includes three things:</span>
 - <span id="32df">Name of the function.</span>
 - <span id="7930">A list of _parameters_ ()</span>
 - <span id="145e">The code to execute {}</span>
-- <span id="37c0">**Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)</span>
+- <span id="37c0">**Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)</span>
 - <span id="f3cc">JS evaluates code top down, left to right.</span>
 - <span id="cf9c">When we execute a declared function later on in our program we refer to this as **invoking** our function.</span>
 - <span id="4374">Every function in JS returns undefined unless otherwise specified.</span>
@@ -199,14 +199,14 @@ over and over. (Think of them as ‘subprograms’)
 
 ### Parameters and Arguments
 
-- <span id="38d3">**Parameters** : Comma separated variables specified as part of a function’s declaration.</span>
-- <span id="ecef">**Arguments** : Values passed to the function when it is invoked.</span>
+- <span id="38d3">**Parameters** : Comma separated variables specified as part of a function’s declaration.</span>
+- <span id="ecef">**Arguments** : Values passed to the function when it is invoked.</span>
 - <span id="a836">_If the number of arguments passed during a function invocation is different than the number of parameters listed, it will still work._</span>
 - <span id="a53a">However, is there are not enough arguments provided for parameters our function will likely yield **Nan**.</span>
 
 ---
 
-<figure><img src="https://cdn-images-1.medium.com/max/2560/1*2FC8D_rbP4cT3jukydhtkg.png" class="graf-image" /></figure>END OF INTRO FOR BEGINNERS (MAIN ARTICLE BELOW)
+<figure><img src="https://cdn-images-1.medium.com/max/2560/1*2FC8D_rbP4cT3jukydhtkg.png" class="graf-image" /></figure>END OF INTRO FOR BEGINNERS (MAIN ARTICLE BELOW)
 
 ### ↓↓**Absolutely Everything You Could Need To Know About JavaScript**↓↓
 
@@ -216,7 +216,7 @@ over and over. (Think of them as ‘subprograms’)
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Call_stack" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developer.mozilla.org/en-US/docs/Glossary/Call_stack"><strong>Call stack - MDN Web Docs Glossary: Definitions of Web-related terms | MDN</strong><br />
 <em>A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Glossary/Call_stack" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec"><strong>Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks &amp; more</strong><br />
+<a href="https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec"><strong>Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks &amp; more</strong><br />
 <em>Web developers or Front end engineers, as that’s what we like to be called, nowadays do everything right from acting as…</em>medium.com</a><a href="https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://medium.freecodecamp.org/understanding-the-javascript-call-stack-861e41ae61d4" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/understanding-the-javascript-call-stack-861e41ae61d4"><strong>Understanding the JavaScript call stack</strong><br />
@@ -229,7 +229,7 @@ over and over. (Think of them as ‘subprograms’)
 <em>Understanding execution context and stack to become a better Javascript developer.</em>blog.bitsrc.io</a><a href="https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf"><strong>How JavaScript works: an overview of the engine, the runtime, and the call stack</strong><br />
-<em>As JavaScript is getting more and more popular, teams are leveraging its support on many levels in their stack …</em>blog.sessionstack.com</a><a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>As JavaScript is getting more and more popular, teams are leveraging its support on many levels in their stack …</em>blog.sessionstack.com</a><a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://medium.com/codex/scope-closures-context-in-javascript-f126f1523104" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/codex/scope-closures-context-in-javascript-f126f1523104"><strong>Breaking Down Scope, Context, And Closure In JavaScript In Simple Terms.</strong><br />
 <em>“JavaScript’s global scope is like a public toilet. You can’t avoid going in there, but try to limit your contact with…</em>medium.com</a><a href="https://medium.com/codex/scope-closures-context-in-javascript-f126f1523104" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -264,7 +264,7 @@ Here’s a live code editor where you can mess with any of the examples…
 - <span id="2d20"><a href="http://codekata.com/" class="markup--anchor markup--li-anchor">CodeKata</a></span>
 - <span id="d3bf"><a href="https://www.firecode.io/" class="markup--anchor markup--li-anchor">Firecode</a></span>
 
-### Dependent on data
+### Dependent on data
 
 > _Something that data structure and algorithms have in common when talking about time complexity is that they are both dealing with data. When you deal with data you become dependent on them and as a result the time complexity is also dependent of the data that you received. To solve this problem we talk about 3 different time complexity._
 
@@ -272,7 +272,7 @@ Here’s a live code editor where you can mess with any of the examples…
 - <span id="8b06">**The worst-case complexity: when the data looks the worst**</span>
 - <span id="881c">**The average-case complexity: when the data looks average**</span>
 
-### Big O notation
+### Big O notation
 
 The complexity is usually expressed with the Big O notation. The wikipedia page about this subject is pretty complex but you can find here a good summary of the different complexity for the most famous data structures and sorting algorithms.
 
@@ -299,7 +299,7 @@ Arrays are among the oldest and most important data structures and are used by e
 <a href="https://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/"><strong>The Secret Life of JavaScript Primitives</strong><br />
 <em>You may not know it but, in JavaScript, whenever you interact with string, number or boolean primitives you enter a…</em>javascriptweblog.wordpress.com</a><a href="https://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-### <a href="https://javascript.info/primitives-methods#a-primitive-as-an-object" class="markup--anchor markup--h3-anchor">A primitive as an object</a>
+### <a href="https://javascript.info/primitives-methods#a-primitive-as-an-object" class="markup--anchor markup--h3-anchor">A primitive as an object</a>
 
 Here’s the paradox faced by the creator of JavaScript:
 
@@ -347,10 +347,10 @@ The JavaScript engine highly optimizes this process. It may even skip the creati
 <a href="https://medium.com/@bolajiayodeji/the-differences-between-object-freeze-vs-const-in-javascript-4eacea534d7c" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@bolajiayodeji/the-differences-between-object-freeze-vs-const-in-javascript-4eacea534d7c"><strong>The differences between Object.freeze() vs Const in JavaScript</strong><br />
 <em>ES6 has brought several new features and methods into JavaScript since its release. These features have better improved…</em>medium.com</a><a href="https://medium.com/@bolajiayodeji/the-differences-between-object-freeze-vs-const-in-javascript-4eacea534d7c" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0"><strong>Explaining Value vs. Reference in Javascript</strong><br />
+<a href="https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0"><strong>Explaining Value vs. Reference in Javascript</strong><br />
 <em>A simple look at computer memory explains what’s happening</em>codeburst.io</a><a href="https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-### DOES IT MUTATE:
+### DOES IT MUTATE:
 
 <a href="https://doesitmutate.xyz/" class="markup--anchor markup--p-anchor">LINK….</a>
 
@@ -466,7 +466,7 @@ The fill() method fills all the elements of an array from a start index to an en
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><strong>Array.prototype.fill() - JavaScript | MDN</strong><br />
 <em>The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-### Example :
+### Example :
 
     var array1 = [1, 2, 3, 4];
 
@@ -539,13 +539,13 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://hackernoon.com/javascript-reference-and-copy-variables-b0103074fdf0" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://hackernoon.com/javascript-reference-and-copy-variables-b0103074fdf0"><strong>JavaScript Reference and Copy Variables | Hacker Noon</strong><br />
 <em>Each programming language has its own peculiarities (and JavaScript has a lot), and today I’m going to talk about…</em>hackernoon.com</a><a href="https://hackernoon.com/javascript-reference-and-copy-variables-b0103074fdf0" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="http://www.javascripttutorial.net/javascript-primitive-vs-reference-values/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://www.javascripttutorial.net/javascript-primitive-vs-reference-values/"><strong>JavaScript Primitive vs. Reference Values</strong><br />
+<a href="http://www.javascripttutorial.net/javascript-primitive-vs-reference-values/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://www.javascripttutorial.net/javascript-primitive-vs-reference-values/"><strong>JavaScript Primitive vs. Reference Values</strong><br />
 <em>Summary: in this tutorial, you will learn the differences between primitive and reference values. In JavaScript, a…</em>www.javascripttutorial.net</a><a href="http://www.javascripttutorial.net/javascript-primitive-vs-reference-values/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://stackoverflow.com/questions/6605640/javascript-by-reference-vs-by-value" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://stackoverflow.com/questions/6605640/javascript-by-reference-vs-by-value"><strong>JavaScript by reference vs. by value</strong><br />
+<a href="https://stackoverflow.com/questions/6605640/javascript-by-reference-vs-by-value" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://stackoverflow.com/questions/6605640/javascript-by-reference-vs-by-value"><strong>JavaScript by reference vs. by value</strong><br />
 <em>I’m looking for some good comprehensive reading material on when JavaScript passes something by value and when by…</em>stackoverflow.com</a><a href="https://stackoverflow.com/questions/6605640/javascript-by-reference-vs-by-value" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://dev.to/mostlyfocusedmike/javascript-interview-prep-primitive-vs-reference-types-3o4f" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/mostlyfocusedmike/javascript-interview-prep-primitive-vs-reference-types-3o4f"><strong>JavaScript Interview Prep: Primitive vs. Reference Types</strong><br />
+<a href="https://dev.to/mostlyfocusedmike/javascript-interview-prep-primitive-vs-reference-types-3o4f" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/mostlyfocusedmike/javascript-interview-prep-primitive-vs-reference-types-3o4f"><strong>JavaScript Interview Prep: Primitive vs. Reference Types</strong><br />
 <em>original article In a JavaScript interview, they might ask if you understand the difference between primitive and…</em>dev.to</a><a href="https://dev.to/mostlyfocusedmike/javascript-interview-prep-primitive-vs-reference-types-3o4f" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://dev.to/promhize/what-you-need-to-know-about-javascripts-implicit-coercion-e23" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/promhize/what-you-need-to-know-about-javascripts-implicit-coercion-e23"><strong>What you need to know about Javascript’s Implicit Coercion</strong><br />
@@ -566,7 +566,7 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://github.com/getify/You-Dont-Know-JS/tree/1st-ed" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/getify/You-Dont-Know-JS/tree/1st-ed"><strong>getify/You-Dont-Know-JS</strong><br />
 <em>A book series on JavaScript. <span class="citation" data-cites="YDKJS">@YDKJS</span> on twitter. Contribute to getify/You-Dont-Know-JS development by creating an…</em>github.com</a><a href="https://github.com/getify/You-Dont-Know-JS/tree/1st-ed" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a"><strong>JavaScript — Double Equals vs. Triple Equals</strong><br />
+<a href="https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a"><strong>JavaScript — Double Equals vs. Triple Equals</strong><br />
 <em>Learn equality in JavaScript in 3 minutes</em>codeburst.io</a><a href="https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://bytearcher.com/articles/equality-comparison-operator-javascript/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://bytearcher.com/articles/equality-comparison-operator-javascript/"><strong>Should I use === or == equality comparison operator in JavaScript?</strong><br />
@@ -626,7 +626,7 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://scotch.io/tutorials/understanding-scope-in-javascript" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://scotch.io/tutorials/understanding-scope-in-javascript"><strong>Understanding Scope in JavaScript</strong><br />
 <em>JavaScript has a feature called Scope. Though the concept of scope is not that easy to understand for many new…</em>scotch.io</a><a href="https://scotch.io/tutorials/understanding-scope-in-javascript" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://medium.freecodecamp.org/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0"><strong>When to use a function declaration vs. a function expression</strong><br />
+<a href="https://medium.freecodecamp.org/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0"><strong>When to use a function declaration vs. a function expression</strong><br />
 <em>The differences between them and when to use one or the other.</em>medium.freecodecamp.org</a><a href="https://medium.freecodecamp.org/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://dev.to/alexandrafren/a-javascript-fundamentals-cheat-sheet-scope-context-and-this-28ai" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/alexandrafren/a-javascript-fundamentals-cheat-sheet-scope-context-and-this-28ai"><strong>A JavaScript Fundamentals Cheat Sheet: Scope, Context, and “this”</strong><br />
@@ -638,10 +638,10 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://medium.com/@raviroshan.talk/javascript-function-declaration-vs-expression-f5873b8c7b38" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@raviroshan.talk/javascript-function-declaration-vs-expression-f5873b8c7b38"><strong>JavaScript Function — Declaration vs Expression</strong><br />
 <em>Functions are considered as First Class citizen in JavaScript and it is really important to be clear with the concept…</em>medium.com</a><a href="https://medium.com/@raviroshan.talk/javascript-function-declaration-vs-expression-f5873b8c7b38" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052"><strong>Function Declarations vs. Function Expressions</strong><br />
+<a href="https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052"><strong>Function Declarations vs. Function Expressions</strong><br />
 <em>What is Function Statement/Declarations in JavaScript?</em>medium.com</a><a href="https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
-<a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/"><strong>Function Declarations vs. Function Expressions</strong><br />
+<a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/"><strong>Function Declarations vs. Function Expressions</strong><br />
 <em>Lets start with a short quiz. What is alerted in each case?: Question 1: Question 2: Question 3: Question 4: If you…</em>javascriptweblog.wordpress.com</a><a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://vvkchandra.medium.com/essential-javascript-mastering-immediately-invoked-function-expressions-67791338ddc6" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://vvkchandra.medium.com/essential-javascript-mastering-immediately-invoked-function-expressions-67791338ddc6"><strong>Essential JavaScript: Mastering Immediately-invoked Function Expressions</strong><br />
@@ -672,7 +672,7 @@ The find() method returns a value of the first element in the array that satisfi
 <em>JavaScript’s never had a standard way to import and export functionality from a source file to another. Well, it has…</em>medium.com</a><a href="https://medium.com/dailyjs/es6-modules-node-js-and-the-michael-jackson-solution-828dc244b8b" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc"><strong>JavaScript Modules: A Beginner’s Guide</strong><br />
-<em>If you’re a newcomer to JavaScript, jargon like “module bundlers vs. module loaders,” “Webpack vs. Browserify” and “AMD…</em>medium.freecodecamp.org</a><a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>If you’re a newcomer to JavaScript, jargon like “module bundlers vs. module loaders,” “Webpack vs. Browserify” and “AMD…</em>medium.freecodecamp.org</a><a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://developers.google.com/web/fundamentals/primers/modules" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developers.google.com/web/fundamentals/primers/modules"><strong>JavaScript modules</strong><br />
 <em>This article explains how to use JavaScript modules, how to deploy them responsibly, and how the Chrome team is working…</em>developers.google.com</a><a href="https://developers.google.com/web/fundamentals/primers/modules" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -681,7 +681,7 @@ The find() method returns a value of the first element in the array that satisfi
 <em>IIFE is a function that is declared and invoked at the same time. You create them by using anonymous functions and…</em>dev.to</a><a href="https://dev.to/bhagatparwinder/iife-immediately-invoked-function-expressions-49c5" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4"><strong>JavaScript Event Loop Explained</strong><br />
-<em>“How is JavaScript asynchronous and single-threaded ?” The short answer is that JavaScript language is single-threaded…</em>medium.com</a><a href="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>“How is JavaScript asynchronous and single-threaded ?” The short answer is that JavaScript language is single-threaded…</em>medium.com</a><a href="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/"><strong>The JavaScript Event Loop: Explained</strong><br />
 <em>With JavaScript approaching near-ubiquity as the scripting language of the web browser, it benefits you to have a basic…</em>blog.carbonfive.com</a><a href="https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -770,7 +770,7 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://www.quora.com/How-can-I-understand-Bitwise-operation-in-JavaScript" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.quora.com/How-can-I-understand-Bitwise-operation-in-JavaScript"><strong>How can I understand Bitwise operation in JavaScript?</strong><br />
 <em>Answer: Okay, I was going to just write that bitwise operations in JavaScript are the same as in every other language…</em>www.quora.com</a><a href="https://www.quora.com/How-can-I-understand-Bitwise-operation-in-JavaScript" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://eloquentjavascript.net/14_dom.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://eloquentjavascript.net/14_dom.html"><strong>The Document Object Model :: Eloquent JavaScript</strong><br />
+<a href="https://eloquentjavascript.net/14_dom.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://eloquentjavascript.net/14_dom.html"><strong>The Document Object Model :: Eloquent JavaScript</strong><br />
 <em>Too bad! Same old story! Once you’ve finished building your house you notice you’ve accidentally learned something that…</em>eloquentjavascript.net</a><a href="https://eloquentjavascript.net/14_dom.html" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://www.digitalocean.com/community/tutorials/introduction-to-the-dom" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.digitalocean.com/community/tutorials/introduction-to-the-dom"><strong>How To Understand and Modify the DOM in JavaScript | DigitalOcean</strong><br />
@@ -837,7 +837,7 @@ The find() method returns a value of the first element in the array that satisfi
 <em>1. An Introduction To Classes In JavaScript In the previous article in this series we looked at function constructors…</em>dev.to</a><a href="https://dev.to/lawrence_eagles/an-easy-guide-to-understanding-classes-in-javascript-3bcm" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><strong>Function.prototype.call() - JavaScript | MDN</strong><br />
-<em>The value to use as this when calling . Note: In certain cases, may not be the actual value seen by the method. If the…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>The value to use as this when calling . Note: In certain cases, may not be the actual value seen by the method. If the…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><strong>Function.prototype.bind() - JavaScript | MDN</strong><br />
 <em>The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -848,7 +848,7 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://levelup.gitconnected.com/grokking-call-apply-and-bind-methods-in-javascript-392351a4be8b" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://levelup.gitconnected.com/grokking-call-apply-and-bind-methods-in-javascript-392351a4be8b"><strong>Grokking call(), apply() and bind() methods in JavaScript</strong><br />
 <em>These are very important for every aspiring JavaScript Developer, these are used in almost every JavaScript Library or…</em>levelup.gitconnected.com</a><a href="https://levelup.gitconnected.com/grokking-call-apply-and-bind-methods-in-javascript-392351a4be8b" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp"><strong>How-to: call() , apply() and bind() in JavaScript | Codementor</strong><br />
+<a href="https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp"><strong>How-to: call() , apply() and bind() in JavaScript | Codementor</strong><br />
 <em>In this post, we will be discussing the difference between call(), apply(), and bind() methods of JavaScript functions…</em>www.codementor.io</a><a href="https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/"><strong>JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals</strong><br />
@@ -873,7 +873,7 @@ The find() method returns a value of the first element in the array that satisfi
 <em>If you have ever been in charge of operating the grill at a family event or party, then you can understand apply, call…</em>dev.to</a><a href="https://dev.to/kbk0125/javascripts-apply-call-and-bind-explained-by-hosting-a-cookout-32jo" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb"><strong>How AND When to use bind, call, and apply in Javascript - Eigen X</strong><br />
-<em>In order for you to fully understand bind, call, and apply you have to understand the Javascript concept of this …</em>www.eigenx.com</a><a href="https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>In order for you to fully understand bind, call, and apply you have to understand the Javascript concept of this …</em>www.eigenx.com</a><a href="https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://www.hacksparrow.com/javascript-bind-vs-apply-and-call.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.hacksparrow.com/javascript-bind-vs-apply-and-call.html"><strong>JavaScript: bind() vs apply() and call()</strong><br />
 <em>var fruit = { name: ‘Apple’ }; and this function: function showDetails(size, price) { console.log(this.name + ’ ’ +…</em>www.hacksparrow.com</a><a href="https://www.hacksparrow.com/javascript-bind-vs-apply-and-call.html" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -887,7 +887,7 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://medium.freecodecamp.org/how-to-understand-the-keyword-this-and-context-in-javascript-cd624c6b74b8" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/how-to-understand-the-keyword-this-and-context-in-javascript-cd624c6b74b8"><strong>How to understand the keyword this and context in JavaScript</strong><br />
 <em>As mentioned in one of my earlier articles, mastering JavaScript fully can be a lengthy journey. You may have come…</em>medium.freecodecamp.org</a><a href="https://medium.freecodecamp.org/how-to-understand-the-keyword-this-and-context-in-javascript-cd624c6b74b8" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1"><strong>What is “this” in Javascript ?</strong><br />
+<a href="https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1"><strong>What is “this” in Javascript ?</strong><br />
 <em>While learning JavaScript there are many roadblocks like closures, asynchronous programming, this keywords, etc. These…</em>dev.to</a><a href="https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://dev.to/steelvoltage/this-and-bind-in-javascript-2pam" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/steelvoltage/this-and-bind-in-javascript-2pam"><strong>This and Bind In Javascript</strong><br />
@@ -941,7 +941,7 @@ The find() method returns a value of the first element in the array that satisfi
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain"><strong>Inheritance and the prototype chain - JavaScript | MDN</strong><br />
 <em>JavaScript is a bit confusing for developers experienced in class-based languages (like Java or C++), as it is dynamic…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b"><strong>Javascript : Prototype vs Class</strong><br />
+<a href="https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b"><strong>Javascript : Prototype vs Class</strong><br />
 <em>Let’s see how classes in JS are not what you think they are.</em>medium.com</a><a href="https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://codeburst.io/javascript-prototype-cb29d82b8809" class="markup--anchor markup--p-anchor">https://codeburst.io/javascript-prototype-cb29d82b8809</a>
@@ -1078,8 +1078,8 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <a href="https://gofore.com/en/why-you-should-replace-foreach/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://gofore.com/en/why-you-should-replace-foreach/"><strong>Why you should replace forEach with map and filter in JavaScript - Gofore</strong><br />
 <em>TL;DR Prefer map and filter over forEach when you need to copy an array or part of it to a new one. One of the best…</em>gofore.com</a><a href="https://gofore.com/en/why-you-should-replace-foreach/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d"><strong>Simplify your JavaScript – Use .map(), .reduce(), and .filter()</strong><br />
-<em>If you haven’t heard of .map(), .reduce(), and .filter() in JavaScript, you might want to learn to use it!</em>medium.com</a><a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d"><strong>Simplify your JavaScript – Use .map(), .reduce(), and .filter()</strong><br />
+<em>If you haven’t heard of .map(), .reduce(), and .filter() in JavaScript, you might want to learn to use it!</em>medium.com</a><a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by-going-on-a-diet/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by-going-on-a-diet/"><strong>JavaScript’s Reduce Method Explained By Going On a Diet</strong><br />
 <em>The reduce method in JavaScript gives you a simple way to take an array of values and combine them into one value, or…</em>blog.codeanalogies.com</a><a href="https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by-going-on-a-diet/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -1090,7 +1090,7 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <a href="https://hackernoon.com/map-filter-reduce-ebbed4be4201" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://hackernoon.com/map-filter-reduce-ebbed4be4201"><strong>Map⇄Filter⇄Reduce↻ | Hacker Noon</strong><br />
 <em>Share it on LinkedIn! Due to that reason we were introduced with these three higher order functions, namely 🗺️Map…</em>hackernoon.com</a><a href="https://hackernoon.com/map-filter-reduce-ebbed4be4201" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6"><strong>Finding Your Way With .Map()</strong><br />
+<a href="https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6"><strong>Finding Your Way With .Map()</strong><br />
 <em>At the end of the article is a CodePen that demonstrates the concepts presented here.</em>medium.freecodecamp.org</a><a href="https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://medium.freecodecamp.org/how-to-write-your-own-map-filter-and-reduce-functions-in-javascript-ab1e35679d26" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.freecodecamp.org/how-to-write-your-own-map-filter-and-reduce-functions-in-javascript-ab1e35679d26"><strong>How to write your own map, filter and reduce functions in JavaScript</strong><br />
@@ -1099,22 +1099,22 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <a href="https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/"><strong>How to Manipulate Arrays in JavaScript</strong><br />
 <em>An important part of any programming language. Most times we need to do several operations on arrays, hence this…</em>www.freecodecamp.org</a><a href="https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://dev.to/pickleat/map-filter-and-reduce-2efb" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/pickleat/map-filter-and-reduce-2efb"><strong>.map(), .filter(), and .reduce()</strong><br />
+<a href="https://dev.to/pickleat/map-filter-and-reduce-2efb" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/pickleat/map-filter-and-reduce-2efb"><strong>.map(), .filter(), and .reduce()</strong><br />
 <em>Originally posted on my blog For the last several weeks I’ve been applying for jobs. Sadly, the startup I was working…</em>dev.to</a><a href="https://dev.to/pickleat/map-filter-and-reduce-2efb" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://jstutorial.medium.com/map-filter-and-reduce-animated-7fe391a35a47" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://jstutorial.medium.com/map-filter-and-reduce-animated-7fe391a35a47"><strong>Map, Filter and Reduce – Animated</strong><br />
 <em>Map, filter and reduce have been around for a long time. They are often seen as part of Functional Programming style.</em>jstutorial.medium.com</a><a href="https://jstutorial.medium.com/map-filter-and-reduce-animated-7fe391a35a47" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209"><strong>Map, Filter, Reduce and others Arrays Iterators You Must Know to Become an Algorithms Wizard</strong><br />
-<em>In this article we are going to take a close look at some arrays iterators like , , or others methods that use…</em>dev.to</a><a href="https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>In this article we are going to take a close look at some arrays iterators like , , or others methods that use…</em>dev.to</a><a href="https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24"><strong>How to Use JavaScript’s .map, .filter, and .reduce</strong><br />
+<a href="https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24"><strong>How to Use JavaScript’s .map, .filter, and .reduce</strong><br />
 <em>How to use these three useful JavaScript functions</em>betterprogramming.pub</a><a href="https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://towardsdatascience.com/javascript-performance-test-for-vs-for-each-vs-map-reduce-filter-find-32c1113f19d7" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://towardsdatascience.com/javascript-performance-test-for-vs-for-each-vs-map-reduce-filter-find-32c1113f19d7"><strong>Javascript performance test - for vs for each vs (map, reduce, filter, find).</strong><br />
 <em>We all know that for loop are faster than for each or javascript function since under the hood of javascript functions…</em>towardsdatascience.com</a><a href="https://towardsdatascience.com/javascript-performance-test-for-vs-for-each-vs-map-reduce-filter-find-32c1113f19d7" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2"><strong>Using .map(), .filter() and .reduce() properly 👩🏽‍💻</strong><br />
+<a href="https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2"><strong>Using .map(), .filter() and .reduce() properly 👩🏽‍💻</strong><br />
 <em>Map, reduce, and filter are all array methods in JavaScript. Each one will iterate over an array and perform a…</em>javascript.plainenglish.io</a><a href="https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://hackernoon.com/javascript-and-functional-programming-pt-3-pure-functions-d572bb52e21c" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://hackernoon.com/javascript-and-functional-programming-pt-3-pure-functions-d572bb52e21c"><strong>Javascript and Functional Programming — Pt. 3: Pure Functions</strong><br />
@@ -1169,7 +1169,7 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <em>Events are actions or occurrences that happen in the system you are programming, which the system tells you about so…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://javascript.info/bubbling-and-capturing" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://javascript.info/bubbling-and-capturing"><strong>Bubbling and capturing</strong><br />
-<em>Let’s start with an example. This handler is assigned to , but also runs if you click any nested tag like or : Isn’t it…</em>javascript.info</a><a href="https://javascript.info/bubbling-and-capturing" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Let’s start with an example. This handler is assigned to , but also runs if you click any nested tag like or : Isn’t it…</em>javascript.info</a><a href="https://javascript.info/bubbling-and-capturing" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://www.youtube.com/watch?v=Jh_Uzqzz_wM" class="markup--anchor markup--p-anchor">https://www.youtube.com/watch?v=Jh_Uzqzz_wM</a>
 
@@ -1177,7 +1177,7 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <a href="https://javascript.info/closure" class="markup--anchor markup--p-anchor">https://javascript.info/closure</a>
 
 <a href="https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8"><strong>I never understood JavaScript closures</strong><br />
-<em>Until someone explained it to me like this …</em>medium.com</a><a href="https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Until someone explained it to me like this …</em>medium.com</a><a href="https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://javascriptissexy.com/understand-javascript-closures-with-ease/"><strong>Understand JavaScript Closures With Ease</strong><br />
 <em>Closures allow JavaScript programmers to write better code. Creative, expressive, and concise. We frequently use…</em>javascriptissexy.com</a><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -1246,7 +1246,7 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 
 <a href="https://www.youtube.com/watch?v=1JsJx1x35c0" class="markup--anchor markup--p-anchor">https://www.youtube.com/watch?v=1JsJx1x35c0</a>
 
-<a href="https://eloquentjavascript.net/05_higher_order.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://eloquentjavascript.net/05_higher_order.html"><strong>Higher-Order Functions :: Eloquent JavaScript</strong><br />
+<a href="https://eloquentjavascript.net/05_higher_order.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://eloquentjavascript.net/05_higher_order.html"><strong>Higher-Order Functions :: Eloquent JavaScript</strong><br />
 <em>Tzu-li and Tzu-ssu were boasting about the size of their latest programs. ‘Two-hundred thousand lines,’ said Tzu-li…</em>eloquentjavascript.net</a><a href="https://eloquentjavascript.net/05_higher_order.html" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://www.sitepoint.com/higher-order-functions-javascript/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.sitepoint.com/higher-order-functions-javascript/"><strong>Higher-Order Functions in JavaScript - SitePoint</strong><br />
@@ -1441,7 +1441,7 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <a href="https://javascript.info/async-await" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://javascript.info/async-await"><strong>Async/await</strong><br />
 <em>There’s a special syntax to work with promises in a more comfortable fashion, called “async/await”. It’s surprisingly…</em>javascript.info</a><a href="https://javascript.info/async-await" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://eloquentjavascript.net/11_async.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://eloquentjavascript.net/11_async.html"><strong>Asynchronous Programming :: Eloquent JavaScript</strong><br />
+<a href="https://eloquentjavascript.net/11_async.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://eloquentjavascript.net/11_async.html"><strong>Asynchronous Programming :: Eloquent JavaScript</strong><br />
 <em>Who can wait quietly while the mud settles?Who can remain still until the moment of action? Laozi, Tao Te Ching The…</em>eloquentjavascript.net</a><a href="https://eloquentjavascript.net/11_async.html" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://exploringjs.com/es6/ch_async.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://exploringjs.com/es6/ch_async.html"><strong>24. Asynchronous programming (background)</strong><br />
@@ -1526,7 +1526,7 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <em>Detail &amp; Discusion (讨论和细节) All algorithms writing with JavaScript in book ’ Algorithms Fourth Edition’. Run…</em>github.com</a><a href="https://github.com/barretlee/algorithms" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://github.com/nzakas/computer-science-in-javascript" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/nzakas/computer-science-in-javascript"><strong>humanwhocodes/computer-science-in-javascript</strong><br />
-<em>Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript. …</em>github.com</a><a href="https://github.com/nzakas/computer-science-in-javascript" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript. …</em>github.com</a><a href="https://github.com/nzakas/computer-science-in-javascript" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://github.com/jamiebuilds/itsy-bitsy-data-structures" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/jamiebuilds/itsy-bitsy-data-structures"><strong>jamiebuilds/itsy-bitsy-data-structures</strong><br />
 <em>Welcome to Itsy Bitsy Data Structures! In here are super simplified examples of many of the common data structures…</em>github.com</a><a href="https://github.com/jamiebuilds/itsy-bitsy-data-structures" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -1573,7 +1573,7 @@ Inheritancecodeburst.io</a><a href="https://codeburst.io/master-javascript-proto
 <em>This repository contains JavaScript based examples of many popular algorithms and data structures. Each algorithm and…</em>github.com</a><a href="https://github.com/trekhleb/javascript-algorithms" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://www.thatjsdude.com/interview/js1.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://www.thatjsdude.com/interview/js1.html"><strong>JS: Algorithm</strong><br />
-<em>More Questions CSS Interview Questions , HTML Interview Questions if you are little more comfortable or claim to be…</em>www.thatjsdude.com</a><a href="http://www.thatjsdude.com/interview/js1.html" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
+<em>More Questions CSS Interview Questions , HTML Interview Questions if you are little more comfortable or claim to be…</em>www.thatjsdude.com</a><a href="http://www.thatjsdude.com/interview/js1.html" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038"><strong>Algorithms in JavaScript</strong><br />
 <em>40 Problems, Solutions, and Explanations</em>medium.com</a><a href="https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -1762,7 +1762,7 @@ Partial Application and Curry</em>medium.com</a><a href="https://medium.com/java
 <em>Sometimes I’m asked why we don’t have “dot-chaining” in RxJS anymore, or why RxJS made the switch to use pipe. There…</em>dev.to</a><a href="https://dev.to/benlesh/a-simple-explanation-of-functional-pipe-in-javascript-2hbj" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://github.com/ryanmcdermott/clean-code-javascript" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/ryanmcdermott/clean-code-javascript"><strong>ryanmcdermott/clean-code-javascript</strong><br />
-<em>Software engineering principles, from Robert C. Martin’s book , adapted for JavaScript. This is not a style guide. It’s…</em>github.com</a><a href="https://github.com/ryanmcdermott/clean-code-javascript" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>Software engineering principles, from Robert C. Martin’s book , adapted for JavaScript. This is not a style guide. It’s…</em>github.com</a><a href="https://github.com/ryanmcdermott/clean-code-javascript" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/"><strong>JavaScript Clean Coding Best Practices | <span class="citation" data-cites="RisingStack">@RisingStack</span></strong><br />
 <em>Writing clean code is what you must know and do in order to call yourself a professional developer. There is no…</em>blog.risingstack.com</a><a href="https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>

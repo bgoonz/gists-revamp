@@ -162,10 +162,10 @@ which presents visual data.
 
 ## Series And Parallel Circuits
 
-The basic idea of a “series” connection is that components are
+The basic idea of a “series " connection is that components are
 connected end-to-end in a line to form a
 single path through which current can flow.
-The basic idea of a “parallel” connection, on the other hand,
+The basic idea of a “parallel " connection, on the other hand,
 is that all components are connected across each other’s leads.
 In a purely parallel circuit, there are never more than two sets
 of electrically common points, no matter how many components
@@ -215,7 +215,7 @@ out of the node.
 Transistor, semiconductor device for amplifying,
 controlling, and generating electrical signals. Transistors
 are the active components of integrated circuits,
-or “microchips,” which often contain billions of
+or “microchips, " which often contain billions of
 these minuscule devices etched into their shiny
 surfaces. Deeply embedded in almost everything
 electronic, transistors have become the nerve

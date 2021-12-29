@@ -52,7 +52,7 @@ const assetsStructure = S.listItem()
               )
               .child(AssetDoc)
           ),
-        // List images with the file extension of “gif”
+        // List images with the file extension of “gif "
         S.listItem()
           .title("GIFs")
           .child(

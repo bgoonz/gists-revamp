@@ -49,9 +49,9 @@ You can use our materials and instructions to roll out your own workshop in your
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*jHzkV4R9dWh08WfI" class="graf-image" /></figure>### Overview
 
-This is a Sinatra app, deployed at <a href="http://docs.railsbridge.org/" class="markup--anchor markup--p-anchor">http://docs.railsbridge.org</a>. The RailsBridge documentation project is home to a few subprojects, including the RailsBridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring to the workshop!), as well as the RailsBridge workshop “Suggestotron” curriculum.
+This is a Sinatra app, deployed at <a href="http://docs.railsbridge.org/" class="markup--anchor markup--p-anchor">http://docs.railsbridge.org</a>. The RailsBridge documentation project is home to a few subprojects, including the RailsBridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring to the workshop!), as well as the RailsBridge workshop “Suggestotron " curriculum.
 
-Each subproject (a “site”) comprises files stored under the “sites” directory; for instance, the installfest instructions are located at ROOT/sites/en/installfest, while the intro rails curriculum can be found under ROOT/sites/en/intro-to-rails. (The “en” means “English” — see “Locales” below.)
+Each subproject (a “site ") comprises files stored under the “sites " directory; for instance, the installfest instructions are located at ROOT/sites/en/installfest, while the intro rails curriculum can be found under ROOT/sites/en/intro-to-rails. (The “en " means “English " — see “Locales " below.)
 
 <a href="https://github.com/railsbridge/docs" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://github.com/railsbridge/docs"><strong>railsbridge/docs</strong><br />
 <em>This is a Sinatra app, deployed at http://docs.railsbridge.org. The RailsBridge documentation project is home to a few…</em>github.com</a><a href="https://github.com/railsbridge/docs" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -770,9 +770,9 @@ _NOTE:_ This list is only for as-a-Service offerings, not for self-hosted softwa
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*OGbTycPsogJHNqrZ.gif" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*u2EbjIkzp7eZwBtY.png" class="graf-image" /></figure>### See how the exact same Medium.com clone (called <a href="https://demo.realworld.io/" class="markup--anchor markup--h3-anchor">Conduit</a>) is built using different <a href="https://codebase.show/projects/realworld?category=frontend" class="markup--anchor markup--h3-anchor">frontends</a> and <a href="https://codebase.show/projects/realworld?category=backend" class="markup--anchor markup--h3-anchor">backends</a>. Yes, you can mix and match them, because they all adhere to the same <a href="https://github.com/gothinkster/realworld/blob/master/spec" class="markup--anchor markup--h3-anchor">API spec</a> 😮😎
 
-While most “todo” demos provide an excellent cursory glance at a framework’s capabilities, they typically don’t convey the knowledge & perspective required to actually build _real_ applications with it.
+While most “todo " demos provide an excellent cursory glance at a framework’s capabilities, they typically don’t convey the knowledge & perspective required to actually build _real_ applications with it.
 
-RealWorld solves this by allowing you to choose any frontend (React, Angular 2, & more) and any backend (Node, Django, & more) and see how they power a real world, beautifully designed fullstack app called “<a href="https://demo.realworld.io/" class="markup--anchor markup--p-anchor">Conduit</a>”.
+RealWorld solves this by allowing you to choose any frontend (React, Angular 2, & more) and any backend (Node, Django, & more) and see how they power a real world, beautifully designed fullstack app called “<a href="https://demo.realworld.io/" class="markup--anchor markup--p-anchor">Conduit</a> ".
 
 _Read the_ <a href="https://medium.com/@ericsimons/introducing-realworld-6016654d36b5" class="markup--anchor markup--p-anchor"><em>full blog post announcing RealWorld on Medium.</em></a>
 

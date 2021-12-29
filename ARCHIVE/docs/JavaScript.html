@@ -935,7 +935,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4 id="answer-a-13">Answer: A</h4>
 <p>JavaScript only has primitive types and objects.</p>
 <p>Primitive types are <code>boolean</code>, <code>null</code>, <code>undefined</code>, <code>bigint</code>, <code>number</code>, <code>string</code>, and <code>symbol</code>.</p>
-<p>What differentiates a primitive from an object is that primitives do not have any properties or methods; however, you’ll note that <code>'foo'.toUpperCase()</code> evaluates to <code>'FOO'</code> and does not result in a <code>TypeError</code>. This is because when you try to access a property or method on a primitive like a string, JavaScript will implicitly wrap the primitive type using one of the wrapper classes, i.e. <code>String</code>, and then immediately discard the wrapper after the expression evaluates. All primitives except for <code>null</code> and <code>undefined</code> exhibit this behaviour.</p>
+<p>What differentiates a primitive from an object is that primitives do not have any properties or methods; however, you’ll note that <code>'foo'.toUpperCase()</code> evaluates to <code>'FOO'</code> and does not result in a <code>TypeError</code>. This is because when you try to access a property or method on a primitive like a string, JavaScript will implicitly wrap the primitive type using one of the wrapper classes, i.e. <code>String</code>, and then immediately discard the wrapper after the expression evaluates. All primitives except for <code>null</code> and <code>undefined</code> exhibit this behaviour.</p>
 </p>
 </details>
 <hr />
@@ -1694,9 +1694,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb73"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb73-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="vs">String.raw`Hello\nworld`</span>)<span class="op">;</span></a></code></pre></div>
 <ul>
 <li>A: <code>Hello world!</code></li>
-<li>B: <code>Hello</code> <br />     <code>world</code></li>
+<li>B: <code>Hello</code> <br />     <code>world</code></li>
 <li>C: <code>Hello\nworld</code></li>
-<li>D: <code>Hello\n</code> <br />      <code>world</code></li>
+<li>D: <code>Hello\n</code> <br />      <code>world</code></li>
 </ul>
 <details>
 <summary><b>Answer</b></summary>

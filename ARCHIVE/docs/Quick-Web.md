@@ -6,14 +6,14 @@ A set of questions you should use before handing off your application to the cli
 
 ### Quick Web Developers Website Checklist & A List Of Tools For Improvement
 
-#### A set of questions you should use before handing off your application to the client.
+#### A set of questions you should use before handing off your application to the client.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*QD7rah374uFotVYN.jpg" class="graf-image" /></figure>First off… download this developer checklist extension for chrome that literally evaluates the checkpoints on any webpage you activate it on.. it also provides advice and html validation so that you can improve your site and it’s SEO rankings!
 
 <a href="https://chrome.google.com/webstore/detail/web-developer-checklist/iahamcpedabephpcgkeikbclmaljebjp?hl=en-US" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://chrome.google.com/webstore/detail/web-developer-checklist/iahamcpedabephpcgkeikbclmaljebjp?hl=en-US"><strong>Web Developer Checklist</strong><br />
 <em>Analyses any web page for violations of best practices</em>chrome.google.com</a><a href="https://chrome.google.com/webstore/detail/web-developer-checklist/iahamcpedabephpcgkeikbclmaljebjp?hl=en-US" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-#### Here it is in action :
+#### Here it is in action :
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/1*Qh8BZUzF7nRISPrwDTz05Q.png" class="graf-image" /></figure>### Remainder of tool list is below this checklist:
 
@@ -61,7 +61,7 @@ A set of questions you should use before handing off your application to the cli
 
 > Does the content include too much or too little information about a topic for the context?
 
-### Voice & Style:
+### Voice & Style:
 
 > Does the content consistently reflect the editorial or brand voice?
 
@@ -128,7 +128,7 @@ A set of questions you should use before handing off your application to the cli
 <em>We have estimated that by transitioning to automated front-end visual testing and by having easy access to so many…</em>crossbrowsertesting.com</a><a href="https://crossbrowsertesting.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://no-www.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://no-www.org/"><strong>www. is deprecated.</strong><br />
-<em>Stay in touch! Dec 21, 2012 No-WWW now hasa a social media presence! Check us out on Twitter at <span class="citation" data-cites="www_deprecated">@www_deprecated</span> . We…</em>no-www.org</a><a href="http://no-www.org/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
+<em>Stay in touch! Dec 21, 2012 No-WWW now hasa a social media presence! Check us out on Twitter at <span class="citation" data-cites="www_deprecated">@www_deprecated</span> . We…</em>no-www.org</a><a href="http://no-www.org/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://www.yes-www.org/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.yes-www.org/"><strong>www. is not deprecated</strong><br />
 <em>Ever since the first traditional media ads began to appear with Web site addresses in them 25 years ago, people have…</em>www.yes-www.org</a><a href="https://www.yes-www.org/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
@@ -142,7 +142,7 @@ A set of questions you should use before handing off your application to the cli
 <a href="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972"><strong>Quick Tip: Don’t Forget the Viewport Meta Tag</strong><br />
 <em>I remember my maiden voyage into responsive web design; I’d used a classic grid, wrestled with a flexible layout, and…</em>webdesign.tutsplus.com</a><a href="https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
-<a href="https://html5tutorial.info/html5-contact.php" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://html5tutorial.info/html5-contact.php"><strong>Input Type : Email,URL,Phone</strong><br />
+<a href="https://html5tutorial.info/html5-contact.php" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://html5tutorial.info/html5-contact.php"><strong>Input Type : Email,URL,Phone</strong><br />
 <em>Email, Phone number and Website url are the three most commonly used contact detail which has its unique input…</em>html5tutorial.info</a><a href="https://html5tutorial.info/html5-contact.php" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://diveintohtml5.info/forms.html" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://diveintohtml5.info/forms.html"><strong>Web Forms - Dive Into HTML5</strong><br />
@@ -188,7 +188,7 @@ A set of questions you should use before handing off your application to the cli
 <em>Compress and compare images with different codecs, right in your browser</em>squoosh.app</a><a href="https://squoosh.app/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="http://pnggauntlet.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="http://pnggauntlet.com/"><strong>PNGGauntlet - PNG Compression Software</strong><br />
-<em>PNGGauntlet 3.1.2 is a minor update that resolves some bugs, and adds a much-requested option. First, the bugfixes …</em>pnggauntlet.com</a><a href="http://pnggauntlet.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>PNGGauntlet 3.1.2 is a minor update that resolves some bugs, and adds a much-requested option. First, the bugfixes …</em>pnggauntlet.com</a><a href="http://pnggauntlet.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://imageoptim.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://imageoptim.com/"><strong>ImageOptim - better Save for Web</strong><br />
 <em>Reduces image file sizes - so they take up less disk space and down­load faster - by applying advanced compression…</em>imageoptim.com</a><a href="https://imageoptim.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
@@ -347,7 +347,7 @@ A set of questions you should use before handing off your application to the cli
 <em>HTTP Strict Transport Security (also named HSTS) is an opt-in security enhancement that is specified by a web…</em>cheatsheetseries.owasp.org</a><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock"></a>
 
 <a href="https://www.html5rocks.com/en/tutorials/security/content-security-policy/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.html5rocks.com/en/tutorials/security/content-security-policy/"><strong>Content Security Policy | Web Fundamentals | Google Developers</strong><br />
-<em>The web’s security model is rooted in the same-origin policy . Code from https://mybank.com should only have access to…</em>www.html5rocks.com</a><a href="https://www.html5rocks.com/en/tutorials/security/content-security-policy/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>The web’s security model is rooted in the same-origin policy . Code from https://mybank.com should only have access to…</em>www.html5rocks.com</a><a href="https://www.html5rocks.com/en/tutorials/security/content-security-policy/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"><strong>Content Security Policy (CSP) - HTTP | MDN</strong><br />
 <em>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks…</em>developer.mozilla.org</a><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>

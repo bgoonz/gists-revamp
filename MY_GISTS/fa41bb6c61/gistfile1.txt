@@ -215,7 +215,7 @@ Experts Index
 
 Development Cycle
 
-Fixing “easy” Issues (and Beyond)
+Fixing "easy” Issues (and Beyond)
 
 Translating
 
@@ -237,12 +237,12 @@ Coverity Scan
 
 Helping out with reviewing open pull requests. See how to review a Pull Request.
 
-Fixing “easy” Issues (and Beyond)
+Fixing "easy” Issues (and Beyond)
 
 It is recommended that the above documents be read as needed. New contributors will build understanding of the CPython workflow by reading the sections mentioned in this table. You can stop where you feel comfortable and begin contributing immediately without reading and understanding these documents all at once. If you do choose to skip around within the documentation, be aware that it is written assuming preceding documentation has been read so you may find it necessary to backtrack to fill in missing concepts and terminology.
 
 Proposing changes to Python itself
-Improving Python’s code, documentation and tests are ongoing tasks that are never going to be “finished”, as Python operates as part of an ever-evolving system of technology. An even more challenging ongoing task than these necessary maintenance activities is finding ways to make Python, in the form of the standard library and the language definition, an even better tool in a developer’s toolkit.
+Improving Python’s code, documentation and tests are ongoing tasks that are never going to be "finished”, as Python operates as part of an ever-evolving system of technology. An even more challenging ongoing task than these necessary maintenance activities is finding ways to make Python, in the form of the standard library and the language definition, an even better tool in a developer’s toolkit.
 
 While these kinds of change are much rarer than those described above, they do happen and that process is also described as part of this guide:
 
@@ -423,7 +423,7 @@ PEP 545 summary:
 How to get help
 Translation FAQ
 Silence Warnings From the Test Suite
-Fixing “easy” Issues (and Beyond)
+Fixing "easy” Issues (and Beyond)
 Issue Tracking
 Using the Issue Tracker
 Checking if a bug already exists
@@ -434,7 +434,7 @@ Helping Triage Issues
 Classifying Reports
 Reviewing Patches
 Finding an Issue You Can Help With
-Gaining the “Developer” Role on the Issue Tracker
+Gaining the "Developer” Role on the Issue Tracker
 The Meta Tracker
 Triaging an Issue
 Python triage team

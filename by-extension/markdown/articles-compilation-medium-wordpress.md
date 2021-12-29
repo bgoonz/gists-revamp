@@ -524,7 +524,7 @@ Using `files.autoGuessEncoding` option of the Visual Studio Code is useful becau
 
 If you always want to output to the relative path directory from the Markdown file.
 
-For example, to output to the “output” directory in the same directory as the Markdown file, set it as follows.
+For example, to output to the “output " directory in the same directory as the Markdown file, set it as follows.
 
     "markdown-pdf.outputDirectory" : "output",
     "markdown-pdf.outputDirectoryRelativePathFile": true,
@@ -631,7 +631,7 @@ See [docs/troubleshooting.md](https://github.com/rubyide/vscode-ruby/blob/master
 ### Other Notable Extensions
 
 - [Ruby Solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph) — Solargraph is a language server that provides intellisense, code completion, and inline documentation for Ruby.
-- [VSCode Endwise](https://github.com/kaiwood/vscode-endwise) — Wisely add “end” in Ruby
+- [VSCode Endwise](https://github.com/kaiwood/vscode-endwise) — Wisely add “end " in Ruby
 
 ![](https://webdevhubcom.files.wordpress.com/2021/04/eb632-0wc4kcdykcjnhxfzj.png)
 
@@ -1000,7 +1000,7 @@ Per default, hidden files are not displayed. Set this to true to show hidden fil
         "path-intellisense.showHiddenFiles": true,
     }
 
-If set to false, PathIntellisense ignores the default “files.exclude” as well:
+If set to false, PathIntellisense ignores the default “files.exclude " as well:
 
     {
         "files.exclude": {
@@ -1780,19 +1780,19 @@ Snippets are optimized to be short and easy to remember. Shortest are the ones y
       ${0}
     })
 
-#### `it⇥` asynchronous “it”
+#### `it⇥` asynchronous “it "
 
     it('${1:description}', async () => {
       ${0}
     })
 
-#### `itd⇥` “it” with callback
+#### `itd⇥` “it " with callback
 
     it('${1:description}', (done) => {
       ${0}
     })
 
-#### `its⇥` “it” synchronous
+#### `its⇥` “it " synchronous
 
     it('${1:description}', () => {
       ${0}
@@ -2101,7 +2101,7 @@ NEXT
 
 The [Visual Studio IntelliCode](https://go.microsoft.com/fwlink/?linkid=872679) extension provides AI-assisted development features for Python, TypeScript/JavaScript and Java developers in Visual Studio Code, with insights based on understanding your code context combined with machine learning.
 
-You’ll need Visual Studio Code October 2018 Release 1.29.1 or later to use this extension. For each supported language, please refer to the “Getting Started” section below to understand any other pre-requisites you’ll need to install and configure to get IntelliCode completions.
+You’ll need Visual Studio Code October 2018 Release 1.29.1 or later to use this extension. For each supported language, please refer to the “Getting Started " section below to understand any other pre-requisites you’ll need to install and configure to get IntelliCode completions.
 
 For C#, C++, TypeScript/JavaScript, and XAML support in the Visual Studio IDE, check out the [IntelliCode extension on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.VSIntelliCode).
 
@@ -2141,7 +2141,7 @@ That’s it — just open a TypeScript or JavaScript file, and start editing
 
 [bgoonz’s gists · GitHub](https://gist.github.com/bgoonz)
 
-#### A condensed summary of the entire “JavaScript the Good Parts” book
+#### A condensed summary of the entire “JavaScript the Good Parts " book
 
 I hope these notes help shed some light and save some time… (this is the most I could condense an entire book)
 
@@ -2180,7 +2180,7 @@ Number methods are discussed in [Chapter 8](https://github.com/Lambda-April/Unso
 - Backslashes (\\) are used for escaping characters that could cause problems in strings.
 - Strings are immutable.
 
-Single quotes are often used to define a String in JavaScript, but if a person’s name has an apostrophe (and the developer does not know the difference between an apostrophe and single quote) it is useful to “escape” the apostrophe character:
+Single quotes are often used to define a String in JavaScript, but if a person’s name has an apostrophe (and the developer does not know the difference between an apostrophe and single quote) it is useful to “escape " the apostrophe character:
 
 var name = 'Patrick O\\'Brian'; // using a backslash in front of the apostrophe  
 console.log('name:', name); // name: Patrick O'Brian
@@ -2390,7 +2390,7 @@ myObject.incrementFunction();
 
 var sum = add(3, 4);
 
-- These functions are bound to the global object (_a “mistake in the design of the language” according to Douglas Crockford)_ and consequently so is `this`[even in inner functions](https://github.com/Lambda-April/Unsorted-Notes/blob/main)
+- These functions are bound to the global object (_a “mistake in the design of the language " according to Douglas Crockford)_ and consequently so is `this`[even in inner functions](https://github.com/Lambda-April/Unsorted-Notes/blob/main)
 - Invoking `this` within an inner function will therefore refer to its _own_ `this` and not the one in global scope
 
 Workaround: Artificially create a new `this`:
@@ -2456,7 +2456,7 @@ var sum = add.apply(null, array); //value of 'this' is null and value of sum is 
 
 - When a function gets to a `return` statement, it returns immediately without carrying out the remaining statements in the function
 - A function always returns a `value` or if unspecified, it returns `undefined`
-- “If the function was invoked with the `new` prefix (used when creating a new object so it must return an object) and the `return` value is not an object, then `this` (the new object) is returned instead.”
+- “If the function was invoked with the `new` prefix (used when creating a new object so it must return an object) and the `return` value is not an object, then `this` (the new object) is returned instead. "
 
 ### Exceptions
 
@@ -2522,7 +2522,7 @@ var variable = function functionName (parameters){
 
 functionName (initialArguments); //initial call to the function
 
-- Javascript does not have _tail recursion optimization_ and therefore does not optimize recursive functions — this also means they sometimes fail if they “recurse very deeply”; On a side note, _tail call optimization_ is now supported in [ECMA-262](https://www.ecma-international.org/ecma-262/7.0/index.html#sec-tail-position-calls)
+- Javascript does not have _tail recursion optimization_ and therefore does not optimize recursive functions — this also means they sometimes fail if they “recurse very deeply "; On a side note, _tail call optimization_ is now supported in [ECMA-262](https://www.ecma-international.org/ecma-262/7.0/index.html#sec-tail-position-calls)
 
 ### Scope
 
@@ -2934,7 +2934,7 @@ Produces new array copying the original array with the `items` appended to it (d
 
 #### array.join(separator)
 
-Creates a string of all the array’s elements, separated by the `separator`. Use an empty string `separator` (”) to join without separation.
+Creates a string of all the array’s elements, separated by the `separator`. Use an empty string `separator` ( ") to join without separation.
 
 #### array.pop()
 
@@ -3353,7 +3353,7 @@ Having read through this appendix (you can read more about [JSLint here](http://
 - **//** : notation for creating a code comment in JS.
 - **code comment** : useful for annotating pieces of code to explain how something works, ignored by computer.
 
-> **_“Simplicity is prerequisite for reliability.” — Edsger W. Dijkstra_**
+> **_“Simplicity is prerequisite for reliability. " — Edsger W. Dijkstra_**
 
 ---
 
@@ -3431,7 +3431,7 @@ The **boolean** data type is the simplest data type since there are only two val
 - **De Morgan’s Law** : Common mistake in boolean logic is incorrectly distributing ! across parentheses.
 - `!(A || B) === !A && !B; !(A && B) === !A || !B;`
 - In summary, to correctly distribute ! across parentheses we must also flip the operation within.
-- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.
+- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit ". For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.
 - `console.log(true || !false); // => stops after it sees "true ||"`
 
 ---
@@ -3449,7 +3449,7 @@ All comparison operators will result in a boolean output.
 - **\===** (equal to)
 - **!==** (not equal to)
 
-> _Fun Fact: “a” < “b” is considered valid JS Code because string comparisons are compared lexicographically (meaning dictionary order), so “a” is less than “b” because it appears earlier!_
+> _Fun Fact: “a " < “b " is considered valid JS Code because string comparisons are compared lexicographically (meaning dictionary order), so “a " is less than “b " because it appears earlier!_
 
 > _If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser._
 
@@ -3534,18 +3534,18 @@ A all encompassing list of tools and resources for web developers
 
 ### ![📦](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f4e6.svg) Finding and vetting npm packages
 
-- [pika](https://www.pikapkg.com/): A searchable catalog of modern “module” packages on npm
+- [pika](https://www.pikapkg.com/): A searchable catalog of modern “module " packages on npm
 - [npms](https://npms.io/): A better and open source search for node packages
 - [emma](https://github.com/maticzav/emma-cli): ![📦](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f4e6.svg) Terminal assistant to find and install node packages
 - [npmvet](https://github.com/harksys/npmvet): A simple CLI tool for vetting npm package versions
-- [Bundlephobia](https://bundlephobia.com/): See the “cost” of any npm package
+- [Bundlephobia](https://bundlephobia.com/): See the “cost " of any npm package
 - [Snyk](https://snyk.io/): Find any security vulnerabilities for any npm package. Search their database here: `[https://snyk.io/vuln/npm](https://snyk.io/vuln/npm):{package}` e.g. [https://snyk.io/vuln/npm:react](https://snyk.io/vuln/npm:react)
 - [runpkg](https://runpkg.com/): Explore, learn about and perform static analysis on npm packages in the browser
 
 ### ![🎨](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f3a8.svg) CSS
 
-- [CSS Tricks “Complete Guide to Flexbox”](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [CSS Tricks “Complete Guide to Grid”](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [CSS Tricks “Complete Guide to Flexbox "](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Tricks “Complete Guide to Grid "](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Cubic bezier curve creator](http://cubic-bezier.com/#.17,.67,.83,.67)
 - [Ceaser](http://matthewlein.com/ceaser/): Cubic bezier curve generator
 - [CSS Triggers](https://csstriggers.com/): find out what CSS properties trigger Paint/Layout/Composite renders
@@ -3657,7 +3657,7 @@ A all encompassing list of tools and resources for web developers
 - [http-errors](https://github.com/jshttp/http-errors): Create HTTP Errors
 - [boom](https://github.com/hapijs/boom): HTTP-friendly error objects
 - [deno](https://github.com/denoland/deno): A secure JavaScript and TypeScript runtime
-- [nanomatch](https://github.com/micromatch/nanomatch): Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but without support for extended globs (extglobs), posix brackets or braces, and with complete Bash 4.3 wildcard support: (“\*”, “\*\*”, and “?”)
+- [nanomatch](https://github.com/micromatch/nanomatch): Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but without support for extended globs (extglobs), posix brackets or braces, and with complete Bash 4.3 wildcard support: (“\* ", “\*\* ", and “? ")
 - [yn](https://github.com/sindresorhus/yn): Parse yes/no like values
 - [ncp](https://github.com/AvianFlu/ncp): Asynchronous recursive file copying with Node.js
 
@@ -4005,7 +4005,7 @@ Accessibility is an extremely important part of any web project. While the SOW, 
 
 [https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b)
 
-Fundamental Data Structures In JavaScript \* { font-family: Georgia, Cambria, “Times New Roman”, Times, serif; } html, body { margin: 0; padding: 0; } h1 { font-size: 50px; margin-bottom: 17px; color: #333; } h2 { font-size: 24px; line-height: 1.6; margin: 30px 0 0 0; margin-bottom: 18px; margin-top: 33px; color: #333; } h3 { font-size: 30px; margin: 10px 0 20px 0; color: #333; } header { width: 640px; margin: auto; } section { width: 640px; margin: auto; } section p { margin-bottom: 27px; font-size: 20px; line-height: 1.6; color: #333; } section img { max-width: 640px; } footer { padding: 0 20px; margin: 50px 0; text-align: center; font-size: 12px; } .aspectRatioPlaceholder { max-width: auto !important; max-height: auto !important; } .aspectRatioPlaceholder-fill { padding-bottom: 0 !important; } header, section\[data-field=subtitle\], section\[data-field=description\] { display: none; }
+Fundamental Data Structures In JavaScript \* { font-family: Georgia, Cambria, “Times New Roman ", Times, serif; } html, body { margin: 0; padding: 0; } h1 { font-size: 50px; margin-bottom: 17px; color: #333; } h2 { font-size: 24px; line-height: 1.6; margin: 30px 0 0 0; margin-bottom: 18px; margin-top: 33px; color: #333; } h3 { font-size: 30px; margin: 10px 0 20px 0; color: #333; } header { width: 640px; margin: auto; } section { width: 640px; margin: auto; } section p { margin-bottom: 27px; font-size: 20px; line-height: 1.6; color: #333; } section img { max-width: 640px; } footer { padding: 0 20px; margin: 50px 0; text-align: center; font-size: 12px; } .aspectRatioPlaceholder { max-width: auto !important; max-height: auto !important; } .aspectRatioPlaceholder-fill { padding-bottom: 0 !important; } header, section\[data-field=subtitle\], section\[data-field=description\] { display: none; }
 
 Data structures in JavaScript
 
@@ -4101,7 +4101,7 @@ Properties could be some variable that it’s storing or some methods that it’
 
 I also visualize an object as a table.
 
-The main difference is that object’s “index” need not be numbers and is not necessarily sequenced.
+The main difference is that object’s “index " need not be numbers and is not necessarily sequenced.
 
 ![](https://webdevhubcom.files.wordpress.com/2021/03/c8daa-1kvzkd2zrgea_47igw8hq8g.png)
 
@@ -4225,7 +4225,7 @@ O(n) O(n) O(1) O(n)
 
 ### _Definition_
 
-> _A Tree is a widely used data structure that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node. A tree data structure can be defined recursively as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the “children”), with the constraints that no reference is duplicated, and none points to the root node. From Wikipedia_
+> _A Tree is a widely used data structure that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node. A tree data structure can be defined recursively as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the “children "), with the constraints that no reference is duplicated, and none points to the root node. From Wikipedia_
 
 Complexity  
 Average  
@@ -4249,7 +4249,7 @@ To get a full overview of the time and space complexity of the Tree data structu
 - Much more relaxed in structure than a tree.
 - It doesn’t need to have a root node (not every node needs to be accessible from a single node)
 - It can have cycles (a group of nodes whose paths begin and end at the same node)
-- Cycles are not always “isolated”, they can be one part of a larger graph. You can detect them by starting your search on a specific node and finding a path that takes you back to that same node.
+- Cycles are not always “isolated ", they can be one part of a larger graph. You can detect them by starting your search on a specific node and finding a path that takes you back to that same node.
 - Any number of edges may leave a given node
 - A Path is a sequence of nodes on a graph
 
@@ -4306,7 +4306,7 @@ Graph
 
 ### Code Runner
 
-- Puts a “Play” button in your toolbar and let’s you run code files by pressing it.
+- Puts a “Play " button in your toolbar and let’s you run code files by pressing it.
 - [https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner "https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner")
 
 ### Code Runner
@@ -4446,7 +4446,7 @@ See full key binding list in the [keyboard shortcuts](https://marketplace.visual
 
 ![](https://cdn-images-1.medium.com/max/800/0*T1aP3qXU9HHLvrkZ.png)
 
-- Run command “**Create Table of Contents**” to insert a new table of contents.
+- Run command “**Create Table of Contents** " to insert a new table of contents.
 - The TOC is **automatically updated** on file save by default. To disable, please change the `toc.updateOnSave` option.
 - The **indentation type (tab or spaces)** of TOC can be configured per file. Find the setting in the right bottom corner of VS Code’s status bar.
 - **_Note_**: Be sure to also check the `list.indentationSize` option.
@@ -4608,7 +4608,7 @@ Quokka.js is a developer productivity tool for rapid JavaScript / TypeScript pro
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Tell me about yourself
 
-> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)\====>_**“Tell me about yourself” is one of the most common and important interview questions. However, it can be daunting, as it’s one you need to get right. After all, not only is it your first impression on the interviewer, but you also need to be simultaneously professional and authentic when answering it.
+> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)\====>_**“Tell me about yourself " is one of the most common and important interview questions. However, it can be daunting, as it’s one you need to get right. After all, not only is it your first impression on the interviewer, but you also need to be simultaneously professional and authentic when answering it.
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**So how can you give a good answer without oversharing? To help you structure your answer, we’ll give you a rough guideline: start with a short introduction, talk about the present, recount the past, and mention your future goals.
 
@@ -4662,9 +4662,9 @@ D**_escribe one or two instances where you had several projects running simultan
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**How you ensure all projects will be delivered with acceptable quality
 
-> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**At what milestones you believe it’s ok to deliver something “less than perfect”
+> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**At what milestones you believe it’s ok to deliver something “less than perfect "
 
-> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**How you decide when to go back and improve the “minimum viable projects” delivered earlier in the project’s timeline
+> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**How you decide when to go back and improve the “minimum viable projects " delivered earlier in the project’s timeline
 
 ### Professional Skills
 
@@ -4704,7 +4704,7 @@ D**_escribe one or two instances where you had several projects running simultan
 
 ### Commitment to the company
 
-> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Are you passionate about the company and will you stay committed to this company? If the interviewer already asked you “Where do you see yourself in 5 years?” then you don’t have to stress too much about showing your long-term commitment when answering this question. However, if you haven’t had the opportunity to show your commitment to the company, the most organic way to show your commitment is to talk about your long term plans in the company. Here are some things you can talk about:_**
+> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)Are you passionate about the company and will you stay committed to this company? If the interviewer already asked you “Where do you see yourself in 5 years? " then you don’t have to stress too much about showing your long-term commitment when answering this question. However, if you haven’t had the opportunity to show your commitment to the company, the most organic way to show your commitment is to talk about your long term plans in the company. Here are some things you can talk about:_**
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Projects you want to start
 
@@ -4716,7 +4716,7 @@ D**_escribe one or two instances where you had several projects running simultan
 
 ### Why should we hire you?
 
-> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Ultimately, every single question interviewers ask you is related to this overarching question: “Why should we hire you?” Interviewers want to know, as confidently as possible, that you will be a good hire. Therefore, your answer should confirm that you’ll be a good hire.
+> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Ultimately, every single question interviewers ask you is related to this overarching question: “Why should we hire you? " Interviewers want to know, as confidently as possible, that you will be a good hire. Therefore, your answer should confirm that you’ll be a good hire.
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**Unlike the more specific questions we’ve outlined above, this question is a generic question that requires a concise but powerful answer. Think about this as your elevator pitch — you should be able to sell yourself to the interview within a matter of minutes.
 
@@ -4780,7 +4780,7 @@ Professional growth opportunities
 
 > **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**How to answer salary expectations?
 
-> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**“What are you salary expectations?” can be a daunting question. If talking about money wasn’t uncomfortable enough already, most job seekers worry that proposing the “wrong number” would cost them the job — or land them a job offer with a disappointing salary. Not great.
+> **_![⦾](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg)_**“What are you salary expectations? " can be a daunting question. If talking about money wasn’t uncomfortable enough already, most job seekers worry that proposing the “wrong number " would cost them the job — or land them a job offer with a disappointing salary. Not great.
 
 ---
 
@@ -5161,7 +5161,7 @@ Allows you to dole out tiny pieces of a large project to many developers who can
 
 · **What is the difference between an adaptive website and a fully responsive website?**
 
-An adaptive website “adapts” to fit a pre-determined set of screen sizes/devices, and a responsive one changes to fit all devices.
+An adaptive website “adapts " to fit a pre-determined set of screen sizes/devices, and a responsive one changes to fit all devices.
 
 · **Describe what it means to be mobile first vs desktop first.**
 
@@ -5211,7 +5211,7 @@ Document object model, the ‘window’ or container that holds all the page’s
 
 - **What is an event?**
 
-An event is something happening on or to the page, like a mouse click, doubleclick, key up/down, pointer out of element/over element, things like this. There are tons of “events” that javascript can detect.
+An event is something happening on or to the page, like a mouse click, doubleclick, key up/down, pointer out of element/over element, things like this. There are tons of “events " that javascript can detect.
 
 - **What is an event listener?**
 
@@ -5275,7 +5275,7 @@ You can store data in a context object instead of prop drilling.
 
 · **In your own words, describe actions, reducers and the store and their role in Redux. What does each piece do? Why is the store known as a ‘single source of truth’ in a redux application?**
 
-Everything that changes within your app is represented by a single JS object called the store. The store contains state for our application. When changes are made to our application state, we never write to our store object but rather clone the state object, modify the clone, and replace the original state with the new copy, never mutating the original object. Reducers are the only place we can update our state. Actions tell our reducers “how” to update the state, and perhaps with what data it should be updated, but only a reducer can actually update the state.
+Everything that changes within your app is represented by a single JS object called the store. The store contains state for our application. When changes are made to our application state, we never write to our store object but rather clone the state object, modify the clone, and replace the original state with the new copy, never mutating the original object. Reducers are the only place we can update our state. Actions tell our reducers “how " to update the state, and perhaps with what data it should be updated, but only a reducer can actually update the state.
 
 · **What is the difference between Application state and Component state? When would be a good time to use one over the other?**
 
@@ -5295,17 +5295,17 @@ Many services out in the wild require the client (our React app, for example) to
 
 · **What steps can you take in your web apps to keep your data secure?**
 
-As we build our web apps, we will most likely have some “protected” routes — routes that we only want to render if the user has logged in and been authenticated by our server. The way this normally works is we make a login request, sending the server the user’s username and password. The server will check those credentials against what is in the database, and if it can authenticate the user, it will return a token. Once we have this token, we can add two layers of protection to our app. One with protected routes, the other by sending an authentication header with our API calls (as we learned in the above objective).
+As we build our web apps, we will most likely have some “protected " routes — routes that we only want to render if the user has logged in and been authenticated by our server. The way this normally works is we make a login request, sending the server the user’s username and password. The server will check those credentials against what is in the database, and if it can authenticate the user, it will return a token. Once we have this token, we can add two layers of protection to our app. One with protected routes, the other by sending an authentication header with our API calls (as we learned in the above objective).
 
 · **Describe how web servers work.**
 
-The “world wide web” (which we’ll refer to as “the web”) is just a part of the internet — which is itself a network of interconnected computers. The web is just one way to share data over the internet. It consists of a body of information stored on web servers, ready to be shared across the world. The term “web server” can mean two things:
+The “world wide web " (which we’ll refer to as “the web ") is just a part of the internet — which is itself a network of interconnected computers. The web is just one way to share data over the internet. It consists of a body of information stored on web servers, ready to be shared across the world. The term “web server " can mean two things:
 
 · a computer that stores the code for a website
 
 · a program that runs on such a computer
 
-The physical computer device that we call a web server is connected to the internet, and stores the code for different websites to be shared across the world at all times. When we load the code for our websites, or web apps, on a server like this, we would say that the server is “hosting” our website/app.
+The physical computer device that we call a web server is connected to the internet, and stores the code for different websites to be shared across the world at all times. When we load the code for our websites, or web apps, on a server like this, we would say that the server is “hosting " our website/app.
 
 · **Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.**
 
@@ -6281,7 +6281,7 @@ This algorithm never needed to compare all the differences to one another, savin
 
 #### Answer
 
-ARIA stands for “Accessible Rich Internet Applications”, and is a technical specification created by the World Wide Web Consortium (W3C). Better known as WAI-ARIA, it provides additional HTML attributes in the development of web applications to offer people who use assistive technologies (AT) a more robust and interoperable experience with dynamic components. By providing the component’s role, name, and state, AT users can better understand how to interact with the component. WAI-ARIA should only be used when an HTML element equivalent is not available or lacks full browser or AT support. WAI-ARIA’s semantic markup coupled with JavaScript works to provide an understandable and interactive experience for people who use AT.
+ARIA stands for “Accessible Rich Internet Applications ", and is a technical specification created by the World Wide Web Consortium (W3C). Better known as WAI-ARIA, it provides additional HTML attributes in the development of web applications to offer people who use assistive technologies (AT) a more robust and interoperable experience with dynamic components. By providing the component’s role, name, and state, AT users can better understand how to interact with the component. WAI-ARIA should only be used when an HTML element equivalent is not available or lacks full browser or AT support. WAI-ARIA’s semantic markup coupled with JavaScript works to provide an understandable and interactive experience for people who use AT.
 
 An example using ARIA:
 
@@ -6502,7 +6502,7 @@ Additional links
 
 #### Answer
 
-The BEM methodology is a naming convention for CSS classes in order to keep CSS more maintainable by defining namespaces to solve scoping issues. BEM stands for Block Element Modifier which is an explanation for its structure. A Block is a standalone component that is reusable across projects and acts as a “namespace” for sub components (Elements). Modifiers are used as flags when a Block or Element is in a certain state or is different in structure or style.
+The BEM methodology is a naming convention for CSS classes in order to keep CSS more maintainable by defining namespaces to solve scoping issues. BEM stands for Block Element Modifier which is an explanation for its structure. A Block is a standalone component that is reusable across projects and acts as a “namespace " for sub components (Elements). Modifiers are used as flags when a Block or Element is in a certain state or is different in structure or style.
 
     /* block component */.block {}
 
@@ -7086,7 +7086,7 @@ Additional links
 
 #### Answer
 
-Debouncing is a process to add some delay before executing a function. It is commonly used with DOM event listeners to improve the performance of page. It is a technique which allow us to “group” multiple sequential calls in a single one. A raw DOM event listeners can easily trigger 20+ events per second. A debounced function will only be called once the delay has passed.
+Debouncing is a process to add some delay before executing a function. It is commonly used with DOM event listeners to improve the performance of page. It is a technique which allow us to “group " multiple sequential calls in a single one. A raw DOM event listeners can easily trigger 20+ events per second. A debounced function will only be called once the delay has passed.
 
 const debounce = (func, delay) => {  
  let debounceTimer;  
@@ -7231,7 +7231,7 @@ Additional links
 
 #### Answer
 
-Event delegation is a technique of delegating events to a single common ancestor. Due to event bubbling, events “bubble” up the DOM tree by executing any handlers progressively on each ancestor element up to the root that may be listening to it.
+Event delegation is a technique of delegating events to a single common ancestor. Due to event bubbling, events “bubble " up the DOM tree by executing any handlers progressively on each ancestor element up to the root that may be listening to it.
 
 DOM events provide useful information about the element that initiated the event via `Event.target`. This allows the parent element to handle behavior as though the target element was listening to the event, rather than all children of the parent or the parent itself.
 
@@ -7506,7 +7506,7 @@ approxEqual(0.1 + 0.2, 0.3) // true
 Additional links
 
 - [A simple helper function to check equality](https://github.com/Chalarangelo/30-seconds-of-code#approximatelyequal)
-- [Fix “0.1 + 0.2 = 0.300000004” in JavaScript](http://blog.blakesimpson.co.uk/read/61-fix-0-1-0-2-0-300000004-in-javascript)
+- [Fix “0.1 + 0.2 = 0.300000004 " in JavaScript](http://blog.blakesimpson.co.uk/read/61-fix-0-1-0-2-0-300000004-in-javascript)
 
 ### What is a focus ring? What is the correct solution to handle them?
 
@@ -7600,7 +7600,7 @@ Additional links
 
 #### Answer
 
-Single page applications make use of client-side rendering. This means that ‘[examplesite.com](http://examplesite.com/)’ and ‘[examplesite.com/more-tools](http://examplesite.com/more-tools)’ are actually the same HTML web page, but the client app decides what content to drop into that single page at runtime. Your user never actually “leaves” the page, and this causes some accessibility issues in terms of focus.
+Single page applications make use of client-side rendering. This means that ‘[examplesite.com](http://examplesite.com/)’ and ‘[examplesite.com/more-tools](http://examplesite.com/more-tools)’ are actually the same HTML web page, but the client app decides what content to drop into that single page at runtime. Your user never actually “leaves " the page, and this causes some accessibility issues in terms of focus.
 
 Unless focus is explicitly managed in the app, a scenario like this may happen:
 
@@ -7715,11 +7715,11 @@ Additional links
 
 #### Answer
 
-Yes to both. The W3 documents state that the tags represent the header(`<header>`) and footer(`<footer>`) areas of their nearest ancestor “section”. So not only can the page `<body>` contain a header and a footer, but so can every `<article>` and `<section>` element.
+Yes to both. The W3 documents state that the tags represent the header(`<header>`) and footer(`<footer>`) areas of their nearest ancestor “section ". So not only can the page `<body>` contain a header and a footer, but so can every `<article>` and `<section>` element.
 
 #### Don’t forget:
 
-- W3 recommends having as many as you want, but only 1 of each for each “section” of your page, i.e. body, section etc.
+- W3 recommends having as many as you want, but only 1 of each for each “section " of your page, i.e. body, section etc.
 
 Additional links
 
@@ -7729,9 +7729,9 @@ Additional links
 
 #### Answer
 
-HTML specifications such as `HTML5` define a set of rules that a document must adhere to in order to be “valid” according to that specification. In addition, a specification provides instructions on how a browser must interpret and render such a document.
+HTML specifications such as `HTML5` define a set of rules that a document must adhere to in order to be “valid " according to that specification. In addition, a specification provides instructions on how a browser must interpret and render such a document.
 
-A browser is said to “support” a specification if it handles valid documents according to the rules of the specification. As of yet, no browser supports all aspects of the `HTML5` specification (although all of the major browser support most of it), and as a result, it is necessary for the developer to confirm whether the aspect they are making use of will be supported by all of the browsers on which they hope to display their content. This is why cross-browser support continues to be a headache for developers, despite the improved specificiations.
+A browser is said to “support " a specification if it handles valid documents according to the rules of the specification. As of yet, no browser supports all aspects of the `HTML5` specification (although all of the major browser support most of it), and as a result, it is necessary for the developer to confirm whether the aspect they are making use of will be supported by all of the browsers on which they hope to display their content. This is why cross-browser support continues to be a headache for developers, despite the improved specificiations.
 
 #### Don’t forget:
 
@@ -7870,7 +7870,7 @@ These two types of programming can roughly be summarized as:
 - Imperative: **how** to achieve something
 - Declarative: **what** should be achieved
 
-A common example of declarative programming is CSS. The developer specifies CSS properties that describe what something should look like rather than how to achieve it. The “how” is abstracted away by the browser.
+A common example of declarative programming is CSS. The developer specifies CSS properties that describe what something should look like rather than how to achieve it. The “how " is abstracted away by the browser.
 
 On the other hand, imperative programming involves the steps required to achieve something. In JavaScript, the differences can be contrasted like so:
 
@@ -8298,7 +8298,7 @@ Additional links
 
 #### Answer
 
-In JavaScript, two values discretely represent nothing — `undefined` and `null`. The concrete difference between them is that `null` is explicit, while `undefined` is implicit. When a property does not exist or a variable has not been given a value, the value is `undefined`. `null` is set as the value to explicitly indicate “no value”. In essence, `undefined` is used when the nothing is not known, and `null` is used when the nothing is known.
+In JavaScript, two values discretely represent nothing — `undefined` and `null`. The concrete difference between them is that `null` is explicit, while `undefined` is implicit. When a property does not exist or a variable has not been given a value, the value is `undefined`. `null` is set as the value to explicitly indicate “no value ". In essence, `undefined` is used when the nothing is not known, and `null` is used when the nothing is known.
 
 #### Don’t forget:
 
@@ -8738,8 +8738,8 @@ The `rel="noopener"` is an attribute used in `<a>` elements (hyperlinks). It pre
 
 Additional links
 
-- [Open external anchors using rel=”noopener”](https://developers.google.com/web/tools/lighthouse/audits/noopener)
-- [About rel=”noopener”](https://mathiasbynens.github.io/rel-noopener/)
+- [Open external anchors using rel= "noopener "](https://developers.google.com/web/tools/lighthouse/audits/noopener)
+- [About rel= "noopener "](https://mathiasbynens.github.io/rel-noopener/)
 
 ### What is REST?
 
@@ -8979,7 +8979,7 @@ In JavaScript, all code is synchronous due to the single-threaded nature of it. 
 
 #### Don’t forget:
 
-- JavaScript has a concurrency model based on an “event loop”.
+- JavaScript has a concurrency model based on an “event loop ".
 - Functions like `alert` block the main thread so that no user input is registered until the user closes it.
 
 Additional links
@@ -9272,7 +9272,7 @@ Additional links
 
 #### Answer
 
-WCAG stands for “Web Content Accessibility Guidelines”. It is a standard describing how to make web content more accessible to people with disabilities They have 12-13 guidelines and for each one, there are testable success criteria, which are at three levels: A, AA, and AAA. The higher the level, the higher the impact on the design of the web content. The higher the level, the web content is essentially more accessible by more users. Depending on where you live/work, there may be regulations requiring websites to meet certain levels of compliance. For instance, in Ontario, Canada, beginning January 1, 2021 all public websites and web content posted after January 1, 2012 must meet AA compliance.
+WCAG stands for “Web Content Accessibility Guidelines ". It is a standard describing how to make web content more accessible to people with disabilities They have 12-13 guidelines and for each one, there are testable success criteria, which are at three levels: A, AA, and AAA. The higher the level, the higher the impact on the design of the web content. The higher the level, the web content is essentially more accessible by more users. Depending on where you live/work, there may be regulations requiring websites to meet certain levels of compliance. For instance, in Ontario, Canada, beginning January 1, 2021 all public websites and web content posted after January 1, 2012 must meet AA compliance.
 
 #### Don’t forget:
 
@@ -9324,14 +9324,14 @@ Resources:
 
 [https://trusting-dijkstra-4d3b17.netlify.app/](https://trusting-dijkstra-4d3b17.netlify.app/)
 
-> _“If you want to build a ship, don’t drum up the men and women to gather wood, divide the work, and give orders. Instead, teach them to yearn for the vast and endless sea.” — Antoine de Saint-Exupery;_
+> _“If you want to build a ship, don’t drum up the men and women to gather wood, divide the work, and give orders. Instead, teach them to yearn for the vast and endless sea. " — Antoine de Saint-Exupery;_
 
 ![](https://cdn-images-1.medium.com/max/800/0*LUQe60D2FeVzDEi8.png)
 
 - `**HTTP**` : Hypertext Transfer Protocol.
 - `**HT**` : Hypertext – content with references to other content.
 - Term used to refer to content in computing.
-- What makes the Web a “web”.
+- What makes the Web a “web ".
 - Most fundamental part of how we interact.
 - `**Hyperlinks**` : Links; references between HT resources.
 - `**TP**` : Transfer Protocol – set of guidelines surrounding the transmission of data.
@@ -9564,7 +9564,7 @@ Happy Coding!
 
 > · ​[Glimmer](https://glimmerjs.com/) — Fast and light-weight UI components for the web. ([Code](https://github.com/glimmerjs/glimmer.js))
 
-> · ​[Glimmer VM](https://github.com/glimmerjs/glimmer-vm) — Flexible, low-level rendering pipeline for building a “live” DOM from Handlebars templates that can subsequently be updated cheaply when data changes.
+> · ​[Glimmer VM](https://github.com/glimmerjs/glimmer-vm) — Flexible, low-level rendering pipeline for building a “live " DOM from Handlebars templates that can subsequently be updated cheaply when data changes.
 
 > · ​[frint](https://github.com/frintjs/frint) — Modular JavaScript framework for building scalable and reactive applications.
 
@@ -10304,7 +10304,7 @@ Happy Coding!
 
 > · ​[xstate-component-tree](https://github.com/tivac/xstate-component-tree) — Build a tree of UI components based on your state chart.
 
-> · [virtual-scroller](https://github.com/valdrinkoshi/virtual-scroller) — Maps a provided set of JavaScript objects onto DOM nodes, and renders only the DOM nodes that are currently visible, leaving the rest “virtualized”.
+> · [virtual-scroller](https://github.com/valdrinkoshi/virtual-scroller) — Maps a provided set of JavaScript objects onto DOM nodes, and renders only the DOM nodes that are currently visible, leaving the rest “virtualized ".
 
 > · ​[jSPDF](https://github.com/MrRio/jsPDF) — Client-side JavaScript PDF generation for everyone.
 
@@ -10478,7 +10478,7 @@ Happy Coding!
 
 > · ​[react-isomorphic-data](https://github.com/jackyef/react-isomorphic-data) — Easily fetch data in your React components, with similar APIs to react-apollo.
 
-> · ​[klona](https://github.com/lukeed/klona) — Tiny (228B) and fast utility to “deep clone” Objects, Arrays, Dates, RegExps, and more.
+> · ​[klona](https://github.com/lukeed/klona) — Tiny (228B) and fast utility to “deep clone " Objects, Arrays, Dates, RegExps, and more.
 
 > · ​[ScrollMagic](https://github.com/janpaepke/ScrollMagic) — JavaScript library for magical scroll interactions.
 
@@ -10712,7 +10712,7 @@ Happy Coding!
 
 > · ​[bpmn-js](https://github.com/bpmn-io/bpmn-js) — BPMN 2.0 rendering toolkit and web modeler.
 
-> · ​[fit-curve](https://github.com/soswow/fit-curve) — JavaScript implementation of Philip J. Schneider’s “Algorithm for Automatically Fitting Digitized Curves” from the book “Graphics Gems”.
+> · ​[fit-curve](https://github.com/soswow/fit-curve) — JavaScript implementation of Philip J. Schneider’s “Algorithm for Automatically Fitting Digitized Curves " from the book “Graphics Gems ".
 
 > · ​[clean-deep](https://github.com/nunofgs/clean-deep) — Remove falsy, empty or nullable values from objects.
 
@@ -10886,7 +10886,7 @@ Happy Coding!
 
 > · ​[Execa](https://github.com/sindresorhus/execa) — Process execution for humans.
 
-> · ​[quick-lru](https://github.com/sindresorhus/quick-lru) — Simple “Least Recently Used” (LRU) cache.
+> · ​[quick-lru](https://github.com/sindresorhus/quick-lru) — Simple “Least Recently Used " (LRU) cache.
 
 > · ​[Deepdash](https://github.com/YuriGor/deepdash) — Tree traversal library written in Underscore/Lodash fashion. ([Docs](https://deepdash.io/))
 
@@ -11006,7 +11006,7 @@ Happy Coding!
 
 > · ​[Alo](https://github.com/alojs/alo) — Full-fledged state management. ([Docs](http://www.alojs.com/index.html))
 
-> · ​[Form-Data](https://github.com/form-data/form-data) — Library to create readable “multipart/form-data” streams. Can be used to submit forms and file uploads to other web applications.
+> · ​[Form-Data](https://github.com/form-data/form-data) — Library to create readable “multipart/form-data " streams. Can be used to submit forms and file uploads to other web applications.
 
 > · ​[conf](https://github.com/sindresorhus/conf) — Simple config handling for your app or module.
 
@@ -11076,7 +11076,7 @@ Or checkout my personal resource site:
 - [JavaScript Algorithms](https://github.com/trekhleb/javascript-algorithms) — Algorithms and data structures implemented in JavaScript with explanations and links to further readings.
 - [EC6 Features](http://es6-features.org/)
 - [Clean Code concepts adapted for JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
-- [Ask HN: “Expert Level” JavaScript questions?](https://news.ycombinator.com/item?id=17324538)
+- [Ask HN: “Expert Level " JavaScript questions?](https://news.ycombinator.com/item?id=17324538)
 - [Benefits of prototypal inheritance over classical?](https://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical/16872315#16872315)
 - [Pax](https://github.com/nathan/pax) — Fastest JavaScript bundler in the galaxy.
 - [Philip Roberts: What the heck is the event loop anyway? (2014)](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
@@ -11961,7 +11961,7 @@ These extensions provide slightly different sets of features. While the first on
 
 ### [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 
-> _Paste code with “correct” indentation_
+> _Paste code with “correct " indentation_
 
 ### [Sort Lines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
 
@@ -12426,11 +12426,11 @@ Collection of 18 light themes separated in 4 groups by background’s brightness
 
 #### `The Interface Segregation Principle`
 
-- Method names should be grouped together into granular collections called “interfaces”
+- Method names should be grouped together into granular collections called “interfaces "
 
 #### `The Law Of Demeter`
 
-- Don’t use more than one dot (not counting the one after “this”).
+- Don’t use more than one dot (not counting the one after “this ").
 - A method of an object can only invoke the methods (or use the properties) of the following kinds of objects: Methods on the object itself Any of the objects passed in as parameters to the method And object created in the method Any values stored in the instance variables of the object Any values stored in global variables
 
 #### `The Liskov Substitution Principle`
@@ -12462,7 +12462,7 @@ const fellowshipOfTheRing = {
  author: "J.R.R. Tolkien",  
 };
 
-- The above literal is a “Book” object type.
+- The above literal is a “Book " object type.
 - `Object Type` is defined by it’s attributes and behaviors.
 
 > `**Behaviors**` **are represented by methods.**
@@ -12531,7 +12531,7 @@ console.log(fellowshipOfTheRing instanceof Book); // true
 - `Prototype` : An object that is delegated to when a reference to an object property or method can’t be resolved.
 - Every instance created by a constructor function shares the same prototype.
 - `Object.setPrototypeOf()` and `Object.getPrototypeOf()` are just used to set a prototype of one object to another object; and also the verify a prototype.
-- `proto` : aka “dunder proto” is a property used to gain easy access to an object’s prototype – it is widely supported by browsers but is considered deprecated.
+- `proto` : aka “dunder proto " is a property used to gain easy access to an object’s prototype – it is widely supported by browsers but is considered deprecated.
 
 function Book(title, series, author) {  
  this.title = title;  
@@ -12804,9 +12804,9 @@ Introducing Node.js modules
 
 #### Syntax for importing modules:
 
-**const classes = require(“./classes”);**
+**const classes = require(“./classes ");**
 
-**const { Book, Movie } = require(“./classes”);**
+**const { Book, Movie } = require(“./classes ");**
 
 #### Using Single Item Modules
 
@@ -12938,7 +12938,7 @@ _Subtype Requirement: Let ϕ(x) be a property provable about objects x of type T
 - A class is open for extension and closed for modification.
 - Creating new functionality can happen in child classes, and not the original class.
 - `Interface Segregation Principle`
-- Method names should be grouped together into granular collections called “interfaces”.
+- Method names should be grouped together into granular collections called “interfaces ".
 - `Dependency Inversion Principle`
 - Functionality that your class depends on should be provided as parameters to methods rather than using new in the class to create a new instance.
 
@@ -13097,7 +13097,7 @@ Now that our for loop has ended and our copied array looks just like how the ans
 
 ![](https://cdn-images-1.medium.com/max/800/0*KxF-AuqgX7UklUa4.png)
 
-HTML stands for “Hypertext Markup Language”. Basically, HTML is the structure for the website, words, bullet points, data tables, etc. CSS stands for “Cascading Style Sheets” which means it’s the “Style” it’s how to make your website look professional, and look visually appealing. JS is how to make your website actually \*\*work\*\*.
+HTML stands for “Hypertext Markup Language ". Basically, HTML is the structure for the website, words, bullet points, data tables, etc. CSS stands for “Cascading Style Sheets " which means it’s the “Style " it’s how to make your website look professional, and look visually appealing. JS is how to make your website actually \*\*work\*\*.
 
 For example, if you created something like YouTube and one of the options you can watch videos, you used HTML for the title, you used CSS for the color/s, and you have to make it actually work! So when you click on it it will run the video. This is an example of the three programming languages working in unison to form an experience you’re already familiar with if you’re reading this…
 
@@ -13225,11 +13225,11 @@ Many inline tags are used to format text. For example, a **<strong></strong>** t
 
 Hyperlinks are also inline elements that require **_<a></a>_** tags and **href** attributes to indicate the link’s destination:
 
-1.  **<a** **href=**”https://example.com/”**\>**Click me!**</a>**
+1.  **<a** **href=** "https://example.com/ "**\>**Click me!**</a>**
 
 Images are inline elements too. You can add one using **_<img>_** without any closing tag. But you will also need to use the **_src_** attribute to specify the image path, for example:
 
-1.  **<img** **src=**”/images/example.jpg” **alt=**”Example image”**\>**
+1.  **<img** **src=** "/images/example.jpg " **alt=** "Example image "**\>**
 
 #### **BODY**: This contains everything you want to display on the Web Page.
 
@@ -13521,7 +13521,7 @@ FROM friends;
 
 - Sometimes we may need to specify what table we are selecting a column from, particulurly if we had joined multiple tables together.
 
-— Notice here we are indicating that we want the “name” field from the “friends” table as well as the “name” field from the “puppies” table. We indicate the table name by table.column  
+— Notice here we are indicating that we want the “name " field from the “friends " table as well as the “name " field from the “puppies " table. We indicate the table name by table.column  
  — We are also aliasing these fields with the AS keyword so that our returned results have friend_name and puppy_name as field headers
 
 SELECT  
@@ -13730,7 +13730,7 @@ pool.end(); // invoking end() will close our connection to the database
 }
 
 // Get the airport name from the command line and store it  
-// in the variable “name”. Pass that value to the  
+// in the variable “name ". Pass that value to the  
 // selectAirportsByName function.  
 const name = process.argv\[2\];  
 // console.log(name);  
@@ -13763,29 +13763,29 @@ CREATE DATABASE example_app_production WITH OWNER example_user
 - Double check that our configuration file matches our username, password, database, dialect, and seederStorage (these will be filled out for you in an assessment scenario):
 
 {  
-“development”: {  
-“username”: “sequelize_recipe_box_app”,  
-“password”: “HfKfK79k”,  
-“database”: “recipe_box_development”,  
-“host”: “127.0.0.1”,  
-“dialect”: “postgres”,  
-“seederStorage”: “sequelize”  
+“development ": {  
+“username ": “sequelize_recipe_box_app ",  
+“password ": “HfKfK79k ",  
+“database ": “recipe_box_development ",  
+“host ": “127.0.0.1 ",  
+“dialect ": “postgres ",  
+“seederStorage ": “sequelize "  
 },  
-“test”: {  
-“username”: “sequelize_recipe_box_app”,  
-“password”: “HfKfK79k”,  
-“database”: “recipe_box_test”,  
-“host”: “127.0.0.1”,  
-“dialect”: “postgres”,  
-“seederStorage”: “sequelize”  
+“test ": {  
+“username ": “sequelize_recipe_box_app ",  
+“password ": “HfKfK79k ",  
+“database ": “recipe_box_test ",  
+“host ": “127.0.0.1 ",  
+“dialect ": “postgres ",  
+“seederStorage ": “sequelize "  
 },  
-“production”: {  
-“username”: “sequelize_recipe_box_app”,  
-“password”: “HfKfK79k”,  
-“database”: “recipe_box_production”,  
-“host”: “127.0.0.1”,  
-“dialect”: “postgres”,  
-“seederStorage”: “sequelize”  
+“production ": {  
+“username ": “sequelize_recipe_box_app ",  
+“password ": “HfKfK79k ",  
+“database ": “recipe_box_production ",  
+“host ": “127.0.0.1 ",  
+“dialect ": “postgres ",  
+“seederStorage ": “sequelize "  
 }  
 }
 
@@ -13795,7 +13795,7 @@ CREATE DATABASE example_app_production WITH OWNER example_user
 
 - In order to make new database tables and sequelize models that reflect them, we want to generate a migration file and model file using model:generate
 
-npx sequelize-cli model:generate — name Cat — attributes “firstName:string,specialSkill:string”
+npx sequelize-cli model:generate — name Cat — attributes “firstName:string,specialSkill:string "
 
 - Here we are creating a migration file and a model file for a Cat. We are specifying that we want this table to have fields for firstName and specialSkill. Sequelize will automatically make fields for an id, createdAt, and updatedAt, as well, so we do not need to specify these.
 - Once our migration file is created, we can go in and edit any details that we need to. Most often we will want to add in database constraints such as allowNull: false, adding a uniqueness constraint with unique: true, adding in character limits to fields such as type: Sequelize.STRING(100), or specifying a foreign key with references to another table references: { model: ‘Categories’ }.
@@ -13964,7 +13964,7 @@ console.log(JSON.stringify(cats, null, 2));
 - The where key takes an object as a value to indicate what we are filtering by
 - { where: { field: value } } => WHERE field = value
 
-const cats = await Cat.findAll({ where: { firstName: “Markov” } }); console.log(JSON.stringify(cats, null, 2));
+const cats = await Cat.findAll({ where: { firstName: “Markov " } }); console.log(JSON.stringify(cats, null, 2));
 
 **OR in the WHERE clause**
 
@@ -13972,7 +13972,7 @@ const cats = await Cat.findAll({ where: { firstName: “Markov” } }); console.
 
 { where: { field: \[value1, value2\] } => WHERE field IN (value1, value2)
 
-const cats = await Cat.findAll({ where: { firstName: \[“Markov”, “Curie”\] } });const cats = await Cat.findAll({  
+const cats = await Cat.findAll({ where: { firstName: \[“Markov ", “Curie "\] } });const cats = await Cat.findAll({  
  where: {  
  firstName: "Markov",  
  age: 4  
@@ -13990,7 +13990,7 @@ console.log(JSON.stringify(cats, null, 2));
 ### Sequelize Op operator
 
 - By requiring Op from the sequelize library we can provide more advanced comparison operators
-- const { Op } = require(“sequelize”);
+- const { Op } = require(“sequelize ");
 - Op.ne: Not equal operator
 
 const cats = await Cat.findAll({  
@@ -14045,7 +14045,7 @@ const cats = await Cat.findAll({ where: { // Find all cats where the age is grea
 - Just like the where clause, we can pass an order key to specify we want our results ordered
 - The key order points to an array with the fields that we want to order by
 - By default, the order is ascending, just like standard SQL. If we want to specify descending, we can instead use a nested array with the field name as the first element and DESC as the second element. (We could also specify ASC as a second element in a nested array, but it is unnecessary as it is default)
-- const cats = await Cat.findAll({ // Order by age descending, then by firstName ascending if cats have the same age order: \[\[“age”, “DESC”\], “firstName”\], }); console.log(JSON.stringify(cats, null, 2));
+- const cats = await Cat.findAll({ // Order by age descending, then by firstName ascending if cats have the same age order: \[\[“age ", “DESC "\], “firstName "\], }); console.log(JSON.stringify(cats, null, 2));
 
 // Get a reference to the cat record that we want to update (here just the cat with primary key of 1)  
 const cat = await Cat.findByPk(1);  
@@ -14074,7 +14074,7 @@ console.log(JSON.stringify(cats, null, 2));
 - If multiple records would have matched our findOne query, it will return the first record
 - Unlike findAll, findOne will return the object directly instead of an array. If no records matched the query it will return null.
 
-// finds the oldest cat const cat = await Cat.findOne({ order: \[\[“age”, “DESC”\]\], }); console.log(JSON.stringify(cat, null, 2));
+// finds the oldest cat const cat = await Cat.findOne({ order: \[\[“age ", “DESC "\]\], }); console.log(JSON.stringify(cat, null, 2));
 
 - **Querying with Associations**
 
@@ -14620,7 +14620,7 @@ According to the latest [Stack Overflow developer survey](https://insights.stack
 
 > `[_working-on-the-header_](#working-on-the-header)`
 
-> [_“Golden Rule of Git”_](#golden-rule-ofgit)
+> [_“Golden Rule of Git "_](#golden-rule-ofgit)
 
 > **How 2’s**
 
@@ -14741,7 +14741,7 @@ It’s also important to note that Git is a complex and powerful tool. As such, 
 
 Before you look at any practical examples, let’s talk about how Git works behind the scenes.
 
-Here is your first new word in Git-speak: _repository_, often shortened to _repo_. A Git repo comprises all the source code for a particular project. In the “dark ages” example above, the repo is the first directory you created, where work is saved to, and which acts as the source for code shared to others. Without a repo, Git has nothing to act on.
+Here is your first new word in Git-speak: _repository_, often shortened to _repo_. A Git repo comprises all the source code for a particular project. In the “dark ages " example above, the repo is the first directory you created, where work is saved to, and which acts as the source for code shared to others. Without a repo, Git has nothing to act on.
 
 Git manages your project as a series of _commits_. A commit is a collection of changes grouped towards a shared purpose. By tracking these commits, you can see your project on a timeline instead of only as a finished project:
 
@@ -14751,11 +14751,11 @@ Notice the notes and seemingly random numbers by each commit? These are referred
 
 A Git hash is 40 characters long, but you only need the first few characters to identify which hash you’re referring to. By default, Git abbreviates hashes to 7 characters. You’ll follow this convention, too.
 
-Git provides a helpful way for us to “alias” a commit in plain English as well. These aliases are called _refs_, short for “references”. A special one that Git creates for all repositories is `HEAD`, which references the most recent commit. You’ll learn more about creating your own refs when you learn about “branching”.
+Git provides a helpful way for us to “alias " a commit in plain English as well. These aliases are called _refs_, short for “references ". A special one that Git creates for all repositories is `HEAD`, which references the most recent commit. You’ll learn more about creating your own refs when you learn about “branching ".
 
 Git maintains three separate lists of changes: the _working directory_, the _staging area_, and the _commit history_. The working directory includes all of your in-progress changes, the staging area is reserved for changes you’re ready to commit, and the commit history is made up of changes you’ve already committed. You’ll look more at these three lists soon.
 
-Git only cares about changes that are “tracked”. To track a file, you must add it to the commit history. The working directory will always show the changes, even if they aren’t tracked. In the commit history, you’ll only have a history of files that have been formally tracked by your repository.
+Git only cares about changes that are “tracked ". To track a file, you must add it to the commit history. The working directory will always show the changes, even if they aren’t tracked. In the commit history, you’ll only have a history of files that have been formally tracked by your repository.
 
 ### Tracking changes in a repository
 
@@ -14763,7 +14763,7 @@ Now, let’s get practical!
 
 You can create a repository with `git init`. Running this command will initialize a new Git repo in your current directory. It’s important to remember that you only want a repository for your project and not your whole hard drive, so always run this command inside a project folder and not your home folder or desktop. You can create a new repo in an empty folder or within a project directory you’ve already created.
 
-What good is an empty repo? Not much! To add content to your repository, use `git add`. You can pass this command a specific filename, a directory, a “wildcard” to select a series of similarly-named files, or a `.` to add every untracked file in the current directory:
+What good is an empty repo? Not much! To add content to your repository, use `git add`. You can pass this command a specific filename, a directory, a “wildcard " to select a series of similarly-named files, or a `.` to add every untracked file in the current directory:
 
     # This will add only my_app.js to the repo:
 
@@ -14781,15 +14781,15 @@ What good is an empty repo? Not much! To add content to your repository, use `gi
 
     > git add .
 
-Adding a file (or files) moves them from Git’s working directory to the staging area. You can see what’s been “staged” and what hasn’t by using `git status`:
+Adding a file (or files) moves them from Git’s working directory to the staging area. You can see what’s been “staged " and what hasn’t by using `git status`:
 
 ![](https://cdn-images-1.medium.com/max/800/1*iiehU7FvC-JK90x6Fr0q6g.png)
 
-In this example, “Changes to be committed” is your staging area and “Changes not staged for commit” is your working directory. Notice that you also have “Untracked files”, Git’s way of reminding us that you may have forgotten to `git add` a file to your repo. Most Git commands will include a bit of help text in the output, so always read the messages carefully before moving forward. Thanks, Git!
+In this example, “Changes to be committed " is your staging area and “Changes not staged for commit " is your working directory. Notice that you also have “Untracked files ", Git’s way of reminding us that you may have forgotten to `git add` a file to your repo. Most Git commands will include a bit of help text in the output, so always read the messages carefully before moving forward. Thanks, Git!
 
 Once you’re happy with your files and have staged them, you’ll use `git commit` to push them into the commit history. It’s significantly more work to make changes after a commit, so be sure your files are staged and exactly as you’d like them before running this command. Your default text editor will pop up, and you’ll be asked to enter a commit message for this group of changes.
 
-**Heads Up:** You may find yourself in an unfamiliar place! The default text editor for MacOS (and many variants of Linux) is called _Vim_. Vim is a terminal-based text editor you’ll discuss in the near future. It’s visually bare and may just look like terminal text to you! If this happens, don’t worry — just type `:q` and press your “return” key to exit.
+**Heads Up:** You may find yourself in an unfamiliar place! The default text editor for MacOS (and many variants of Linux) is called _Vim_. Vim is a terminal-based text editor you’ll discuss in the near future. It’s visually bare and may just look like terminal text to you! If this happens, don’t worry — just type `:q` and press your “return " key to exit.
 
 You’ll want to ensure that future commit messages open in a more familiar editor. You can run the following commands in your terminal to ensure that Visual Studio Code is your `git commit` editor from now on:
 
@@ -14807,7 +14807,7 @@ Like many Git commands, `git commit` includes some helpful shorthand. If you nee
 
     > git commit -m "Fix typo"
 
-This will commit your changes with the message “Fix typo” and avoid opening your default text editor. Remember the commit messages are how you make your project’s history friendly to humans, so don’t use the `-m` flag as an excuse to write lame commit messages! A commit message should always explain why changes were made in clear, concise language. It is also best practice to use imperative voice in commit messages (i.e. use “Fix typo” instead of “Fixing the typo” or “Typo was fixed”).
+This will commit your changes with the message “Fix typo " and avoid opening your default text editor. Remember the commit messages are how you make your project’s history friendly to humans, so don’t use the `-m` flag as an excuse to write lame commit messages! A commit message should always explain why changes were made in clear, concise language. It is also best practice to use imperative voice in commit messages (i.e. use “Fix typo " instead of “Fixing the typo " or “Typo was fixed ").
 
 ### Branches and workflow
 
@@ -14845,7 +14845,7 @@ As you can imagine, branching can get _very_ complicated. Your repository’s hi
 
 ### Connect-W-Github
 
-Git can act as a great history tool and source code backup for your local projects, but it can also help you work with a team! Git is classified as a “DVCS”, or “Distributed Version Control System”. This means it has built-in support for managing code both locally and from a distant source.
+Git can act as a great history tool and source code backup for your local projects, but it can also help you work with a team! Git is classified as a “DVCS ", or “Distributed Version Control System ". This means it has built-in support for managing code both locally and from a distant source.
 
 You can refer to a repository source that’s not local as a _remote_. Your Git repository can have any number of remotes, but you’ll usually only have one. By default you’ll refer to the primary remote of a repo as the `origin`.
 
@@ -14889,13 +14889,13 @@ Fetching retrieves the repository code and updates any remote tracking branches 
 
 ![](https://cdn-images-1.medium.com/max/800/1*eJVpPtvfIeuYqmql0XkQ8Q.png)
 
-It’s important to remember to use `git pull` often. A dynamic team may commit and push code many times during the day, and it’s easy to fall behind. The more often you `pull`, the more certain you can be that your own code is based on the “latest and greatest”.
+It’s important to remember to use `git pull` often. A dynamic team may commit and push code many times during the day, and it’s easy to fall behind. The more often you `pull`, the more certain you can be that your own code is based on the “latest and greatest ".
 
 ### Merging your code on GitHub
 
 If you’re paying close attention, you may have noticed that there’s a missing step in your workflows so far: how do you get your code merged into your default branch? This is done by a process called a _Pull Request_.
 
-A pull request (or “PR”) is a feature specific to GitHub, not a feature of Git. It’s a safety net to prevent bugs, and it’s a critical part of the collaboration workflow. Here’s a high-level of overview of how it works:
+A pull request (or “PR ") is a feature specific to GitHub, not a feature of Git. It’s a safety net to prevent bugs, and it’s a critical part of the collaboration workflow. Here’s a high-level of overview of how it works:
 
 You push your code up to GitHub in its own branch.
 
@@ -14923,7 +14923,7 @@ We’ll be covering:
 
 Comparing changes with `git diff`
 
-Browsing through our code “checkpoints” with `git checkout`
+Browsing through our code “checkpoints " with `git checkout`
 
 ### Seeing changes in real time
 
@@ -14937,9 +14937,9 @@ Let’s break down some of the new syntax in this output.
 
 The diff opens with some Git-specific data, including the branch/files we’re checking, and some unique hashes that Git uses to track each diff. You can skip past this to get to the important bits.
 
-`---` & `+++` let us know that there are both additions and subtractions in the file “App.js”. A diff doesn’t have a concept of inline changes – it treats a single change as removing something old and replacing it with something new.
+`---` & `+++` let us know that there are both additions and subtractions in the file “App.js ". A diff doesn’t have a concept of inline changes – it treats a single change as removing something old and replacing it with something new.
 
-`@@` lets us know that we’re starting a single “chunk” of the diff. A diff could have multiple chunks for a single file (for example: if you made changes far apart, like the header & footer). The numbers in between tell us how many lines we’re seeing and where they start. For example: `@@ +1,3 -1,3 @@` means we’ll see three lines of significant content, including both addition & removal, beginning at line one.
+`@@` lets us know that we’re starting a single “chunk " of the diff. A diff could have multiple chunks for a single file (for example: if you made changes far apart, like the header & footer). The numbers in between tell us how many lines we’re seeing and where they start. For example: `@@ +1,3 -1,3 @@` means we’ll see three lines of significant content, including both addition & removal, beginning at line one.
 
 In the code itself, lines that were removed are prefixed with a `-` and lines that were added are prefixed with a `+`. Remember that you won’t see these on the same lines. Even if you only changed a few words, Git will still treat it like the whole line was replaced.
 
@@ -15011,7 +15011,7 @@ That said, you’ll likely use shortcuts like `git checkout -` far more often th
 
 ![](https://cdn-images-1.medium.com/max/800/0*5yBLWI2EMAqgm01n.jpg)
 
-Git is designed to protect you — not only from others, but also from yourself! Of course, there are times where you’d like to exercise your own judgement, even if it may not be the best thing to do. For this, Git provides some helpful tools to change commits and “time travel”.
+Git is designed to protect you — not only from others, but also from yourself! Of course, there are times where you’d like to exercise your own judgement, even if it may not be the best thing to do. For this, Git provides some helpful tools to change commits and “time travel ".
 
 Before we talk about these, a warning: **The commands in this lesson are destructive!** If used improperly, you could lose work, damage a teammate’s branch, or even rewrite the history of your entire project. You should exercise caution when using these on production code, and don’t hesitate to ask for help if you’re unsure what a command might do.
 
@@ -15039,7 +15039,7 @@ A soft reset will move our `HEAD` ref to the commit we’ve specified, and will 
 
 This means you won’t lose any code, though you will lose commit messages.
 
-A practical example of when a soft reset would be handy is joining some small commits into a larger one. We’ll pretend we’ve been struggling with “their”, “there”, and “they’re” in our app. Here’s our commit history:Those commit messages aren’t great: they’re not very explanatory, and they don’t provide a lot of value in our commit history. We’ll fix them with a soft reset:
+A practical example of when a soft reset would be handy is joining some small commits into a larger one. We’ll pretend we’ve been struggling with “their ", “there ", and “they’re " in our app. Here’s our commit history:Those commit messages aren’t great: they’re not very explanatory, and they don’t provide a lot of value in our commit history. We’ll fix them with a soft reset:
 
     git reset --soft 9c5e2fc
 
@@ -15059,9 +15059,9 @@ If soft resets are the safest form of `git reset`, mixed resets are the most ave
 
 In a mixed reset, your changes are preserved, but they’re moved from the commit history directly to the working directory. This means you’ll have to use `git add` to choose everything you want in future commits.
 
-Mixed resets are a good option when you want to alter a change in a previous commit. Let’s use a mixed reset with our “their”, “there”, “they’re” example again.
+Mixed resets are a good option when you want to alter a change in a previous commit. Let’s use a mixed reset with our “their ", “there ", “they’re " example again.
 
-We’ll start with “they’re”:
+We’ll start with “they’re ":
 
 ![](https://cdn-images-1.medium.com/max/800/1*I71W4NpNdNz8NPr7i2tcAQ.png)
 
@@ -15073,7 +15073,7 @@ Hard resets are the most dangerous type of reset in Git. Hard resets adjust your
 
 There are very few good uses for a hard reset, but one is to get yourself out of a tight spot. Let’s say you’ve made a few changes to your repository but you now realize those changes were unnecessary. You’d like to move back in time so that your code looks exactly as it did before any changes were made. `git reset --hard` can take you there.
 
-It’s our last round with “their”, “there”, and “they’re”. We’ve tried it all three ways and decided we don’t need to use that word at all! Let’s walk through a hard reset to get rid of our changes.
+It’s our last round with “their ", “there ", and “they’re ". We’ve tried it all three ways and decided we don’t need to use that word at all! Let’s walk through a hard reset to get rid of our changes.
 
 We’ll start in the same place we began for our soft reset:
 
@@ -15101,7 +15101,7 @@ _Rebasing_ involves changing your current branch’s base branch. We might do th
 
 > Isn’t that the same as git merge?
 
-`git merge`?” In almost all cases, you’d be right. Rebasing is a dangerous process that effectively rewrites history.
+`git merge`? " In almost all cases, you’d be right. Rebasing is a dangerous process that effectively rewrites history.
 
 ### I see you too like to live life Dangerously… tell me about Rebase..
 
@@ -15127,13 +15127,13 @@ Notice that both branches start at `9c5e2fc`. That’s our common ancestor commi
 
 ### `working-on-the-header`
 
-See how we changed the color of our commits after the rebase? Take a close look at the commit history changes as well. Even though our commits have the same content, they have a new hash assigned, meaning they’re entirely new commits! This is what we mean by “rewriting history”: we’ve actually changed how Git refers to these changes now.
+See how we changed the color of our commits after the rebase? Take a close look at the commit history changes as well. Even though our commits have the same content, they have a new hash assigned, meaning they’re entirely new commits! This is what we mean by “rewriting history ": we’ve actually changed how Git refers to these changes now.
 
-### “Golden Rule of Git”
+### “Golden Rule of Git "
 
 These tools can all feel pretty nifty, but be very wary of using them too much! While they can augment your Git skills from good to great, they can also have catastrophic side effects.
 
-There’s a “Golden Rule of Git” you should know that directly relates to both `git reset` and `git rebase`:
+There’s a “Golden Rule of Git " you should know that directly relates to both `git reset` and `git rebase`:
 
 **_Never change the history of a branch that’s shared with others._**
 
@@ -15239,7 +15239,7 @@ This command will cause the Git log to show some statistics about the changes in
 
     git log --stat
 
-### How to see changes made before committing them using “diff” in Git:
+### How to see changes made before committing them using “diff " in Git:
 
 You can pass a file as a parameter to only see changes on a specific file.  
 `git diff` shows only unstaged changes by default.
@@ -15248,7 +15248,7 @@ We can call diff with the `--staged` flag to see any staged changes.
 
     git diffgit diff all_checks.pygit diff --staged
 
-### How to see changes using “git add -p”:
+### How to see changes using “git add -p ":
 
 This command opens a prompt and asks if you want to stage changes or not, and includes other options.
 
@@ -15528,7 +15528,7 @@ Configuring both the client and the server is unnecessary.
 
 - On UNIX, edit `~/.ssh/config` (create the file if it doesn’t exist) and add or edit:
 - `Host your-gitlab-instance-url.com ServerAliveInterval 60 ServerAliveCountMax 5`
-- On Windows, if you are using PuTTY, go to your session properties, then navigate to “Connection” and under “Sending of null packets to keep session active”, set `Seconds between keepalives (0 to turn off)` to `60`.
+- On Windows, if you are using PuTTY, go to your session properties, then navigate to “Connection " and under “Sending of null packets to keep session active ", set `Seconds between keepalives (0 to turn off)` to `60`.
 
 **To configure SSH on the server side**, edit `/etc/ssh/sshd_config` and add:
 
@@ -15646,7 +15646,7 @@ Nothing too ground breaking here, but pay close attention to the exact way we wr
 
 ### Syntax
 
-We refer to the exact arrangement of the symbols, characters, and keywords as **syntax**. These details matter — your computer will only be able to “understand” proper JavaScript syntax. A programming language is similar to a spoken language. A spoken language like English has grammar rules that we should follow in order to be understood by fellow speakers. In the same way, a programming language like JavaScript has syntax rules that we ought to follow!
+We refer to the exact arrangement of the symbols, characters, and keywords as **syntax**. These details matter — your computer will only be able to “understand " proper JavaScript syntax. A programming language is similar to a spoken language. A spoken language like English has grammar rules that we should follow in order to be understood by fellow speakers. In the same way, a programming language like JavaScript has syntax rules that we ought to follow!
 
 As you write your first lines of code in this new language, you may make many syntax errors. Don’t get frustrated! This is normal — all new programmers go through this phase. Every time we recognize an error in our code, we have an opportunity to reinforce your understanding of correct syntax. Adopt a growth mindset and learn from your mistakes.
 
@@ -15698,9 +15698,9 @@ The **string** data type is a primitive data type that used to represent textual
 
 - can be wrapped by either **single** or **double** quotation marks, _best to choose one and stick with it for consistency_.
 - If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.  
-   “That’s a great string”; (valid)
+   “That’s a great string "; (valid)
 
-  ‘Shakespeare wrote, “To be or not to be”’; (valid)
+  ‘Shakespeare wrote, “To be or not to be "’; (valid)
 
   ‘That’s a bad string’; (invalid)
 
@@ -15709,15 +15709,15 @@ The **string** data type is a primitive data type that used to represent textual
 - **.length** : property that can be appended to data to return the length.
 - empty strings have a length of zero.
 - **indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].  
-   console.log(“bootcamp”\[0\]); // => “b”  
-   console.log(“bootcamp”\[10\]); // => “undefined”  
-   console.log(“boots”\[1 \* 2\]); // => “o”  
-   console.log(“boots”\[“boot”.length-1\]); // => “t”
+   console.log(“bootcamp "\[0\]); // => “b "  
+   console.log(“bootcamp "\[10\]); // => “undefined "  
+   console.log(“boots "\[1 \* 2\]); // => “o "  
+   console.log(“boots "\[“boot ".length-1\]); // => “t "
 - we can pass expressions through the brackets as well since JS always evaluates expressions first.
 - The index of the last character of a string is always one less than it’s length.
 - **indexOf()** : method used to find the first index of a given character within a string.  
-   console.log(“bagel”.indexOf(“b”)); // => 0  
-   console.log(“bagel”.indexOf(“z”)); // => -1
+   console.log(“bagel ".indexOf(“b ")); // => 0  
+   console.log(“bagel ".indexOf(“z ")); // => -1
 - if the character inside the indexOf() search does not exist in the string, the output will be -1.
 - the indexOf() search will return the first instanced index of the the char in the string.
 - **concatenate** : word to describe joining strings together into a single string.
@@ -15731,8 +15731,8 @@ The **Boolean** data type is the simplest data type since there are only two val
    console.log(!true); // => false  
    console.log(!!false); // => false
 - **Logical Order of Operations** : JS will evaluate !, then &&, then ||.
-- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.  
-   console.log(true || !false) // => stops after it sees “true ||”
+- **Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit ". For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.  
+   console.log(true || !false) // => stops after it sees “true || "
 
 **Comparison Operators**
 
@@ -15747,7 +15747,7 @@ All comparison operators will result in a boolean output.
 - **\===** (equal to)
 - **!==** (not equal to)
 
-Fun Fact: “a” < “b” is considered valid JS Code because string comparisons are compared lexicographically (meaning dictionary order), so “a” is less than “b” because it appears earlier!
+Fun Fact: “a " < “b " is considered valid JS Code because string comparisons are compared lexicographically (meaning dictionary order), so “a " is less than “b " because it appears earlier!
 
 If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser.
 
@@ -15766,8 +15766,8 @@ Loose Equality, will return true even if the values are of a different type, due
 Variables are used to store information to be referenced and manipulated in a program.
 
 - We initialize a variable by using the **let** keyword and a **\=** single equals sign (assignment operator).   
-   let bootcamp = “WebDevHub”;  
-   console.log(bootcamp); // “WebDevHub”
+   let bootcamp = “WebDevHub ";  
+   console.log(bootcamp); // “WebDevHub "
 - JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).
 - If you do not declare a value for a variable, undefined is automatically set.   
    let bootcamp;  
@@ -15851,13 +15851,13 @@ Objects are certain kinds of variables. They are variables that can have their o
 
 var person = {
 
-firstName:”John”,
+firstName: "John ",
 
-lastName:”Doe”,
+lastName: "Doe ",
 
 age:20,
 
-nationality:”German”
+nationality: "German "
 
 };
 
@@ -15865,7 +15865,7 @@ nationality:”German”
 
 Next up in our JavaScript cheat sheet are arrays. Arrays are part of many different programming languages. They are a way of organizing variables and properties into groups. Here’s how to create one in JavaScript:
 
-var fruit = \[“Banana”, “Apple”, “Pear”\];
+var fruit = \[“Banana ", “Apple ", “Pear "\];
 
 Now you have an array called `fruit` which contains three items that you can use for future operations.
 
@@ -16006,7 +16006,7 @@ A similar concept to `if else` is the `switch` statement. However, using the swi
 
 Strings are what JavaScript calls to text that does not perform a function but can appear on the screen.
 
-var person = “John Doe”;
+var person = “John Doe ";
 
 In this case, `John Doe` is the string.
 
@@ -16112,7 +16112,7 @@ In JavaScript, you can also work with numbers, constants and perform mathematica
 
 - `MAX_VALUE` — The maximum numeric value representable in JavaScript
 - `MIN_VALUE` — Smallest positive numeric value representable in JavaScript
-- `NaN` — The “Not-a-Number” value
+- `NaN` — The “Not-a-Number " value
 - `NEGATIVE_INFINITY` — The negative Infinity value
 - `POSITIVE_INFINITY` — Positive Infinity value
 
@@ -16443,7 +16443,7 @@ JavaScript also has a built-in error object. It has two properties:
 The error property can return six different values as its name:
 
 - `EvalError` — An error has occurred in the `eval()` function
-- `RangeError` — A number is “out of range”
+- `RangeError` — A number is “out of range "
 - `ReferenceError` — An illegal reference has occurred
 - `SyntaxError` — A syntax error has occurred
 - `TypeError` — A type error has occurred
@@ -16473,23 +16473,23 @@ hex
 
 `n.toFixed(0)`
 
-“123457”
+“123457 "
 
 `n.toFixed(5)`
 
-“123456.78900”
+“123456.78900 "
 
 `n.toExponential(3)`
 
-“1.235e+5”
+“1.235e+5 "
 
 `n.toPrecision(7)`
 
-“123456.8”
+“123456.8 "
 
 `n.toPrecision(10)`
 
-“123456.7890”
+“123456.7890 "
 
 `parseInt("3 blind mice")`
 
@@ -16545,23 +16545,23 @@ hex
 
 `n.toFixed(0)`
 
-“123457”
+“123457 "
 
 `n.toFixed(5)`
 
-“123456.78900”
+“123456.78900 "
 
 `n.toExponential(3)`
 
-“1.235e+5”
+“1.235e+5 "
 
 `n.toPrecision(7)`
 
-“123456.8”
+“123456.8 "
 
 `n.toPrecision(10)`
 
-“123456.7890”
+“123456.7890 "
 
 `parseInt("3 blind mice")`
 
@@ -16593,11 +16593,11 @@ hex
 
 `parseInt(".1")`
 
-NaN: integers can’t start with “.”
+NaN: integers can’t start with “. "
 
 `parseFloat("$72.47")`
 
-NaN: numbers can’t start with “$”
+NaN: numbers can’t start with “$ "
 
 Supply Radix
 
@@ -16683,7 +16683,7 @@ y == \[2,3,4\]
 
 `let [first, ...rest] = "Hello";`
 
-first == “H”; rest ==\[“e”,”l”,”l”,”o”\]
+first == “H "; rest ==\[“e ", "l ", "l ", "o "\]
 
 Destructuring assignment can also be performed when the righthand side is an object value.
 
@@ -16715,7 +16715,7 @@ return x \* x;
 
 }
 
-Note that expression `x++` is not always the same as `x = x + 1`.The `++` operator never performs string concatenation: it always converts its operand to a number and increments it. If x is the string “1”, `++x` is the number 2, but `x + 1` is the string “11”.
+Note that expression `x++` is not always the same as `x = x + 1`.The `++` operator never performs string concatenation: it always converts its operand to a number and increments it. If x is the string “1 ", `++x` is the number 2, but `x + 1` is the string “11 ".
 
 JavaScript objects are compared by reference, not by value. An object is equal to itself, but not to any other object. If two distinct objects have the same number of properties, with the same names and values, they are still not equal. Similarly, two arrays that have the same elements in the same order are not equal to each other.
 
@@ -16729,7 +16729,7 @@ JavaScript has the ability to interpret strings of JavaScript source code, evalu
 
 `eval("3+2")`
 
-Because of security issues, some web servers use the HTTP “Content-Security-Policy” header to disable `eval()` for an entire website.
+Because of security issues, some web servers use the HTTP “Content-Security-Policy " header to disable `eval()` for an entire website.
 
 ### First-Defined (??)
 
@@ -16745,7 +16745,7 @@ The first-defined operator `??` evaluates to its first defined operand: if its l
 
 ### delete Operator
 
-Deleting an array element leaves a “hole” in the array and does not change the array’s length. The resulting array is sparse.
+Deleting an array element leaves a “hole " in the array and does not change the array’s length. The resulting array is sparse.
 
 ### void Operator
 
@@ -16899,7 +16899,7 @@ The differences between strict mode and non-strict mode are the following:
 
 · In strict mode, code passed to `eval()` cannot declare variables or define functions in the caller’s scope as it can in non-strict mode. Instead, variable and function definitions live in a new scope created for the `eval()`. This scope is discarded when the `eval()` returns.
 
-· In strict mode, the Arguments object in a function holds a static copy of the values passed to the function. In non-strict mode, the Arguments object has “magical” behavior in which elements of the array and named function parameters both refer to the same value.
+· In strict mode, the Arguments object in a function holds a static copy of the values passed to the function. In non-strict mode, the Arguments object has “magical " behavior in which elements of the array and named function parameters both refer to the same value.
 
 · In strict mode, a `SyntaxError` is thrown if the `delete` operator is followed by an unqualified identifier such as a variable, function, or function parameter. (In non-strict mode, such a `delete` expression does nothing and evaluates to false.)
 
@@ -17162,11 +17162,11 @@ The functions `JSON.stringify()` and `JSON.parse()` serialize and restore JavaSc
 
 `let s = JSON.stringify(o);`
 
-s == ‘{“x”:1,”y”:{“z”:\[false,null,””\]}}’
+s == ‘{“x ":1, "y ":{“z ":\[false,null, " "\]}}’
 
 `let p = JSON.parse(s);`
 
-p == {x: 1, y: {z: \[false,null, “”\]}}
+p == {x: 1, y: {z: \[false,null, “ "\]}}
 
 ### Object methods
 
@@ -17174,7 +17174,7 @@ p == {x: 1, y: {z: \[false,null, “”\]}}
 
 `let s = { x: 1, y: 1 }.toString();`
 
-s == “\[object Object\]”
+s == “\[object Object\] "
 
 ### Extended Object Literal Syntax
 
@@ -17234,7 +17234,7 @@ The point of Symbols is not security, but to define a safe extension mechanism f
 
 ### Spread Operator
 
-You can copy the properties of an existing object into a new object using the “spread operator” … inside an object literal:
+You can copy the properties of an existing object into a new object using the “spread operator " … inside an object literal:
 
 `let position = { x: 0, y: 0 };`  
  `let dimensions = { width: 100, height: 75 };`  
@@ -17350,15 +17350,15 @@ create a copy of an array — modifying the copy does not change the origina
 
 `let digits = [..."0123456789ABCDEF"];`
 
-\[“0”,”1″,”2″,”3″,”4″,”5″,”6″,”7″,”8″,”9″,”A”,”B”,”C”,”D”,”E”,”F”\]
+\[“0 ", "1″, "2″, "3″, "4″, "5″, "6″, "7″, "8″, "9″, "A ", "B ", "C ", "D ", "E ", "F "\]
 
 `let letters = [..."hello world"];`
 
-\[“h”,”e”,”l”,”l””o”,””,”w”,”o””r”,”l”,”d”\]
+\[“h ", "e ", "l ", "l " "o ", " ", "w ", "o " "r ", "l ", "d "\]
 
 `[...new Set(letters)]`
 
-\[“h”,”e”,”l”,”o”,””,”w”,”r”,”d”\]
+\[“h ", "e ", "l ", "o ", " ", "w ", "r ", "d "\]
 
 ### Array.of()
 
@@ -17392,7 +17392,7 @@ It is also a simple way to make a copy of an array:
 
 What is special about arrays is that when you use property names that are non-negative integers , the array automatically maintains the value of the `length` property for you.
 
-JavaScript converts the numeric array index you specify to a string — the index 1 becomes the string “1”, then uses that string as a property name.
+JavaScript converts the numeric array index you specify to a string — the index 1 becomes the string “1 ", then uses that string as a property name.
 
 It is helpful to clearly distinguish an array index from an object property name. All indexes are property names, but only property names that are integers between 0 and 231 are indexes. All arrays are objects, and you can create properties of any name on them. If you use properties that are array indexes, however, arrays have the special behavior of updating their `length` property as needed.
 
@@ -17400,7 +17400,7 @@ Note that you can index an array using numbers that are negative or that are not
 
 `a[-1.23] = true;`
 
-This creates a property named “-1.23”
+This creates a property named “-1.23 "
 
 `a["1000"] = 0;`
 
@@ -17410,7 +17410,7 @@ This the 1001st element of the array
 
 Array index 1. Same as a\[1\] = 1;
 
-The fact that array indexes are simply a special type of object property name means that JavaScript arrays have no notion of an “out of bounds” error. When you try to query a nonexistent property of any object, you don’t get an error; you simply get `undefined`.
+The fact that array indexes are simply a special type of object property name means that JavaScript arrays have no notion of an “out of bounds " error. When you try to query a nonexistent property of any object, you don’t get an error; you simply get `undefined`.
 
 ### Sparse Arrays
 
@@ -17688,7 +17688,7 @@ When you invoke `reduce()` with no initial value, it uses the first element of t
 `let phrases = ["hello world", "the definitive guide"];`  
  `let words = phrases.flatMap(phrase => phrase.split(" "));`
 
-\[“hello”, “world”, “the”, “definitive”, “guide”\];
+\[“hello ", “world ", “the ", “definitive ", “guide "\];
 
 Calling `a.flatMap(f)` is the same as (but more efficient than) `a.map(f).flat()`:
 
@@ -17772,9 +17772,9 @@ SPLICE
 
 \[4\]; a is now \[1\]
 
-\[\]; a is now \[1,2,”a”,”b”,3,4,5\]
+\[\]; a is now \[1,2, "a ", "b ",3,4,5\]
 
-\[“a”,”b”\]; a is now \[1,2,\[1,2\],3,3,4,5\]
+\[“a ", "b "\]; a is now \[1,2,\[1,2\],3,3,4,5\]
 
 FILL()
 
@@ -17894,31 +17894,31 @@ The `join()` method converts all the elements of an array to strings and concate
 
 `a.join("")`
 
-“1,2,3”
+“1,2,3 "
 
-“1 2 3”
+“1 2 3 "
 
-“123”
+“123 "
 
 `let b = new Array(10);`
 
 `b.join("-")`
 
-“ — — — — -”
+“ — — — — - "
 
 Arrays, like all JavaScript objects, have a `toString()` method. For an array, this method works just like the `join()` method with no arguments:
 
 `[1,2,3].toString()`
 
-“1,2,3”
+“1,2,3 "
 
 `["a", "b", "c"].toString()`
 
-“a,b,c”
+“a,b,c "
 
 `[1, [2,"c"]].toString()`
 
-“1,2,c”
+“1,2,c "
 
 ### Static Array Functions
 
@@ -17966,19 +17966,19 @@ Since array-like objects do not inherit from `Array.prototype`, you cannot invok
 
 `Array.prototype.join.call(a, "+")`
 
-“a+b+c”
+“a+b+c "
 
 `Array.prototype.join.call("JavaScript", " ")`
 
-“J a v a S c r i p t”
+“J a v a S c r i p t "
 
 `Array.prototype.map.call(a, x => x.toUpperCase())`
 
-\[“A”,”B”,”C”\]
+\[“A ", "B ", "C "\]
 
 `Array.from(a)`
 
-\[“a”,”b”,”c”\]
+\[“a ", "b ", "c "\]
 
 ### Strings as Arrays
 
@@ -18008,7 +18008,7 @@ console.log(\`${p}: ${o\[p\]}\\n\`);
 
 }
 
-Function declaration statements are “hoisted” to the top of the enclosing script, function, or block so that functions defined in this way may be invoked from code that appears before the definition.
+Function declaration statements are “hoisted " to the top of the enclosing script, function, or block so that functions defined in this way may be invoked from code that appears before the definition.
 
 ### Function Expressions
 
@@ -18382,7 +18382,7 @@ else throw "unknown operator";
 
 `operate2("add", "hello", operate2("add", " ", "world"))`
 
-// “hello world”
+// “hello world "
 
 `operate2("pow", 10, 2)`
 
@@ -18390,7 +18390,7 @@ else throw "unknown operator";
 
 ### Defining Your Own Function Properties
 
-When a function needs a “static” variable whose value persists across invocations, it is often convenient to use a property of the function itself.
+When a function needs a “static " variable whose value persists across invocations, it is often convenient to use a property of the function itself.
 
 For example, suppose you want to write a function that returns a unique integer whenever it is invoked. The function must never return the same value twice. In order to manage this, the function needs to keep track of the values it has already returned, and this information must persist across function invocations.
 
@@ -18498,7 +18498,7 @@ return f();
 
 `checkscope()`
 
-“local scope”
+“local scope "
 
 let scope = "global scope";
 
@@ -18514,7 +18514,7 @@ return f;
 
 `let s = checkscope()();`
 
-“local scope”
+“local scope "
 
 Closures capture the local variables of a single function invocation and can use those variables as private state.
 
@@ -18646,7 +18646,7 @@ value = v;
 
 `o.getName()`
 
-“Frank”
+“Frank "
 
 `o.setName(0);`
 
@@ -18860,7 +18860,7 @@ true
 
 `r.toString()`
 
-“(1…3)”
+“(1…3) "
 
 `[...r]`
 
@@ -18910,7 +18910,7 @@ true
 
 `r.toString()`
 
-“(1…3)”
+“(1…3) "
 
 `[...r]`
 
@@ -19520,7 +19520,7 @@ Iterate over map:
 
 `[...m]`
 
-\[\[“x”, 1\], \[“y”, 2\]\]
+\[\[“x ", 1\], \[“y ", 2\]\]
 
 `for(let [key, value] of m) {...}`
 
@@ -19609,7 +19609,7 @@ Typed arrays are not true arrays, but they re-implement most array methods, so y
 
 `ints.fill(3).map(x=>x*x).join("")`
 
-“9999999999”
+“9999999999 "
 
 Remember that typed arrays have fixed lengths, so the length property is read-only, and methods that change the length of the array (such as `push(), pop(), unshift(), shift(),` and `splice()`) are not implemented for typed arrays. Methods that alter the contents of an array without changing the length (such as `sort(), reverse()`, and `fill()`) are implemented.
 
@@ -19733,7 +19733,7 @@ Match exactly three word characters and an optional digit
 
 r = /\\s+java\\s+/;
 
-Match “java” with one or more spaces before and after
+Match “java " with one or more spaces before and after
 
 r = /\[^(\]\*/;
 
@@ -19779,7 +19779,7 @@ Note that using non-greedy repetition may not always produce the results you exp
 
 `/ab|cd|ef/`
 
-“ab” or the string “cd” or the string “ef”.
+“ab " or the string “cd " or the string “ef ".
 
 `/\d{3}|[a-z]{4}/`
 
@@ -19787,19 +19787,19 @@ either three digits or four lowercase letters.
 
 `/a|ab/`
 
-matches only the first letter “a”
+matches only the first letter “a "
 
 `()`
 
 `/java(script)?/`
 
-matches “java” followed by the optional “script”
+matches “java " followed by the optional “script "
 
 `/(ab|cd)+|ef/`
 
-matches “java” followed by the optional “script”
+matches “java " followed by the optional “script "
 
-If the left alternative matches, the right alternative is ignored, even if it would have produced a “better” match
+If the left alternative matches, the right alternative is ignored, even if it would have produced a “better " match
 
 Another purpose of parentheses in regular expressions is to define subpatterns within the complete pattern. When a regular expression is successfully matched against a target string, it is possible to extract the portions of the target string that matched any particular parenthesized subpattern. For example, suppose you are looking for one or more lowercase letters followed by one or more digits. You might use the pattern `/[a-z]+\d+/`. But suppose you only really care about the digits at the end of each match. If you put that part of the pattern in parentheses (/\[a-z\]+(\\d+)/), you can extract the digits from any matches you find,
 
@@ -19836,7 +19836,7 @@ group items into a single unit, but do not remember the characters that match th
 
 Note `(?:...)` syntax:
 
-In pattern `"/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/`” `\2` refers to the text matched by `(fun\w*)` since `(?:[Ss]cript)?)` in not remembered.
+In pattern `"/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/` " `\2` refers to the text matched by `(fun\w*)` since `(?:[Ss]cript)?)` in not remembered.
 
 ### SPECIFYING MATCH POSITION
 
@@ -19846,13 +19846,13 @@ _regular expression anchors_ because they anchor the pattern to a specific posit
 
 **Pattern**
 
-match the word “JavaScript” on a line by itself
+match the word “JavaScript " on a line by itself
 
 `/^JavaScript$/`
 
-To search for “Java” as a word by itself you can try the pattern `/\sJava\s/`, which requires a space before and after the word. But there are two problems with this solution. First, it does not match “Java” at the beginning or the end of a string, but only if it appears with space on either side. Second, when this pattern does find a match, the matched string it returns has leading and trailing spaces, which is not quite what’s needed. So instead of matching actual space characters with \\s, match (or anchor to) word boundaries with \\b. The resulting expression is `/\bJava\b/`.
+To search for “Java " as a word by itself you can try the pattern `/\sJava\s/`, which requires a space before and after the word. But there are two problems with this solution. First, it does not match “Java " at the beginning or the end of a string, but only if it appears with space on either side. Second, when this pattern does find a match, the matched string it returns has leading and trailing spaces, which is not quite what’s needed. So instead of matching actual space characters with \\s, match (or anchor to) word boundaries with \\b. The resulting expression is `/\bJava\b/`.
 
-The element `\B` anchors the match to a location that is not a word boundary. Thus, the pattern `/\B[Ss]cript/` matches “JavaScript” and “postscript”, but not “script” or “Scripting”.
+The element `\B` anchors the match to a location that is not a word boundary. Thus, the pattern `/\B[Ss]cript/` matches “JavaScript " and “postscript ", but not “script " or “Scripting ".
 
 You can also use arbitrary regular expressions as anchor conditions.
 
@@ -19868,9 +19868,9 @@ to match the name of a common programming language, but only if it is followed b
 
 `/[Jj]ava([Ss]cript)?(?=\:)/`
 
-matches the word “JavaScript” in “JavaScript: The DefinitiveGuide”
+matches the word “JavaScript " in “JavaScript: The DefinitiveGuide "
 
-does not match “Java” in “Java in a Nutshell”
+does not match “Java " in “Java in a Nutshell "
 
 If you instead introduce an assertion with `(?!`, it is a negative lookahead assertion.
 
@@ -19884,7 +19884,7 @@ Flags are specified after the second / character of a regular expression literal
 
 g
 
-“global” — that is,that we intend to use it to find all matches within a string rather than just finding the first [match.it](http://match.it/) does alter the behavior of the String `match()` method and the `RegExp exec()` method in important ways.
+“global " — that is,that we intend to use it to find all matches within a string rather than just finding the first [match.it](http://match.it/) does alter the behavior of the String `match()` method and the `RegExp exec()` method in important ways.
 
 i
 
@@ -19892,11 +19892,11 @@ case-insensitive
 
 m
 
-“multiline” mode
+“multiline " mode
 
 s
 
-useful when working with text that includes newlines.Normally, a “.” in a regular expression matches any character except a line terminator. When the s flag is used, however, “.” will match any character, including line terminators.
+useful when working with text that includes newlines.Normally, a “. " in a regular expression matches any character except a line terminator. When the s flag is used, however, “. " will match any character, including line terminators.
 
 u
 
@@ -19906,7 +19906,7 @@ Setting the u flag on a RegExp also allows you to use the new `\u{...}` escape s
 
 y
 
-“sticky”. should match at the beginning of a string or at the first character following the previous match
+“sticky ". should match at the beginning of a string or at the first character following the previous match
 
 ### String Methods for Pattern Matching
 
@@ -19956,13 +19956,13 @@ Example to convert decimal integers in a string to hexadecimal:
 
 `s.replace(/\d+/gu, n => parseInt(n).toString(16))`
 
-“f times f is e1”
+“f times f is e1 "
 
 ### MATCH()
 
 `"7 plus 8 equals 15".match(/\d+/g)`
 
-\[“7”, “8”, “15”\]
+\[“7 ", “8 ", “15 "\]
 
 If the regular expression does not have the `g` flag set, `match()` does not do a global search; it simply searches for the first match. In this nonglobal case, `match()` still returns an array, but the array elements are completely different.
 
@@ -19984,7 +19984,7 @@ fullurl = match\[0\];
 
 protocol = match\[1\];
 
-“http”
+“http "
 
 host = match\[2\];
 
@@ -19992,7 +19992,7 @@ host = match\[2\];
 
 path = match\[3\];
 
-“~david”
+“~david "
 
 In this non-global case, the array returned by match() also has some object properties in addition to the numbered array elements.
 
@@ -20022,7 +20022,7 @@ text
 
 `match.groups.protocol`
 
-“http”
+“http "
 
 `match.groups.host`
 
@@ -20030,7 +20030,7 @@ text
 
 `match.groups.path`
 
-“~david”
+“~david "
 
 There are also important but less dramatic differences in behavior when the y flag is set. Refer to book for examples.
 
@@ -20042,11 +20042,11 @@ Instead of returning an array of matching substrings like `match()` does, howeve
 
 `"123,456,789".split(",")`
 
-\[“123”, “456”,”789″\]
+\[“123 ", “456 ", "789″\]
 
 `"1, 2, 3,\n4, 5".split(/\s*,\s*/)`
 
-\[“1”, “2”, “3”, “4”,”5″\]
+\[“1 ", “2 ", “3 ", “4 ", "5″\]
 
 Surprisingly, if you call `split()` with a RegExp delimiter and the regular expression includes capturing groups, then the text that matches the capturing groups will be included in the returned array.
 
@@ -20054,7 +20054,7 @@ Surprisingly, if you call `split()` with a RegExp delimiter and the regular expr
 
 `"Testing<br/>1,2,3".split(htmlTag)`
 
-\[“Testing”, “br/”,”1,2,3″\]
+\[“Testing ", “br/ ", "1,2,3″\]
 
 ### The RegExp Class
 
@@ -20121,9 +20121,9 @@ doubleLetterWords.push(word);
 
 `doubleLetterWords`
 
-\[“apple”, “coffee”\]: “book” is missing!
+\[“apple ", “coffee "\]: “book " is missing!
 
-Because we set the g flag on the RegExp, the `lastIndex` property is changed after successful matches, and the `test()` method (which is based on `exec()`) starts searching for a match at the position specified by `lastIndex`. After matching the “pp” in “apple”, `lastIndex` is 3, and so we start searching the word “book” at position 3 and do not see the “oo” that it contains.
+Because we set the g flag on the RegExp, the `lastIndex` property is changed after successful matches, and the `test()` method (which is based on `exec()`) starts searching for a match at the position specified by `lastIndex`. After matching the “pp " in “apple ", `lastIndex` is 3, and so we start searching the word “book " at position 3 and do not see the “oo " that it contains.
 
 ### Dates and Times
 
@@ -20196,23 +20196,23 @@ let d = new Date(2020, 0, 1, 17, 10, 30);
 
 d.toString()
 
-“Wed Jan 01 2020 17:10:30 GMT-0800 (Pacific Standard Time)”
+“Wed Jan 01 2020 17:10:30 GMT-0800 (Pacific Standard Time) "
 
 d.toUTCString()
 
-“Thu, 02 Jan 2020 01:10:30 GMT”
+“Thu, 02 Jan 2020 01:10:30 GMT "
 
 d.toLocaleDateString()
 
-“1/1/2020”: ‘en-US’ locale
+“1/1/2020 ": ‘en-US’ locale
 
 d.toLocaleTimeString()
 
-“5:10:30 PM”: ‘en-US’ locale
+“5:10:30 PM ": ‘en-US’ locale
 
 d.toISOString()
 
-“2020-01-02T01:10:30.000Z”
+“2020-01-02T01:10:30.000Z "
 
 there is also a static Date.parse() method that takes a string as its argument, attempts to parse it as a date and time, and returns a timestamp representing that date. `Date.parse()` is able to parse the same strings that the `Date()` constructor can and is guaranteed to be able to parse the output of `toISOString(), toUTCString()`, and `toString()`.
 
@@ -20266,11 +20266,11 @@ let o = {s: "", n: 0, a: \[true, false, null\]};
 
 let s = JSON.stringify(o);
 
-s == ‘{“s”:””,”n”:0,”a”:\[true,false,null\]}’
+s == ‘{“s ": " ", "n ":0, "a ":\[true,false,null\]}’
 
 let copy = JSON.parse(s);
 
-copy == {s: “”, n: 0, a:\[true, false, null\]}
+copy == {s: “ ", n: 0, a:\[true, false, null\]}
 
 Inefficient way of creating a deep copy of an object
 
@@ -20288,7 +20288,7 @@ Typically, you pass only a single argument to `JSON.stringify()` and `JSON.parse
 
 If `JSON.stringify()` is asked to serialize a value that is not natively supported by the JSON format, it looks to see if that value has a `toJSON()` method, and if so, it calls that method and then stringifies the return value in place of the original value. Date objects implement `toJSON()`: it returns the same string that `toISOString()` method does.
 
-If you need to re-create Date objects (or modify the parsed object inany other way), you can pass a “reviver” function as the second argument to `JSON.parse()`.
+If you need to re-create Date objects (or modify the parsed object inany other way), you can pass a “reviver " function as the second argument to `JSON.parse()`.
 
 let data = JSON.parse(text, function(key, value) {
 
@@ -20314,7 +20314,7 @@ let url = new URL("https://example.com:8000/path/name?q=term#fragment");
 
 url.href
 
-[“https://example.com:8000/path/name](https://example.com:8000/path/name)?q=term#fragment”
+[“https://example.com:8000/path/name](https://example.com:8000/path/name)?q=term#fragment "
 
 url.origin
 
@@ -20322,31 +20322,31 @@ url.origin
 
 url.protocol
 
-“https:”
+“https: "
 
 url.host
 
-[“example.com](http://example.com/):8000”
+[“example.com](http://example.com/):8000 "
 
 url.hostname
 
-[“example.com](http://example.com/)”
+[“example.com](http://example.com/) "
 
 url.port
 
-“8000”
+“8000 "
 
 url.pathname
 
-“/path/name”
+“/path/name "
 
 url.search
 
-“?q=term”
+“?q=term "
 
 url.hash
 
-“#fragment”
+“#fragment "
 
 let url = new URL("https://example.com");
 
@@ -20370,13 +20370,13 @@ url.pathname = "path with spaces";
 
 url.pathname
 
-“/path%20with%20spaces”
+“/path%20with%20spaces "
 
 url.search = "q=foo#bar";
 
 url.search
 
-“?q=foo%23bar”
+“?q=foo%23bar "
 
 url.href
 
@@ -20390,25 +20390,25 @@ If you want to encode these kinds of name/value pairs into the query portion of 
 
 `url.search`
 
-“”
+“ "
 
 `url.searchParams.append("q", "term");`
 
 `url.search`
 
-“?q=term”
+“?q=term "
 
 `url.searchParams.set("q", "x");`
 
 `url.search`
 
-“?q=x”
+“?q=x "
 
 `url.searchParams.append("opts", "1");`
 
 `url.search`
 
-“?q=x&opts=1”
+“?q=x&opts=1 "
 
 The value of the searchParams property is a URLSearchParams object.
 
@@ -20422,13 +20422,13 @@ The value of the searchParams property is a URLSearchParams object.
 
 `params.toString()`
 
-“q=term&opts=exact”
+“q=term&opts=exact "
 
 `url.search = params;`
 
 `url.href`
 
-[“http://example.com/](http://example.com/)?q=term&opts=exact”
+[“http://example.com/](http://example.com/)?q=term&opts=exact "
 
 ### Timers
 
@@ -20470,7 +20470,7 @@ console.log(result.value) // result.value == 99
 
 }
 
-When you want to iterate though a “partially used” iterator:
+When you want to iterate though a “partially used " iterator:
 
 `let list = [1,2,3,4,5];`  
  `let iter = list[Symbol.iterator]();`
@@ -20701,7 +20701,7 @@ yield key;
 
 `[...o.g()]`
 
-\[“x”, “y”, “z”, “g”\]
+\[“x ", “y ", “z ", “g "\]
 
 Generators often make it particularly easy to define iterable classes.
 
@@ -20955,11 +20955,11 @@ fetch(theURL) // task 1; returns promise 1
 
 ### Resolving Promises
 
-There is actually a fourth Promise object involved as which brings up the point of what it means for a Promise to be “resolved.”
+There is actually a fourth Promise object involved as which brings up the point of what it means for a Promise to be “resolved. "
 
 fetch() returns a Promise object which, when fulfilled, passes a Response object to the callback function we register. This Response object has `.text(), .json(),` and other methods to request the body of the HTTP response in various forms. But since the body may not yet have arrived, these methods must return Promise objects.
 
-“task 2” calls the `.json()` method and returns its value. This is the fourth Promise object, and it is the return value of the `callback1()` function.
+“task 2 " calls the `.json()` method and returns its value. This is the fourth Promise object, and it is the return value of the `callback1()` function.
 
 Let’s consider:
 
@@ -21007,9 +21007,9 @@ When you pass a callback c to the `then()` method, `then()` returns a Promise p 
 
 So if c returns a non-Promise, that return value becomes the value of p, p is fulfilled and we are done. But if the return value v is itself a Promise, then p is resolved but not yet fulfilled.
 
-At this stage, p cannot settle until the Promise v settles. If v is fulfilled, then p will be fulfilled to the same value. If v is rejected, then p will be rejected for the same reason. This is what the “resolved” state of a Promise means
+At this stage, p cannot settle until the Promise v settles. If v is fulfilled, then p will be fulfilled to the same value. If v is rejected, then p will be rejected for the same reason. This is what the “resolved " state of a Promise means
 
-the Promise has become associated with, or “locked onto,” another Promise. We don’t know yet whether p will be fulfilled or rejected, but our callback c no longer has any control over that. p is “resolved” in the sense that its fate now depends entirely on what happens to Promise v.
+the Promise has become associated with, or “locked onto, " another Promise. We don’t know yet whether p will be fulfilled or rejected, but our callback c no longer has any control over that. p is “resolved " in the sense that its fate now depends entirely on what happens to Promise v.
 
 Let’s bring this back to our URL-fetching example. When c1 returns p4, p2 is resolved. But being resolved is not the same as being fulfilled, so task 3 does not begin yet. When the full body of the HTTP response becomes available, then the .`json()` method can parse it and use that parsed value to fulfill p4. When p4 is fulfilled, p2 is automatically fulfilled as well, with the same parsed JSON value. At this point, the parsed JSON object is passed to c2, and task 3 begins.
 
@@ -21151,7 +21151,7 @@ Promise.all(promises)
 .catch(e => console.error(e));
 
 The Promise returned by `Promise.all()` rejects when any of the input Promises is rejected. This happens immediately upon the first rejection and can happen while other input Promises are still pending. In ES2020, `Promise.allSettled()` takes an array of input  
- Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to “fulfilled” or “rejected.” If the status is “fulfilled”, then the object will also have a value property that gives the fulfillment value. And if the status is “rejected”, then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
+ Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to “fulfilled " or “rejected. " If the status is “fulfilled ", then the object will also have a value property that gives the fulfillment value. And if the status is “rejected ", then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
 
 Promise.allSettled(\[Promise.resolve(1), Promise.reject(2),3\]).then(results => {
 
@@ -21687,7 +21687,7 @@ When the search for a match requires something more than a direct match, such as
 
 For example, to match _a single_ `_"a"_` _followed by zero or more_ `_"b"_`_s followed by_ `_"c"_`, you’d use the pattern `/ab*c/`:
 
-> the `*` after `"b"` means “0 or more occurrences of the preceding item.” In the string `"cbbabbbbcdebc"`, this pattern will match the substring `"abbbbc"`.
+> the `*` after `"b"` means “0 or more occurrences of the preceding item. " In the string `"cbbabbbbcdebc"`, this pattern will match the substring `"abbbbc"`.
 
 [**Assertions**](https://github.com/bgoonz/Cheat-Sheets/blob/master/Regular_Expressions/Assertions.html) **: Assertions include boundaries, which indicate the beginnings and endings of lines and words, and other patterns indicating in some way that a match is possible (including look-ahead, look-behind, and conditional expressions).**
 
@@ -21711,17 +21711,17 @@ If you need to use any of the special characters literally (actually searching f
 
 For instance, to search for `"a"` followed by `"*"` followed by `"b"`,
 
-> you’d use `/a\*b/` — the backslash “escapes” the `"*"`, making it literal instead of special.
+> you’d use `/a\*b/` — the backslash “escapes " the `"*"`, making it literal instead of special.
 
-Similarly, if you’re writing a regular expression literal and need to match a slash (“/”), you need to escape that (otherwise, it terminates the pattern)
+Similarly, if you’re writing a regular expression literal and need to match a slash (“/ "), you need to escape that (otherwise, it terminates the pattern)
 
-For instance, to search for the string “/example/” followed by one or more alphabetic characters, you’d use `/\/example\/[a-z]+/i`
+For instance, to search for the string “/example/ " followed by one or more alphabetic characters, you’d use `/\/example\/[a-z]+/i`
 
 **–the backslashes before each slash make them literal.**
 
 To match a literal backslash, you need to escape the backslash.
 
-For instance, to match the string “C:\\” where “C” can be any letter,
+For instance, to match the string “C:\\ " where “C " can be any letter,
 
 you’d use `/[A-Z]:\\/`
 
@@ -21731,13 +21731,13 @@ If using the `RegExp` constructor with a string literal, **remember that the bac
 
 `/a\*b/` and `new RegExp("a\\*b")` create the same expression,
 
-which searches for “a” followed by a literal “\*” followed by “b”.
+which searches for “a " followed by a literal “\* " followed by “b ".
 
 If escape strings are not already part of your pattern you can add them using `[String.replace](https://github.com/bgoonz/Cheat-Sheets/blob/Reference/Global_Objects/String/replace.html)`:
 
     function escapeRegExp(string) {  return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string}
 
-**The “g” after the regular expression is an option or flag that performs a global search, looking in the whole string and returning all matches.**
+**The “g " after the regular expression is an option or flag that performs a global search, looking in the whole string and returning all matches.**
 
 ### Using parentheses
 
@@ -21859,9 +21859,9 @@ Flag Description Corresponding property
 
 `s` Allows `.` to match newline characters. `RegExp.prototype.dotAll`
 
-`u` “unicode”; treat a pattern as a sequence of unicode code points. `RegExp.prototype.unicode`
+`u` “unicode "; treat a pattern as a sequence of unicode code points. `RegExp.prototype.unicode`
 
-`y` Perform a “sticky” search that matches starting at the current position in the target string. `RegExp.prototype.sticky`
+`y` Perform a “sticky " search that matches starting at the current position in the target string. `RegExp.prototype.sticky`
 
 #### Regular expression flags
 
@@ -21891,7 +21891,7 @@ and get the same result.
 
 The behavior associated with the `g` flag is different when the `.exec()` method is used.
 
-The roles of “class” and “argument” get reversed:
+The roles of “class " and “argument " get reversed:
 
 In the case of `.match()`, the string class (or data type) owns the method and the regular expression is just an argument,
 
@@ -21909,7 +21909,7 @@ If the `m` flag is used, `^` and `$` match at the start or end of any line withi
 
 ### Using special characters to verify input
 
-In the following example, the user is expected to enter a phone number. When the user presses the “Check” button, the script checks the validity of the number. If the number is valid (matches the character sequence specified by the regular expression), the script shows a message thanking the user and confirming the number. If the number is invalid, the script informs the user that the phone number is not valid.
+In the following example, the user is expected to enter a phone number. When the user presses the “Check " button, the script checks the validity of the number. If the number is valid (matches the character sequence specified by the regular expression), the script shows a message thanking the user and confirming the number. If the number is invalid, the script informs the user that the phone number is not valid.
 
 Within non-capturing parentheses `(?:` , the regular expression looks for three numeric characters `\d{3}` OR `|` a left parenthesis `\(` followed by three digits `\d{3}`, followed by a close parenthesis `\)`, (end non-capturing parenthesis `)`), followed by one dash, forward slash, or decimal point and when found, remember the character `([-\/\.])`, followed by three digits `\d{3}`, followed by the remembered match of a dash, forward slash, or decimal point `\1`, followed by four digits `\d{4}`.
 
@@ -21961,13 +21961,13 @@ As pointed out in a previous article that deals with reading data from files, fi
 
 The common methods to operate with files are `open()` to open a file, `seek()` to set the file’s current position at the given offset, and `close()` to close the file afterwards. The `open()` method returns a file handle that represents a [file object](https://docs.python.org/3/glossary.html#term-file-object) to be used to access the file for reading, writing, or appending.
 
-Writing to a file requires a few decisions — the name of the file in which to store data and the access mode of the file. Available are two modes, writing to a new file (and overwriting any existing data) and appending data at the end of a file that already exists. The according abbreviations are “w”, and “a”, and have to be specified before opening a file.
+Writing to a file requires a few decisions — the name of the file in which to store data and the access mode of the file. Available are two modes, writing to a new file (and overwriting any existing data) and appending data at the end of a file that already exists. The according abbreviations are “w ", and “a ", and have to be specified before opening a file.
 
 In this article we will explain how to write data to a file line by line, as a list of lines, and appending data at the end of a file.
 
 ### Writing a Single Line to a File
 
-This first example is pretty similar to writing to files with the popular programming languages C and C++, as you’ll see in _Listing 1_. The process is pretty straightforward. First, we open the file using the `open()` method for writing, write a single line of text to the file using the `write()` method, and then close the file using the `close()` method. Keep in mind that due to the way we opened the “helloworld.txt” file it will either be created if it does not exist yet, or it will be completely overwritten.
+This first example is pretty similar to writing to files with the popular programming languages C and C++, as you’ll see in _Listing 1_. The process is pretty straightforward. First, we open the file using the `open()` method for writing, write a single line of text to the file using the `write()` method, and then close the file using the `close()` method. Keep in mind that due to the way we opened the “helloworld.txt " file it will either be created if it does not exist yet, or it will be completely overwritten.
 
 filehandle = open('helloworld.txt', 'w')  
 filehandle.write('Hello, world!\\n')  
@@ -21975,7 +21975,7 @@ filehandle.close()
 
 _Listing 1_
 
-This entire process can be shortened using the `with` statement. _Listing 2_ shows how to write that. As already said before keep in mind that by opening the “helloworld.txt” file this way will either create if it does not exist yet or completely overwritten, otherwise.
+This entire process can be shortened using the `with` statement. _Listing 2_ shows how to write that. As already said before keep in mind that by opening the “helloworld.txt " file this way will either create if it does not exist yet or completely overwritten, otherwise.
 
 with open('helloworld.txt', 'w') as filehandle:  
  filehandle.write('Hello, world!\\n')
@@ -21993,14 +21993,14 @@ filehandle.close()
 
 _Listing 3_
 
-Running the Python program shown in _Listing 3_ and then using the `cat` command we can see that the file “helloworld.txt” has the following content:
+Running the Python program shown in _Listing 3_ and then using the `cat` command we can see that the file “helloworld.txt " has the following content:
 
 $ cat helloworld.txt  
 a first line of text a second line of text a third line
 
 _Listing 4_
 
-This happens because **the** `**writelines()**` **method does not automatically add any line separators when writing the data**. _Listing 5_ shows how to achieve that, writing each line of text on a single line by adding the line separator “\\n”. Using a generator expression each line is substituted by the line plus line separator. Again, you can formulate this using the `with` statement.
+This happens because **the** `**writelines()**` **method does not automatically add any line separators when writing the data**. _Listing 5_ shows how to achieve that, writing each line of text on a single line by adding the line separator “\\n ". Using a generator expression each line is substituted by the line plus line separator. Again, you can formulate this using the `with` statement.
 
 with open('helloworld.txt', 'w') as filehandle:  
  filebuffer = \["a line of text", "another line of text", "a third line"\]  
@@ -22008,7 +22008,7 @@ with open('helloworld.txt', 'w') as filehandle:
 
 _Listing 5_
 
-Now, the output file “helloworld.txt” has the desired content as shown in _Listing 6_:
+Now, the output file “helloworld.txt " has the desired content as shown in _Listing 6_:
 
 $ cat helloworld.txt  
 a first line of text  
@@ -22699,7 +22699,7 @@ In addition, psql provides a number of meta-commands and various shell-like feat
 
 The pgAdmin package is a free and open-source [graphical user interface](https://en.wikipedia.org/wiki/Graphical_user_interface "Graphical user interface") (GUI) administration tool for PostgreSQL.
 
-When you read “installation”, that means the actual OS that’s running on your machine. So, you have a Windows installation, Windows 10, that’s running when you boot your computer. Then, when you start the Ubuntu installation, it’s as if there’s a completely separate computer running inside your computer. It’s like having two completely different laptops.
+When you read “installation ", that means the actual OS that’s running on your machine. So, you have a Windows installation, Windows 10, that’s running when you boot your computer. Then, when you start the Ubuntu installation, it’s as if there’s a completely separate computer running inside your computer. It’s like having two completely different laptops.
 
 ### Other Noteworthy Distinctions:
 
@@ -22746,7 +22746,7 @@ If prompted for your password, type it.
 
 echo "deb [http://apt.postgresql.org/pub/repos/apt/](http://apt.postgresql.org/pub/repos/apt/) \`lsb_release -cs\`-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
 
-The last line of output of those two commands running should read “OK”. If it does not, try copying and pasting them one at a time.
+The last line of output of those two commands running should read “OK ". If it does not, try copying and pasting them one at a time.
 
 Now that you’ve registered the PostgreSQL repositories as a source to look for PostgreSQL, you need to update the `apt` registry. You should do this before you install _any_ software on Ubuntu.
 
@@ -22756,7 +22756,7 @@ Once that’s finished running, the new entries for PostgreSQL 12 should be in t
 
 sudo apt install postgresql-client-12 postgresql-common
 
-If it asks you if you want to install them, please tell it “Y”.
+If it asks you if you want to install them, please tell it “Y ".
 
 Test that it installed by typing `psql --version`. You should see it print out information about the version of the installed tools. If it tells you that it can’t find the command, try these instructions over.
 
@@ -22768,13 +22768,13 @@ This assumes you’re still using Bash. If you changed the shell that your Ubunt
 
 Make sure you’re in your Ubuntu home directory. You can do that by typing `cd` and hitting enter. Use `ls` to find out if you have a `.bashrc` file. Type `ls .bashrc`. If it shows you that one exists, that’s the one you will add the alias to. If it tells you that there is no file named that, then type `ls .profile`. If it shows you that one exists, that’s the one you will add the alias to. If it shows you that it does not exist, then use the file name `.bashrc` in the following section.
 
-Now that you know which profile file to use, type `code «profile file name»` where “profile file name” is the name of the file you determined from the last section. Once Visual Studio Code starts up with your file, at the end of it (or if you’ve already added aliases, in that section), type the following.
+Now that you know which profile file to use, type `code «profile file name»` where “profile file name " is the name of the file you determined from the last section. Once Visual Studio Code starts up with your file, at the end of it (or if you’ve already added aliases, in that section), type the following.
 
 alias psql="psql -h localhost"
 
 When you run `psql` from the command line, it will now always add the part about wanting to connect to _localhost_ every time. You would have to type that each time, otherwise.
 
-To make sure that you set that up correctly, type `psql -U postgres postgres`. This tells the `psql` client that you want to connect as the user “postgres” (`-U postgres`) to the database postgres (`postgres` at the end), which is the default database created when PostgreSQL is installed. It will prompt you for a password. Type the password that you used when you installed PostgrSQL, earlier. If the alias works correctly and you type the correct password, then you should see something like the following output.
+To make sure that you set that up correctly, type `psql -U postgres postgres`. This tells the `psql` client that you want to connect as the user “postgres " (`-U postgres`) to the database postgres (`postgres` at the end), which is the default database created when PostgreSQL is installed. It will prompt you for a password. Type the password that you used when you installed PostgrSQL, earlier. If the alias works correctly and you type the correct password, then you should see something like the following output.
 
 psql (12.2 (Ubuntu 12.2-2.pgdg18.04+1))  
 Type "help" for help.
@@ -22789,7 +22789,7 @@ Copy and paste the following into your Ubuntu shell. Think of a password that yo
 
 psql -U postgres -c "CREATE USER \`whoami\` WITH PASSWORD 'password' SUPERUSER"
 
-It should prompt you for a password. Type the password that you created when you installed PostgreSQL. Once you type the correct password, you should see “CREATE ROLE”.
+It should prompt you for a password. Type the password that you created when you installed PostgreSQL. Once you type the correct password, you should see “CREATE ROLE ".
 
 Now you will create your PostgreSQL password file. Type the following into your Ubuntu shell to open Visual Studio Code and create a new file.
 
@@ -22805,7 +22805,7 @@ The last step you have to take is change the permission on that file so that it 
 
 chmod go-rw ~/.pgpass
 
-You can confirm that only you have read/write permission by typing `ls -al ~/.pgpass`. That should return output that looks like this, **with your Ubuntu user name instead of “web-dev-hub”.**
+You can confirm that only you have read/write permission by typing `ls -al ~/.pgpass`. That should return output that looks like this, **with your Ubuntu user name instead of “web-dev-hub ".**
 
 \-rw------- 1 web-dev-hub web-dev-hub 37 Mar 28 21:20 /home/web-dev-hub/.pgpass
 
@@ -22813,7 +22813,7 @@ Now, try connecting to PostreSQL by typing `psql postgres`. Because you added th
 
 ### Installing Postbird
 
-Head over to the [Postbird releases page on GitHub](https://github.com/Paxa/postbird/releases). Click the installer for Windows which you can recognize because it’s the only file in the list that ends with “.exe”.
+Head over to the [Postbird releases page on GitHub](https://github.com/Paxa/postbird/releases). Click the installer for Windows which you can recognize because it’s the only file in the list that ends with “.exe ".
 
 ![](https://cdn-images-1.medium.com/max/800/0*ZdKurvQ4bHs3vDLT.png)
 
@@ -22823,11 +22823,11 @@ After that installer downloads, run it. You will get a warning from Windows that
 
 You should get used to seeing this because many open-source applications aren’t signed with the Microsoft Store for monetary and philosophical reasons.
 
-Otherwise, if you trust Paxa like web-dev-hub and tens of thousands of other developers do, then click the link that reads “More info” and the “Run anyway” button.
+Otherwise, if you trust Paxa like web-dev-hub and tens of thousands of other developers do, then click the link that reads “More info " and the “Run anyway " button.
 
 ![](https://cdn-images-1.medium.com/max/800/0*9pDpx8XsYt2KnMku.png)
 
-When it’s done installing, it will launch itself. Test it out by typing the “postgres” into the “Username” field and the password from your installation in the “Password” field. Click the Connect button. It should properly connect to the running
+When it’s done installing, it will launch itself. Test it out by typing the “postgres " into the “Username " field and the password from your installation in the “Password " field. Click the Connect button. It should properly connect to the running
 
 You can close it for now. It also installed an icon on your desktop. You can launch it from there or your Start Menu at any time.
 
@@ -23557,7 +23557,7 @@ def foo():
  """  
  secretThing()
 
-> _Python has a built in help function that let’s you see a description of the source code without having to navigate to it… “-SickNasty … Autor Unknown”_
+> _Python has a built in help function that let’s you see a description of the source code without having to navigate to it… “-SickNasty … Autor Unknown "_
 
 ---
 
@@ -23620,8 +23620,8 @@ print(str(17.0) + ' and ' + str(17)) # => 17.0 and 17
 
 **The arithmetic operators are the same between JS and Python, with two additions:**
 
-- _“\*\*” : Double asterisk for exponent._
-- _“//” : Integer Division._
+- _“\*\* " : Double asterisk for exponent._
+- _“// " : Integer Division._
 - **There are no spaces between math operations in Python.**
 - **Integer Division gives the other part of the number from Module; it is a way to do round down numbers replacing** `**Math.floor()**` **in JS.**
 - **There are no** `**++**` **and** `**--**` **in Python, the only shorthand operators are:**
@@ -23644,23 +23644,23 @@ the end of the string!''')
 
 **Use the** `**len()**` **function to get the length of a string.**
 
-print(len(“Spaghetti”)) # => 9
+print(len(“Spaghetti ")) # => 9
 
 ### **Python uses** `**zero-based indexing**`
 
 #### Python allows negative indexing (thank god!)
 
-print(“Spaghetti”\[-1\]) # => i
+print(“Spaghetti "\[-1\]) # => i
 
-print(“Spaghetti”\[-4\]) # => e
+print(“Spaghetti "\[-4\]) # => e
 
 - Python let’s you use ranges
 
 You can think of this as roughly equivalent to the slice method called on a JavaScript object or string… _(mind you that in JS … strings are wrapped in an object (under the hood)… upon which the string methods are actually called. As a immutable privative type_ **_by textbook definition_**_, a string literal could not hope to invoke most of it’s methods without violating the state it was bound to on initialization if it were not for this bit of syntactic sugar.)_
 
-print(“Spaghetti”\[1:4\]) # => pag  
-print(“Spaghetti”\[4:-1\]) # => hett  
-print(“Spaghetti”\[4:4\]) # => (empty string)
+print(“Spaghetti "\[1:4\]) # => pag  
+print(“Spaghetti "\[4:-1\]) # => hett  
+print(“Spaghetti "\[4:4\]) # => (empty string)
 
 - The end range is exclusive just like `slice` in JS.
 
@@ -23690,7 +23690,7 @@ postpone, and one which we intend to win, and the others, too.
 '''.count('the ')) # => 4
 
 - **You can use** `**+**` **to concatenate strings, just like in JS.**
-- **You can also use “\*” to repeat strings or multiply strings.**
+- **You can also use “\* " to repeat strings or multiply strings.**
 - **Use the** `**format()**` **function to use placeholders in a string to input values later on.**
 
 first_name = "Billy"  
@@ -24340,7 +24340,7 @@ _Prints Key: color Value: red_
 
 **Looping over string**
 
-for c in “abcdefg”:  
+for c in “abcdefg ":  
 print(c)
 
 **When you order arguments within a function or function call, the args need to occur in a particular order:**
@@ -24356,7 +24356,7 @@ _keyword args with default values_
 def example(arg_1, arg_2, \*args, \*\*kwargs):  
 pass
 
-def example2(arg_1, arg_2, \*args, kw_1=”shark”, kw_2=”blowfish”, \*\*kwargs):  
+def example2(arg_1, arg_2, \*args, kw_1= "shark ", kw_2= "blowfish ", \*\*kwargs):  
 pass
 
 ---
@@ -24555,7 +24555,7 @@ In the following phases, you will configure your application to work in producti
 
 If you haven’t created a Heroku account yet, create one [here](https://signup.heroku.com/).
 
-Add a new application in your [Heroku dashboard](https://dashboard.heroku.com/) named whatever you want. Under the “Resources” tab in your new application, click “Find more add-ons” and add the “Heroku Postgres” add-on with the free Hobby Dev setting.
+Add a new application in your [Heroku dashboard](https://dashboard.heroku.com/) named whatever you want. Under the “Resources " tab in your new application, click “Find more add-ons " and add the “Heroku Postgres " add-on with the free Hobby Dev setting.
 
 In your terminal, install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line). Afterwards, login to Heroku in your terminal by running the following:
 
@@ -24619,7 +24619,7 @@ Finally, commit your changes.
 
 ### Phase 3: Deploy to Heroku
 
-Once you’re finished setting this up, navigate to your application’s Heroku dashboard. Under “Settings” there is a section for “Config Vars”. Click the `Reveal Config Vars` button to see all your production environment variables. You should have a `DATABASE_URL` environment variable already from the Heroku Postgres add-on.
+Once you’re finished setting this up, navigate to your application’s Heroku dashboard. Under “Settings " there is a section for “Config Vars ". Click the `Reveal Config Vars` button to see all your production environment variables. You should have a `DATABASE_URL` environment variable already from the Heroku Postgres add-on.
 
 Add environment variables for `JWT_EXPIRES_IN` and `JWT_SECRET` and any other environment variables you need for production.
 
@@ -24647,7 +24647,7 @@ To seed the production database, run:
 
     heroku run npm run sequelize db:seed:all
 
-Note: You can interact with your database this way as you’d like, but beware that `db:drop` cannot be run in the Heroku environment. If you want to drop and create the database, you need to remove and add back the “Heroku Postgres” add-on.
+Note: You can interact with your database this way as you’d like, but beware that `db:drop` cannot be run in the Heroku environment. If you want to drop and create the database, you need to remove and add back the “Heroku Postgres " add-on.
 
 Another way to interact with the production application is by opening a bash shell through your terminal by running:
 
@@ -25114,7 +25114,7 @@ Common Complexity Classes
 
 #### `O(n) Linear`
 
-> **Linear algorithm’s will access each item of the input “once”.**
+> **Linear algorithm’s will access each item of the input “once ".**
 
 [https://gist.github.com/eengineergz/cc953ba2bd6e1d6f524a6d8b297aad5b](https://gist.github.com/eengineergz/cc953ba2bd6e1d6f524a6d8b297aad5b)
 
@@ -25410,24 +25410,24 @@ function fibonacci(n) {
 
 ![](https://webdevhubcom.files.wordpress.com/2021/03/d44d1-0aqkp1drnhmnm34zz.jpg)
 
-Test if you have Ubuntu installed by typing “Ubuntu” in the search box in the bottom app bar that reads “Type here to search”. If you see a search result that reads **“Ubuntu 20.04 LTS”** with “App” under it, then you have it installed.
+Test if you have Ubuntu installed by typing “Ubuntu " in the search box in the bottom app bar that reads “Type here to search ". If you see a search result that reads **“Ubuntu 20.04 LTS "** with “App " under it, then you have it installed.
 
 ‌
 
-1.  In the application search box in the bottom bar, type “PowerShell” to find the application named “Windows PowerShell”
-2.  Right-click on “Windows PowerShell” and choose “Run as administrator” from the popup menu
+1.  In the application search box in the bottom bar, type “PowerShell " to find the application named “Windows PowerShell "
+2.  Right-click on “Windows PowerShell " and choose “Run as administrator " from the popup menu
 3.  In the blue PowerShell window, type the following: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
 4.  Restart your computer
-5.  In the application search box in the bottom bar, type “Store” to find the application named “Microsoft Store”
-6.  Click “Microsoft Store”
-7.  Click the “Search” button in the upper-right corner of the window
-8.  Type in “Ubuntu”
-9.  Click “Run Linux on Windows (Get the apps)”
-10. Click the orange tile labeled **“Ubuntu”** Note that there are 3 versions in the Microsoft Store… you want the one just entitled ‘Ubuntu’
-11. Click “Install”
-12. After it downloads, click “Launch”
-13. If you get the option, pin the application to the task bar. Otherwise, right-click on the orange Ubuntu icon in the task bar and choose “Pin to taskbar”
-14. When prompted to “Enter new UNIX username”, type your first name with no spaces
+5.  In the application search box in the bottom bar, type “Store " to find the application named “Microsoft Store "
+6.  Click “Microsoft Store "
+7.  Click the “Search " button in the upper-right corner of the window
+8.  Type in “Ubuntu "
+9.  Click “Run Linux on Windows (Get the apps) "
+10. Click the orange tile labeled **“Ubuntu "** Note that there are 3 versions in the Microsoft Store… you want the one just entitled ‘Ubuntu’
+11. Click “Install "
+12. After it downloads, click “Launch "
+13. If you get the option, pin the application to the task bar. Otherwise, right-click on the orange Ubuntu icon in the task bar and choose “Pin to taskbar "
+14. When prompted to “Enter new UNIX username ", type your first name with no spaces
 15. When prompted, enter and retype a password for this UNIX user (it can be the same as your Windows password)
 16. Confirm your installation by typing the command `whoami ‘as in who-am-i'`followed by Enter at the prompt (it should print your first name)
 17. You need to update your packages, so type `sudo apt update` (if prompted for your password, enter it)
@@ -25439,8 +25439,8 @@ Git comes with Ubuntu, so there’s nothing to install. However, you should conf
 
 ‌Open an Ubuntu terminal if you don’t have one open already.
 
-1.  You need to configure Git, so type `git config --global user.name "Your Name"` with replacing “Your Name” with your real name.
-2.  You need to configure Git, so type `git config --global user.email your@email.com` with replacing “[your@email.com](mailto:your@email.com)” with your real email.
+1.  You need to configure Git, so type `git config --global user.name "Your Name"` with replacing “Your Name " with your real name.
+2.  You need to configure Git, so type `git config --global user.email your@email.com` with replacing “[your@email.com](mailto:your@email.com) " with your real email.
 
 **Note: if you want git to remember your login credentials type:**
 
@@ -25450,23 +25450,23 @@ $ git config --global credential.helper store
 
 ### Google Chrome
 
-Test if you have Chrome installed by typing “Chrome” in the search box in the bottom app bar that reads “Type here to search”. If you see a search result that reads “Chrome” with “App” under it, then you have it installed. Otherwise, follow these instructions to install Google Chrome.
+Test if you have Chrome installed by typing “Chrome " in the search box in the bottom app bar that reads “Type here to search ". If you see a search result that reads “Chrome " with “App " under it, then you have it installed. Otherwise, follow these instructions to install Google Chrome.
 
 ‌
 
-1.  Open Microsoft Edge, the blue “e” in the task bar, and type in [http://chrome.google.com](http://chrome.google.com/). Click the “Download Chrome” button. Click the “Accept and Install” button after reading the terms of service. Click “Save” in the “What do you want to do with ChromeSetup.exe” dialog at the bottom of the window. When you have the option to “Run” it, do so. Answer the questions as you’d like. Set it as the default browser.
-2.  Right-click on the Chrome icon in the task bar and choose “Pin to taskbar”.
+1.  Open Microsoft Edge, the blue “e " in the task bar, and type in [http://chrome.google.com](http://chrome.google.com/). Click the “Download Chrome " button. Click the “Accept and Install " button after reading the terms of service. Click “Save " in the “What do you want to do with ChromeSetup.exe " dialog at the bottom of the window. When you have the option to “Run " it, do so. Answer the questions as you’d like. Set it as the default browser.
+2.  Right-click on the Chrome icon in the task bar and choose “Pin to taskbar ".
 
 ### Node.js
 
-Test if you have Node.js installed by opening an Ubuntu terminal and typing `node --version`. If it reports “Command ‘node’ not found”, then you need to follow these directions.
+Test if you have Node.js installed by opening an Ubuntu terminal and typing `node --version`. If it reports “Command ‘node’ not found ", then you need to follow these directions.
 
 1.  In the Ubuntu terminal, type `sudo apt update` and press Enter
 2.  In the Ubuntu terminal, type `sudo apt install build-essential` and press Enter
 3.  In the Ubuntu terminal, type `curl -o- [https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh](https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh) | bash` and press Enter
 4.  In the Ubuntu terminal, type `. ./.bashrc` and press Enter
 5.  In the Ubuntu terminal, type `nvm install --lts` and press Enter
-6.  Confirm that **node** is installed by typing `node --version` and seeing it print something that is not “Command not found”!
+6.  Confirm that **node** is installed by typing `node --version` and seeing it print something that is not “Command not found "!
 
 ### Unzip
 

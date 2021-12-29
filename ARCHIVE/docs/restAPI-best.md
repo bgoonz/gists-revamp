@@ -110,7 +110,7 @@ The word _stateless_ indicates that an API doesn’t store any information relat
 
 Being stateless, REST APIs don’t have to deal with the server-side state synchronization logic. Another advantage of session independence is that any server can process requests. This improves the performance of the application and reduces the risk of going down.
 
-*“Going stateless means fewer side effects,”* Pál Váradi Nagy, a developer at [Hanna Instruments](https://www.hannainst.com/), argues. _“In FTP for example, we have an ongoing session with commands that modify the state of the session. This state can and sometimes will be lost. So, for REST it was a decision to go as pure as possible. Meaning that it relies on PURE functions that always return the same output when given the same input, and doesn’t affect anything else.”_
+*“Going stateless means fewer side effects,”* Pál Váradi Nagy, a developer at [Hanna Instruments](https://www.hannainst.com/), argues. _“In FTP for example, we have an ongoing session with commands that modify the state of the session. This state can and sometimes will be lost. So, for REST it was a decision to go as pure as possible. Meaning that it relies on PURE functions that always return the same output when given the same input, and doesn’t affect anything else.”_
 
 ### Code on Demand (CoD)
 
@@ -190,7 +190,7 @@ In addition, REST allows for better abstraction than RPC. Following RESTful cons
 
 According to Cloud Elements’ 2017 [State of API Integration](https://offers.cloud-elements.com/the-state-of-api-integrations-report-2017-download) report, APIs using REST number 83 percent versus 15 percent of those using [SOAP.](https://www.altexsoft.com/blog/engineering/what-is-soap-formats-protocols-message-structure-and-how-soap-is-different-from-rest/) And that just proves that SOAP isn’t dead yet.
 
-[Rob James](https://www.quora.com/profile/Rob-James-179), who’s been in software development since the 80s, points out that despite its shortcomings, SOAP provides some important advantages: “_Encapsulation is easier than the more common REST/JSON solutions. Web Service Description Language_ (or WSDL for short,  in which the SOAP API logic is written) _gives up more information than a typical JSON object provides.”_
+[Rob James](https://www.quora.com/profile/Rob-James-179), who’s been in software development since the 80s, points out that despite its shortcomings, SOAP provides some important advantages: “_Encapsulation is easier than the more common REST/JSON solutions. Web Service Description Language_ (or WSDL for short,  in which the SOAP API logic is written) _gives up more information than a typical JSON object provides.”_
 
 Integrated with the WS-Security protocols, SOAP API transmits messages with a high level of privacy and integrity. That’s why it remains the best option for financial services, payment gateways ([PayPal public API](https://developer.paypal.com/docs/nvp-soap-api/PayPalSOAPAPIArchitecture/)), CRM software, identity management, and telecommunication services.
 

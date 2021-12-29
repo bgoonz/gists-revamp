@@ -19,7 +19,7 @@ Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.
 Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
 
 Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
-We already discussed the first line of this definition: “Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.” Now let’s understand the other two lines so we can find out why Node.js is so popular.
+We already discussed the first line of this definition: “Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. " Now let’s understand the other two lines so we can find out why Node.js is so popular.
 
 I/O refers to input/output. It can be anything ranging from reading/writing local files to making an HTTP request to an API.
 
@@ -65,7 +65,7 @@ Require does three things:
 It loads modules that come bundled with Node.js like file system and HTTP from the Node.js API .
 It loads third-party libraries like Express and Mongoose that you install from npm.
 It lets you require your own files and modularize the project.
-Require is a function, and it accepts a parameter “path” and returns module.exports.
+Require is a function, and it accepts a parameter “path " and returns module.exports.
 
 Node Modules
 A Node module is a reusable block of code whose existence does not accidentally impact other code.

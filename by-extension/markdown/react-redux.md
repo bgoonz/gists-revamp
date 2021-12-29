@@ -148,11 +148,11 @@ Overall, React-Redux encourages good React architecture, and implements complex 
 
 ### <span id="why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running" class="anchor enhancedAnchor_2LWZ"></span>Why isn't my component re-rendering, or my mapStateToProps running?<a href="#why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running" class="hash-link" title="Direct link to heading">#</a>
 
-Accidentally mutating or modifying your state directly is by far the most common reason why components do not re-render after an action has been dispatched. Redux expects that your reducers will update their state “immutably”, which effectively means always making copies of your data, and applying your changes to the copies. If you return the same object from a reducer, Redux assumes that nothing has been changed, even if you made changes to its contents. Similarly, React Redux tries to improve performance by doing shallow equality reference checks on incoming props in `shouldComponentUpdate`, and if all references are the same, `shouldComponentUpdate` returns `false` to skip actually updating your original component.
+Accidentally mutating or modifying your state directly is by far the most common reason why components do not re-render after an action has been dispatched. Redux expects that your reducers will update their state “immutably ", which effectively means always making copies of your data, and applying your changes to the copies. If you return the same object from a reducer, Redux assumes that nothing has been changed, even if you made changes to its contents. Similarly, React Redux tries to improve performance by doing shallow equality reference checks on incoming props in `shouldComponentUpdate`, and if all references are the same, `shouldComponentUpdate` returns `false` to skip actually updating your original component.
 
 It's important to remember that whenever you update a nested value, you must also return new copies of anything above it in your state tree. If you have `state.a.b.c.d`, and you want to make an update to `d`, you would also need to return new copies of `c`, `b`, `a`, and `state`. This [state tree mutation diagram](http://arqex.com/wp-content/uploads/2015/02/trees.png) demonstrates how a change deep in a tree requires changes all the way up.
 
-Note that “updating data immutably” does _not_ mean that you must use [Immer](https://github.com/immerjs/immer), although that is certainly an option. You can do immutable updates to plain JS objects and arrays using several different approaches:
+Note that “updating data immutably " does _not_ mean that you must use [Immer](https://github.com/immerjs/immer), although that is certainly an option. You can do immutable updates to plain JS objects and arrays using several different approaches:
 
 - Copying objects using functions like `Object.assign()` or `_.extend()`, and array functions such as `slice()` and `concat()`
 - The array spread operator in ES6, and the similar object spread operator that is proposed for a future version of JavaScript
@@ -223,7 +223,7 @@ For non-connected components, you may want to check what props are being passed 
 
 ### <span id="how-can-i-speed-up-my-mapstatetoprops" class="anchor enhancedAnchor_2LWZ"></span>How can I speed up my `mapStateToProps`?<a href="#how-can-i-speed-up-my-mapstatetoprops" class="hash-link" title="Direct link to heading">#</a>
 
-While React Redux does work to minimize the number of times that your `mapStateToProps` function is called, it's still a good idea to ensure that your `mapStateToProps` runs quickly and also minimizes the amount of work it does. The common recommended approach is to create memoized “selector” functions using [Reselect](https://github.com/reduxjs/reselect). These selectors can be combined and composed together, and selectors later in a pipeline will only run if their inputs have changed. This means you can create selectors that do things like filtering or sorting, and ensure that the real work only happens if needed.
+While React Redux does work to minimize the number of times that your `mapStateToProps` function is called, it's still a good idea to ensure that your `mapStateToProps` runs quickly and also minimizes the amount of work it does. The common recommended approach is to create memoized “selector " functions using [Reselect](https://github.com/reduxjs/reselect). These selectors can be combined and composed together, and selectors later in a pipeline will only run if their inputs have changed. This means you can create selectors that do things like filtering or sorting, and ensure that the real work only happens if needed.
 
 #### <span id="further-information-3" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-3" class="hash-link" title="Direct link to heading">#</a>
 
@@ -263,9 +263,9 @@ If you do not provide your own `mapDispatchToProps` function when calling `conne
 
 Early Redux documentation advised that you should only have a few connected components near the top of your component tree. However, time and experience has shown that such a component architecture generally requires a few components to know too much about the data requirements of all their descendants, and forces them to pass down a confusing number of props.
 
-The current suggested best practice is to categorize your components as “presentational” or “container” components, and extract a connected container component wherever it makes sense:
+The current suggested best practice is to categorize your components as “presentational " or “container " components, and extract a connected container component wherever it makes sense:
 
-> Emphasizing “one container component at the top” in Redux examples was a mistake. Don't take this as a maxim. Try to keep your presentation components separate. Create container components by connecting them when it's convenient. Whenever you feel like you're duplicating code in parent components to provide data for same kinds of children, time to extract a container. Generally as soon as you feel a parent knows too much about “personal” data or actions of its children, time to extract a container.
+> Emphasizing “one container component at the top " in Redux examples was a mistake. Don't take this as a maxim. Try to keep your presentation components separate. Create container components by connecting them when it's convenient. Whenever you feel like you're duplicating code in parent components to provide data for same kinds of children, time to extract a container. Generally as soon as you feel a parent knows too much about “personal " data or actions of its children, time to extract a container.
 
 In fact, benchmarks have shown that more connected components generally leads to better performance than fewer connected components.
 
@@ -287,7 +287,7 @@ In general, try to find a balance between understandable data flow and areas of 
 
 **Discussions**
 
-- [Twitter: emphasizing “one container” was a mistake](https://twitter.com/dan_abramov/status/668585589609005056)
+- [Twitter: emphasizing “one container " was a mistake](https://twitter.com/dan_abramov/status/668585589609005056)
 - [\#419: Recommended usage of connect](https://github.com/reduxjs/redux/issues/419)
 - [\#756: container vs component?](https://github.com/reduxjs/redux/issues/756)
 - [\#1176: Redux+React with only stateless components](https://github.com/reduxjs/redux/issues/1176)

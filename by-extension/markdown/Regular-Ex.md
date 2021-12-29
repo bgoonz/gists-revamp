@@ -122,8 +122,8 @@ Basic:
 ### String Replacement
 
 - <span id="97cc">$n n-th non-passive group</span>
-- <span id="b1ec">\\(2 “xyz” in /^(abc(xyz))\\)/</span>
-- <span id="5cfe">\\(1 “xyz” in /^(?:abc)(xyz)\\)/</span>
+- <span id="b1ec">\\(2 “xyz " in /^(abc(xyz))\\)/</span>
+- <span id="5cfe">\\(1 “xyz " in /^(?:abc)(xyz)\\)/</span>
 - <span id="c851">$\` Before matched string</span>
 - <span id="a73d">$’ After matched string</span>
 - <span id="b11b">$+ Last matched string</span>
